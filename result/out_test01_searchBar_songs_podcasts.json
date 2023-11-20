@@ -24,8 +24,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 30,
-  "message" : "Search returned 0 results",
-  "results" : "[]"
+  "message" : "Search returned 1 results",
+  "results" : "[Big Pimpin']"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -36,8 +36,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 50,
-  "message" : "Search returned 0 results",
-  "results" : "[]"
+  "message" : "Search returned 5 results",
+  "results" : "[Shape of You, Don't, Maps, The Man, Freedom]"
 }, {
   "command" : "search",
   "user" : "alice22",

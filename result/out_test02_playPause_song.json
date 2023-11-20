@@ -9,4 +9,9 @@
   "user" : "alice22",
   "timestamp" : 15,
   "message" : "Successfully selected Shape of You."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 20,
+  "message" : "Playback loaded successfully."
 } ]

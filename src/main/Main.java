@@ -88,11 +88,22 @@ public final class Main {
                 new TypeReference<ArrayList<Command>>() {}
         );
 
-        //  Storing last result
+        //  IMPORTANT VARIABLES DECLARATION STARTS HERE
+
+        //  Storing last result and checking if it was initialized
         ArrayList<String> lastSearchResult = new ArrayList<>();
+        boolean initLastSearchResult = false;
+
+        //  Storing all selections in an array
+        ArrayList<ItemSelection> crtSelections = new ArrayList<>();
+
+        //  Keeping last selection for loading
+        LastSelection lastSelection = new LastSelection();
 
         //  Creating an array list of playlists
         ArrayList<Playlist> playlists = new ArrayList<>();
+
+        //  IMPORTANT VARIABLES DECLARATION ENDS HERE
 
         //  Parsing commands
         for (Command crtCommand : commands) {
@@ -128,9 +139,13 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(songNames));
 
                             //  Storing the result in case we need to select it later
+                            //  First element specifies the type of items searched
                             //  But first we need to clear the old search
                             lastSearchResult.clear();
+                            lastSelection.resetSelection();
+                            lastSearchResult.add("song");
                             lastSearchResult.addAll(List.of(songNames));
+                            initLastSearchResult = true;
 
                             //  Adding the output in JSON Array
                             outputs.add(searchOutput);
@@ -166,9 +181,13 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(playlistNames));
 
                             //  Storing the result in case we need to select it later
+                            //  First element specifies the type of items searched
                             //  But first we need to clear the old search
                             lastSearchResult.clear();
+                            lastSelection.resetSelection();
+                            lastSearchResult.add("playlist");
                             lastSearchResult.addAll(List.of(playlistNames));
+                            initLastSearchResult = true;
 
                             //  Adding the output in JSON Array
                             outputs.add(searchOutput);
@@ -200,9 +219,13 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(podcastNames));
 
                             //  Storing the result in case we need to select it later
+                            //  First element specifies the type of items searched
                             //  But first we need to clear the old search
                             lastSearchResult.clear();
+                            lastSelection.resetSelection();
+                            lastSearchResult.add("podcast");
                             lastSearchResult.addAll(List.of(podcastNames));
+                            initLastSearchResult = true;
 
                             //  Adding the output in JSON Array
                             outputs.add(searchOutput);
@@ -224,6 +247,57 @@ public final class Main {
                     selectOutput.put("message", message);
 
                     outputs.add(selectOutput);
+
+                    //  Storing the selection in case we need to load it
+                    if (message.contains("Successfully selected")) {
+                        int index = crtCommand.getItemNumber();
+                        lastSelection.setSelectionName(lastSearchResult.get(index));
+                        lastSelection.setSelectionType(lastSearchResult.get(0));
+                    }
+                }
+
+                case "load" -> {
+                    ObjectNode loadOutput = objectMapper.createObjectNode();
+                    loadOutput.put("command", "load");
+                    loadOutput.put("user", crtCommand.getUsername());
+                    loadOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Adding the appropriate load message
+                    if (lastSearchResult.isEmpty()) {
+                        if (initLastSearchResult) {
+                            loadOutput.put("message", "You can't load an empty audio collection!");
+                        } else {
+                            loadOutput.put("message", "Please select a source before attempting to load.");
+                        }
+                    } else {
+                        loadOutput.put("message", "Playback loaded successfully.");
+
+                        //  Loading the song into the database
+                        if (lastSelection.getSelectionType().equals("song")) {
+                            SongSelection selectedSong = getSongSelection(crtCommand, library, lastSelection);
+
+                            //  Add selection to array
+                            crtSelections.add(selectedSong);
+                        }
+
+                        //  Loading the playlist into the database
+                        if (lastSelection.getSelectionType().equals("playlist")) {
+                            PlaylistSelection selectedPlaylist = getPlaylistSelection(crtCommand, playlists, lastSelection);
+
+                            //  Add selection to array
+                            crtSelections.add(selectedPlaylist);
+                        }
+
+                        //  Loading the podcast into the database
+                        if (lastSelection.getSelectionType().equals("podcast")) {
+                            PodcastSelection selectedPodcast = getPodcastSelection(crtCommand, library, lastSelection);
+
+                            //  Add selection to array
+                            crtSelections.add(selectedPodcast);
+                        }
+                    }
+
+                    outputs.add(loadOutput);
                 }
 
                 default -> {
@@ -267,14 +341,28 @@ public final class Main {
         if (result.isEmpty()) {
             if (filters.getTags() != null) {
                 for (SongInput song : library.getSongs()) {
-                    if (song.getTags().equals(filters.getTags())) {
+                    int hasTags = 1;
+                    for (String tag : filters.getTags()) {
+                        if (!song.getTags().contains(tag)) {
+                            hasTags = 0;
+                            break;
+                        }
+                    }
+                    if (hasTags == 1) {
                         result.add(song);
                     }
                 }
             }
         } else {
             if (filters.getTags() != null) {
-                result.removeIf(song -> !song.getTags().equals(filters.getTags()));
+                for (SongInput song : result) {
+                    for (String tag : filters.getTags()) {
+                        if (!song.getTags().contains(tag)) {
+                            result.remove(song);
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -299,14 +387,14 @@ public final class Main {
         if (result.isEmpty()) {
             if (filters.getGenre() != null) {
                 for (SongInput song : library.getSongs()) {
-                    if (song.getGenre().equals(filters.getGenre())) {
+                    if (song.getGenre().equalsIgnoreCase(filters.getGenre())) {
                         result.add(song);
                     }
                 }
             }
         } else {
             if (filters.getGenre() != null) {
-                result.removeIf(song -> !song.getGenre().equals(filters.getGenre()));
+                result.removeIf(song -> !song.getGenre().equalsIgnoreCase(filters.getGenre()));
             }
         }
 
@@ -423,14 +511,62 @@ public final class Main {
         String message;
         if (lastSearchResult.isEmpty()) {
             message = "Please conduct a search before making a selection.";
-        } else if (crtCommand.getItemNumber() > lastSearchResult.size()) {
+        } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 1) {
             message = "The selected ID is too high.";
         } else {
-            int index = crtCommand.getItemNumber() - 1;
+            int index = crtCommand.getItemNumber();
             message = "Successfully selected " + lastSearchResult.get(index) + ".";
         }
 
         return message;
+    }
+
+    public static SongSelection getSongSelection(Command crtCommand, LibraryInput library, LastSelection lastSelection) {
+        SongSelection selectedSong = new SongSelection();
+        //  Set name
+        for (SongInput song : library.getSongs()) {
+            if (song.getName().equals(lastSelection.getSelectionName())) {
+                selectedSong.setSong(song);
+                break;
+            }
+        }
+        //  Set user
+        selectedSong.setUser(crtCommand.getUsername());
+        //  Set start time
+        selectedSong.setStartTime(crtCommand.getTimestamp());
+        return selectedSong;
+    }
+
+    public static PlaylistSelection getPlaylistSelection(Command crtCommand, ArrayList<Playlist> playlists, LastSelection lastSelection) {
+        PlaylistSelection selectedPlaylist = new PlaylistSelection();
+        //  Set name
+        for (Playlist playlist : playlists) {
+            if (playlist.getName().equals(lastSelection.getSelectionName())) {
+                selectedPlaylist.setPlaylist(playlist);
+                break;
+            }
+        }
+        //  Set user
+        selectedPlaylist.setUser(crtCommand.getUsername());
+        //  Set start time
+        selectedPlaylist.setStartTime(crtCommand.getTimestamp());
+        return selectedPlaylist;
+    }
+
+    public static PodcastSelection getPodcastSelection(Command crtCommand, LibraryInput library, LastSelection lastSelection) {
+        PodcastSelection selectedPodcast = new PodcastSelection();
+        //  Set name
+        for (PodcastInput podcast : library.getPodcasts()) {
+            if (podcast.getName().equals(lastSelection.getSelectionName())) {
+                selectedPodcast.setPodcast(podcast);
+                break;
+            }
+        }
+        //  Set user
+        selectedPodcast.setUser(crtCommand.getUsername());
+        //  Set start time
+        selectedPodcast.setStartTime(crtCommand.getTimestamp());
+        return selectedPodcast;
     }
 }
 
