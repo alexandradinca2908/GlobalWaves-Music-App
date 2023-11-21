@@ -7,6 +7,8 @@ public class Command {
     private String type;
     private Filters filters;
     private int itemNumber;
+    private String playlistName;
+    private int playlistId;
 
     public Command() {
     }
@@ -57,5 +59,21 @@ public class Command {
 
     public void setItemNumber(int itemNumber) {
         this.itemNumber = itemNumber;
+    }
+
+    public String getPlaylistName() {
+        return playlistName;
+    }
+
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
+    }
+
+    public int getPlaylistId() {
+        return playlistId;
+    }
+
+    public void setPlaylistId(int playlistId) {
+        this.playlistId = playlistId;
     }
 }

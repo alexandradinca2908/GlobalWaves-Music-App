@@ -33,4 +33,12 @@ public final class PodcastInput {
     public void setEpisodes(final ArrayList<EpisodeInput> episodes) {
         this.episodes = episodes;
     }
+
+    public int getDuration() {
+        int duration = 0;
+        for (EpisodeInput episode : this.episodes) {
+            duration += episode.getDuration();
+        }
+        return duration;
+    }
 }

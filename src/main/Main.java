@@ -95,13 +95,16 @@ public final class Main {
         boolean initLastSearchResult = false;
 
         //  Storing all selections in an array
-        ArrayList<ItemSelection> crtSelections = new ArrayList<>();
+        ArrayList<ItemSelection> player = new ArrayList<>();
 
         //  Keeping last selection for loading
         LastSelection lastSelection = new LastSelection();
 
         //  Creating an array list of playlists
         ArrayList<Playlist> playlists = new ArrayList<>();
+
+        //  Keeping played podcasts in order for the user to easily resume them
+        ArrayList<PodcastSelection> podcasts = new ArrayList<>();
 
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
 
@@ -110,8 +113,12 @@ public final class Main {
             switch(crtCommand.getCommand()) {
                 //  SEARCH COMMAND
                 case "search" -> {
+                    //  Clear player first
+                    player.removeIf(item -> item.getUser().equals(crtCommand.getUsername()));
+
                     //  Searching for a song
                     ObjectNode searchOutput = objectMapper.createObjectNode();
+
                     switch (crtCommand.getType()) {
                         case "song" -> {
                             Filters filters = crtCommand.getFilters();
@@ -139,13 +146,9 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(songNames));
 
                             //  Storing the result in case we need to select it later
-                            //  First element specifies the type of items searched
-                            //  But first we need to clear the old search
-                            lastSearchResult.clear();
-                            lastSelection.resetSelection();
-                            lastSearchResult.add("song");
-                            lastSearchResult.addAll(List.of(songNames));
+                            storeResultForSelect(lastSearchResult, lastSelection, songNames);
                             initLastSearchResult = true;
+
 
                             //  Adding the output in JSON Array
                             outputs.add(searchOutput);
@@ -181,12 +184,7 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(playlistNames));
 
                             //  Storing the result in case we need to select it later
-                            //  First element specifies the type of items searched
-                            //  But first we need to clear the old search
-                            lastSearchResult.clear();
-                            lastSelection.resetSelection();
-                            lastSearchResult.add("playlist");
-                            lastSearchResult.addAll(List.of(playlistNames));
+                            storeResultForSelect(lastSearchResult, lastSelection, playlistNames);
                             initLastSearchResult = true;
 
                             //  Adding the output in JSON Array
@@ -219,12 +217,7 @@ public final class Main {
                             searchOutput.put("results", Arrays.toString(podcastNames));
 
                             //  Storing the result in case we need to select it later
-                            //  First element specifies the type of items searched
-                            //  But first we need to clear the old search
-                            lastSearchResult.clear();
-                            lastSelection.resetSelection();
-                            lastSearchResult.add("podcast");
-                            lastSearchResult.addAll(List.of(podcastNames));
+                            storeResultForSelect(lastSearchResult, lastSelection, podcastNames);
                             initLastSearchResult = true;
 
                             //  Adding the output in JSON Array
@@ -276,28 +269,182 @@ public final class Main {
                         if (lastSelection.getSelectionType().equals("song")) {
                             SongSelection selectedSong = getSongSelection(crtCommand, library, lastSelection);
 
+                            //  Clearing other load from the same user
+                            for (ItemSelection item : player) {
+                                if (item.getUser().equals(selectedSong.getUser())) {
+                                    player.remove(item);
+                                    break;
+                                }
+                            }
+
                             //  Add selection to array
-                            crtSelections.add(selectedSong);
+                            player.add(selectedSong);
                         }
 
                         //  Loading the playlist into the database
                         if (lastSelection.getSelectionType().equals("playlist")) {
                             PlaylistSelection selectedPlaylist = getPlaylistSelection(crtCommand, playlists, lastSelection);
 
+                            //  Clearing other load from the same user
+                            for (ItemSelection item : player) {
+                                if (item.getUser().equals(selectedPlaylist.getUser())) {
+                                    player.remove(item);
+                                    break;
+                                }
+                            }
+
                             //  Add selection to array
-                            crtSelections.add(selectedPlaylist);
+                            player.add(selectedPlaylist);
                         }
 
                         //  Loading the podcast into the database
                         if (lastSelection.getSelectionType().equals("podcast")) {
                             PodcastSelection selectedPodcast = getPodcastSelection(crtCommand, library, lastSelection);
 
-                            //  Add selection to array
-                            crtSelections.add(selectedPodcast);
+                            //  Check to see if the podcast has been started by this user already
+                            int started = 0;
+                            for (PodcastSelection podcast : podcasts) {
+                                if (podcast.getUser().equals(selectedPodcast.getUser())) {
+                                    if (podcast.getPodcast().equals(selectedPodcast.getPodcast())) {
+                                        //  Resume podcast and update info
+                                        player.add(podcast);
+                                        podcast.setPaused(false);
+                                        podcast.setStartTime(crtCommand.getTimestamp());
+                                        started = 1;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (started == 0) {
+                                //  Loading the podcast into the database
+                                for (ItemSelection item : player) {
+                                    if (item.getUser().equals(selectedPodcast.getUser())) {
+                                        player.remove(item);
+                                        break;
+                                    }
+                                }
+
+                                //  Add selection to array
+                                player.add(selectedPodcast);
+
+                                //  Keep record of the selection
+                                podcasts.add(selectedPodcast);
+                            }
                         }
                     }
 
                     outputs.add(loadOutput);
+                }
+
+                case "status" -> {
+                    ObjectNode statusOutput = objectMapper.createObjectNode();
+                    statusOutput.put("command", "status");
+                    statusOutput.put("user", crtCommand.getUsername());
+                    statusOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String user = crtCommand.getUsername();
+                    ItemSelection reqItem = new ItemSelection();
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(user)) {
+                            reqItem = item;
+                        }
+                    }
+
+                    //  Setting the stats
+                    ObjectNode stats = getStats(reqItem, objectMapper, crtCommand);
+                    statusOutput.set("stats", stats);
+
+                    //  If we analyzed a podcast, we need to update information in podcast array
+                    if (reqItem instanceof PodcastSelection) {
+                        PodcastSelection copy = (PodcastSelection) reqItem;
+
+                        for (PodcastSelection podcast : podcasts) {
+                            if (podcast.getUser().equals(reqItem.getUser())) {
+                                if (podcast.getPodcast().equals(copy.getPodcast())) {
+                                    podcast.setStartTime(copy.getStartTime());
+                                    podcast.setRemainingTime(copy.getRemainingTime());
+                                    podcast.setPaused(copy.isPaused());
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    //  Adding output to array
+                    outputs.add(statusOutput);
+                }
+
+                case "playPause" -> {
+                    ObjectNode playPauseOutput = objectMapper.createObjectNode();
+
+                    playPauseOutput.put("command", "playPause");
+                    playPauseOutput.put("user", crtCommand.getUsername());
+                    playPauseOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Looking for what the user is playing
+                    int found = 0;
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            if (item.isPaused()) {
+                                playPauseOutput.put("message", "Playback resumed successfully.");
+                                item.setPaused(false);
+                                found = 1;
+
+                                //  Updating start time
+                                item.setStartTime(crtCommand.getTimestamp());
+
+                                break;
+                            } else {
+                                playPauseOutput.put("message", "Playback paused successfully.");
+                                item.setPaused(true);
+                                found = 1;
+
+                                //  Updating remaining time
+                                int remainingTime = item.getRemainingTime() - (crtCommand.getTimestamp() - item.getStartTime());
+                                item.setRemainingTime(remainingTime);
+
+                                break;
+                            }
+                        }
+                    }
+
+                    if (found == 0) {
+                        playPauseOutput.put("message", "Please load a source before attempting to pause or resume playback.");
+                    }
+
+                    outputs.add(playPauseOutput);
+                }
+
+                case "createPlaylist" -> {
+                    ObjectNode createPlaylistOutput = objectMapper.createObjectNode();
+
+                    createPlaylistOutput.put("command", "playPause");
+                    createPlaylistOutput.put("user", crtCommand.getUsername());
+                    createPlaylistOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    int exists = 0;
+                    for (Playlist playlist : playlists) {
+                        if (playlist.getOwner().equals(crtCommand.getUsername())) {
+                            if (playlist.getName().equals(crtCommand.getPlaylistName())) {
+                                createPlaylistOutput.put("message", "A playlist with the same name already exists.");
+                                exists = 1;
+
+                                break;
+                            }
+                        }
+                    }
+
+                    if (exists == 0) {
+                        Playlist newPlaylist = new Playlist(crtCommand.getPlaylistName(), crtCommand.getUsername());
+                        playlists.add(newPlaylist);
+
+                        createPlaylistOutput.put("message", "Playlist created successfully.");
+                    }
+
+                    outputs.add(createPlaylistOutput);
                 }
 
                 default -> {
@@ -534,6 +681,9 @@ public final class Main {
         selectedSong.setUser(crtCommand.getUsername());
         //  Set start time
         selectedSong.setStartTime(crtCommand.getTimestamp());
+        //  Set remaining time
+        selectedSong.setRemainingTime(selectedSong.getSong().getDuration());
+
         return selectedSong;
     }
 
@@ -550,6 +700,9 @@ public final class Main {
         selectedPlaylist.setUser(crtCommand.getUsername());
         //  Set start time
         selectedPlaylist.setStartTime(crtCommand.getTimestamp());
+        //  Set remaining time
+        selectedPlaylist.setRemainingTime(selectedPlaylist.getPlaylist().getDuration());
+
         return selectedPlaylist;
     }
 
@@ -566,7 +719,149 @@ public final class Main {
         selectedPodcast.setUser(crtCommand.getUsername());
         //  Set start time
         selectedPodcast.setStartTime(crtCommand.getTimestamp());
+        //  Set remaining time
+        selectedPodcast.setRemainingTime(selectedPodcast.getPodcast().getDuration());
+
         return selectedPodcast;
+    }
+
+    public static void storeResultForSelect(ArrayList<String> lastSearchResult, LastSelection lastSelection, String[] names) {
+        //  First element specifies the type of items searched
+        //  But first we need to clear the old search
+        lastSearchResult.clear();
+        lastSelection.resetSelection();
+        if (names.length > 0) {
+            lastSearchResult.add("song");
+            lastSearchResult.addAll(List.of(names));
+        }
+    }
+
+    public static ObjectNode getStats(ItemSelection reqItem, ObjectMapper objectMapper, Command crtCommand) {
+        ObjectNode stats = objectMapper.createObjectNode();
+
+        //  Downsize item for JSON details
+        if (reqItem instanceof SongSelection) {
+            SongInput songItem = ((SongSelection) reqItem).getSong();
+
+            //  Check remaining time
+            int remainingTime = reqItem.getRemainingTime();
+
+            //  If the song is playing we update the time
+            if (!reqItem.isPaused()) {
+                remainingTime = reqItem.getRemainingTime() - (crtCommand.getTimestamp() - reqItem.getStartTime());
+                if (remainingTime < 0) {
+                    remainingTime = 0;
+                    reqItem.setPaused(true);
+                }
+                //  Replace start time with timestamp of update
+                reqItem.setStartTime(crtCommand.getTimestamp());
+                reqItem.setRemainingTime(remainingTime);
+            }
+
+            //  Set name
+            if (remainingTime == 0) {
+                stats.put("name", "");
+            } else {
+                stats.put("name", songItem.getName());
+            }
+
+            //  Set remaining time
+            stats.put("remainedTime", remainingTime);
+
+            //  Set repeat status
+            stats.put("repeat", reqItem.getRepeat());
+
+            //  Set shuffle
+            stats.put("shuffle", reqItem.isShuffle());
+
+            //  Set paused
+            stats.put("paused", reqItem.isPaused());
+
+            return stats;
+
+        } else if (reqItem instanceof PlaylistSelection) {
+            Playlist playlistItem = ((PlaylistSelection) reqItem).getPlaylist();
+
+            //  Check remaining time
+            int remainingTime = reqItem.getRemainingTime();
+
+            //  If the playlist is playing we update the time
+            if (!reqItem.isPaused()) {
+                remainingTime = reqItem.getRemainingTime() - (crtCommand.getTimestamp() - reqItem.getStartTime());
+                if (remainingTime < 0) {
+                    remainingTime = 0;
+                    reqItem.setPaused(true);
+                }
+                //  Replace start time with timestamp of update
+                reqItem.setStartTime(crtCommand.getTimestamp());
+                reqItem.setRemainingTime(remainingTime);
+            }
+
+            //  Set name
+            if (remainingTime == 0) {
+                stats.put("name", "");
+            } else {
+                stats.put("name", playlistItem.getName());
+            }
+
+            //  Set remaining time
+            stats.put("remainedTime", remainingTime);
+
+            //  Set repeat status
+            stats.put("repeat", reqItem.getRepeat());
+
+            //  Set shuffle
+            stats.put("shuffle", reqItem.isShuffle());
+
+            //  Set paused
+            stats.put("paused", reqItem.isPaused());
+
+            return stats;
+
+        } else if (reqItem instanceof PodcastSelection) {
+            PodcastInput podcastItem = ((PodcastSelection) reqItem).getPodcast();
+
+            //  Check remaining time
+            int remainingTime = reqItem.getRemainingTime();
+
+            //  If the podcast is playing we update the time
+            if (!reqItem.isPaused()) {
+                remainingTime = reqItem.getRemainingTime() - (crtCommand.getTimestamp() - reqItem.getStartTime());
+                if (remainingTime < 0) {
+                    remainingTime = 0;
+                    reqItem.setPaused(true);
+                }
+                //  Replace start time with timestamp of update
+                reqItem.setStartTime(crtCommand.getTimestamp());
+                reqItem.setRemainingTime(remainingTime);
+            }
+
+            //  Set name
+            if (remainingTime == 0) {
+                stats.put("name", "");
+            } else {
+                stats.put("name", podcastItem.getName());
+            }
+
+            //  Set remaining time
+            stats.put("remainedTime", remainingTime);
+
+            //  Replace start time with timestamp of update
+            reqItem.setStartTime(crtCommand.getTimestamp());
+
+            //  Set repeat status
+            stats.put("repeat", reqItem.getRepeat());
+
+            //  Set shuffle
+            stats.put("shuffle", reqItem.isShuffle());
+
+            //  Set paused
+            stats.put("paused", reqItem.isPaused());
+
+            return stats;
+        }
+
+        return null;
     }
 }
 

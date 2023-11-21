@@ -8,11 +8,16 @@ import java.util.ArrayList;
 public class Playlist {
     private String name;
     private ArrayList<SongInput> songs;
-    private boolean visibility;
+    private boolean visibility = true;
     private ArrayList<UserInput> followers;
     private String owner;
 
     public Playlist(){
+    }
+
+    public Playlist(String name, String owner) {
+        this.name = name;
+        this.owner = owner;
     }
 
     public String getName() {
@@ -53,5 +58,13 @@ public class Playlist {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public int getDuration() {
+        int duration = 0;
+        for (SongInput song : this.songs) {
+            duration += song.getDuration();
+        }
+        return duration;
     }
 }

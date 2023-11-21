@@ -2,10 +2,11 @@ package main;
 
 import fileio.input.SongInput;
 
-public abstract class ItemSelection {
+public class ItemSelection {
     private String user;
     private int startTime;
-    private String repeat = "No repeat";
+    private int remainingTime;
+    private String repeat = "No Repeat";
     private boolean shuffle = false;
     private boolean paused = false;
 
@@ -26,6 +27,14 @@ public abstract class ItemSelection {
 
     public void setStartTime(int startTime) {
         this.startTime = startTime;
+    }
+
+    public int getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void setRemainingTime(int remainingTime) {
+        this.remainingTime = remainingTime;
     }
 
     public String getRepeat() {
