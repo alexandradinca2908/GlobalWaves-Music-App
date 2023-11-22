@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String name;
-    private ArrayList<SongInput> songs;
+    private ArrayList<SongInput> songs = new ArrayList<>();
     private boolean visibility = true;
-    private ArrayList<UserInput> followers;
+    private ArrayList<UserInput> followers = new ArrayList<>();
     private String owner;
 
     public Playlist(){

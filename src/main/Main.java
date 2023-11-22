@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.LibraryInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
+import fileio.input.UserInput;
 
 import java.io.File;
 import java.io.IOException;
@@ -100,8 +101,18 @@ public final class Main {
         //  Keeping last selection for loading
         LastSelection lastSelection = new LastSelection();
 
-        //  Creating an array list of playlists
+        //  Creating an array list of all the playlists
         ArrayList<Playlist> playlists = new ArrayList<>();
+
+        //  Creating an array list of playlists sorted by users
+        ArrayList<UserPlaylists> usersPlaylists = new ArrayList<>();
+
+        for (UserInput user : library.getUsers()) {
+            UserPlaylists newUserPlaylists = new UserPlaylists();
+            newUserPlaylists.setUser(user);
+
+            usersPlaylists.add(newUserPlaylists);
+        }
 
         //  Keeping played podcasts in order for the user to easily resume them
         ArrayList<PodcastSelection> podcasts = new ArrayList<>();
@@ -139,18 +150,16 @@ public final class Main {
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
                             //  Extracting the names of the songs
-                            String[] songNames = new String[result.size()];
-                            for (int songIndex = 0; songIndex < result.size(); songIndex++) {
-                                songNames[songIndex] = result.get(songIndex).getName();
+                            ArrayList<String > songNames = new ArrayList<>();
+                            for (SongInput songInput : result) {
+                                songNames.add(songInput.getName());
                             }
-                            searchOutput.put("results", Arrays.toString(songNames));
+                            searchOutput.putPOJO("results", songNames);
 
                             //  Storing the result in case we need to select it later
                             storeResultForSelect(lastSearchResult, lastSelection, songNames);
                             initLastSearchResult = true;
 
-
-                            //  Adding the output in JSON Array
                             outputs.add(searchOutput);
                         }
 
@@ -177,17 +186,16 @@ public final class Main {
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
                             //  Extracting the names of the playlists
-                            String[] playlistNames = new String[result.size()];
-                            for (int pIndex = 0; pIndex < result.size(); pIndex++) {
-                                playlistNames[pIndex] = result.get(pIndex).getName();
+                            ArrayList<String > playlistNames = new ArrayList<>();
+                            for (Playlist playlist : result) {
+                                playlistNames.add(playlist.getName());
                             }
-                            searchOutput.put("results", Arrays.toString(playlistNames));
+                            searchOutput.putPOJO("results", playlistNames);
 
                             //  Storing the result in case we need to select it later
                             storeResultForSelect(lastSearchResult, lastSelection, playlistNames);
                             initLastSearchResult = true;
 
-                            //  Adding the output in JSON Array
                             outputs.add(searchOutput);
                         }
 
@@ -209,18 +217,17 @@ public final class Main {
                             searchOutput.put("timestamp", crtCommand.getTimestamp());
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
-                            //  Extracting the names of the playlists
-                            String[] podcastNames = new String[result.size()];
-                            for (int pIndex = 0; pIndex < result.size(); pIndex++) {
-                                podcastNames[pIndex] = result.get(pIndex).getName();
+                            //  Extracting the names of the podcasts
+                            ArrayList<String > podcastNames = new ArrayList<>();
+                            for (PodcastInput podcastInput : result) {
+                                podcastNames.add(podcastInput.getName());
                             }
-                            searchOutput.put("results", Arrays.toString(podcastNames));
+                            searchOutput.putPOJO("results", podcastNames);
 
                             //  Storing the result in case we need to select it later
                             storeResultForSelect(lastSearchResult, lastSelection, podcastNames);
                             initLastSearchResult = true;
 
-                            //  Adding the output in JSON Array
                             outputs.add(searchOutput);
                         }
 
@@ -236,7 +243,7 @@ public final class Main {
                     selectOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Creating the message
-                    String message = getMessage(lastSearchResult, crtCommand);
+                    String message = getSelectMessage(lastSearchResult, crtCommand);
                     selectOutput.put("message", message);
 
                     outputs.add(selectOutput);
@@ -311,6 +318,7 @@ public final class Main {
                                         podcast.setPaused(false);
                                         podcast.setStartTime(crtCommand.getTimestamp());
                                         started = 1;
+
                                         break;
                                     }
                                 }
@@ -373,7 +381,6 @@ public final class Main {
                         }
                     }
 
-                    //  Adding output to array
                     outputs.add(statusOutput);
                 }
 
@@ -421,7 +428,7 @@ public final class Main {
                 case "createPlaylist" -> {
                     ObjectNode createPlaylistOutput = objectMapper.createObjectNode();
 
-                    createPlaylistOutput.put("command", "playPause");
+                    createPlaylistOutput.put("command", "createPlaylist");
                     createPlaylistOutput.put("user", crtCommand.getUsername());
                     createPlaylistOutput.put("timestamp", crtCommand.getTimestamp());
 
@@ -439,12 +446,100 @@ public final class Main {
 
                     if (exists == 0) {
                         Playlist newPlaylist = new Playlist(crtCommand.getPlaylistName(), crtCommand.getUsername());
+                        //  Add playlist in general list
                         playlists.add(newPlaylist);
+                        //  Add playlist in user's list
+                        for (UserPlaylists userPlaylists : usersPlaylists) {
+                            if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                                userPlaylists.getPlaylists().add(newPlaylist);
+                                break;
+                            }
+                        }
 
                         createPlaylistOutput.put("message", "Playlist created successfully.");
                     }
 
                     outputs.add(createPlaylistOutput);
+                }
+
+                case "addRemoveInPlaylist" -> {
+                    ObjectNode addRemoveOutput = objectMapper.createObjectNode();
+
+                    addRemoveOutput.put("command", "addRemoveInPlaylist");
+                    addRemoveOutput.put("user", crtCommand.getUsername());
+                    addRemoveOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Get message and make proper modifications to the playlist
+                    String message = getAddRemoveMessage(player, playlists, usersPlaylists, crtCommand);
+                    addRemoveOutput.put("message", message);
+
+                    outputs.add(addRemoveOutput);
+                }
+
+                case "like" -> {
+                    ObjectNode likeOutput = objectMapper.createObjectNode();
+
+                    likeOutput.put("command", "like");
+                    likeOutput.put("user", crtCommand.getUsername());
+                    likeOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Get message and make proper modifications to the user's liked songs
+                    String message = getLikeMessage(player, usersPlaylists, crtCommand);
+
+                    likeOutput.put("message", message);
+
+                    outputs.add(likeOutput);
+                }
+
+                case "showPlaylists" -> {
+                    ObjectNode showPlaylistsOutput = objectMapper.createObjectNode();
+
+                    showPlaylistsOutput.put("command", "showPlaylists");
+                    showPlaylistsOutput.put("user", crtCommand.getUsername());
+                    showPlaylistsOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    ArrayList<ObjectNode> result = new ArrayList<>();
+
+                    UserPlaylists user = null;
+
+                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                        if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                            user = userPlaylists;
+                            break;
+                        }
+                    }
+
+                    if (user != null) {
+                        for (Playlist playlist : user.getPlaylists()) {
+                            ObjectNode resultNode = objectMapper.createObjectNode();
+
+                            //  Set playlist data
+                            resultNode.put("name", playlist.getName());
+
+                            ArrayList<String> songNames = new ArrayList<>();
+                            for (SongInput song : playlist.getSongs()) {
+                                songNames.add(song.getName());
+                            }
+                            resultNode.putPOJO("songs", songNames);
+
+                            if (playlist.isVisibility()) {
+                                resultNode.put("visibility", "public");
+                            } else {
+                                resultNode.put("visibility", "private");
+                            }
+
+                            resultNode.put("followers", playlist.getFollowers().size());
+
+                            result.add(resultNode);
+                        }
+
+                        showPlaylistsOutput.putPOJO("result", result);
+
+                    } else {
+                        showPlaylistsOutput.put("result", "");
+                    }
+
+                    outputs.add(showPlaylistsOutput);
                 }
 
                 default -> {
@@ -654,7 +749,7 @@ public final class Main {
         }
     }
 
-    public static String getMessage(ArrayList<String> lastSearchResult, Command crtCommand) {
+    public static String getSelectMessage(ArrayList<String> lastSearchResult, Command crtCommand) {
         String message;
         if (lastSearchResult.isEmpty()) {
             message = "Please conduct a search before making a selection.";
@@ -725,14 +820,15 @@ public final class Main {
         return selectedPodcast;
     }
 
-    public static void storeResultForSelect(ArrayList<String> lastSearchResult, LastSelection lastSelection, String[] names) {
+    public static void storeResultForSelect(ArrayList<String> lastSearchResult, LastSelection lastSelection,
+                                            ArrayList<String> names) {
         //  First element specifies the type of items searched
         //  But first we need to clear the old search
         lastSearchResult.clear();
         lastSelection.resetSelection();
-        if (names.length > 0) {
+        if (!names.isEmpty()) {
             lastSearchResult.add("song");
-            lastSearchResult.addAll(List.of(names));
+            lastSearchResult.addAll(names);
         }
     }
 
@@ -862,6 +958,173 @@ public final class Main {
         }
 
         return null;
+    }
+
+    public static String getAddRemoveMessage(ArrayList<ItemSelection> player, ArrayList<Playlist> playlists,
+                                             ArrayList<UserPlaylists> usersPlaylists, Command crtCommand) {
+        String message = "";
+
+        //  First we check to see if the user has anything loaded
+        //  The loaded media MUST be a song
+        int loaded = 0;
+        int isSong = 0;
+        SongInput crtSong = null;
+        Playlist copyPlaylist = null;
+
+        for (ItemSelection item : player) {
+            if (item.getUser().equals(crtCommand.getUsername())) {
+                loaded = 1;
+                if (item instanceof SongSelection) {
+                    isSong = 1;
+                    crtSong = ((SongSelection) item).getSong();
+                }
+                break;
+            }
+        }
+
+        if (loaded == 0) {
+            message = "Please load a source before adding to or removing from the playlist.";
+
+        } else if (isSong == 0){
+            message = "The loaded source is not a song.";
+
+        } else {
+            //  We try to find the specified ID
+
+            //  searchId will count all user playlists until we reach desired playlist
+            int searchId = 0;
+
+            for (Playlist playlist : playlists) {
+                if (playlist.getOwner().equals(crtCommand.getUsername())) {
+                    searchId++;
+                }
+
+                if (searchId == crtCommand.getPlaylistId()) {
+                    copyPlaylist = playlist;
+                    break;
+                }
+            }
+
+            if (copyPlaylist == null) {
+                message = "The specified playlist does not exist.";
+
+            } else {
+                //  All conditions are met; we can now add/remove the loaded song
+                int foundSong = 0;
+                for (SongInput song : copyPlaylist.getSongs()) {
+                    if (song.equals(crtSong)) {
+                        copyPlaylist.getSongs().remove(song);
+                        foundSong = 1;
+                        break;
+                    }
+                }
+
+                //  If we didn't remove the song, this means we must add it
+                if (foundSong == 0) {
+                    copyPlaylist.getSongs().add(crtSong);
+                }
+
+                //  Updating user playlist array
+                searchId = 0;
+                for (UserPlaylists userPlaylists : usersPlaylists) {
+                    if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                        //  When the user is found we search for the playlist
+                        for (Playlist playlist : userPlaylists.getPlaylists()) {
+                            searchId++;
+                            //  When the playlist is found we add/remove the song
+                            if (searchId == crtCommand.getPlaylistId()) {
+                                //  Add
+                                if (foundSong == 0) {
+                                    playlist.getSongs().add(crtSong);
+                                //  Remove
+                                } else {
+                                    playlist.getSongs().remove(crtSong);
+                                }
+
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+
+                //  Set the message
+                if (foundSong == 0) {
+                    message = "Successfully added to playlist.";
+                } else {
+                    message = "Successfully removed from playlist.";
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getLikeMessage(ArrayList<ItemSelection> player, ArrayList<UserPlaylists> usersPlaylists, Command crtCommand) {
+        String message = "";
+
+        //  We begin by checking if there is a loaded source
+        //  The source MUST be a song
+        int loaded = 0;
+        int isSong = 0;
+        SongInput crtSong = null;
+
+        for (ItemSelection item : player) {
+            if (item.getUser().equals(crtCommand.getUsername())) {
+                loaded = 1;
+                if (item instanceof SongSelection) {
+                    isSong = 1;
+                    crtSong = ((SongSelection) item).getSong();
+                }
+                break;
+            }
+        }
+
+        if (loaded == 0) {
+            message = "Please load a source before liking or unliking.";
+
+        } else if (isSong == 0) {
+            message = "Loaded source is not a song.";
+
+        } else {
+            //  The loaded source is checked. We can add/remove it from liked songs
+            UserPlaylists user = null;
+
+            for (UserPlaylists crtUser : usersPlaylists) {
+                if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
+                    user = crtUser;
+                    break;
+                }
+            }
+
+            if (user != null) {
+                //  We search the current song
+                int found = 0;
+                for (SongInput song : user.getLikedSongs()) {
+                    if (song.equals(crtSong)) {
+                        found = 1;
+                        user.getLikedSongs().remove(song);
+
+                        break;
+                    }
+                }
+
+                if (found == 0) {
+                    user.getLikedSongs().add(crtSong);
+                }
+
+                //  Lastly, the message is set
+                if (found == 0) {
+                    message = "Like registered successfully.";
+                } else {
+                    message = "Unlike registered successfully.";
+                }
+            } else {
+                message = "ERROR. User not found";
+            }
+        }
+
+        return message;
     }
 }
 

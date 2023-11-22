@@ -3,7 +3,7 @@
   "user" : "alice22",
   "timestamp" : 10,
   "message" : "Search returned 1 results",
-  "results" : "[Shape of You]"
+  "results" : [ "Shape of You" ]
 }, {
   "command" : "select",
   "user" : "alice22",
