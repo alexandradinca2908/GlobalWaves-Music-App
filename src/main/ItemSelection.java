@@ -63,7 +63,15 @@ public class ItemSelection {
 
     public void updateRemainingTime(int crtTimestamp) {
         if (!isPaused()) {
-            this.remainingTime = this.remainingTime - (crtTimestamp - startTime);
+            int remainingTime = this.remainingTime - (crtTimestamp - startTime);
+
+            if (remainingTime < 0) {
+                remainingTime = 0;
+                this.paused = true;
+            }
+
+            this.remainingTime = remainingTime;
+            this.startTime = crtTimestamp;
         }
     }
 }

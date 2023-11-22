@@ -19,8 +19,8 @@
   "user" : "alice22",
   "timestamp" : 59,
   "stats" : {
-    "name" : "TED Radio Hour",
-    "remainedTime" : 15493,
+    "name" : "The Power of Design",
+    "remainedTime" : 3065,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -62,8 +62,8 @@
   "user" : "alice22",
   "timestamp" : 86,
   "stats" : {
-    "name" : "TED Radio Hour",
-    "remainedTime" : 15492,
+    "name" : "The Power of Design",
+    "remainedTime" : 3063,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -78,8 +78,8 @@
   "user" : "alice22",
   "timestamp" : 3201,
   "stats" : {
-    "name" : "TED Radio Hour",
-    "remainedTime" : 12378,
+    "name" : "The Science of Us",
+    "remainedTime" : 3081,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -152,8 +152,8 @@
   "user" : "alice22",
   "timestamp" : 3270,
   "stats" : {
-    "name" : "2010 hits",
-    "remainedTime" : 380,
+    "name" : "Freedom",
+    "remainedTime" : 173,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -163,7 +163,7 @@
   "user" : "alice22",
   "timestamp" : 3448,
   "stats" : {
-    "name" : "2010 hits",
+    "name" : "Happier",
     "remainedTime" : 202,
     "repeat" : "No Repeat",
     "shuffle" : false,

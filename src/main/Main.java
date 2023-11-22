@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.LibraryInput;
-import fileio.input.PodcastInput;
-import fileio.input.SongInput;
-import fileio.input.UserInput;
+import fileio.input.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -125,7 +122,18 @@ public final class Main {
                 //  SEARCH COMMAND
                 case "search" -> {
                     //  Clear player first
-                    player.removeIf(item -> item.getUser().equals(crtCommand.getUsername()));
+                    if (!player.isEmpty()) {
+                        for (ItemSelection item : player) {
+                            if (item.getUser().equals(crtCommand.getUsername())) {
+                                if (item instanceof PodcastSelection) {
+                                    item.updateRemainingTime(crtCommand.getTimestamp());
+                                    item.setPaused(true);
+                                }
+                                player.remove(item);
+                                break;
+                            }
+                        }
+                    }
 
                     //  Searching for a song
                     ObjectNode searchOutput = objectMapper.createObjectNode();
@@ -359,23 +367,6 @@ public final class Main {
                     //  Setting the stats
                     ObjectNode stats = getStats(reqItem, objectMapper, crtCommand);
                     statusOutput.set("stats", stats);
-
-                    //  If we analyzed a podcast, we need to update information in podcast array
-                    if (reqItem instanceof PodcastSelection) {
-                        PodcastSelection copy = (PodcastSelection) reqItem;
-
-                        for (PodcastSelection podcast : podcasts) {
-                            if (podcast.getUser().equals(reqItem.getUser())) {
-                                if (podcast.getPodcast().equals(copy.getPodcast())) {
-                                    podcast.setStartTime(copy.getStartTime());
-                                    podcast.setRemainingTime(copy.getRemainingTime());
-                                    podcast.setPaused(copy.isPaused());
-
-                                    break;
-                                }
-                            }
-                        }
-                    }
 
                     outputs.add(statusOutput);
                 }
@@ -897,30 +888,41 @@ public final class Main {
         } else if (reqItem instanceof PlaylistSelection) {
             Playlist playlistItem = ((PlaylistSelection) reqItem).getPlaylist();
 
+            //  If the podcast is playing we update the time
+            if (!reqItem.isPaused()) {
+                reqItem.updateRemainingTime(crtCommand.getTimestamp());
+            }
+
             //  Check remaining time
             int remainingTime = reqItem.getRemainingTime();
 
-            //  If the playlist is playing we update the time
-            if (!reqItem.isPaused()) {
-                remainingTime = reqItem.getRemainingTime() - (crtCommand.getTimestamp() - reqItem.getStartTime());
-                if (remainingTime < 0) {
-                    remainingTime = 0;
-                    reqItem.setPaused(true);
-                }
-                //  Replace start time with timestamp of update
-                reqItem.setStartTime(crtCommand.getTimestamp());
-                reqItem.setRemainingTime(remainingTime);
-            }
-
-            //  Set name
             if (remainingTime == 0) {
+                //  Set name
                 stats.put("name", "");
-            } else {
-                stats.put("name", playlistItem.getName());
-            }
 
-            //  Set remaining time
-            stats.put("remainedTime", remainingTime);
+                //  Set remaining time
+                stats.put("remainedTime", 0);
+            } else {
+                //  We find the current episode
+                SongInput crtSong = null;
+
+                int duration = ((PlaylistSelection) reqItem).getPlaylist().getDuration();
+
+                for (SongInput song : ((PlaylistSelection) reqItem).getPlaylist().getSongs()) {
+                    duration -= song.getDuration();
+
+                    if (duration < remainingTime) {
+                        crtSong = song;
+                        break;
+                    }
+                }
+
+                //  Set name
+                stats.put("name", crtSong.getName());
+
+                //  Set remaining time
+                stats.put("remainedTime", remainingTime - duration);
+            }
 
             //  Set repeat status
             stats.put("repeat", reqItem.getRepeat());
@@ -936,33 +938,41 @@ public final class Main {
         } else if (reqItem instanceof PodcastSelection) {
             PodcastInput podcastItem = ((PodcastSelection) reqItem).getPodcast();
 
+            //  If the podcast is playing we update the time
+            if (!reqItem.isPaused()) {
+                reqItem.updateRemainingTime(crtCommand.getTimestamp());
+            }
+
             //  Check remaining time
             int remainingTime = reqItem.getRemainingTime();
 
-            //  If the podcast is playing we update the time
-            if (!reqItem.isPaused()) {
-                remainingTime = reqItem.getRemainingTime() - (crtCommand.getTimestamp() - reqItem.getStartTime());
-                if (remainingTime < 0) {
-                    remainingTime = 0;
-                    reqItem.setPaused(true);
-                }
-                //  Replace start time with timestamp of update
-                reqItem.setStartTime(crtCommand.getTimestamp());
-                reqItem.setRemainingTime(remainingTime);
-            }
-
-            //  Set name
             if (remainingTime == 0) {
+                //  Set name
                 stats.put("name", "");
+
+                //  Set remaining time
+                stats.put("remainedTime", 0);
             } else {
-                stats.put("name", podcastItem.getName());
+                //  We find the current episode
+                EpisodeInput crtEpisode = null;
+
+                int duration = ((PodcastSelection) reqItem).getPodcast().getDuration();
+
+                for (EpisodeInput episode : ((PodcastSelection) reqItem).getPodcast().getEpisodes()) {
+                    duration -= episode.getDuration();
+
+                    if (duration < remainingTime) {
+                        crtEpisode = episode;
+                        break;
+                    }
+                }
+
+                //  Set name
+                stats.put("name", crtEpisode.getName());
+
+                //  Set remaining time
+                stats.put("remainedTime", remainingTime - duration);
             }
-
-            //  Set remaining time
-            stats.put("remainedTime", remainingTime);
-
-            //  Replace start time with timestamp of update
-            reqItem.setStartTime(crtCommand.getTimestamp());
 
             //  Set repeat status
             stats.put("repeat", reqItem.getRepeat());
@@ -1126,7 +1136,10 @@ public final class Main {
             //  We need to calculate which song we are currently at and store it
             SongInput crtSongInPlaylist = null;
             int duration = crtPlaylist.getPlaylist().getDuration();
+
+            //  Calculating based on current time
             crtPlaylist.updateRemainingTime(crtCommand.getTimestamp());
+
             for (SongInput song : crtPlaylist.getPlaylist().getSongs()) {
                 duration -= song.getDuration();
 
