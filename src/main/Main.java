@@ -130,6 +130,11 @@ public final class Main {
                     //  Searching for a song
                     ObjectNode searchOutput = objectMapper.createObjectNode();
 
+                    //  Setting the output
+                    searchOutput.put("command", "search");
+                    searchOutput.put("user", crtCommand.getUsername());
+                    searchOutput.put("timestamp", crtCommand.getTimestamp());
+
                     switch (crtCommand.getType()) {
                         case "song" -> {
                             Filters filters = crtCommand.getFilters();
@@ -143,10 +148,7 @@ public final class Main {
                                 result.subList(5, result.size()).clear();
                             }
 
-                            //  Setting the output
-                            searchOutput.put("command", "search");
-                            searchOutput.put("user", crtCommand.getUsername());
-                            searchOutput.put("timestamp", crtCommand.getTimestamp());
+                            //  Setting the message
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
                             //  Extracting the names of the songs
@@ -157,7 +159,7 @@ public final class Main {
                             searchOutput.putPOJO("results", songNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, lastSelection, songNames);
+                            storeResultForSelect(lastSearchResult, lastSelection, songNames, "song");
                             initLastSearchResult = true;
 
                             outputs.add(searchOutput);
@@ -171,7 +173,7 @@ public final class Main {
                             searchForPlaylists(filters, result, playlists);
 
                             //  Taking out private playlists
-                            playlists.removeIf(playlist -> !playlist.getOwner().equals(crtCommand.getUsername())
+                            result.removeIf(playlist -> !playlist.getOwner().equals(crtCommand.getUsername())
                                     && !playlist.isVisibility());
 
                             //  Truncate results if needed
@@ -179,10 +181,7 @@ public final class Main {
                                 result.subList(5, result.size()).clear();
                             }
 
-                            //  Setting the output
-                            searchOutput.put("command", "search");
-                            searchOutput.put("user", crtCommand.getUsername());
-                            searchOutput.put("timestamp", crtCommand.getTimestamp());
+                            //  Setting the message
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
                             //  Extracting the names of the playlists
@@ -193,7 +192,7 @@ public final class Main {
                             searchOutput.putPOJO("results", playlistNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, lastSelection, playlistNames);
+                            storeResultForSelect(lastSearchResult, lastSelection, playlistNames, "playlist");
                             initLastSearchResult = true;
 
                             outputs.add(searchOutput);
@@ -211,10 +210,7 @@ public final class Main {
                                 result.subList(5, result.size()).clear();
                             }
 
-                            //  Setting the output
-                            searchOutput.put("command", "search");
-                            searchOutput.put("user", crtCommand.getUsername());
-                            searchOutput.put("timestamp", crtCommand.getTimestamp());
+                            //  Setting the message
                             searchOutput.put("message", "Search returned " + result.size() + " results");
 
                             //  Extracting the names of the podcasts
@@ -225,7 +221,7 @@ public final class Main {
                             searchOutput.putPOJO("results", podcastNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, lastSelection, podcastNames);
+                            storeResultForSelect(lastSearchResult, lastSelection, podcastNames, "podcast");
                             initLastSearchResult = true;
 
                             outputs.add(searchOutput);
@@ -308,6 +304,14 @@ public final class Main {
                         if (lastSelection.getSelectionType().equals("podcast")) {
                             PodcastSelection selectedPodcast = getPodcastSelection(crtCommand, library, lastSelection);
 
+                            //  Clearing other load from the same user
+                            for (ItemSelection item : player) {
+                                if (item.getUser().equals(selectedPodcast.getUser())) {
+                                    player.remove(item);
+                                    break;
+                                }
+                            }
+
                             //  Check to see if the podcast has been started by this user already
                             int started = 0;
                             for (PodcastSelection podcast : podcasts) {
@@ -325,14 +329,6 @@ public final class Main {
                             }
 
                             if (started == 0) {
-                                //  Loading the podcast into the database
-                                for (ItemSelection item : player) {
-                                    if (item.getUser().equals(selectedPodcast.getUser())) {
-                                        player.remove(item);
-                                        break;
-                                    }
-                                }
-
                                 //  Add selection to array
                                 player.add(selectedPodcast);
 
@@ -540,6 +536,28 @@ public final class Main {
                     }
 
                     outputs.add(showPlaylistsOutput);
+                }
+
+                case "showPreferredSongs" -> {
+                    ObjectNode showPreferredSongs = objectMapper.createObjectNode();
+
+                    showPreferredSongs.put("command", "showPreferredSongs");
+                    showPreferredSongs.put("user", crtCommand.getUsername());
+                    showPreferredSongs.put("timestamp", crtCommand.getTimestamp());
+
+                    ArrayList<String> songNames = new ArrayList<>();
+
+                    for (UserPlaylists userPlaylists :usersPlaylists) {
+                        if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                            for (SongInput song : userPlaylists.getLikedSongs()) {
+                                songNames.add(song.getName());
+                            }
+                        }
+                    }
+
+                    showPreferredSongs.putPOJO("result", songNames);
+
+                    outputs.add(showPreferredSongs);
                 }
 
                 default -> {
@@ -765,13 +783,14 @@ public final class Main {
 
     public static SongSelection getSongSelection(Command crtCommand, LibraryInput library, LastSelection lastSelection) {
         SongSelection selectedSong = new SongSelection();
-        //  Set name
+        //  Set song
         for (SongInput song : library.getSongs()) {
             if (song.getName().equals(lastSelection.getSelectionName())) {
                 selectedSong.setSong(song);
                 break;
             }
         }
+
         //  Set user
         selectedSong.setUser(crtCommand.getUsername());
         //  Set start time
@@ -821,13 +840,13 @@ public final class Main {
     }
 
     public static void storeResultForSelect(ArrayList<String> lastSearchResult, LastSelection lastSelection,
-                                            ArrayList<String> names) {
+                                            ArrayList<String> names, String type) {
         //  First element specifies the type of items searched
         //  But first we need to clear the old search
         lastSearchResult.clear();
         lastSelection.resetSelection();
         if (!names.isEmpty()) {
-            lastSearchResult.add("song");
+            lastSearchResult.add(type);
             lastSearchResult.addAll(names);
         }
     }
@@ -1019,33 +1038,9 @@ public final class Main {
                     }
                 }
 
-                //  If we didn't remove the song, this means we must add it
+                //  If the song was not found, it can be added
                 if (foundSong == 0) {
                     copyPlaylist.getSongs().add(crtSong);
-                }
-
-                //  Updating user playlist array
-                searchId = 0;
-                for (UserPlaylists userPlaylists : usersPlaylists) {
-                    if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
-                        //  When the user is found we search for the playlist
-                        for (Playlist playlist : userPlaylists.getPlaylists()) {
-                            searchId++;
-                            //  When the playlist is found we add/remove the song
-                            if (searchId == crtCommand.getPlaylistId()) {
-                                //  Add
-                                if (foundSong == 0) {
-                                    playlist.getSongs().add(crtSong);
-                                //  Remove
-                                } else {
-                                    playlist.getSongs().remove(crtSong);
-                                }
-
-                                break;
-                            }
-                        }
-                        break;
-                    }
                 }
 
                 //  Set the message
@@ -1067,7 +1062,9 @@ public final class Main {
         //  The source MUST be a song
         int loaded = 0;
         int isSong = 0;
+        int isPlaylist = 0;
         SongInput crtSong = null;
+        PlaylistSelection crtPlaylist = null;
 
         for (ItemSelection item : player) {
             if (item.getUser().equals(crtCommand.getUsername())) {
@@ -1075,6 +1072,9 @@ public final class Main {
                 if (item instanceof SongSelection) {
                     isSong = 1;
                     crtSong = ((SongSelection) item).getSong();
+                } else if (item instanceof PlaylistSelection) {
+                    isPlaylist = 1;
+                    crtPlaylist = (PlaylistSelection) item;
                 }
                 break;
             }
@@ -1083,10 +1083,10 @@ public final class Main {
         if (loaded == 0) {
             message = "Please load a source before liking or unliking.";
 
-        } else if (isSong == 0) {
+        } else if (isSong == 0 && isPlaylist == 0) {
             message = "Loaded source is not a song.";
 
-        } else {
+        } else if (isSong == 1) {
             //  The loaded source is checked. We can add/remove it from liked songs
             UserPlaylists user = null;
 
@@ -1122,6 +1122,56 @@ public final class Main {
             } else {
                 message = "ERROR. User not found";
             }
+        } else {
+            //  We need to calculate which song we are currently at and store it
+            SongInput crtSongInPlaylist = null;
+            int duration = crtPlaylist.getPlaylist().getDuration();
+            crtPlaylist.updateRemainingTime(crtCommand.getTimestamp());
+            for (SongInput song : crtPlaylist.getPlaylist().getSongs()) {
+                duration -= song.getDuration();
+
+                if (duration <= crtPlaylist.getRemainingTime()) {
+                    crtSongInPlaylist = song;
+                    break;
+                }
+            }
+
+            //  The loaded song is checked. We can add/remove it from liked songs
+            UserPlaylists user = null;
+
+            for (UserPlaylists crtUser : usersPlaylists) {
+                if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
+                    user = crtUser;
+                    break;
+                }
+            }
+
+            if (user != null) {
+                //  We search the current song
+                int found = 0;
+                for (SongInput song : user.getLikedSongs()) {
+                    if (song.equals(crtSongInPlaylist)) {
+                        found = 1;
+                        user.getLikedSongs().remove(song);
+
+                        break;
+                    }
+                }
+
+                if (found == 0) {
+                    user.getLikedSongs().add(crtSongInPlaylist);
+                }
+
+                //  Lastly, the message is set
+                if (found == 0) {
+                    message = "Like registered successfully.";
+                } else {
+                    message = "Unlike registered successfully.";
+                }
+            } else {
+                message = "ERROR. User not found";
+            }
+
         }
 
         return message;

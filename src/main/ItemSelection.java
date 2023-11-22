@@ -60,4 +60,10 @@ public class ItemSelection {
     public void setPaused(boolean paused) {
         this.paused = paused;
     }
+
+    public void updateRemainingTime(int crtTimestamp) {
+        if (!isPaused()) {
+            this.remainingTime = this.remainingTime - (crtTimestamp - startTime);
+        }
+    }
 }

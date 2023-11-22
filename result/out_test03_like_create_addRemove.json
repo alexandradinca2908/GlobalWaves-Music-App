@@ -97,13 +97,18 @@
   "timestamp" : 64,
   "message" : "Successfully selected Playlist bengos."
 }, {
-  "command" : "like",
+  "command" : "showPlaylists",
   "user" : "alice22",
   "timestamp" : 65,
   "result" : [ {
     "name" : "Playlist bengos",
-    "songs" : [ "The Unforgiven", "The Unforgiven" ],
+    "songs" : [ "The Unforgiven" ],
     "visibility" : "public",
     "followers" : 0
   } ]
+}, {
+  "command" : "showPreferredSongs",
+  "user" : "alice22",
+  "timestamp" : 70,
+  "result" : [ "Stairway to Heaven" ]
 } ]
