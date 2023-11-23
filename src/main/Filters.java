@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public class Filters {
+public final class Filters {
     //  Song filters
     private String name;
     private String album;

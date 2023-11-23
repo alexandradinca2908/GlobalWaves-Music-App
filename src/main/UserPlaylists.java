@@ -5,7 +5,7 @@ import fileio.input.UserInput;
 
 import java.util.ArrayList;
 
-public class UserPlaylists {
+public final class UserPlaylists {
     private UserInput user;
     private ArrayList<Playlist> playlists = new ArrayList<>();
     private ArrayList<SongInput> likedSongs = new ArrayList<>();

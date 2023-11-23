@@ -2,7 +2,7 @@ package main;
 
 import fileio.input.PodcastInput;
 
-public class PodcastSelection extends ItemSelection {
+public final class PodcastSelection extends ItemSelection {
     private PodcastInput podcast;
 
     public PodcastSelection() {

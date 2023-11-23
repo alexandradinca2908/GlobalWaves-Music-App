@@ -1,7 +1,5 @@
 package main;
 
-import fileio.input.SongInput;
-
 public class ItemSelection {
     private String user;
     private int startTime;
@@ -61,5 +59,5 @@ public class ItemSelection {
         this.paused = paused;
     }
 
-    public void updateRemainingTime(int crtTimestamp){};
+    public void updateRemainingTime(int crtTimestamp) { };
 }

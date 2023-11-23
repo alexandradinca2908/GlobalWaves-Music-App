@@ -2,7 +2,7 @@ package main;
 
 import fileio.input.SongInput;
 
-public class PlaylistSelection extends ItemSelection {
+public final class PlaylistSelection extends ItemSelection {
     private Playlist playlist;
     private int startTimestamp;
     private int stopTimestamp;

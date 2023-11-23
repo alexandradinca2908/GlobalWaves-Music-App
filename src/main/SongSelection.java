@@ -2,7 +2,7 @@ package main;
 
 import fileio.input.SongInput;
 
-public class SongSelection extends ItemSelection {
+public final class SongSelection extends ItemSelection {
     private SongInput song;
 
     public SongSelection() {

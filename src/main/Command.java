@@ -1,6 +1,6 @@
 package main;
 
-public class Command {
+public final class Command {
     private String command;
     private String username;
     private int timestamp;
