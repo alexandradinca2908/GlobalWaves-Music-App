@@ -9926,4 +9926,12 @@
   "user" : "jack29",
   "timestamp" : 8580,
   "result" : [ "The Man" ]
+}, {
+  "command" : "getTop5Playlists",
+  "timestamp" : 8580,
+  "result" : [ "Dynamic Tracks Trek #2", "Electric Bangers Dream #1", "Classic Tunes Dream #1", "Epic Tracks Safari #1", "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "getTop5Songs",
+  "timestamp" : 8580,
+  "result" : [ "Happier", "Castle on the Hill", "Dream On", "The Man", "Paint It Black" ]
 } ]

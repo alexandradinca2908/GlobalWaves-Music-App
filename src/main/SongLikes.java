@@ -2,9 +2,15 @@ package main;
 
 import fileio.input.SongInput;
 
-public class SongLikes {
+public class SongLikes implements Comparable<SongLikes>{
     private SongInput song;
     private int likes;
+
+
+    @Override
+    public int compareTo(SongLikes songLikes) {
+        return this.likes - songLikes.likes;
+    }
 
     public SongLikes() {
     }

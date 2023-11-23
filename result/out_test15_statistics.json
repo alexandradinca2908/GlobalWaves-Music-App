@@ -217,6 +217,10 @@
   "timestamp" : 2520,
   "message" : "Playlist followed successfully."
 }, {
+  "command" : "getTop5Playlists",
+  "timestamp" : 2560,
+  "result" : [ "My first playlist", "Just for fun", "Felt cute might delete later", "Listen on repeat" ]
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 2565,
@@ -249,6 +253,10 @@
   "timestamp" : 2850,
   "message" : "Playlist followed successfully."
 }, {
+  "command" : "getTop5Playlists",
+  "timestamp" : 3000,
+  "result" : [ "Just for fun", "My first playlist", "Felt cute might delete later", "Listen on repeat" ]
+}, {
   "command" : "showPreferredSongs",
   "user" : "bob35",
   "timestamp" : 3100,
@@ -258,4 +266,8 @@
   "user" : "carol19",
   "timestamp" : 3200,
   "result" : [ "Bohemian Rhapsody" ]
+}, {
+  "command" : "getTop5Songs",
+  "timestamp" : 3300,
+  "result" : [ "Bohemian Rhapsody", "Angie", "Shape of You", "Don't", "Stairway to Heaven" ]
 } ]

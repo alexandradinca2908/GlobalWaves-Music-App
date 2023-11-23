@@ -5,13 +5,18 @@ import fileio.input.UserInput;
 
 import java.util.ArrayList;
 
-public class Playlist {
+public class Playlist implements Comparable<Playlist>{
     private String name;
     private ArrayList<SongInput> songs = new ArrayList<>();
     private boolean visibility = true;
     private ArrayList<String> followers = new ArrayList<>();
     private String owner;
     private ArrayList<SongInput> originalSongOrder;
+
+    @Override
+    public int compareTo(Playlist playlist) {
+        return this.followers.size() - playlist.getFollowers().size();
+    }
 
     public Playlist(){
     }

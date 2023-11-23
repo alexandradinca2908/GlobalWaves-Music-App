@@ -487,7 +487,7 @@ public final class Main {
                     likeOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Get message and make proper modifications to the user's liked songs
-                    String message = getLikeMessage(player, usersPlaylists, crtCommand);
+                    String message = getLikeMessage(player, usersPlaylists, crtCommand, songsLikes);
 
                     likeOutput.put("message", message);
 
@@ -832,6 +832,7 @@ public final class Main {
 
                 case "switchVisibility" -> {
                     ObjectNode switchOutput = objectMapper.createObjectNode();
+
                     switchOutput.put("command", "switchVisibility");
                     switchOutput.put("user", crtCommand.getUsername());
                     switchOutput.put("timestamp", crtCommand.getTimestamp());
@@ -843,6 +844,58 @@ public final class Main {
                     outputs.add(switchOutput);
                 }
 
+                case "getTop5Songs" -> {
+                    ObjectNode topSongsOutput = objectMapper.createObjectNode();
+
+                    topSongsOutput.put("command", "getTop5Songs");
+                    topSongsOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Sort the songs in a separate array and then take the first 5 results
+                    ArrayList<SongLikes> sortedSongsByLikes = new ArrayList<>(songsLikes);
+                    sortedSongsByLikes.sort(Collections.reverseOrder());
+
+                    //  Truncate the result to 5
+                    if (sortedSongsByLikes.size() > 5) {
+                        sortedSongsByLikes.subList(5, sortedSongsByLikes.size()).clear();
+                    }
+
+                    //  Store names
+                    ArrayList<String> result = new ArrayList<>();
+                    for (SongLikes songLikes : sortedSongsByLikes) {
+                        result.add(songLikes.getSong().getName());
+                    }
+
+                    topSongsOutput.putPOJO("result", result);
+
+                    outputs.add(topSongsOutput);
+
+                }
+
+                case "getTop5Playlists" -> {
+                    ObjectNode topPlaylistsOutput = objectMapper.createObjectNode();
+
+                    topPlaylistsOutput.put("command", "getTop5Playlists");
+                    topPlaylistsOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Sort the songs in a separate array and then take the first 5 results
+                    ArrayList<Playlist> sortedPlaylists= new ArrayList<>(playlists);
+                    sortedPlaylists.sort(Collections.reverseOrder());
+
+                    //  Truncate the result to 5
+                    if (sortedPlaylists.size() > 5) {
+                        sortedPlaylists.subList(5, sortedPlaylists.size()).clear();
+                    }
+
+                    //  Store names
+                    ArrayList<String> result = new ArrayList<>();
+                    for (Playlist playlist : sortedPlaylists) {
+                        result.add(playlist.getName());
+                    }
+
+                    topPlaylistsOutput.putPOJO("result", result);
+
+                    outputs.add(topPlaylistsOutput);
+                }
                 default -> {
 
                 }
@@ -1391,6 +1444,7 @@ public final class Main {
             //  The loaded source is checked. We can add/remove it from liked songs
             UserPlaylists user = null;
 
+            //  Find user
             for (UserPlaylists crtUser : usersPlaylists) {
                 if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
                     user = crtUser;
@@ -1411,15 +1465,29 @@ public final class Main {
                 }
 
                 if (found == 0) {
+                    //  Add like
                     user.getLikedSongs().add(crtSong);
-                }
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSong)) {
+                            song.setLikes(song.getLikes() + 1);
+                            break;
+                        }
+                    }
 
-                //  Lastly, the message is set
-                if (found == 0) {
                     message = "Like registered successfully.";
+
                 } else {
+                    //  Also remove like from songsLikes
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSong)) {
+                            song.setLikes(song.getLikes() - 1);
+                            break;
+                        }
+                    }
+
                     message = "Unlike registered successfully.";
                 }
+
             } else {
                 message = "ERROR. User not found";
             }
@@ -1463,15 +1531,28 @@ public final class Main {
                 }
 
                 if (found == 0) {
+                    //  Add like
                     user.getLikedSongs().add(crtSongInPlaylist);
-                }
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSongInPlaylist)) {
+                            song.setLikes(song.getLikes() + 1);
+                            break;
+                        }
+                    }
 
-                //  Lastly, the message is set
-                if (found == 0) {
                     message = "Like registered successfully.";
                 } else {
+                    //  Also remove the like from the song
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSongInPlaylist)) {
+                            song.setLikes(song.getLikes() - 1);
+                            break;
+                        }
+                    }
+
                     message = "Unlike registered successfully.";
                 }
+
             } else {
                 message = "ERROR. User not found";
             }

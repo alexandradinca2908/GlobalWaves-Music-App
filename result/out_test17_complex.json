@@ -9932,4 +9932,12 @@
   "user" : "jack29",
   "timestamp" : 8580,
   "result" : [ ]
+}, {
+  "command" : "getTop5Playlists",
+  "timestamp" : 8580,
+  "result" : [ "Chill Melodies Voyage #1", "Dynamic Tracks Adventure #2", "Stellar Tunes Quest #2", "Breezy Rhythms Trek #1", "Chill Sounds Journey #1" ]
+}, {
+  "command" : "getTop5Songs",
+  "timestamp" : 8580,
+  "result" : [ "Start Me Up", "Black Dog", "Gimme Shelter", "Don't", "Dream On" ]
 } ]
