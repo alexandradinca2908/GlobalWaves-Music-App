@@ -52,6 +52,11 @@
   "message" : "Search returned 1 results",
   "results" : [ "My favourite songs" ]
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 1120,
+  "message" : "Please load a source before returning to the previous track."
+}, {
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 1130,
@@ -105,12 +110,17 @@
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 1260,
+  "message" : "Returned to previous track successfully. The current track is Swimming Pools (Drank)."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 1320,
   "stats" : {
     "name" : "Swimming Pools (Drank)",
-    "remainedTime" : 167,
+    "remainedTime" : 187,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -135,7 +145,7 @@
   "command" : "forward",
   "user" : "emily30",
   "timestamp" : 2120,
-  "message" : "Please load a source before skipping forward."
+  "message" : "Please load a source before attempting to forward."
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -182,7 +192,7 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 4120,
-  "message" : "Skipped to next track successfully. The current track is fileio.input.EpisodeInput@10b48321"
+  "message" : "Skipped to next track successfully. The current track is The Battle for Abortion Rights."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -198,7 +208,7 @@
   "command" : "forward",
   "user" : "emily30",
   "timestamp" : 4290,
-  "message" : "Please load a source before skipping forward."
+  "message" : "Please load a source before attempting to forward."
 }, {
   "command" : "status",
   "user" : "emily30",

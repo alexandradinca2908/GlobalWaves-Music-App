@@ -9,7 +9,7 @@ public class Playlist {
     private String name;
     private ArrayList<SongInput> songs = new ArrayList<>();
     private boolean visibility = true;
-    private ArrayList<UserInput> followers = new ArrayList<>();
+    private ArrayList<String> followers = new ArrayList<>();
     private String owner;
     private ArrayList<SongInput> originalSongOrder;
 
@@ -45,11 +45,11 @@ public class Playlist {
         this.visibility = visibility;
     }
 
-    public ArrayList<UserInput> getFollowers() {
+    public ArrayList<String> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(ArrayList<UserInput> followers) {
+    public void setFollowers(ArrayList<String> followers) {
         this.followers = followers;
     }
 

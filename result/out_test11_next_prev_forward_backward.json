@@ -142,23 +142,38 @@
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 710,
+  "message" : "Returned to previous track successfully. The current track is Shape of You."
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 711,
   "stats" : {
     "name" : "Shape of You",
-    "remainedTime" : 192,
+    "remainedTime" : 232,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 712,
+  "message" : "Returned to previous track successfully. The current track is Shape of You."
+}, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 712,
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 713,
   "stats" : {
-    "name" : "Shape of You",
-    "remainedTime" : 190,
+    "name" : "Start Me Up",
+    "remainedTime" : 211,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

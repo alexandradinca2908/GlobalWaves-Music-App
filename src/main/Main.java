@@ -110,6 +110,16 @@ public final class Main {
         //  Keeping played podcasts in order for the user to easily resume them
         ArrayList<PodcastSelection> podcasts = new ArrayList<>();
 
+        //  Storing all songs with their respective likes
+        ArrayList<SongLikes> songsLikes = new ArrayList<>();
+
+        for (SongInput song : library.getSongs()) {
+            SongLikes newSongLikes = new SongLikes();
+            newSongLikes.setSong(song);
+
+            songsLikes.add(newSongLikes);
+        }
+
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
 
         //  Parsing commands
@@ -125,7 +135,7 @@ public final class Main {
                         for (ItemSelection item : player) {
                             if (item.getUser().equals(crtCommand.getUsername())) {
                                 if (item instanceof PodcastSelection) {
-                                    ((PodcastSelection)item).updateRemainingTime(crtCommand.getTimestamp());
+                                    item.updateRemainingTime(crtCommand.getTimestamp());
                                     item.setPaused(true);
                                 }
                                 player.remove(item);
@@ -463,7 +473,7 @@ public final class Main {
                     addRemoveOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Get message and make proper modifications to the playlist
-                    String message = getAddRemoveMessage(player, playlists, usersPlaylists, crtCommand);
+                    String message = getAddRemoveMessage(player, playlists, crtCommand);
                     addRemoveOutput.put("message", message);
 
                     outputs.add(addRemoveOutput);
@@ -596,7 +606,7 @@ public final class Main {
 
                                     //  Setting intervals for the song loop
                                     PlaylistSelection copy = (PlaylistSelection) crtItem;
-                                    setIntervals(copy, crtCommand);
+                                    setIntervals(copy);
                                 }
                                 case "Repeat Current Song" -> {
                                     crtItem.setRepeat("No Repeat");
@@ -717,7 +727,7 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = getBackwardMessage(crtItem, crtCommand);
+                    String message = getBackwardMessage(crtItem);
                     backwardOutput.put("message", message);
 
                     outputs.add(backwardOutput);
@@ -733,7 +743,7 @@ public final class Main {
                     //  First we update the player
                     updatePlayer(player, crtCommand, podcasts);
 
-                    //  Now we check for podcast
+                    //  Now we check for loaded source
                     ItemSelection crtItem = null;
 
                     for (ItemSelection item : player) {
@@ -743,18 +753,98 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = getNextMessage(crtItem, crtCommand, player, podcasts);
+                    String message = getNextMessage(crtItem, player, podcasts);
                     nextOutput.put("message", message);
 
                     outputs.add(nextOutput);
                 }
 
                 case "prev" -> {
+                    ObjectNode prevOutput = objectMapper.createObjectNode();
 
+                    prevOutput.put("command", "prev");
+                    prevOutput.put("user", crtCommand.getUsername());
+                    prevOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  First we update the player
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Now we check for loaded source
+                    ItemSelection crtItem = null;
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            crtItem = item;
+                        }
+                    }
+
+                    //  Get message and make changes
+                    String message = getPrevMessage(crtItem, player);
+                    prevOutput.put("message", message);
+
+                    outputs.add(prevOutput);
                 }
-                
+
+                case "follow" -> {
+                    ObjectNode followOutput = objectMapper.createObjectNode();
+                    followOutput.put("command", "follow");
+                    followOutput.put("user", crtCommand.getUsername());
+                    followOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Adding the appropriate load message
+                    //  No select or no results found
+                    if (steps[1] == 0) {
+                        followOutput.put("message", "Please select a source before following or unfollowing.");
+
+                    //  Source is not a playlist
+                    } else if (!lastSearchResult.get(0).equals("playlist")) {
+                        followOutput.put("message", "The selected source is not a playlist.");
+
+                    } else {
+                        //  Localize the specific playlist
+                        Playlist wantedPlaylist = null;
+                        for (Playlist playlist : playlists) {
+                            if (playlist.getName().equals(lastSearchResult.get(1))) {
+                                wantedPlaylist = playlist;
+                                break;
+                            }
+                        }
+
+                        //  User tries to follow their own playlist
+                        if (wantedPlaylist.getOwner().equals(crtCommand.getUsername())) {
+                            followOutput.put("message", "You cannot follow or unfollow your own playlist.");
+
+                        //  The follow/unfollow command can be executed
+                        } else {
+                            String message = getFollowMessage(wantedPlaylist, crtCommand, usersPlaylists);
+                            followOutput.put("message", message);
+                        }
+
+                        //  Clearing the result so that we can't follow it twice
+                        lastSearchResult.clear();
+                        //  Reset steps
+                        steps[0] = 0;
+                        steps[1] = 0;
+                    }
+
+                    outputs.add(followOutput);
+                }
+
+                case "switchVisibility" -> {
+                    ObjectNode switchOutput = objectMapper.createObjectNode();
+                    switchOutput.put("command", "switchVisibility");
+                    switchOutput.put("user", crtCommand.getUsername());
+                    switchOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Get message and make changes
+                    String message = getSwitchVisibilityMessage(usersPlaylists, crtCommand);
+                    switchOutput.put("message", message);
+
+                    outputs.add(switchOutput);
+                }
+
                 default -> {
-                    break;
+
                 }
             }
         }
@@ -1089,8 +1179,6 @@ public final class Main {
                 return stats;
 
             } else if (reqItem instanceof PlaylistSelection) {
-                Playlist playlistItem = ((PlaylistSelection) reqItem).getPlaylist();
-
                 //  If the playlist is playing we update the time
                 if (!reqItem.isPaused()) {
                     reqItem.updateRemainingTime(crtCommand.getTimestamp());
@@ -1139,8 +1227,6 @@ public final class Main {
                 return stats;
 
             } else if (reqItem instanceof PodcastSelection) {
-                PodcastInput podcastItem = ((PodcastSelection) reqItem).getPodcast();
-
                 //  If the podcast is playing we update the time
                 if (!reqItem.isPaused()) {
                     reqItem.updateRemainingTime(crtCommand.getTimestamp());
@@ -1194,8 +1280,8 @@ public final class Main {
     }
 
     public static String getAddRemoveMessage(ArrayList<ItemSelection> player, ArrayList<Playlist> playlists,
-                                             ArrayList<UserPlaylists> usersPlaylists, Command crtCommand) {
-        String message = "";
+                                             Command crtCommand) {
+        String message;
 
         //  First we check to see if the user has anything loaded
         //  The loaded media MUST be a song
@@ -1270,8 +1356,8 @@ public final class Main {
     }
 
     public static String getLikeMessage(ArrayList<ItemSelection> player, ArrayList<UserPlaylists> usersPlaylists,
-                                        Command crtCommand) {
-        String message = "";
+                                        Command crtCommand, ArrayList<SongLikes> songsLikes) {
+        String message;
 
         //  We begin by checking if there is a loaded source
         //  The source MUST be a song
@@ -1395,7 +1481,7 @@ public final class Main {
         return message;
     }
 
-    public static void setIntervals (PlaylistSelection playlist, Command crtCommand) {
+    public static void setIntervals(PlaylistSelection playlist) {
         int remainingTime = playlist.getRemainingTime();
         int duration = playlist.getPlaylist().getDuration();
 
@@ -1412,8 +1498,8 @@ public final class Main {
         }
     }
 
-    public static String getShuffleMessage (PlaylistSelection copyItem, Command crtCommand) {
-        String message = "";
+    public static String getShuffleMessage(PlaylistSelection copyItem, Command crtCommand) {
+        String message;
 
         //  Shuffle
         if (!copyItem.isShuffle()) {
@@ -1426,7 +1512,7 @@ public final class Main {
             //  Keep track of the current song
             SongInput crtSong = null;
             int duration = copyItem.getPlaylist().getDuration();
-            int timeLeft = 0;
+            int timeLeft;
 
             for (SongInput song : copyItem.getPlaylist().getSongs()) {
                 duration -= song.getDuration();
@@ -1460,7 +1546,7 @@ public final class Main {
             copyItem.setStartTime(crtCommand.getTimestamp());
 
             //  If the repeat status is "Repeat Current Song", intervals must be updated
-            setIntervals(copyItem, crtCommand);
+            setIntervals(copyItem);
 
             //  Set the output message
             message = "Shuffle function activated successfully.";
@@ -1476,7 +1562,7 @@ public final class Main {
             //  Keep track of the current song
             SongInput crtSong = null;
             int duration = copyItem.getPlaylist().getDuration();
-            int timeLeft = 0;
+            int timeLeft;
 
             for (SongInput song : copyItem.getPlaylist().getSongs()) {
                 duration -= song.getDuration();
@@ -1511,7 +1597,7 @@ public final class Main {
             copyItem.setStartTime(crtCommand.getTimestamp());
 
             //  If the repeat status is "Repeat Current Song", intervals must be updated
-            setIntervals(copyItem, crtCommand);
+            setIntervals(copyItem);
 
             //  Set the output message
             message = "Shuffle function deactivated successfully.";
@@ -1523,7 +1609,7 @@ public final class Main {
         return message;
     }
 
-    public static void updatePlayer (ArrayList<ItemSelection> player, Command crtCommand,
+    public static void updatePlayer(ArrayList<ItemSelection> player, Command crtCommand,
                                      ArrayList<PodcastSelection> podcasts) {
         //  Iterate through the player and update times
         //  Remove all finished sources
@@ -1548,11 +1634,11 @@ public final class Main {
     }
 
     public static String getForwardMessage(ItemSelection crtItem, Command crtCommand) {
-        String message = "";
+        String message;
 
         //  Verify if the command is possible
         if (crtItem == null) {
-            message = "Please load a source before skipping forward.";
+            message = "Please load a source before attempting to forward.";
         } else {
             if (!(crtItem instanceof PodcastSelection)) {
                 message = "The loaded source is not a podcast.";
@@ -1605,8 +1691,8 @@ public final class Main {
         return message;
     }
 
-    public static String getBackwardMessage(ItemSelection crtItem, Command crtCommand) {
-        String message = "";
+    public static String getBackwardMessage(ItemSelection crtItem) {
+        String message;
 
         //  Verify if the command is possible
         if (crtItem == null) {
@@ -1661,7 +1747,7 @@ public final class Main {
         return message;
     }
 
-    public static String getNextMessage (ItemSelection crtItem, Command crtCommand, ArrayList<ItemSelection> player,
+    public static String getNextMessage(ItemSelection crtItem, ArrayList<ItemSelection> player,
                                          ArrayList<PodcastSelection> podcasts) {
         String message = "";
 
@@ -1699,7 +1785,7 @@ public final class Main {
                     int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp);
 
                     message = "Skipped to next track successfully. The current track is " +
-                            copyItem.getPodcast().getEpisodes().get(index + 1);
+                            copyItem.getPodcast().getEpisodes().get(index + 1).getName() + ".";
 
                 } else if (duration == 0) {
                     //  Check repeat status to take action
@@ -1786,6 +1872,218 @@ public final class Main {
                 }
             }
         }
+
+        return message;
+    }
+
+    public static String getPrevMessage(ItemSelection crtItem, ArrayList<ItemSelection> player) {
+        String message = "";
+
+        //  Verify if the command is possible
+        if (crtItem == null) {
+            message = "Please load a source before returning to the previous track.";
+        } else {
+            //  Now we can execute the command
+            if (crtItem instanceof SongSelection) {
+                crtItem.setRemainingTime(((SongSelection) crtItem).getSong().getDuration());
+                crtItem.setPaused(false);
+
+                message = "Returned to previous track successfully. The current track is " +
+                        ((SongSelection) crtItem).getSong().getName() + ".";
+
+            } else if (crtItem instanceof PodcastSelection) {
+                PodcastSelection copyItem = (PodcastSelection) crtItem;
+                EpisodeInput crtEp = null;
+
+                //  Find the current episode
+                int duration = copyItem.getPodcast().getDuration();
+
+                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                    duration -= episode.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        duration += episode.getDuration();
+                        crtEp = episode;
+                        break;
+                    }
+                }
+
+                if (duration - crtItem.getRemainingTime() > 1) {
+                    copyItem.setRemainingTime(duration);
+
+                    message = "Returned to previous track successfully. The current track is " +
+                            crtEp.getName() + ".";
+
+                } else {
+                    //  Treating first episode exception
+                    if (copyItem.getPodcast().getEpisodes().indexOf(crtEp) == 0) {
+                        if (copyItem.getRepeat().equals("Repeat All")) {
+                            int lastElement = copyItem.getPodcast().getEpisodes().size() - 1;
+                            duration = copyItem.getPodcast().getEpisodes().get(lastElement).getDuration();
+
+                            copyItem.setRemainingTime(duration);
+
+                            message = "Returned to previous track successfully. The current track is " +
+                                    copyItem.getPodcast().getEpisodes().get(lastElement).getName() + ".";
+                        } else {
+                            //  If status is not repeat all, we just restart the podcast
+                            copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+
+                            message = "Returned to previous track successfully. The current track is " +
+                                    copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+                        }
+
+                    //  Now we can go back to the previous episode
+                    } else {
+                        int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp) - 1;
+                        copyItem.setRemainingTime(duration + copyItem.getPodcast().getEpisodes().get(index).getDuration());
+
+                        message = "Returned to previous track successfully. The current track is " +
+                                copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+                    }
+                }
+
+            } else if (crtItem instanceof PlaylistSelection) {
+                PlaylistSelection copyItem = (PlaylistSelection) crtItem;
+                SongInput crtSong = null;
+
+                //  Find the current episode
+                int duration = copyItem.getPlaylist().getDuration();
+
+                for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                    duration -= song.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        duration += song.getDuration();
+                        crtSong = song;
+                        break;
+                    }
+                }
+
+                if (duration - crtItem.getRemainingTime() > 1) {
+                    copyItem.setRemainingTime(duration);
+
+                    message = "Returned to previous track successfully. The current track is " +
+                            crtSong.getName() + ".";
+
+                } else {
+                    //  Treating first song exception
+                    if (copyItem.getPlaylist().getSongs().indexOf(crtSong) == 0) {
+                        if (copyItem.getRepeat().equals("Repeat All")) {
+                            int lastElement = copyItem.getPlaylist().getSongs().size() - 1;
+                            duration = copyItem.getPlaylist().getSongs().get(lastElement).getDuration();
+
+                            copyItem.setRemainingTime(duration);
+
+                            message = "Returned to previous track successfully. The current track is " +
+                                    copyItem.getPlaylist().getSongs().get(lastElement).getName() + ".";
+                        } else {
+                            //  If status is not repeat all, we just restart the playlist
+                            copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
+
+                            message = "Returned to previous track successfully. The current track is " +
+                                    copyItem.getPlaylist().getSongs().get(0).getName() + ".";
+                        }
+
+                    //  Now we can go back to the previous song
+                    } else {
+                        int index = copyItem.getPlaylist().getSongs().indexOf(crtSong) - 1;
+                        copyItem.setRemainingTime(duration + copyItem.getPlaylist().getSongs().get(index).getDuration());
+
+                        message = "Returned to previous track successfully. The current track is " +
+                                copyItem.getPlaylist().getSongs().get(0).getName() + ".";
+                    }
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getFollowMessage(Playlist wantedPlaylist, Command crtCommand,
+                                          ArrayList<UserPlaylists> usersPlaylists) {
+        String message;
+
+        //  Begin by checking whether the user follows this playlist or not
+        int found = 0;
+        for (String user : wantedPlaylist.getFollowers()) {
+            if (user.equals(crtCommand.getUsername())) {
+                //  Remove follower
+                wantedPlaylist.getFollowers().remove(user);
+                found = 1;
+                break;
+            }
+        }
+
+        //  Remove playlist from user's followed playlists
+        if (found == 1) {
+            for (UserPlaylists userPlaylists : usersPlaylists) {
+                if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                    userPlaylists.getFollowedPlaylists().remove(wantedPlaylist);
+                    break;
+                }
+            }
+            message = "Playlist unfollowed successfully.";
+
+        } else {
+            //  Add the user to the playlist followers
+            wantedPlaylist.getFollowers().add(crtCommand.getUsername());
+
+            //  Add the playlist to the user's followed playlists
+            for (UserPlaylists userPlaylists : usersPlaylists) {
+                if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                    userPlaylists.getFollowedPlaylists().add(wantedPlaylist);
+                    break;
+                }
+            }
+
+            message = "Playlist followed successfully.";
+        }
+
+        return message;
+    }
+
+    public static String getSwitchVisibilityMessage(ArrayList<UserPlaylists> usersPlaylists, Command crtCommand) {
+        String message;
+
+        //  We find the user, search through the playlists and switch the visibility
+
+        //  Find user
+        UserPlaylists crtUser = null;
+
+        for (UserPlaylists userPlaylists : usersPlaylists) {
+            if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
+                crtUser = userPlaylists;
+                break;
+            }
+        }
+
+        if (crtCommand.getPlaylistId() > crtUser.getPlaylists().size()) {
+            //  ID too high
+            message = "The specified playlist ID is too high.";
+        } else {
+            //  Search playlist
+            Playlist crtPlaylist = null;
+            int searchId = 0;
+
+            for (Playlist playlist : crtUser.getPlaylists()) {
+                searchId++;
+
+                if (searchId == crtCommand.getPlaylistId()) {
+                    crtPlaylist = playlist;
+                    break;
+                }
+            }
+
+            //  Switch visibility
+            crtPlaylist.setVisibility(!crtPlaylist.isVisibility());
+            if (crtPlaylist.isVisibility()) {
+                message = "Visibility status updated successfully to public.";
+            } else {
+                message = "Visibility status updated successfully to private.";
+            }
+        }
+
 
         return message;
     }

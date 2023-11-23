@@ -1,4 +1,9 @@
 [ {
+  "command" : "switchVisibility",
+  "user" : "alice22",
+  "timestamp" : 100,
+  "message" : "The specified playlist ID is too high."
+}, {
   "command" : "createPlaylist",
   "user" : "alice22",
   "timestamp" : 100,
@@ -8,6 +13,11 @@
   "user" : "bob35",
   "timestamp" : 110,
   "message" : "Playlist created successfully."
+}, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 120,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "createPlaylist",
   "user" : "carol19",
@@ -39,10 +49,20 @@
   "timestamp" : 170,
   "message" : "Playlist created successfully."
 }, {
+  "command" : "switchVisibility",
+  "user" : "irene33",
+  "timestamp" : 180,
+  "message" : "The specified playlist ID is too high."
+}, {
   "command" : "createPlaylist",
   "user" : "irene33",
   "timestamp" : 180,
   "message" : "Playlist created successfully."
+}, {
+  "command" : "switchVisibility",
+  "user" : "jack29",
+  "timestamp" : 190,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "createPlaylist",
   "user" : "jack29",
@@ -58,6 +78,11 @@
   "user" : "bob35",
   "timestamp" : 210,
   "message" : "Playlist created successfully."
+}, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 220,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "createPlaylist",
   "user" : "carol19",
@@ -4625,6 +4650,11 @@
     "paused" : false
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "bob35",
+  "timestamp" : 5510,
+  "message" : "The specified playlist ID is too high."
+}, {
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 5510,
@@ -4672,6 +4702,11 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "emily30",
+  "timestamp" : 5540,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "repeat",
   "user" : "emily30",
@@ -4807,6 +4842,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 5620,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 5620,
@@ -4845,12 +4885,22 @@
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 5640,
+  "message" : "Returned to previous track successfully. The current track is Don't."
+}, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 5640,
+  "message" : "Returned to previous track successfully. The current track is Castle on the Hill."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 5640,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 21,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -5015,8 +5065,8 @@
   "user" : "emily30",
   "timestamp" : 5740,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 111,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 161,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5043,35 +5093,60 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 5760,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
+}, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 5760,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 5760,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 169,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "prev",
+  "user" : "henry26",
+  "timestamp" : 5770,
+  "message" : "Returned to previous track successfully. The current track is Whatever You Need."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 5770,
   "stats" : {
     "name" : "Whatever You Need",
-    "remainedTime" : 112,
+    "remainedTime" : 210,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "irene33",
+  "timestamp" : 5780,
+  "message" : "Visibility status updated successfully to private."
+}, {
+  "command" : "prev",
+  "user" : "irene33",
+  "timestamp" : 5780,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 5780,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 167,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -5093,6 +5168,11 @@
     "paused" : false
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "alice22",
+  "timestamp" : 5800,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "playPause",
   "user" : "alice22",
   "timestamp" : 5800,
@@ -5108,6 +5188,11 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 5810,
+  "message" : "Please load a source before returning to the previous track."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -5152,6 +5237,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "emily30",
+  "timestamp" : 5840,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 5840,
@@ -5161,8 +5251,8 @@
   "user" : "emily30",
   "timestamp" : 5840,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 111,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 161,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5195,7 +5285,7 @@
   "timestamp" : 5860,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 169,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : true
@@ -5206,7 +5296,7 @@
   "timestamp" : 5860,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 169,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : true
@@ -5217,7 +5307,7 @@
   "timestamp" : 5870,
   "stats" : {
     "name" : "Whatever You Need",
-    "remainedTime" : 112,
+    "remainedTime" : 210,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5228,7 +5318,7 @@
   "timestamp" : 5870,
   "stats" : {
     "name" : "Whatever You Need",
-    "remainedTime" : 112,
+    "remainedTime" : 210,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5250,6 +5340,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "jack29",
+  "timestamp" : 5890,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "shuffle",
   "user" : "jack29",
   "timestamp" : 5890,
@@ -5265,6 +5360,11 @@
     "shuffle" : true,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "alice22",
+  "timestamp" : 5900,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "playPause",
   "user" : "alice22",
@@ -5297,6 +5397,11 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 5920,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "like",
   "user" : "carol19",
@@ -5339,19 +5444,24 @@
   "user" : "emily30",
   "timestamp" : 5940,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 111,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 161,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "frank21",
+  "timestamp" : 5950,
+  "message" : "Returned to previous track successfully. The current track is Castle on the Hill."
+}, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 5950,
   "stats" : {
-    "name" : "Maps",
-    "remainedTime" : 190,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -5367,7 +5477,7 @@
   "timestamp" : 5960,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 169,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -5383,7 +5493,7 @@
   "timestamp" : 5970,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 99,
+    "remainedTime" : 197,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -5491,12 +5601,17 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 6040,
+  "message" : "Returned to previous track successfully. The current track is Castle on the Hill."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6040,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 111,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
@@ -5511,12 +5626,17 @@
   "user" : "frank21",
   "timestamp" : 6050,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "grace25",
+  "timestamp" : 6060,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -5543,8 +5663,8 @@
   "user" : "henry26",
   "timestamp" : 6070,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 218,
+    "name" : "Money Trees",
+    "remainedTime" : 97,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5655,12 +5775,17 @@
   "user" : "emily30",
   "timestamp" : 6140,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 111,
+    "name" : "Black Dog",
+    "remainedTime" : 294,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "frank21",
+  "timestamp" : 6150,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "repeat",
   "user" : "frank21",
@@ -5671,8 +5796,8 @@
   "user" : "frank21",
   "timestamp" : 6150,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -5694,17 +5819,27 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "henry26",
+  "timestamp" : 6170,
+  "message" : "Returned to previous track successfully. The current track is Money Trees."
+}, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 6170,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 218,
+    "name" : "Money Trees",
+    "remainedTime" : 387,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "irene33",
+  "timestamp" : 6180,
+  "message" : "Visibility status updated successfully to public."
+}, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 6180,
@@ -5726,6 +5861,11 @@
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "jack29",
+  "timestamp" : 6190,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "repeat",
   "user" : "jack29",
@@ -5742,6 +5882,11 @@
     "shuffle" : true,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "alice22",
+  "timestamp" : 6200,
+  "message" : "Visibility status updated successfully to public."
 }, {
   "command" : "playPause",
   "user" : "alice22",
@@ -5791,6 +5936,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "david27",
+  "timestamp" : 6230,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "shuffle",
   "user" : "david27",
   "timestamp" : 6230,
@@ -5810,17 +5960,17 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 6240,
-  "message" : "Skipped to next track successfully. The current track is The Man."
+  "message" : ""
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6240,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 90,
+    "name" : "Black Dog",
+    "remainedTime" : 294,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "shuffle",
@@ -5832,19 +5982,29 @@
   "user" : "frank21",
   "timestamp" : 6250,
   "stats" : {
-    "name" : "Maps",
-    "remainedTime" : 190,
+    "name" : "Happier",
+    "remainedTime" : 207,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6260,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
+}, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6260,
+  "message" : "Returned to previous track successfully. The current track is The Man."
+}, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6260,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 212,
+    "name" : "The Man",
+    "remainedTime" : 190,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -5859,12 +6019,17 @@
   "user" : "henry26",
   "timestamp" : 6270,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 218,
+    "name" : "The Man",
+    "remainedTime" : 190,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "irene33",
+  "timestamp" : 6280,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "playPause",
   "user" : "irene33",
@@ -5974,39 +6139,54 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 6340,
+  "message" : "Returned to previous track successfully. The current track is The Man."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6340,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 180,
+    "name" : "Whatever You Need",
+    "remainedTime" : 210,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "next",
   "user" : "frank21",
   "timestamp" : 6350,
-  "message" : "Skipped to next track successfully. The current track is Blank Space."
+  "message" : "Skipped to next track successfully. The current track is Big Pimpin'."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6350,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6360,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
+}, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6360,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
+}, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6360,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 212,
+    "name" : "Love Story",
+    "remainedTime" : 236,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -6016,8 +6196,8 @@
   "user" : "henry26",
   "timestamp" : 6370,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 218,
+    "name" : "The Man",
+    "remainedTime" : 190,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -6027,8 +6207,8 @@
   "user" : "henry26",
   "timestamp" : 6370,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 218,
+    "name" : "The Man",
+    "remainedTime" : 190,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -6050,12 +6230,17 @@
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "jack29",
+  "timestamp" : 6390,
+  "message" : "Returned to previous track successfully. The current track is Money Trees."
+}, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 6390,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 371,
+    "remainedTime" : 387,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6099,6 +6284,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 6420,
+  "message" : "Visibility status updated successfully to public."
+}, {
   "command" : "next",
   "user" : "carol19",
   "timestamp" : 6420,
@@ -6115,6 +6305,11 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "david27",
+  "timestamp" : 6430,
+  "message" : "Please load a source before returning to the previous track."
+}, {
   "command" : "status",
   "user" : "david27",
   "timestamp" : 6430,
@@ -6129,14 +6324,14 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 6440,
-  "message" : "Skipped to next track successfully. The current track is The Man."
+  "message" : "Skipped to next track successfully. The current track is Whatever You Need."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6440,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 190,
+    "name" : "Black Dog",
+    "remainedTime" : 204,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -6151,8 +6346,8 @@
   "user" : "frank21",
   "timestamp" : 6450,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -6167,24 +6362,29 @@
   "user" : "grace25",
   "timestamp" : 6460,
   "stats" : {
-    "name" : "Love Story",
-    "remainedTime" : 236,
+    "name" : "Dream On",
+    "remainedTime" : 267,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "henry26",
+  "timestamp" : 6470,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "next",
   "user" : "henry26",
   "timestamp" : 6470,
-  "message" : "Skipped to next track successfully. The current track is Black Dog."
+  "message" : "Skipped to next track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 6470,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 294,
+    "name" : "Start Me Up",
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -6216,7 +6416,7 @@
   "timestamp" : 6490,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 271,
+    "remainedTime" : 287,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6254,6 +6454,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 6520,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "playPause",
   "user" : "carol19",
   "timestamp" : 6520,
@@ -6286,12 +6491,17 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "emily30",
+  "timestamp" : 6540,
+  "message" : "Returned to previous track successfully. The current track is Black Dog."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6540,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 90,
+    "name" : "Black Dog",
+    "remainedTime" : 294,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -6306,19 +6516,29 @@
   "user" : "frank21",
   "timestamp" : 6550,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6560,
+  "message" : "Returned to previous track successfully. The current track is Stairway to Heaven."
+}, {
+  "command" : "prev",
+  "user" : "grace25",
+  "timestamp" : 6560,
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
+}, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6560,
   "stats" : {
-    "name" : "Love Story",
-    "remainedTime" : 236,
+    "name" : "Start Me Up",
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -6333,19 +6553,24 @@
   "user" : "henry26",
   "timestamp" : 6570,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 294,
+    "name" : "Start Me Up",
+    "remainedTime" : 212,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : true
   }
+}, {
+  "command" : "prev",
+  "user" : "irene33",
+  "timestamp" : 6580,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 6580,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 217,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6356,7 +6581,7 @@
   "timestamp" : 6590,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 171,
+    "remainedTime" : 187,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6367,7 +6592,7 @@
   "timestamp" : 6590,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 171,
+    "remainedTime" : 187,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6404,6 +6629,11 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "carol19",
+  "timestamp" : 6620,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -6446,12 +6676,17 @@
   "user" : "emily30",
   "timestamp" : 6640,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 180,
+    "name" : "Black Dog",
+    "remainedTime" : 194,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "frank21",
+  "timestamp" : 6650,
+  "message" : "Visibility status updated successfully to public."
 }, {
   "command" : "like",
   "user" : "frank21",
@@ -6462,8 +6697,8 @@
   "user" : "frank21",
   "timestamp" : 6650,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -6478,8 +6713,8 @@
   "user" : "grace25",
   "timestamp" : 6660,
   "stats" : {
-    "name" : "Love Story",
-    "remainedTime" : 36,
+    "name" : "Start Me Up",
+    "remainedTime" : 12,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6494,19 +6729,24 @@
   "user" : "henry26",
   "timestamp" : 6670,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 188,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "command" : "prev",
+  "user" : "irene33",
+  "timestamp" : 6680,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 6680,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 117,
+    "remainedTime" : 267,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6522,7 +6762,7 @@
   "timestamp" : 6690,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 71,
+    "remainedTime" : 87,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -6560,16 +6800,31 @@
     "paused" : true
   }
 }, {
+  "command" : "prev",
+  "user" : "carol19",
+  "timestamp" : 6720,
+  "message" : "Returned to previous track successfully. The current track is Dream On."
+}, {
+  "command" : "prev",
+  "user" : "carol19",
+  "timestamp" : 6720,
+  "message" : "Returned to previous track successfully. The current track is Sad But True."
+}, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 6720,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 167,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 261,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "david27",
+  "timestamp" : 6730,
+  "message" : "The specified playlist ID is too high."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -6602,8 +6857,8 @@
   "user" : "emily30",
   "timestamp" : 6740,
   "stats" : {
-    "name" : "The Man",
-    "remainedTime" : 80,
+    "name" : "Black Dog",
+    "remainedTime" : 94,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6618,39 +6873,54 @@
   "user" : "frank21",
   "timestamp" : 6750,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "grace25",
+  "timestamp" : 6760,
+  "message" : "Visibility status updated successfully to public."
+}, {
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 6760,
-  "message" : "Skipped to next track successfully. The current track is The Unforgiven."
+  "message" : "Skipped to next track successfully. The current track is Dream On."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6760,
   "stats" : {
-    "name" : "The Unforgiven",
-    "remainedTime" : 386,
+    "name" : "Dream On",
+    "remainedTime" : 267,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
   }
 }, {
+  "command" : "prev",
+  "user" : "henry26",
+  "timestamp" : 6770,
+  "message" : "Please load a source before returning to the previous track."
+}, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 6770,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 88,
-    "repeat" : "Repeat Current Song",
-    "shuffle" : true,
-    "paused" : false
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "irene33",
+  "timestamp" : 6780,
+  "message" : "Visibility status updated successfully to public."
 }, {
   "command" : "like",
   "user" : "irene33",
@@ -6662,7 +6932,7 @@
   "timestamp" : 6780,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 17,
+    "remainedTime" : 167,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6678,7 +6948,7 @@
   "timestamp" : 6790,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 71,
+    "remainedTime" : 87,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : true
@@ -6705,6 +6975,16 @@
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 6810,
+  "message" : "Please load a source before returning to the previous track."
+}, {
+  "command" : "prev",
+  "user" : "bob35",
+  "timestamp" : 6810,
+  "message" : "Please load a source before returning to the previous track."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -6726,8 +7006,8 @@
   "user" : "carol19",
   "timestamp" : 6820,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 67,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 161,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -6749,6 +7029,11 @@
     "paused" : true
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "emily30",
+  "timestamp" : 6840,
+  "message" : "Visibility status updated successfully to public."
+}, {
   "command" : "repeat",
   "user" : "emily30",
   "timestamp" : 6840,
@@ -6758,19 +7043,24 @@
   "user" : "emily30",
   "timestamp" : 6840,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 211,
+    "name" : "Whatever You Need",
+    "remainedTime" : 204,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "frank21",
+  "timestamp" : 6850,
+  "message" : "Visibility status updated successfully to private."
+}, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6850,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
@@ -6780,8 +7070,8 @@
   "user" : "frank21",
   "timestamp" : 6850,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
@@ -6790,14 +7080,14 @@
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 6860,
-  "message" : "Skipped to next track successfully. The current track is Start Me Up."
+  "message" : "Skipped to next track successfully. The current track is Love Story."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6860,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 212,
+    "name" : "Love Story",
+    "remainedTime" : 236,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6806,17 +7096,17 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 6870,
-  "message" : "Like registered successfully."
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 6870,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 282,
-    "repeat" : "Repeat Current Song",
-    "shuffle" : true,
-    "paused" : false
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
   }
 }, {
   "command" : "like",
@@ -6828,8 +7118,8 @@
   "user" : "irene33",
   "timestamp" : 6880,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 136,
+    "name" : "Dream On",
+    "remainedTime" : 67,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6845,7 +7135,7 @@
   "timestamp" : 6890,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 71,
+    "remainedTime" : 87,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : true
@@ -6866,6 +7156,11 @@
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "bob35",
+  "timestamp" : 6910,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "playPause",
   "user" : "bob35",
@@ -6892,12 +7187,17 @@
   "user" : "carol19",
   "timestamp" : 6920,
   "stats" : {
-    "name" : "Sad But True",
-    "remainedTime" : 291,
+    "name" : "Castle on the Hill",
+    "remainedTime" : 61,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "david27",
+  "timestamp" : 6930,
+  "message" : "Visibility status updated successfully to private."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -6930,8 +7230,8 @@
   "user" : "emily30",
   "timestamp" : 6940,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 111,
+    "name" : "Whatever You Need",
+    "remainedTime" : 104,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : true
@@ -6946,8 +7246,8 @@
   "user" : "frank21",
   "timestamp" : 6950,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 231,
+    "name" : "Big Pimpin'",
+    "remainedTime" : 284,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -6956,32 +7256,37 @@
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 6960,
-  "message" : ""
+  "message" : "Skipped to next track successfully. The current track is The Man."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 6960,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 112,
+    "name" : "The Man",
+    "remainedTime" : 190,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
   }
 }, {
+  "command" : "switchVisibility",
+  "user" : "henry26",
+  "timestamp" : 6970,
+  "message" : "The specified playlist ID is too high."
+}, {
   "command" : "playPause",
   "user" : "henry26",
   "timestamp" : 6970,
-  "message" : "Playback paused successfully."
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 6970,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 182,
-    "repeat" : "Repeat Current Song",
-    "shuffle" : true,
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
     "paused" : true
   }
 }, {
@@ -6995,11 +7300,16 @@
   "timestamp" : 6980,
   "stats" : {
     "name" : "Don't",
-    "remainedTime" : 36,
+    "remainedTime" : 186,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "switchVisibility",
+  "user" : "jack29",
+  "timestamp" : 6990,
+  "message" : "Visibility status updated successfully to public."
 }, {
   "command" : "repeat",
   "user" : "jack29",
@@ -7011,7 +7321,7 @@
   "timestamp" : 6990,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 71,
+    "remainedTime" : 87,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : true
@@ -7028,82 +7338,122 @@
   "timestamp" : 6990,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 6990,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7000,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7000,
-  "message" : "Successfully selected Epic Melodies Safari #1."
+  "message" : "Successfully selected Breezy Bangers Quest #2."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7000,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7010,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7010,
-  "message" : "Successfully selected Chill Tracks Safari #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7010,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7020,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 7020,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7020,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 7030,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 7030,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7030,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7040,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 7040,
-  "message" : "Successfully selected Chill Grooves Quest #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7040,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7050,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7050,
-  "message" : "Successfully selected Dynamic Tracks Trek #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7050,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7060,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7060,
-  "message" : "Successfully selected Chill Grooves Quest #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7060,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -7116,6 +7466,11 @@
   "timestamp" : 7070,
   "message" : "Successfully selected Electric Beats Escape #2."
 }, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7070,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 7080,
@@ -7127,39 +7482,59 @@
   "timestamp" : 7080,
   "message" : "Successfully selected Classic Grooves Escape #2."
 }, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7080,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 7090,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 7090,
-  "message" : "Successfully selected Groovy Beats Expedition #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7090,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7100,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7100,
-  "message" : "Successfully selected Vibey Tracks Safari #1."
+  "message" : "Successfully selected Chill Tracks Safari #2."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7100,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7110,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7110,
   "message" : "Successfully selected Classic Harmonies Quest #1."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7110,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7120,
@@ -7170,6 +7545,11 @@
   "user" : "david27",
   "timestamp" : 7120,
   "message" : "Successfully selected Groovy Beats Expedition #2."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7120,
+  "message" : "You cannot follow or unfollow your own playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -7182,6 +7562,11 @@
   "timestamp" : 7130,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7130,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7140,
@@ -7193,38 +7578,58 @@
   "timestamp" : 7140,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7140,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7150,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7150,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7150,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7160,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7160,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7160,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7170,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7170,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7170,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -7237,49 +7642,74 @@
   "timestamp" : 7180,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7180,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 7190,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 7190,
   "message" : "Successfully selected Classic Harmonies Quest #1."
 }, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7190,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7200,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7200,
-  "message" : "Successfully selected Vibey Tracks Safari #1."
+  "message" : "Successfully selected Chill Tracks Safari #2."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7200,
+  "message" : "Playlist unfollowed successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7210,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7210,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7210,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7220,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 7220,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7220,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -7292,6 +7722,11 @@
   "timestamp" : 7230,
   "message" : "Successfully selected Classic Grooves Escape #2."
 }, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7230,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7240,
@@ -7303,38 +7738,58 @@
   "timestamp" : 7240,
   "message" : "Successfully selected Classic Tunes Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7240,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7250,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7250,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7250,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7260,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7260,
-  "message" : "Successfully selected Breezy Bangers Quest #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7260,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7270,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7270,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7270,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -7347,27 +7802,42 @@
   "timestamp" : 7280,
   "message" : "Successfully selected Stellar Rhythms Safari #2."
 }, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7280,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 7290,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 7290,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7290,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7300,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7300,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7300,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -7380,27 +7850,42 @@
   "timestamp" : 7310,
   "message" : "Successfully selected Electric Bangers Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7310,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7320,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 7320,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7320,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 7330,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 7330,
-  "message" : "Successfully selected Groovy Beats Dream #1."
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7330,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -7413,16 +7898,26 @@
   "timestamp" : 7340,
   "message" : "Successfully selected Epic Melodies Safari #1."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7340,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7350,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7350,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7350,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -7435,27 +7930,42 @@
   "timestamp" : 7360,
   "message" : "Successfully selected Epic Tracks Safari #1."
 }, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7360,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7370,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7370,
   "message" : "Successfully selected Classic Harmonies Quest #1."
 }, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7370,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 7380,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 7380,
-  "message" : "Successfully selected Chill Tracks Safari #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7380,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -7468,60 +7978,90 @@
   "timestamp" : 7390,
   "message" : "Successfully selected Classic Tunes Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7390,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7400,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7400,
-  "message" : "Successfully selected Chill Grooves Quest #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7400,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7410,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7410,
-  "message" : "Successfully selected Groovy Beats Dream #1."
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7410,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7420,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 7420,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7420,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 7430,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 7430,
-  "message" : "Successfully selected Breezy Bangers Quest #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7430,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7440,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 7440,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7440,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -7534,27 +8074,42 @@
   "timestamp" : 7450,
   "message" : "Successfully selected Epic Tracks Safari #1."
 }, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7450,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7460,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7460,
-  "message" : "Successfully selected Mellow Tracks Safari #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7460,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7470,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7470,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7470,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -7567,6 +8122,11 @@
   "timestamp" : 7480,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7480,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 7490,
@@ -7578,38 +8138,58 @@
   "timestamp" : 7490,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7490,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7500,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7500,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7500,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7510,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7510,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7510,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 7520,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 7520,
   "message" : "Successfully selected Dynamic Tracks Trek #2."
 }, {
-  "command" : "search",
+  "command" : "follow",
   "user" : "david27",
   "timestamp" : 7520,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 7520,
-  "message" : "Successfully selected Groovy Beats Dream #1."
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -7622,6 +8202,11 @@
   "timestamp" : 7530,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7530,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7540,
@@ -7633,82 +8218,122 @@
   "timestamp" : 7540,
   "message" : "Successfully selected Electric Bangers Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7540,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7550,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7550,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7550,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7560,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7560,
-  "message" : "Successfully selected Epic Melodies Safari #1."
+  "message" : "Successfully selected Breezy Bangers Quest #2."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7560,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 7570,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 7570,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7570,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 7580,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 7580,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7580,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 7590,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 7590,
-  "message" : "Successfully selected Electric Grooves Dream #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7590,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7600,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7600,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7600,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7610,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7610,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7610,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -7721,16 +8346,26 @@
   "timestamp" : 7620,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7620,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 7630,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 7630,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7630,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -7743,27 +8378,42 @@
   "timestamp" : 7640,
   "message" : "Successfully selected Epic Melodies Safari #1."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7640,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 7650,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 7650,
-  "message" : "Successfully selected Chill Tracks Safari #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7650,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 7660,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 7660,
-  "message" : "Successfully selected Groovy Beats Expedition #2."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7660,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -7776,6 +8426,11 @@
   "timestamp" : 7670,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7670,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 7680,
@@ -7786,6 +8441,11 @@
   "user" : "jack29",
   "timestamp" : 7680,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7680,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -7798,775 +8458,1130 @@
   "timestamp" : 7690,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7690,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7700,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 7700,
   "message" : "Successfully selected Classic Harmonies Quest #1."
 }, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7700,
+  "message" : "Playlist followed successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7710,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 7710,
-  "message" : "Successfully selected Epic Melodies Safari #1."
-}, {
-  "command" : "search",
-  "user" : "david27",
-  "timestamp" : 7720,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 7720,
-  "message" : "Successfully selected Classic Tunes Dream #1."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 7730,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 7730,
-  "message" : "Successfully selected Dynamic Tracks Trek #2."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 7740,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 7740,
-  "message" : "Successfully selected Epic Tracks Safari #1."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 7750,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 7750,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 7760,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 7760,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 7770,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 7770,
-  "message" : "Successfully selected Electric Bangers Dream #1."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 7780,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 7780,
-  "message" : "Successfully selected Classic Harmonies Quest #1."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 7790,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 7790,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 7800,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 7800,
-  "message" : "Successfully selected Epic Tracks Safari #1."
-}, {
-  "command" : "search",
-  "user" : "carol19",
-  "timestamp" : 7810,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 7810,
-  "message" : "Successfully selected Electric Beats Escape #2."
-}, {
-  "command" : "search",
-  "user" : "david27",
-  "timestamp" : 7820,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 7820,
-  "message" : "Successfully selected Electric Bangers Dream #1."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 7830,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 7830,
-  "message" : "Successfully selected Mellow Tracks Safari #2."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 7840,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 7840,
-  "message" : "Successfully selected Groovy Beats Dream #1."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 7850,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 7850,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 7860,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 7860,
-  "message" : "Successfully selected Electric Bangers Dream #1."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 7870,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 7870,
-  "message" : "Successfully selected Epic Tracks Safari #1."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 7880,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 7880,
-  "message" : "Successfully selected Electric Tunes Dream #2."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 7890,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 7890,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 7900,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 7900,
-  "message" : "Successfully selected Electric Beats Escape #2."
-}, {
-  "command" : "search",
-  "user" : "carol19",
-  "timestamp" : 7910,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 7910,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "david27",
-  "timestamp" : 7920,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 7920,
-  "message" : "Successfully selected Chill Grooves Quest #2."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 7930,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 7930,
-  "message" : "Successfully selected Electric Grooves Dream #1."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 7940,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 7940,
-  "message" : "Successfully selected Classic Tunes Dream #1."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 7950,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 7950,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 7960,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 7960,
-  "message" : "Successfully selected Classic Tunes Dream #1."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 7970,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 7970,
-  "message" : "Successfully selected Vibey Tracks Safari #1."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 7980,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 7980,
-  "message" : "Successfully selected Electric Vibes Journey #1."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 7990,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 7990,
-  "message" : "Successfully selected Electric Vibes Journey #1."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 8000,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 8000,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "carol19",
-  "timestamp" : 8010,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 8010,
-  "message" : "Successfully selected Electric Vibes Journey #1."
-}, {
-  "command" : "search",
-  "user" : "david27",
-  "timestamp" : 8020,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 8020,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 8030,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 8030,
-  "message" : "Successfully selected Classic Grooves Escape #2."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 8040,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 8040,
-  "message" : "Successfully selected Electric Grooves Dream #1."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 8050,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 8050,
   "message" : "Successfully selected Breezy Bangers Quest #2."
 }, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 8060,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 8060,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 8070,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 8070,
-  "message" : "Successfully selected Mellow Tracks Safari #2."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 8080,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 8080,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 8090,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 8090,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 8100,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 8100,
-  "message" : "Successfully selected Electric Bangers Dream #1."
-}, {
-  "command" : "search",
+  "command" : "follow",
   "user" : "carol19",
-  "timestamp" : 8110,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 8110,
-  "message" : "The selected ID is too high."
+  "timestamp" : 7710,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "david27",
-  "timestamp" : 8120,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 8120,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 8130,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 8130,
-  "message" : "Successfully selected Groovy Beats Quest #1."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 8140,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 8140,
-  "message" : "Successfully selected Groovy Beats Quest #1."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 8150,
+  "timestamp" : 7720,
   "message" : "Search returned 2 results",
   "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
 }, {
   "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 8150,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 8160,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 8160,
-  "message" : "Successfully selected Classic Grooves Escape #2."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 8170,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 8170,
-  "message" : "Successfully selected Epic Tracks Safari #1."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 8180,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 8180,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 8190,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 8190,
-  "message" : "Successfully selected Electric Beats Escape #2."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 8200,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 8200,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "carol19",
-  "timestamp" : 8210,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 8210,
-  "message" : "Successfully selected Mellow Tracks Safari #2."
-}, {
-  "command" : "search",
   "user" : "david27",
-  "timestamp" : 8220,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 8220,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 8230,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 8230,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 8240,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 8240,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 8250,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 8250,
-  "message" : "Successfully selected Classic Grooves Escape #2."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 8260,
-  "message" : "Search returned 2 results",
-  "results" : [ "Epic Melodies Safari #1", "Breezy Bangers Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 8260,
-  "message" : "The selected ID is too high."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 8270,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 8270,
-  "message" : "Successfully selected Electric Tunes Dream #2."
-}, {
-  "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 8280,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "jack29",
-  "timestamp" : 8280,
-  "message" : "Successfully selected Groovy Beats Quest #1."
-}, {
-  "command" : "search",
-  "user" : "alice22",
-  "timestamp" : 8290,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "alice22",
-  "timestamp" : 8290,
-  "message" : "Successfully selected Dynamic Tracks Trek #2."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 8300,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 8300,
-  "message" : "Successfully selected Dynamic Tracks Trek #2."
-}, {
-  "command" : "search",
-  "user" : "carol19",
-  "timestamp" : 8310,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "carol19",
-  "timestamp" : 8310,
-  "message" : "Successfully selected Electric Vibes Journey #1."
-}, {
-  "command" : "search",
-  "user" : "david27",
-  "timestamp" : 8320,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
-}, {
-  "command" : "select",
-  "user" : "david27",
-  "timestamp" : 8320,
-  "message" : "Successfully selected Dynamic Tracks Trek #2."
-}, {
-  "command" : "search",
-  "user" : "emily30",
-  "timestamp" : 8330,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "emily30",
-  "timestamp" : 8330,
+  "timestamp" : 7720,
   "message" : "Successfully selected Classic Tunes Dream #1."
 }, {
-  "command" : "search",
-  "user" : "frank21",
-  "timestamp" : 8340,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
-}, {
-  "command" : "select",
-  "user" : "frank21",
-  "timestamp" : 8340,
-  "message" : "Successfully selected Electric Bangers Dream #1."
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7720,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
-  "user" : "grace25",
-  "timestamp" : 8350,
-  "message" : "Search returned 2 results",
-  "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
+  "user" : "emily30",
+  "timestamp" : 7730,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
-  "user" : "grace25",
-  "timestamp" : 8350,
-  "message" : "Successfully selected Groovy Beats Dream #1."
-}, {
-  "command" : "search",
-  "user" : "henry26",
-  "timestamp" : 8360,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
-}, {
-  "command" : "select",
-  "user" : "henry26",
-  "timestamp" : 8360,
-  "message" : "Successfully selected Chill Grooves Quest #2."
-}, {
-  "command" : "search",
-  "user" : "irene33",
-  "timestamp" : 8370,
-  "message" : "Search returned 2 results",
-  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
-}, {
-  "command" : "select",
-  "user" : "irene33",
-  "timestamp" : 8370,
+  "user" : "emily30",
+  "timestamp" : 7730,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7730,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
-  "user" : "jack29",
-  "timestamp" : 8380,
+  "user" : "frank21",
+  "timestamp" : 7740,
+  "message" : "Search returned 2 results",
+  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 7740,
+  "message" : "Successfully selected Epic Tracks Safari #1."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7740,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 7750,
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 7750,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7750,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 7760,
   "message" : "Search returned 2 results",
   "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 7760,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7760,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 7770,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 7770,
+  "message" : "Successfully selected Electric Bangers Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7770,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
   "user" : "jack29",
-  "timestamp" : 8380,
+  "timestamp" : 7780,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Harmonies Quest #1", "Mellow Tracks Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 7780,
+  "message" : "Successfully selected Classic Harmonies Quest #1."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7780,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 7790,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 7790,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7790,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 7800,
+  "message" : "Search returned 2 results",
+  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 7800,
+  "message" : "Successfully selected Epic Tracks Safari #1."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7800,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 7810,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 7810,
+  "message" : "Successfully selected Electric Beats Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7810,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 7820,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 7820,
+  "message" : "Successfully selected Electric Bangers Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7820,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 7830,
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 7830,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7830,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 7840,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 7840,
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7840,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 7850,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 7850,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7850,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 7860,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 7860,
+  "message" : "Successfully selected Electric Bangers Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7860,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 7870,
+  "message" : "Search returned 2 results",
+  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 7870,
+  "message" : "Successfully selected Epic Tracks Safari #1."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7870,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 7880,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 7880,
+  "message" : "Successfully selected Electric Tunes Dream #2."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7880,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 7890,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 7890,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7890,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 7900,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 7900,
+  "message" : "Successfully selected Electric Beats Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 7900,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 7910,
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 7910,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 7910,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 7920,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 7920,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 7920,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 7930,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 7930,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 7930,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 7940,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 7940,
+  "message" : "Successfully selected Classic Tunes Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 7940,
+  "message" : "Playlist unfollowed successfully."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 7950,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 7950,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 7950,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 7960,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 7960,
+  "message" : "Successfully selected Classic Tunes Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 7960,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 7970,
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 7970,
   "message" : "Successfully selected Chill Tracks Safari #2."
 }, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 7970,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 7980,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 7980,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 7980,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "alice22",
-  "timestamp" : 8390,
+  "timestamp" : 7990,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 7990,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 7990,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 8000,
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 8000,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 8000,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 8010,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 8010,
+  "message" : "Successfully selected Electric Vibes Journey #1."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 8010,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 8020,
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 8020,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 8020,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 8030,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 8030,
+  "message" : "Successfully selected Classic Grooves Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 8030,
+  "message" : "Playlist unfollowed successfully."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 8040,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 8040,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 8040,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 8050,
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 8050,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 8050,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 8060,
+  "message" : "Search returned 2 results",
+  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 8060,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 8060,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 8070,
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 8070,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 8070,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 8080,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 8080,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 8080,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 8090,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 8090,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 8090,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 8100,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 8100,
+  "message" : "Successfully selected Electric Bangers Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 8100,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 8110,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 8110,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 8110,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 8120,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 8120,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 8120,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 8130,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 8130,
+  "message" : "Successfully selected Groovy Beats Quest #1."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 8130,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 8140,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 8140,
+  "message" : "Successfully selected Groovy Beats Quest #1."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 8140,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 8150,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 8150,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 8150,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 8160,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 8160,
+  "message" : "Successfully selected Classic Grooves Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 8160,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 8170,
+  "message" : "Search returned 2 results",
+  "results" : [ "Epic Tracks Safari #1", "Stellar Rhythms Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 8170,
+  "message" : "Successfully selected Epic Tracks Safari #1."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 8170,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 8180,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 8180,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 8180,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 8190,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 8190,
+  "message" : "Successfully selected Electric Beats Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 8190,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 8200,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 8200,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 8200,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 8210,
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 8210,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 8210,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 8220,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 8220,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 8220,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 8230,
+  "message" : "Search returned 1 results",
+  "results" : [ "Classic Harmonies Quest #1" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 8230,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 8230,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 8240,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 8240,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 8240,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 8250,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 8250,
+  "message" : "Successfully selected Classic Grooves Escape #2."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 8250,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 8260,
+  "message" : "Search returned 1 results",
+  "results" : [ "Breezy Bangers Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 8260,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 8260,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 8270,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 8270,
+  "message" : "Successfully selected Electric Tunes Dream #2."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 8270,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 8280,
+  "message" : "Search returned 2 results",
+  "results" : [ "Groovy Beats Quest #1", "Classic Grooves Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 8280,
+  "message" : "Successfully selected Groovy Beats Quest #1."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 8280,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 8290,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 8290,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 8290,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 8300,
   "message" : "Search returned 2 results",
   "results" : [ "Groovy Beats Dream #1", "Dynamic Tracks Trek #2" ]
 }, {
   "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 8300,
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 8300,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "carol19",
+  "timestamp" : 8310,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+}, {
+  "command" : "select",
+  "user" : "carol19",
+  "timestamp" : 8310,
+  "message" : "Successfully selected Electric Vibes Journey #1."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 8310,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 8320,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "david27",
+  "timestamp" : 8320,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 8320,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 8330,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "emily30",
+  "timestamp" : 8330,
+  "message" : "Successfully selected Classic Tunes Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 8330,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "frank21",
+  "timestamp" : 8340,
+  "message" : "Search returned 2 results",
+  "results" : [ "Electric Bangers Dream #1", "Electric Tunes Dream #2" ]
+}, {
+  "command" : "select",
+  "user" : "frank21",
+  "timestamp" : 8340,
+  "message" : "Successfully selected Electric Bangers Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 8340,
+  "message" : "Playlist unfollowed successfully."
+}, {
+  "command" : "search",
+  "user" : "grace25",
+  "timestamp" : 8350,
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "grace25",
+  "timestamp" : 8350,
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 8350,
+  "message" : "Playlist followed successfully."
+}, {
+  "command" : "search",
+  "user" : "henry26",
+  "timestamp" : 8360,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "henry26",
+  "timestamp" : 8360,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 8360,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "irene33",
+  "timestamp" : 8370,
+  "message" : "Search returned 2 results",
+  "results" : [ "Classic Tunes Dream #1", "Electric Beats Escape #2" ]
+}, {
+  "command" : "select",
+  "user" : "irene33",
+  "timestamp" : 8370,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 8370,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 8380,
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
+}, {
+  "command" : "select",
+  "user" : "jack29",
+  "timestamp" : 8380,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 8380,
+  "message" : "Please select a source before following or unfollowing."
+}, {
+  "command" : "search",
   "user" : "alice22",
   "timestamp" : 8390,
-  "message" : "Successfully selected Groovy Beats Dream #1."
+  "message" : "Search returned 1 results",
+  "results" : [ "Dynamic Tracks Trek #2" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 8390,
+  "message" : "Successfully selected Dynamic Tracks Trek #2."
+}, {
+  "command" : "follow",
+  "user" : "alice22",
+  "timestamp" : 8390,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -8579,6 +9594,11 @@
   "timestamp" : 8400,
   "message" : "The selected ID is too high."
 }, {
+  "command" : "follow",
+  "user" : "bob35",
+  "timestamp" : 8400,
+  "message" : "Please select a source before following or unfollowing."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 8410,
@@ -8589,6 +9609,11 @@
   "user" : "carol19",
   "timestamp" : 8410,
   "message" : "Successfully selected Classic Tunes Dream #1."
+}, {
+  "command" : "follow",
+  "user" : "carol19",
+  "timestamp" : 8410,
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -8601,16 +9626,26 @@
   "timestamp" : 8420,
   "message" : "Successfully selected Electric Grooves Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "david27",
+  "timestamp" : 8420,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 8430,
-  "message" : "Search returned 2 results",
-  "results" : [ "Vibey Tracks Safari #1", "Chill Tracks Safari #2" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Chill Tracks Safari #2" ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 8430,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "emily30",
+  "timestamp" : 8430,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -8623,16 +9658,26 @@
   "timestamp" : 8440,
   "message" : "Successfully selected Breezy Bangers Quest #2."
 }, {
+  "command" : "follow",
+  "user" : "frank21",
+  "timestamp" : 8440,
+  "message" : "You cannot follow or unfollow your own playlist."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 8450,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Grooves Dream #1", "Groovy Beats Expedition #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 8450,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "grace25",
+  "timestamp" : 8450,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -8645,16 +9690,26 @@
   "timestamp" : 8460,
   "message" : "Successfully selected Classic Tunes Dream #1."
 }, {
+  "command" : "follow",
+  "user" : "henry26",
+  "timestamp" : 8460,
+  "message" : "Playlist unfollowed successfully."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 8470,
-  "message" : "Search returned 2 results",
-  "results" : [ "Electric Vibes Journey #1", "Chill Grooves Quest #2" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 8470,
-  "message" : "Successfully selected Electric Vibes Journey #1."
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "irene33",
+  "timestamp" : 8470,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -8666,6 +9721,11 @@
   "user" : "jack29",
   "timestamp" : 8480,
   "message" : "The selected ID is too high."
+}, {
+  "command" : "follow",
+  "user" : "jack29",
+  "timestamp" : 8480,
+  "message" : "Please select a source before following or unfollowing."
 }, {
   "command" : "showPlaylists",
   "user" : "alice22",
@@ -8674,12 +9734,12 @@
     "name" : "Groovy Beats Quest #1",
     "songs" : [ "Start Me Up", "Bohemian Rhapsody", "Paint It Black" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 3
   }, {
     "name" : "Classic Grooves Escape #2",
     "songs" : [ "Start Me Up", "Shape of You", "Begin Again", "Black Dog" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 3
   } ]
 }, {
   "command" : "showPreferredSongs",
@@ -8693,13 +9753,13 @@
   "result" : [ {
     "name" : "Groovy Beats Dream #1",
     "songs" : [ "The Unforgiven", "Delicate", "The Man", "Money Trees", "Start Me Up" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   }, {
     "name" : "Dynamic Tracks Trek #2",
     "songs" : [ "Begin Again", "The Unforgiven", "Bohemian Rhapsody" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 6
   } ]
 }, {
   "command" : "showPreferredSongs",
@@ -8713,19 +9773,19 @@
   "result" : [ {
     "name" : "Electric Vibes Journey #1",
     "songs" : [ "Sad But True", "Gimme Shelter", "Happier", "Money Trees", "Castle on the Hill", "Dream On" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   }, {
     "name" : "Chill Grooves Quest #2",
     "songs" : [ "Happier", "Black Dog", "Gimme Shelter", "Under Pressure", "Maps", "Shape of You" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   } ]
 }, {
   "command" : "showPreferredSongs",
   "user" : "carol19",
   "timestamp" : 8510,
-  "result" : [ "Happier", "Sad But True" ]
+  "result" : [ "Happier", "Castle on the Hill" ]
 }, {
   "command" : "showPlaylists",
   "user" : "david27",
@@ -8733,12 +9793,12 @@
   "result" : [ {
     "name" : "Electric Grooves Dream #1",
     "songs" : [ "Dream On", "Start Me Up", "Under Pressure" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   }, {
     "name" : "Groovy Beats Expedition #2",
     "songs" : [ "Don't", "Sad But True", "Dream On" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   } ]
 }, {
@@ -8754,18 +9814,18 @@
     "name" : "Electric Bangers Dream #1",
     "songs" : [ "Don't", "The Man", "Blank Space", "Black Dog", "Whatever You Need", "Castle on the Hill" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 5
   }, {
     "name" : "Electric Tunes Dream #2",
     "songs" : [ "Bohemian Rhapsody", "The Man", "Delicate", "Angie", "Paint It Black", "Begin Again" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 2
   } ]
 }, {
   "command" : "showPreferredSongs",
   "user" : "emily30",
   "timestamp" : 8530,
-  "result" : [ "The Man" ]
+  "result" : [ "Castle on the Hill" ]
 }, {
   "command" : "showPlaylists",
   "user" : "frank21",
@@ -8773,19 +9833,19 @@
   "result" : [ {
     "name" : "Epic Melodies Safari #1",
     "songs" : [ "Castle on the Hill", "The Man", "Love Story", "Don't", "Dream On" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   }, {
     "name" : "Breezy Bangers Quest #2",
     "songs" : [ "Castle on the Hill", "Maps", "Blank Space", "Delicate", "Happier", "Big Pimpin'" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 3
   } ]
 }, {
   "command" : "showPreferredSongs",
   "user" : "frank21",
   "timestamp" : 8540,
-  "result" : [ "Maps" ]
+  "result" : [ "Happier" ]
 }, {
   "command" : "showPlaylists",
   "user" : "grace25",
@@ -8794,12 +9854,12 @@
     "name" : "Classic Tunes Dream #1",
     "songs" : [ "Stairway to Heaven", "Dream On", "Love Story", "The Man", "The Unforgiven", "Start Me Up" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 4
   }, {
     "name" : "Electric Beats Escape #2",
     "songs" : [ "Maps", "Black Dog", "Whatever You Need", "Begin Again", "Start Me Up" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 4
   } ]
 }, {
   "command" : "showPreferredSongs",
@@ -8813,19 +9873,19 @@
   "result" : [ {
     "name" : "Vibey Tracks Safari #1",
     "songs" : [ "Maps", "Don't", "Black Dog", "Begin Again", "Money Trees", "Whatever You Need", "The Man", "Start Me Up" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   }, {
     "name" : "Chill Tracks Safari #2",
     "songs" : [ "Sad But True", "Don't", "Delicate", "Gimme Shelter", "Paint It Black" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 1
   } ]
 }, {
   "command" : "showPreferredSongs",
   "user" : "henry26",
   "timestamp" : 8560,
-  "result" : [ "Black Dog" ]
+  "result" : [ ]
 }, {
   "command" : "showPlaylists",
   "user" : "irene33",
@@ -8834,18 +9894,18 @@
     "name" : "Epic Tracks Safari #1",
     "songs" : [ "Blank Space", "Dream On", "Don't", "Start Me Up" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 4
   }, {
     "name" : "Stellar Rhythms Safari #2",
     "songs" : [ "Sad But True", "The Man", "Delicate", "Big Pimpin'", "Under Pressure", "Gimme Shelter", "Don't" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 1
   } ]
 }, {
   "command" : "showPreferredSongs",
   "user" : "irene33",
   "timestamp" : 8570,
-  "result" : [ "Blank Space", "Don't" ]
+  "result" : [ "Blank Space", "Dream On" ]
 }, {
   "command" : "showPlaylists",
   "user" : "jack29",
@@ -8854,11 +9914,11 @@
     "name" : "Classic Harmonies Quest #1",
     "songs" : [ "Big Pimpin'", "Maps", "Money Trees", "Gimme Shelter", "Start Me Up" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 4
   }, {
     "name" : "Mellow Tracks Safari #2",
     "songs" : [ "Money Trees", "The Unforgiven", "Maps", "Love Story", "The Man", "Shape of You", "Blank Space", "Big Pimpin'" ],
-    "visibility" : "public",
+    "visibility" : "private",
     "followers" : 0
   } ]
 }, {
