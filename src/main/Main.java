@@ -583,6 +583,9 @@ public final class Main {
                     } else {
                         //  Player was found and repeat state will be changed
 
+                        //  First we update the time
+                        crtItem.updateRemainingTime(crtCommand.getTimestamp());
+
                         if (crtItem instanceof PlaylistSelection) {
                             switch (crtItem.getRepeat()) {
                                 case "No Repeat" -> {
@@ -1274,10 +1277,6 @@ public final class Main {
     public static void setIntervals (PlaylistSelection playlist, Command crtCommand) {
         //  First we check if the time needs to be updated
         int remainingTime = playlist.getRemainingTime();
-
-        if (remainingTime < 0) {
-            playlist.updateRemainingTime(crtCommand.getTimestamp());
-        }
 
         int duration = playlist.getPlaylist().getDuration();
 

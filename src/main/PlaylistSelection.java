@@ -36,7 +36,7 @@ public class PlaylistSelection extends ItemSelection {
     @Override
     public void updateRemainingTime(int crtTimestamp) {
         if (!isPaused()) {
-            int remainingTime = this.getRemainingTime() - (crtTimestamp - getStartTime());
+            int remainingTime = this.getRemainingTime() - (crtTimestamp - this.getStartTime());
 
             if (remainingTime < 0) {
                 if (this.getRepeat().equals("Repeat All")) {
@@ -56,9 +56,10 @@ public class PlaylistSelection extends ItemSelection {
             } else {
                 if (this.getRepeat().equals("Repeat Current Song")) {
                     //  Go back to initial timestamp
-                    if (remainingTime <= this.stopTimestamp) {
-                        this.setRemainingTime(this.startTimestamp - (this.stopTimestamp - remainingTime));
+                    while (remainingTime <= this.stopTimestamp) {
+                        remainingTime += (this.startTimestamp - this.stopTimestamp);
                     }
+                    this.setRemainingTime(remainingTime);
                     this.setStartTime(crtTimestamp);
 
                 } else {
