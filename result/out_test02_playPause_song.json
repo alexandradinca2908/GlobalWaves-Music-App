@@ -36,7 +36,7 @@
   "timestamp" : 35,
   "stats" : {
     "name" : "Shape of You",
-    "remainedTime" : 228,
+    "remainedTime" : 223,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -47,7 +47,7 @@
   "timestamp" : 40,
   "stats" : {
     "name" : "Shape of You",
-    "remainedTime" : 228,
+    "remainedTime" : 223,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -63,7 +63,7 @@
   "timestamp" : 50,
   "stats" : {
     "name" : "Shape of You",
-    "remainedTime" : 223,
+    "remainedTime" : 203,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -74,7 +74,7 @@
   "timestamp" : 55,
   "stats" : {
     "name" : "Shape of You",
-    "remainedTime" : 218,
+    "remainedTime" : 198,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

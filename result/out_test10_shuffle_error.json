@@ -1,230 +1,138 @@
 [ {
   "command" : "createPlaylist",
   "user" : "bob35",
-  "timestamp" : 150,
+  "timestamp" : 50,
   "message" : "Playlist created successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 170,
+  "timestamp" : 100,
   "message" : "Search returned 1 results",
-  "results" : [ "Nothing Else Matters" ]
+  "results" : [ "TED Talks Daily" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 190,
-  "message" : "Successfully selected Nothing Else Matters."
+  "timestamp" : 110,
+  "message" : "Successfully selected TED Talks Daily."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 195,
+  "timestamp" : 115,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 120,
+  "message" : "The loaded source is not a playlist."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 200,
+  "message" : "Search returned 1 results",
+  "results" : [ "Blank Space" ]
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 210,
+  "message" : "Successfully selected Blank Space."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 213,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
-  "timestamp" : 240,
+  "timestamp" : 215,
   "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 270,
+  "timestamp" : 250,
   "message" : "Search returned 1 results",
-  "results" : [ "Crazy" ]
+  "results" : [ "Whole Lotta Love" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 290,
-  "message" : "Successfully selected Crazy."
+  "timestamp" : 260,
+  "message" : "Successfully selected Whole Lotta Love."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 320,
+  "timestamp" : 263,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
-  "timestamp" : 340,
+  "timestamp" : 265,
   "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 370,
-  "message" : "Search returned 1 results",
-  "results" : [ "Elevate" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 390,
-  "message" : "Successfully selected Elevate."
-}, {
-  "command" : "load",
   "user" : "bob35",
   "timestamp" : 400,
-  "message" : "Playback loaded successfully."
-}, {
-  "command" : "addRemoveInPlaylist",
-  "user" : "bob35",
-  "timestamp" : 430,
-  "message" : "Successfully added to playlist."
-}, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 445,
   "message" : "Search returned 1 results",
   "results" : [ "I Don't Wanna Live Forever" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 450,
+  "timestamp" : 410,
   "message" : "Successfully selected I Don't Wanna Live Forever."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 460,
+  "timestamp" : 415,
   "message" : "Playback loaded successfully."
 }, {
-  "command" : "addRemoveInPlaylist",
+  "command" : "shuffle",
   "user" : "bob35",
-  "timestamp" : 480,
-  "message" : "Successfully added to playlist."
+  "timestamp" : 420,
+  "message" : "The loaded source is not a playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 500,
   "message" : "Search returned 1 results",
-  "results" : [ "Hustle Hard" ]
+  "results" : [ "Kings Dead" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 510,
-  "message" : "Successfully selected Hustle Hard."
+  "message" : "Successfully selected Kings Dead."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 520,
+  "timestamp" : 513,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
-  "timestamp" : 540,
+  "timestamp" : 515,
   "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 590,
+  "timestamp" : 550,
   "message" : "Search returned 1 results",
-  "results" : [ "Begin Again" ]
+  "results" : [ "Thinking Out Loud" ]
 }, {
   "command" : "select",
   "user" : "bob35",
-  "timestamp" : 650,
-  "message" : "Successfully selected Begin Again."
+  "timestamp" : 560,
+  "message" : "Successfully selected Thinking Out Loud."
 }, {
   "command" : "load",
   "user" : "bob35",
-  "timestamp" : 660,
+  "timestamp" : 563,
   "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
-  "timestamp" : 690,
+  "timestamp" : 565,
   "message" : "Successfully added to playlist."
 }, {
-  "command" : "search",
-  "user" : "bob35",
-  "timestamp" : 700,
-  "message" : "Search returned 1 results",
-  "results" : [ "My playlist" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 710,
-  "message" : "Successfully selected My playlist."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 740,
-  "message" : "Playback loaded successfully."
-}, {
   "command" : "status",
   "user" : "bob35",
-  "timestamp" : 800,
-  "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 329,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "shuffle",
-  "user" : "bob35",
-  "timestamp" : 850,
-  "message" : "Shuffle function activated successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 900,
-  "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 229,
-    "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
-  }
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1250,
-  "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 111,
-    "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
-  }
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1600,
-  "stats" : {
-    "name" : "I Don't Wanna Live Forever",
-    "remainedTime" : 231,
-    "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
-  }
-}, {
-  "command" : "shuffle",
-  "user" : "bob35",
-  "timestamp" : 1610,
-  "message" : "Shuffle function deactivated successfully."
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 1660,
-  "stats" : {
-    "name" : "I Don't Wanna Live Forever",
-    "remainedTime" : 171,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 2000,
-  "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 63,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : false
-  }
-}, {
-  "command" : "status",
-  "user" : "bob35",
-  "timestamp" : 2350,
+  "timestamp" : 3100,
   "stats" : {
     "name" : "",
     "remainedTime" : 0,
@@ -235,31 +143,69 @@
 }, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 2351,
+  "timestamp" : 3110,
   "message" : "Search returned 1 results",
-  "results" : [ "My playlist" ]
-}, {
-  "command" : "select",
-  "user" : "bob35",
-  "timestamp" : 2352,
-  "message" : "Successfully selected My playlist."
-}, {
-  "command" : "load",
-  "user" : "bob35",
-  "timestamp" : 2353,
-  "message" : "Playback loaded successfully."
+  "results" : [ "Colaj" ]
 }, {
   "command" : "shuffle",
   "user" : "bob35",
-  "timestamp" : 2360,
+  "timestamp" : 3120,
+  "message" : "Please load a source before using the shuffle function."
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 3130,
+  "message" : "Successfully selected Colaj."
+}, {
+  "command" : "load",
+  "user" : "bob35",
+  "timestamp" : 3140,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3150,
+  "stats" : {
+    "name" : "Blank Space",
+    "remainedTime" : 221,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3200,
+  "stats" : {
+    "name" : "Blank Space",
+    "remainedTime" : 171,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3250,
+  "stats" : {
+    "name" : "Blank Space",
+    "remainedTime" : 121,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 3260,
   "message" : "Shuffle function activated successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
-  "timestamp" : 2410,
+  "timestamp" : 3270,
   "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 332,
+    "name" : "Blank Space",
+    "remainedTime" : 101,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -267,10 +213,10 @@
 }, {
   "command" : "status",
   "user" : "bob35",
-  "timestamp" : 2750,
+  "timestamp" : 3320,
   "stats" : {
-    "name" : "Elevate",
-    "remainedTime" : 217,
+    "name" : "Blank Space",
+    "remainedTime" : 51,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -278,12 +224,39 @@
 }, {
   "command" : "status",
   "user" : "bob35",
-  "timestamp" : 3100,
+  "timestamp" : 3370,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 105,
+    "name" : "Blank Space",
+    "remainedTime" : 1,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
+  }
+}, {
+  "command" : "shuffle",
+  "user" : "bob35",
+  "timestamp" : 3680,
+  "message" : "Please load a source before using the shuffle function."
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3690,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "status",
+  "user" : "bob35",
+  "timestamp" : 3740,
+  "stats" : {
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
   }
 } ]

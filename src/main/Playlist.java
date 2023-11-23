@@ -11,6 +11,7 @@ public class Playlist {
     private boolean visibility = true;
     private ArrayList<UserInput> followers = new ArrayList<>();
     private String owner;
+    private ArrayList<SongInput> originalSongOrder;
 
     public Playlist(){
     }
@@ -58,6 +59,14 @@ public class Playlist {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public ArrayList<SongInput> getOriginalSongOrder() {
+        return originalSongOrder;
+    }
+
+    public void setOriginalSongOrder(ArrayList<SongInput> originalSongOrder) {
+        this.originalSongOrder = originalSongOrder;
     }
 
     public int getDuration() {

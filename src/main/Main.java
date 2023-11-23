@@ -14,10 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
@@ -120,7 +117,10 @@ public final class Main {
             switch(crtCommand.getCommand()) {
                 //  SEARCH COMMAND
                 case "search" -> {
-                    //  Clear player first
+                    //  Update all players first
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Clear user's player
                     if (!player.isEmpty()) {
                         for (ItemSelection item : player) {
                             if (item.getUser().equals(crtCommand.getUsername())) {
@@ -387,29 +387,27 @@ public final class Main {
                     playPauseOutput.put("user", crtCommand.getUsername());
                     playPauseOutput.put("timestamp", crtCommand.getTimestamp());
 
+                    //  Update the player
+                    updatePlayer(player, crtCommand, podcasts);
+
                     //  Looking for what the user is playing
                     int found = 0;
                     for (ItemSelection item : player) {
                         if (item.getUser().equals(crtCommand.getUsername())) {
                             if (item.isPaused()) {
                                 playPauseOutput.put("message", "Playback resumed successfully.");
+
+                                //  Resume
                                 item.setPaused(false);
-                                found = 1;
 
-                                //  Updating start time
-                                item.setStartTime(crtCommand.getTimestamp());
-
-                                break;
                             } else {
                                 playPauseOutput.put("message", "Playback paused successfully.");
+
+                                //  Pause
                                 item.setPaused(true);
-                                found = 1;
-
-                                //  Updating remaining time
-                                item.updateRemainingTime(crtCommand.getTimestamp());
-
-                                break;
                             }
+                            found = 1;
+                            break;
                         }
                     }
 
@@ -584,7 +582,7 @@ public final class Main {
                         //  Player was found and repeat state will be changed
 
                         //  First we update the time
-                        crtItem.updateRemainingTime(crtCommand.getTimestamp());
+                        updatePlayer(player, crtCommand, podcasts);
 
                         if (crtItem instanceof PlaylistSelection) {
                             switch (crtItem.getRepeat()) {
@@ -630,6 +628,47 @@ public final class Main {
                     }
 
                     outputs.add(repeatOutput);
+                }
+
+                case "shuffle" -> {
+                    ObjectNode shuffleOutput = objectMapper.createObjectNode();
+
+                    shuffleOutput.put("command", "shuffle");
+                    shuffleOutput.put("user", crtCommand.getUsername());
+                    shuffleOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Update player first
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Then we gather the user's player
+                    ItemSelection crtItem = null;
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            crtItem = item;
+                            break;
+                        }
+                    }
+
+                    if (crtItem == null) {
+                        //  No player was found
+                        shuffleOutput.put("message", "Please load a source before using the shuffle function.");
+                    } else {
+                        if (!(crtItem instanceof PlaylistSelection)) {
+                            //  Loaded source is not a playlist
+                            shuffleOutput.put("message", "The loaded source is not a playlist.");
+                        } else {
+                            //  All conditions met. Switch to shuffle/unshuffle
+                            PlaylistSelection copyItem = (PlaylistSelection) crtItem;
+
+                            //  Set the message and update playlist
+                            String message = getShuffleMessage(copyItem, crtCommand);
+
+                            shuffleOutput.put("message", message);
+                        }
+                    }
+
+                    outputs.add(shuffleOutput);
                 }
 
                 default -> {
@@ -970,7 +1009,7 @@ public final class Main {
             } else if (reqItem instanceof PlaylistSelection) {
                 Playlist playlistItem = ((PlaylistSelection) reqItem).getPlaylist();
 
-                //  If the podcast is playing we update the time
+                //  If the playlist is playing we update the time
                 if (!reqItem.isPaused()) {
                     reqItem.updateRemainingTime(crtCommand.getTimestamp());
                 }
@@ -985,7 +1024,7 @@ public final class Main {
                     //  Set remaining time
                     stats.put("remainedTime", 0);
                 } else {
-                    //  We find the current episode
+                    //  We find the current song
                     SongInput crtSong = null;
 
                     int duration = ((PlaylistSelection) reqItem).getPlaylist().getDuration();
@@ -1275,9 +1314,7 @@ public final class Main {
     }
 
     public static void setIntervals (PlaylistSelection playlist, Command crtCommand) {
-        //  First we check if the time needs to be updated
         int remainingTime = playlist.getRemainingTime();
-
         int duration = playlist.getPlaylist().getDuration();
 
         //  Now we find the song that needs repetition
@@ -1291,6 +1328,141 @@ public final class Main {
                 break;
             }
         }
+    }
+
+    public static String getShuffleMessage (PlaylistSelection copyItem, Command crtCommand) {
+        String message = "";
+
+        //  Shuffle
+        if (!copyItem.isShuffle()) {
+            //  Keep the original order for unshuffle
+            copyItem.getPlaylist().setOriginalSongOrder(new ArrayList<>(copyItem.getPlaylist().getSongs()));
+
+            //  Playlist must be up-to-date with remaining time
+            copyItem.updateRemainingTime(crtCommand.getTimestamp());
+
+            //  Keep track of the current song
+            SongInput crtSong = null;
+            int duration = copyItem.getPlaylist().getDuration();
+            int timeLeft = 0;
+
+            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                duration -= song.getDuration();
+
+                if (duration <= copyItem.getRemainingTime()) {
+                    crtSong = song;
+                    break;
+                }
+            }
+
+            //  Calculate how much time is left of the current song
+            timeLeft = copyItem.getRemainingTime() - duration;
+
+            //  Shuffle the songs;
+            Collections.shuffle(copyItem.getPlaylist().getSongs(), new Random(crtCommand.getSeed()));
+
+            //  Search the song that is currently playing
+            //  Calculate remaining time considering new order
+            int remainingTime = copyItem.getPlaylist().getDuration();
+            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                remainingTime -= song.getDuration();
+
+                if (song.equals(crtSong)) {
+                    remainingTime += timeLeft;
+                    break;
+                }
+            }
+
+            //  Set new remaining time
+            copyItem.setRemainingTime(remainingTime);
+            copyItem.setStartTime(crtCommand.getTimestamp());
+
+            //  If the repeat status is "Repeat Current Song", intervals must be updated
+            setIntervals(copyItem, crtCommand);
+
+            //  Set the output message
+            message = "Shuffle function activated successfully.";
+
+            //  Set shuffle status
+            copyItem.setShuffle(true);
+
+        //  Unshuffle
+        } else {
+            //  Playlist must be up-to-date with remaining time
+            copyItem.updateRemainingTime(crtCommand.getTimestamp());
+
+            //  Keep track of the current song
+            SongInput crtSong = null;
+            int duration = copyItem.getPlaylist().getDuration();
+            int timeLeft = 0;
+
+            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                duration -= song.getDuration();
+
+                if (duration <= copyItem.getRemainingTime()) {
+                    crtSong = song;
+                    break;
+                }
+            }
+
+            //  Calculate how much time is left of the current song
+            timeLeft = copyItem.getRemainingTime() - duration;
+
+            //  Reset the order
+            copyItem.getPlaylist().getSongs().clear();
+            copyItem.getPlaylist().getSongs().addAll(copyItem.getPlaylist().getOriginalSongOrder());
+
+            //  Search the song that is currently playing
+            //  Calculate remaining time considering new order
+            int remainingTime = copyItem.getPlaylist().getDuration();
+            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                remainingTime -= song.getDuration();
+
+                if (song.equals(crtSong)) {
+                    remainingTime += timeLeft;
+                    break;
+                }
+            }
+
+            //  Set new remaining time
+            copyItem.setRemainingTime(remainingTime);
+            copyItem.setStartTime(crtCommand.getTimestamp());
+
+            //  If the repeat status is "Repeat Current Song", intervals must be updated
+            setIntervals(copyItem, crtCommand);
+
+            //  Set the output message
+            message = "Shuffle function deactivated successfully.";
+
+            //  Set shuffle status
+            copyItem.setShuffle(false);
+        }
+
+        return message;
+    }
+
+    public static void updatePlayer (ArrayList<ItemSelection> player, Command crtCommand,
+                                     ArrayList<PodcastSelection> podcasts) {
+        //  Iterate through the player and update times
+        //  Remove all finished sources
+        ArrayList<ItemSelection> removableItems = new ArrayList<>();
+
+        for (ItemSelection item : player) {
+            item.updateRemainingTime(crtCommand.getTimestamp());
+
+            if (item.getRemainingTime() == 0) {
+                if (item instanceof PodcastSelection) {
+                    podcasts.remove(item);
+                }
+                removableItems.add(item);
+            }
+        }
+
+        for (ItemSelection item : removableItems) {
+            player.remove(item);
+        }
+
+        removableItems.clear();
     }
 }
 

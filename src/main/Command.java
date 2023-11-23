@@ -9,6 +9,7 @@ public class Command {
     private int itemNumber;
     private String playlistName;
     private int playlistId;
+    private int seed;
 
     public Command() {
     }
@@ -75,5 +76,13 @@ public class Command {
 
     public void setPlaylistId(int playlistId) {
         this.playlistId = playlistId;
+    }
+
+    public int getSeed() {
+        return seed;
+    }
+
+    public void setSeed(int seed) {
+        this.seed = seed;
     }
 }
