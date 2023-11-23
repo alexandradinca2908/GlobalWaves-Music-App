@@ -126,12 +126,17 @@
     "paused" : false
   }
 }, {
+  "command" : "next",
+  "user" : "bob35",
+  "timestamp" : 670,
+  "message" : "Skipped to next track successfully. The current track is Shape of You."
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 690,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 172,
+    "name" : "Shape of You",
+    "remainedTime" : 213,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -141,8 +146,8 @@
   "user" : "bob35",
   "timestamp" : 711,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 151,
+    "name" : "Shape of You",
+    "remainedTime" : 192,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -152,8 +157,8 @@
   "user" : "bob35",
   "timestamp" : 713,
   "stats" : {
-    "name" : "Start Me Up",
-    "remainedTime" : 149,
+    "name" : "Shape of You",
+    "remainedTime" : 190,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -186,12 +191,17 @@
     "paused" : false
   }
 }, {
+  "command" : "forward",
+  "user" : "bob35",
+  "timestamp" : 1050,
+  "message" : "Skipped forward successfully."
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 1051,
   "stats" : {
     "name" : "Airbnb: Joe Gebbia",
-    "remainedTime" : 2815,
+    "remainedTime" : 2725,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -218,11 +228,16 @@
   "timestamp" : 1389,
   "stats" : {
     "name" : "Airbnb: Joe Gebbia",
-    "remainedTime" : 2479,
+    "remainedTime" : 2389,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
   }
+}, {
+  "command" : "backward",
+  "user" : "bob35",
+  "timestamp" : 1390,
+  "message" : "Rewound successfully."
 }, {
   "command" : "status",
   "user" : "bob35",

@@ -671,6 +671,88 @@ public final class Main {
                     outputs.add(shuffleOutput);
                 }
 
+                case "forward" -> {
+                    ObjectNode forwardOutput = objectMapper.createObjectNode();
+
+                    forwardOutput.put("command", "forward");
+                    forwardOutput.put("user", crtCommand.getUsername());
+                    forwardOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  First we update the player
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Now we check for podcast
+                    ItemSelection crtItem = null;
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            crtItem = item;
+                        }
+                    }
+
+                    //  Get message and make changes
+                    String message = getForwardMessage(crtItem, crtCommand);
+                    forwardOutput.put("message", message);
+
+                    outputs.add(forwardOutput);
+                }
+
+                case "backward" -> {
+                    ObjectNode backwardOutput = objectMapper.createObjectNode();
+
+                    backwardOutput.put("command", "backward");
+                    backwardOutput.put("user", crtCommand.getUsername());
+                    backwardOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  First we update the player
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Now we check for podcast
+                    ItemSelection crtItem = null;
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            crtItem = item;
+                        }
+                    }
+
+                    //  Get message and make changes
+                    String message = getBackwardMessage(crtItem, crtCommand);
+                    backwardOutput.put("message", message);
+
+                    outputs.add(backwardOutput);
+                }
+
+                case "next" -> {
+                    ObjectNode nextOutput = objectMapper.createObjectNode();
+
+                    nextOutput.put("command", "next");
+                    nextOutput.put("user", crtCommand.getUsername());
+                    nextOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  First we update the player
+                    updatePlayer(player, crtCommand, podcasts);
+
+                    //  Now we check for podcast
+                    ItemSelection crtItem = null;
+
+                    for (ItemSelection item : player) {
+                        if (item.getUser().equals(crtCommand.getUsername())) {
+                            crtItem = item;
+                        }
+                    }
+
+                    //  Get message and make changes
+                    String message = getNextMessage(crtItem, crtCommand, player, podcasts);
+                    nextOutput.put("message", message);
+
+                    outputs.add(nextOutput);
+                }
+
+                case "prev" -> {
+
+                }
+                
                 default -> {
                     break;
                 }
@@ -1463,6 +1545,249 @@ public final class Main {
         }
 
         removableItems.clear();
+    }
+
+    public static String getForwardMessage(ItemSelection crtItem, Command crtCommand) {
+        String message = "";
+
+        //  Verify if the command is possible
+        if (crtItem == null) {
+            message = "Please load a source before skipping forward.";
+        } else {
+            if (!(crtItem instanceof PodcastSelection)) {
+                message = "The loaded source is not a podcast.";
+            } else {
+                //  We can now forward the podcast 90 seconds
+                PodcastSelection copyItem = (PodcastSelection) crtItem;
+
+                //  Find the current episode
+                EpisodeInput crtEp = null;
+                int duration = copyItem.getPodcast().getDuration();
+
+                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                    duration -= episode.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        crtEp = episode;
+                        break;
+                    }
+                }
+
+                //  Forward
+                copyItem.setRemainingTime(crtItem.getRemainingTime() - 90);
+
+                //  If the podcast finished, we update the time
+                if (copyItem.getRemainingTime() < 0) {
+                    copyItem.updateRemainingTime(crtCommand.getTimestamp());
+
+                    //  If it didn't, we check to see if we jumped to the next episode
+                } else {
+                    duration = copyItem.getPodcast().getDuration();
+
+                    for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                        duration -= episode.getDuration();
+
+                        if (duration < copyItem.getRemainingTime()) {
+                            //  Compare episodes
+                            //  If we went to the next episode, start from beginning
+                            if (!episode.equals(crtEp)) {
+                                duration += episode.getDuration();
+                                copyItem.setRemainingTime(duration);
+                            }
+                            break;
+                        }
+                    }
+                }
+                message = "Skipped forward successfully.";
+            }
+        }
+
+        return message;
+    }
+
+    public static String getBackwardMessage(ItemSelection crtItem, Command crtCommand) {
+        String message = "";
+
+        //  Verify if the command is possible
+        if (crtItem == null) {
+            message = "Please select a source before rewinding.";
+        } else {
+            if (!(crtItem instanceof PodcastSelection)) {
+                message = "The loaded source is not a podcast.";
+            } else {
+                //  We can now backward the podcast 90 seconds
+                PodcastSelection copyItem = (PodcastSelection) crtItem;
+
+                //  Find the current episode
+                EpisodeInput crtEp = null;
+                int duration = copyItem.getPodcast().getDuration();
+
+                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                    duration -= episode.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        crtEp = episode;
+                        break;
+                    }
+                }
+
+                //  Backward
+                copyItem.setRemainingTime(crtItem.getRemainingTime() + 90);
+
+                //  Check to see if we jumped back to the start
+                duration = copyItem.getPodcast().getDuration();
+
+                if (copyItem.getRemainingTime() > duration) {
+                    copyItem.setRemainingTime(duration);
+                } else {
+                    for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                        duration -= episode.getDuration();
+
+                        if (duration < copyItem.getRemainingTime()) {
+                            //  Compare episodes
+                            //  If we went to the next episode, start from beginning
+                            if (!episode.equals(crtEp)) {
+                                duration += episode.getDuration();
+                                copyItem.setRemainingTime(duration);
+                            }
+                            break;
+                        }
+                    }
+                }
+                message = "Rewound successfully.";
+            }
+        }
+
+        return message;
+    }
+
+    public static String getNextMessage (ItemSelection crtItem, Command crtCommand, ArrayList<ItemSelection> player,
+                                         ArrayList<PodcastSelection> podcasts) {
+        String message = "";
+
+        //  Verify if the command is possible
+        if (crtItem == null) {
+            message = "Please load a source before skipping to the next track.";
+        } else {
+            //  Now we can execute the command
+            if (crtItem instanceof SongSelection) {
+                message = "Please load a source before skipping to the next track.";
+
+                crtItem.setRemainingTime(0);
+                crtItem.setPaused(true);
+
+                player.remove(crtItem);
+
+            } else if (crtItem instanceof PodcastSelection) {
+                PodcastSelection copyItem = (PodcastSelection) crtItem;
+                EpisodeInput crtEp = null;
+
+                //  Find the current episode
+                int duration = copyItem.getPodcast().getDuration();
+
+                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+                    duration -= episode.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        crtEp = episode;
+                        break;
+                    }
+                }
+
+                if (duration > 0) {
+                    copyItem.setRemainingTime(duration);
+                    int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp);
+
+                    message = "Skipped to next track successfully. The current track is " +
+                            copyItem.getPodcast().getEpisodes().get(index + 1);
+
+                } else if (duration == 0) {
+                    //  Check repeat status to take action
+                    if (copyItem.getRepeat().equals("No Repeat")) {
+                        //  Stop podcast
+                        copyItem.setRemainingTime(0);
+                        copyItem.setPaused(true);
+                        player.remove(copyItem);
+                        podcasts.remove(copyItem);
+
+                        message = "Please load a source before skipping to the next track.";
+
+                    } else if (copyItem.getRepeat().equals("Repeat Once")) {
+                        //  Restart podcast
+                        copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+                        copyItem.setPaused(false);
+                        copyItem.setRepeat("No Repeat");
+
+                        message = "Skipped to next track successfully. The current track is " +
+                                copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+
+                    } else if (copyItem.getRepeat().equals("Repeat Infinite")){
+                        //  Restart podcast but keep repeat status
+                        copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+                        copyItem.setPaused(false);
+
+                        message = "Skipped to next track successfully. The current track is " +
+                                copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+                    }
+                }
+            } else if (crtItem instanceof PlaylistSelection) {
+                PlaylistSelection copyItem = (PlaylistSelection) crtItem;
+                SongInput crtSong = null;
+
+                //  Find the current song
+                int duration = copyItem.getPlaylist().getDuration();
+                int prevDuration = duration;
+
+                for (SongInput song : copyItem.getPlaylist().getSongs()) {
+                    prevDuration = duration;
+                    duration -= song.getDuration();
+
+                    if (duration < copyItem.getRemainingTime()) {
+                        crtSong = song;
+                        break;
+                    }
+                }
+
+                if (duration > 0) {
+                    if (copyItem.getRepeat().equals("Repeat Current Song")) {
+                        //  Restart song
+                        copyItem.setRemainingTime(prevDuration);
+                        copyItem.setPaused(false);
+
+                        message = "Skipped to next track successfully. The current track is " +
+                                crtSong.getName() + ".";
+                    } else {
+                        //  Next song
+                        copyItem.setRemainingTime(duration);
+
+                        int index = copyItem.getPlaylist().getSongs().indexOf(crtSong);
+
+                        message = "Skipped to next track successfully. The current track is " +
+                                copyItem.getPlaylist().getSongs().get(index + 1).getName() + ".";
+                    }
+                } else if (duration == 0) {
+                    //  Check repeat status to take action
+                    if (copyItem.getRepeat().equals("No Repeat")) {
+                        //  Stop playlist
+                        copyItem.setRemainingTime(0);
+                        copyItem.setPaused(true);
+                        player.remove(copyItem);
+
+                        message = "Please load a source before skipping to the next track.";
+
+                    } else if (copyItem.getRepeat().equals("Repeat Infinite")){
+                        //  Restart playlist
+                        copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
+                        copyItem.setPaused(false);
+
+                        message = "Skipped to next track successfully. The current track is " +
+                                copyItem.getPlaylist().getSongs().get(0).getName() + ".";
+                    }
+                }
+            }
+        }
+
+        return message;
     }
 }
 
