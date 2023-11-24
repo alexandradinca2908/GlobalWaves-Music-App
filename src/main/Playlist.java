@@ -1,11 +1,10 @@
 package main;
 
 import fileio.input.SongInput;
-import fileio.input.UserInput;
 
 import java.util.ArrayList;
 
-public final class Playlist implements Comparable<Playlist>{
+public final class Playlist implements Comparable<Playlist> {
     private String name;
     private ArrayList<SongInput> songs = new ArrayList<>();
     private boolean visibility = true;
@@ -14,14 +13,14 @@ public final class Playlist implements Comparable<Playlist>{
     private ArrayList<SongInput> originalSongOrder;
 
     @Override
-    public int compareTo(Playlist playlist) {
+    public int compareTo(final Playlist playlist) {
         return this.followers.size() - playlist.getFollowers().size();
     }
 
-    public Playlist(){
+    public Playlist() {
     }
 
-    public Playlist(String name, String owner) {
+    public Playlist(final String name, final String owner) {
         this.name = name;
         this.owner = owner;
     }
@@ -30,7 +29,7 @@ public final class Playlist implements Comparable<Playlist>{
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -38,7 +37,7 @@ public final class Playlist implements Comparable<Playlist>{
         return songs;
     }
 
-    public void setSongs(ArrayList<SongInput> songs) {
+    public void setSongs(final ArrayList<SongInput> songs) {
         this.songs = songs;
     }
 
@@ -46,7 +45,7 @@ public final class Playlist implements Comparable<Playlist>{
         return visibility;
     }
 
-    public void setVisibility(boolean visibility) {
+    public void setVisibility(final boolean visibility) {
         this.visibility = visibility;
     }
 
@@ -54,7 +53,7 @@ public final class Playlist implements Comparable<Playlist>{
         return followers;
     }
 
-    public void setFollowers(ArrayList<String> followers) {
+    public void setFollowers(final ArrayList<String> followers) {
         this.followers = followers;
     }
 
@@ -62,7 +61,7 @@ public final class Playlist implements Comparable<Playlist>{
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(final String owner) {
         this.owner = owner;
     }
 
@@ -70,10 +69,16 @@ public final class Playlist implements Comparable<Playlist>{
         return originalSongOrder;
     }
 
-    public void setOriginalSongOrder(ArrayList<SongInput> originalSongOrder) {
+    public void setOriginalSongOrder(final ArrayList<SongInput>
+                                             originalSongOrder) {
         this.originalSongOrder = originalSongOrder;
     }
 
+    /**
+     * This method calculates the duration of all songs in the playlist
+     *
+     * @return The duration of the playlist
+     */
     public int getDuration() {
         int duration = 0;
         for (SongInput song : this.songs) {

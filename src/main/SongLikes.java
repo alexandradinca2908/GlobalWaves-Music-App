@@ -2,13 +2,13 @@ package main;
 
 import fileio.input.SongInput;
 
-public final class SongLikes implements Comparable<SongLikes>{
+public final class SongLikes implements Comparable<SongLikes> {
     private SongInput song;
     private int likes;
 
 
     @Override
-    public int compareTo(SongLikes songLikes) {
+    public int compareTo(final SongLikes songLikes) {
         return this.likes - songLikes.likes;
     }
 
@@ -19,7 +19,7 @@ public final class SongLikes implements Comparable<SongLikes>{
         return song;
     }
 
-    public void setSong(SongInput song) {
+    public void setSong(final SongInput song) {
         this.song = song;
     }
 
@@ -27,7 +27,7 @@ public final class SongLikes implements Comparable<SongLikes>{
         return likes;
     }
 
-    public void setLikes(int likes) {
+    public void setLikes(final int likes) {
         this.likes = likes;
     }
 }

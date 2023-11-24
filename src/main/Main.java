@@ -81,7 +81,7 @@ public final class Main {
         // TODO add your implementation
 
         //  Reading commands from input file
-        ArrayList<Command> commands = objectMapper.readValue(
+        final ArrayList<Command> commands = objectMapper.readValue(
                 new File(filePathInput),
                 new TypeReference<ArrayList<Command>>() {
                 }
@@ -162,7 +162,7 @@ public final class Main {
                             ArrayList<SongInput> result = new ArrayList<>();
 
                             //  Found songs will be added in result array
-                            searchForSongs(filters, result, library);
+                            SearchSelect.searchForSongs(filters, result, library);
 
                             //  Truncate results if needed
                             if (result.size() > Constants.MAX_SIZE_5) {
@@ -181,7 +181,7 @@ public final class Main {
                             searchOutput.putPOJO("results", songNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, songNames, "song");
+                            SearchSelect.storeResultForSelect(lastSearchResult, songNames, "song");
                             steps[0] = 1;
 
                             outputs.add(searchOutput);
@@ -192,7 +192,7 @@ public final class Main {
                             ArrayList<Playlist> result = new ArrayList<>();
 
                             //  Found playlists will be added in result array
-                            searchForPlaylists(filters, result, playlists);
+                            SearchSelect.searchForPlaylists(filters, result, playlists);
 
                             //  Taking out private playlists
                             String username = crtCommand.getUsername();
@@ -216,7 +216,8 @@ public final class Main {
                             searchOutput.putPOJO("results", playlistNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, playlistNames, "playlist");
+                            SearchSelect.storeResultForSelect(lastSearchResult,
+                                    playlistNames, "playlist");
                             steps[0] = 1;
 
                             outputs.add(searchOutput);
@@ -227,7 +228,7 @@ public final class Main {
                             ArrayList<PodcastInput> result = new ArrayList<>();
 
                             //  Found podcasts will be added in result array
-                            searchForPodcasts(filters, result, library);
+                            SearchSelect.searchForPodcasts(filters, result, library);
 
                             //  Truncate results if needed
                             if (result.size() > Constants.MAX_SIZE_5) {
@@ -246,7 +247,8 @@ public final class Main {
                             searchOutput.putPOJO("results", podcastNames);
 
                             //  Storing the result in case we need to select it later
-                            storeResultForSelect(lastSearchResult, podcastNames, "podcast");
+                            SearchSelect.storeResultForSelect(lastSearchResult,
+                                    podcastNames, "podcast");
                             steps[0] = 1;
 
                             outputs.add(searchOutput);
@@ -265,7 +267,8 @@ public final class Main {
                     selectOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Creating the message
-                    String message = GetMessages.getSelectMessage(lastSearchResult, crtCommand, steps);
+                    String message = GetMessages.getSelectMessage(lastSearchResult,
+                            crtCommand, steps);
                     selectOutput.put("message", message);
 
                     outputs.add(selectOutput);
@@ -301,7 +304,7 @@ public final class Main {
 
                         //  Loading the song into the database
                         if (lastSearchResult.get(0).equals("song")) {
-                            SongSelection selectedSong = GetMessages.getSongSelection(crtCommand,
+                            SongSelection selectedSong = SearchSelect.getSongSelection(crtCommand,
                                     library, lastSearchResult);
 
                             //  Clearing other load from the same user
@@ -318,7 +321,8 @@ public final class Main {
 
                         //  Loading the playlist into the database
                         if (lastSearchResult.get(0).equals("playlist")) {
-                            PlaylistSelection selectedPlaylist = getPlaylistSelection(crtCommand,
+                            PlaylistSelection selectedPlaylist =
+                                    SearchSelect.getPlaylistSelection(crtCommand,
                                     playlists, lastSearchResult);
 
                             //  Clearing other load from the same user
@@ -335,7 +339,8 @@ public final class Main {
 
                         //  Loading the podcast into the database
                         if (lastSearchResult.get(0).equals("podcast")) {
-                            PodcastSelection selectedPodcast = getPodcastSelection(crtCommand,
+                            PodcastSelection selectedPodcast =
+                                    SearchSelect.getPodcastSelection(crtCommand,
                                     library, lastSearchResult);
 
                             //  Clearing other load from the same user
@@ -400,7 +405,7 @@ public final class Main {
                     }
 
                     //  Setting the stats
-                    ObjectNode stats = getStats(reqItem, objectMapper);
+                    ObjectNode stats = ItemSelection.getStats(reqItem, objectMapper);
                     statusOutput.set("stats", stats);
 
                     outputs.add(statusOutput);
@@ -511,7 +516,8 @@ public final class Main {
                     likeOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Get message and make proper modifications to the user's liked songs
-                    String message = GetMessages.getLikeMessage(player, usersPlaylists, crtCommand, songsLikes);
+                    String message = GetMessages.getLikeMessage(player, usersPlaylists,
+                            crtCommand, songsLikes);
 
                     likeOutput.put("message", message);
 
@@ -631,7 +637,7 @@ public final class Main {
 
                                     //  Setting intervals for the song loop
                                     PlaylistSelection copy = (PlaylistSelection) crtItem;
-                                    setIntervals(copy);
+                                    PlaylistSelection.setIntervals(copy);
                                 }
                                 case "Repeat Current Song" -> {
                                     crtItem.setRepeat("No Repeat");
@@ -730,7 +736,8 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = GetMessages.getForwardMessage(crtItem, crtCommand);
+                    String message = GetMessages.getForwardMessage(crtItem, crtCommand,
+                            player, podcasts);
                     forwardOutput.put("message", message);
 
                     outputs.add(forwardOutput);
@@ -808,7 +815,7 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = GetMessages.getPrevMessage(crtItem, player);
+                    String message = GetMessages.getPrevMessage(crtItem);
                     prevOutput.put("message", message);
 
                     outputs.add(prevOutput);
@@ -847,8 +854,8 @@ public final class Main {
 
                             //  The follow/unfollow command can be executed
                         } else {
-                            String message = GetMessages.getFollowMessage(wantedPlaylist, crtCommand,
-                                    usersPlaylists);
+                            String message = GetMessages.getFollowMessage(wantedPlaylist,
+                                    crtCommand, usersPlaylists);
                             followOutput.put("message", message);
                         }
 
@@ -870,7 +877,8 @@ public final class Main {
                     switchOutput.put("timestamp", crtCommand.getTimestamp());
 
                     //  Get message and make changes
-                    String message = GetMessages.getSwitchVisibilityMessage(usersPlaylists, crtCommand);
+                    String message = GetMessages.getSwitchVisibilityMessage(usersPlaylists,
+                            crtCommand);
                     switchOutput.put("message", message);
 
                     outputs.add(switchOutput);
@@ -938,409 +946,17 @@ public final class Main {
         objectWriter.writeValue(new File(filePathOutput), outputs);
     }
 
-    //  Search command function that filters all songs
-    public static void searchForSongs(Filters filters, ArrayList<SongInput> result,
-                                      LibraryInput library) {
-        //  Add all songs containing the searched name
-        if (filters.getName() != null) {
-            for (SongInput song : library.getSongs()) {
-                if (song.getName().startsWith(filters.getName())) {
-                    result.add(song);
-                }
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs from unwanted albums
-        if (result.isEmpty()) {
-            if (filters.getAlbum() != null) {
-                for (SongInput song : library.getSongs()) {
-                    if (song.getAlbum().equals(filters.getAlbum())) {
-                        result.add(song);
-                    }
-                }
-            }
-        } else {
-            if (filters.getAlbum() != null) {
-                result.removeIf(song -> !song.getAlbum().equals(filters.getAlbum()));
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs with unwanted tags
-        if (result.isEmpty()) {
-            if (filters.getTags() != null) {
-                for (SongInput song : library.getSongs()) {
-                    int hasTags = 1;
-                    for (String tag : filters.getTags()) {
-                        if (!song.getTags().contains(tag)) {
-                            hasTags = 0;
-                            break;
-                        }
-                    }
-                    if (hasTags == 1) {
-                        result.add(song);
-                    }
-                }
-            }
-        } else {
-            if (filters.getTags() != null) {
-                for (SongInput song : result) {
-                    for (String tag : filters.getTags()) {
-                        if (!song.getTags().contains(tag)) {
-                            result.remove(song);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs with mismatched lyrics
-        if (result.isEmpty()) {
-            if (filters.getLyrics() != null) {
-                for (SongInput song : library.getSongs()) {
-                    if (song.getLyrics().toLowerCase().contains(filters.getLyrics().toLowerCase())) {
-                        result.add(song);
-                    }
-                }
-            }
-        } else {
-            if (filters.getLyrics() != null) {
-                result.removeIf(song -> !song.getLyrics().contains(filters.getLyrics()));
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs from wrong genre
-        if (result.isEmpty()) {
-            if (filters.getGenre() != null) {
-                for (SongInput song : library.getSongs()) {
-                    if (song.getGenre().equalsIgnoreCase(filters.getGenre())) {
-                        result.add(song);
-                    }
-                }
-            }
-        } else {
-            if (filters.getGenre() != null) {
-                result.removeIf(song -> !song.getGenre().equalsIgnoreCase(filters.getGenre()));
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs from wrong years
-        if (result.isEmpty()) {
-            if (filters.getReleaseYear() != null) {
-                //  Extract the </> operator and the year from original filter
-                char op = filters.getReleaseYear().charAt(0);
-                int year = Integer.parseInt(filters.getReleaseYear().substring(1));
-
-                if (op == '>') {
-                    for (SongInput song : library.getSongs()) {
-                        if (song.getReleaseYear() > year) {
-                            result.add(song);
-                        }
-                    }
-                } else {
-                    for (SongInput song : library.getSongs()) {
-                        if (song.getReleaseYear() < year) {
-                            result.add(song);
-                        }
-                    }
-                }
-
-            }
-        } else {
-            if (filters.getReleaseYear() != null) {
-                //  Extract the </> operator and the year from original filter
-                char op = filters.getReleaseYear().charAt(0);
-                int year = Integer.parseInt(filters.getReleaseYear().substring(1));
-
-                if (op == '>') {
-                    result.removeIf(song -> song.getReleaseYear() < year);
-                } else {
-                    result.removeIf(song -> song.getReleaseYear() > year);
-                }
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs from other artists
-        if (result.isEmpty()) {
-            if (filters.getArtist() != null) {
-                for (SongInput song : library.getSongs()) {
-                    if (song.getArtist().equals(filters.getArtist())) {
-                        result.add(song);
-                    }
-                }
-            }
-        } else {
-            if (filters.getArtist() != null) {
-                result.removeIf(song -> !song.getArtist().equals(filters.getArtist()));
-            }
-        }
-    }
-
-    //  Search command function that filters all playlists
-    public static void searchForPlaylists(Filters filters, ArrayList<Playlist> result,
-                                          ArrayList<Playlist> playlists) {
-        //  Add all playlists containing the searched name
-        if (filters.getName() != null) {
-            for (Playlist playlist : playlists) {
-                if (playlist.getName().startsWith(filters.getName())) {
-                    result.add(playlist);
-                }
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove playlists from other owners
-        if (result.isEmpty()) {
-            if (filters.getOwner() != null) {
-                for (Playlist playlist : playlists) {
-                    if (playlist.getOwner().equals(filters.getOwner())) {
-                        result.add(playlist);
-                    }
-                }
-            }
-        } else {
-            if (filters.getOwner() != null) {
-                result.removeIf(playlist -> !playlist.getOwner().equals(filters.getOwner()));
-            }
-        }
-    }
-
-    public static void searchForPodcasts(Filters filters, ArrayList<PodcastInput> result,
-                                         LibraryInput library) {
-        //  Add all playlists containing the searched name
-        if (filters.getName() != null) {
-            for (PodcastInput podcast : library.getPodcasts()) {
-                if (podcast.getName().startsWith(filters.getName())) {
-                    result.add(podcast);
-                }
-            }
-        }
-
-        //  Initialize result if it is still empty
-        //  Else, parse the array and remove songs from other owners
-        if (result.isEmpty()) {
-            if (filters.getOwner() != null) {
-                for (PodcastInput podcast : library.getPodcasts()) {
-                    if (podcast.getOwner().equals(filters.getOwner())) {
-                        result.add(podcast);
-                    }
-                }
-            }
-        } else {
-            if (filters.getOwner() != null) {
-                result.removeIf(podcast -> !podcast.getOwner().equals(filters.getOwner()));
-            }
-        }
-    }
-
-    public static PlaylistSelection getPlaylistSelection(Command crtCommand,
-                                                         ArrayList<Playlist> playlists,
-                                                         ArrayList<String> lastSearchResult) {
-        PlaylistSelection selectedPlaylist = new PlaylistSelection();
-        //  Set name
-        for (Playlist playlist : playlists) {
-            if (playlist.getName().equals(lastSearchResult.get(1))) {
-                selectedPlaylist.setPlaylist(playlist);
-                break;
-            }
-        }
-        //  Set user
-        selectedPlaylist.setUser(crtCommand.getUsername());
-        //  Set start time
-        selectedPlaylist.setStartTime(crtCommand.getTimestamp());
-        //  Set remaining time
-        selectedPlaylist.setRemainingTime(selectedPlaylist.getPlaylist().getDuration());
-
-        return selectedPlaylist;
-    }
-
-    public static PodcastSelection getPodcastSelection(Command crtCommand, LibraryInput library,
-                                                       ArrayList<String> lastSearchResult) {
-        PodcastSelection selectedPodcast = new PodcastSelection();
-        //  Set name
-        for (PodcastInput podcast : library.getPodcasts()) {
-            if (podcast.getName().equals(lastSearchResult.get(1))) {
-                selectedPodcast.setPodcast(podcast);
-                break;
-            }
-        }
-        //  Set user
-        selectedPodcast.setUser(crtCommand.getUsername());
-        //  Set start time
-        selectedPodcast.setStartTime(crtCommand.getTimestamp());
-        //  Set remaining time
-        selectedPodcast.setRemainingTime(selectedPodcast.getPodcast().getDuration());
-
-        return selectedPodcast;
-    }
-
-    public static void storeResultForSelect(ArrayList<String> lastSearchResult,
-                                            ArrayList<String> names, String type) {
-        //  First element specifies the type of items searched
-        //  But first we need to clear the old search
-        lastSearchResult.clear();
-        if (!names.isEmpty()) {
-            lastSearchResult.add(type);
-            lastSearchResult.addAll(names);
-        }
-    }
-
-    public static ObjectNode getStats(ItemSelection reqItem, final ObjectMapper objectMapper) {
-        ObjectNode stats = objectMapper.createObjectNode();
-
-        if (reqItem == null) {
-            //  If the user does not have an active player, we set default stats
-            stats.put("name", "");
-            stats.put("remainedTime", 0);
-            stats.put("repeat", "No Repeat");
-            stats.put("shuffle", false);
-            stats.put("paused", true);
-        } else {
-            //  Downsize item for JSON details
-            if (reqItem instanceof SongSelection) {
-                SongInput songItem = ((SongSelection) reqItem).getSong();
-
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                //  Set name
-                if (remainingTime == 0) {
-                    stats.put("name", "");
-                } else {
-                    stats.put("name", songItem.getName());
-                }
-
-                //  Set remaining time
-                stats.put("remainedTime", remainingTime);
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-
-            } else if (reqItem instanceof PlaylistSelection) {
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                if (remainingTime == 0) {
-                    //  Set name
-                    stats.put("name", "");
-
-                    //  Set remaining time
-                    stats.put("remainedTime", 0);
-                } else {
-                    //  We find the current song
-                    SongInput crtSong = null;
-
-                    int duration = ((PlaylistSelection) reqItem).getPlaylist().getDuration();
-
-                    for (SongInput song : ((PlaylistSelection) reqItem).getPlaylist().getSongs()) {
-                        duration -= song.getDuration();
-
-                        if (duration < remainingTime) {
-                            crtSong = song;
-                            break;
-                        }
-                    }
-
-                    //  Set name
-                    stats.put("name", crtSong.getName());
-
-                    //  Set remaining time
-                    stats.put("remainedTime", remainingTime - duration);
-                }
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-
-            } else if (reqItem instanceof PodcastSelection) {
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                if (remainingTime == 0) {
-                    //  Set name
-                    stats.put("name", "");
-
-                    //  Set remaining time
-                    stats.put("remainedTime", 0);
-                } else {
-                    //  We find the current episode
-                    EpisodeInput crtEpisode = null;
-                    PodcastSelection copyItem = (PodcastSelection) reqItem;
-                    int duration = ((PodcastSelection) reqItem).getPodcast().getDuration();
-
-                    for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
-                        duration -= episode.getDuration();
-
-                        if (duration < remainingTime) {
-                            crtEpisode = episode;
-                            break;
-                        }
-                    }
-
-                    //  Set name
-                    stats.put("name", crtEpisode.getName());
-
-                    //  Set remaining time
-                    stats.put("remainedTime", remainingTime - duration);
-                }
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-            }
-        }
-
-        return stats;
-    }
-
-    public static void setIntervals(PlaylistSelection playlist) {
-        int remainingTime = playlist.getRemainingTime();
-        int duration = playlist.getPlaylist().getDuration();
-
-        //  Now we find the song that needs repetition
-        for (SongInput song : playlist.getPlaylist().getSongs()) {
-            duration -= song.getDuration();
-
-            if (duration < remainingTime) {
-                playlist.setStartTimestamp(duration + song.getDuration());
-                playlist.setStopTimestamp(duration);
-
-                break;
-            }
-        }
-    }
-
-
-    public static void updatePlayer(ArrayList<ItemSelection> player, Command crtCommand,
-                                    ArrayList<PodcastSelection> podcasts) {
+    /**
+     * This method updates the current time of all unpaused songs in the player
+     *
+     * @param player The array that keeps all user players in check
+     * @param crtCommand The current command with all its data
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     */
+    public static void updatePlayer(final ArrayList<ItemSelection> player,
+                                    final Command crtCommand,
+                                    final ArrayList<PodcastSelection> podcasts) {
         //  Iterate through the player and update times
         //  Remove all finished sources
         ArrayList<ItemSelection> removableItems = new ArrayList<>();

@@ -12,12 +12,12 @@ public final class PodcastSelection extends ItemSelection {
         return podcast;
     }
 
-    public void setPodcast(PodcastInput podcast) {
+    public void setPodcast(final PodcastInput podcast) {
         this.podcast = podcast;
     }
 
     @Override
-    public void updateRemainingTime(int crtTimestamp) {
+    public void updateRemainingTime(final int crtTimestamp) {
         if (!isPaused()) {
             int remainingTime = this.getRemainingTime() - (crtTimestamp - getStartTime());
 

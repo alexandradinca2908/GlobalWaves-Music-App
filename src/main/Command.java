@@ -1,7 +1,7 @@
 package main;
 
 public final class Command {
-    private String command;
+    private String command = null;
     private String username;
     private int timestamp;
     private String type;
@@ -18,7 +18,7 @@ public final class Command {
         return command;
     }
 
-    public void setCommand(String command) {
+    public void setCommand(final String command) {
         this.command = command;
     }
 
@@ -26,7 +26,7 @@ public final class Command {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
@@ -34,7 +34,7 @@ public final class Command {
         return timestamp;
     }
 
-    public void setTimestamp(int timestamp) {
+    public void setTimestamp(final int timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -42,7 +42,7 @@ public final class Command {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(final String type) {
         this.type = type;
     }
 
@@ -50,7 +50,7 @@ public final class Command {
         return filters;
     }
 
-    public void setFilters(Filters filters) {
+    public void setFilters(final Filters filters) {
         this.filters = filters;
     }
 
@@ -58,7 +58,7 @@ public final class Command {
         return itemNumber;
     }
 
-    public void setItemNumber(int itemNumber) {
+    public void setItemNumber(final int itemNumber) {
         this.itemNumber = itemNumber;
     }
 
@@ -66,7 +66,7 @@ public final class Command {
         return playlistName;
     }
 
-    public void setPlaylistName(String playlistName) {
+    public void setPlaylistName(final String playlistName) {
         this.playlistName = playlistName;
     }
 
@@ -74,7 +74,7 @@ public final class Command {
         return playlistId;
     }
 
-    public void setPlaylistId(int playlistId) {
+    public void setPlaylistId(final int playlistId) {
         this.playlistId = playlistId;
     }
 
@@ -82,7 +82,7 @@ public final class Command {
         return seed;
     }
 
-    public void setSeed(int seed) {
+    public void setSeed(final int seed) {
         this.seed = seed;
     }
 }

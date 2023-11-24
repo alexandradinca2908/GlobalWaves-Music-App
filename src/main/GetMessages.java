@@ -1,7 +1,6 @@
 package main;
 
 import fileio.input.EpisodeInput;
-import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 
 import java.util.ArrayList;
@@ -13,7 +12,15 @@ public final class GetMessages {
     private GetMessages() {
     }
 
-    public static String getShuffleMessage(PlaylistSelection copyItem, Command crtCommand) {
+    /**
+     * This method shuffles/unshuffles the songs
+     *
+     * @param copyItem The cast copy of the playlist that needs shuffle
+     * @param crtCommand The shuffle command with all its data
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getShuffleMessage(final PlaylistSelection copyItem,
+                                           final Command crtCommand) {
         String message;
 
         //  Shuffle
@@ -61,7 +68,7 @@ public final class GetMessages {
             copyItem.setStartTime(crtCommand.getTimestamp());
 
             //  If the repeat status is "Repeat Current Song", intervals must be updated
-            Main.setIntervals(copyItem);
+            PlaylistSelection.setIntervals(copyItem);
 
             //  Set the output message
             message = "Shuffle function activated successfully.";
@@ -109,7 +116,7 @@ public final class GetMessages {
             copyItem.setStartTime(crtCommand.getTimestamp());
 
             //  If the repeat status is "Repeat Current Song", intervals must be updated
-            Main.setIntervals(copyItem);
+            PlaylistSelection.setIntervals(copyItem);
 
             //  Set the output message
             message = "Shuffle function deactivated successfully.";
@@ -121,8 +128,16 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getSelectMessage(ArrayList<String> lastSearchResult, Command crtCommand,
-                                          int[] steps) {
+    /**
+     * This method selects one item from the last search
+     *
+     * @param lastSearchResult The array containing the search result and its type
+     * @param crtCommand The select command with all its data
+     * @param steps The array that checks whether search and select were executed
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getSelectMessage(final ArrayList<String> lastSearchResult,
+                                          final Command crtCommand, final int[] steps) {
         String message;
         if (steps[0] == 0) {
             message = "Please conduct a search before making a selection.";
@@ -136,29 +151,17 @@ public final class GetMessages {
         return message;
     }
 
-    public static SongSelection getSongSelection(Command crtCommand, LibraryInput library,
-                                                 ArrayList<String> lastSearchResult) {
-        SongSelection selectedSong = new SongSelection();
-        //  Set song
-        for (SongInput song : library.getSongs()) {
-            if (song.getName().equals(lastSearchResult.get(1))) {
-                selectedSong.setSong(song);
-                break;
-            }
-        }
-
-        //  Set user
-        selectedSong.setUser(crtCommand.getUsername());
-        //  Set start time
-        selectedSong.setStartTime(crtCommand.getTimestamp());
-        //  Set remaining time
-        selectedSong.setRemainingTime(selectedSong.getSong().getDuration());
-
-        return selectedSong;
-    }
-
-    public static String getAddRemoveMessage(ArrayList<ItemSelection> player,
-                                             ArrayList<Playlist> playlists, Command crtCommand) {
+    /**
+     * This method adds the loaded song to a playlist
+     *
+     * @param player The array that keeps all user players in check
+     * @param playlists The array of all user playlists
+     * @param crtCommand The addRemoveSong command with all its data
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getAddRemoveMessage(final ArrayList<ItemSelection> player,
+                                             final ArrayList<Playlist> playlists,
+                                             final Command crtCommand) {
         String message;
 
         //  First we check to see if the user has anything loaded
@@ -233,9 +236,19 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getLikeMessage(ArrayList<ItemSelection> player,
-                                        ArrayList<UserPlaylists> usersPlaylists,
-                                        Command crtCommand, ArrayList<SongLikes> songsLikes) {
+    /**
+     * This method likes or dislikes a song
+     *
+     * @param player The array that keeps all user players in check
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param crtCommand The like command with all its data
+     * @param songsLikes The array of songs and their respective likes
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getLikeMessage(final ArrayList<ItemSelection> player,
+                                        final ArrayList<UserPlaylists> usersPlaylists,
+                                        final Command crtCommand,
+                                        final ArrayList<SongLikes> songsLikes) {
         String message;
 
         //  We begin by checking if there is a loaded source, the source MUST be a song
@@ -385,7 +398,18 @@ public final class GetMessages {
 
         return message;
     }
-    public static String getForwardMessage(ItemSelection crtItem, Command crtCommand) {
+
+    /**
+     * This method skips 90 seconds of the current episode or moves to the next episode
+     *
+     * @param crtItem The loaded item in the users player
+     * @param crtCommand The forward command with all its data
+     * @param player The array that keeps all user players in check
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getForwardMessage(final ItemSelection crtItem, final Command crtCommand,
+                                           final ArrayList<ItemSelection> player,
+                                           final ArrayList<PodcastSelection> podcasts) {
         String message;
 
         //  Verify if the command is possible
@@ -417,6 +441,8 @@ public final class GetMessages {
                 //  If the podcast finished, we update the time
                 if (copyItem.getRemainingTime() < 0) {
                     copyItem.updateRemainingTime(crtCommand.getTimestamp());
+                    player.remove(copyItem);
+                    podcasts.remove(copyItem);
 
                     //  If it didn't, we check to see if we jumped to the next episode
                 } else {
@@ -443,7 +469,13 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getBackwardMessage(ItemSelection crtItem) {
+    /**
+     * This method goes back 90 seconds of the current episode or moves to the previous episode
+     *
+     * @param crtItem The loaded item in the users player
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getBackwardMessage(final ItemSelection crtItem) {
         String message;
 
         //  Verify if the command is possible
@@ -499,8 +531,18 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getNextMessage(ItemSelection crtItem, ArrayList<ItemSelection> player,
-                                        ArrayList<PodcastSelection> podcasts) {
+    /**
+     * This method skips to the next track
+     *
+     * @param crtItem The loaded item in the users player
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getNextMessage(final ItemSelection crtItem,
+                                        final ArrayList<ItemSelection> player,
+                                        final ArrayList<PodcastSelection> podcasts) {
         String message = "";
 
         //  Verify if the command is possible
@@ -630,7 +672,13 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getPrevMessage(ItemSelection crtItem, ArrayList<ItemSelection> player) {
+    /**
+     * This method goes back to the previous track
+     *
+     * @param crtItem The loaded item in the users player
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getPrevMessage(final ItemSelection crtItem) {
         String message = "";
 
         //  Verify if the command is possible
@@ -743,8 +791,17 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getFollowMessage(Playlist wantedPlaylist, Command crtCommand,
-                                          ArrayList<UserPlaylists> usersPlaylists) {
+    /**
+     * This method helps the user follow/unfollow a playlist
+     *
+     * @param wantedPlaylist The playlist selected by the user
+     * @param crtCommand The follow command with all its data
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getFollowMessage(final Playlist wantedPlaylist,
+                                          final Command crtCommand,
+                                          final ArrayList<UserPlaylists> usersPlaylists) {
         String message;
 
         //  Begin by checking whether the user follows this playlist or not
@@ -786,8 +843,15 @@ public final class GetMessages {
         return message;
     }
 
-    public static String getSwitchVisibilityMessage(ArrayList<UserPlaylists> usersPlaylists,
-                                                    Command crtCommand) {
+    /**
+     * This method switches the visibility of a playlist
+     *
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param crtCommand The switchVisibility command with all its data
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getSwitchVisibilityMessage(final ArrayList<UserPlaylists> usersPlaylists,
+                                                    final Command crtCommand) {
         String message;
 
         //  We find the user, search through the playlists and switch the visibility

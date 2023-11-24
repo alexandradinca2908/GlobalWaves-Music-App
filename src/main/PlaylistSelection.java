@@ -13,7 +13,7 @@ public final class PlaylistSelection extends ItemSelection {
         return playlist;
     }
 
-    public void setPlaylist(Playlist playlist) {
+    public void setPlaylist(final Playlist playlist) {
         this.playlist = playlist;
     }
 
@@ -21,7 +21,7 @@ public final class PlaylistSelection extends ItemSelection {
         return startTimestamp;
     }
 
-    public void setStartTimestamp(int startTimestamp) {
+    public void setStartTimestamp(final int startTimestamp) {
         this.startTimestamp = startTimestamp;
     }
 
@@ -29,12 +29,12 @@ public final class PlaylistSelection extends ItemSelection {
         return stopTimestamp;
     }
 
-    public void setStopTimestamp(int stopTimestamp) {
+    public void setStopTimestamp(final int stopTimestamp) {
         this.stopTimestamp = stopTimestamp;
     }
 
     @Override
-    public void updateRemainingTime(int crtTimestamp) {
+    public void updateRemainingTime(final int crtTimestamp) {
         if (!isPaused()) {
             int remainingTime = this.getRemainingTime() - (crtTimestamp - this.getStartTime());
 
@@ -66,6 +66,28 @@ public final class PlaylistSelection extends ItemSelection {
                     this.setRemainingTime(remainingTime);
                     this.setStartTime(crtTimestamp);
                 }
+            }
+        }
+    }
+
+    /**
+     * This method sets the interval of the current song within a playlist
+     *
+     * @param playlist The specified playlist
+     */
+    public static void setIntervals(final PlaylistSelection playlist) {
+        int remainingTime = playlist.getRemainingTime();
+        int duration = playlist.getPlaylist().getDuration();
+
+        //  Now we find the song that needs repetition
+        for (SongInput song : playlist.getPlaylist().getSongs()) {
+            duration -= song.getDuration();
+
+            if (duration < remainingTime) {
+                playlist.setStartTimestamp(duration + song.getDuration());
+                playlist.setStopTimestamp(duration);
+
+                break;
             }
         }
     }

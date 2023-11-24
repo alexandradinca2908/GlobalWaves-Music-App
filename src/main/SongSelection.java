@@ -12,12 +12,12 @@ public final class SongSelection extends ItemSelection {
         return song;
     }
 
-    public void setSong(SongInput song) {
+    public void setSong(final SongInput song) {
         this.song = song;
     }
 
     @Override
-    public void updateRemainingTime(int crtTimestamp) {
+    public void updateRemainingTime(final int crtTimestamp) {
         if (!isPaused()) {
             int remainingTime = this.getRemainingTime() - (crtTimestamp - getStartTime());
 

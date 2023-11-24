@@ -34,6 +34,11 @@ public final class PodcastInput {
         this.episodes = episodes;
     }
 
+    /**
+     * This method calculates the duration of all episodes in the podcast
+     *
+     * @return The duration of the podcast
+     */
     public int getDuration() {
         int duration = 0;
         for (EpisodeInput episode : this.episodes) {
