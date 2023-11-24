@@ -446,7 +446,7 @@ public final class Main {
                     }
 
                     if (found == 0) {
-                        String message = "Please load a source before"
+                        String message = "Please load a source before "
                                 + "attempting to pause or resume playback.";
                         playPauseOutput.put("message", message);
                     }
@@ -550,7 +550,16 @@ public final class Main {
                             resultNode.put("name", playlist.getName());
 
                             ArrayList<String> songNames = new ArrayList<>();
-                            for (SongInput song : playlist.getSongs()) {
+
+                            ArrayList<SongInput> correctSongOrder;
+
+                            if (playlist.getOriginalSongOrder() != null) {
+                                correctSongOrder = playlist.getOriginalSongOrder();
+                            } else {
+                                correctSongOrder = playlist.getSongs();
+                            }
+
+                            for (SongInput song : correctSongOrder) {
                                 songNames.add(song.getName());
                             }
                             resultNode.putPOJO("songs", songNames);
@@ -789,7 +798,8 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = GetMessages.getNextMessage(crtItem, player, podcasts);
+                    String message = GetMessages.getNextMessage(crtItem, player,
+                            podcasts, crtCommand);
                     nextOutput.put("message", message);
 
                     outputs.add(nextOutput);
@@ -815,7 +825,7 @@ public final class Main {
                     }
 
                     //  Get message and make changes
-                    String message = GetMessages.getPrevMessage(crtItem);
+                    String message = GetMessages.getPrevMessage(crtItem, crtCommand);
                     prevOutput.put("message", message);
 
                     outputs.add(prevOutput);

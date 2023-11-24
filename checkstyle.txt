@@ -1,5 +1,5 @@
 Starting audit...
 [ERROR] D:\JetBrains\etapa-1-POO\.\src\main\Main.java:10:20: Using the '.*' form of import should be avoided - fileio.input.*. [AvoidStarImport]
-[ERROR] D:\JetBrains\etapa-1-POO\.\src\main\Main.java:74:5: Method length is 873 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-1-POO\.\src\main\Main.java:74:5: Method length is 883 lines (max allowed is 150). [MethodLength]
 Audit done.
 Checkstyle ends with 2 errors.

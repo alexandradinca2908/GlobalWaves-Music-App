@@ -98,6 +98,8 @@ public final class GetMessages {
             //  Reset the order
             copyItem.getPlaylist().getSongs().clear();
             copyItem.getPlaylist().getSongs().addAll(copyItem.getPlaylist().getOriginalSongOrder());
+            copyItem.getPlaylist().getOriginalSongOrder().clear();
+            copyItem.getPlaylist().setOriginalSongOrder(null);
 
             //  Search the song that is currently playing
             //  Calculate remaining time considering new order
@@ -542,7 +544,8 @@ public final class GetMessages {
      */
     public static String getNextMessage(final ItemSelection crtItem,
                                         final ArrayList<ItemSelection> player,
-                                        final ArrayList<PodcastSelection> podcasts) {
+                                        final ArrayList<PodcastSelection> podcasts,
+                                        final Command crtCommand) {
         String message = "";
 
         //  Verify if the command is possible
@@ -596,6 +599,7 @@ public final class GetMessages {
                     } else if (copyItem.getRepeat().equals("Repeat Once")) {
                         //  Restart podcast
                         copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
                         copyItem.setRepeat("No Repeat");
 
@@ -605,6 +609,7 @@ public final class GetMessages {
                     } else if (copyItem.getRepeat().equals("Repeat Infinite")) {
                         //  Restart podcast but keep repeat status
                         copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Skipped to next track successfully. The current track is "
@@ -633,6 +638,7 @@ public final class GetMessages {
                     if (copyItem.getRepeat().equals("Repeat Current Song")) {
                         //  Restart song
                         copyItem.setRemainingTime(prevDuration);
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Skipped to next track successfully. The current track is "
@@ -640,6 +646,7 @@ public final class GetMessages {
                     } else {
                         //  Next song
                         copyItem.setRemainingTime(duration);
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         int index = copyItem.getPlaylist().getSongs().indexOf(crtSong);
@@ -657,13 +664,23 @@ public final class GetMessages {
 
                         message = "Please load a source before skipping to the next track.";
 
-                    } else if (copyItem.getRepeat().equals("Repeat Infinite")) {
+                    } else if (copyItem.getRepeat().equals("Repeat All")) {
                         //  Restart playlist
                         copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Skipped to next track successfully. The current track is "
                                 + copyItem.getPlaylist().getSongs().get(0).getName() + ".";
+
+                    } else if (copyItem.getRepeat().equals("Repeat Current Song")) {
+                        //  Restart song
+                        copyItem.setRemainingTime(prevDuration);
+                        copyItem.setStartTime(crtCommand.getTimestamp());
+                        copyItem.setPaused(false);
+
+                        message = "Skipped to next track successfully. The current track is "
+                                + crtSong.getName() + ".";
                     }
                 }
             }
@@ -678,7 +695,8 @@ public final class GetMessages {
      * @param crtItem The loaded item in the users player
      * @return Based on the operation, it returns an appropriate message
      */
-    public static String getPrevMessage(final ItemSelection crtItem) {
+    public static String getPrevMessage(final ItemSelection crtItem,
+                                        final Command crtCommand) {
         String message = "";
 
         //  Verify if the command is possible
@@ -712,6 +730,7 @@ public final class GetMessages {
 
                 if (duration - crtItem.getRemainingTime() > 1) {
                     copyItem.setRemainingTime(duration);
+                    copyItem.setStartTime(crtCommand.getTimestamp());
                     copyItem.setPaused(false);
 
                     message = "Returned to previous track successfully. The current track is "
@@ -722,6 +741,7 @@ public final class GetMessages {
                     if (copyItem.getPodcast().getEpisodes().indexOf(crtEp) == 0) {
                         //  If we are at the first episode, restart the podcast
                         copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Returned to previous track successfully. The current track is "
@@ -732,6 +752,7 @@ public final class GetMessages {
                         int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp) - 1;
                         copyItem.setRemainingTime(duration
                                 + copyItem.getPodcast().getEpisodes().get(index).getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Returned to previous track successfully. The current track is "
@@ -758,6 +779,7 @@ public final class GetMessages {
 
                 if (duration - crtItem.getRemainingTime() > 1) {
                     copyItem.setRemainingTime(duration);
+                    copyItem.setStartTime(crtCommand.getTimestamp());
                     copyItem.setPaused(false);
 
                     message = "Returned to previous track successfully. The current track is "
@@ -768,6 +790,7 @@ public final class GetMessages {
                     if (copyItem.getPlaylist().getSongs().indexOf(crtSong) == 0) {
                         //  If we are at the first song, just restart the playlist
                         copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Returned to previous track successfully. "
@@ -779,10 +802,11 @@ public final class GetMessages {
                         int index = copyItem.getPlaylist().getSongs().indexOf(crtSong) - 1;
                         copyItem.setRemainingTime(duration
                                 + copyItem.getPlaylist().getSongs().get(index).getDuration());
+                        copyItem.setStartTime(crtCommand.getTimestamp());
                         copyItem.setPaused(false);
 
                         message = "Returned to previous track successfully. The current track is "
-                                + copyItem.getPlaylist().getSongs().get(0).getName() + ".";
+                                + copyItem.getPlaylist().getSongs().get(index).getName() + ".";
                     }
                 }
             }

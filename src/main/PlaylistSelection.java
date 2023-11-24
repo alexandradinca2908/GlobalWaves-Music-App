@@ -47,6 +47,14 @@ public final class PlaylistSelection extends ItemSelection {
                     this.setRemainingTime(remainingTime);
                     this.setStartTime(crtTimestamp);
 
+                } else if (this.getRepeat().equals("Repeat Current Song")) {
+                    //  Go back to initial timestamp
+                    while (remainingTime <= this.stopTimestamp) {
+                        remainingTime += (this.startTimestamp - this.stopTimestamp);
+                    }
+                    this.setRemainingTime(remainingTime);
+                    this.setStartTime(crtTimestamp);
+
                 } else {
                     //  Stop playlist
                     this.setRemainingTime(0);
