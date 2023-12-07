@@ -7,7 +7,6 @@ public final class UserInput {
 
     public UserInput() {
     }
-
     public String getUsername() {
         return username;
     }

@@ -1,0 +1,74 @@
+[ {
+  "command" : "search",
+  "user" : "melodicmind42",
+  "timestamp" : 60,
+  "message" : "Search returned 1 results",
+  "results" : [ "Radio Ga Ga" ]
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 65,
+  "message" : "Successfully selected Radio Ga Ga."
+}, {
+  "command" : "select",
+  "user" : "melodicmind42",
+  "timestamp" : 70,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "load",
+  "user" : "melodicmind42",
+  "timestamp" : 75,
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "status",
+  "user" : "melodicmind42",
+  "timestamp" : 90,
+  "stats" : {
+    "name" : "Radio Ga Ga",
+    "remainedTime" : 329,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
+}, {
+  "command" : "like",
+  "user" : "melodicmind42",
+  "timestamp" : 120,
+  "message" : "ERROR. User not found"
+}, {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 280,
+  "message" : "Please conduct a search before making a selection."
+}, {
+  "command" : "load",
+  "user" : "alice22",
+  "timestamp" : 285,
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "prev",
+  "user" : "alice22",
+  "timestamp" : 1159,
+  "message" : "Please load a source before returning to the previous track."
+}, {
+  "command" : "search",
+  "user" : "melodicmind42",
+  "timestamp" : 1385,
+  "message" : "Search returned 0 results",
+  "results" : [ ]
+}, {
+  "command" : "select",
+  "user" : "melodicmind42",
+  "timestamp" : 1390,
+  "message" : "The selected ID is too high."
+}, {
+  "command" : "load",
+  "user" : "melodicmind42",
+  "timestamp" : 1440,
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "like",
+  "user" : "melodicmind42",
+  "timestamp" : 1455,
+  "message" : "Please load a source before liking or unliking."
+} ]

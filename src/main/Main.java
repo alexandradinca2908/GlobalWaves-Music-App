@@ -8,6 +8,18 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.*;
+import main.CommandHelper.Command;
+import main.CommandHelper.Filters;
+import main.PlaylistClasses.Playlist;
+import main.PlaylistClasses.UserPlaylists;
+import main.Selections.ItemSelection;
+import main.Selections.PlaylistSelection;
+import main.Selections.PodcastSelection;
+import main.Selections.SongSelection;
+import main.SongClasses.SongLikes;
+import main.UtilityClasses.Constants;
+import main.UtilityClasses.GetMessages;
+import main.UtilityClasses.SearchSelect;
 
 import java.io.File;
 import java.io.IOException;
@@ -254,8 +266,7 @@ public final class Main {
                             outputs.add(searchOutput);
                         }
 
-                        default -> throw new IllegalStateException("Unexpected value: "
-                                + crtCommand.getType());
+                        default -> System.out.println("Invalid command " + crtCommand.getCommand());
                     }
                 }
 

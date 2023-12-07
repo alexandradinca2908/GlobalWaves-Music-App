@@ -1,5 +1,18 @@
 Starting audit...
-[ERROR] D:\JetBrains\etapa-1-POO\.\src\main\Main.java:10:20: Using the '.*' form of import should be avoided - fileio.input.*. [AvoidStarImport]
-[ERROR] D:\JetBrains\etapa-1-POO\.\src\main\Main.java:74:5: Method length is 883 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:6:8: Unused import - java.lang.reflect.Array. [UnusedImports]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:115:24: Parameter age should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:123:25: Parameter city should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:131:25: Parameter name should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:139:32: Parameter releaseYear should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:147:32: Parameter description should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:155:26: Parameter songs should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:163:25: Parameter date should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:171:26: Parameter price should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:179:29: Parameter episodes should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\CommandHelper\Command.java:187:29: Parameter nextPage should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\Main.java:10:20: Using the '.*' form of import should be avoided - fileio.input.*. [AvoidStarImport]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\Main.java:86:5: Method length is 882 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\Selections\PodcastSelection.java:4:1: Redundant import from the same package - main.Selections.ItemSelection. [RedundantImport]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\Selections\SongSelection.java:4:1: Redundant import from the same package - main.Selections.ItemSelection. [RedundantImport]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 15 errors.

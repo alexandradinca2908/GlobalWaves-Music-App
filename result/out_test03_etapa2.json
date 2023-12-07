@@ -1,0 +1,11 @@
+[ {
+  "command" : "select",
+  "user" : "alice22",
+  "timestamp" : 70,
+  "message" : "Please conduct a search before making a selection."
+}, {
+  "command" : "select",
+  "user" : "bob35",
+  "timestamp" : 110,
+  "message" : "Please conduct a search before making a selection."
+} ]
