@@ -10,6 +10,7 @@ public final class UserPlaylists {
     private ArrayList<Playlist> playlists = new ArrayList<>();
     private ArrayList<SongInput> likedSongs = new ArrayList<>();
     private ArrayList<Playlist> followedPlaylists = new ArrayList<>();
+    private ArrayList<Album> albums = new ArrayList<>();
 
     public UserPlaylists() {
     }
@@ -44,5 +45,13 @@ public final class UserPlaylists {
 
     public void setFollowedPlaylists(final ArrayList<Playlist> followedPlaylists) {
         this.followedPlaylists = followedPlaylists;
+    }
+
+    public ArrayList<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(ArrayList<Album> albums) {
+        this.albums = albums;
     }
 }

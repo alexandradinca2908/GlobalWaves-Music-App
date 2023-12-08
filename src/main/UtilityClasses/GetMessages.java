@@ -1,8 +1,11 @@
 package main.UtilityClasses;
 
 import fileio.input.EpisodeInput;
+import fileio.input.LibraryInput;
 import fileio.input.SongInput;
+import fileio.input.UserInput;
 import main.CommandHelper.Command;
+import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PlaylistSelection;
@@ -14,6 +17,8 @@ import main.PlaylistClasses.UserPlaylists;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+
+import static main.Main.updatePlayer;
 
 public final class GetMessages {
 
@@ -924,6 +929,179 @@ public final class GetMessages {
             }
         }
 
+
+        return message;
+    }
+
+    public static String getSwitchConnectionMessage(final UserInput crtUser,
+                                                    final ArrayList<ItemSelection> player,
+                                                    final Command crtCommand,
+                                                    final ArrayList<PodcastSelection> podcasts,
+                                                    final LibraryInput library) {
+        String message;
+
+        if (crtUser == null) {
+            message = "The username " + crtCommand.getUsername() + " doesn't exist.";
+        } else if (!crtUser.getType().equals("user")) {
+            message = crtCommand.getUsername() + " is not a normal user.";
+        } else {
+            //  The user exists and is normal. Status can be updated
+            updatePlayer(player, crtCommand, podcasts, library);
+            crtUser.setOnline(!crtUser.isOnline());
+
+            message = crtUser.getUsername() + " has changed status successfully.";
+        }
+
+        return message;
+    }
+
+    public static String getAddUserMessage(final Command crtCommand,
+                                           final LibraryInput library,
+                                           final ArrayList<UserPlaylists> usersPlaylists) {
+        String message;
+
+        //  Search to see if this is a new user
+        boolean isTaken = false;
+        String wantedUsername = crtCommand.getUsername();
+
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(wantedUsername)) {
+                isTaken = true;
+                break;
+            }
+        }
+
+        if (isTaken) {
+            message = "The username " + wantedUsername + " is already taken.";
+        } else {
+            //  Create user
+            UserInput newUser = new UserInput();
+
+            //  Set user data
+            newUser.setType(crtCommand.getType());
+            newUser.setUsername(crtCommand.getUsername());
+            newUser.setAge(crtCommand.getAge());
+            newUser.setCity(crtCommand.getCity());
+            newUser.setOnline(true);
+
+            //  Add user in all databases
+            //  Library
+            library.getUsers().add(newUser);
+
+            //  Users' Playlists
+            UserPlaylists newUserPlaylists = new UserPlaylists();
+            newUserPlaylists.setUser(newUser);
+            usersPlaylists.add(newUserPlaylists);
+
+            message = "The username " + wantedUsername + " has been added successfully.";
+        }
+
+        return message;
+    }
+
+    public static String getAddAlbumMessage(final Command crtCommand,
+                                            final LibraryInput library,
+                                            final ArrayList<UserPlaylists> usersPlaylists,
+                                            final ArrayList<Album> albums) {
+        String message;
+
+        UserInput artist = null;
+        boolean exists = false;
+        boolean isArtist = false;
+
+        //  Checking to see artist availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("artist")) {
+                    isArtist = true;
+                    artist = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isArtist) {
+            message = crtCommand.getUsername() + " is not an artist.";
+        } else {
+            //  Artist is eligible to add album
+
+            //  Verify album name uniqueness
+            //  First we find the user's playlists
+            UserPlaylists allPlaylists = null;
+
+            for (UserPlaylists userPlaylists : usersPlaylists) {
+                if (userPlaylists.getUser().equals(artist)) {
+                    allPlaylists = userPlaylists;
+                    break;
+                }
+            }
+
+            boolean duplicate = false;
+            //  Now we check the name
+            for (Album album : allPlaylists.getAlbums()) {
+                if (album.getName().equals(crtCommand.getName())) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if (duplicate) {
+                message = crtCommand.getUsername()
+                        + " has another album with the same name.";
+            } else {
+                //  We check to see if the album has duplicate songs
+                boolean sameName = false;
+
+                for (int i = 0; i < crtCommand.getSongs().size() - 1; i++) {
+                    SongInput crtSong = crtCommand.getSongs().get(i);
+                    for (int j = i + 1; j < crtCommand.getSongs().size(); j++) {
+                        SongInput nextSong = crtCommand.getSongs().get(j);
+
+                        if (crtSong.getName().equals(nextSong.getName())) {
+                            sameName = true;
+                            break;
+                        }
+                    }
+
+                    if (sameName) {
+                        break;
+                    }
+                }
+
+                if (sameName) {
+                    message = crtCommand.getUsername()
+                            + " has the same song at least twice in this album.";
+                } else {
+                    //  The album can initialized
+                    Album newAlbum = new Album();
+
+                    //  Set data
+                    newAlbum.setArtist(crtCommand.getUsername());
+                    newAlbum.setName(crtCommand.getName());
+                    newAlbum.setReleaseYear(crtCommand.getReleaseYear());
+                    newAlbum.setDescription(crtCommand.getDescription());
+                    newAlbum.setSongs(crtCommand.getSongs());
+
+                    //  Add album and songs in all databases
+                    //  Artist's albums
+                    allPlaylists.getAlbums().add(newAlbum);
+
+                    //  All albums
+                    albums.add(newAlbum);
+
+                    //  Add songs in library
+                    for (SongInput song : newAlbum.getSongs()) {
+                        library.getSongs().add(song);
+                    }
+
+                    message = crtCommand.getUsername()
+                            + " has added new album successfully.";
+                }
+            }
+        }
 
         return message;
     }

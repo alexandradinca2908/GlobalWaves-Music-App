@@ -6,7 +6,6 @@ public final class SongLikes implements Comparable<SongLikes> {
     private SongInput song;
     private int likes;
 
-
     @Override
     public int compareTo(final SongLikes songLikes) {
         return this.likes - songLikes.likes;

@@ -11,6 +11,7 @@ import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
 import main.CommandHelper.Command;
+import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
@@ -132,6 +133,9 @@ public final class Main {
 
             songsLikes.add(newSongLikes);
         }
+
+        //  Creating an array list of all the albums
+        ArrayList<Album> albums = new ArrayList<>();
 
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
 
@@ -303,57 +307,43 @@ public final class Main {
                 }
 
                 case "switchConnectionStatus" -> {
-                    ObjectNode switchConnectionOutput = objectMapper.createObjectNode();
-                    switchConnectionOutput.put("command", "switchConnectionStatus");
-                    switchConnectionOutput.put("user", crtCommand.getUsername());
-                    switchConnectionOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message;
-                    UserInput crtUser = null;
-
-                    //  Searching for the current user
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            crtUser = user;
-                            break;
-                        }
-                    }
-
-                    if (crtUser == null) {
-                        message = "The username " + crtCommand.getUsername() + " doesn't exist.";
-                    } else if (!crtUser.getType().equals("user")) {
-                        message = crtCommand.getUsername() + " is not a normal user.";
-                    } else {
-                        //  The user exists and is normal. Status can be updated
-                        updatePlayer(player, crtCommand, podcasts, library);
-                        crtUser.setOnline(!crtUser.isOnline());
-
-                        message = crtUser.getUsername() + " has changed status successfully.";
-                    }
-
-                    switchConnectionOutput.put("message", message);
+                    ObjectNode switchConnectionOutput;
+                    switchConnectionOutput = doSwitchConnectionStatus(objectMapper,
+                            crtCommand, player, library, podcasts);
 
                     outputs.add(switchConnectionOutput);
                 }
 
                 case "getOnlineUsers" -> {
-                    ObjectNode getUsersOutput = objectMapper.createObjectNode();
-                    getUsersOutput.put("command", "getOnlineUsers");
-                    getUsersOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    ArrayList<String> onlineUsers = new ArrayList<>();
-
-                    //  Filter online users and add them to the result array
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getType().equals("user")
-                                && user.isOnline()) {
-                            onlineUsers.add(user.getUsername());
-                        }
-                    }
-
-                    getUsersOutput.putPOJO("result", onlineUsers);
+                    ObjectNode getUsersOutput;
+                    getUsersOutput = doGetOnlineUsers(objectMapper,
+                            crtCommand, library);
 
                     outputs.add(getUsersOutput);
+                }
+
+                case "addUser" -> {
+                    ObjectNode addUserOutput;
+                    addUserOutput = doAddUser(objectMapper,
+                            crtCommand, library, usersPlaylists);
+
+                    outputs.add(addUserOutput);
+                }
+
+                case "addAlbum" -> {
+                    ObjectNode addUserOutput;
+                    addUserOutput = doAddAlbum(objectMapper, crtCommand,
+                            library, usersPlaylists, albums);
+
+                    outputs.add(addUserOutput);
+                }
+
+                case "showAlbums" -> {
+                    ObjectNode showAlbumsOutput;
+                    showAlbumsOutput = doShowAlbums(objectMapper,
+                            crtCommand, usersPlaylists);
+
+                    outputs.add(showAlbumsOutput);
                 }
 
                 default -> {
@@ -391,7 +381,7 @@ public final class Main {
                 }
             }
             //  Only update time of online players
-            if (playerUser.isOnline()) {
+            if (playerUser != null && playerUser.isOnline()) {
                 item.updateRemainingTime(crtCommand.getTimestamp());
 
                 if (item.getRemainingTime() == 0) {
@@ -409,5 +399,6 @@ public final class Main {
 
         removableItems.clear();
     }
+
 }
 

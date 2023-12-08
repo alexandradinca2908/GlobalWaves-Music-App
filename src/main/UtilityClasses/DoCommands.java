@@ -8,6 +8,7 @@ import fileio.input.SongInput;
 import fileio.input.UserInput;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
+import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import static main.Main.updatePlayer;
+import static main.UtilityClasses.GetMessages.getSwitchConnectionMessage;
 
 public class DoCommands {
 
@@ -529,7 +531,6 @@ public class DoCommands {
             if (user.getUsername().equals(crtCommand.getUsername())) {
                 if (!user.isOnline()) {
                     likeOutput.put("message", user.getUsername() + " is offline.");
-                    likeOutput.putPOJO("results", new ArrayList<>());
 
                     return likeOutput;
                 }
@@ -1113,5 +1114,137 @@ public class DoCommands {
         topPlaylistsOutput.putPOJO("result", result);
 
         return topPlaylistsOutput;
+    }
+
+    public static ObjectNode doSwitchConnectionStatus(final ObjectMapper objectMapper,
+                                                      final Command crtCommand,
+                                                      final ArrayList<ItemSelection> player,
+                                                      final LibraryInput library,
+                                                      final ArrayList<PodcastSelection> podcasts) {
+        ObjectNode switchConnectionOutput = objectMapper.createObjectNode();
+
+        switchConnectionOutput.put("command", "switchConnectionStatus");
+        switchConnectionOutput.put("user", crtCommand.getUsername());
+        switchConnectionOutput.put("timestamp", crtCommand.getTimestamp());
+
+        UserInput crtUser = null;
+
+        //  Searching for the current user
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                crtUser = user;
+                break;
+            }
+        }
+
+        //  Get message and make changes
+        String message = getSwitchConnectionMessage(crtUser,
+                player, crtCommand, podcasts, library);
+        switchConnectionOutput.put("message", message);
+
+        return  switchConnectionOutput;
+    }
+
+    public static ObjectNode doGetOnlineUsers(final ObjectMapper objectMapper,
+                                              final Command crtCommand,
+                                              final LibraryInput library) {
+        ObjectNode getUsersOutput = objectMapper.createObjectNode();
+        getUsersOutput.put("command", "getOnlineUsers");
+        getUsersOutput.put("timestamp", crtCommand.getTimestamp());
+
+        ArrayList<String> onlineUsers = new ArrayList<>();
+
+        //  Filter online users and add them to the result array
+        for (UserInput user : library.getUsers()) {
+            if (user.getType().equals("user")
+                    && user.isOnline()) {
+                onlineUsers.add(user.getUsername());
+            }
+        }
+
+        getUsersOutput.putPOJO("result", onlineUsers);
+
+        return getUsersOutput;
+    }
+
+    public static ObjectNode doAddUser(final ObjectMapper objectMapper,
+                                       final Command crtCommand,
+                                       final LibraryInput library,
+                                       final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode addUserOutput = objectMapper.createObjectNode();
+
+        addUserOutput.put("command", "addUser");
+        addUserOutput.put("user", crtCommand.getUsername());
+        addUserOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = GetMessages.getAddUserMessage(crtCommand,
+                library, usersPlaylists);
+        addUserOutput.put("message", message);
+
+        return addUserOutput;
+    }
+
+    public static ObjectNode doAddAlbum(final ObjectMapper objectMapper,
+                                        final Command crtCommand,
+                                        final LibraryInput library,
+                                        final ArrayList<UserPlaylists> usersPlaylists,
+                                        final ArrayList<Album> albums) {
+        ObjectNode addUserOutput = objectMapper.createObjectNode();
+
+        addUserOutput.put("command", "addAlbum");
+        addUserOutput.put("user", crtCommand.getUsername());
+        addUserOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = GetMessages.getAddAlbumMessage(crtCommand, library,
+                usersPlaylists, albums);
+        addUserOutput.put("message", message);
+
+        return addUserOutput;
+    }
+
+    public static ObjectNode doShowAlbums(final ObjectMapper objectMapper,
+                                          final Command crtCommand,
+                                          final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode showAlbumsOutput = objectMapper.createObjectNode();
+
+        showAlbumsOutput.put("command", "showAlbums");
+        showAlbumsOutput.put("user", crtCommand.getUsername());
+        showAlbumsOutput.put("timestamp", crtCommand.getTimestamp());
+
+        UserPlaylists crtUser = null;
+
+        //  Search for the user's playlists
+        for (UserPlaylists userPlaylists : usersPlaylists) {
+            String username = userPlaylists.getUser().getUsername();
+            if (username.equals(crtCommand.getUsername())) {
+                crtUser = userPlaylists;
+                break;
+            }
+        }
+
+        ArrayList<ObjectNode> result = new ArrayList<>();
+
+        if (crtUser != null) {
+            for (Album album : crtUser.getAlbums()) {
+                ObjectNode resultNode = objectMapper.createObjectNode();
+
+                //  Set album data
+                resultNode.put("name", album.getName());
+
+                ArrayList<String> songNames = new ArrayList<>();
+                ArrayList<SongInput> songs = album.getSongs();
+
+                for (SongInput song : songs) {
+                    songNames.add(song.getName());
+                }
+                resultNode.putPOJO("songs", songNames);
+
+                result.add(resultNode);
+            }
+
+            showAlbumsOutput.putPOJO("result", result);
+        }
+
+        return showAlbumsOutput;
     }
 }
