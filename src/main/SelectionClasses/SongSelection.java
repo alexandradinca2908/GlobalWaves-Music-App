@@ -1,8 +1,10 @@
 package main.SelectionClasses;
 
 import fileio.input.SongInput;
+import main.VisitorPattern.Visitable;
+import main.VisitorPattern.Visitor;
 
-public final class SongSelection extends ItemSelection {
+public final class SongSelection extends ItemSelection implements Visitable {
     private SongInput song;
 
     public SongSelection() {
@@ -55,5 +57,9 @@ public final class SongSelection extends ItemSelection {
                 this.setStartTime(crtTimestamp);
             }
         }
+    }
+
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
     }
 }

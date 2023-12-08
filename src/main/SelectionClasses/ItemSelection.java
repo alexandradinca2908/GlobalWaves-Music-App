@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
+import main.VisitorPattern.Visitable;
+import main.VisitorPattern.Visitor;
 
-public class ItemSelection {
+public class ItemSelection implements Visitable {
     private String user;
     private int startTime;
     private int remainingTime;
@@ -257,4 +259,9 @@ public class ItemSelection {
      * @param crtTimestamp Current time
      */
     public void updateRemainingTime(final int crtTimestamp) { };
+
+    @Override
+    public String accept(Visitor visitor) {
+        return null;
+    }
 }

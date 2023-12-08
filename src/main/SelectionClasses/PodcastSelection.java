@@ -1,8 +1,10 @@
 package main.SelectionClasses;
 
 import fileio.input.PodcastInput;
+import main.VisitorPattern.Visitable;
+import main.VisitorPattern.Visitor;
 
-public final class PodcastSelection extends ItemSelection {
+public final class PodcastSelection extends ItemSelection implements Visitable {
     private PodcastInput podcast;
 
     public PodcastSelection() {
@@ -55,5 +57,9 @@ public final class PodcastSelection extends ItemSelection {
                 this.setStartTime(crtTimestamp);
             }
         }
+    }
+
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
     }
 }

@@ -13,6 +13,9 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
+import main.VisitorPattern.VisitClasses.VisitNextMessage;
+import main.VisitorPattern.VisitClasses.VisitPrevMessage;
+import main.VisitorPattern.Visitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -566,137 +569,10 @@ public final class GetMessages {
             message = "Please load a source before skipping to the next track.";
         } else {
             //  Now we can execute the command
-            if (crtItem instanceof SongSelection) {
-                message = "Please load a source before skipping to the next track.";
+            Visitor visitNextMessage = new VisitNextMessage(player,
+                    podcasts, crtCommand);
 
-                crtItem.setRemainingTime(0);
-                crtItem.setPaused(true);
-
-                player.remove(crtItem);
-
-            } else if (crtItem instanceof PodcastSelection) {
-                PodcastSelection copyItem = (PodcastSelection) crtItem;
-                EpisodeInput crtEp = null;
-
-                //  Find the current episode
-                int duration = copyItem.getPodcast().getDuration();
-
-                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
-                    duration -= episode.getDuration();
-
-                    if (duration < copyItem.getRemainingTime()) {
-                        crtEp = episode;
-                        break;
-                    }
-                }
-
-                if (duration > 0) {
-                    copyItem.setRemainingTime(duration);
-                    copyItem.setPaused(false);
-                    int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp);
-
-                    message = "Skipped to next track successfully. The current track is "
-                            + copyItem.getPodcast().getEpisodes().get(index + 1).getName() + ".";
-
-                } else if (duration == 0) {
-                    //  Check repeat status to take action
-                    if (copyItem.getRepeat().equals("No Repeat")) {
-                        //  Stop podcast
-                        copyItem.setRemainingTime(0);
-                        copyItem.setPaused(true);
-                        player.remove(copyItem);
-                        podcasts.remove(copyItem);
-
-                        message = "Please load a source before skipping to the next track.";
-
-                    } else if (copyItem.getRepeat().equals("Repeat Once")) {
-                        //  Restart podcast
-                        copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-                        copyItem.setRepeat("No Repeat");
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
-
-                    } else if (copyItem.getRepeat().equals("Repeat Infinite")) {
-                        //  Restart podcast but keep repeat status
-                        copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
-                    }
-                }
-            } else if (crtItem instanceof PlaylistSelection) {
-                PlaylistSelection copyItem = (PlaylistSelection) crtItem;
-                SongInput crtSong = null;
-
-                //  Find the current song
-                int duration = copyItem.getPlaylist().getDuration();
-                int prevDuration = duration;
-
-                for (SongInput song : copyItem.getPlaylist().getSongs()) {
-                    prevDuration = duration;
-                    duration -= song.getDuration();
-
-                    if (duration < copyItem.getRemainingTime()) {
-                        crtSong = song;
-                        break;
-                    }
-                }
-
-                if (duration > 0) {
-                    if (copyItem.getRepeat().equals("Repeat Current Song")) {
-                        //  Restart song
-                        copyItem.setRemainingTime(prevDuration);
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + crtSong.getName() + ".";
-                    } else {
-                        //  Next song
-                        copyItem.setRemainingTime(duration);
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        int index = copyItem.getPlaylist().getSongs().indexOf(crtSong);
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + copyItem.getPlaylist().getSongs().get(index + 1).getName() + ".";
-                    }
-                } else if (duration == 0) {
-                    //  Check repeat status to take action
-                    if (copyItem.getRepeat().equals("No Repeat")) {
-                        //  Stop playlist
-                        copyItem.setRemainingTime(0);
-                        copyItem.setPaused(true);
-                        player.remove(copyItem);
-
-                        message = "Please load a source before skipping to the next track.";
-
-                    } else if (copyItem.getRepeat().equals("Repeat All")) {
-                        //  Restart playlist
-                        copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + copyItem.getPlaylist().getSongs().get(0).getName() + ".";
-
-                    } else if (copyItem.getRepeat().equals("Repeat Current Song")) {
-                        //  Restart song
-                        copyItem.setRemainingTime(prevDuration);
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Skipped to next track successfully. The current track is "
-                                + crtSong.getName() + ".";
-                    }
-                }
-            }
+            message = crtItem.accept(visitNextMessage);
         }
 
         return message;
@@ -717,112 +593,9 @@ public final class GetMessages {
             message = "Please load a source before returning to the previous track.";
         } else {
             //  Now we can execute the command
-            if (crtItem instanceof SongSelection) {
-                crtItem.setRemainingTime(((SongSelection) crtItem).getSong().getDuration());
-                crtItem.setPaused(false);
+            Visitor visitPrevMessage = new VisitPrevMessage(crtCommand);
 
-                message = "Returned to previous track successfully. The current track is "
-                        + ((SongSelection) crtItem).getSong().getName() + ".";
-
-            } else if (crtItem instanceof PodcastSelection) {
-                PodcastSelection copyItem = (PodcastSelection) crtItem;
-                EpisodeInput crtEp = null;
-
-                //  Find the current episode
-                int duration = copyItem.getPodcast().getDuration();
-
-                for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
-                    duration -= episode.getDuration();
-
-                    if (duration < copyItem.getRemainingTime()) {
-                        duration += episode.getDuration();
-                        crtEp = episode;
-                        break;
-                    }
-                }
-
-                if (duration - crtItem.getRemainingTime() > 1) {
-                    copyItem.setRemainingTime(duration);
-                    copyItem.setStartTime(crtCommand.getTimestamp());
-                    copyItem.setPaused(false);
-
-                    message = "Returned to previous track successfully. The current track is "
-                            + crtEp.getName() + ".";
-
-                } else {
-                    //  Treating first episode exception
-                    if (copyItem.getPodcast().getEpisodes().indexOf(crtEp) == 0) {
-                        //  If we are at the first episode, restart the podcast
-                        copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Returned to previous track successfully. The current track is "
-                                + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
-
-                        //  Lastly we can go back to the previous episode
-                    } else {
-                        int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp) - 1;
-                        copyItem.setRemainingTime(duration
-                                + copyItem.getPodcast().getEpisodes().get(index).getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Returned to previous track successfully. The current track is "
-                                + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
-                    }
-                }
-
-            } else if (crtItem instanceof PlaylistSelection) {
-                PlaylistSelection copyItem = (PlaylistSelection) crtItem;
-                SongInput crtSong = null;
-
-                //  Find the current episode
-                int duration = copyItem.getPlaylist().getDuration();
-
-                for (SongInput song : copyItem.getPlaylist().getSongs()) {
-                    duration -= song.getDuration();
-
-                    if (duration < copyItem.getRemainingTime()) {
-                        duration += song.getDuration();
-                        crtSong = song;
-                        break;
-                    }
-                }
-
-                if (duration - crtItem.getRemainingTime() > 1) {
-                    copyItem.setRemainingTime(duration);
-                    copyItem.setStartTime(crtCommand.getTimestamp());
-                    copyItem.setPaused(false);
-
-                    message = "Returned to previous track successfully. The current track is "
-                            + crtSong.getName() + ".";
-
-                } else {
-                    //  Treating first song exception
-                    if (copyItem.getPlaylist().getSongs().indexOf(crtSong) == 0) {
-                        //  If we are at the first song, just restart the playlist
-                        copyItem.setRemainingTime(copyItem.getPlaylist().getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Returned to previous track successfully. "
-                                + "The current track is "
-                                + copyItem.getPlaylist().getSongs().get(0).getName() + ".";
-
-                        //  Now we can go back to the previous song
-                    } else {
-                        int index = copyItem.getPlaylist().getSongs().indexOf(crtSong) - 1;
-                        copyItem.setRemainingTime(duration
-                                + copyItem.getPlaylist().getSongs().get(index).getDuration());
-                        copyItem.setStartTime(crtCommand.getTimestamp());
-                        copyItem.setPaused(false);
-
-                        message = "Returned to previous track successfully. The current track is "
-                                + copyItem.getPlaylist().getSongs().get(index).getName() + ".";
-                    }
-                }
-            }
+            message = crtItem.accept(visitPrevMessage);
         }
 
         return message;

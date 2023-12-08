@@ -2,8 +2,10 @@ package main.SelectionClasses;
 
 import fileio.input.SongInput;
 import main.PlaylistClasses.Playlist;
+import main.VisitorPattern.Visitable;
+import main.VisitorPattern.Visitor;
 
-public final class PlaylistSelection extends ItemSelection {
+public final class PlaylistSelection extends ItemSelection implements Visitable {
     private Playlist playlist;
     private int startTimestamp;
     private int stopTimestamp;
@@ -99,5 +101,10 @@ public final class PlaylistSelection extends ItemSelection {
                 break;
             }
         }
+    }
+
+    @Override
+    public String accept(Visitor visitor) {
+        return visitor.visit(this);
     }
 }
