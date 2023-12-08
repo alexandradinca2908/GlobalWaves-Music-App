@@ -1,4 +1,4 @@
-package main.Selections;
+package main.SelectionClasses;
 
 import fileio.input.SongInput;
 import main.PlaylistClasses.Playlist;

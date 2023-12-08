@@ -36,6 +36,10 @@
   "timestamp" : 120,
   "message" : "ERROR. User not found"
 }, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 190
+}, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 280,

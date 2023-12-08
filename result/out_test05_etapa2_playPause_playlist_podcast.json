@@ -26,6 +26,10 @@
     "paused" : false
   }
 }, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 55
+}, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 57,

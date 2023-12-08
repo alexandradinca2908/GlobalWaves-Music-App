@@ -6,9 +6,9 @@ import fileio.input.SongInput;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
 import main.PlaylistClasses.Playlist;
-import main.Selections.PlaylistSelection;
-import main.Selections.PodcastSelection;
-import main.Selections.SongSelection;
+import main.SelectionClasses.PlaylistSelection;
+import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.SongSelection;
 
 import java.util.ArrayList;
 public final class SearchSelect {

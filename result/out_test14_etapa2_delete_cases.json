@@ -83,6 +83,10 @@
   "timestamp" : 480,
   "message" : "Please load a source before setting the repeat status."
 }, {
+  "command" : "search",
+  "user" : "soundseeker21",
+  "timestamp" : 625
+}, {
   "command" : "select",
   "user" : "soundseeker21",
   "timestamp" : 630,
@@ -108,6 +112,10 @@
   "user" : "carol19",
   "timestamp" : 740,
   "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 760
 }, {
   "command" : "repeat",
   "user" : "carol19",

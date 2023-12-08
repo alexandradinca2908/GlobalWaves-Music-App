@@ -136,6 +136,10 @@
   "timestamp" : 1390,
   "message" : "Please select a source before rewinding."
 }, {
+  "command" : "search",
+  "user" : "emily30",
+  "timestamp" : 2000
+}, {
   "command" : "forward",
   "user" : "emily30",
   "timestamp" : 2120,

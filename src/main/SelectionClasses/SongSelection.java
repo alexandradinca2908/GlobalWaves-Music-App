@@ -1,7 +1,6 @@
-package main.Selections;
+package main.SelectionClasses;
 
 import fileio.input.SongInput;
-import main.Selections.ItemSelection;
 
 public final class SongSelection extends ItemSelection {
     private SongInput song;

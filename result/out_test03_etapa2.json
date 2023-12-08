@@ -1,8 +1,20 @@
 [ {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 65
+}, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 70,
   "message" : "Please conduct a search before making a selection."
+}, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 105
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 105
 }, {
   "command" : "select",
   "user" : "bob35",

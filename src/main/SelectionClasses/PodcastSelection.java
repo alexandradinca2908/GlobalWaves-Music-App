@@ -1,7 +1,6 @@
-package main.Selections;
+package main.SelectionClasses;
 
 import fileio.input.PodcastInput;
-import main.Selections.ItemSelection;
 
 public final class PodcastSelection extends ItemSelection {
     private PodcastInput podcast;

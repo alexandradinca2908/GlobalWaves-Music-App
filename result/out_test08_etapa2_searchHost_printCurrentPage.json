@@ -26,6 +26,10 @@
     "paused" : false
   }
 }, {
+  "command" : "search",
+  "user" : "jack29",
+  "timestamp" : 50
+}, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 57,

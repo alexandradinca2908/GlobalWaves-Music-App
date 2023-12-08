@@ -31,6 +31,10 @@
   "message" : "Search returned 2 results",
   "results" : [ "Don't", "Delicate" ]
 }, {
+  "command" : "search",
+  "user" : "david27",
+  "timestamp" : 270
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 290,
@@ -97,6 +101,10 @@
   "user" : "bob35",
   "timestamp" : 430,
   "message" : "Successfully added to playlist."
+}, {
+  "command" : "search",
+  "user" : "bob35",
+  "timestamp" : 431
 }, {
   "command" : "select",
   "user" : "bob35",

@@ -100,6 +100,10 @@
   "timestamp" : 1005,
   "message" : "Playlist created successfully."
 }, {
+  "command" : "search",
+  "user" : "alice22",
+  "timestamp" : 1006
+}, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 1007,

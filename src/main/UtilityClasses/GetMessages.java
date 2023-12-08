@@ -4,10 +4,10 @@ import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 import main.CommandHelper.Command;
 import main.PlaylistClasses.Playlist;
-import main.Selections.ItemSelection;
-import main.Selections.PlaylistSelection;
-import main.Selections.PodcastSelection;
-import main.Selections.SongSelection;
+import main.SelectionClasses.ItemSelection;
+import main.SelectionClasses.PlaylistSelection;
+import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
 
