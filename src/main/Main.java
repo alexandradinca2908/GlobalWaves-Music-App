@@ -150,7 +150,7 @@ public final class Main {
                 case "select" -> {
                     ObjectNode selectOutput;
                     selectOutput = doSelect(objectMapper, crtCommand,
-                            lastSearchResult, steps);
+                            lastSearchResult, steps, library);
 
                     outputs.add(selectOutput);
                 }
@@ -167,7 +167,7 @@ public final class Main {
                 case "status" -> {
                     ObjectNode statusOutput;
                     statusOutput = doStatus(objectMapper, crtCommand, player,
-                            podcasts);
+                            podcasts, library);
 
                     outputs.add(statusOutput);
                 }
@@ -175,7 +175,7 @@ public final class Main {
                 case "playPause" -> {
                     ObjectNode playPauseOutput;
                     playPauseOutput = doPlayPause(objectMapper, crtCommand, player,
-                            podcasts);
+                            podcasts, library);
 
                     outputs.add(playPauseOutput);
                 }
@@ -183,7 +183,8 @@ public final class Main {
                 case "createPlaylist" -> {
                     ObjectNode createPlaylistOutput;
                     createPlaylistOutput = doCreatePlaylist(objectMapper,
-                            crtCommand, playlists, usersPlaylists);
+                            crtCommand, playlists, usersPlaylists,
+                            library);
 
                     outputs.add(createPlaylistOutput);
                 }
@@ -191,7 +192,7 @@ public final class Main {
                 case "addRemoveInPlaylist" -> {
                     ObjectNode addRemoveOutput;
                     addRemoveOutput = doAddRemoveInPlaylist(objectMapper,
-                            crtCommand, player, playlists);
+                            crtCommand, player, playlists, library);
 
                     outputs.add(addRemoveOutput);
                 }
@@ -199,7 +200,7 @@ public final class Main {
                 case "like" -> {
                     ObjectNode likeOutput;
                     likeOutput = doLike(objectMapper, crtCommand, player,
-                            usersPlaylists, songsLikes);
+                            usersPlaylists, songsLikes, library);
 
                     outputs.add(likeOutput);
                 }
@@ -223,7 +224,7 @@ public final class Main {
                 case "repeat" -> {
                     ObjectNode repeatOutput;
                     repeatOutput = doRepeat(objectMapper, crtCommand,
-                            player, podcasts);
+                            player, podcasts, library);
 
                     outputs.add(repeatOutput);
                 }
@@ -231,7 +232,7 @@ public final class Main {
                 case "shuffle" -> {
                     ObjectNode shuffleOutput;
                     shuffleOutput = doShuffle(objectMapper, crtCommand,
-                            player, podcasts);
+                            player, podcasts, library);
 
                     outputs.add(shuffleOutput);
                 }
@@ -239,7 +240,7 @@ public final class Main {
                 case "forward" -> {
                     ObjectNode forwardOutput;
                     forwardOutput = doForward(objectMapper, crtCommand,
-                            podcasts, player);
+                            podcasts, player, library);
 
                     outputs.add(forwardOutput);
                 }
@@ -247,7 +248,7 @@ public final class Main {
                 case "backward" -> {
                     ObjectNode backwardOutput;
                     backwardOutput = doBackward(objectMapper, crtCommand,
-                            podcasts, player);
+                            podcasts, player, library);
 
                     outputs.add(backwardOutput);
                 }
@@ -255,7 +256,7 @@ public final class Main {
                 case "next" -> {
                     ObjectNode nextOutput;
                     nextOutput = doNext(objectMapper, crtCommand,
-                            podcasts, player);
+                            podcasts, player, library);
 
                     outputs.add(nextOutput);
                 }
@@ -263,7 +264,7 @@ public final class Main {
                 case "prev" -> {
                     ObjectNode prevOutput;
                     prevOutput = doPrev(objectMapper, crtCommand,
-                            podcasts, player);
+                            podcasts, player, library);
 
                     outputs.add(prevOutput);
                 }
@@ -272,7 +273,7 @@ public final class Main {
                     ObjectNode followOutput;
                     followOutput = doFollow(objectMapper, crtCommand,
                             steps, lastSearchResult, playlists,
-                            usersPlaylists);
+                            usersPlaylists, library);
 
                     outputs.add(followOutput);
                 }
@@ -280,7 +281,7 @@ public final class Main {
                 case "switchVisibility" -> {
                     ObjectNode switchOutput;
                     switchOutput = doSwitchVisibility(objectMapper, crtCommand,
-                            usersPlaylists);
+                            usersPlaylists, library);
 
                     outputs.add(switchOutput);
                 }
@@ -301,6 +302,60 @@ public final class Main {
                     outputs.add(topPlaylistsOutput);
                 }
 
+                case "switchConnectionStatus" -> {
+                    ObjectNode switchConnectionOutput = objectMapper.createObjectNode();
+                    switchConnectionOutput.put("command", "switchConnectionStatus");
+                    switchConnectionOutput.put("user", crtCommand.getUsername());
+                    switchConnectionOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message;
+                    UserInput crtUser = null;
+
+                    //  Searching for the current user
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            crtUser = user;
+                            break;
+                        }
+                    }
+
+                    if (crtUser == null) {
+                        message = "The username " + crtCommand.getUsername() + " doesn't exist.";
+                    } else if (!crtUser.getType().equals("user")) {
+                        message = crtCommand.getUsername() + " is not a normal user.";
+                    } else {
+                        //  The user exists and is normal. Status can be updated
+                        updatePlayer(player, crtCommand, podcasts, library);
+                        crtUser.setOnline(!crtUser.isOnline());
+
+                        message = crtUser.getUsername() + " has changed status successfully.";
+                    }
+
+                    switchConnectionOutput.put("message", message);
+
+                    outputs.add(switchConnectionOutput);
+                }
+
+                case "getOnlineUsers" -> {
+                    ObjectNode getUsersOutput = objectMapper.createObjectNode();
+                    getUsersOutput.put("command", "getOnlineUsers");
+                    getUsersOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    ArrayList<String> onlineUsers = new ArrayList<>();
+
+                    //  Filter online users and add them to the result array
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getType().equals("user")
+                                && user.isOnline()) {
+                            onlineUsers.add(user.getUsername());
+                        }
+                    }
+
+                    getUsersOutput.putPOJO("result", onlineUsers);
+
+                    outputs.add(getUsersOutput);
+                }
+
                 default -> {
                 }
             }
@@ -319,19 +374,32 @@ public final class Main {
      */
     public static void updatePlayer(final ArrayList<ItemSelection> player,
                                     final Command crtCommand,
-                                    final ArrayList<PodcastSelection> podcasts) {
+                                    final ArrayList<PodcastSelection> podcasts,
+                                    final LibraryInput library) {
         //  Iterate through the player and update times
         //  Remove all finished sources
         ArrayList<ItemSelection> removableItems = new ArrayList<>();
 
-        for (ItemSelection item : player) {
-            item.updateRemainingTime(crtCommand.getTimestamp());
+        //  Username converted to user
+        UserInput playerUser = null;
 
-            if (item.getRemainingTime() == 0) {
-                if (item instanceof PodcastSelection) {
-                    podcasts.remove(item);
+        for (ItemSelection item : player) {
+            for (UserInput user : library.getUsers()) {
+                if (user.getUsername().equals(item.getUser())) {
+                    playerUser = user;
+                    break;
                 }
-                removableItems.add(item);
+            }
+            //  Only update time of online players
+            if (playerUser.isOnline()) {
+                item.updateRemainingTime(crtCommand.getTimestamp());
+
+                if (item.getRemainingTime() == 0) {
+                    if (item instanceof PodcastSelection) {
+                        podcasts.remove(item);
+                    }
+                    removableItems.add(item);
+                }
             }
         }
 

@@ -1,4 +1,8 @@
 [ {
+  "command" : "getOnlineUsers",
+  "timestamp" : 25,
+  "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29" ]
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 65
@@ -8,9 +12,16 @@
   "timestamp" : 70,
   "message" : "Please conduct a search before making a selection."
 }, {
+  "command" : "switchConnectionStatus",
+  "user" : "alice22",
+  "timestamp" : 87,
+  "message" : "alice22 has changed status successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
-  "timestamp" : 105
+  "timestamp" : 105,
+  "message" : "alice22 is offline.",
+  "results" : [ ]
 }, {
   "command" : "search",
   "user" : "bob35",

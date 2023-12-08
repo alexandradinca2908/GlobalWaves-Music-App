@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.LibraryInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
+import fileio.input.UserInput;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
 import main.PlaylistClasses.Playlist;
@@ -33,8 +34,29 @@ public class DoCommands {
                                       final ArrayList<String> lastSearchResult,
                                       final int[] steps,
                                       final ArrayList<Playlist> playlists) {
+        //  Searching for a song
+        ObjectNode searchOutput = objectMapper.createObjectNode();
+
+        //  Setting the output
+        searchOutput.put("command", "search");
+        searchOutput.put("user", crtCommand.getUsername());
+        searchOutput.put("timestamp", crtCommand.getTimestamp());
+
         //  Update all players first
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    searchOutput.put("message", user.getUsername() + " is offline.");
+                    searchOutput.putPOJO("results", new ArrayList<>());
+
+                    return searchOutput;
+                }
+            }
+        }
 
         //  Clear user's player
         if (!player.isEmpty()) {
@@ -49,14 +71,6 @@ public class DoCommands {
                 }
             }
         }
-
-        //  Searching for a song
-        ObjectNode searchOutput = objectMapper.createObjectNode();
-
-        //  Setting the output
-        searchOutput.put("command", "search");
-        searchOutput.put("user", crtCommand.getUsername());
-        searchOutput.put("timestamp", crtCommand.getTimestamp());
 
         switch (crtCommand.getType()) {
             case "song" -> {
@@ -159,12 +173,26 @@ public class DoCommands {
     public static ObjectNode doSelect(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<String> lastSearchResult,
-                                      final int[] steps) {
+                                      final int[] steps,
+                                      final LibraryInput library) {
         //  Setting the output
         ObjectNode selectOutput = objectMapper.createObjectNode();
         selectOutput.put("command", "select");
         selectOutput.put("user", crtCommand.getUsername());
         selectOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    selectOutput.put("message", user.getUsername() + " is offline.");
+                    selectOutput.putPOJO("results", new ArrayList<>());
+
+                    return selectOutput;
+                }
+            }
+        }
 
         //  Creating the message
         String message = GetMessages.getSelectMessage(lastSearchResult,
@@ -199,6 +227,19 @@ public class DoCommands {
         loadOutput.put("command", "load");
         loadOutput.put("user", crtCommand.getUsername());
         loadOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    loadOutput.put("message", user.getUsername() + " is offline.");
+                    loadOutput.putPOJO("results", new ArrayList<>());
+
+                    return loadOutput;
+                }
+            }
+        }
 
         //  Adding the appropriate load message
         if (steps[1] == 1 && lastSearchResult.isEmpty()) {
@@ -296,14 +337,15 @@ public class DoCommands {
     public static ObjectNode doStatus(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
-                                      final ArrayList<PodcastSelection> podcasts) {
+                                      final ArrayList<PodcastSelection> podcasts,
+                                      final LibraryInput library) {
         ObjectNode statusOutput = objectMapper.createObjectNode();
         statusOutput.put("command", "status");
         statusOutput.put("user", crtCommand.getUsername());
         statusOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
 
         String user = crtCommand.getUsername();
         ItemSelection reqItem = null;
@@ -324,7 +366,8 @@ public class DoCommands {
     public static ObjectNode doPlayPause(final ObjectMapper objectMapper,
                                          final Command crtCommand,
                                          final ArrayList<ItemSelection> player,
-                                         final ArrayList<PodcastSelection> podcasts) {
+                                         final ArrayList<PodcastSelection> podcasts,
+                                         final LibraryInput library) {
         ObjectNode playPauseOutput = objectMapper.createObjectNode();
 
         playPauseOutput.put("command", "playPause");
@@ -332,7 +375,20 @@ public class DoCommands {
         playPauseOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    playPauseOutput.put("message", user.getUsername() + " is offline.");
+                    playPauseOutput.putPOJO("results", new ArrayList<>());
+
+                    return playPauseOutput;
+                }
+            }
+        }
 
         //  Looking for what the user is playing
         int found = 0;
@@ -370,12 +426,26 @@ public class DoCommands {
     public static ObjectNode doCreatePlaylist(final ObjectMapper objectMapper,
                                               final Command crtCommand,
                                               final ArrayList<Playlist> playlists,
-                                              final ArrayList<UserPlaylists> usersPlaylists) {
+                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final LibraryInput library) {
         ObjectNode createPlaylistOutput = objectMapper.createObjectNode();
 
         createPlaylistOutput.put("command", "createPlaylist");
         createPlaylistOutput.put("user", crtCommand.getUsername());
         createPlaylistOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    createPlaylistOutput.put("message", user.getUsername() + " is offline.");
+                    createPlaylistOutput.putPOJO("results", new ArrayList<>());
+
+                    return createPlaylistOutput;
+                }
+            }
+        }
 
         int exists = 0;
         for (Playlist playlist : playlists) {
@@ -413,12 +483,26 @@ public class DoCommands {
     public static ObjectNode doAddRemoveInPlaylist(final ObjectMapper objectMapper,
                                                    final Command crtCommand,
                                                    final ArrayList<ItemSelection> player,
-                                                   final ArrayList<Playlist> playlists) {
+                                                   final ArrayList<Playlist> playlists,
+                                                   final LibraryInput library) {
         ObjectNode addRemoveOutput = objectMapper.createObjectNode();
 
         addRemoveOutput.put("command", "addRemoveInPlaylist");
         addRemoveOutput.put("user", crtCommand.getUsername());
         addRemoveOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    addRemoveOutput.put("message", user.getUsername() + " is offline.");
+                    addRemoveOutput.putPOJO("results", new ArrayList<>());
+
+                    return addRemoveOutput;
+                }
+            }
+        }
 
         //  Get message and make proper modifications to the playlist
         String message = GetMessages.getAddRemoveMessage(player, playlists, crtCommand);
@@ -431,12 +515,26 @@ public class DoCommands {
                                     final Command crtCommand,
                                     final ArrayList<ItemSelection> player,
                                     final ArrayList<UserPlaylists> usersPlaylists,
-                                    final ArrayList<SongLikes> songsLikes) {
+                                    final ArrayList<SongLikes> songsLikes,
+                                    final LibraryInput library) {
         ObjectNode likeOutput = objectMapper.createObjectNode();
 
         likeOutput.put("command", "like");
         likeOutput.put("user", crtCommand.getUsername());
         likeOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    likeOutput.put("message", user.getUsername() + " is offline.");
+                    likeOutput.putPOJO("results", new ArrayList<>());
+
+                    return likeOutput;
+                }
+            }
+        }
 
         //  Get message and make proper modifications to the user's liked songs
         String message = GetMessages.getLikeMessage(player, usersPlaylists,
@@ -536,12 +634,26 @@ public class DoCommands {
     public static ObjectNode doRepeat(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
-                                      final ArrayList<PodcastSelection> podcasts) {
+                                      final ArrayList<PodcastSelection> podcasts,
+                                      final LibraryInput library) {
         ObjectNode repeatOutput = objectMapper.createObjectNode();
 
         repeatOutput.put("command", "repeat");
         repeatOutput.put("user", crtCommand.getUsername());
         repeatOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    repeatOutput.put("message", user.getUsername() + " is offline.");
+                    repeatOutput.putPOJO("results", new ArrayList<>());
+
+                    return repeatOutput;
+                }
+            }
+        }
 
         //  First we gather the user's player
         ItemSelection crtItem = null;
@@ -562,7 +674,7 @@ public class DoCommands {
             //  Player was found and repeat state will be changed
 
             //  First we update the time
-            updatePlayer(player, crtCommand, podcasts);
+            updatePlayer(player, crtCommand, podcasts, library);
 
             if (crtItem instanceof PlaylistSelection) {
                 switch (crtItem.getRepeat()) {
@@ -617,7 +729,8 @@ public class DoCommands {
     public static ObjectNode doShuffle(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final ArrayList<ItemSelection> player,
-                                       final ArrayList<PodcastSelection> podcasts) {
+                                       final ArrayList<PodcastSelection> podcasts,
+                                       final LibraryInput library) {
         ObjectNode shuffleOutput = objectMapper.createObjectNode();
 
         shuffleOutput.put("command", "shuffle");
@@ -625,7 +738,20 @@ public class DoCommands {
         shuffleOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update player first
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    shuffleOutput.put("message", user.getUsername() + " is offline.");
+                    shuffleOutput.putPOJO("results", new ArrayList<>());
+
+                    return shuffleOutput;
+                }
+            }
+        }
 
         //  Then we gather the user's player
         ItemSelection crtItem = null;
@@ -661,7 +787,8 @@ public class DoCommands {
     public static ObjectNode doForward(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final ArrayList<PodcastSelection> podcasts,
-                                       final ArrayList<ItemSelection> player) {
+                                       final ArrayList<ItemSelection> player,
+                                       final LibraryInput library) {
         ObjectNode forwardOutput = objectMapper.createObjectNode();
 
         forwardOutput.put("command", "forward");
@@ -669,7 +796,20 @@ public class DoCommands {
         forwardOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    forwardOutput.put("message", user.getUsername() + " is offline.");
+                    forwardOutput.putPOJO("results", new ArrayList<>());
+
+                    return forwardOutput;
+                }
+            }
+        }
 
         //  Now we check for podcast
         ItemSelection crtItem = null;
@@ -691,7 +831,8 @@ public class DoCommands {
     public static ObjectNode doBackward(final ObjectMapper objectMapper,
                                         final Command crtCommand,
                                         final ArrayList<PodcastSelection> podcasts,
-                                        final ArrayList<ItemSelection> player) {
+                                        final ArrayList<ItemSelection> player,
+                                        final LibraryInput library) {
         ObjectNode backwardOutput = objectMapper.createObjectNode();
 
         backwardOutput.put("command", "backward");
@@ -699,7 +840,20 @@ public class DoCommands {
         backwardOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    backwardOutput.put("message", user.getUsername() + " is offline.");
+                    backwardOutput.putPOJO("results", new ArrayList<>());
+
+                    return backwardOutput;
+                }
+            }
+        }
 
         //  Now we check for podcast
         ItemSelection crtItem = null;
@@ -720,7 +874,8 @@ public class DoCommands {
     public static ObjectNode doNext(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
-                                    final ArrayList<ItemSelection> player) {
+                                    final ArrayList<ItemSelection> player,
+                                    final LibraryInput library) {
         ObjectNode nextOutput = objectMapper.createObjectNode();
 
         nextOutput.put("command", "next");
@@ -728,7 +883,20 @@ public class DoCommands {
         nextOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    nextOutput.put("message", user.getUsername() + " is offline.");
+                    nextOutput.putPOJO("results", new ArrayList<>());
+
+                    return nextOutput;
+                }
+            }
+        }
 
         //  Now we check for loaded source
         ItemSelection crtItem = null;
@@ -750,7 +918,8 @@ public class DoCommands {
     public static ObjectNode doPrev(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
-                                    final ArrayList<ItemSelection> player) {
+                                    final ArrayList<ItemSelection> player,
+                                    final LibraryInput library) {
         ObjectNode prevOutput = objectMapper.createObjectNode();
 
         prevOutput.put("command", "prev");
@@ -758,7 +927,20 @@ public class DoCommands {
         prevOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts);
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    prevOutput.put("message", user.getUsername() + " is offline.");
+                    prevOutput.putPOJO("results", new ArrayList<>());
+
+                    return prevOutput;
+                }
+            }
+        }
 
         //  Now we check for loaded source
         ItemSelection crtItem = null;
@@ -781,11 +963,26 @@ public class DoCommands {
                                       final int[] steps,
                                       final ArrayList<String> lastSearchResult,
                                       final ArrayList<Playlist> playlists,
-                                      final ArrayList<UserPlaylists> usersPlaylists) {
+                                      final ArrayList<UserPlaylists> usersPlaylists,
+                                      final LibraryInput library) {
         ObjectNode followOutput = objectMapper.createObjectNode();
+
         followOutput.put("command", "follow");
         followOutput.put("user", crtCommand.getUsername());
         followOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    followOutput.put("message", user.getUsername() + " is offline.");
+                    followOutput.putPOJO("results", new ArrayList<>());
+
+                    return followOutput;
+                }
+            }
+        }
 
         //  Adding the appropriate load message
         //  No select or no results found
@@ -831,12 +1028,26 @@ public class DoCommands {
 
     public static ObjectNode doSwitchVisibility(final ObjectMapper objectMapper,
                                                 final Command crtCommand,
-                                                final ArrayList<UserPlaylists> usersPlaylists) {
+                                                final ArrayList<UserPlaylists> usersPlaylists,
+                                                final LibraryInput library) {
         ObjectNode switchOutput = objectMapper.createObjectNode();
 
         switchOutput.put("command", "switchVisibility");
         switchOutput.put("user", crtCommand.getUsername());
         switchOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    switchOutput.put("message", user.getUsername() + " is offline.");
+                    switchOutput.putPOJO("results", new ArrayList<>());
+
+                    return switchOutput;
+                }
+            }
+        }
 
         //  Get message and make changes
         String message = GetMessages.getSwitchVisibilityMessage(usersPlaylists,
