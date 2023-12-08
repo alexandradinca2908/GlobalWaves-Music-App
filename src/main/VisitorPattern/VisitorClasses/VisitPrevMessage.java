@@ -1,17 +1,14 @@
-package main.VisitorPattern.VisitClasses;
+package main.VisitorPattern.VisitorClasses;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 import main.CommandHelper.Command;
-import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.VisitorPattern.Visitor;
 
-import java.util.ArrayList;
-
-public class VisitPrevMessage implements Visitor {
+public final class VisitPrevMessage implements Visitor {
     private Command crtCommand;
 
     public VisitPrevMessage(final Command crtCommand) {
@@ -28,7 +25,7 @@ public class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(PodcastSelection crtItem) {
+    public String visit(final PodcastSelection crtItem) {
         String message = null;
         EpisodeInput crtEp = null;
 
@@ -81,7 +78,7 @@ public class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(PlaylistSelection crtItem) {
+    public String visit(final PlaylistSelection crtItem) {
         String message = null;
         SongInput crtSong = null;
 

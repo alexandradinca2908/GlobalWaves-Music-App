@@ -260,8 +260,14 @@ public class ItemSelection implements Visitable {
      */
     public void updateRemainingTime(final int crtTimestamp) { };
 
+    /**
+     * This method accepts visitors for the ItemSelection subclasses
+     *
+     * @param visitor Visitor
+     * @return Command message
+     */
     @Override
-    public String accept(Visitor visitor) {
+    public String accept(final Visitor visitor) {
         return null;
     }
 }

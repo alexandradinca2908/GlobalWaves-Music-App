@@ -104,7 +104,7 @@ public final class PlaylistSelection extends ItemSelection implements Visitable 
     }
 
     @Override
-    public String accept(Visitor visitor) {
+    public String accept(final Visitor visitor) {
         return visitor.visit(this);
     }
 }

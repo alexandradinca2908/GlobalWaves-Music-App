@@ -51,7 +51,7 @@ public final class UserPlaylists {
         return albums;
     }
 
-    public void setAlbums(ArrayList<Album> albums) {
+    public void setAlbums(final ArrayList<Album> albums) {
         this.albums = albums;
     }
 }

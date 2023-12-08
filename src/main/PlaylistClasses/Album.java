@@ -4,7 +4,7 @@ import fileio.input.SongInput;
 
 import java.util.ArrayList;
 
-public class Album {
+public final class Album {
     private String artist;
     private String name;
     private int releaseYear;

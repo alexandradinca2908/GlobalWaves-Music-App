@@ -59,7 +59,8 @@ public final class PodcastSelection extends ItemSelection implements Visitable {
         }
     }
 
-    public String accept(Visitor visitor) {
+    @Override
+    public String accept(final Visitor visitor) {
         return visitor.visit(this);
     }
 }

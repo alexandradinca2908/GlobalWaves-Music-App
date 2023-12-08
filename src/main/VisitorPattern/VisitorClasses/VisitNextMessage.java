@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitClasses;
+package main.VisitorPattern.VisitorClasses;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
@@ -11,7 +11,7 @@ import main.VisitorPattern.Visitor;
 
 import java.util.ArrayList;
 
-public class VisitNextMessage implements Visitor {
+public final class VisitNextMessage implements Visitor {
     private ArrayList<ItemSelection> player;
     private ArrayList<PodcastSelection> podcasts;
     private Command crtCommand;

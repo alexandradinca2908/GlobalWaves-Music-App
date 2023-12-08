@@ -13,8 +13,8 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
-import main.VisitorPattern.VisitClasses.VisitNextMessage;
-import main.VisitorPattern.VisitClasses.VisitPrevMessage;
+import main.VisitorPattern.VisitorClasses.VisitNextMessage;
+import main.VisitorPattern.VisitorClasses.VisitPrevMessage;
 import main.VisitorPattern.Visitor;
 
 import java.util.ArrayList;
@@ -706,6 +706,17 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method switches the connection (online/offline) of a user
+     *
+     * @param crtUser Current user
+     * @param player The array that keeps all user players in check
+     * @param crtCommand The switchConnectionStatus command with all its data
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     * @param library Singleton containing all songs, users and podcasts
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getSwitchConnectionMessage(final UserInput crtUser,
                                                     final ArrayList<ItemSelection> player,
                                                     final Command crtCommand,
@@ -728,6 +739,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds a new user
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddUserMessage(final Command crtCommand,
                                            final LibraryInput library,
                                            final ArrayList<UserPlaylists> usersPlaylists) {
@@ -772,6 +791,15 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds a new album
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param albums The array of all albums in the database
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddAlbumMessage(final Command crtCommand,
                                             final LibraryInput library,
                                             final ArrayList<UserPlaylists> usersPlaylists,

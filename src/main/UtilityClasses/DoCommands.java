@@ -23,11 +23,25 @@ import java.util.Collections;
 import static main.Main.updatePlayer;
 import static main.UtilityClasses.GetMessages.getSwitchConnectionMessage;
 
-public class DoCommands {
+public final class DoCommands {
 
     private DoCommands() {
     }
 
+    /**
+     * Main method call for search command
+     *
+     * @param player The array that keeps all user players in check
+     * @param crtCommand Current command
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param lastSearchResult The array containing the search result and its type
+     * @param steps The array that checks whether search and select were executed
+     * @param playlists The array of all user playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doSearch(final ArrayList<ItemSelection> player,
                                       final Command crtCommand,
                                       final ArrayList<PodcastSelection> podcasts,
@@ -172,6 +186,16 @@ public class DoCommands {
         return searchOutput;
     }
 
+    /**
+     * Main method call for select command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param lastSearchResult The array containing the search result and its type
+     * @param steps The array that checks whether search and select were executed
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doSelect(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<String> lastSearchResult,
@@ -217,6 +241,20 @@ public class DoCommands {
         return selectOutput;
     }
 
+    /**
+     * Main method call for load command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param steps The array that checks whether search and select were executed
+     * @param lastSearchResult The array containing the search result and its type
+     * @param library Singleton containing all songs, users and podcasts
+     * @param player The array that keeps all user players in check
+     * @param playlists The array of all user playlists
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doLoad(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final int[] steps,
@@ -336,6 +374,17 @@ public class DoCommands {
         return loadOutput;
     }
 
+    /**
+     * Main method call for status command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doStatus(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
@@ -365,6 +414,17 @@ public class DoCommands {
         return statusOutput;
     }
 
+    /**
+     * Main method call for playPause command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doPlayPause(final ObjectMapper objectMapper,
                                          final Command crtCommand,
                                          final ArrayList<ItemSelection> player,
@@ -425,6 +485,16 @@ public class DoCommands {
         return playPauseOutput;
     }
 
+    /**
+     * Main method call for doCreatePlaylist command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param playlists The array of all user playlists
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doCreatePlaylist(final ObjectMapper objectMapper,
                                               final Command crtCommand,
                                               final ArrayList<Playlist> playlists,
@@ -482,6 +552,16 @@ public class DoCommands {
         return createPlaylistOutput;
     }
 
+    /**
+     * Main method call for doAddRemoveInPlaylist command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param playlists The array of all user playlists
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doAddRemoveInPlaylist(final ObjectMapper objectMapper,
                                                    final Command crtCommand,
                                                    final ArrayList<ItemSelection> player,
@@ -513,6 +593,17 @@ public class DoCommands {
         return addRemoveOutput;
     }
 
+    /**
+     * Main method call for doLike command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param songsLikes The array of songs and their respective likes
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doLike(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<ItemSelection> player,
@@ -546,6 +637,14 @@ public class DoCommands {
         return likeOutput;
     }
 
+    /**
+     * Main method call for doShowPlaylist command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doShowPlaylists(final ObjectMapper objectMapper,
                                              final Command crtCommand,
                                              final ArrayList<UserPlaylists> usersPlaylists) {
@@ -608,6 +707,14 @@ public class DoCommands {
         return showPlaylistsOutput;
     }
 
+    /**
+     * Main method call for doShowPreferredSongs command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doShowPreferredSongs(final ObjectMapper objectMapper,
                                                   final Command crtCommand,
                                                   final ArrayList<UserPlaylists> usersPlaylists) {
@@ -632,6 +739,17 @@ public class DoCommands {
         return showPreferredSongsOutput;
     }
 
+    /**
+     * Main method call for doRepeat command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doRepeat(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
@@ -727,6 +845,17 @@ public class DoCommands {
         return repeatOutput;
     }
 
+    /**
+     * Main method call for doShuffle command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doShuffle(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final ArrayList<ItemSelection> player,
@@ -785,6 +914,17 @@ public class DoCommands {
         return shuffleOutput;
     }
 
+    /**
+     * Main method call for doForward command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doForward(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final ArrayList<PodcastSelection> podcasts,
@@ -829,6 +969,17 @@ public class DoCommands {
         return forwardOutput;
     }
 
+    /**
+     * Main method call for doBackward command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doBackward(final ObjectMapper objectMapper,
                                         final Command crtCommand,
                                         final ArrayList<PodcastSelection> podcasts,
@@ -872,6 +1023,17 @@ public class DoCommands {
         return backwardOutput;
     }
 
+    /**
+     * Main method call for doNext command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doNext(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
@@ -916,6 +1078,17 @@ public class DoCommands {
         return nextOutput;
     }
 
+    /**
+     * Main method call for doPrev command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doPrev(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
@@ -959,6 +1132,18 @@ public class DoCommands {
         return prevOutput;
     }
 
+    /**
+     * Main method call for doFollow command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param steps The array that checks whether search and select were executed
+     * @param lastSearchResult The array containing the search result and its type
+     * @param playlists The array of all user playlists
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doFollow(final ObjectMapper objectMapper,
                                       final Command crtCommand,
                                       final int[] steps,
@@ -1027,6 +1212,15 @@ public class DoCommands {
         return followOutput;
     }
 
+    /**
+     * Main method call for doSwitchVisibility command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doSwitchVisibility(final ObjectMapper objectMapper,
                                                 final Command crtCommand,
                                                 final ArrayList<UserPlaylists> usersPlaylists,
@@ -1058,6 +1252,14 @@ public class DoCommands {
         return switchOutput;
     }
 
+    /**
+     * Main method call for doGetTop5Songs command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param songsLikes The array of songs and their respective likes
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doGetTop5Songs(final ObjectMapper objectMapper,
                                             final Command crtCommand,
                                             final ArrayList<SongLikes> songsLikes) {
@@ -1087,6 +1289,14 @@ public class DoCommands {
         return topSongsOutput;
     }
 
+    /**
+     * Main method call for doGetTop5Playlists command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param playlists The array of all user playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doGetTop5Playlists(final ObjectMapper objectMapper,
                                                 final Command crtCommand,
                                                 final ArrayList<Playlist> playlists) {
@@ -1116,6 +1326,17 @@ public class DoCommands {
         return topPlaylistsOutput;
     }
 
+    /**
+     * Main method call for doSwitchConnectionStatus command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @param podcasts The array that keeps track of all the podcasts
+     *                  when they are not loaded
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doSwitchConnectionStatus(final ObjectMapper objectMapper,
                                                       final Command crtCommand,
                                                       final ArrayList<ItemSelection> player,
@@ -1145,6 +1366,14 @@ public class DoCommands {
         return  switchConnectionOutput;
     }
 
+    /**
+     * Main method call for doGetOnlineUsers command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doGetOnlineUsers(final ObjectMapper objectMapper,
                                               final Command crtCommand,
                                               final LibraryInput library) {
@@ -1167,6 +1396,15 @@ public class DoCommands {
         return getUsersOutput;
     }
 
+    /**
+     * Main method call for doAddUser command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doAddUser(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final LibraryInput library,
@@ -1184,6 +1422,16 @@ public class DoCommands {
         return addUserOutput;
     }
 
+    /**
+     * Main method call for doAddAlbum command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param albums The array of all albums in the database
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doAddAlbum(final ObjectMapper objectMapper,
                                         final Command crtCommand,
                                         final LibraryInput library,
@@ -1202,6 +1450,14 @@ public class DoCommands {
         return addUserOutput;
     }
 
+    /**
+     * Main method call for doShowAlbums command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doShowAlbums(final ObjectMapper objectMapper,
                                           final Command crtCommand,
                                           final ArrayList<UserPlaylists> usersPlaylists) {
