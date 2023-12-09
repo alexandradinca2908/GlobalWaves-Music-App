@@ -4,7 +4,7 @@ import fileio.input.SongInput;
 
 import java.util.ArrayList;
 
-public final class Playlist implements Comparable<Playlist> {
+public class Playlist implements Comparable<Playlist> {
     private String name;
     private ArrayList<SongInput> songs = new ArrayList<>();
     private boolean visibility = true;

@@ -128,6 +128,11 @@
   "timestamp" : 480,
   "message" : "Repeat mode changed to repeat once."
 }, {
+  "user" : "bob35",
+  "command" : "printCurrentPage",
+  "timestamp" : 525,
+  "message" : "Liked songs:\n\t[Aurora Harmony]\n\nFollowed playlists:\n\t[Playlist bengos]"
+}, {
   "command" : "search",
   "user" : "soundseeker21",
   "timestamp" : 625
@@ -160,7 +165,9 @@
 }, {
   "command" : "search",
   "user" : "david27",
-  "timestamp" : 760
+  "timestamp" : 760,
+  "message" : "Search returned 3 results",
+  "results" : [ "sonicpainter", "soundseeker21", "soundcurator" ]
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -170,7 +177,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1225,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected sonicpainter's page."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -181,4 +188,9 @@
   "user" : "carol19",
   "timestamp" : 7505,
   "message" : "Please load a source before setting the repeat status."
+}, {
+  "user" : "bob35",
+  "command" : "printCurrentPage",
+  "timestamp" : 7900,
+  "message" : "Liked songs:\n\t[Aurora Harmony]\n\nFollowed playlists:\n\t[Playlist bengos]"
 } ]

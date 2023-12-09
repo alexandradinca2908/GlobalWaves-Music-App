@@ -6,8 +6,12 @@ import fileio.input.LibraryInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.ArtistClasses.Event;
+import main.ArtistClasses.Management;
+import main.ArtistClasses.Merch;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
+import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
@@ -31,15 +35,15 @@ public final class DoCommands {
     /**
      * Main method call for search command
      *
-     * @param player The array that keeps all user players in check
-     * @param crtCommand Current command
-     * @param podcasts The array that keeps track of all the podcasts
-     *                 when they are not loaded
-     * @param objectMapper Object Mapper
-     * @param library Singleton containing all songs, users and podcasts
+     * @param player           The array that keeps all user players in check
+     * @param crtCommand       Current command
+     * @param podcasts         The array that keeps track of all the podcasts
+     *                         when they are not loaded
+     * @param objectMapper     Object Mapper
+     * @param library          Singleton containing all songs, users and podcasts
      * @param lastSearchResult The array containing the search result and its type
-     * @param steps The array that checks whether search and select were executed
-     * @param playlists The array of all user playlists
+     * @param steps            The array that checks whether search and select were executed
+     * @param playlists        The array of all user playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doSearch(final ArrayList<ItemSelection> player,
@@ -49,7 +53,8 @@ public final class DoCommands {
                                       final LibraryInput library,
                                       final ArrayList<String> lastSearchResult,
                                       final int[] steps,
-                                      final ArrayList<Playlist> playlists) {
+                                      final ArrayList<Playlist> playlists,
+                                      final ArrayList<Album> albums) {
         //  Searching for a song
         ObjectNode searchOutput = objectMapper.createObjectNode();
 
@@ -113,7 +118,8 @@ public final class DoCommands {
                 searchOutput.putPOJO("results", songNames);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult, songNames, "song");
+                SearchSelect.storeResultForSelect(lastSearchResult, songNames,
+                        "song");
                 steps[0] = 1;
             }
 
@@ -180,6 +186,64 @@ public final class DoCommands {
                 steps[0] = 1;
             }
 
+            case "album" -> {
+                Filters filters = crtCommand.getFilters();
+                ArrayList<Album> result = new ArrayList<>();
+
+                //  Found albums will be added in result array
+                SearchSelect.searchForAlbums(filters, result, albums);
+
+                //  Truncate results if needed
+                if (result.size() > Constants.MAX_SIZE_5) {
+                    result.subList(Constants.MAX_SIZE_5, result.size()).clear();
+                }
+
+                //  Setting the message
+                searchOutput.put("message", "Search returned "
+                        + result.size() + " results");
+
+                //  Extracting the names of the albums
+                ArrayList<String> albumNames = new ArrayList<>();
+                for (Album album : result) {
+                    albumNames.add(album.getName());
+                }
+                searchOutput.putPOJO("results", albumNames);
+
+                //  Storing the result in case we need to select it later
+                SearchSelect.storeResultForSelect(lastSearchResult,
+                        albumNames, "album");
+                steps[0] = 1;
+            }
+
+            case "artist" -> {
+                Filters filters = crtCommand.getFilters();
+                ArrayList<UserInput> result = new ArrayList<>();
+
+                //  Found artists will be added in result array
+                SearchSelect.searchForArtists(filters, result, library);
+
+                //  Truncate results if needed
+                if (result.size() > Constants.MAX_SIZE_5) {
+                    result.subList(Constants.MAX_SIZE_5, result.size()).clear();
+                }
+
+                //  Setting the message
+                searchOutput.put("message", "Search returned "
+                        + result.size() + " results");
+
+                //  Extracting the names of the artists
+                ArrayList<String> artistNames = new ArrayList<>();
+                for (UserInput artist : result) {
+                    artistNames.add(artist.getUsername());
+                }
+                searchOutput.putPOJO("results", artistNames);
+
+                //  Storing the result in case we need to select it later
+                SearchSelect.storeResultForSelect(lastSearchResult,
+                        artistNames, "artist");
+                steps[0] = 1;
+            }
+
             default -> { }
         }
 
@@ -200,7 +264,10 @@ public final class DoCommands {
                                       final Command crtCommand,
                                       final ArrayList<String> lastSearchResult,
                                       final int[] steps,
-                                      final LibraryInput library) {
+                                      final LibraryInput library,
+                                      final ArrayList<Page> pageSystem,
+                                      final ArrayList<UserPlaylists> usersPlaylists,
+                                      final ArrayList<Management> managements) {
         //  Setting the output
         ObjectNode selectOutput = objectMapper.createObjectNode();
         selectOutput.put("command", "select");
@@ -236,6 +303,58 @@ public final class DoCommands {
 
             //  Last result is initialized properly for loading
             steps[1] = 1;
+        }
+
+        //  If an artist was selected, we change the user's page
+        if (message.contains("Successfully selected")
+                && lastSearchResult.get(0).equals("artist")) {
+            //  Searching for the user's page
+            Page crtPage = null;
+
+            for (Page page : pageSystem) {
+                if (page.getPageOwner().getUsername()
+                        .equals(crtCommand.getUsername())) {
+                    crtPage = page;
+                    break;
+                }
+            }
+
+            //  Searching for the artist
+            UserInput artist = null;
+
+            for (UserInput user : library.getUsers()) {
+                if (user.getUsername().equals(lastSearchResult.get(1))) {
+                    artist = user;
+                    break;
+                }
+            }
+
+            if (artist != null && crtPage != null) {
+                //  Add the artist's playlists to the current page
+                for (UserPlaylists userPlaylists : usersPlaylists) {
+                    if (userPlaylists.getUser().equals(artist)) {
+                        crtPage.setUserPlaylists(userPlaylists);
+                        break;
+                    }
+                }
+
+                //  Add the artist's management info to the current page
+                for (Management management : managements) {
+                    if (management.getArtist().equals(artist)) {
+                        crtPage.setManagement(management);
+                        break;
+                    }
+                }
+
+                //  Change current page name
+                crtPage.setCurrentPage("ArtistPage");
+            }
+
+            //  Clearing the result so that we can't load it twice
+            lastSearchResult.clear();
+            //  Reset steps
+            steps[0] = 0;
+            steps[1] = 0;
         }
 
         return selectOutput;
@@ -1408,7 +1527,9 @@ public final class DoCommands {
     public static ObjectNode doAddUser(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final LibraryInput library,
-                                       final ArrayList<UserPlaylists> usersPlaylists) {
+                                       final ArrayList<UserPlaylists> usersPlaylists,
+                                       final ArrayList<Page> pageSystem,
+                                       final ArrayList<Management> managements) {
         ObjectNode addUserOutput = objectMapper.createObjectNode();
 
         addUserOutput.put("command", "addUser");
@@ -1416,7 +1537,7 @@ public final class DoCommands {
         addUserOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddUserMessage(crtCommand,
-                library, usersPlaylists);
+                library, usersPlaylists, pageSystem, managements);
         addUserOutput.put("message", message);
 
         return addUserOutput;
@@ -1502,5 +1623,160 @@ public final class DoCommands {
         }
 
         return showAlbumsOutput;
+    }
+
+    public static ObjectNode doPrintCurrentPage(final ObjectMapper objectMapper,
+                                                final Command crtCommand,
+                                                final ArrayList<Page> pageSystem,
+                                                final LibraryInput library) {
+
+        ObjectNode printCurrentPageOutput = objectMapper.createObjectNode();
+
+        printCurrentPageOutput.put("user", crtCommand.getUsername());
+        printCurrentPageOutput.put("command", "printCurrentPage");
+        printCurrentPageOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Check online status
+        //  If user is offline, we exit the function before any action can be done
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                if (!user.isOnline()) {
+                    printCurrentPageOutput.put("message", user.getUsername() + " is offline.");
+
+                    return printCurrentPageOutput;
+                }
+            }
+        }
+
+        //  Searching for the user
+        Page crtPage = null;
+
+        for (Page page : pageSystem) {
+            if (page.getPageOwner().getUsername()
+                    .equals(crtCommand.getUsername())) {
+                crtPage = page;
+                break;
+            }
+        }
+
+        //  Depending on what page the user is, we print the appropriate message
+        String message = null;
+
+        if (crtPage != null) {
+            switch (crtPage.getCurrentPage()){
+                case "HomePage" -> {
+                    //  Get first 5 liked songs
+                    ArrayList<String> likedSongs = new ArrayList<>();
+                    ArrayList<SongInput> songs =
+                            crtPage.getUserPlaylists().getLikedSongs();
+
+                    int size = 0;
+
+                    for (SongInput song : songs) {
+                        likedSongs.add(song.getName());
+                        size++;
+
+                        if (size == 5) {
+                            break;
+                        }
+                    }
+
+                    //  Get first 5 followed playlists
+                    ArrayList<String> followedPlaylists = new ArrayList<>();
+                    ArrayList<Playlist> playlistsArray =
+                            crtPage.getUserPlaylists().getFollowedPlaylists();
+                    size = 0;
+
+                    for (Playlist playlist : playlistsArray) {
+                        followedPlaylists.add(playlist.getName());
+                        size++;
+
+                        if (size == 5) {
+                            break;
+                        }
+                    }
+
+                    //  Get message
+                    message = "Liked songs:\n\t" + likedSongs
+                            + "\n\nFollowed playlists:\n\t"
+                            + followedPlaylists;
+                }
+
+                case "LikedContentPage" -> {
+                    //  Get liked songs
+                    ArrayList<String> likedSongs = new ArrayList<>();
+                    ArrayList<SongInput> songs =
+                            crtPage.getUserPlaylists().getLikedSongs();
+
+                    for (SongInput song : songs) {
+                        likedSongs.add(song.getName()
+                                + " - " + song.getArtist());
+                    }
+
+                    //  Get followed playlists
+                    ArrayList<String> followedPlaylists = new ArrayList<>();
+                    ArrayList<Playlist> playlistsArray =
+                            crtPage.getUserPlaylists().getFollowedPlaylists();
+
+                    for (Playlist playlist : playlistsArray) {
+                        followedPlaylists.add(playlist.getName()
+                                + " - " + playlist.getOwner());
+                    }
+
+                    //  Get message
+                    message = "Liked songs:\n\t" + likedSongs
+                            + "\n\nFollowed Playlists:\n\t"
+                            + followedPlaylists;
+                }
+
+                case "ArtistPage" -> {
+                    //  Get albums
+                    ArrayList<String> artistAlbums = new ArrayList<>();
+                    ArrayList<Album> albumsArray =
+                            crtPage.getUserPlaylists().getAlbums();
+
+                    for (Album album : albumsArray) {
+                        artistAlbums.add(album.getName());
+                    }
+
+                    //  Get merch
+                    ArrayList<String> artistMerch = new ArrayList<>();
+                    ArrayList<Merch> merchArray =
+                            crtPage.getManagement().getMerches();
+
+                    for (Merch merch : merchArray) {
+                        artistMerch.add(merch.getName()
+                                + " - " + merch.getPrice()
+                                + ":\n\t"
+                                + merch.getDescription());
+                    }
+
+                    //  Get events
+                    ArrayList<String> artistEvents = new ArrayList<>();
+                    ArrayList<Event> eventArray =
+                            crtPage.getManagement().getEvents();
+
+                    for (Event event : eventArray) {
+                        artistEvents.add(event.getName()
+                                + " - " + event.getDate()
+                                + ":\n\t"
+                                + event.getDescription());
+                    }
+
+                    //  Get message
+                    message = "Albums:\n\t" + artistAlbums
+                            + "\n\nMerch:\n\t"
+                            + artistMerch + "\n\nEvents:\n\t"
+                            + artistEvents;
+                }
+
+                default -> { }
+
+            }
+        }
+
+        printCurrentPageOutput.put("message", message);
+
+        return printCurrentPageOutput;
     }
 }

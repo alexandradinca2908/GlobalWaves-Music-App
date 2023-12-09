@@ -15,7 +15,6 @@ public class ItemSelection implements Visitable {
     private boolean shuffle = false;
     private boolean paused = false;
 
-
     public ItemSelection() {
     }
 

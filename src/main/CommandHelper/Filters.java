@@ -18,6 +18,9 @@ public final class Filters {
 
     //  Podcast filters already exist (name and owner)
 
+    //  Album filters
+    private String description;
+
     public Filters() {
     }
 
@@ -83,5 +86,13 @@ public final class Filters {
 
     public void setOwner(final String owner) {
         this.owner = owner;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(final String description) {
+        this.description = description;
     }
 }

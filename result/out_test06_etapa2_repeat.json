@@ -112,17 +112,19 @@
 }, {
   "command" : "search",
   "user" : "alice22",
-  "timestamp" : 1006
+  "timestamp" : 1006,
+  "message" : "Search returned 1 results",
+  "results" : [ "Harmonic Horizons" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 1007,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected Harmonic Horizons."
 }, {
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 1008,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",
@@ -277,11 +279,21 @@
     "paused" : true
   }
 }, {
+  "user" : "alice22",
+  "command" : "printCurrentPage",
+  "timestamp" : 1038,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1039,
   "message" : "Search returned 0 results",
   "results" : [ ]
+}, {
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 1040,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[My favourite songs]"
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -346,6 +358,11 @@
     "shuffle" : false,
     "paused" : true
   }
+}, {
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 2338,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[My favourite songs]"
 }, {
   "command" : "status",
   "user" : "alice22",

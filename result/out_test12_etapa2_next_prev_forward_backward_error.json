@@ -148,7 +148,9 @@
 }, {
   "command" : "search",
   "user" : "emily30",
-  "timestamp" : 2000
+  "timestamp" : 2000,
+  "message" : "Search returned 1 results",
+  "results" : [ "Harmonic Horizons" ]
 }, {
   "command" : "forward",
   "user" : "emily30",
@@ -158,12 +160,12 @@
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 2190,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected Harmonic Horizons."
 }, {
   "command" : "load",
   "user" : "emily30",
   "timestamp" : 2200,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "forward",
   "user" : "emily30",

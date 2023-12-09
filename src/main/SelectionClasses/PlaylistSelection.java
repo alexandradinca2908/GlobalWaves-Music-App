@@ -5,7 +5,7 @@ import main.PlaylistClasses.Playlist;
 import main.VisitorPattern.Visitable;
 import main.VisitorPattern.Visitor;
 
-public final class PlaylistSelection extends ItemSelection implements Visitable {
+public class PlaylistSelection extends ItemSelection implements Visitable {
     private Playlist playlist;
     private int startTimestamp;
     private int stopTimestamp;

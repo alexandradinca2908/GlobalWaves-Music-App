@@ -10,7 +10,11 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.ArtistClasses.Event;
+import main.ArtistClasses.Management;
+import main.ArtistClasses.Merch;
 import main.CommandHelper.Command;
+import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
@@ -137,6 +141,29 @@ public final class Main {
         //  Creating an array list of all the albums
         ArrayList<Album> albums = new ArrayList<>();
 
+        //  Initializing Page System
+        ArrayList<Page> pageSystem = new ArrayList<>();
+
+        for (UserPlaylists user : usersPlaylists) {
+            Page crtPage = new Page();
+            crtPage.setPageOwner(user.getUser());
+            crtPage.setUserPlaylists(user);
+
+            pageSystem.add(crtPage);
+        }
+
+        //  Creating an array for artist management
+        ArrayList<Management> managements = new ArrayList<>();
+
+        for (UserInput user : library.getUsers()) {
+            if (user.getType().equals("artist")) {
+                Management crtManagement = new Management();
+                crtManagement.setArtist(user);
+
+                managements.add(crtManagement);
+            }
+        }
+
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
 
         //  Parsing commands
@@ -146,7 +173,7 @@ public final class Main {
                     ObjectNode searchOutput;
                     searchOutput = doSearch(player, crtCommand,
                             podcasts, objectMapper, library, lastSearchResult,
-                            steps, playlists);
+                            steps, playlists, albums);
 
                     outputs.add(searchOutput);
                 }
@@ -154,7 +181,8 @@ public final class Main {
                 case "select" -> {
                     ObjectNode selectOutput;
                     selectOutput = doSelect(objectMapper, crtCommand,
-                            lastSearchResult, steps, library);
+                            lastSearchResult, steps, library,
+                            pageSystem, usersPlaylists, managements);
 
                     outputs.add(selectOutput);
                 }
@@ -325,7 +353,8 @@ public final class Main {
                 case "addUser" -> {
                     ObjectNode addUserOutput;
                     addUserOutput = doAddUser(objectMapper,
-                            crtCommand, library, usersPlaylists);
+                            crtCommand, library, usersPlaylists,
+                            pageSystem, managements);
 
                     outputs.add(addUserOutput);
                 }
@@ -344,6 +373,187 @@ public final class Main {
                             crtCommand, usersPlaylists);
 
                     outputs.add(showAlbumsOutput);
+                }
+
+                case "printCurrentPage" -> {
+                    ObjectNode printCurrentPageOuput;
+                    printCurrentPageOuput = doPrintCurrentPage(objectMapper,
+                            crtCommand, pageSystem, library);
+
+                    outputs.add(printCurrentPageOuput);
+                }
+
+                case "addEvent" -> {
+                    ObjectNode addEventOutput = objectMapper.createObjectNode();
+
+                    addEventOutput.put("command", "addEvent");
+                    addEventOutput.put("user", crtCommand.getUsername());
+                    addEventOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message = null;
+
+                    UserInput artist = null;
+                    boolean exists = false;
+                    boolean isArtist = false;
+
+                    //  Checking to see artist availability
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            exists = true;
+                            if (user.getType().equals("artist")) {
+                                isArtist = true;
+                                artist = user;
+                            }
+                        }
+                    }
+
+                    if (!exists) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!isArtist) {
+                        message = crtCommand.getUsername() + " is not an artist.";
+                    } else {
+                        //  Artist may add event
+
+                        //  We need to check event uniqueness
+                        boolean sameName = false;
+                        ArrayList<Event> allEvents = null;
+
+                        for (Management management : managements) {
+                            if (management.getArtist().equals(artist)) {
+                                allEvents = management.getEvents();
+                                break;
+                            }
+                        }
+
+                        //  Browsing through events
+                        for (Event event : allEvents) {
+                            if (event.getName().equals(crtCommand.getName())) {
+                                sameName = true;
+                                break;
+                            }
+                        }
+
+                        if (sameName) {
+                            message = crtCommand.getUsername()
+                                    + " has another event with the same name.";
+                        } else {
+                            //  Checking date information
+                            String[] date = crtCommand.getDate().split("-");
+                            int day = Integer.parseInt(date[0]);
+                            int month = Integer.parseInt(date[1]);
+                            int year = Integer.parseInt(date[2]);
+
+                            //  General date check
+                            if (day > 31 || month > 12
+                            || year < 1990 || year > 2023) {
+                                message = "Event for " + artist.getUsername()
+                                        + "<username> does not have a valid date.";
+                            } else {
+                                //  Checking exceptions
+                                if (month == 2 && day > 28) {
+                                    message = "Event for " + artist.getUsername()
+                                            + "<username> does not have a valid date.";
+
+                                //  Date is correct; all conditions are met
+                                } else {
+                                    Event newEvent = new Event();
+
+                                    newEvent.setDate(crtCommand.getDate());
+                                    newEvent.setName(crtCommand.getName());
+                                    newEvent.setDescription(crtCommand.getDescription());
+
+                                    //  Add event
+                                    allEvents.add(newEvent);
+
+                                    message = crtCommand.getUsername()
+                                            + " has added new event successfully.";
+                                }
+                            }
+                        }
+                    }
+
+                    addEventOutput.put("message", message);
+                    outputs.add(addEventOutput);
+                }
+
+                case "addMerch" -> {
+                    ObjectNode addMerchOutput = objectMapper.createObjectNode();
+
+                    addMerchOutput.put("command", "addMerch");
+                    addMerchOutput.put("user", crtCommand.getUsername());
+                    addMerchOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message = null;
+
+                    UserInput artist = null;
+                    boolean exists = false;
+                    boolean isArtist = false;
+
+                    //  Checking to see artist availability
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            exists = true;
+                            if (user.getType().equals("artist")) {
+                                isArtist = true;
+                                artist = user;
+                            }
+                        }
+                    }
+
+                    if (!exists) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!isArtist) {
+                        message = crtCommand.getUsername() + " is not an artist.";
+                    } else {
+                        //  Artist may add merch
+
+                        //  We need to check merch uniqueness
+                        boolean sameName = false;
+                        ArrayList<Merch> allMerch = null;
+
+                        for (Management management : managements) {
+                            if (management.getArtist().equals(artist)) {
+                                allMerch = management.getMerches();
+                                break;
+                            }
+                        }
+
+                        //  Browsing through merchandise
+                        for (Merch merch : allMerch) {
+                            if (merch.getName().equals(crtCommand.getName())) {
+                                sameName = true;
+                                break;
+                            }
+                        }
+
+                        if (sameName) {
+                            message = crtCommand.getUsername()
+                                    + " has merchandise with the same name.";
+                        } else {
+                            //  Checking price information
+                            if (crtCommand.getPrice() < 0) {
+                                message = "Price for merchandise can not be negative.";
+                            } else {
+                                //  Merch can be added
+                                Merch newMerch = new Merch();
+
+                                newMerch.setName(crtCommand.getName());
+                                newMerch.setDescription(crtCommand.getDescription());
+                                newMerch.setPrice(crtCommand.getPrice());
+
+                                //  Add event
+                                allMerch.add(newMerch);
+
+                                message = crtCommand.getUsername()
+                                        + " has added new merchandise successfully.";
+                            }
+                        }
+                    }
+
+                    addMerchOutput.put("message", message);
+                    outputs.add(addMerchOutput);
                 }
 
                 default -> {

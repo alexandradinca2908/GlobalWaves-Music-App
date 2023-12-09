@@ -20,6 +20,11 @@
   "timestamp" : 172,
   "message" : "melodymaster has added new album successfully."
 }, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 185,
+  "message" : "melodymaster has added new event successfully."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 190,
@@ -43,17 +48,19 @@
 }, {
   "command" : "search",
   "user" : "david27",
-  "timestamp" : 270
+  "timestamp" : 270,
+  "message" : "Search returned 1 results",
+  "results" : [ "melodymaster" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 290,
-  "message" : "Successfully selected Don't."
+  "message" : "Successfully selected melodymaster's page."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 320,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
 }, {
   "command" : "select",
   "user" : "david27",
@@ -63,7 +70,7 @@
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
   "timestamp" : 340,
-  "message" : "Successfully added to playlist."
+  "message" : "Successfully removed from playlist."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -102,6 +109,11 @@
   "timestamp" : 390,
   "message" : "Successfully selected Elevate."
 }, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 395,
+  "message" : "Event for melodymaster<username> does not have a valid date."
+}, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 400,
@@ -112,19 +124,31 @@
   "timestamp" : 430,
   "message" : "Successfully added to playlist."
 }, {
+  "user" : "david27",
+  "command" : "printCurrentPage",
+  "timestamp" : 430,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+}, {
   "command" : "search",
   "user" : "bob35",
-  "timestamp" : 431
+  "timestamp" : 431,
+  "message" : "Search returned 1 results",
+  "results" : [ "Harmonic Horizons" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 432,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected Harmonic Horizons."
 }, {
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 433,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
+}, {
+  "command" : "addMerch",
+  "user" : "melodymaster",
+  "timestamp" : 433,
+  "message" : "melodymaster has added new merchandise successfully."
 }, {
   "command" : "load",
   "user" : "carol19",
@@ -162,6 +186,11 @@
   "user" : "carol19",
   "timestamp" : 690,
   "message" : "Please load a source before setting the repeat status."
+}, {
+  "command" : "addEvent",
+  "user" : "melodymaster",
+  "timestamp" : 785,
+  "message" : "melodymaster has added new event successfully."
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -216,6 +245,11 @@
   "user" : "bob35",
   "timestamp" : 2450,
   "message" : "Successfully selected I Don't Wanna Live Forever."
+}, {
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 2455,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -294,8 +328,8 @@
   "user" : "bob35",
   "timestamp" : 2800,
   "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 329,
+    "name" : "Retro Rhythms",
+    "remainedTime" : 160,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -310,8 +344,8 @@
   "user" : "bob35",
   "timestamp" : 2900,
   "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 229,
+    "name" : "Retro Rhythms",
+    "remainedTime" : 60,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -321,8 +355,8 @@
   "user" : "bob35",
   "timestamp" : 3250,
   "stats" : {
-    "name" : "I Don't Wanna Live Forever",
-    "remainedTime" : 124,
+    "name" : "Hustle Hard",
+    "remainedTime" : 167,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -332,38 +366,43 @@
   "user" : "bob35",
   "timestamp" : 3600,
   "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 225,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
+    "shuffle" : false,
+    "paused" : true
   }
 }, {
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 3610,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Please load a source before using the shuffle function."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 3660,
   "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 165,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
+}, {
+  "user" : "david27",
+  "command" : "printCurrentPage",
+  "timestamp" : 3900,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 4000,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 63,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -398,12 +437,17 @@
   "timestamp" : 4360,
   "message" : "Shuffle function activated successfully."
 }, {
+  "user" : "david27",
+  "command" : "printCurrentPage",
+  "timestamp" : 4400,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 4410,
   "stats" : {
-    "name" : "Nothing Else Matters",
-    "remainedTime" : 332,
+    "name" : "I Don't Wanna Live Forever",
+    "remainedTime" : 188,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -413,22 +457,27 @@
   "user" : "bob35",
   "timestamp" : 4750,
   "stats" : {
-    "name" : "Retro Rhythms",
-    "remainedTime" : 212,
+    "name" : "Elevate",
+    "remainedTime" : 73,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
   }
 }, {
+  "user" : "carol19",
+  "command" : "printCurrentPage",
+  "timestamp" : 5000,
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+}, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 5100,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 100,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
+    "shuffle" : false,
+    "paused" : true
   }
 }, {
   "command" : "showPlaylists",
@@ -436,7 +485,7 @@
   "timestamp" : 6000,
   "result" : [ {
     "name" : "My playlist",
-    "songs" : [ "Nothing Else Matters", "Don't", "Retro Rhythms", "Elevate", "I Don't Wanna Live Forever", "Hustle Hard", "Begin Again" ],
+    "songs" : [ "I Don't Wanna Live Forever", "Begin Again", "Retro Rhythms", "Elevate", "Hustle Hard" ],
     "visibility" : "public",
     "followers" : 0
   } ]

@@ -3,9 +3,12 @@ package main.UtilityClasses;
 import fileio.input.LibraryInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
+import fileio.input.UserInput;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
+import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
+import main.SelectionClasses.ArtistSelection;
 import main.SelectionClasses.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
@@ -236,6 +239,71 @@ public final class SearchSelect {
         } else {
             if (filters.getOwner() != null) {
                 result.removeIf(podcast -> !podcast.getOwner().equals(filters.getOwner()));
+            }
+        }
+    }
+
+    /**
+     * This command filters the albums based on the search filter
+     *
+     * @param filters Search filters
+     * @param result Found albums
+     * @param albums The array of all albums
+     */
+    public static void searchForAlbums(final Filters filters,
+                                       final ArrayList<Album> result,
+                                       final ArrayList<Album> albums) {
+        //  Add all albums containing the searched name
+        if (filters.getName() != null) {
+            for (Album album : albums) {
+                if (album.getName().startsWith(filters.getName())) {
+                    result.add(album);
+                }
+            }
+        }
+
+        //  Initialize result if it is still empty
+        //  Else, parse the array and remove albums from other owners
+        if (result.isEmpty()) {
+            if (filters.getOwner() != null) {
+                for (Album album : albums) {
+                    if (album.getOwner().equals(filters.getOwner())) {
+                        result.add(album);
+                    }
+                }
+            }
+        } else {
+            if (filters.getOwner() != null) {
+                result.removeIf(album -> !album.getOwner().equals(filters.getOwner()));
+            }
+        }
+
+        //  Initialize result if it is still empty
+        //  Else, parse the array and remove albums with other descriptions
+        if (result.isEmpty()) {
+            if (filters.getOwner() != null) {
+                for (Album album : albums) {
+                    if (album.getDescription().equals(filters.getDescription())) {
+                        result.add(album);
+                    }
+                }
+            }
+        } else {
+            if (filters.getOwner() != null) {
+                result.removeIf(album -> !album.getDescription().equals(filters.getDescription()));
+            }
+        }
+    }
+
+    public static void searchForArtists(final Filters filters,
+                                        final ArrayList<UserInput> result,
+                                        final LibraryInput library) {
+        //  Add all artists containing the searched name
+        if (filters.getName() != null) {
+            for (UserInput artist : library.getUsers()) {
+                if (artist.getUsername().startsWith(filters.getName())) {
+                    result.add(artist);
+                }
             }
         }
     }

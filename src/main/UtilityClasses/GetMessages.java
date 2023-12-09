@@ -4,7 +4,9 @@ import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.ArtistClasses.Management;
 import main.CommandHelper.Command;
+import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.ItemSelection;
@@ -161,7 +163,11 @@ public final class GetMessages {
             message = "Please conduct a search before making a selection.";
         } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 1) {
             message = "The selected ID is too high.";
+        } else if (lastSearchResult.get(0).equals("artist")){
+            int index = crtCommand.getItemNumber();
+            message = "Successfully selected " + lastSearchResult.get(index) + "'s page.";
         } else {
+            //  Selecting something to play
             int index = crtCommand.getItemNumber();
             message = "Successfully selected " + lastSearchResult.get(index) + ".";
         }
@@ -745,11 +751,15 @@ public final class GetMessages {
      * @param crtCommand The addUser command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param usersPlaylists The array of users and their respective playlists
+     * @param pageSystem The array of user pages
+     * @param managements The array of managing technicalities for artists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddUserMessage(final Command crtCommand,
                                            final LibraryInput library,
-                                           final ArrayList<UserPlaylists> usersPlaylists) {
+                                           final ArrayList<UserPlaylists> usersPlaylists,
+                                           final ArrayList<Page> pageSystem,
+                                           final ArrayList<Management> managements) {
         String message;
 
         //  Search to see if this is a new user
@@ -784,6 +794,19 @@ public final class GetMessages {
             UserPlaylists newUserPlaylists = new UserPlaylists();
             newUserPlaylists.setUser(newUser);
             usersPlaylists.add(newUserPlaylists);
+
+            //  Page system
+            Page newPage = new Page();
+            newPage.setUserPlaylists(newUserPlaylists);
+            newPage.setPageOwner(newUserPlaylists.getUser());
+            pageSystem.add(newPage);
+
+            //  Management, if the user is an artist
+            if (newUser.getType().equals("artist")) {
+                Management newManagement = new Management();
+                newManagement.setArtist(newUser);
+                managements.add(newManagement);
+            }
 
             message = "The username " + wantedUsername + " has been added successfully.";
         }
@@ -876,11 +899,11 @@ public final class GetMessages {
                     message = crtCommand.getUsername()
                             + " has the same song at least twice in this album.";
                 } else {
-                    //  The album can initialized
+                    //  The album can be initialized
                     Album newAlbum = new Album();
 
                     //  Set data
-                    newAlbum.setArtist(crtCommand.getUsername());
+                    newAlbum.setOwner(crtCommand.getUsername());
                     newAlbum.setName(crtCommand.getName());
                     newAlbum.setReleaseYear(crtCommand.getReleaseYear());
                     newAlbum.setDescription(crtCommand.getDescription());
