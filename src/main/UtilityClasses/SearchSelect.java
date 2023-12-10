@@ -15,7 +15,6 @@ import main.SelectionClasses.Playlists.PlaylistSelection;
 import java.util.ArrayList;
 public final class SearchSelect {
     private SearchSelect() {
-
     }
 
     /**

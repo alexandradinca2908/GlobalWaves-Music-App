@@ -14,7 +14,7 @@ public final class Page {
         return pageOwner;
     }
 
-    public void setPageOwner(UserInput pageOwner) {
+    public void setPageOwner(final UserInput pageOwner) {
         this.pageOwner = pageOwner;
     }
 
@@ -38,7 +38,7 @@ public final class Page {
         return management;
     }
 
-    public void setManagement(Management management) {
+    public void setManagement(final Management management) {
         this.management = management;
     }
 }

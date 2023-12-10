@@ -19,7 +19,10 @@ import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
+import main.SelectionClasses.Playlists.AlbumSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 
 import java.io.File;
@@ -28,6 +31,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 import static main.UtilityClasses.DoCommands.*;
@@ -591,7 +595,144 @@ public final class Main {
                 }
 
                 case "deleteUser" -> {
-                    
+                    ObjectNode deleteUserOutput = objectMapper.createObjectNode();
+
+                    deleteUserOutput.put("command", "deleteUser");
+                    deleteUserOutput.put("user", crtCommand.getUsername());
+                    deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message = null;
+
+                    //  Searching the user through database
+                    UserInput crtUser = null;
+
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            crtUser = user;
+                            break;
+                        }
+                    }
+
+                    if (crtUser == null) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else {
+                        //  Looking to see if user's dependencies are being used
+                        boolean used = false;
+
+                        for (ItemSelection item : player) {
+                            if (item instanceof SongSelection) {
+                                if (((SongSelection)item).getSong().getArtist().equals(crtCommand.getUsername())) {
+                                    used = true;
+                                    break;
+                                }
+                            }
+                            if (item instanceof PodcastSelection) {
+                                if (((PodcastSelection)item).getPodcast().getOwner().equals(crtCommand.getUsername())) {
+                                    used = true;
+                                    break;
+                                }
+                            }
+                            if (item instanceof PlaylistSelection) {
+                                if (((PlaylistSelection)item).getPlaylist().getOwner().equals(crtCommand.getUsername())) {
+                                    used = true;
+                                    break;
+                                }
+                            }
+                            if (item instanceof AlbumSelection) {
+                                if (((AlbumSelection)item).getAlbum().getOwner().equals(crtCommand.getUsername())) {
+                                    used = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (used) {
+                            message = crtCommand.getUsername() + " can't be deleted.";
+                        } else {
+                            //  We can safely delete this user
+                            if (crtUser.getType().equals("user")) {
+                                //  Collect all deletable playlists
+                                ArrayList<Playlist> removables = new ArrayList<>();
+                                for (Playlist playlist : playlists) {
+                                    if (playlist.getOwner().equals(crtUser.getUsername())) {
+                                        removables.add(playlist);
+                                    }
+                                }
+
+                                //  Before deleting playlists we must delete follows
+                                for (Playlist playlist : removables) {
+                                    for (String username : playlist.getFollowers()) {
+                                        for (UserPlaylists user : usersPlaylists) {
+                                            if (user.getUser().getUsername().equals(username)) {
+                                                user.getFollowedPlaylists().remove(playlist);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    playlists.remove(playlist);
+                                }
+
+                                //  Now delete the user from the database
+                                UserPlaylists deleteUserPlaylists = null;
+                                for (UserPlaylists userPlaylists : usersPlaylists) {
+                                    if (userPlaylists.getUser().equals(crtUser)) {
+                                        deleteUserPlaylists = userPlaylists;
+                                        break;
+                                    }
+                                }
+                                usersPlaylists.remove(deleteUserPlaylists);
+
+                                //  Lastly delete the user themselves
+                                library.getUsers().remove(crtUser);
+
+                                message = crtUser.getUsername() + " was successfully deleted.";
+                            }
+
+                            if (crtUser.getType().equals("artist")) {
+                                //  Collect all deletable albums
+                                ArrayList<Album> removables = new ArrayList<>();
+                                for (Album album : albums) {
+                                    if (album.getOwner().equals(crtUser.getUsername())) {
+                                        removables.add(album);
+                                    }
+                                }
+
+                                //  By deleting albums we must delete song likes
+                                for (Album album : removables) {
+                                    for (SongInput song : album.getSongs()) {
+                                        //  Delete song from users' likes
+                                        for (UserPlaylists user : usersPlaylists) {
+                                            if (user.getLikedSongs().contains(song)) {
+                                                user.getLikedSongs().remove(song);
+                                                break;
+                                            }
+                                        }
+                                        library.getSongs().remove(song);
+
+                                        //  Delete song from song likes array
+                                        SongLikes removableSong = null;
+                                        for (SongLikes songLikes : songsLikes) {
+                                            if (songLikes.getSong().equals(song)) {
+                                                removableSong = songLikes;
+                                                break;
+                                            }
+                                        }
+                                        if (removableSong != null) {
+                                            songsLikes.remove(removableSong);
+                                        }
+                                    }
+                                    //  Delete album
+                                    albums.remove(album);
+                                }
+                                //  Lastly delete the user themselves
+                                library.getUsers().remove(crtUser);
+
+                                message = crtUser.getUsername() + " was successfully deleted.";
+                            }
+                        }
+                    }
+                    deleteUserOutput.put("message", message);
+                    outputs.add(deleteUserOutput);
                 }
 
                 default -> {

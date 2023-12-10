@@ -1,6 +1,6 @@
 package main.ArtistClasses;
 
-public class Merch {
+public final class Merch {
     private String name;
     private String description;
     private int price;

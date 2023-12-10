@@ -95,32 +95,47 @@
   "timestamp" : 135,
   "message" : "Liked songs:\n\t[Radio Ga Ga]\n\nFollowed playlists:\n\t[]"
 }, {
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 150,
+  "message" : "beatblazer was successfully deleted."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 190,
-  "message" : "Search returned 1 results",
-  "results" : [ "Beat Odyssey" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 280,
-  "message" : "Successfully selected Beat Odyssey."
+  "message" : "The selected ID is too high."
 }, {
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 285,
-  "message" : "Playback loaded successfully."
+  "message" : "Please select a source before attempting to load."
+}, {
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 1158,
+  "message" : "The username beatblazer doesn't exist."
 }, {
   "command" : "prev",
   "user" : "alice22",
   "timestamp" : 1159,
-  "message" : "Returned to previous track successfully. The current track is Melodic Motion."
+  "message" : "Please load a source before returning to the previous track."
+}, {
+  "command" : "deleteUser",
+  "user" : "beatblazer",
+  "timestamp" : 1380,
+  "message" : "The username beatblazer doesn't exist."
 }, {
   "command" : "search",
   "user" : "melodicmind42",
   "timestamp" : 1385,
-  "message" : "Search returned 2 results",
-  "results" : [ "Rapid Rhythms", "Rapid Fire" ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Rapid Rhythms" ]
 }, {
   "command" : "select",
   "user" : "melodicmind42",
