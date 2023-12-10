@@ -3,10 +3,9 @@ package main.VisitorPattern.VisitorClasses;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 import main.CommandHelper.Command;
-import main.SelectionClasses.ItemSelection;
-import main.SelectionClasses.PlaylistSelection;
-import main.SelectionClasses.PodcastSelection;
-import main.SelectionClasses.SongSelection;
+import main.SelectionClasses.*;
+import main.SelectionClasses.Playlists.AlbumSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.VisitorPattern.Visitor;
 
 import java.util.ArrayList;
@@ -154,6 +153,79 @@ public final class VisitNextMessage implements Visitor {
 
                 message = "Skipped to next track successfully. The current track is "
                         + crtItem.getPlaylist().getSongs().get(0).getName() + ".";
+
+            } else if (crtItem.getRepeat().equals("Repeat Current Song")) {
+                //  Restart song
+                crtItem.setRemainingTime(prevDuration);
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                message = "Skipped to next track successfully. The current track is "
+                        + crtSong.getName() + ".";
+            }
+        }
+
+        return message;
+    }
+
+    @Override
+    public String visit(AlbumSelection crtItem) {
+        String message = null;
+
+        SongInput crtSong = null;
+
+        //  Find the current song
+        int duration = crtItem.getAlbum().getDuration();
+        int prevDuration = duration;
+
+        for (SongInput song : crtItem.getAlbum().getSongs()) {
+            prevDuration = duration;
+            duration -= song.getDuration();
+
+            if (duration < crtItem.getRemainingTime()) {
+                crtSong = song;
+                break;
+            }
+        }
+
+        if (duration > 0) {
+            if (crtItem.getRepeat().equals("Repeat Current Song")) {
+                //  Restart song
+                crtItem.setRemainingTime(prevDuration);
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                message = "Skipped to next track successfully. The current track is "
+                        + crtSong.getName() + ".";
+            } else {
+                //  Next song
+                crtItem.setRemainingTime(duration);
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                int index = crtItem.getAlbum().getSongs().indexOf(crtSong);
+
+                message = "Skipped to next track successfully. The current track is "
+                        + crtItem.getAlbum().getSongs().get(index + 1).getName() + ".";
+            }
+        } else if (duration == 0) {
+            //  Check repeat status to take action
+            if (crtItem.getRepeat().equals("No Repeat")) {
+                //  Stop playlist
+                crtItem.setRemainingTime(0);
+                crtItem.setPaused(true);
+                player.remove(crtItem);
+
+                message = "Please load a source before skipping to the next track.";
+
+            } else if (crtItem.getRepeat().equals("Repeat All")) {
+                //  Restart playlist
+                crtItem.setRemainingTime(crtItem.getAlbum().getDuration());
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                message = "Skipped to next track successfully. The current track is "
+                        + crtItem.getAlbum().getSongs().get(0).getName() + ".";
 
             } else if (crtItem.getRepeat().equals("Repeat Current Song")) {
                 //  Restart song

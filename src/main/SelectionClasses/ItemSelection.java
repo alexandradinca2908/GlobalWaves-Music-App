@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.VisitorPattern.Visitable;
 import main.VisitorPattern.Visitor;
 

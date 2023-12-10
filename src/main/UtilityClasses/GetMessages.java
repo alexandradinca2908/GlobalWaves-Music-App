@@ -10,7 +10,7 @@ import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.ItemSelection;
-import main.SelectionClasses.PlaylistSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
@@ -806,6 +806,7 @@ public final class GetMessages {
                 Management newManagement = new Management();
                 newManagement.setArtist(newUser);
                 managements.add(newManagement);
+                newPage.setManagement(newManagement);
             }
 
             message = "The username " + wantedUsername + " has been added successfully.";

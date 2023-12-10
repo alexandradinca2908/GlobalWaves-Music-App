@@ -1,11 +1,12 @@
-package main.SelectionClasses;
+package main.SelectionClasses.Playlists;
 
 import fileio.input.SongInput;
 import main.PlaylistClasses.Playlist;
+import main.SelectionClasses.ItemSelection;
 import main.VisitorPattern.Visitable;
 import main.VisitorPattern.Visitor;
 
-public class PlaylistSelection extends ItemSelection implements Visitable {
+public final class PlaylistSelection extends ItemSelection implements Visitable {
     private Playlist playlist;
     private int startTimestamp;
     private int stopTimestamp;

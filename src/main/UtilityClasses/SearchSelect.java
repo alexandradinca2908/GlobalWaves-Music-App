@@ -8,10 +8,9 @@ import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
-import main.SelectionClasses.ArtistSelection;
-import main.SelectionClasses.PlaylistSelection;
-import main.SelectionClasses.PodcastSelection;
-import main.SelectionClasses.SongSelection;
+import main.SelectionClasses.*;
+import main.SelectionClasses.Playlists.AlbumSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 
 import java.util.ArrayList;
 public final class SearchSelect {
@@ -281,7 +280,7 @@ public final class SearchSelect {
         //  Initialize result if it is still empty
         //  Else, parse the array and remove albums with other descriptions
         if (result.isEmpty()) {
-            if (filters.getOwner() != null) {
+            if (filters.getDescription() != null) {
                 for (Album album : albums) {
                     if (album.getDescription().equals(filters.getDescription())) {
                         result.add(album);
@@ -289,7 +288,7 @@ public final class SearchSelect {
                 }
             }
         } else {
-            if (filters.getOwner() != null) {
+            if (filters.getDescription() != null) {
                 result.removeIf(album -> !album.getDescription().equals(filters.getDescription()));
             }
         }
@@ -395,6 +394,35 @@ public final class SearchSelect {
         selectedPodcast.setRemainingTime(selectedPodcast.getPodcast().getDuration());
 
         return selectedPodcast;
+    }
+
+    /**
+     * This method retrieves the selected album
+     *
+     * @param crtCommand The select command with all its data
+     * @param albums The array of all albums
+     * @param lastSearchResult The array containing the search result and its type
+     * @return The selected album
+     */
+    public static AlbumSelection getAlbumSelection(final Command crtCommand,
+                                                   final ArrayList<Album> albums,
+                                                   final ArrayList<String> lastSearchResult) {
+        AlbumSelection selectedAlbum = new AlbumSelection();
+        //  Set name
+        for (Album album : albums) {
+            if (album.getName().equals(lastSearchResult.get(1))) {
+                selectedAlbum.setAlbum(album);
+                break;
+            }
+        }
+        //  Set user
+        selectedAlbum.setUser(crtCommand.getUsername());
+        //  Set start time
+        selectedAlbum.setStartTime(crtCommand.getTimestamp());
+        //  Set remaining time
+        selectedAlbum.setRemainingTime(selectedAlbum.getAlbum().getDuration());
+
+        return selectedAlbum;
     }
 
     /**

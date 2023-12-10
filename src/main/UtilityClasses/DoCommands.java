@@ -15,10 +15,9 @@ import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
-import main.SelectionClasses.ItemSelection;
-import main.SelectionClasses.PlaylistSelection;
-import main.SelectionClasses.PodcastSelection;
-import main.SelectionClasses.SongSelection;
+import main.SelectionClasses.*;
+import main.SelectionClasses.Playlists.AlbumSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SongClasses.SongLikes;
 
 import java.util.ArrayList;
@@ -381,7 +380,8 @@ public final class DoCommands {
                                     final LibraryInput library,
                                     final ArrayList<ItemSelection> player,
                                     final ArrayList<Playlist> playlists,
-                                    final ArrayList<PodcastSelection> podcasts) {
+                                    final ArrayList<PodcastSelection> podcasts,
+                                    final ArrayList<Album> albums) {
         ObjectNode loadOutput = objectMapper.createObjectNode();
         loadOutput.put("command", "load");
         loadOutput.put("user", crtCommand.getUsername());
@@ -481,6 +481,23 @@ public final class DoCommands {
                     //  Keep record of the selection
                     podcasts.add(selectedPodcast);
                 }
+            }
+
+            if (lastSearchResult.get(0).equals("album")) {
+                AlbumSelection selectedAlbum =
+                        SearchSelect.getAlbumSelection(crtCommand,
+                                albums, lastSearchResult);
+
+                //  Clearing other load from the same user
+                for (ItemSelection item : player) {
+                    if (item.getUser().equals(selectedAlbum.getUser())) {
+                        player.remove(item);
+                        break;
+                    }
+                }
+
+                //  Add selection to array
+                player.add(selectedAlbum);
             }
 
             //  Clearing the result so that we can't load it twice

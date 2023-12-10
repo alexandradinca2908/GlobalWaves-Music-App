@@ -3,7 +3,8 @@ package main.VisitorPattern.VisitorClasses;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 import main.CommandHelper.Command;
-import main.SelectionClasses.PlaylistSelection;
+import main.SelectionClasses.Playlists.AlbumSelection;
+import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.VisitorPattern.Visitor;
@@ -82,7 +83,7 @@ public final class VisitPrevMessage implements Visitor {
         String message = null;
         SongInput crtSong = null;
 
-        //  Find the current episode
+        //  Find the current song
         int duration = crtItem.getPlaylist().getDuration();
 
         for (SongInput song : crtItem.getPlaylist().getSongs()) {
@@ -125,6 +126,60 @@ public final class VisitPrevMessage implements Visitor {
 
                 message = "Returned to previous track successfully. The current track is "
                         + crtItem.getPlaylist().getSongs().get(index).getName() + ".";
+            }
+        }
+
+        return message;
+    }
+
+    @Override
+    public String visit(final AlbumSelection crtItem) {
+        String message = null;
+        SongInput crtSong = null;
+
+        //  Find the current song
+        int duration = crtItem.getAlbum().getDuration();
+
+        for (SongInput song : crtItem.getAlbum().getSongs()) {
+            duration -= song.getDuration();
+
+            if (duration < crtItem.getRemainingTime()) {
+                duration += song.getDuration();
+                crtSong = song;
+                break;
+            }
+        }
+
+        if (duration - crtItem.getRemainingTime() > 1) {
+            crtItem.setRemainingTime(duration);
+            crtItem.setStartTime(crtCommand.getTimestamp());
+            crtItem.setPaused(false);
+
+            message = "Returned to previous track successfully. The current track is "
+                    + crtSong.getName() + ".";
+
+        } else {
+            //  Treating first song exception
+            if (crtItem.getAlbum().getSongs().indexOf(crtSong) == 0) {
+                //  If we are at the first song, just restart the playlist
+                crtItem.setRemainingTime(crtItem.getAlbum().getDuration());
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                message = "Returned to previous track successfully. "
+                        + "The current track is "
+                        + crtItem.getAlbum().getSongs().get(0).getName() + ".";
+
+                //  Now we can go back to the previous song
+            } else {
+                int index = crtItem.getAlbum().getSongs().indexOf(crtSong) - 1;
+                crtItem.setRemainingTime(duration
+                        + crtItem.getAlbum().getSongs().get(index).getDuration());
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+
+                message = "Returned to previous track successfully. The current track is "
+                        + crtItem.getAlbum().getSongs().get(index).getName() + ".";
             }
         }
 

@@ -170,18 +170,12 @@
   "command" : "forward",
   "user" : "emily30",
   "timestamp" : 3120,
-  "message" : "Please load a source before attempting to forward."
+  "message" : "The loaded source is not a podcast."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 3220,
-  "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
-    "shuffle" : false,
-    "paused" : true
-  }
+  "stats" : { }
 }, {
   "command" : "forward",
   "user" : "emily30",

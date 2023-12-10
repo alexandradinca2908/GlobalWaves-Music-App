@@ -191,7 +191,7 @@ public final class Main {
                     ObjectNode loadOutput;
                     loadOutput = doLoad(objectMapper, crtCommand,
                             steps, lastSearchResult, library, player,
-                            playlists, podcasts);
+                            playlists, podcasts, albums);
 
                     outputs.add(loadOutput);
                 }
@@ -554,6 +554,44 @@ public final class Main {
 
                     addMerchOutput.put("message", message);
                     outputs.add(addMerchOutput);
+                }
+
+                case "getAllUsers" -> {
+                    ObjectNode getAllUsersOutput = objectMapper.createObjectNode();
+
+                    getAllUsersOutput.put("command", "getAllUsers");
+                    getAllUsersOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    ArrayList<String> result = new ArrayList<>();
+
+                    //  Parsing user list 3 times
+
+                    //  Normal users
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getType().equals("user")) {
+                            result.add(user.getUsername());
+                        }
+                    }
+                    //  Artists
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getType().equals("artist")) {
+                            result.add(user.getUsername());
+                        }
+                    }
+                    //  Hosts
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getType().equals("host")) {
+                            result.add(user.getUsername());
+                        }
+                    }
+
+                    getAllUsersOutput.putPOJO("result", result);
+
+                    outputs.add(getAllUsersOutput);
+                }
+
+                case "deleteUser" -> {
+                    
                 }
 
                 default -> {

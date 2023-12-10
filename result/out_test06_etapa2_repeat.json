@@ -129,7 +129,7 @@
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",
   "timestamp" : 1009,
-  "message" : "Please load a source before adding to or removing from the playlist."
+  "message" : "The loaded source is not a song."
 }, {
   "command" : "search",
   "user" : "alice22",
