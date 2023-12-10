@@ -120,6 +120,8 @@ public final class DoCommands {
                 SearchSelect.storeResultForSelect(lastSearchResult, songNames,
                         "song");
                 steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
             }
 
             case "playlist" -> {
@@ -154,6 +156,8 @@ public final class DoCommands {
                 SearchSelect.storeResultForSelect(lastSearchResult,
                         playlistNames, "playlist");
                 steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
             }
 
             case "podcast" -> {
@@ -183,6 +187,8 @@ public final class DoCommands {
                 SearchSelect.storeResultForSelect(lastSearchResult,
                         podcastNames, "podcast");
                 steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
             }
 
             case "album" -> {
@@ -212,6 +218,8 @@ public final class DoCommands {
                 SearchSelect.storeResultForSelect(lastSearchResult,
                         albumNames, "album");
                 steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
             }
 
             case "artist" -> {
@@ -241,6 +249,8 @@ public final class DoCommands {
                 SearchSelect.storeResultForSelect(lastSearchResult,
                         artistNames, "artist");
                 steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
             }
 
             default -> { }
@@ -1757,34 +1767,36 @@ public final class DoCommands {
                     }
 
                     //  Get merch
-                    ArrayList<String> artistMerch = new ArrayList<>();
-                    ArrayList<Merch> merchArray =
-                            crtPage.getManagement().getMerches();
+                    if (crtPage.getManagement() != null) {
+                        ArrayList<String> artistMerch = new ArrayList<>();
+                        ArrayList<Merch> merchArray =
+                                crtPage.getManagement().getMerches();
 
-                    for (Merch merch : merchArray) {
-                        artistMerch.add(merch.getName()
-                                + " - " + merch.getPrice()
-                                + ":\n\t"
-                                + merch.getDescription());
+                        for (Merch merch : merchArray) {
+                            artistMerch.add(merch.getName()
+                                    + " - " + merch.getPrice()
+                                    + ":\n\t"
+                                    + merch.getDescription());
+                        }
+
+                        //  Get events
+                        ArrayList<String> artistEvents = new ArrayList<>();
+                        ArrayList<Event> eventArray =
+                                crtPage.getManagement().getEvents();
+
+                        for (Event event : eventArray) {
+                            artistEvents.add(event.getName()
+                                    + " - " + event.getDate()
+                                    + ":\n\t"
+                                    + event.getDescription());
+                        }
+
+                        //  Get message
+                        message = "Albums:\n\t" + artistAlbums
+                                + "\n\nMerch:\n\t"
+                                + artistMerch + "\n\nEvents:\n\t"
+                                + artistEvents;
                     }
-
-                    //  Get events
-                    ArrayList<String> artistEvents = new ArrayList<>();
-                    ArrayList<Event> eventArray =
-                            crtPage.getManagement().getEvents();
-
-                    for (Event event : eventArray) {
-                        artistEvents.add(event.getName()
-                                + " - " + event.getDate()
-                                + ":\n\t"
-                                + event.getDescription());
-                    }
-
-                    //  Get message
-                    message = "Albums:\n\t" + artistAlbums
-                            + "\n\nMerch:\n\t"
-                            + artistMerch + "\n\nEvents:\n\t"
-                            + artistEvents;
                 }
 
                 default -> { }

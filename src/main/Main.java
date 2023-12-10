@@ -31,7 +31,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Objects;
 
 import static main.UtilityClasses.DoCommands.*;
@@ -600,6 +599,8 @@ public final class Main {
                     deleteUserOutput.put("command", "deleteUser");
                     deleteUserOutput.put("user", crtCommand.getUsername());
                     deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    updatePlayer(player, crtCommand, podcasts, library);
 
                     String message = null;
 

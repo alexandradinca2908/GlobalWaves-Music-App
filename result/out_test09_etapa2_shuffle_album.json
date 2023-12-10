@@ -55,7 +55,7 @@
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 290,
-  "message" : "Successfully selected melodymaster's page."
+  "message" : "Please conduct a search before making a selection."
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -65,7 +65,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 320,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected melodymaster's page."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
@@ -127,7 +127,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 430,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -374,7 +374,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 3900,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!, Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -422,7 +422,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 4400,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!, Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",

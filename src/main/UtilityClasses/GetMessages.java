@@ -159,9 +159,10 @@ public final class GetMessages {
     public static String getSelectMessage(final ArrayList<String> lastSearchResult,
                                           final Command crtCommand, final int[] steps) {
         String message;
-        if (steps[0] == 0) {
+        if (steps[0] == 0 || !lastSearchResult.get(lastSearchResult.size() - 1)
+                .equals(crtCommand.getUsername())) {
             message = "Please conduct a search before making a selection.";
-        } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 1) {
+        } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 2) {
             message = "The selected ID is too high.";
         } else if (lastSearchResult.get(0).equals("artist")){
             int index = crtCommand.getItemNumber();
