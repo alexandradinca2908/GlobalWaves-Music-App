@@ -4,7 +4,9 @@ import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.ArtistClasses.Event;
 import main.ArtistClasses.Management;
+import main.ArtistClasses.Merch;
 import main.CommandHelper.Command;
 import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
@@ -15,9 +17,11 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
+import main.VisitorPattern.VisitorClasses.VisitDeleteUser;
 import main.VisitorPattern.VisitorClasses.VisitNextMessage;
 import main.VisitorPattern.VisitorClasses.VisitPrevMessage;
 import main.VisitorPattern.Visitor;
+import main.UtilityClasses.Constants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -164,7 +168,7 @@ public final class GetMessages {
             message = "Please conduct a search before making a selection.";
         } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 2) {
             message = "The selected ID is too high.";
-        } else if (lastSearchResult.get(0).equals("artist")){
+        } else if (lastSearchResult.get(0).equals("artist")) {
             int index = crtCommand.getItemNumber();
             message = "Successfully selected " + lastSearchResult.get(index) + "'s page.";
         } else {
@@ -925,6 +929,292 @@ public final class GetMessages {
 
                     message = crtCommand.getUsername()
                             + " has added new album successfully.";
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getAddEventMessage(final LibraryInput library,
+                                            final Command crtCommand,
+                                            final ArrayList<Management> managements) {
+        String message = null;
+
+        UserInput artist = null;
+        boolean exists = false;
+        boolean isArtist = false;
+
+        //  Checking to see artist availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("artist")) {
+                    isArtist = true;
+                    artist = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isArtist) {
+            message = crtCommand.getUsername() + " is not an artist.";
+        } else {
+            //  Artist may add event
+
+            //  We need to check event uniqueness
+            boolean sameName = false;
+            ArrayList<Event> allEvents = null;
+
+            for (Management management : managements) {
+                if (management.getArtist().equals(artist)) {
+                    allEvents = management.getEvents();
+                    break;
+                }
+            }
+
+            //  Browsing through events
+            for (Event event : allEvents) {
+                if (event.getName().equals(crtCommand.getName())) {
+                    sameName = true;
+                    break;
+                }
+            }
+
+            if (sameName) {
+                message = crtCommand.getUsername()
+                        + " has another event with the same name.";
+            } else {
+                //  Checking date information
+                String[] date = crtCommand.getDate().split("-");
+                int day = Integer.parseInt(date[0]);
+                int month = Integer.parseInt(date[1]);
+                int year = Integer.parseInt(date[2]);
+
+                //  General date check
+                if (day > Constants.LAST_DAY_OF_MONTH
+                        || month > Constants.LAST_MONTH_OF_YEAR
+                        || year < Constants.MIN_YEAR
+                        || year > Constants.MAX_YEAR) {
+                    message = "Event for " + artist.getUsername()
+                            + "<username> does not have a valid date.";
+                } else {
+                    //  Checking exceptions
+                    if (month == Constants.FEBRUARY
+                            && day > Constants.LAST_DAY_OF_FEBRUARY) {
+                        message = "Event for " + artist.getUsername()
+                                + "<username> does not have a valid date.";
+
+                        //  Date is correct; all conditions are met
+                    } else {
+                        Event newEvent = new Event();
+
+                        newEvent.setDate(crtCommand.getDate());
+                        newEvent.setName(crtCommand.getName());
+                        newEvent.setDescription(crtCommand.getDescription());
+
+                        //  Add event
+                        allEvents.add(newEvent);
+
+                        message = crtCommand.getUsername()
+                                + " has added new event successfully.";
+                    }
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getAddMerchMessage(final LibraryInput library,
+                                            final Command crtCommand,
+                                            final ArrayList<Management> managements) {
+        String message = null;
+
+        UserInput artist = null;
+        boolean exists = false;
+        boolean isArtist = false;
+
+        //  Checking to see artist availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("artist")) {
+                    isArtist = true;
+                    artist = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isArtist) {
+            message = crtCommand.getUsername() + " is not an artist.";
+        } else {
+            //  Artist may add merch
+
+            //  We need to check merch uniqueness
+            boolean sameName = false;
+            ArrayList<Merch> allMerch = null;
+
+            for (Management management : managements) {
+                if (management.getArtist().equals(artist)) {
+                    allMerch = management.getMerches();
+                    break;
+                }
+            }
+
+            //  Browsing through merchandise
+            for (Merch merch : allMerch) {
+                if (merch.getName().equals(crtCommand.getName())) {
+                    sameName = true;
+                    break;
+                }
+            }
+
+            if (sameName) {
+                message = crtCommand.getUsername()
+                        + " has merchandise with the same name.";
+            } else {
+                //  Checking price information
+                if (crtCommand.getPrice() < 0) {
+                    message = "Price for merchandise can not be negative.";
+                } else {
+                    //  Merch can be added
+                    Merch newMerch = new Merch();
+
+                    newMerch.setName(crtCommand.getName());
+                    newMerch.setDescription(crtCommand.getDescription());
+                    newMerch.setPrice(crtCommand.getPrice());
+
+                    //  Add event
+                    allMerch.add(newMerch);
+
+                    message = crtCommand.getUsername()
+                            + " has added new merchandise successfully.";
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getDeleteUserMessage(final LibraryInput library,
+                                              final Command crtCommand,
+                                              final ArrayList<ItemSelection> player,
+                                              final ArrayList<Playlist> playlists,
+                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<Album> albums,
+                                              final ArrayList<SongLikes> songsLikes) {
+        String message = null;
+
+        //  Searching the user through database
+        UserInput crtUser = null;
+
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                crtUser = user;
+                break;
+            }
+        }
+
+        if (crtUser == null) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else {
+            //  Looking to see if user's dependencies are being used
+            Visitor visitDeleteUser = new VisitDeleteUser(crtCommand);
+            String used = "false";
+
+            for (ItemSelection item : player) {
+                used = item.accept(visitDeleteUser);
+            }
+
+            if (used.equals("true")) {
+                message = crtCommand.getUsername() + " can't be deleted.";
+            } else {
+                //  We can safely delete this user
+                if (crtUser.getType().equals("user")) {
+                    //  Collect all deletable playlists
+                    ArrayList<Playlist> removables = new ArrayList<>();
+                    for (Playlist playlist : playlists) {
+                        if (playlist.getOwner().equals(crtUser.getUsername())) {
+                            removables.add(playlist);
+                        }
+                    }
+
+                    //  Before deleting playlists we must delete follows
+                    for (Playlist playlist : removables) {
+                        for (String username : playlist.getFollowers()) {
+                            for (UserPlaylists user : usersPlaylists) {
+                                if (user.getUser().getUsername().equals(username)) {
+                                    user.getFollowedPlaylists().remove(playlist);
+                                    break;
+                                }
+                            }
+                        }
+                        playlists.remove(playlist);
+                    }
+
+                    //  Now delete the user from the database
+                    UserPlaylists deleteUserPlaylists = null;
+                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                        if (userPlaylists.getUser().equals(crtUser)) {
+                            deleteUserPlaylists = userPlaylists;
+                            break;
+                        }
+                    }
+                    usersPlaylists.remove(deleteUserPlaylists);
+
+                    //  Lastly delete the user themselves
+                    library.getUsers().remove(crtUser);
+
+                    message = crtUser.getUsername() + " was successfully deleted.";
+                }
+
+                if (crtUser.getType().equals("artist")) {
+                    //  Collect all deletable albums
+                    ArrayList<Album> removables = new ArrayList<>();
+                    for (Album album : albums) {
+                        if (album.getOwner().equals(crtUser.getUsername())) {
+                            removables.add(album);
+                        }
+                    }
+
+                    //  By deleting albums we must delete song likes
+                    for (Album album : removables) {
+                        for (SongInput song : album.getSongs()) {
+                            //  Delete song from users' likes
+                            for (UserPlaylists user : usersPlaylists) {
+                                if (user.getLikedSongs().contains(song)) {
+                                    user.getLikedSongs().remove(song);
+                                    break;
+                                }
+                            }
+                            library.getSongs().remove(song);
+
+                            //  Delete song from song likes array
+                            SongLikes removableSong = null;
+                            for (SongLikes songLikes : songsLikes) {
+                                if (songLikes.getSong().equals(song)) {
+                                    removableSong = songLikes;
+                                    break;
+                                }
+                            }
+                            if (removableSong != null) {
+                                songsLikes.remove(removableSong);
+                            }
+                        }
+                        //  Delete album
+                        albums.remove(album);
+                    }
+                    //  Lastly delete the user themselves
+                    library.getUsers().remove(crtUser);
+
+                    message = crtUser.getUsername() + " was successfully deleted.";
                 }
             }
         }

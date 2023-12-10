@@ -169,7 +169,7 @@ public final class VisitNextMessage implements Visitor {
     }
 
     @Override
-    public String visit(AlbumSelection crtItem) {
+    public String visit(final AlbumSelection crtItem) {
         String message = null;
 
         SongInput crtSong = null;

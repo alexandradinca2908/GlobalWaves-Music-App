@@ -1,7 +1,5 @@
 package main.PagingClasses;
 
-import main.PlaylistClasses.UserPlaylists;
-
 import java.util.ArrayList;
 
 public final class PageSystem {

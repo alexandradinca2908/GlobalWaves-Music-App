@@ -17,7 +17,7 @@ public final class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(SongSelection crtItem) {
+    public String visit(final SongSelection crtItem) {
         crtItem.setRemainingTime(crtItem.getSong().getDuration());
         crtItem.setPaused(false);
 

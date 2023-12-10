@@ -10,19 +10,14 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
-import main.ArtistClasses.Event;
 import main.ArtistClasses.Management;
-import main.ArtistClasses.Merch;
 import main.CommandHelper.Command;
 import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
-import main.SelectionClasses.Playlists.AlbumSelection;
-import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
-import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 
 import java.io.File;
@@ -379,360 +374,42 @@ public final class Main {
                 }
 
                 case "printCurrentPage" -> {
-                    ObjectNode printCurrentPageOuput;
-                    printCurrentPageOuput = doPrintCurrentPage(objectMapper,
+                    ObjectNode printCurrentPageOutput;
+                    printCurrentPageOutput = doPrintCurrentPage(objectMapper,
                             crtCommand, pageSystem, library);
 
-                    outputs.add(printCurrentPageOuput);
+                    outputs.add(printCurrentPageOutput);
                 }
 
                 case "addEvent" -> {
-                    ObjectNode addEventOutput = objectMapper.createObjectNode();
+                    ObjectNode addEventOutput;
+                    addEventOutput = doAddEvent(objectMapper, library,
+                            crtCommand, managements);
 
-                    addEventOutput.put("command", "addEvent");
-                    addEventOutput.put("user", crtCommand.getUsername());
-                    addEventOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message = null;
-
-                    UserInput artist = null;
-                    boolean exists = false;
-                    boolean isArtist = false;
-
-                    //  Checking to see artist availability
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            exists = true;
-                            if (user.getType().equals("artist")) {
-                                isArtist = true;
-                                artist = user;
-                            }
-                        }
-                    }
-
-                    if (!exists) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else if (!isArtist) {
-                        message = crtCommand.getUsername() + " is not an artist.";
-                    } else {
-                        //  Artist may add event
-
-                        //  We need to check event uniqueness
-                        boolean sameName = false;
-                        ArrayList<Event> allEvents = null;
-
-                        for (Management management : managements) {
-                            if (management.getArtist().equals(artist)) {
-                                allEvents = management.getEvents();
-                                break;
-                            }
-                        }
-
-                        //  Browsing through events
-                        for (Event event : allEvents) {
-                            if (event.getName().equals(crtCommand.getName())) {
-                                sameName = true;
-                                break;
-                            }
-                        }
-
-                        if (sameName) {
-                            message = crtCommand.getUsername()
-                                    + " has another event with the same name.";
-                        } else {
-                            //  Checking date information
-                            String[] date = crtCommand.getDate().split("-");
-                            int day = Integer.parseInt(date[0]);
-                            int month = Integer.parseInt(date[1]);
-                            int year = Integer.parseInt(date[2]);
-
-                            //  General date check
-                            if (day > 31 || month > 12
-                            || year < 1990 || year > 2023) {
-                                message = "Event for " + artist.getUsername()
-                                        + "<username> does not have a valid date.";
-                            } else {
-                                //  Checking exceptions
-                                if (month == 2 && day > 28) {
-                                    message = "Event for " + artist.getUsername()
-                                            + "<username> does not have a valid date.";
-
-                                //  Date is correct; all conditions are met
-                                } else {
-                                    Event newEvent = new Event();
-
-                                    newEvent.setDate(crtCommand.getDate());
-                                    newEvent.setName(crtCommand.getName());
-                                    newEvent.setDescription(crtCommand.getDescription());
-
-                                    //  Add event
-                                    allEvents.add(newEvent);
-
-                                    message = crtCommand.getUsername()
-                                            + " has added new event successfully.";
-                                }
-                            }
-                        }
-                    }
-
-                    addEventOutput.put("message", message);
                     outputs.add(addEventOutput);
                 }
 
                 case "addMerch" -> {
-                    ObjectNode addMerchOutput = objectMapper.createObjectNode();
+                    ObjectNode addMerchOutput;
+                    addMerchOutput = doAddMerch(objectMapper, library,
+                            crtCommand, managements);
 
-                    addMerchOutput.put("command", "addMerch");
-                    addMerchOutput.put("user", crtCommand.getUsername());
-                    addMerchOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message = null;
-
-                    UserInput artist = null;
-                    boolean exists = false;
-                    boolean isArtist = false;
-
-                    //  Checking to see artist availability
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            exists = true;
-                            if (user.getType().equals("artist")) {
-                                isArtist = true;
-                                artist = user;
-                            }
-                        }
-                    }
-
-                    if (!exists) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else if (!isArtist) {
-                        message = crtCommand.getUsername() + " is not an artist.";
-                    } else {
-                        //  Artist may add merch
-
-                        //  We need to check merch uniqueness
-                        boolean sameName = false;
-                        ArrayList<Merch> allMerch = null;
-
-                        for (Management management : managements) {
-                            if (management.getArtist().equals(artist)) {
-                                allMerch = management.getMerches();
-                                break;
-                            }
-                        }
-
-                        //  Browsing through merchandise
-                        for (Merch merch : allMerch) {
-                            if (merch.getName().equals(crtCommand.getName())) {
-                                sameName = true;
-                                break;
-                            }
-                        }
-
-                        if (sameName) {
-                            message = crtCommand.getUsername()
-                                    + " has merchandise with the same name.";
-                        } else {
-                            //  Checking price information
-                            if (crtCommand.getPrice() < 0) {
-                                message = "Price for merchandise can not be negative.";
-                            } else {
-                                //  Merch can be added
-                                Merch newMerch = new Merch();
-
-                                newMerch.setName(crtCommand.getName());
-                                newMerch.setDescription(crtCommand.getDescription());
-                                newMerch.setPrice(crtCommand.getPrice());
-
-                                //  Add event
-                                allMerch.add(newMerch);
-
-                                message = crtCommand.getUsername()
-                                        + " has added new merchandise successfully.";
-                            }
-                        }
-                    }
-
-                    addMerchOutput.put("message", message);
                     outputs.add(addMerchOutput);
                 }
 
                 case "getAllUsers" -> {
-                    ObjectNode getAllUsersOutput = objectMapper.createObjectNode();
-
-                    getAllUsersOutput.put("command", "getAllUsers");
-                    getAllUsersOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    ArrayList<String> result = new ArrayList<>();
-
-                    //  Parsing user list 3 times
-
-                    //  Normal users
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getType().equals("user")) {
-                            result.add(user.getUsername());
-                        }
-                    }
-                    //  Artists
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getType().equals("artist")) {
-                            result.add(user.getUsername());
-                        }
-                    }
-                    //  Hosts
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getType().equals("host")) {
-                            result.add(user.getUsername());
-                        }
-                    }
-
-                    getAllUsersOutput.putPOJO("result", result);
+                    ObjectNode getAllUsersOutput;
+                    getAllUsersOutput = doGetAllUsers(objectMapper, library, crtCommand);
 
                     outputs.add(getAllUsersOutput);
                 }
 
                 case "deleteUser" -> {
-                    ObjectNode deleteUserOutput = objectMapper.createObjectNode();
+                    ObjectNode deleteUserOutput;
+                    deleteUserOutput = doDeleteUser(objectMapper, library, crtCommand,
+                            player, playlists, usersPlaylists, albums, songsLikes,
+                            podcasts);
 
-                    deleteUserOutput.put("command", "deleteUser");
-                    deleteUserOutput.put("user", crtCommand.getUsername());
-                    deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    updatePlayer(player, crtCommand, podcasts, library);
-
-                    String message = null;
-
-                    //  Searching the user through database
-                    UserInput crtUser = null;
-
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            crtUser = user;
-                            break;
-                        }
-                    }
-
-                    if (crtUser == null) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else {
-                        //  Looking to see if user's dependencies are being used
-                        boolean used = false;
-
-                        for (ItemSelection item : player) {
-                            if (item instanceof SongSelection) {
-                                if (((SongSelection)item).getSong().getArtist().equals(crtCommand.getUsername())) {
-                                    used = true;
-                                    break;
-                                }
-                            }
-                            if (item instanceof PodcastSelection) {
-                                if (((PodcastSelection)item).getPodcast().getOwner().equals(crtCommand.getUsername())) {
-                                    used = true;
-                                    break;
-                                }
-                            }
-                            if (item instanceof PlaylistSelection) {
-                                if (((PlaylistSelection)item).getPlaylist().getOwner().equals(crtCommand.getUsername())) {
-                                    used = true;
-                                    break;
-                                }
-                            }
-                            if (item instanceof AlbumSelection) {
-                                if (((AlbumSelection)item).getAlbum().getOwner().equals(crtCommand.getUsername())) {
-                                    used = true;
-                                    break;
-                                }
-                            }
-                        }
-                        if (used) {
-                            message = crtCommand.getUsername() + " can't be deleted.";
-                        } else {
-                            //  We can safely delete this user
-                            if (crtUser.getType().equals("user")) {
-                                //  Collect all deletable playlists
-                                ArrayList<Playlist> removables = new ArrayList<>();
-                                for (Playlist playlist : playlists) {
-                                    if (playlist.getOwner().equals(crtUser.getUsername())) {
-                                        removables.add(playlist);
-                                    }
-                                }
-
-                                //  Before deleting playlists we must delete follows
-                                for (Playlist playlist : removables) {
-                                    for (String username : playlist.getFollowers()) {
-                                        for (UserPlaylists user : usersPlaylists) {
-                                            if (user.getUser().getUsername().equals(username)) {
-                                                user.getFollowedPlaylists().remove(playlist);
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    playlists.remove(playlist);
-                                }
-
-                                //  Now delete the user from the database
-                                UserPlaylists deleteUserPlaylists = null;
-                                for (UserPlaylists userPlaylists : usersPlaylists) {
-                                    if (userPlaylists.getUser().equals(crtUser)) {
-                                        deleteUserPlaylists = userPlaylists;
-                                        break;
-                                    }
-                                }
-                                usersPlaylists.remove(deleteUserPlaylists);
-
-                                //  Lastly delete the user themselves
-                                library.getUsers().remove(crtUser);
-
-                                message = crtUser.getUsername() + " was successfully deleted.";
-                            }
-
-                            if (crtUser.getType().equals("artist")) {
-                                //  Collect all deletable albums
-                                ArrayList<Album> removables = new ArrayList<>();
-                                for (Album album : albums) {
-                                    if (album.getOwner().equals(crtUser.getUsername())) {
-                                        removables.add(album);
-                                    }
-                                }
-
-                                //  By deleting albums we must delete song likes
-                                for (Album album : removables) {
-                                    for (SongInput song : album.getSongs()) {
-                                        //  Delete song from users' likes
-                                        for (UserPlaylists user : usersPlaylists) {
-                                            if (user.getLikedSongs().contains(song)) {
-                                                user.getLikedSongs().remove(song);
-                                                break;
-                                            }
-                                        }
-                                        library.getSongs().remove(song);
-
-                                        //  Delete song from song likes array
-                                        SongLikes removableSong = null;
-                                        for (SongLikes songLikes : songsLikes) {
-                                            if (songLikes.getSong().equals(song)) {
-                                                removableSong = songLikes;
-                                                break;
-                                            }
-                                        }
-                                        if (removableSong != null) {
-                                            songsLikes.remove(removableSong);
-                                        }
-                                    }
-                                    //  Delete album
-                                    albums.remove(album);
-                                }
-                                //  Lastly delete the user themselves
-                                library.getUsers().remove(crtUser);
-
-                                message = crtUser.getUsername() + " was successfully deleted.";
-                            }
-                        }
-                    }
-                    deleteUserOutput.put("message", message);
                     outputs.add(deleteUserOutput);
                 }
 
@@ -789,6 +466,7 @@ public final class Main {
 
         removableItems.clear();
     }
+
 
 }
 

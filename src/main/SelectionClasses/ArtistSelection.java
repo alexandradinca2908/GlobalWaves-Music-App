@@ -12,7 +12,7 @@ public final class ArtistSelection extends ItemSelection {
         return artist;
     }
 
-    public void setArtist(UserInput artist) {
+    public void setArtist(final UserInput artist) {
         this.artist = artist;
     }
 }

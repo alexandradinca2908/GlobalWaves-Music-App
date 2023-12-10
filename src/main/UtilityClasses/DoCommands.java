@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import static main.Main.updatePlayer;
-import static main.UtilityClasses.GetMessages.getSwitchConnectionMessage;
+import static main.UtilityClasses.GetMessages.*;
 
 public final class DoCommands {
 
@@ -1690,7 +1690,7 @@ public final class DoCommands {
         String message = null;
 
         if (crtPage != null) {
-            switch (crtPage.getCurrentPage()){
+            switch (crtPage.getCurrentPage()) {
                 case "HomePage" -> {
                     //  Get first 5 liked songs
                     ArrayList<String> likedSongs = new ArrayList<>();
@@ -1703,7 +1703,7 @@ public final class DoCommands {
                         likedSongs.add(song.getName());
                         size++;
 
-                        if (size == 5) {
+                        if (size == Constants.MAX_SIZE_5) {
                             break;
                         }
                     }
@@ -1718,7 +1718,7 @@ public final class DoCommands {
                         followedPlaylists.add(playlist.getName());
                         size++;
 
-                        if (size == 5) {
+                        if (size == Constants.MAX_SIZE_5) {
                             break;
                         }
                     }
@@ -1807,5 +1807,102 @@ public final class DoCommands {
         printCurrentPageOutput.put("message", message);
 
         return printCurrentPageOutput;
+    }
+
+    public static ObjectNode doAddEvent(final ObjectMapper objectMapper,
+                                        final LibraryInput library,
+                                        final Command crtCommand,
+                                        final ArrayList<Management> managements) {
+        ObjectNode addEventOutput = objectMapper.createObjectNode();
+
+        addEventOutput.put("command", "addEvent");
+        addEventOutput.put("user", crtCommand.getUsername());
+        addEventOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddEventMessage(library, crtCommand,
+                managements);
+
+        addEventOutput.put("message", message);
+
+        return addEventOutput;
+    }
+
+    public static ObjectNode doAddMerch(final ObjectMapper objectMapper,
+                                        final LibraryInput library,
+                                        final Command crtCommand,
+                                        final ArrayList<Management> managements) {
+        ObjectNode addMerchOutput = objectMapper.createObjectNode();
+
+        addMerchOutput.put("command", "addMerch");
+        addMerchOutput.put("user", crtCommand.getUsername());
+        addMerchOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddMerchMessage(library, crtCommand,
+                managements);
+
+        addMerchOutput.put("message", message);
+
+        return addMerchOutput;
+    }
+    public static ObjectNode doGetAllUsers(final ObjectMapper objectMapper,
+                                           final LibraryInput library,
+                                           final Command crtCommand) {
+        ObjectNode getAllUsersOutput = objectMapper.createObjectNode();
+
+        getAllUsersOutput.put("command", "getAllUsers");
+        getAllUsersOutput.put("timestamp", crtCommand.getTimestamp());
+
+        ArrayList<String> result = new ArrayList<>();
+
+        //  Parsing user list 3 times
+
+        //  Normal users
+        for (UserInput user : library.getUsers()) {
+            if (user.getType().equals("user")) {
+                result.add(user.getUsername());
+            }
+        }
+        //  Artists
+        for (UserInput user : library.getUsers()) {
+            if (user.getType().equals("artist")) {
+                result.add(user.getUsername());
+            }
+        }
+        //  Hosts
+        for (UserInput user : library.getUsers()) {
+            if (user.getType().equals("host")) {
+                result.add(user.getUsername());
+            }
+        }
+
+        getAllUsersOutput.putPOJO("result", result);
+
+        return getAllUsersOutput;
+    }
+
+    public static ObjectNode doDeleteUser(final ObjectMapper objectMapper,
+                                          final LibraryInput library,
+                                          final Command crtCommand,
+                                          final ArrayList<ItemSelection> player,
+                                          final ArrayList<Playlist> playlists,
+                                          final ArrayList<UserPlaylists> usersPlaylists,
+                                          final ArrayList<Album> albums,
+                                          final ArrayList<SongLikes> songsLikes,
+                                          final ArrayList<PodcastSelection> podcasts) {
+        ObjectNode deleteUserOutput = objectMapper.createObjectNode();
+
+        deleteUserOutput.put("command", "deleteUser");
+        deleteUserOutput.put("user", crtCommand.getUsername());
+        deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
+
+        updatePlayer(player, crtCommand, podcasts, library);
+
+        String message = getDeleteUserMessage(library, crtCommand,
+                player, playlists, usersPlaylists, albums, songsLikes);
+
+
+        deleteUserOutput.put("message", message);
+
+        return deleteUserOutput;
     }
 }

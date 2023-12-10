@@ -26,7 +26,7 @@ public final class AlbumSelection extends ItemSelection implements Visitable {
         return startTimestamp;
     }
 
-    public void setStartTimestamp(int startTimestamp) {
+    public void setStartTimestamp(final int startTimestamp) {
         this.startTimestamp = startTimestamp;
     }
 
@@ -34,7 +34,7 @@ public final class AlbumSelection extends ItemSelection implements Visitable {
         return stopTimestamp;
     }
 
-    public void setStopTimestamp(int stopTimestamp) {
+    public void setStopTimestamp(final int stopTimestamp) {
         this.stopTimestamp = stopTimestamp;
     }
 
