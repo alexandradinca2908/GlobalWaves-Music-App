@@ -1,4 +1,4 @@
-package main.ArtistClasses;
+package main.CreatorClasses.ArtistClasses;
 
 import fileio.input.UserInput;
 

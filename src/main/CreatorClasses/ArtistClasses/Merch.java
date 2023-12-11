@@ -1,4 +1,4 @@
-package main.ArtistClasses;
+package main.CreatorClasses.ArtistClasses;
 
 public final class Merch {
     private String name;

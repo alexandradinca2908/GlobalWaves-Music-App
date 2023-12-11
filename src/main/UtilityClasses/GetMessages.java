@@ -1,13 +1,15 @@
 package main.UtilityClasses;
 
+import com.fasterxml.jackson.databind.introspect.Annotated;
 import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
-import main.ArtistClasses.Event;
-import main.ArtistClasses.Management;
-import main.ArtistClasses.Merch;
+import main.CreatorClasses.ArtistClasses.Event;
+import main.CreatorClasses.ArtistClasses.Management;
+import main.CreatorClasses.ArtistClasses.Merch;
 import main.CommandHelper.Command;
+import main.CreatorClasses.HostClasses.HostInfo;
 import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
@@ -21,7 +23,6 @@ import main.VisitorPattern.VisitorClasses.VisitDeleteUser;
 import main.VisitorPattern.VisitorClasses.VisitNextMessage;
 import main.VisitorPattern.VisitorClasses.VisitPrevMessage;
 import main.VisitorPattern.Visitor;
-import main.UtilityClasses.Constants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -168,7 +169,8 @@ public final class GetMessages {
             message = "Please conduct a search before making a selection.";
         } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 2) {
             message = "The selected ID is too high.";
-        } else if (lastSearchResult.get(0).equals("artist")) {
+        } else if (lastSearchResult.get(0).equals("artist")
+                || lastSearchResult.get(0).equals("host")) {
             int index = crtCommand.getItemNumber();
             message = "Successfully selected " + lastSearchResult.get(index) + "'s page.";
         } else {
@@ -764,7 +766,8 @@ public final class GetMessages {
                                            final LibraryInput library,
                                            final ArrayList<UserPlaylists> usersPlaylists,
                                            final ArrayList<Page> pageSystem,
-                                           final ArrayList<Management> managements) {
+                                           final ArrayList<Management> managements,
+                                           final ArrayList<HostInfo> hostInfos) {
         String message;
 
         //  Search to see if this is a new user
@@ -812,6 +815,14 @@ public final class GetMessages {
                 newManagement.setArtist(newUser);
                 managements.add(newManagement);
                 newPage.setManagement(newManagement);
+            }
+
+            //  Host Info, if the user is a host
+            if (newUser.getType().equals("host")) {
+                HostInfo newHostInfo = new HostInfo();
+                newHostInfo.setHost(newUser);
+                hostInfos.add(newHostInfo);
+                newPage.setHostInfo(newHostInfo);
             }
 
             message = "The username " + wantedUsername + " has been added successfully.";

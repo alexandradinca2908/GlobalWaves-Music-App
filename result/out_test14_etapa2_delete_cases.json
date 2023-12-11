@@ -43,6 +43,31 @@
   "timestamp" : 85,
   "result" : [ "alice22", "bob35", "carol19", "david27", "emily30", "frank21", "grace25", "henry26", "irene33", "jack29", "soundseeker21", "melodicwanderer", "sonicpainter", "echoexplorer", "rhythmweaver", "audiosage", "soundcurator", "musicmaven" ]
 }, {
+  "command" : "addPodcast",
+  "user" : "audiosage",
+  "timestamp" : 280,
+  "message" : "audiosage has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "audiosage",
+  "timestamp" : 285,
+  "message" : "audiosage has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 290,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 295,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
+  "command" : "addPodcast",
+  "user" : "musicmaven",
+  "timestamp" : 300,
+  "message" : "musicmaven has added new podcast successfully."
+}, {
   "command" : "createPlaylist",
   "user" : "melodicwanderer",
   "timestamp" : 305,
@@ -77,18 +102,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 335,
-  "message" : "Search returned 0 results",
-  "results" : [ ]
+  "message" : "Search returned 1 results",
+  "results" : [ "Rhythmic Dialogues" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 340,
-  "message" : "The selected ID is too high."
+  "message" : "Successfully selected Rhythmic Dialogues."
 }, {
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 345,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -140,16 +165,18 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 620,
-  "message" : "sonicpainter can't be deleted."
+  "message" : "sonicpainter was successfully deleted."
 }, {
   "command" : "search",
   "user" : "soundseeker21",
-  "timestamp" : 625
+  "timestamp" : 625,
+  "message" : "Search returned 1 results",
+  "results" : [ "audiosage" ]
 }, {
   "command" : "select",
   "user" : "soundseeker21",
   "timestamp" : 630,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected audiosage's page."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -175,13 +202,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 760,
-  "message" : "Search returned 3 results",
-  "results" : [ "sonicpainter", "soundseeker21", "soundcurator" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "soundseeker21", "soundcurator" ]
 }, {
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 900,
-  "message" : "sonicpainter was successfully deleted."
+  "message" : "The username sonicpainter doesn't exist."
 }, {
   "command" : "deleteUser",
   "user" : "audiosage",
@@ -211,7 +238,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1225,
-  "message" : "Successfully selected sonicpainter's page."
+  "message" : "Successfully selected soundseeker21's page."
 }, {
   "command" : "deleteUser",
   "user" : "melodicwanderer",
@@ -221,7 +248,7 @@
   "command" : "deleteUser",
   "user" : "musicmaven",
   "timestamp" : 6900,
-  "message" : null
+  "message" : "musicmaven can't be deleted."
 }, {
   "command" : "repeat",
   "user" : "carol19",

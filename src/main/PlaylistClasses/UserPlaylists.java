@@ -1,5 +1,6 @@
 package main.PlaylistClasses;
 
+import fileio.input.PodcastInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
 
@@ -11,6 +12,7 @@ public final class UserPlaylists {
     private ArrayList<SongInput> likedSongs = new ArrayList<>();
     private ArrayList<Playlist> followedPlaylists = new ArrayList<>();
     private ArrayList<Album> albums = new ArrayList<>();
+    private ArrayList<PodcastInput> podcasts = new ArrayList<>();
 
     public UserPlaylists() {
     }
@@ -53,5 +55,13 @@ public final class UserPlaylists {
 
     public void setAlbums(final ArrayList<Album> albums) {
         this.albums = albums;
+    }
+
+    public ArrayList<PodcastInput> getPodcasts() {
+        return podcasts;
+    }
+
+    public void setPodcasts(ArrayList<PodcastInput> podcasts) {
+        this.podcasts = podcasts;
     }
 }

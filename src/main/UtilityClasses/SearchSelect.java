@@ -1,5 +1,6 @@
 package main.UtilityClasses;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.LibraryInput;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
@@ -293,7 +294,7 @@ public final class SearchSelect {
         }
     }
 
-    public static void searchForArtists(final Filters filters,
+    public static void searchForCreators(final Filters filters,
                                         final ArrayList<UserInput> result,
                                         final LibraryInput library) {
         //  Add all artists containing the searched name
@@ -304,6 +305,34 @@ public final class SearchSelect {
                 }
             }
         }
+    }
+
+    public static ArrayList<String> setCreatorSearchResults(final Command crtCommand,
+                                                            final LibraryInput library,
+                                                            final ObjectNode searchOutput) {
+        Filters filters = crtCommand.getFilters();
+        ArrayList<UserInput> result = new ArrayList<>();
+
+        //  Found artists will be added in result array
+        SearchSelect.searchForCreators(filters, result, library);
+
+        //  Truncate results if needed
+        if (result.size() > Constants.MAX_SIZE_5) {
+            result.subList(Constants.MAX_SIZE_5, result.size()).clear();
+        }
+
+        //  Setting the message
+        searchOutput.put("message", "Search returned "
+                + result.size() + " results");
+
+        //  Extracting the names of the artists
+        ArrayList<String> creatorNames = new ArrayList<>();
+        for (UserInput artist : result) {
+            creatorNames.add(artist.getUsername());
+        }
+        searchOutput.putPOJO("results", creatorNames);
+
+        return creatorNames;
     }
 
     /**

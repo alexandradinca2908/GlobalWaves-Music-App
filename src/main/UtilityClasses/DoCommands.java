@@ -2,15 +2,14 @@ package main.UtilityClasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.LibraryInput;
-import fileio.input.PodcastInput;
-import fileio.input.SongInput;
-import fileio.input.UserInput;
-import main.ArtistClasses.Event;
-import main.ArtistClasses.Management;
-import main.ArtistClasses.Merch;
+import fileio.input.*;
+import main.CreatorClasses.ArtistClasses.Event;
+import main.CreatorClasses.ArtistClasses.Management;
+import main.CreatorClasses.ArtistClasses.Merch;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
+import main.CreatorClasses.HostClasses.Announcement;
+import main.CreatorClasses.HostClasses.HostInfo;
 import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
@@ -223,27 +222,9 @@ public final class DoCommands {
             }
 
             case "artist" -> {
-                Filters filters = crtCommand.getFilters();
-                ArrayList<UserInput> result = new ArrayList<>();
-
-                //  Found artists will be added in result array
-                SearchSelect.searchForArtists(filters, result, library);
-
-                //  Truncate results if needed
-                if (result.size() > Constants.MAX_SIZE_5) {
-                    result.subList(Constants.MAX_SIZE_5, result.size()).clear();
-                }
-
-                //  Setting the message
-                searchOutput.put("message", "Search returned "
-                        + result.size() + " results");
-
-                //  Extracting the names of the artists
-                ArrayList<String> artistNames = new ArrayList<>();
-                for (UserInput artist : result) {
-                    artistNames.add(artist.getUsername());
-                }
-                searchOutput.putPOJO("results", artistNames);
+                ArrayList<String> artistNames =SearchSelect
+                        .setCreatorSearchResults(crtCommand,
+                        library, searchOutput);
 
                 //  Storing the result in case we need to select it later
                 SearchSelect.storeResultForSelect(lastSearchResult,
@@ -253,6 +234,17 @@ public final class DoCommands {
                 lastSearchResult.add(crtCommand.getUsername());
             }
 
+            case "host" -> {
+                ArrayList<String> hostNames =SearchSelect
+                        .setCreatorSearchResults(crtCommand,
+                                library, searchOutput);
+                //  Storing the result in case we need to select it later
+                SearchSelect.storeResultForSelect(lastSearchResult,
+                        hostNames, "host");
+                steps[0] = 1;
+                //  Store the name of the user that searched
+                lastSearchResult.add(crtCommand.getUsername());
+            }
             default -> { }
         }
 
@@ -276,7 +268,8 @@ public final class DoCommands {
                                       final LibraryInput library,
                                       final ArrayList<Page> pageSystem,
                                       final ArrayList<UserPlaylists> usersPlaylists,
-                                      final ArrayList<Management> managements) {
+                                      final ArrayList<Management> managements,
+                                      final ArrayList<HostInfo> hostInfos) {
         //  Setting the output
         ObjectNode selectOutput = objectMapper.createObjectNode();
         selectOutput.put("command", "select");
@@ -316,7 +309,8 @@ public final class DoCommands {
 
         //  If an artist was selected, we change the user's page
         if (message.contains("Successfully selected")
-                && lastSearchResult.get(0).equals("artist")) {
+                && (lastSearchResult.get(0).equals("artist")
+                || lastSearchResult.get(0).equals("host"))) {
             //  Searching for the user's page
             Page crtPage = null;
 
@@ -328,35 +322,49 @@ public final class DoCommands {
                 }
             }
 
-            //  Searching for the artist
-            UserInput artist = null;
+            //  Searching for the creator
+            UserInput creator = null;
 
             for (UserInput user : library.getUsers()) {
                 if (user.getUsername().equals(lastSearchResult.get(1))) {
-                    artist = user;
+                    creator = user;
                     break;
                 }
             }
 
-            if (artist != null && crtPage != null) {
-                //  Add the artist's playlists to the current page
+            if (creator != null && crtPage != null) {
+                //  Add the creator's playlists to the current page
                 for (UserPlaylists userPlaylists : usersPlaylists) {
-                    if (userPlaylists.getUser().equals(artist)) {
+                    if (userPlaylists.getUser().equals(creator)) {
                         crtPage.setUserPlaylists(userPlaylists);
                         break;
                     }
                 }
 
-                //  Add the artist's management info to the current page
-                for (Management management : managements) {
-                    if (management.getArtist().equals(artist)) {
-                        crtPage.setManagement(management);
-                        break;
+                if (lastSearchResult.get(0).equals("artist")) {
+                    //  Add the artist's management info to the current page
+                    for (Management management : managements) {
+                        if (management.getArtist().equals(creator)) {
+                            crtPage.setManagement(management);
+                            break;
+                        }
                     }
+
+                    //  Change current page name
+                    crtPage.setCurrentPage("ArtistPage");
+                } else {
+                    //  Add the host's info to the current page
+                    for (HostInfo hostInfo : hostInfos) {
+                        if (hostInfo.getHost().equals(creator)) {
+                            crtPage.setHostInfo(hostInfo);
+                            break;
+                        }
+                    }
+
+                    //  Change current page name
+                    crtPage.setCurrentPage("HostPage");
                 }
 
-                //  Change current page name
-                crtPage.setCurrentPage("ArtistPage");
             }
 
             //  Clearing the result so that we can't load it twice
@@ -1556,7 +1564,8 @@ public final class DoCommands {
                                        final LibraryInput library,
                                        final ArrayList<UserPlaylists> usersPlaylists,
                                        final ArrayList<Page> pageSystem,
-                                       final ArrayList<Management> managements) {
+                                       final ArrayList<Management> managements,
+                                       final ArrayList<HostInfo> hostInfos) {
         ObjectNode addUserOutput = objectMapper.createObjectNode();
 
         addUserOutput.put("command", "addUser");
@@ -1564,7 +1573,8 @@ public final class DoCommands {
         addUserOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddUserMessage(crtCommand,
-                library, usersPlaylists, pageSystem, managements);
+                library, usersPlaylists, pageSystem, managements,
+                hostInfos);
         addUserOutput.put("message", message);
 
         return addUserOutput;
@@ -1585,17 +1595,17 @@ public final class DoCommands {
                                         final LibraryInput library,
                                         final ArrayList<UserPlaylists> usersPlaylists,
                                         final ArrayList<Album> albums) {
-        ObjectNode addUserOutput = objectMapper.createObjectNode();
+        ObjectNode addAlbumOutput = objectMapper.createObjectNode();
 
-        addUserOutput.put("command", "addAlbum");
-        addUserOutput.put("user", crtCommand.getUsername());
-        addUserOutput.put("timestamp", crtCommand.getTimestamp());
+        addAlbumOutput.put("command", "addAlbum");
+        addAlbumOutput.put("user", crtCommand.getUsername());
+        addAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddAlbumMessage(crtCommand, library,
                 usersPlaylists, albums);
-        addUserOutput.put("message", message);
+        addAlbumOutput.put("message", message);
 
-        return addUserOutput;
+        return addAlbumOutput;
     }
 
     /**
@@ -1796,6 +1806,42 @@ public final class DoCommands {
                                 + "\n\nMerch:\n\t"
                                 + artistMerch + "\n\nEvents:\n\t"
                                 + artistEvents;
+                    }
+                }
+
+                case "HostPage" -> {
+                    //  Get podcasts
+                    ArrayList<String> hostPodcasts = new ArrayList<>();
+                    ArrayList<PodcastInput> podcastArray =
+                            crtPage.getUserPlaylists().getPodcasts();
+
+                    for (PodcastInput podcast : podcastArray) {
+                        String podcastString = podcast.getName() + ":\n\t[";
+                        for (EpisodeInput episode : podcast.getEpisodes()) {
+                            podcastString += episode.getName() + " - "
+                                    + episode.getDescription() + ", ";
+                        }
+                        String finalString = podcastString.substring(0, podcastString.length() - 2)
+                                + "]\n";
+                        hostPodcasts.add(finalString);
+                    }
+
+                    //  Get merch
+                    if (crtPage.getHostInfo() != null) {
+                        ArrayList<String> hostAnnouncements = new ArrayList<>();
+                        ArrayList<Announcement> announcementArray =
+                                crtPage.getHostInfo().getAnnouncements();
+
+                        for (Announcement announcement : announcementArray) {
+                            hostAnnouncements.add(announcement.getName()
+                                    + ":\n\t" + announcement.getDescription()
+                                    + "\n");
+                        }
+
+                        //  Get message
+                        message = "Podcasts:\n\t" + hostPodcasts
+                                + "\n\nAnnouncements:\n\t"
+                                + hostAnnouncements;
                     }
                 }
 
