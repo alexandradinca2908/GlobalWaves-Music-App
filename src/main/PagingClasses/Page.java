@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public final class Page {
     private UserInput pageOwner;
     private UserPlaylists userPlaylists;
-    private String currentPage = "HomePage";
+    private String currentPage = "Home";
     //  All artist extras
     private Management management;
     //  Host announcements

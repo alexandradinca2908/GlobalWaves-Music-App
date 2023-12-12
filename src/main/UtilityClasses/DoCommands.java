@@ -766,12 +766,16 @@ public final class DoCommands {
                                                    final Command crtCommand,
                                                    final ArrayList<ItemSelection> player,
                                                    final ArrayList<Playlist> playlists,
-                                                   final LibraryInput library) {
+                                                   final LibraryInput library,
+                                                   final ArrayList<PodcastSelection> podcasts) {
         ObjectNode addRemoveOutput = objectMapper.createObjectNode();
 
         addRemoveOutput.put("command", "addRemoveInPlaylist");
         addRemoveOutput.put("user", crtCommand.getUsername());
         addRemoveOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Update the player
+        updatePlayer(player, crtCommand, podcasts, library);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -1751,7 +1755,7 @@ public final class DoCommands {
 
         if (crtPage != null) {
             switch (crtPage.getCurrentPage()) {
-                case "HomePage" -> {
+                case "Home" -> {
                     //  Get first 5 liked songs
                     ArrayList<String> likedSongs = new ArrayList<>();
                     ArrayList<SongInput> songs =

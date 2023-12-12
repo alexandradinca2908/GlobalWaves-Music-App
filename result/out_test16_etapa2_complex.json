@@ -4893,6 +4893,11 @@
   "timestamp" : 5430,
   "message" : "Please load a source before using the shuffle function."
 }, {
+  "command" : "removeAlbum",
+  "user" : "fwebb",
+  "timestamp" : 5434,
+  "message" : "fwebb is not an artist."
+}, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 5435,
@@ -4986,6 +4991,11 @@
   "user" : "bob35",
   "timestamp" : 5741,
   "message" : "Please load a source before using the shuffle function."
+}, {
+  "command" : "removeAlbum",
+  "user" : "barmstrong",
+  "timestamp" : 5745,
+  "message" : "barmstrong is not an artist."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -5081,6 +5091,11 @@
   "timestamp" : 6052,
   "message" : "Please load a source before using the shuffle function."
 }, {
+  "command" : "removeAlbum",
+  "user" : "john99",
+  "timestamp" : 6056,
+  "message" : "john99 is not an artist."
+}, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 6057,
@@ -5175,6 +5190,11 @@
   "timestamp" : 6363,
   "message" : "Please load a source before using the shuffle function."
 }, {
+  "command" : "removeAlbum",
+  "user" : "john99",
+  "timestamp" : 6367,
+  "message" : "john99 is not an artist."
+}, {
   "command" : "status",
   "user" : "david27",
   "timestamp" : 6368,
@@ -5257,6 +5277,11 @@
   "timestamp" : 6674,
   "message" : "The loaded source is not a playlist."
 }, {
+  "command" : "removeAlbum",
+  "user" : "jacobdean",
+  "timestamp" : 6678,
+  "message" : "jacobdean  can't delete this album."
+}, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6679,
@@ -5327,6 +5352,11 @@
   "timestamp" : 6985,
   "message" : "The loaded source is not a playlist."
 }, {
+  "command" : "removeAlbum",
+  "user" : "jacobdean",
+  "timestamp" : 6989,
+  "message" : "jacobdean  can't delete this album."
+}, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 6990,
@@ -5396,6 +5426,11 @@
   "user" : "grace25",
   "timestamp" : 7296,
   "message" : "The loaded source is not a playlist."
+}, {
+  "command" : "removeAlbum",
+  "user" : "jsimpson",
+  "timestamp" : 7300,
+  "message" : "jsimpson  can't delete this album."
 }, {
   "command" : "status",
   "user" : "grace25",
@@ -5479,6 +5514,11 @@
   "timestamp" : 7607,
   "message" : "Please load a source before using the shuffle function."
 }, {
+  "command" : "removeAlbum",
+  "user" : "charlesgarcia",
+  "timestamp" : 7611,
+  "message" : "charlesgarcia is not an artist."
+}, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 7612,
@@ -5561,6 +5601,11 @@
   "timestamp" : 7918,
   "message" : "The loaded source is not a playlist."
 }, {
+  "command" : "removeAlbum",
+  "user" : "mccarthyluis",
+  "timestamp" : 7922,
+  "message" : "mccarthyluis  can't delete this album."
+}, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 7923,
@@ -5642,6 +5687,11 @@
   "user" : "jack29",
   "timestamp" : 8229,
   "message" : "Please load a source before using the shuffle function."
+}, {
+  "command" : "removeAlbum",
+  "user" : "matthewporter",
+  "timestamp" : 8233,
+  "message" : "matthewporter is not an artist."
 }, {
   "command" : "status",
   "user" : "jack29",

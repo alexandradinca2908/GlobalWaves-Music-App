@@ -18,7 +18,9 @@ import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
+import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 
 import java.io.File;
@@ -233,7 +235,8 @@ public final class Main {
                 case "addRemoveInPlaylist" -> {
                     ObjectNode addRemoveOutput;
                     addRemoveOutput = doAddRemoveInPlaylist(objectMapper,
-                            crtCommand, player, playlists, library);
+                            crtCommand, player, playlists, library,
+                            podcasts);
 
                     outputs.add(addRemoveOutput);
                 }
@@ -711,6 +714,156 @@ public final class Main {
                     outputs.add(showPodcastsOutput);
                 }
 
+                case "removeAlbum" -> {
+                    ObjectNode removeAlbumOutput = objectMapper.createObjectNode();
+
+                    removeAlbumOutput.put("command", "removeAlbum");
+                    removeAlbumOutput.put("user", crtCommand.getUsername());
+                    removeAlbumOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message;
+
+                    UserInput artist = null;
+                    boolean exists = false;
+                    boolean isArtist = false;
+
+                    //  Checking to see artist availability
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            exists = true;
+                            if (user.getType().equals("artist")) {
+                                isArtist = true;
+                                artist = user;
+                            }
+                            break;
+                        }
+                    }
+
+                    if (!exists) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!isArtist) {
+                        message = crtCommand.getUsername() + " is not an artist.";
+                    } else {
+                        //  Artist is eligible to remove album
+
+                        //  Verify album name
+                        //  First we find the user's playlists
+                        UserPlaylists allPlaylists = null;
+
+                        for (UserPlaylists userPlaylists : usersPlaylists) {
+                            if (userPlaylists.getUser().equals(artist)) {
+                                allPlaylists = userPlaylists;
+                                break;
+                            }
+                        }
+
+                        boolean hasAlbum = false;
+                        Album crtAlbum = null;
+
+                        //  Now we check the name
+                        for (Album album : allPlaylists.getAlbums()) {
+                            if (album.getName().equals(crtCommand.getName())) {
+                                hasAlbum = true;
+                                crtAlbum = album;
+                                break;
+                            }
+                        }
+
+                        if (!hasAlbum) {
+                            message = crtCommand.getUsername()
+                                    + " doesn't have an album with the given name.";
+                        } else {
+                            //  Last check
+
+                            ArrayList<SongSelection> loadedArtistSongs = new ArrayList<>();
+                            boolean used = false;
+
+                            //  We need to see if the album is loaded
+                            for (ItemSelection item : player) {
+                                if (item instanceof SongSelection) {
+                                    if (((SongSelection) item).getSong().getArtist()
+                                            .equals(crtCommand.getUsername())) {
+                                        loadedArtistSongs.add(((SongSelection) item));
+                                    }
+                                }
+                                if (item instanceof AlbumSelection) {
+                                    if (((AlbumSelection) item).getAlbum()
+                                            .equals(crtAlbum)) {
+                                        used = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            //  We need to see if any song is loaded
+                            for (SongSelection song : loadedArtistSongs) {
+                                if (crtAlbum.getSongs().contains(song.getSong())) {
+                                    used = true;
+                                    break;
+                                }
+                            }
+
+                            //  We need to check if a playlist has any of the album songs
+                            for (SongInput song : crtAlbum.getSongs()) {
+                                for (Playlist playlist : playlists) {
+                                    if (playlist.getSongs().contains(song)) {
+                                        used = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (used) {
+                                message = crtCommand.getUsername()
+                                        + " can't delete this album.";
+                            } else {
+                                //  Album can be safely deleted
+
+                                //  Remove songs
+                                for (SongInput song : crtAlbum.getSongs()) {
+                                    for (SongLikes songLikes : songsLikes) {
+                                        if (songLikes.getSong().equals(song)) {
+                                            //  If the song has at least a like
+                                            //  It must be removed from users' liked songs
+                                            for (UserPlaylists userPlaylists : usersPlaylists) {
+                                                userPlaylists.getLikedSongs().remove(song);
+
+                                                //  From the artist's playlist also remove the album
+                                                if (userPlaylists.getUser().getUsername()
+                                                        .equals(crtCommand.getUsername())) {
+                                                    userPlaylists.getAlbums().remove(crtAlbum);
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    }
+                                    library.getSongs().remove(song);
+                                }
+
+                                //  Remove album from database
+                                albums.remove(crtAlbum);
+
+                                message = crtCommand.getUsername()
+                                        + "  deleted the album successfully.";
+                            }
+                        }
+                    }
+
+                    removeAlbumOutput.put("message", message);
+                    outputs.add(removeAlbumOutput);
+                }
+
+                case "changePage" -> {
+                    ObjectNode changePage = objectMapper.createObjectNode();
+
+                    changePage.put("command", "changePage");
+                    changePage.put("user", crtCommand.getUsername());
+                    changePage.put("timestamp", crtCommand.getTimestamp());
+
+                    // TODO
+                }
+                
                 default -> {
                 }
             }
@@ -764,7 +917,5 @@ public final class Main {
 
         removableItems.clear();
     }
-
-
 }
 

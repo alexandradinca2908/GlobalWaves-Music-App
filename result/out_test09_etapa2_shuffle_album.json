@@ -104,6 +104,11 @@
   "message" : "Search returned 1 results",
   "results" : [ "Elevate" ]
 }, {
+  "command" : "removeAlbum",
+  "user" : "Ed Sheeran",
+  "timestamp" : 375,
+  "message" : "The username Ed Sheeran doesn't exist."
+}, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 390,
@@ -128,6 +133,11 @@
   "command" : "printCurrentPage",
   "timestamp" : 430,
   "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!]"
+}, {
+  "command" : "removeAlbum",
+  "user" : "melodymaster",
+  "timestamp" : 430,
+  "message" : "melodymaster doesn't have an album with the given name."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -194,6 +204,11 @@
   "user" : "carol19",
   "timestamp" : 1115,
   "message" : "Like registered successfully."
+}, {
+  "command" : "removeAlbum",
+  "user" : "melodymaster",
+  "timestamp" : 1200,
+  "message" : "melodymaster  can't delete this album."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -332,6 +347,11 @@
     "shuffle" : true,
     "paused" : false
   }
+}, {
+  "command" : "removeAlbum",
+  "user" : "melodymaster",
+  "timestamp" : 3000,
+  "message" : "melodymaster  can't delete this album."
 }, {
   "command" : "status",
   "user" : "bob35",

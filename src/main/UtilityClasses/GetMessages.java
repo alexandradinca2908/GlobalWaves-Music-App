@@ -15,6 +15,7 @@ import main.PagingClasses.Page;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.ItemSelection;
+import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
@@ -200,6 +201,8 @@ public final class GetMessages {
         //  The loaded media MUST be a song
         int loaded = 0;
         int isSong = 0;
+        int isAlbum = 0;
+        AlbumSelection crtAlbum = null;
         SongInput crtSong = null;
         Playlist copyPlaylist = null;
 
@@ -210,6 +213,10 @@ public final class GetMessages {
                     isSong = 1;
                     crtSong = ((SongSelection) item).getSong();
                 }
+                if (item instanceof AlbumSelection) {
+                    isAlbum = 1;
+                    crtAlbum = (AlbumSelection) item;
+                }
                 break;
             }
         }
@@ -217,7 +224,7 @@ public final class GetMessages {
         if (loaded == 0) {
             message = "Please load a source before adding to or removing from the playlist.";
 
-        } else if (isSong == 0) {
+        } else if (isSong == 0 && isAlbum == 0) {
             message = "The loaded source is not a song.";
 
         } else {
@@ -241,6 +248,24 @@ public final class GetMessages {
                 message = "The specified playlist does not exist.";
 
             } else {
+                //  If we are listening to an album we extract the song first
+                if (isAlbum == 1) {
+                    //  We need to calculate which song we are currently at and store it
+                    int duration = crtAlbum.getAlbum().getDuration();
+
+                    //  Calculating based on current time
+                    crtAlbum.updateRemainingTime(crtCommand.getTimestamp());
+
+                    for (SongInput song : crtAlbum.getAlbum().getSongs()) {
+                        duration -= song.getDuration();
+
+                        if (duration <= crtAlbum.getRemainingTime()) {
+                            crtSong = song;
+                            break;
+                        }
+                    }
+                }
+
                 //  All conditions are met; we can now add/remove the loaded song
                 int foundSong = 0;
                 for (SongInput song : copyPlaylist.getSongs()) {
@@ -859,6 +884,7 @@ public final class GetMessages {
                     isArtist = true;
                     artist = user;
                 }
+                break;
             }
         }
 

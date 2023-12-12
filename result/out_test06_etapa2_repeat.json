@@ -129,7 +129,12 @@
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",
   "timestamp" : 1009,
-  "message" : "The loaded source is not a song."
+  "message" : "Successfully added to playlist."
+}, {
+  "command" : "removeAlbum",
+  "user" : "melodymaster",
+  "timestamp" : 1010,
+  "message" : "melodymaster  can't delete this album."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -256,8 +261,8 @@
   "user" : "alice22",
   "timestamp" : 1035,
   "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 225,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 243,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -272,8 +277,8 @@
   "user" : "alice22",
   "timestamp" : 1037,
   "stats" : {
-    "name" : "Hustle Hard",
-    "remainedTime" : 223,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 241,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -299,8 +304,8 @@
   "user" : "alice22",
   "timestamp" : 2099,
   "stats" : {
-    "name" : "Butterfly Effect",
-    "remainedTime" : 179,
+    "name" : "Dream Chaser",
+    "remainedTime" : 7,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -320,8 +325,8 @@
   "user" : "alice22",
   "timestamp" : 2101,
   "stats" : {
-    "name" : "Butterfly Effect",
-    "remainedTime" : 177,
+    "name" : "Dream Chaser",
+    "remainedTime" : 5,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
@@ -331,8 +336,8 @@
   "user" : "alice22",
   "timestamp" : 2334,
   "stats" : {
-    "name" : "Butterfly Effect",
-    "remainedTime" : 134,
+    "name" : "Dream Chaser",
+    "remainedTime" : 182,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
@@ -352,8 +357,8 @@
   "user" : "alice22",
   "timestamp" : 2336,
   "stats" : {
-    "name" : "Butterfly Effect",
-    "remainedTime" : 132,
+    "name" : "Dream Chaser",
+    "remainedTime" : 180,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
