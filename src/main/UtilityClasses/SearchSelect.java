@@ -7,6 +7,7 @@ import fileio.input.SongInput;
 import fileio.input.UserInput;
 import main.CommandHelper.Command;
 import main.CommandHelper.Filters;
+import main.CommandHelper.Search;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.*;
@@ -456,19 +457,17 @@ public final class SearchSelect {
     /**
      * This method stores the search result in an array for the select command
      *
-     * @param lastSearchResult The array that stores the result and its type
+     * @param crtSearch The object that stores search data
      * @param names The names of the searched items
      * @param type The type of item (song/playlist/podcast)
      */
-    public static void storeResultForSelect(final ArrayList<String> lastSearchResult,
+    public static void storeResultForSelect(final Search crtSearch,
                                             final ArrayList<String> names,
                                             final String type) {
         //  First element specifies the type of items searched
-        //  But first we need to clear the old search
-        lastSearchResult.clear();
         if (!names.isEmpty()) {
-            lastSearchResult.add(type);
-            lastSearchResult.addAll(names);
+            crtSearch.getLastSearchResult().add(type);
+            crtSearch.getLastSearchResult().addAll(names);
         }
     }
 }

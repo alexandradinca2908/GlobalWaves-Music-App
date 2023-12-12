@@ -34,7 +34,7 @@
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 25,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected Retro Rhythms."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -103,7 +103,7 @@
   "command" : "load",
   "user" : "bob35",
   "timestamp" : 1000,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "createPlaylist",
   "user" : "alice22",
@@ -150,7 +150,7 @@
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
   "timestamp" : 1012,
-  "message" : "Please load a source before adding to or removing from the playlist."
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "alice22",
@@ -229,7 +229,7 @@
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 1025,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected My favourite songs."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -250,33 +250,33 @@
   "command" : "load",
   "user" : "alice22",
   "timestamp" : 1028,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 1035,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Hustle Hard",
+    "remainedTime" : 225,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "repeat",
   "user" : "alice22",
   "timestamp" : 1036,
-  "message" : "Please load a source before setting the repeat status."
+  "message" : "Repeat mode changed to repeat all."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 1037,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Hustle Hard",
+    "remainedTime" : 223,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "user" : "alice22",
@@ -299,11 +299,11 @@
   "user" : "alice22",
   "timestamp" : 2099,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Butterfly Effect",
+    "remainedTime" : 179,
+    "repeat" : "Repeat All",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "select",
@@ -314,28 +314,28 @@
   "command" : "repeat",
   "user" : "alice22",
   "timestamp" : 2100,
-  "message" : "Please load a source before setting the repeat status."
+  "message" : "Repeat mode changed to repeat current song."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 2101,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Butterfly Effect",
+    "remainedTime" : 177,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 2334,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "Butterfly Effect",
+    "remainedTime" : 134,
+    "repeat" : "Repeat Current Song",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "follow",
@@ -346,17 +346,17 @@
   "command" : "repeat",
   "user" : "alice22",
   "timestamp" : 2335,
-  "message" : "Please load a source before setting the repeat status."
+  "message" : "Repeat mode changed to no repeat."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 2336,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
+    "name" : "Butterfly Effect",
+    "remainedTime" : 132,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "user" : "carol19",

@@ -91,7 +91,7 @@
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 340,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected Digital Dreams."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "bob35",
@@ -153,7 +153,7 @@
   "command" : "load",
   "user" : "carol19",
   "timestamp" : 434,
-  "message" : "Please select a source before attempting to load."
+  "message" : "Playback loaded successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -173,7 +173,7 @@
   "command" : "repeat",
   "user" : "carol19",
   "timestamp" : 690,
-  "message" : "Please load a source before setting the repeat status."
+  "message" : "Repeat mode changed to repeat once."
 }, {
   "command" : "addEvent",
   "user" : "melodymaster",
@@ -183,7 +183,7 @@
   "command" : "repeat",
   "user" : "carol19",
   "timestamp" : 950,
-  "message" : "Please load a source before setting the repeat status."
+  "message" : "Repeat mode changed to repeat once."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -193,7 +193,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 1115,
-  "message" : "Please load a source before liking or unliking."
+  "message" : "Like registered successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -231,7 +231,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 2455,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -257,7 +257,7 @@
   "command" : "follow",
   "user" : "carol19",
   "timestamp" : 2515,
-  "message" : "The selected source is not a playlist."
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -449,7 +449,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 5000,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Digital Dreams]\n\nFollowed playlists:\n\t[My playlist]"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -469,6 +469,6 @@
     "name" : "My playlist",
     "songs" : [ "I Don't Wanna Live Forever", "Begin Again", "Retro Rhythms", "Elevate", "Hustle Hard" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 1
   } ]
 } ]

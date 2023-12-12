@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.*;
-import main.CreatorClasses.ArtistClasses.Event;
+import main.CommandHelper.Search;
 import main.CreatorClasses.ArtistClasses.Management;
 import main.CommandHelper.Command;
 import main.CreatorClasses.HostClasses.Announcement;
@@ -20,7 +20,6 @@ import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SongClasses.SongLikes;
-import main.UtilityClasses.Constants;
 
 import java.io.File;
 import java.io.IOException;
@@ -103,11 +102,8 @@ public final class Main {
 
         //  IMPORTANT VARIABLES DECLARATION STARTS HERE
 
-        //  Storing last result and checking if it was initialized
-        ArrayList<String> lastSearchResult = new ArrayList<>();
-
-        //  Storing if search and select were called before a load was called
-        int[] steps = new int[2];
+        //  Storing all searches in an array
+        ArrayList<Search> searches = new ArrayList<>();
 
         //  Storing all selections in an array
         ArrayList<ItemSelection> player = new ArrayList<>();
@@ -184,8 +180,8 @@ public final class Main {
                 case "search" -> {
                     ObjectNode searchOutput;
                     searchOutput = doSearch(player, crtCommand,
-                            podcasts, objectMapper, library, lastSearchResult,
-                            steps, playlists, albums);
+                            podcasts, objectMapper, library, searches,
+                            playlists, albums);
 
                     outputs.add(searchOutput);
                 }
@@ -193,7 +189,7 @@ public final class Main {
                 case "select" -> {
                     ObjectNode selectOutput;
                     selectOutput = doSelect(objectMapper, crtCommand,
-                            lastSearchResult, steps, library,
+                            searches, library,
                             pageSystem, usersPlaylists, managements,
                             hostInfos);
 
@@ -203,7 +199,7 @@ public final class Main {
                 case "load" -> {
                     ObjectNode loadOutput;
                     loadOutput = doLoad(objectMapper, crtCommand,
-                            steps, lastSearchResult, library, player,
+                            searches, library, player,
                             playlists, podcasts, albums);
 
                     outputs.add(loadOutput);
@@ -317,7 +313,7 @@ public final class Main {
                 case "follow" -> {
                     ObjectNode followOutput;
                     followOutput = doFollow(objectMapper, crtCommand,
-                            steps, lastSearchResult, playlists,
+                            searches, playlists,
                             usersPlaylists, library);
 
                     outputs.add(followOutput);

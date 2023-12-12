@@ -181,28 +181,28 @@
   "command" : "repeat",
   "user" : "emily30",
   "timestamp" : 3200,
-  "message" : "Repeat mode changed to repeat all."
+  "message" : "Repeat mode changed to repeat once."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 3220,
   "stats" : {
-    "name" : "",
-    "remainedTime" : 0,
-    "repeat" : "No Repeat",
+    "name" : "99 Problems",
+    "remainedTime" : 209,
+    "repeat" : "Repeat Once",
     "shuffle" : false,
-    "paused" : true
+    "paused" : false
   }
 }, {
   "command" : "select",
   "user" : "rhythmicrider58",
   "timestamp" : 3225,
-  "message" : "Please conduct a search before making a selection."
+  "message" : "Successfully selected My favourite songs."
 }, {
   "command" : "addRemoveInPlaylist",
   "user" : "emily30",
   "timestamp" : 3240,
-  "message" : "Please load a source before adding to or removing from the playlist."
+  "message" : "Successfully added to playlist."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -218,7 +218,7 @@
   "command" : "follow",
   "user" : "rhythmicrider58",
   "timestamp" : 3285,
-  "message" : "Please select a source before following or unfollowing."
+  "message" : "Playlist followed successfully."
 }, {
   "command" : "select",
   "user" : "emily30",
@@ -233,7 +233,7 @@
   "user" : "rhythmicrider58",
   "command" : "printCurrentPage",
   "timestamp" : 3300,
-  "message" : "Liked songs:\n\t[Synth Symphony]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Synth Symphony]\n\nFollowed playlists:\n\t[My favourite songs]"
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -299,9 +299,9 @@
   "timestamp" : 3438,
   "result" : [ {
     "name" : "My favourite songs",
-    "songs" : [ ],
+    "songs" : [ "99 Problems" ],
     "visibility" : "public",
-    "followers" : 0
+    "followers" : 1
   } ]
 }, {
   "command" : "load",

@@ -3,6 +3,7 @@ package main.UtilityClasses;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.*;
+import main.CommandHelper.Search;
 import main.CreatorClasses.ArtistClasses.Event;
 import main.CreatorClasses.ArtistClasses.Management;
 import main.CreatorClasses.ArtistClasses.Merch;
@@ -39,8 +40,7 @@ public final class DoCommands {
      *                         when they are not loaded
      * @param objectMapper     Object Mapper
      * @param library          Singleton containing all songs, users and podcasts
-     * @param lastSearchResult The array containing the search result and its type
-     * @param steps            The array that checks whether search and select were executed
+     * @param searches         The array containing all searches
      * @param playlists        The array of all user playlists
      * @return ObjectNode of the final JSON
      */
@@ -49,8 +49,7 @@ public final class DoCommands {
                                       final ArrayList<PodcastSelection> podcasts,
                                       final ObjectMapper objectMapper,
                                       final LibraryInput library,
-                                      final ArrayList<String> lastSearchResult,
-                                      final int[] steps,
+                                      final ArrayList<Search> searches,
                                       final ArrayList<Playlist> playlists,
                                       final ArrayList<Album> albums) {
         //  Searching for a song
@@ -63,6 +62,21 @@ public final class DoCommands {
 
         //  Update all players first
         updatePlayer(player, crtCommand, podcasts, library);
+
+        //  Select the user's search
+        Search pastSearch = null;
+        for (Search search : searches) {
+            if (search.getUser().equals(crtCommand.getUsername())) {
+                pastSearch = search;
+                break;
+            }
+        }
+
+        //  If there is any leftover search, we must delete it before
+        //  allowing the user to search again
+        if (pastSearch != null) {
+            searches.remove(pastSearch);
+        }
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -116,11 +130,14 @@ public final class DoCommands {
                 searchOutput.putPOJO("results", songNames);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult, songNames,
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, songNames,
                         "song");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
 
             case "playlist" -> {
@@ -152,11 +169,14 @@ public final class DoCommands {
                 searchOutput.putPOJO("results", playlistNames);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult,
-                        playlistNames, "playlist");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, playlistNames,
+                        "playlist");
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
 
             case "podcast" -> {
@@ -183,11 +203,14 @@ public final class DoCommands {
                 searchOutput.putPOJO("results", podcastNames);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult,
-                        podcastNames, "podcast");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, podcastNames,
+                        "podcast");
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
 
             case "album" -> {
@@ -214,36 +237,46 @@ public final class DoCommands {
                 searchOutput.putPOJO("results", albumNames);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult,
-                        albumNames, "album");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, albumNames,
+                        "album");
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
 
             case "artist" -> {
-                ArrayList<String> artistNames =SearchSelect
+                ArrayList<String> artistNames = SearchSelect
                         .setCreatorSearchResults(crtCommand,
                         library, searchOutput);
 
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult,
-                        artistNames, "artist");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, artistNames,
+                        "artist");
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
 
             case "host" -> {
                 ArrayList<String> hostNames =SearchSelect
                         .setCreatorSearchResults(crtCommand,
                                 library, searchOutput);
+
                 //  Storing the result in case we need to select it later
-                SearchSelect.storeResultForSelect(lastSearchResult,
-                        hostNames, "host");
-                steps[0] = 1;
-                //  Store the name of the user that searched
-                lastSearchResult.add(crtCommand.getUsername());
+                Search crtSearch = new Search();
+
+                SearchSelect.storeResultForSelect(crtSearch, hostNames,
+                        "host");
+                crtSearch.setSteps(1, 0);
+                crtSearch.setUser(crtCommand.getUsername());
+
+                searches.add(crtSearch);
             }
             default -> { }
         }
@@ -256,15 +289,17 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param lastSearchResult The array containing the search result and its type
-     * @param steps The array that checks whether search and select were executed
+     * @param searches The array containing all searches
      * @param library Singleton containing all songs, users and podcasts
+     * @param pageSystem The pages of all user
+     * @param usersPlaylists Every playlist a user/artist/host owns
+     * @param managements All events and merches for every artist
+     * @param hostInfos All announcements for every host
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doSelect(final ObjectMapper objectMapper,
                                       final Command crtCommand,
-                                      final ArrayList<String> lastSearchResult,
-                                      final int[] steps,
+                                      final ArrayList<Search> searches,
                                       final LibraryInput library,
                                       final ArrayList<Page> pageSystem,
                                       final ArrayList<UserPlaylists> usersPlaylists,
@@ -289,28 +324,38 @@ public final class DoCommands {
             }
         }
 
+        //  Select the user's search
+        Search crtSearch = null;
+        for (Search search : searches) {
+            if (search.getUser().equals(crtCommand.getUsername())) {
+                crtSearch = search;
+                break;
+            }
+        }
+
         //  Creating the message
-        String message = GetMessages.getSelectMessage(lastSearchResult,
-                crtCommand, steps);
+        String message = GetMessages.getSelectMessage(crtSearch,
+                crtCommand);
         selectOutput.put("message", message);
 
         //  Storing the selection in case we need to load it
         if (message.contains("Successfully selected")) {
             int index = crtCommand.getItemNumber();
-            String result = lastSearchResult.get(index);
+            String result = crtSearch.getLastSearchResult().get(index);
 
             //  Keeping only the required value in the array (and its type)
-            lastSearchResult.add(1, result);
-            lastSearchResult.subList(2, lastSearchResult.size()).clear();
+            crtSearch.getLastSearchResult().add(1, result);
+            crtSearch.getLastSearchResult()
+                    .subList(2, crtSearch.getLastSearchResult().size()).clear();
 
             //  Last result is initialized properly for loading
-            steps[1] = 1;
+            crtSearch.setSteps(1,1);
         }
 
         //  If an artist was selected, we change the user's page
         if (message.contains("Successfully selected")
-                && (lastSearchResult.get(0).equals("artist")
-                || lastSearchResult.get(0).equals("host"))) {
+                && (crtSearch.getLastSearchResult().get(0).equals("artist")
+                || crtSearch.getLastSearchResult().get(0).equals("host"))) {
             //  Searching for the user's page
             Page crtPage = null;
 
@@ -326,7 +371,7 @@ public final class DoCommands {
             UserInput creator = null;
 
             for (UserInput user : library.getUsers()) {
-                if (user.getUsername().equals(lastSearchResult.get(1))) {
+                if (user.getUsername().equals(crtSearch.getLastSearchResult().get(1))) {
                     creator = user;
                     break;
                 }
@@ -341,7 +386,7 @@ public final class DoCommands {
                     }
                 }
 
-                if (lastSearchResult.get(0).equals("artist")) {
+                if (crtSearch.getLastSearchResult().get(0).equals("artist")) {
                     //  Add the artist's management info to the current page
                     for (Management management : managements) {
                         if (management.getArtist().equals(creator)) {
@@ -368,10 +413,7 @@ public final class DoCommands {
             }
 
             //  Clearing the result so that we can't load it twice
-            lastSearchResult.clear();
-            //  Reset steps
-            steps[0] = 0;
-            steps[1] = 0;
+            searches.remove(crtSearch);
         }
 
         return selectOutput;
@@ -382,8 +424,7 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param steps The array that checks whether search and select were executed
-     * @param lastSearchResult The array containing the search result and its type
+     * @param searches The array containing all searches
      * @param library Singleton containing all songs, users and podcasts
      * @param player The array that keeps all user players in check
      * @param playlists The array of all user playlists
@@ -393,8 +434,7 @@ public final class DoCommands {
      */
     public static ObjectNode doLoad(final ObjectMapper objectMapper,
                                     final Command crtCommand,
-                                    final int[] steps,
-                                    final ArrayList<String> lastSearchResult,
+                                    final ArrayList<Search> searches,
                                     final LibraryInput library,
                                     final ArrayList<ItemSelection> player,
                                     final ArrayList<Playlist> playlists,
@@ -418,19 +458,28 @@ public final class DoCommands {
             }
         }
 
+        //  Select the user's search
+        Search crtSearch = null;
+        for (Search search : searches) {
+            if (search.getUser().equals(crtCommand.getUsername())) {
+                crtSearch = search;
+                break;
+            }
+        }
+
         //  Adding the appropriate load message
-        if (steps[1] == 1 && lastSearchResult.isEmpty()) {
-            loadOutput.put("message", "You can't load an empty audio collection!");
-        } else if (steps[1] == 0) {
+        if (crtSearch == null || crtSearch.getSteps()[1] == 0) {
             loadOutput.put("message", "Please select a source"
                     + " before attempting to load.");
+        } else if (crtSearch.getSteps()[1] == 1 && crtSearch.getLastSearchResult().isEmpty()) {
+            loadOutput.put("message", "You can't load an empty audio collection!");
         } else {
             loadOutput.put("message", "Playback loaded successfully.");
 
             //  Loading the song into the database
-            if (lastSearchResult.get(0).equals("song")) {
+            if (crtSearch.getLastSearchResult().get(0).equals("song")) {
                 SongSelection selectedSong = SearchSelect.getSongSelection(crtCommand,
-                        library, lastSearchResult);
+                        library, crtSearch.getLastSearchResult());
 
                 //  Clearing other load from the same user
                 for (ItemSelection item : player) {
@@ -445,10 +494,10 @@ public final class DoCommands {
             }
 
             //  Loading the playlist into the database
-            if (lastSearchResult.get(0).equals("playlist")) {
+            if (crtSearch.getLastSearchResult().get(0).equals("playlist")) {
                 PlaylistSelection selectedPlaylist =
                         SearchSelect.getPlaylistSelection(crtCommand,
-                                playlists, lastSearchResult);
+                                playlists, crtSearch.getLastSearchResult());
 
                 //  Clearing other load from the same user
                 for (ItemSelection item : player) {
@@ -463,10 +512,10 @@ public final class DoCommands {
             }
 
             //  Loading the podcast into the database
-            if (lastSearchResult.get(0).equals("podcast")) {
+            if (crtSearch.getLastSearchResult().get(0).equals("podcast")) {
                 PodcastSelection selectedPodcast =
                         SearchSelect.getPodcastSelection(crtCommand,
-                                library, lastSearchResult);
+                                library, crtSearch.getLastSearchResult());
 
                 //  Clearing other load from the same user
                 for (ItemSelection item : player) {
@@ -501,10 +550,10 @@ public final class DoCommands {
                 }
             }
 
-            if (lastSearchResult.get(0).equals("album")) {
+            if (crtSearch.getLastSearchResult().get(0).equals("album")) {
                 AlbumSelection selectedAlbum =
                         SearchSelect.getAlbumSelection(crtCommand,
-                                albums, lastSearchResult);
+                                albums, crtSearch.getLastSearchResult());
 
                 //  Clearing other load from the same user
                 for (ItemSelection item : player) {
@@ -519,10 +568,7 @@ public final class DoCommands {
             }
 
             //  Clearing the result so that we can't load it twice
-            lastSearchResult.clear();
-            //  Reset steps
-            steps[0] = 0;
-            steps[1] = 0;
+            searches.remove(crtSearch);
         }
 
         return loadOutput;
@@ -1291,8 +1337,7 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param steps The array that checks whether search and select were executed
-     * @param lastSearchResult The array containing the search result and its type
+     * @param searches The array containing all searches
      * @param playlists The array of all user playlists
      * @param usersPlaylists The array of users and their respective playlists
      * @param library Singleton containing all songs, users and podcasts
@@ -1300,8 +1345,7 @@ public final class DoCommands {
      */
     public static ObjectNode doFollow(final ObjectMapper objectMapper,
                                       final Command crtCommand,
-                                      final int[] steps,
-                                      final ArrayList<String> lastSearchResult,
+                                      final ArrayList<Search> searches,
                                       final ArrayList<Playlist> playlists,
                                       final ArrayList<UserPlaylists> usersPlaylists,
                                       final LibraryInput library) {
@@ -1324,21 +1368,30 @@ public final class DoCommands {
             }
         }
 
+        //  Select the user's search
+        Search crtSearch = null;
+        for (Search search : searches) {
+            if (search.getUser().equals(crtCommand.getUsername())) {
+                crtSearch = search;
+                break;
+            }
+        }
+
         //  Adding the appropriate load message
         //  No select or no results found
-        if (steps[1] == 0) {
+        if (crtSearch == null || crtSearch.getSteps()[1] == 0) {
             followOutput.put("message", "Please select a source "
                     + "before following or unfollowing.");
 
             //  Source is not a playlist
-        } else if (!lastSearchResult.get(0).equals("playlist")) {
+        } else if (!crtSearch.getLastSearchResult().get(0).equals("playlist")) {
             followOutput.put("message", "The selected source is not a playlist.");
 
         } else {
             //  Localize the specific playlist
             Playlist wantedPlaylist = null;
             for (Playlist playlist : playlists) {
-                if (playlist.getName().equals(lastSearchResult.get(1))) {
+                if (playlist.getName().equals(crtSearch.getLastSearchResult().get(1))) {
                     wantedPlaylist = playlist;
                     break;
                 }
@@ -1357,10 +1410,7 @@ public final class DoCommands {
             }
 
             //  Clearing the result so that we can't follow it twice
-            lastSearchResult.clear();
-            //  Reset steps
-            steps[0] = 0;
-            steps[1] = 0;
+            searches.remove(crtSearch);
         }
 
         return followOutput;

@@ -5,6 +5,7 @@ import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.CommandHelper.Search;
 import main.CreatorClasses.ArtistClasses.Event;
 import main.CreatorClasses.ArtistClasses.Management;
 import main.CreatorClasses.ArtistClasses.Merch;
@@ -156,27 +157,27 @@ public final class GetMessages {
     /**
      * This method selects one item from the last search
      *
-     * @param lastSearchResult The array containing the search result and its type
+     * @param crtSearch The variable containing search data
      * @param crtCommand The select command with all its data
-     * @param steps The array that checks whether search and select were executed
      * @return Based on the operation, it returns an appropriate message
      */
-    public static String getSelectMessage(final ArrayList<String> lastSearchResult,
-                                          final Command crtCommand, final int[] steps) {
+    public static String getSelectMessage(final Search crtSearch,
+                                          final Command crtCommand) {
         String message;
-        if (steps[0] == 0 || !lastSearchResult.get(lastSearchResult.size() - 1)
-                .equals(crtCommand.getUsername())) {
+        if (crtSearch == null) {
             message = "Please conduct a search before making a selection.";
-        } else if (crtCommand.getItemNumber() > lastSearchResult.size() - 2) {
+        } else if (crtCommand.getItemNumber() > crtSearch.getLastSearchResult().size() - 1) {
             message = "The selected ID is too high.";
-        } else if (lastSearchResult.get(0).equals("artist")
-                || lastSearchResult.get(0).equals("host")) {
+        } else if (crtSearch.getLastSearchResult().get(0).equals("artist")
+                || crtSearch.getLastSearchResult().get(0).equals("host")) {
             int index = crtCommand.getItemNumber();
-            message = "Successfully selected " + lastSearchResult.get(index) + "'s page.";
+            message = "Successfully selected "
+                    + crtSearch.getLastSearchResult().get(index) + "'s page.";
         } else {
             //  Selecting something to play
             int index = crtCommand.getItemNumber();
-            message = "Successfully selected " + lastSearchResult.get(index) + ".";
+            message = "Successfully selected "
+                    + crtSearch.getLastSearchResult().get(index) + ".";
         }
 
         return message;
