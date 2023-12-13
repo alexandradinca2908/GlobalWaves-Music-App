@@ -175,7 +175,13 @@
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 3220,
-  "stats" : { }
+  "stats" : {
+    "name" : "Digital Dreams",
+    "remainedTime" : 10,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "forward",
   "user" : "emily30",

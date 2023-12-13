@@ -1,12 +1,15 @@
 package main.SelectionClasses.Playlists;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.SongInput;
 import main.PlaylistClasses.Playlist;
 import main.SelectionClasses.ItemSelection;
-import main.VisitorPattern.Visitable;
-import main.VisitorPattern.Visitor;
+import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
+import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.VisitableString;
+import main.VisitorPattern.VisitorString.VisitorString;
 
-public final class PlaylistSelection extends ItemSelection implements Visitable {
+public final class PlaylistSelection extends ItemSelection implements VisitableString, VisitableObjectNode {
     private Playlist playlist;
     private int startTimestamp;
     private int stopTimestamp;
@@ -105,7 +108,12 @@ public final class PlaylistSelection extends ItemSelection implements Visitable 
     }
 
     @Override
-    public String accept(final Visitor visitor) {
-        return visitor.visit(this);
+    public String acceptString(final VisitorString visitor) {
+        return visitor.visitString(this);
+    }
+
+    @Override
+    public ObjectNode acceptObjectNode(final VisitorObjectNode visitor) {
+        return visitor.visitObjectNode(this);
     }
 }

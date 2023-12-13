@@ -1,10 +1,12 @@
 package main.SelectionClasses;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.PodcastInput;
-import main.VisitorPattern.Visitable;
-import main.VisitorPattern.Visitor;
+import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.VisitableString;
+import main.VisitorPattern.VisitorString.VisitorString;
 
-public final class PodcastSelection extends ItemSelection implements Visitable {
+public final class PodcastSelection extends ItemSelection implements VisitableString {
     private PodcastInput podcast;
 
     public PodcastSelection() {
@@ -60,7 +62,12 @@ public final class PodcastSelection extends ItemSelection implements Visitable {
     }
 
     @Override
-    public String accept(final Visitor visitor) {
-        return visitor.visit(this);
+    public String acceptString(final VisitorString visitor) {
+        return visitor.visitString(this);
+    }
+
+    @Override
+    public ObjectNode acceptObjectNode(final VisitorObjectNode visitor) {
+        return visitor.visitObjectNode(this);
     }
 }

@@ -165,7 +165,7 @@
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 620,
-  "message" : "sonicpainter was successfully deleted."
+  "message" : "sonicpainter can't be deleted."
 }, {
   "command" : "search",
   "user" : "soundseeker21",
@@ -202,18 +202,23 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 760,
-  "message" : "Search returned 2 results",
-  "results" : [ "soundseeker21", "soundcurator" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "sonicpainter", "soundseeker21", "soundcurator" ]
 }, {
   "command" : "deleteUser",
   "user" : "sonicpainter",
   "timestamp" : 900,
-  "message" : "The username sonicpainter doesn't exist."
+  "message" : "sonicpainter was successfully deleted."
 }, {
   "command" : "deleteUser",
   "user" : "audiosage",
   "timestamp" : 930,
-  "message" : null
+  "message" : "audiosage can't be deleted."
+}, {
+  "command" : "changePage",
+  "user" : "soundseeker21",
+  "timestamp" : 955,
+  "message" : "soundseeker21 accessed Home successfully."
 }, {
   "command" : "deleteUser",
   "user" : "melodicwanderer",
@@ -230,6 +235,11 @@
   "timestamp" : 975,
   "message" : "The username sonicpainter doesn't exist."
 }, {
+  "command" : "removePodcast",
+  "user" : "musicmaven",
+  "timestamp" : 980,
+  "message" : "musicmaven can't delete this podcast."
+}, {
   "command" : "deleteUser",
   "user" : "audiosage",
   "timestamp" : 1100,
@@ -238,7 +248,7 @@
   "command" : "select",
   "user" : "david27",
   "timestamp" : 1225,
-  "message" : "Successfully selected soundseeker21's page."
+  "message" : "Successfully selected sonicpainter's page."
 }, {
   "command" : "deleteUser",
   "user" : "melodicwanderer",
@@ -274,6 +284,11 @@
   "user" : "sonicpainter",
   "timestamp" : 7860,
   "message" : "The username sonicpainter doesn't exist."
+}, {
+  "command" : "changePage",
+  "user" : "david27",
+  "timestamp" : 7885,
+  "message" : "david27 accessed Home successfully."
 }, {
   "command" : "deleteUser",
   "user" : "sonicpainter",

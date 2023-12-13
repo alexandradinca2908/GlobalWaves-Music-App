@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorClasses;
+package main.VisitorPattern.VisitorString;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
@@ -7,9 +7,8 @@ import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
-import main.VisitorPattern.Visitor;
 
-public final class VisitPrevMessage implements Visitor {
+public final class VisitPrevMessage implements VisitorString {
     private Command crtCommand;
 
     public VisitPrevMessage(final Command crtCommand) {
@@ -17,7 +16,7 @@ public final class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(final SongSelection crtItem) {
+    public String visitString(final SongSelection crtItem) {
         crtItem.setRemainingTime(crtItem.getSong().getDuration());
         crtItem.setPaused(false);
 
@@ -26,7 +25,7 @@ public final class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(final PodcastSelection crtItem) {
+    public String visitString(final PodcastSelection crtItem) {
         String message = null;
         EpisodeInput crtEp = null;
 
@@ -79,7 +78,7 @@ public final class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(final PlaylistSelection crtItem) {
+    public String visitString(final PlaylistSelection crtItem) {
         String message = null;
         SongInput crtSong = null;
 
@@ -133,7 +132,7 @@ public final class VisitPrevMessage implements Visitor {
     }
 
     @Override
-    public String visit(final AlbumSelection crtItem) {
+    public String visitString(final AlbumSelection crtItem) {
         String message = null;
         SongInput crtSong = null;
 

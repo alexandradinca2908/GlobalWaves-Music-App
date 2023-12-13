@@ -1,8 +1,9 @@
 package main.SelectionClasses.Creators;
 
 import fileio.input.UserInput;
+import main.SelectionClasses.ItemSelection;
 
-public final class HostSelection {
+public final class HostSelection extends ItemSelection {
     private UserInput host;
 
     public HostSelection() {

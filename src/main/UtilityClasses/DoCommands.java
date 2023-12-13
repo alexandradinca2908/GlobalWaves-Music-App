@@ -1793,7 +1793,7 @@ public final class DoCommands {
                             + followedPlaylists;
                 }
 
-                case "LikedContentPage" -> {
+                case "LikedContent" -> {
                     //  Get liked songs
                     ArrayList<String> likedSongs = new ArrayList<>();
                     ArrayList<SongInput> songs =
@@ -1816,7 +1816,7 @@ public final class DoCommands {
 
                     //  Get message
                     message = "Liked songs:\n\t" + likedSongs
-                            + "\n\nFollowed Playlists:\n\t"
+                            + "\n\nFollowed playlists:\n\t"
                             + followedPlaylists;
                 }
 
@@ -1988,7 +1988,8 @@ public final class DoCommands {
                                           final ArrayList<UserPlaylists> usersPlaylists,
                                           final ArrayList<Album> albums,
                                           final ArrayList<SongLikes> songsLikes,
-                                          final ArrayList<PodcastSelection> podcasts) {
+                                          final ArrayList<PodcastSelection> podcasts,
+                                          final ArrayList<Page> pageSystem) {
         ObjectNode deleteUserOutput = objectMapper.createObjectNode();
 
         deleteUserOutput.put("command", "deleteUser");
@@ -1998,7 +1999,8 @@ public final class DoCommands {
         updatePlayer(player, crtCommand, podcasts, library);
 
         String message = getDeleteUserMessage(library, crtCommand,
-                player, playlists, usersPlaylists, albums, songsLikes);
+                player, playlists, usersPlaylists, albums,
+                songsLikes, pageSystem);
 
 
         deleteUserOutput.put("message", message);

@@ -422,252 +422,32 @@ public final class Main {
                     ObjectNode deleteUserOutput;
                     deleteUserOutput = doDeleteUser(objectMapper, library, crtCommand,
                             player, playlists, usersPlaylists, albums, songsLikes,
-                            podcasts);
+                            podcasts, pageSystem);
 
                     outputs.add(deleteUserOutput);
                 }
 
                 case "addPodcast" -> {
-                    ObjectNode addPodcastOutput = objectMapper.createObjectNode();
-
-                    addPodcastOutput.put("command", "addPodcast");
-                    addPodcastOutput.put("user", crtCommand.getUsername());
-                    addPodcastOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message;
-
-                    UserInput host = null;
-                    boolean exists = false;
-                    boolean isHost = false;
-
-                    //  Checking to see artist availability
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            exists = true;
-                            if (user.getType().equals("host")) {
-                                isHost = true;
-                                host = user;
-                            }
-                        }
-                    }
-
-                    if (!exists) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else if (!isHost) {
-                        message = crtCommand.getUsername() + " is not a host.";
-                    } else {
-                        //  Host is eligible to add podcast
-
-                        //  Verify podcast name uniqueness
-                        //  First we find the user's playlists
-                        UserPlaylists allPlaylists = null;
-
-                        for (UserPlaylists userPlaylists : usersPlaylists) {
-                            if (userPlaylists.getUser().equals(host)) {
-                                allPlaylists = userPlaylists;
-                                break;
-                            }
-                        }
-
-                        boolean duplicate = false;
-                        //  Now we check the name
-                        for (PodcastInput podcast : allPlaylists.getPodcasts()) {
-                            if (podcast.getName().equals(crtCommand.getName())) {
-                                duplicate = true;
-                                break;
-                            }
-                        }
-
-                        if (duplicate) {
-                            message = crtCommand.getUsername()
-                                    + " has another podcast with the same name.";
-                        } else {
-                            //  We check to see if the podcast has duplicate episodes
-                            boolean sameName = false;
-
-                            for (int i = 0; i < crtCommand.getEpisodes().size() - 1; i++) {
-                                EpisodeInput crtEpisode = crtCommand.getEpisodes().get(i);
-                                for (int j = i + 1; j < crtCommand.getEpisodes().size(); j++) {
-                                    EpisodeInput nextEpisode = crtCommand.getEpisodes().get(j);
-
-                                    if (crtEpisode.getName().equals(nextEpisode.getName())) {
-                                        sameName = true;
-                                        break;
-                                    }
-                                }
-
-                                if (sameName) {
-                                    break;
-                                }
-                            }
-
-                            if (sameName) {
-                                message = crtCommand.getUsername()
-                                        + " has the same episode in this podcast.";
-                            } else {
-                                //  The podcast can be initialized
-                                PodcastInput newPodcast = new PodcastInput();
-
-                                //  Set data
-                                newPodcast.setOwner(crtCommand.getUsername());
-                                newPodcast.setName(crtCommand.getName());
-                                newPodcast.setEpisodes(crtCommand.getEpisodes());
-
-                                //  Add album and songs in all databases
-                                //  Artist's podcasts
-                                allPlaylists.getPodcasts().add(newPodcast);
-
-                                //  All podcasts
-                                library.getPodcasts().add(newPodcast);
-
-                                message = crtCommand.getUsername()
-                                        + " has added new podcast successfully.";
-                            }
-                        }
-                    }
-
-                    addPodcastOutput.put("message", message);
+                    ObjectNode addPodcastOutput;
+                    addPodcastOutput =  doAddPodcast(objectMapper, crtCommand,
+                            library, usersPlaylists);
 
                     outputs.add(addPodcastOutput);
                 }
 
                 case "addAnnouncement" -> {
-                    ObjectNode addAnnouncementOutput = objectMapper.createObjectNode();
+                    ObjectNode addAnnouncementOutput;
+                    addAnnouncementOutput = doAddAnnouncement(objectMapper,
+                            crtCommand, library, hostInfos);
 
-                    addAnnouncementOutput.put("command", "addAnnouncement");
-                    addAnnouncementOutput.put("user", crtCommand.getUsername());
-                    addAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message = null;
-
-                    UserInput host = null;
-                    boolean exists = false;
-                    boolean isHost = false;
-
-                    //  Checking to see host availability
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            exists = true;
-                            if (user.getType().equals("host")) {
-                                isHost = true;
-                                host = user;
-                            }
-                        }
-                    }
-
-                    if (!exists) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else if (!isHost) {
-                        message = crtCommand.getUsername() + " is not a host.";
-                    } else {
-                        //  Host may add announcement
-
-                        //  We need to check announcement uniqueness
-                        boolean sameName = false;
-                        ArrayList<Announcement> allAnnouncements = null;
-
-                        for (HostInfo hostInfo : hostInfos) {
-                            if (hostInfo.getHost().equals(host)) {
-                                allAnnouncements = hostInfo.getAnnouncements();
-                                break;
-                            }
-                        }
-
-                        //  Browsing through announcements
-                        for (Announcement announcement : allAnnouncements) {
-                            if (announcement.getName().equals(crtCommand.getName())) {
-                                sameName = true;
-                                break;
-                            }
-                        }
-
-                        if (sameName) {
-                            message = crtCommand.getUsername()
-                                    + " has already added an announcement with this name.";
-                        } else {
-                            Announcement newAnnouncement = new Announcement();
-
-                            newAnnouncement.setName(crtCommand.getName());
-                            newAnnouncement.setDescription(crtCommand.getDescription());
-
-                            //  Add event
-                            allAnnouncements.add(newAnnouncement);
-
-                            message = crtCommand.getUsername()
-                                    + " has successfully added new announcement.";
-                        }
-                    }
-
-                    addAnnouncementOutput.put("message", message);
                     outputs.add(addAnnouncementOutput);
                 }
 
                 case "removeAnnouncement" -> {
-                    ObjectNode removeAnnouncementOutput = objectMapper.createObjectNode();
+                    ObjectNode removeAnnouncementOutput;
+                    removeAnnouncementOutput = doRemoveAnnouncement(objectMapper,
+                            crtCommand, library, hostInfos);
 
-                    removeAnnouncementOutput.put("command", "removeAnnouncement");
-                    removeAnnouncementOutput.put("user", crtCommand.getUsername());
-                    removeAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
-
-                    String message = null;
-
-                    UserInput host = null;
-                    boolean exists = false;
-                    boolean isHost = false;
-
-                    //  Checking to see host availability
-                    for (UserInput user : library.getUsers()) {
-                        if (user.getUsername().equals(crtCommand.getUsername())) {
-                            exists = true;
-                            if (user.getType().equals("host")) {
-                                isHost = true;
-                                host = user;
-                            }
-                        }
-                    }
-
-                    if (!exists) {
-                        message = "The username " + crtCommand.getUsername()
-                                + " doesn't exist.";
-                    } else if (!isHost) {
-                        message = crtCommand.getUsername() + " is not a host.";
-                    } else {
-                        //  Host may remove announcement
-
-                        //  We need to check if the announcement exists
-                        ArrayList<Announcement> allAnnouncements = null;
-
-                        for (HostInfo hostInfo : hostInfos) {
-                            if (hostInfo.getHost().equals(host)) {
-                                allAnnouncements = hostInfo.getAnnouncements();
-                                break;
-                            }
-                        }
-
-                        //  Browsing through announcements
-                        Announcement removableAnnouncement = null;
-                        for (Announcement announcement : allAnnouncements) {
-                            if (announcement.getName().equals(crtCommand.getName())) {
-                                removableAnnouncement = announcement;
-                                break;
-                            }
-                        }
-
-                        if (removableAnnouncement == null) {
-                            message = crtCommand.getUsername()
-                                    + " has no announcement with the given name.";
-                        } else {
-                            //  We can remove announcement
-                            allAnnouncements.remove(removableAnnouncement);
-
-                            message = crtCommand.getUsername()
-                                    + " has successfully deleted the announcement.";
-                        }
-                    }
-
-                    removeAnnouncementOutput.put("message", message);
                     outputs.add(removeAnnouncementOutput);
                 }
 
@@ -855,15 +635,180 @@ public final class Main {
                 }
 
                 case "changePage" -> {
-                    ObjectNode changePage = objectMapper.createObjectNode();
+                    ObjectNode changePageOutput = objectMapper.createObjectNode();
 
-                    changePage.put("command", "changePage");
-                    changePage.put("user", crtCommand.getUsername());
-                    changePage.put("timestamp", crtCommand.getTimestamp());
+                    changePageOutput.put("command", "changePage");
+                    changePageOutput.put("user", crtCommand.getUsername());
+                    changePageOutput.put("timestamp", crtCommand.getTimestamp());
 
-                    // TODO
+                    String message;
+
+                    //  Find the user's page
+                    Page crtPage = null;
+
+                    for (Page page : pageSystem) {
+                        if (page.getPageOwner().getUsername().equals(crtCommand.getUsername())) {
+                            crtPage = page;
+                            break;
+                        }
+                    }
+
+                    switch (crtCommand.getNextPage()) {
+                        case "Home" -> {
+                            //  Finding the user's original playlists
+                            for (UserPlaylists userPlaylists : usersPlaylists) {
+                                if (userPlaylists.getUser().equals(crtPage.getPageOwner())) {
+                                    crtPage.setUserPlaylists(userPlaylists);
+                                    break;
+                                }
+                            }
+
+                            //  Updating current page
+                            crtPage.setCurrentPage("Home");
+
+                            //  Removing any previous connections
+                            crtPage.setHostInfo(null);
+                            crtPage.setManagement(null);
+
+                            message = crtCommand.getUsername()
+                                   + " accessed Home successfully.";
+                        }
+
+                        case "LikedContent" -> {
+                            //  Finding the user's original playlists
+                            for (UserPlaylists userPlaylists : usersPlaylists) {
+                                if (userPlaylists.getUser().equals(crtPage.getPageOwner())) {
+                                    crtPage.setUserPlaylists(userPlaylists);
+                                    break;
+                                }
+                            }
+
+                            //  Updating current page
+                            crtPage.setCurrentPage("LikedContent");
+
+                            //  Removing any previous connections
+                            crtPage.setHostInfo(null);
+                            crtPage.setManagement(null);
+
+                            message = crtCommand.getUsername()
+                                    + " accessed LikedContent successfully.";
+                        }
+
+                        default -> {
+                            message = crtCommand.getUsername()
+                                    + "  is trying to access a non-existent page.";
+                        }
+                    }
+
+                    changePageOutput.put("message", message);
+                    outputs.add(changePageOutput);
                 }
-                
+
+                case "removePodcast" -> {
+                    ObjectNode removePodcastOutput = objectMapper.createObjectNode();
+
+                    removePodcastOutput.put("command", "removePodcast");
+                    removePodcastOutput.put("user", crtCommand.getUsername());
+                    removePodcastOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message;
+
+                    UserInput host = null;
+                    boolean exists = false;
+                    boolean isHost = false;
+
+                    //  Checking to see host availability
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            exists = true;
+                            if (user.getType().equals("host")) {
+                                isHost = true;
+                                host = user;
+                            }
+                            break;
+                        }
+                    }
+
+                    if (!exists) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!isHost) {
+                        message = crtCommand.getUsername() + " is not a host.";
+                    } else {
+                        //  Host is eligible to remove podcast
+
+                        //  Verify podcast name
+                        //  First we find the user's playlists
+                        UserPlaylists allPlaylists = null;
+
+                        for (UserPlaylists userPlaylists : usersPlaylists) {
+                            if (userPlaylists.getUser().equals(host)) {
+                                allPlaylists = userPlaylists;
+                                break;
+                            }
+                        }
+
+                        boolean hasPodcast = false;
+                        PodcastInput crtPodcast = null;
+
+                        //  Now we check the name
+                        for (PodcastInput podcast : allPlaylists.getPodcasts()) {
+                            if (podcast.getName().equals(crtCommand.getName())) {
+                                hasPodcast = true;
+                                crtPodcast = podcast;
+                                break;
+                            }
+                        }
+
+                        if (!hasPodcast) {
+                            message = crtCommand.getUsername()
+                                    + " doesn't have a podcast with the given name.";
+                        } else {
+                            //  Last check
+
+                            boolean used = false;
+
+                            //  We need to see if the podcast is loaded
+                            for (ItemSelection item : player) {
+                                if (item instanceof PodcastSelection) {
+                                    if (((PodcastSelection) item).getPodcast()
+                                            .equals(crtPodcast)) {
+                                        used = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (used) {
+                                message = crtCommand.getUsername()
+                                        + " can't delete this podcast.";
+                            } else {
+                                //  Podcast can be safely deleted
+
+                                //  Remove podcast from paused podcasts
+                                for (PodcastSelection podcast : podcasts) {
+                                    if (podcast.getPodcast().equals(crtPodcast)) {
+                                        podcasts.remove(podcast);
+                                        break;
+                                    }
+                                }
+
+                                //  Remove podcast from host's podcasts
+                                allPlaylists.getPodcasts().remove(crtPodcast);
+
+                                //  Remove podcast from database
+                                library.getPodcasts().remove(crtPodcast);
+
+                                message = crtCommand.getUsername()
+                                        + " deleted the podcast successfully.";
+                            }
+                        }
+                    }
+
+                    removePodcastOutput.put("message", message);
+                    outputs.add(removePodcastOutput);
+                }
+
                 default -> {
                 }
             }
@@ -916,6 +861,286 @@ public final class Main {
         }
 
         removableItems.clear();
+    }
+
+    public static String getAddPodcastMessage(final LibraryInput library,
+                                              final Command crtCommand,
+                                              final ArrayList<UserPlaylists> usersPlaylists) {
+        String message = null;
+
+        UserInput host = null;
+        boolean exists = false;
+        boolean isHost = false;
+
+        //  Checking to see artist availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("host")) {
+                    isHost = true;
+                    host = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isHost) {
+            message = crtCommand.getUsername() + " is not a host.";
+        } else {
+            //  Host is eligible to add podcast
+
+            //  Verify podcast name uniqueness
+            //  First we find the user's playlists
+            UserPlaylists allPlaylists = null;
+
+            for (UserPlaylists userPlaylists : usersPlaylists) {
+                if (userPlaylists.getUser().equals(host)) {
+                    allPlaylists = userPlaylists;
+                    break;
+                }
+            }
+
+            boolean duplicate = false;
+            //  Now we check the name
+            for (PodcastInput podcast : allPlaylists.getPodcasts()) {
+                if (podcast.getName().equals(crtCommand.getName())) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if (duplicate) {
+                message = crtCommand.getUsername()
+                        + " has another podcast with the same name.";
+            } else {
+                //  We check to see if the podcast has duplicate episodes
+                boolean sameName = false;
+
+                for (int i = 0; i < crtCommand.getEpisodes().size() - 1; i++) {
+                    EpisodeInput crtEpisode = crtCommand.getEpisodes().get(i);
+                    for (int j = i + 1; j < crtCommand.getEpisodes().size(); j++) {
+                        EpisodeInput nextEpisode = crtCommand.getEpisodes().get(j);
+
+                        if (crtEpisode.getName().equals(nextEpisode.getName())) {
+                            sameName = true;
+                            break;
+                        }
+                    }
+
+                    if (sameName) {
+                        break;
+                    }
+                }
+
+                if (sameName) {
+                    message = crtCommand.getUsername()
+                            + " has the same episode in this podcast.";
+                } else {
+                    //  The podcast can be initialized
+                    PodcastInput newPodcast = new PodcastInput();
+
+                    //  Set data
+                    newPodcast.setOwner(crtCommand.getUsername());
+                    newPodcast.setName(crtCommand.getName());
+                    newPodcast.setEpisodes(crtCommand.getEpisodes());
+
+                    //  Add album and songs in all databases
+                    //  Artist's podcasts
+                    allPlaylists.getPodcasts().add(newPodcast);
+
+                    //  All podcasts
+                    library.getPodcasts().add(newPodcast);
+
+                    message = crtCommand.getUsername()
+                            + " has added new podcast successfully.";
+                }
+            }
+        }
+
+        return message;
+    }
+
+    public static String getAddAnnouncementMessage(final LibraryInput library,
+                                                   final Command crtCommand,
+                                                   final ArrayList<HostInfo> hostInfos) {
+        String message = null;
+
+        UserInput host = null;
+        boolean exists = false;
+        boolean isHost = false;
+
+        //  Checking to see host availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("host")) {
+                    isHost = true;
+                    host = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isHost) {
+            message = crtCommand.getUsername() + " is not a host.";
+        } else {
+            //  Host may add announcement
+
+            //  We need to check announcement uniqueness
+            boolean sameName = false;
+            ArrayList<Announcement> allAnnouncements = null;
+
+            for (HostInfo hostInfo : hostInfos) {
+                if (hostInfo.getHost().equals(host)) {
+                    allAnnouncements = hostInfo.getAnnouncements();
+                    break;
+                }
+            }
+
+            //  Browsing through announcements
+            for (Announcement announcement : allAnnouncements) {
+                if (announcement.getName().equals(crtCommand.getName())) {
+                    sameName = true;
+                    break;
+                }
+            }
+
+            if (sameName) {
+                message = crtCommand.getUsername()
+                        + " has already added an announcement with this name.";
+            } else {
+                Announcement newAnnouncement = new Announcement();
+
+                newAnnouncement.setName(crtCommand.getName());
+                newAnnouncement.setDescription(crtCommand.getDescription());
+
+                //  Add event
+                allAnnouncements.add(newAnnouncement);
+
+                message = crtCommand.getUsername()
+                        + " has successfully added new announcement.";
+            }
+        }
+
+        return message;
+    }
+
+    public static String getRemoveAnnouncementMessage(final LibraryInput library,
+                                                      final Command crtCommand,
+                                                      final ArrayList<HostInfo> hostInfos) {
+        String message = null;
+
+        UserInput host = null;
+        boolean exists = false;
+        boolean isHost = false;
+
+        //  Checking to see host availability
+        for (UserInput user : library.getUsers()) {
+            if (user.getUsername().equals(crtCommand.getUsername())) {
+                exists = true;
+                if (user.getType().equals("host")) {
+                    isHost = true;
+                    host = user;
+                }
+            }
+        }
+
+        if (!exists) {
+            message = "The username " + crtCommand.getUsername()
+                    + " doesn't exist.";
+        } else if (!isHost) {
+            message = crtCommand.getUsername() + " is not a host.";
+        } else {
+            //  Host may remove announcement
+
+            //  We need to check if the announcement exists
+            ArrayList<Announcement> allAnnouncements = null;
+
+            for (HostInfo hostInfo : hostInfos) {
+                if (hostInfo.getHost().equals(host)) {
+                    allAnnouncements = hostInfo.getAnnouncements();
+                    break;
+                }
+            }
+
+            //  Browsing through announcements
+            Announcement removableAnnouncement = null;
+            for (Announcement announcement : allAnnouncements) {
+                if (announcement.getName().equals(crtCommand.getName())) {
+                    removableAnnouncement = announcement;
+                    break;
+                }
+            }
+
+            if (removableAnnouncement == null) {
+                message = crtCommand.getUsername()
+                        + " has no announcement with the given name.";
+            } else {
+                //  We can remove announcement
+                allAnnouncements.remove(removableAnnouncement);
+
+                message = crtCommand.getUsername()
+                        + " has successfully deleted the announcement.";
+            }
+        }
+
+        return message;
+    }
+
+    public static ObjectNode doAddPodcast(final ObjectMapper objectMapper,
+                                          final Command crtCommand,
+                                          final LibraryInput library,
+                                          final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode addPodcastOutput = objectMapper.createObjectNode();
+
+        addPodcastOutput.put("command", "addPodcast");
+        addPodcastOutput.put("user", crtCommand.getUsername());
+        addPodcastOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddPodcastMessage(library, crtCommand,
+                usersPlaylists);
+        addPodcastOutput.put("message", message);
+
+        return addPodcastOutput;
+    }
+
+    public static ObjectNode doAddAnnouncement(final ObjectMapper objectMapper,
+                                               final Command crtCommand,
+                                               final LibraryInput library,
+                                               final ArrayList<HostInfo> hostInfos) {
+        ObjectNode addAnnouncementOutput = objectMapper.createObjectNode();
+
+        addAnnouncementOutput.put("command", "addAnnouncement");
+        addAnnouncementOutput.put("user", crtCommand.getUsername());
+        addAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddAnnouncementMessage(library,
+                crtCommand, hostInfos);
+        addAnnouncementOutput.put("message", message);
+
+        return addAnnouncementOutput;
+    }
+
+    public static ObjectNode doRemoveAnnouncement(final ObjectMapper objectMapper,
+                                                  final Command crtCommand,
+                                                  final LibraryInput library,
+                                                  final ArrayList<HostInfo> hostInfos) {
+        ObjectNode removeAnnouncementOutput = objectMapper.createObjectNode();
+
+        removeAnnouncementOutput.put("command", "removeAnnouncement");
+        removeAnnouncementOutput.put("user", crtCommand.getUsername());
+        removeAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getRemoveAnnouncementMessage(library,
+                crtCommand, hostInfos);
+
+        removeAnnouncementOutput.put("message", message);
+
+        return removeAnnouncementOutput;
     }
 }
 

@@ -4,11 +4,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
+import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
-import main.VisitorPattern.Visitable;
-import main.VisitorPattern.Visitor;
+import main.VisitorPattern.VisitorObjectNode.VisitGetStats;
+import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
+import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.VisitableString;
+import main.VisitorPattern.VisitorString.VisitorString;
 
-public class ItemSelection implements Visitable {
+public class ItemSelection implements VisitableString, VisitableObjectNode {
     private String user;
     private int startTime;
     private int remainingTime;
@@ -134,120 +138,9 @@ public class ItemSelection implements Visitable {
             stats.put("shuffle", false);
             stats.put("paused", true);
         } else {
-            //  Downsize item for JSON details
-            if (reqItem instanceof SongSelection) {
-                SongInput songItem = ((SongSelection) reqItem).getSong();
+            VisitorObjectNode visitGetStats = new VisitGetStats(stats);
 
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                //  Set name
-                if (remainingTime == 0) {
-                    stats.put("name", "");
-                } else {
-                    stats.put("name", songItem.getName());
-                }
-
-                //  Set remaining time
-                stats.put("remainedTime", remainingTime);
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-
-            } else if (reqItem instanceof PlaylistSelection) {
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                if (remainingTime == 0) {
-                    //  Set name
-                    stats.put("name", "");
-
-                    //  Set remaining time
-                    stats.put("remainedTime", 0);
-                } else {
-                    //  We find the current song
-                    SongInput crtSong = null;
-
-                    int duration = ((PlaylistSelection) reqItem).getPlaylist().getDuration();
-
-                    for (SongInput song : ((PlaylistSelection) reqItem).getPlaylist().getSongs()) {
-                        duration -= song.getDuration();
-
-                        if (duration < remainingTime) {
-                            crtSong = song;
-                            break;
-                        }
-                    }
-
-                    //  Set name
-                    stats.put("name", crtSong.getName());
-
-                    //  Set remaining time
-                    stats.put("remainedTime", remainingTime - duration);
-                }
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-
-            } else if (reqItem instanceof PodcastSelection) {
-                //  Check remaining time
-                int remainingTime = reqItem.getRemainingTime();
-
-                if (remainingTime == 0) {
-                    //  Set name
-                    stats.put("name", "");
-
-                    //  Set remaining time
-                    stats.put("remainedTime", 0);
-                } else {
-                    //  We find the current episode
-                    EpisodeInput crtEpisode = null;
-                    PodcastSelection copyItem = (PodcastSelection) reqItem;
-                    int duration = ((PodcastSelection) reqItem).getPodcast().getDuration();
-
-                    for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
-                        duration -= episode.getDuration();
-
-                        if (duration < remainingTime) {
-                            crtEpisode = episode;
-                            break;
-                        }
-                    }
-
-                    //  Set name
-                    stats.put("name", crtEpisode.getName());
-
-                    //  Set remaining time
-                    stats.put("remainedTime", remainingTime - duration);
-                }
-
-                //  Set repeat status
-                stats.put("repeat", reqItem.getRepeat());
-
-                //  Set shuffle
-                stats.put("shuffle", reqItem.isShuffle());
-
-                //  Set paused
-                stats.put("paused", reqItem.isPaused());
-
-                return stats;
-            }
+            return reqItem.acceptObjectNode(visitGetStats);
         }
 
         return stats;
@@ -267,7 +160,12 @@ public class ItemSelection implements Visitable {
      * @return Command message
      */
     @Override
-    public String accept(final Visitor visitor) {
+    public String acceptString(final VisitorString visitor) {
+        return null;
+    }
+
+    @Override
+    public ObjectNode acceptObjectNode(final VisitorObjectNode visitor) {
         return null;
     }
 }

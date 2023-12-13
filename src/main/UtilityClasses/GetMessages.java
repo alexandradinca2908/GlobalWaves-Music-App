@@ -1,6 +1,5 @@
 package main.UtilityClasses;
 
-import com.fasterxml.jackson.databind.introspect.Annotated;
 import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
@@ -21,10 +20,10 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
-import main.VisitorPattern.VisitorClasses.VisitDeleteUser;
-import main.VisitorPattern.VisitorClasses.VisitNextMessage;
-import main.VisitorPattern.VisitorClasses.VisitPrevMessage;
-import main.VisitorPattern.Visitor;
+import main.VisitorPattern.VisitorString.VisitDeleteUser;
+import main.VisitorPattern.VisitorString.VisitNextMessage;
+import main.VisitorPattern.VisitorString.VisitPrevMessage;
+import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -608,10 +607,10 @@ public final class GetMessages {
             message = "Please load a source before skipping to the next track.";
         } else {
             //  Now we can execute the command
-            Visitor visitNextMessage = new VisitNextMessage(player,
+            VisitorString visitNextMessage = new VisitNextMessage(player,
                     podcasts, crtCommand);
 
-            message = crtItem.accept(visitNextMessage);
+            message = crtItem.acceptString(visitNextMessage);
         }
 
         return message;
@@ -632,9 +631,9 @@ public final class GetMessages {
             message = "Please load a source before returning to the previous track.";
         } else {
             //  Now we can execute the command
-            Visitor visitPrevMessage = new VisitPrevMessage(crtCommand);
+            VisitorString visitPrevMessage = new VisitPrevMessage(crtCommand);
 
-            message = crtItem.accept(visitPrevMessage);
+            message = crtItem.acceptString(visitPrevMessage);
         }
 
         return message;
@@ -1037,13 +1036,13 @@ public final class GetMessages {
                         || year < Constants.MIN_YEAR
                         || year > Constants.MAX_YEAR) {
                     message = "Event for " + artist.getUsername()
-                            + "<username> does not have a valid date.";
+                            + " does not have a valid date.";
                 } else {
                     //  Checking exceptions
                     if (month == Constants.FEBRUARY
                             && day > Constants.LAST_DAY_OF_FEBRUARY) {
                         message = "Event for " + artist.getUsername()
-                                + "<username> does not have a valid date.";
+                                + " does not have a valid date.";
 
                         //  Date is correct; all conditions are met
                     } else {
@@ -1146,7 +1145,8 @@ public final class GetMessages {
                                               final ArrayList<Playlist> playlists,
                                               final ArrayList<UserPlaylists> usersPlaylists,
                                               final ArrayList<Album> albums,
-                                              final ArrayList<SongLikes> songsLikes) {
+                                              final ArrayList<SongLikes> songsLikes,
+                                              final ArrayList<Page> pageSystem) {
         String message = null;
 
         //  Searching the user through database
@@ -1164,11 +1164,34 @@ public final class GetMessages {
                     + " doesn't exist.";
         } else {
             //  Looking to see if user's dependencies are being used
-            Visitor visitDeleteUser = new VisitDeleteUser(crtCommand);
+            VisitorString visitDeleteUser = new VisitDeleteUser(crtCommand);
             String used = "false";
 
+            //  User's items
             for (ItemSelection item : player) {
-                used = item.accept(visitDeleteUser);
+                used = item.acceptString(visitDeleteUser);
+                if (used.equals("true")) {
+                    break;
+                }
+            }
+
+            //  Creator's page
+            if (crtUser.getType().equals("artist")) {
+                for (Page page : pageSystem) {
+                    if (page.getCurrentPage().equals("ArtistPage")
+                            && page.getUserPlaylists().getUser().equals(crtUser)) {
+                        used = "true";
+                        break;
+                    }
+                }
+            } else if (crtUser.getType().equals("host")) {
+                for (Page page : pageSystem) {
+                    if (page.getCurrentPage().equals("HostPage")
+                            && page.getUserPlaylists().getUser().equals(crtUser)) {
+                        used = "true";
+                        break;
+                    }
+                }
             }
 
             if (used.equals("true")) {
@@ -1195,6 +1218,11 @@ public final class GetMessages {
                             }
                         }
                         playlists.remove(playlist);
+                    }
+
+                    //  Also delete user's follows
+                    for (Playlist playlist : playlists) {
+                        playlist.getFollowers().remove(crtUser.getUsername());
                     }
 
                     //  Now delete the user from the database

@@ -117,7 +117,7 @@
   "command" : "addEvent",
   "user" : "melodymaster",
   "timestamp" : 395,
-  "message" : "Event for melodymaster<username> does not have a valid date."
+  "message" : "Event for melodymaster does not have a valid date."
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -168,7 +168,13 @@
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 434,
-  "stats" : { }
+  "stats" : {
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 249,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "shuffle",
   "user" : "bob35",
@@ -178,7 +184,13 @@
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 446,
-  "stats" : { }
+  "stats" : {
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 237,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "repeat",
   "user" : "carol19",
@@ -198,7 +210,13 @@
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 1000,
-  "stats" : { }
+  "stats" : {
+    "name" : "Retro Rhythms",
+    "remainedTime" : 203,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : false
+  }
 }, {
   "command" : "like",
   "user" : "carol19",
@@ -208,7 +226,7 @@
   "command" : "removeAlbum",
   "user" : "melodymaster",
   "timestamp" : 1200,
-  "message" : "melodymaster  can't delete this album."
+  "message" : "melodymaster can't delete this album."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -351,7 +369,7 @@
   "command" : "removeAlbum",
   "user" : "melodymaster",
   "timestamp" : 3000,
-  "message" : "melodymaster  can't delete this album."
+  "message" : "melodymaster can't delete this album."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -363,6 +381,11 @@
     "shuffle" : true,
     "paused" : false
   }
+}, {
+  "command" : "changePage",
+  "user" : "carol19",
+  "timestamp" : 3251,
+  "message" : "carol19 accessed LikedContent successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -469,7 +492,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 5000,
-  "message" : "Liked songs:\n\t[Digital Dreams]\n\nFollowed playlists:\n\t[My playlist]"
+  "message" : "Liked songs:\n\t[Digital Dreams - melodymaster]\n\nFollowed playlists:\n\t[My playlist - bob35]"
 }, {
   "command" : "status",
   "user" : "bob35",
