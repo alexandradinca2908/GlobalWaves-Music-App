@@ -179,16 +179,16 @@
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 440,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 446,
   "stats" : {
-    "name" : "Vibrant Echoes",
-    "remainedTime" : 237,
+    "name" : "Synth Symphony",
+    "remainedTime" : 77,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -211,10 +211,10 @@
   "user" : "bob35",
   "timestamp" : 1000,
   "stats" : {
-    "name" : "Retro Rhythms",
-    "remainedTime" : 203,
+    "name" : "Digital Dreams",
+    "remainedTime" : 3,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -249,6 +249,11 @@
   "user" : "carol19",
   "timestamp" : 2435,
   "message" : "Successfully selected My playlist."
+}, {
+  "command" : "removeEvent",
+  "user" : "melodymaster",
+  "timestamp" : 2440,
+  "message" : "melodymaster deleted the event successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -417,7 +422,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 3900,
-  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!, Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",
@@ -465,14 +470,14 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 4400,
-  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event1 - 01-01-2022:\n\tPrimul Event adaugat!, Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
+  "message" : "Albums:\n\t[Harmonic Horizons]\n\nMerch:\n\t[Merch1 - 100:\n\tPrimul Merch adaugat!]\n\nEvents:\n\t[Event2 - 05-02-2021:\n\tAl doilea Event adaugat!]"
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 4410,
   "stats" : {
-    "name" : "I Don't Wanna Live Forever",
-    "remainedTime" : 188,
+    "name" : "Retro Rhythms",
+    "remainedTime" : 163,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -482,8 +487,8 @@
   "user" : "bob35",
   "timestamp" : 4750,
   "stats" : {
-    "name" : "Elevate",
-    "remainedTime" : 73,
+    "name" : "Hustle Hard",
+    "remainedTime" : 55,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -510,7 +515,7 @@
   "timestamp" : 6000,
   "result" : [ {
     "name" : "My playlist",
-    "songs" : [ "I Don't Wanna Live Forever", "Begin Again", "Retro Rhythms", "Elevate", "Hustle Hard" ],
+    "songs" : [ "Retro Rhythms", "Elevate", "I Don't Wanna Live Forever", "Hustle Hard", "Begin Again" ],
     "visibility" : "public",
     "followers" : 1
   } ]

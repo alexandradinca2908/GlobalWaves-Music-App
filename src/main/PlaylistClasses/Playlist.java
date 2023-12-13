@@ -10,7 +10,6 @@ public class Playlist implements Comparable<Playlist> {
     private boolean visibility = true;
     private ArrayList<String> followers = new ArrayList<>();
     private String owner;
-    private ArrayList<SongInput> originalSongOrder;
 
     @Override
     public int compareTo(final Playlist playlist) {
@@ -63,15 +62,6 @@ public class Playlist implements Comparable<Playlist> {
 
     public void setOwner(final String owner) {
         this.owner = owner;
-    }
-
-    public ArrayList<SongInput> getOriginalSongOrder() {
-        return originalSongOrder;
-    }
-
-    public void setOriginalSongOrder(final ArrayList<SongInput>
-                                             originalSongOrder) {
-        this.originalSongOrder = originalSongOrder;
     }
 
     /**

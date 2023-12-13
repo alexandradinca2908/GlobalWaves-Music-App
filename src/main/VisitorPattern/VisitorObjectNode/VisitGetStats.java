@@ -2,14 +2,25 @@ package main.VisitorPattern.VisitorObjectNode;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
+import fileio.input.LibraryInput;
+import fileio.input.PodcastInput;
 import fileio.input.SongInput;
+import main.CommandHelper.Command;
+import main.Main;
+import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 
+import java.util.ArrayList;
+
 public class VisitGetStats implements VisitorObjectNode {
     ObjectNode stats;
+    ArrayList<ItemSelection> player;
+    Command crtCommand;
+    ArrayList<PodcastInput> podcasts;
+    LibraryInput library;
 
     public VisitGetStats(ObjectNode stats) {
         this.stats = stats;
@@ -104,12 +115,23 @@ public class VisitGetStats implements VisitorObjectNode {
 
             int duration = reqItem.getPlaylist().getDuration();
 
-            for (SongInput song : reqItem.getPlaylist().getSongs()) {
-                duration -= song.getDuration();
+            if (!reqItem.isShuffle()) {
+                for (SongInput song : reqItem.getPlaylist().getSongs()) {
+                    duration -= song.getDuration();
 
-                if (duration < remainingTime) {
-                    crtSong = song;
-                    break;
+                    if (duration < remainingTime) {
+                        crtSong = song;
+                        break;
+                    }
+                }
+            } else {
+                for (SongInput song : reqItem.getShuffledPlaylist()) {
+                    duration -= song.getDuration();
+
+                    if (duration < remainingTime) {
+                        crtSong = song;
+                        break;
+                    }
                 }
             }
 

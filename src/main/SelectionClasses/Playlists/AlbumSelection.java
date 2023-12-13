@@ -9,8 +9,11 @@ import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
 
+import java.util.ArrayList;
+
 public final class AlbumSelection extends ItemSelection implements VisitableString, VisitableObjectNode {
     private Album album;
+    private ArrayList<SongInput> shuffledAlbum = new ArrayList<>();
     private int startTimestamp;
     private int stopTimestamp;
 
@@ -39,6 +42,14 @@ public final class AlbumSelection extends ItemSelection implements VisitableStri
 
     public void setStopTimestamp(final int stopTimestamp) {
         this.stopTimestamp = stopTimestamp;
+    }
+
+    public ArrayList<SongInput> getShuffledAlbum() {
+        return shuffledAlbum;
+    }
+
+    public void setShuffledAlbum(ArrayList<SongInput> shuffledAlbum) {
+        this.shuffledAlbum = shuffledAlbum;
     }
 
     @Override
@@ -89,19 +100,42 @@ public final class AlbumSelection extends ItemSelection implements VisitableStri
     /**
      * This method sets the interval of the current song within a playlist
      *
-     * @param playlist The specified playlist
+     * @param album The specified album
      */
-    public static void setIntervals(final PlaylistSelection playlist) {
-        int remainingTime = playlist.getRemainingTime();
-        int duration = playlist.getPlaylist().getDuration();
+    public static void setIntervals(final AlbumSelection album) {
+        int remainingTime = album.getRemainingTime();
+        int duration = album.getAlbum().getDuration();
 
         //  Now we find the song that needs repetition
-        for (SongInput song : playlist.getPlaylist().getSongs()) {
+        for (SongInput song : album.getAlbum().getSongs()) {
             duration -= song.getDuration();
 
             if (duration < remainingTime) {
-                playlist.setStartTimestamp(duration + song.getDuration());
-                playlist.setStopTimestamp(duration);
+                album.setStartTimestamp(duration + song.getDuration());
+                album.setStopTimestamp(duration);
+
+                break;
+            }
+        }
+    }
+
+
+    /**
+     * This method sets the interval of the current song within a playlist
+     *
+     * @param album The specified album
+     */
+    public static void setIntervalsShuffle(final AlbumSelection album) {
+        int remainingTime = album.getRemainingTime();
+        int duration = album.getAlbum().getDuration();
+
+        //  Now we find the song that needs repetition
+        for (SongInput song : album.getShuffledAlbum()) {
+            duration -= song.getDuration();
+
+            if (duration < remainingTime) {
+                album.setStartTimestamp(duration + song.getDuration());
+                album.setStopTimestamp(duration);
 
                 break;
             }

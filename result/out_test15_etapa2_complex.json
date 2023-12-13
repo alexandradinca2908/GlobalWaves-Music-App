@@ -4923,7 +4923,7 @@
   "command" : "shuffle",
   "user" : "alice22",
   "timestamp" : 5429,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -4934,33 +4934,33 @@
   "user" : "alice22",
   "timestamp" : 5434,
   "stats" : {
-    "name" : "Serendipity Serendipity",
-    "remainedTime" : 229,
+    "name" : "Essence Cascade",
+    "remainedTime" : 2,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "alice22",
   "timestamp" : 5435,
-  "message" : "Skipped to next track successfully. The current track is Melody Sunset."
+  "message" : "Skipped to next track successfully. The current track is Radiance Starlight."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 5689,
   "stats" : {
-    "name" : "Rapture Odyssey",
-    "remainedTime" : 144,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 5690,
-  "message" : "Loaded source is not a song."
+  "message" : "Please load a source before liking or unliking."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -5022,7 +5022,7 @@
   "command" : "shuffle",
   "user" : "bob35",
   "timestamp" : 5740,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "leslie27",
@@ -5036,7 +5036,7 @@
     "name" : "Whisper Pulse",
     "remainedTime" : 244,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5052,7 +5052,7 @@
     "name" : "Odyssey Rapture",
     "remainedTime" : 188,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5126,7 +5126,7 @@
   "command" : "shuffle",
   "user" : "carol19",
   "timestamp" : 6051,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "cbutler",
@@ -5137,26 +5137,26 @@
   "user" : "carol19",
   "timestamp" : 6056,
   "stats" : {
-    "name" : "Heart Bliss",
-    "remainedTime" : 147,
+    "name" : "Adventure Cascade",
+    "remainedTime" : 104,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "carol19",
   "timestamp" : 6057,
-  "message" : "Skipped to next track successfully. The current track is Pinnacle Euphoria."
+  "message" : "Skipped to next track successfully. The current track is Aurora Voyage."
 }, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 6311,
   "stats" : {
-    "name" : "Whirlwind Solitude",
-    "remainedTime" : 194,
+    "name" : "Aurora Voyage",
+    "remainedTime" : 35,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5324,7 +5324,7 @@
   "command" : "shuffle",
   "user" : "emily30",
   "timestamp" : 6673,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -5335,26 +5335,26 @@
   "user" : "emily30",
   "timestamp" : 6678,
   "stats" : {
-    "name" : "Serendipity Serendipity",
-    "remainedTime" : 229,
+    "name" : "Rapture Odyssey",
+    "remainedTime" : 132,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 6679,
-  "message" : "Skipped to next track successfully. The current track is Melody Sunset."
+  "message" : "Skipped to next track successfully. The current track is Mystique Radiance."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 6933,
   "stats" : {
-    "name" : "Rapture Odyssey",
-    "remainedTime" : 144,
+    "name" : "Mystique Radiance",
+    "remainedTime" : 45,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5423,7 +5423,7 @@
   "command" : "shuffle",
   "user" : "frank21",
   "timestamp" : 6984,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "amanda16",
@@ -5434,26 +5434,26 @@
   "user" : "frank21",
   "timestamp" : 6989,
   "stats" : {
-    "name" : "Luminescence Crescendo",
-    "remainedTime" : 214,
+    "name" : "Bliss Rhythm",
+    "remainedTime" : 178,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "frank21",
   "timestamp" : 6990,
-  "message" : "Skipped to next track successfully. The current track is Bliss Rhythm."
+  "message" : "Skipped to next track successfully. The current track is Echo Pinnacle."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 7244,
   "stats" : {
     "name" : "Echo Pinnacle",
-    "remainedTime" : 256,
+    "remainedTime" : 22,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5522,7 +5522,7 @@
   "command" : "shuffle",
   "user" : "grace25",
   "timestamp" : 7295,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "barmstrong",
@@ -5533,26 +5533,26 @@
   "user" : "grace25",
   "timestamp" : 7300,
   "stats" : {
-    "name" : "Love Love",
-    "remainedTime" : 221,
+    "name" : "Euphoria Celestial",
+    "remainedTime" : 102,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 7301,
-  "message" : "Skipped to next track successfully. The current track is Soul Love."
+  "message" : "Skipped to next track successfully. The current track is Serendipity Enigma."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 7555,
   "stats" : {
-    "name" : "Soul Love",
-    "remainedTime" : 36,
+    "name" : "Serendipity Enigma",
+    "remainedTime" : 16,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5621,7 +5621,7 @@
   "command" : "shuffle",
   "user" : "henry26",
   "timestamp" : 7606,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "amanda16",
@@ -5632,26 +5632,26 @@
   "user" : "henry26",
   "timestamp" : 7611,
   "stats" : {
-    "name" : "Luminescence Crescendo",
-    "remainedTime" : 214,
+    "name" : "Echo Pinnacle",
+    "remainedTime" : 189,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "henry26",
   "timestamp" : 7612,
-  "message" : "Skipped to next track successfully. The current track is Bliss Rhythm."
+  "message" : "Skipped to next track successfully. The current track is Zephyr Eclipse."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 7866,
   "stats" : {
-    "name" : "Echo Pinnacle",
-    "remainedTime" : 256,
+    "name" : "Voyage Solitude",
+    "remainedTime" : 247,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5720,7 +5720,7 @@
   "command" : "shuffle",
   "user" : "irene33",
   "timestamp" : 7917,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "jacobdean",
@@ -5731,26 +5731,26 @@
   "user" : "irene33",
   "timestamp" : 7922,
   "stats" : {
-    "name" : "Celestial Soul",
-    "remainedTime" : 203,
+    "name" : "Utopia Harmony",
+    "remainedTime" : 219,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 7923,
-  "message" : "Skipped to next track successfully. The current track is Utopia Harmony."
+  "message" : "Skipped to next track successfully. The current track is Dream Infinity."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 8177,
   "stats" : {
-    "name" : "Utopia Harmony",
-    "remainedTime" : 44,
+    "name" : "Dream Infinity",
+    "remainedTime" : 28,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -5819,7 +5819,7 @@
   "command" : "shuffle",
   "user" : "jack29",
   "timestamp" : 8228,
-  "message" : "The loaded source is not a playlist."
+  "message" : "Shuffle function activated successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "cbutler",
@@ -5830,26 +5830,26 @@
   "user" : "jack29",
   "timestamp" : 8233,
   "stats" : {
-    "name" : "Heart Bliss",
-    "remainedTime" : 147,
+    "name" : "Enigma Euphoria",
+    "remainedTime" : 34,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
   "command" : "next",
   "user" : "jack29",
   "timestamp" : 8234,
-  "message" : "Skipped to next track successfully. The current track is Pinnacle Euphoria."
+  "message" : "Skipped to next track successfully. The current track is Essence Voyage."
 }, {
   "command" : "status",
   "user" : "jack29",
   "timestamp" : 8488,
   "stats" : {
-    "name" : "Whirlwind Solitude",
-    "remainedTime" : 194,
+    "name" : "Adventure Cascade",
+    "remainedTime" : 242,
     "repeat" : "No Repeat",
-    "shuffle" : false,
+    "shuffle" : true,
     "paused" : false
   }
 }, {
@@ -6676,14 +6676,14 @@
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 9069,
-  "message" : "Skipped to next track successfully. The current track is Sad But True."
+  "message" : "Skipped to next track successfully. The current track is Begin Again."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 9069,
   "stats" : {
-    "name" : "Sad But True",
-    "remainedTime" : 324,
+    "name" : "Blank Space",
+    "remainedTime" : 8,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -6767,14 +6767,14 @@
   "command" : "prev",
   "user" : "david27",
   "timestamp" : 9119,
-  "message" : "Returned to previous track successfully. The current track is Black Dog."
+  "message" : "Returned to previous track successfully. The current track is Angie."
 }, {
   "command" : "status",
   "user" : "david27",
   "timestamp" : 9119,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 294,
+    "remainedTime" : 273,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -6865,7 +6865,7 @@
   "timestamp" : 9169,
   "stats" : {
     "name" : "Sad But True",
-    "remainedTime" : 224,
+    "remainedTime" : 232,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -6961,7 +6961,7 @@
   "timestamp" : 9219,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 194,
+    "remainedTime" : 173,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7051,7 +7051,7 @@
   "timestamp" : 9269,
   "stats" : {
     "name" : "Sad But True",
-    "remainedTime" : 124,
+    "remainedTime" : 132,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7137,7 +7137,7 @@
   "timestamp" : 9319,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 94,
+    "remainedTime" : 73,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -7285,19 +7285,19 @@
   "command" : "prev",
   "user" : "bob35",
   "timestamp" : 9399,
-  "message" : "Returned to previous track successfully. The current track is Gimme Shelter."
+  "message" : "Returned to previous track successfully. The current track is Under Pressure."
 }, {
   "command" : "prev",
   "user" : "bob35",
   "timestamp" : 9399,
-  "message" : "Returned to previous track successfully. The current track is Black Dog."
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 9399,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 294,
+    "remainedTime" : 166,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7312,8 +7312,8 @@
   "user" : "carol19",
   "timestamp" : 9409,
   "stats" : {
-    "name" : "Don't",
-    "remainedTime" : 171,
+    "name" : "Black Dog",
+    "remainedTime" : 246,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -7334,7 +7334,7 @@
   "timestamp" : 9419,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 288,
+    "remainedTime" : 246,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7417,14 +7417,14 @@
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 9469,
-  "message" : "Skipped to next track successfully. The current track is Begin Again."
+  "message" : "Skipped to next track successfully. The current track is Blank Space."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 9469,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 238,
+    "name" : "Blank Space",
+    "remainedTime" : 231,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7472,7 +7472,7 @@
   "timestamp" : 9499,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 194,
+    "remainedTime" : 66,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7483,7 +7483,7 @@
   "timestamp" : 9499,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 194,
+    "remainedTime" : 66,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7497,14 +7497,14 @@
   "command" : "next",
   "user" : "carol19",
   "timestamp" : 9509,
-  "message" : "Skipped to next track successfully. The current track is Don't."
+  "message" : "Skipped to next track successfully. The current track is Thinking Out Loud."
 }, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 9509,
   "stats" : {
     "name" : "Don't",
-    "remainedTime" : 219,
+    "remainedTime" : 179,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -7513,12 +7513,12 @@
   "command" : "prev",
   "user" : "david27",
   "timestamp" : 9519,
-  "message" : "Returned to previous track successfully. The current track is Black Dog."
+  "message" : "Returned to previous track successfully. The current track is Angie."
 }, {
   "command" : "prev",
   "user" : "david27",
   "timestamp" : 9519,
-  "message" : "Returned to previous track successfully. The current track is Angie."
+  "message" : "Returned to previous track successfully. The current track is Black Dog."
 }, {
   "command" : "status",
   "user" : "david27",
@@ -7572,14 +7572,14 @@
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 9549,
-  "message" : "Skipped to next track successfully. The current track is Dream On."
+  "message" : "Skipped to next track successfully. The current track is The Unforgiven."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 9549,
   "stats" : {
     "name" : "Dream On",
-    "remainedTime" : 267,
+    "remainedTime" : 92,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7610,8 +7610,8 @@
   "user" : "irene33",
   "timestamp" : 9569,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 138,
+    "name" : "Blank Space",
+    "remainedTime" : 131,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -7669,8 +7669,8 @@
   "user" : "bob35",
   "timestamp" : 9599,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 94,
+    "name" : "Gimme Shelter",
+    "remainedTime" : 237,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -7686,7 +7686,7 @@
   "timestamp" : 9609,
   "stats" : {
     "name" : "Don't",
-    "remainedTime" : 119,
+    "remainedTime" : 79,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : true
@@ -7749,8 +7749,8 @@
   "user" : "grace25",
   "timestamp" : 9649,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 167,
+    "name" : "Black Dog",
+    "remainedTime" : 286,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -7776,8 +7776,8 @@
   "user" : "irene33",
   "timestamp" : 9669,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 38,
+    "name" : "Blank Space",
+    "remainedTime" : 31,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -7787,8 +7787,8 @@
   "user" : "irene33",
   "timestamp" : 9669,
   "stats" : {
-    "name" : "Begin Again",
-    "remainedTime" : 38,
+    "name" : "Blank Space",
+    "remainedTime" : 31,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -7836,7 +7836,7 @@
   "timestamp" : 9699,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 288,
+    "remainedTime" : 78,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -7852,7 +7852,7 @@
   "timestamp" : 9709,
   "stats" : {
     "name" : "Don't",
-    "remainedTime" : 119,
+    "remainedTime" : 79,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : true
@@ -7898,12 +7898,12 @@
   "command" : "prev",
   "user" : "frank21",
   "timestamp" : 9739,
-  "message" : "Returned to previous track successfully. The current track is Stairway to Heaven."
+  "message" : "Returned to previous track successfully. The current track is Whatever You Need."
 }, {
   "command" : "prev",
   "user" : "frank21",
   "timestamp" : 9739,
-  "message" : "Returned to previous track successfully. The current track is Stairway to Heaven."
+  "message" : "Returned to previous track successfully. The current track is Whatever You Need."
 }, {
   "command" : "status",
   "user" : "frank21",
@@ -7925,8 +7925,8 @@
   "user" : "grace25",
   "timestamp" : 9749,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 67,
+    "name" : "Black Dog",
+    "remainedTime" : 186,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -7962,11 +7962,11 @@
   "user" : "irene33",
   "timestamp" : 9769,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 222,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
+    "shuffle" : false,
+    "paused" : true
   }
 }, {
   "command" : "status",
@@ -8011,8 +8011,8 @@
   "user" : "bob35",
   "timestamp" : 9799,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 188,
+    "name" : "Gimme Shelter",
+    "remainedTime" : 249,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8022,8 +8022,8 @@
   "user" : "bob35",
   "timestamp" : 9799,
   "stats" : {
-    "name" : "Black Dog",
-    "remainedTime" : 188,
+    "name" : "Gimme Shelter",
+    "remainedTime" : 249,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8044,7 +8044,7 @@
   "timestamp" : 9809,
   "stats" : {
     "name" : "Don't",
-    "remainedTime" : 119,
+    "remainedTime" : 79,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -8059,11 +8059,11 @@
   "user" : "david27",
   "timestamp" : 9819,
   "stats" : {
-    "name" : "Angie",
-    "remainedTime" : 173,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
+    "shuffle" : false,
+    "paused" : true
   }
 }, {
   "command" : "repeat",
@@ -8117,8 +8117,8 @@
   "user" : "grace25",
   "timestamp" : 9849,
   "stats" : {
-    "name" : "Under Pressure",
-    "remainedTime" : 211,
+    "name" : "Black Dog",
+    "remainedTime" : 86,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8143,16 +8143,16 @@
   "command" : "playPause",
   "user" : "irene33",
   "timestamp" : 9869,
-  "message" : "Playback paused successfully."
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 9869,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 122,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
+    "shuffle" : false,
     "paused" : true
   }
 }, {
@@ -8165,8 +8165,8 @@
   "user" : "jack29",
   "timestamp" : 9879,
   "stats" : {
-    "name" : "Delicate",
-    "remainedTime" : 232,
+    "name" : "Blank Space",
+    "remainedTime" : 19,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8203,7 +8203,7 @@
   "timestamp" : 9899,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 88,
+    "remainedTime" : 90,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
@@ -8228,17 +8228,17 @@
   "command" : "shuffle",
   "user" : "david27",
   "timestamp" : 9919,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Please load a source before using the shuffle function."
 }, {
   "command" : "status",
   "user" : "david27",
   "timestamp" : 9919,
   "stats" : {
-    "name" : "Angie",
-    "remainedTime" : 73,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
-    "paused" : false
+    "paused" : true
   }
 }, {
   "command" : "like",
@@ -8276,19 +8276,19 @@
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 9949,
-  "message" : "Returned to previous track successfully. The current track is Under Pressure."
+  "message" : "Returned to previous track successfully. The current track is Begin Again."
 }, {
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 9949,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Black Dog."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 9949,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 267,
+    "name" : "Black Dog",
+    "remainedTime" : 294,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8297,7 +8297,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 9959,
-  "message" : "Like registered successfully."
+  "message" : "Unlike registered successfully."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -8313,14 +8313,25 @@
   "command" : "playPause",
   "user" : "irene33",
   "timestamp" : 9969,
-  "message" : "Playback resumed successfully."
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 9969,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 122,
+    "name" : "",
+    "remainedTime" : 0,
+    "repeat" : "No Repeat",
+    "shuffle" : false,
+    "paused" : true
+  }
+}, {
+  "command" : "status",
+  "user" : "jack29",
+  "timestamp" : 9979,
+  "stats" : {
+    "name" : "Delicate",
+    "remainedTime" : 151,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8331,18 +8342,7 @@
   "timestamp" : 9979,
   "stats" : {
     "name" : "Delicate",
-    "remainedTime" : 132,
-    "repeat" : "No Repeat",
-    "shuffle" : true,
-    "paused" : false
-  }
-}, {
-  "command" : "status",
-  "user" : "jack29",
-  "timestamp" : 9979,
-  "stats" : {
-    "name" : "Delicate",
-    "remainedTime" : 132,
+    "remainedTime" : 151,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8351,14 +8351,14 @@
   "command" : "next",
   "user" : "alice22",
   "timestamp" : 9989,
-  "message" : "Skipped to next track successfully. The current track is Bohemian Rhapsody."
+  "message" : "Skipped to next track successfully. The current track is Delicate."
 }, {
   "command" : "status",
   "user" : "alice22",
   "timestamp" : 9989,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 355,
+    "remainedTime" : 125,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8374,7 +8374,7 @@
   "timestamp" : 9999,
   "stats" : {
     "name" : "Black Dog",
-    "remainedTime" : 282,
+    "remainedTime" : 284,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8441,14 +8441,14 @@
   "command" : "next",
   "user" : "frank21",
   "timestamp" : 10039,
-  "message" : "Skipped to next track successfully. The current track is Whatever You Need."
+  "message" : "Skipped to next track successfully. The current track is Stairway to Heaven."
 }, {
   "command" : "status",
   "user" : "frank21",
   "timestamp" : 10039,
   "stats" : {
-    "name" : "Whatever You Need",
-    "remainedTime" : 210,
+    "name" : "Stairway to Heaven",
+    "remainedTime" : 272,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8457,14 +8457,14 @@
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 10049,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Black Dog."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 10049,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 267,
+    "name" : "Black Dog",
+    "remainedTime" : 294,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8500,16 +8500,16 @@
   "command" : "playPause",
   "user" : "irene33",
   "timestamp" : 10069,
-  "message" : "Playback paused successfully."
+  "message" : "Please load a source before attempting to pause or resume playback."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 10069,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 22,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
+    "shuffle" : false,
     "paused" : true
   }
 }, {
@@ -8523,7 +8523,7 @@
   "timestamp" : 10079,
   "stats" : {
     "name" : "Delicate",
-    "remainedTime" : 32,
+    "remainedTime" : 51,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8539,7 +8539,7 @@
   "timestamp" : 10089,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 255,
+    "remainedTime" : 25,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
@@ -8564,8 +8564,8 @@
   "user" : "bob35",
   "timestamp" : 10099,
   "stats" : {
-    "name" : "Sad But True",
-    "remainedTime" : 324,
+    "name" : "Blank Space",
+    "remainedTime" : 231,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8643,19 +8643,19 @@
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 10149,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Black Dog."
 }, {
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 10149,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Under Pressure."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 10149,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 267,
+    "name" : "Under Pressure",
+    "remainedTime" : 244,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8664,7 +8664,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10159,
-  "message" : "Unlike registered successfully."
+  "message" : "Like registered successfully."
 }, {
   "command" : "status",
   "user" : "henry26",
@@ -8681,10 +8681,10 @@
   "user" : "irene33",
   "timestamp" : 10169,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 22,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
+    "shuffle" : false,
     "paused" : true
   }
 }, {
@@ -8692,10 +8692,10 @@
   "user" : "irene33",
   "timestamp" : 10169,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 22,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
-    "shuffle" : true,
+    "shuffle" : false,
     "paused" : true
   }
 }, {
@@ -8709,7 +8709,7 @@
   "timestamp" : 10179,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 319,
+    "remainedTime" : 338,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8745,8 +8745,8 @@
   "user" : "bob35",
   "timestamp" : 10199,
   "stats" : {
-    "name" : "Sad But True",
-    "remainedTime" : 224,
+    "name" : "Blank Space",
+    "remainedTime" : 131,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8825,14 +8825,14 @@
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 10249,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Under Pressure."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 10249,
   "stats" : {
-    "name" : "Dream On",
-    "remainedTime" : 267,
+    "name" : "Under Pressure",
+    "remainedTime" : 244,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8841,14 +8841,14 @@
   "command" : "next",
   "user" : "henry26",
   "timestamp" : 10259,
-  "message" : "Skipped to next track successfully. The current track is Paint It Black."
+  "message" : "Skipped to next track successfully. The current track is Stairway to Heaven."
 }, {
   "command" : "status",
   "user" : "henry26",
   "timestamp" : 10259,
   "stats" : {
-    "name" : "Paint It Black",
-    "remainedTime" : 202,
+    "name" : "Stairway to Heaven",
+    "remainedTime" : 209,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8857,14 +8857,14 @@
   "command" : "shuffle",
   "user" : "irene33",
   "timestamp" : 10269,
-  "message" : "Shuffle function deactivated successfully."
+  "message" : "Please load a source before using the shuffle function."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 10269,
   "stats" : {
-    "name" : "Big Pimpin'",
-    "remainedTime" : 22,
+    "name" : "",
+    "remainedTime" : 0,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -8880,7 +8880,7 @@
   "timestamp" : 10279,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 219,
+    "remainedTime" : 238,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -8955,7 +8955,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10289,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -8996,7 +8996,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10289,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -9006,7 +9006,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10289,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -9260,7 +9260,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10339,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -9301,7 +9301,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10339,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -9311,7 +9311,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10339,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -9443,7 +9443,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10369,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -9484,7 +9484,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10369,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -9494,7 +9494,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10369,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -9565,7 +9565,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10389,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -9606,7 +9606,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10389,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -9616,7 +9616,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10389,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -9870,7 +9870,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10439,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -9911,7 +9911,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10439,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -9921,7 +9921,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10439,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -10053,7 +10053,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10469,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -10094,7 +10094,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10469,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -10104,7 +10104,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10469,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -10175,7 +10175,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10489,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -10216,7 +10216,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10489,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -10226,7 +10226,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10489,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -10480,7 +10480,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10539,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -10521,7 +10521,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10539,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -10531,7 +10531,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10539,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -10663,7 +10663,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10569,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -10704,7 +10704,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10569,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -10714,7 +10714,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10569,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -10785,7 +10785,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10589,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -10826,7 +10826,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10589,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -10836,7 +10836,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10589,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -11090,7 +11090,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10639,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -11131,7 +11131,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10639,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -11141,7 +11141,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10639,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -11273,7 +11273,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10669,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -11314,7 +11314,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10669,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -11324,7 +11324,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10669,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -11395,7 +11395,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10689,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -11436,7 +11436,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10689,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -11446,7 +11446,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10689,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -11700,7 +11700,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10739,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -11741,7 +11741,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10739,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -11751,7 +11751,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10739,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -11883,7 +11883,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10769,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -11924,7 +11924,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10769,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -11934,7 +11934,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10769,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -12005,7 +12005,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10789,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -12046,7 +12046,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10789,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -12056,7 +12056,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10789,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -12310,7 +12310,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10839,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -12351,7 +12351,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10839,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -12361,7 +12361,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10839,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -12493,7 +12493,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10869,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -12534,7 +12534,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10869,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -12544,7 +12544,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10869,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -12615,7 +12615,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10889,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -12656,7 +12656,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10889,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -12666,7 +12666,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10889,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -12920,7 +12920,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10939,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -12961,7 +12961,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10939,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -12971,7 +12971,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10939,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -13103,7 +13103,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10969,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -13144,7 +13144,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10969,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -13154,7 +13154,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 10969,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -13225,7 +13225,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10989,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -13266,7 +13266,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10989,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -13276,7 +13276,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 10989,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -13530,7 +13530,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11039,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -13571,7 +13571,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11039,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -13581,7 +13581,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11039,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -13713,7 +13713,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11069,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -13754,7 +13754,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11069,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -13764,7 +13764,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11069,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -13835,7 +13835,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11089,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -13876,7 +13876,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11089,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -13886,7 +13886,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11089,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -14140,7 +14140,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11139,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -14181,7 +14181,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11139,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -14191,7 +14191,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11139,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -14323,7 +14323,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11169,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -14364,7 +14364,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11169,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -14374,7 +14374,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11169,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -14445,7 +14445,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11189,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -14486,7 +14486,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11189,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -14496,7 +14496,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11189,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -14750,7 +14750,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11239,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -14791,7 +14791,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11239,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -14801,7 +14801,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11239,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -14933,7 +14933,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11269,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -14974,7 +14974,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11269,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -14984,7 +14984,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11269,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -15055,7 +15055,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11289,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -15096,7 +15096,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11289,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -15106,7 +15106,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11289,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -15360,7 +15360,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11339,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -15401,7 +15401,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11339,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -15411,7 +15411,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11339,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -15543,7 +15543,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11369,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -15584,7 +15584,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11369,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -15594,7 +15594,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11369,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -15665,7 +15665,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11389,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -15706,7 +15706,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11389,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -15716,7 +15716,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11389,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -15970,7 +15970,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11439,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -16011,7 +16011,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11439,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -16021,7 +16021,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11439,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -16153,7 +16153,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11469,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -16194,7 +16194,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11469,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -16204,7 +16204,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11469,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -16275,7 +16275,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11489,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -16316,7 +16316,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11489,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -16326,7 +16326,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11489,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -16580,7 +16580,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11539,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -16621,7 +16621,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11539,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -16631,7 +16631,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11539,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -16763,7 +16763,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11569,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -16804,7 +16804,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11569,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -16814,7 +16814,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11569,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -16885,7 +16885,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11589,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -16926,7 +16926,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11589,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -16936,7 +16936,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11589,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -17190,7 +17190,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11639,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -17231,7 +17231,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11639,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -17241,7 +17241,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11639,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -17373,7 +17373,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11669,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -17414,7 +17414,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11669,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -17424,7 +17424,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11669,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -17495,7 +17495,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11689,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -17536,7 +17536,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11689,
-  "message" : "Liked songs:\n\t[Black Dog - Led Zeppelin, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Sad But True - Metallica]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -17546,7 +17546,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11689,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -17800,7 +17800,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11739,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -17841,7 +17841,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11739,
-  "message" : "Liked songs:\n\t[Under Pressure - Queen, David Bowie, Dream On - Aerosmith]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again - Taylor Swift, Black Dog - Led Zeppelin]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -17851,7 +17851,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11739,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -17983,7 +17983,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11769,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -18024,7 +18024,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11769,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Money Trees - Kendrick Lamar]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man - Taylor Swift, Paint It Black - The Rolling Stones]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -18034,7 +18034,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11769,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -18106,7 +18106,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11779,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -18286,7 +18286,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11829,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -18394,7 +18394,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11859,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -18466,7 +18466,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11879,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -18646,7 +18646,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11929,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -18754,7 +18754,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11959,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -18826,7 +18826,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11979,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -19006,7 +19006,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12029,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -19114,7 +19114,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12059,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -19186,7 +19186,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12079,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -19366,7 +19366,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12129,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -19474,7 +19474,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12159,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -19546,7 +19546,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12179,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -19726,7 +19726,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12229,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -19834,7 +19834,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12259,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -19906,7 +19906,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12279,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -20086,7 +20086,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12329,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -20194,7 +20194,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12359,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -20266,7 +20266,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12379,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -20446,7 +20446,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12429,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -20554,7 +20554,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12459,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -20626,7 +20626,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12479,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -20806,7 +20806,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12529,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -20914,7 +20914,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12559,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -20986,7 +20986,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12579,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -21166,7 +21166,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12629,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -21274,7 +21274,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12659,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -21346,7 +21346,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12679,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -21526,7 +21526,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12729,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -21634,7 +21634,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12759,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -21706,7 +21706,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12779,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -21886,7 +21886,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12829,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -21994,7 +21994,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12859,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -22066,7 +22066,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12879,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -22246,7 +22246,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12929,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -22354,7 +22354,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12959,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -22426,7 +22426,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12979,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -22606,7 +22606,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13029,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -22714,7 +22714,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 13059,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -22786,7 +22786,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 13079,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -22966,7 +22966,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13129,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -23074,7 +23074,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 13159,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -23146,7 +23146,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 13179,
-  "message" : "Liked songs:\n\t[Black Dog, Sad But True]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Start Me Up, Sad But True]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -23326,7 +23326,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13229,
-  "message" : "Liked songs:\n\t[Under Pressure, Dream On]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Begin Again, Black Dog]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -23434,7 +23434,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 13259,
-  "message" : "Liked songs:\n\t[The Man, Money Trees]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[The Man, Paint It Black]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -25874,7 +25874,7 @@
   "command" : "showPreferredSongs",
   "user" : "bob35",
   "timestamp" : 14769,
-  "result" : [ "Black Dog", "Sad But True" ]
+  "result" : [ "Start Me Up", "Sad But True" ]
 }, {
   "command" : "showPlaylists",
   "user" : "carol19",
@@ -25974,7 +25974,7 @@
   "command" : "showPreferredSongs",
   "user" : "grace25",
   "timestamp" : 14819,
-  "result" : [ "Under Pressure", "Dream On" ]
+  "result" : [ "Begin Again", "Black Dog" ]
 }, {
   "command" : "showPlaylists",
   "user" : "henry26",
@@ -26034,7 +26034,7 @@
   "command" : "showPreferredSongs",
   "user" : "jack29",
   "timestamp" : 14849,
-  "result" : [ "The Man", "Money Trees" ]
+  "result" : [ "The Man", "Paint It Black" ]
 }, {
   "command" : "getAllUsers",
   "timestamp" : 14849,
@@ -26046,5 +26046,5 @@
 }, {
   "command" : "getTop5Songs",
   "timestamp" : 14849,
-  "result" : [ "Stairway to Heaven", "Money Trees", "Under Pressure", "Dream On", "Whatever You Need" ]
+  "result" : [ "Stairway to Heaven", "Start Me Up", "Whatever You Need", "Black Dog", "Sad But True" ]
 } ]

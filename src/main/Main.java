@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.*;
 import main.CommandHelper.Search;
+import main.CreatorClasses.ArtistClasses.Event;
 import main.CreatorClasses.ArtistClasses.Management;
 import main.CommandHelper.Command;
 import main.CreatorClasses.HostClasses.Announcement;
@@ -22,6 +23,7 @@ import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
+import main.UtilityClasses.Constants;
 
 import java.io.File;
 import java.io.IOException;
@@ -807,6 +809,75 @@ public final class Main {
 
                     removePodcastOutput.put("message", message);
                     outputs.add(removePodcastOutput);
+                }
+
+                case "removeEvent" -> {
+                    ObjectNode removeEventOutput = objectMapper.createObjectNode();
+
+                    removeEventOutput.put("command", "removeEvent");
+                    removeEventOutput.put("user", crtCommand.getUsername());
+                    removeEventOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message = null;
+
+                    UserInput artist = null;
+                    boolean exists = false;
+                    boolean isArtist = false;
+
+                    //  Checking to see artist availability
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            exists = true;
+                            if (user.getType().equals("artist")) {
+                                isArtist = true;
+                                artist = user;
+                            }
+                        }
+                    }
+
+                    if (!exists) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!isArtist) {
+                        message = crtCommand.getUsername() + " is not an artist.";
+                    } else {
+                        //  Artist may remove event
+
+                        //  We need to check if the event exists
+                        boolean hasEvent = false;
+                        Event crtEvent = null;
+                        ArrayList<Event> allEvents = null;
+
+                        for (Management management : managements) {
+                            if (management.getArtist().equals(artist)) {
+                                allEvents = management.getEvents();
+                                break;
+                            }
+                        }
+
+                        //  Browsing through events
+                        for (Event event : allEvents) {
+                            if (event.getName().equals(crtCommand.getName())) {
+                                hasEvent = true;
+                                crtEvent = event;
+                                break;
+                            }
+                        }
+
+                        if (!hasEvent) {
+                            message = crtCommand.getUsername()
+                                    + " doesn't have an event with the given name.";
+                        } else {
+                            //  Artist can safely delete this event
+                            allEvents.remove(crtEvent);
+
+                            message = crtCommand.getUsername()
+                                    + " deleted the event successfully.";
+                        }
+                    }
+
+                    removeEventOutput.put("message", message);
+                    outputs.add(removeEventOutput);
                 }
 
                 default -> {

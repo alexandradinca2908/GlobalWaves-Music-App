@@ -49,11 +49,6 @@ public final class GetMessages {
 
         //  Shuffle
         if (!copyItem.isShuffle()) {
-            //  Keep the original order for unshuffle
-
-            copyItem.getPlaylist().setOriginalSongOrder(new ArrayList<>(
-                    copyItem.getPlaylist().getSongs()));
-
             //  Keep track of the current song
             SongInput crtSong = null;
             int duration = copyItem.getPlaylist().getDuration();
@@ -72,8 +67,55 @@ public final class GetMessages {
             timeLeft = copyItem.getRemainingTime() - duration;
 
             //  Shuffle the songs;
-            Collections.shuffle(copyItem.getPlaylist().getSongs(),
+            copyItem.getShuffledPlaylist().clear();
+
+            copyItem.getShuffledPlaylist().addAll(copyItem.getPlaylist().getSongs());
+            Collections.shuffle(copyItem.getShuffledPlaylist(),
                     new Random(crtCommand.getSeed()));
+
+            //  Search the song that is currently playing
+            //  Calculate remaining time considering new order
+            int remainingTime = copyItem.getPlaylist().getDuration();
+            for (SongInput song : copyItem.getShuffledPlaylist()) {
+                remainingTime -= song.getDuration();
+
+                if (song.equals(crtSong)) {
+                    remainingTime += timeLeft;
+                    break;
+                }
+            }
+
+            //  Set new remaining time
+            copyItem.setRemainingTime(remainingTime);
+            copyItem.setStartTime(crtCommand.getTimestamp());
+
+            //  If the repeat status is "Repeat Current Song", intervals must be updated
+            PlaylistSelection.setIntervalsShuffle(copyItem);
+
+            //  Set the output message
+            message = "Shuffle function activated successfully.";
+
+            //  Set shuffle status
+            copyItem.setShuffle(true);
+
+            //  Unshuffle
+        } else {
+            //  Keep track of the current song
+            SongInput crtSong = null;
+            int duration = copyItem.getPlaylist().getDuration();
+            int timeLeft;
+
+            for (SongInput song : copyItem.getShuffledPlaylist()) {
+                duration -= song.getDuration();
+
+                if (duration < copyItem.getRemainingTime()) {
+                    crtSong = song;
+                    break;
+                }
+            }
+
+            //  Calculate how much time is left of the current song
+            timeLeft = copyItem.getRemainingTime() - duration;
 
             //  Search the song that is currently playing
             //  Calculate remaining time considering new order
@@ -95,19 +137,34 @@ public final class GetMessages {
             PlaylistSelection.setIntervals(copyItem);
 
             //  Set the output message
-            message = "Shuffle function activated successfully.";
+            message = "Shuffle function deactivated successfully.";
 
             //  Set shuffle status
-            copyItem.setShuffle(true);
+            copyItem.setShuffle(false);
+        }
 
-            //  Unshuffle
-        } else {
+        return message;
+    }
+
+    /**
+     * This method overloads the above method; same implementation
+     *
+     * @param copyItem The cast copy of the album that needs shuffle
+     * @param crtCommand The shuffle command with all its data
+     * @return Based on the operation, it returns an appropriate message
+     */
+    public static String getShuffleMessage(final AlbumSelection copyItem,
+                                           final Command crtCommand) {
+        String message;
+
+        //  Shuffle
+        if (!copyItem.isShuffle()) {
             //  Keep track of the current song
             SongInput crtSong = null;
-            int duration = copyItem.getPlaylist().getDuration();
+            int duration = copyItem.getAlbum().getDuration();
             int timeLeft;
 
-            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+            for (SongInput song : copyItem.getAlbum().getSongs()) {
                 duration -= song.getDuration();
 
                 if (duration < copyItem.getRemainingTime()) {
@@ -119,16 +176,17 @@ public final class GetMessages {
             //  Calculate how much time is left of the current song
             timeLeft = copyItem.getRemainingTime() - duration;
 
-            //  Reset the order
-            copyItem.getPlaylist().getSongs().clear();
-            copyItem.getPlaylist().getSongs().addAll(copyItem.getPlaylist().getOriginalSongOrder());
-            copyItem.getPlaylist().getOriginalSongOrder().clear();
-            copyItem.getPlaylist().setOriginalSongOrder(null);
+            //  Shuffle the songs;
+            copyItem.getShuffledAlbum().clear();
+
+            copyItem.getShuffledAlbum().addAll(copyItem.getAlbum().getSongs());
+            Collections.shuffle(copyItem.getShuffledAlbum(),
+                    new Random(crtCommand.getSeed()));
 
             //  Search the song that is currently playing
             //  Calculate remaining time considering new order
-            int remainingTime = copyItem.getPlaylist().getDuration();
-            for (SongInput song : copyItem.getPlaylist().getSongs()) {
+            int remainingTime = copyItem.getAlbum().getDuration();
+            for (SongInput song : copyItem.getShuffledAlbum()) {
                 remainingTime -= song.getDuration();
 
                 if (song.equals(crtSong)) {
@@ -142,7 +200,51 @@ public final class GetMessages {
             copyItem.setStartTime(crtCommand.getTimestamp());
 
             //  If the repeat status is "Repeat Current Song", intervals must be updated
-            PlaylistSelection.setIntervals(copyItem);
+            AlbumSelection.setIntervalsShuffle(copyItem);
+
+            //  Set the output message
+            message = "Shuffle function activated successfully.";
+
+            //  Set shuffle status
+            copyItem.setShuffle(true);
+
+            //  Unshuffle
+        } else {
+            //  Keep track of the current song
+            SongInput crtSong = null;
+            int duration = copyItem.getAlbum().getDuration();
+            int timeLeft;
+
+            for (SongInput song : copyItem.getAlbum().getSongs()) {
+                duration -= song.getDuration();
+
+                if (duration < copyItem.getRemainingTime()) {
+                    crtSong = song;
+                    break;
+                }
+            }
+
+            //  Calculate how much time is left of the current song
+            timeLeft = copyItem.getRemainingTime() - duration;
+
+            //  Search the song that is currently playing
+            //  Calculate remaining time considering new order
+            int remainingTime = copyItem.getAlbum().getDuration();
+            for (SongInput song : copyItem.getAlbum().getSongs()) {
+                remainingTime -= song.getDuration();
+
+                if (song.equals(crtSong)) {
+                    remainingTime += timeLeft;
+                    break;
+                }
+            }
+
+            //  Set new remaining time
+            copyItem.setRemainingTime(remainingTime);
+            copyItem.setStartTime(crtCommand.getTimestamp());
+
+            //  If the repeat status is "Repeat Current Song", intervals must be updated
+            AlbumSelection.setIntervals(copyItem);
 
             //  Set the output message
             message = "Shuffle function deactivated successfully.";

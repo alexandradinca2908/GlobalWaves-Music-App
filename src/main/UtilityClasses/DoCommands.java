@@ -19,6 +19,9 @@ import main.SelectionClasses.*;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SongClasses.SongLikes;
+import main.VisitorPattern.VisitorString.VisitShuffle;
+import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -880,11 +883,7 @@ public final class DoCommands {
 
                 ArrayList<SongInput> correctSongOrder;
 
-                if (playlist.getOriginalSongOrder() != null) {
-                    correctSongOrder = playlist.getOriginalSongOrder();
-                } else {
-                    correctSongOrder = playlist.getSongs();
-                }
+                correctSongOrder = playlist.getSongs();
 
                 for (SongInput song : correctSongOrder) {
                     songNames.add(song.getName());
@@ -1102,17 +1101,10 @@ public final class DoCommands {
             shuffleOutput.put("message", "Please load a source "
                     + "before using the shuffle function.");
         } else {
-            if (!(crtItem instanceof PlaylistSelection copyItem)) {
-                //  Loaded source is not a playlist
-                shuffleOutput.put("message", "The loaded source is not a playlist.");
-            } else {
-                //  All conditions met. Switch to shuffle/unshuffle
+            VisitorString visitShuffle = new VisitShuffle(crtCommand);
+            String message = crtItem.acceptString(visitShuffle);
 
-                //  Set the message and update playlist
-                String message = GetMessages.getShuffleMessage(copyItem, crtCommand);
-
-                shuffleOutput.put("message", message);
-            }
+            shuffleOutput.put("message", message);
         }
 
         return shuffleOutput;

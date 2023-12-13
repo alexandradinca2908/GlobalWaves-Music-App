@@ -9,8 +9,11 @@ import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
 
+import java.util.ArrayList;
+
 public final class PlaylistSelection extends ItemSelection implements VisitableString, VisitableObjectNode {
     private Playlist playlist;
+    private ArrayList<SongInput> shuffledPlaylist = new ArrayList<>();
     private int startTimestamp;
     private int stopTimestamp;
     public PlaylistSelection() {
@@ -38,6 +41,14 @@ public final class PlaylistSelection extends ItemSelection implements VisitableS
 
     public void setStopTimestamp(final int stopTimestamp) {
         this.stopTimestamp = stopTimestamp;
+    }
+
+    public ArrayList<SongInput> getShuffledPlaylist() {
+        return shuffledPlaylist;
+    }
+
+    public void setShuffledPlaylist(ArrayList<SongInput> shuffledPlaylist) {
+        this.shuffledPlaylist = shuffledPlaylist;
     }
 
     @Override
@@ -96,6 +107,28 @@ public final class PlaylistSelection extends ItemSelection implements VisitableS
 
         //  Now we find the song that needs repetition
         for (SongInput song : playlist.getPlaylist().getSongs()) {
+            duration -= song.getDuration();
+
+            if (duration < remainingTime) {
+                playlist.setStartTimestamp(duration + song.getDuration());
+                playlist.setStopTimestamp(duration);
+
+                break;
+            }
+        }
+    }
+
+    /**
+     * This method sets the interval of the current song within a playlist
+     *
+     * @param playlist The specified playlist
+     */
+    public static void setIntervalsShuffle(final PlaylistSelection playlist) {
+        int remainingTime = playlist.getRemainingTime();
+        int duration = playlist.getPlaylist().getDuration();
+
+        //  Now we find the song that needs repetition
+        for (SongInput song : playlist.getShuffledPlaylist()) {
             duration -= song.getDuration();
 
             if (duration < remainingTime) {
