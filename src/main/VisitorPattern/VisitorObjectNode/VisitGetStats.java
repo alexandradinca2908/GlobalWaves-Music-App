@@ -171,12 +171,23 @@ public class VisitGetStats implements VisitorObjectNode {
 
             int duration = reqItem.getAlbum().getDuration();
 
-            for (SongInput song : reqItem.getAlbum().getSongs()) {
-                duration -= song.getDuration();
+            if (!reqItem.isShuffle()) {
+                for (SongInput song : reqItem.getAlbum().getSongs()) {
+                    duration -= song.getDuration();
 
-                if (duration < remainingTime) {
-                    crtSong = song;
-                    break;
+                    if (duration < remainingTime) {
+                        crtSong = song;
+                        break;
+                    }
+                }
+            } else {
+                for (SongInput song : reqItem.getShuffledAlbum()) {
+                    duration -= song.getDuration();
+
+                    if (duration < remainingTime) {
+                        crtSong = song;
+                        break;
+                    }
                 }
             }
 

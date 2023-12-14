@@ -185,8 +185,8 @@
   "user" : "bob35",
   "timestamp" : 446,
   "stats" : {
-    "name" : "Synth Symphony",
-    "remainedTime" : 77,
+    "name" : "Vibrant Echoes",
+    "remainedTime" : 237,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -212,7 +212,7 @@
   "timestamp" : 1000,
   "stats" : {
     "name" : "Digital Dreams",
-    "remainedTime" : 3,
+    "remainedTime" : 243,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false

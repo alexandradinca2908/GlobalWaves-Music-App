@@ -18,12 +18,14 @@ public class VisitShuffle implements VisitorString {
 
     @Override
     public String visitString(SongSelection crtItem) {
-        return "The loaded source is not a playlist.";
+        return "The loaded source is not a playlist "
+                +  "or an album.";
     }
 
     @Override
     public String visitString(PodcastSelection crtItem) {
-        return "The loaded source is not a playlist.";
+        return "The loaded source is not a playlist "
+                +  "or an album.";
     }
 
     @Override
