@@ -19,8 +19,8 @@ import main.SelectionClasses.*;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SongClasses.SongLikes;
-import main.VisitorPattern.VisitorString.VisitShuffle;
-import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.Classes.VisitRepeat;
+import main.VisitorPattern.VisitorString.Classes.VisitShuffle;
 import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
@@ -998,50 +998,11 @@ public final class DoCommands {
             //  First we update the time
             updatePlayer(player, crtCommand, podcasts, library);
 
-            if (crtItem instanceof PlaylistSelection) {
-                switch (crtItem.getRepeat()) {
-                    case "No Repeat" -> {
-                        crtItem.setRepeat("Repeat All");
-                        message = "Repeat mode changed to repeat all.";
-                    }
-                    case "Repeat All" -> {
-                        crtItem.setRepeat("Repeat Current Song");
-                        message = "Repeat mode changed to repeat current song.";
+            //  Now we update repeat status
+            VisitorString visitorRepeat = new VisitRepeat();
 
-                        //  Setting intervals for the song loop
-                        PlaylistSelection copy = (PlaylistSelection) crtItem;
-                        PlaylistSelection.setIntervals(copy);
-                    }
-                    case "Repeat Current Song" -> {
-                        crtItem.setRepeat("No Repeat");
-                        message = "Repeat mode changed to no repeat.";
+            message = crtItem.acceptString(visitorRepeat);
 
-                        //  Reset intervals
-                        PlaylistSelection copy = (PlaylistSelection) crtItem;
-                        copy.setStartTimestamp(-1);
-                        copy.setStopTimestamp(-1);
-                    }
-                    default -> {
-                    }
-                }
-            } else {
-                switch (crtItem.getRepeat()) {
-                    case "No Repeat" -> {
-                        crtItem.setRepeat("Repeat Once");
-                        message = "Repeat mode changed to repeat once.";
-                    }
-                    case "Repeat Once" -> {
-                        crtItem.setRepeat("Repeat Infinite");
-                        message = "Repeat mode changed to repeat infinite.";
-                    }
-                    case "Repeat Infinite" -> {
-                        crtItem.setRepeat("No Repeat");
-                        message = "Repeat mode changed to no repeat.";
-                    }
-                    default -> {
-                    }
-                }
-            }
             repeatOutput.put("message", message);
         }
 
@@ -1404,9 +1365,6 @@ public final class DoCommands {
                         crtCommand, usersPlaylists);
                 followOutput.put("message", message);
             }
-
-            //  Clearing the result so that we can't follow it twice
-            searches.remove(crtSearch);
         }
 
         return followOutput;
@@ -1640,7 +1598,8 @@ public final class DoCommands {
                                         final Command crtCommand,
                                         final LibraryInput library,
                                         final ArrayList<UserPlaylists> usersPlaylists,
-                                        final ArrayList<Album> albums) {
+                                        final ArrayList<Album> albums,
+                                        final ArrayList<SongLikes> songsLikes) {
         ObjectNode addAlbumOutput = objectMapper.createObjectNode();
 
         addAlbumOutput.put("command", "addAlbum");
@@ -1648,7 +1607,7 @@ public final class DoCommands {
         addAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddAlbumMessage(crtCommand, library,
-                usersPlaylists, albums);
+                usersPlaylists, albums, songsLikes);
         addAlbumOutput.put("message", message);
 
         return addAlbumOutput;
@@ -1988,11 +1947,12 @@ public final class DoCommands {
         deleteUserOutput.put("user", crtCommand.getUsername());
         deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
 
+        //  Update the player
         updatePlayer(player, crtCommand, podcasts, library);
 
         String message = getDeleteUserMessage(library, crtCommand,
                 player, playlists, usersPlaylists, albums,
-                songsLikes, pageSystem);
+                songsLikes, pageSystem, podcasts);
 
 
         deleteUserOutput.put("message", message);

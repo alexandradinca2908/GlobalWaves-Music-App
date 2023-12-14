@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString;
+package main.VisitorPattern.VisitorString.Classes;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import main.CommandHelper.Command;
@@ -8,6 +8,7 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.UtilityClasses.GetMessages;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
+import main.VisitorPattern.VisitorString.VisitorString;
 
 public class VisitShuffle implements VisitorString {
     Command crtCommand;

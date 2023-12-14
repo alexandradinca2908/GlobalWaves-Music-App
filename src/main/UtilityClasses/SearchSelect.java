@@ -296,12 +296,14 @@ public final class SearchSelect {
     }
 
     public static void searchForCreators(final Filters filters,
-                                        final ArrayList<UserInput> result,
-                                        final LibraryInput library) {
+                                         final ArrayList<UserInput> result,
+                                         final LibraryInput library,
+                                         final Command crtCommand) {
         //  Add all artists containing the searched name
         if (filters.getName() != null) {
             for (UserInput artist : library.getUsers()) {
-                if (artist.getUsername().startsWith(filters.getName())) {
+                if (artist.getUsername().startsWith(filters.getName())
+                        && artist.getType().equals(crtCommand.getType())) {
                     result.add(artist);
                 }
             }
@@ -315,7 +317,7 @@ public final class SearchSelect {
         ArrayList<UserInput> result = new ArrayList<>();
 
         //  Found artists will be added in result array
-        SearchSelect.searchForCreators(filters, result, library);
+        SearchSelect.searchForCreators(filters, result, library, crtCommand);
 
         //  Truncate results if needed
         if (result.size() > Constants.MAX_SIZE_5) {

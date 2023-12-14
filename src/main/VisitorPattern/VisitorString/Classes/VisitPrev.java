@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString;
+package main.VisitorPattern.VisitorString.Classes;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
@@ -7,11 +7,14 @@ import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
+import main.VisitorPattern.VisitorString.VisitorString;
 
-public final class VisitPrevMessage implements VisitorString {
+import java.util.ArrayList;
+
+public final class VisitPrev implements VisitorString {
     private Command crtCommand;
 
-    public VisitPrevMessage(final Command crtCommand) {
+    public VisitPrev(final Command crtCommand) {
         this.crtCommand = crtCommand;
     }
 
@@ -80,12 +83,20 @@ public final class VisitPrevMessage implements VisitorString {
     @Override
     public String visitString(final PlaylistSelection crtItem) {
         String message = null;
+
         SongInput crtSong = null;
+        ArrayList<SongInput> songOrder = null;
 
         //  Find the current song
         int duration = crtItem.getPlaylist().getDuration();
 
-        for (SongInput song : crtItem.getPlaylist().getSongs()) {
+        if (!crtItem.isShuffle()) {
+            songOrder = crtItem.getPlaylist().getSongs();
+        } else {
+            songOrder = crtItem.getShuffledPlaylist();
+        }
+
+        for (SongInput song : songOrder) {
             duration -= song.getDuration();
 
             if (duration < crtItem.getRemainingTime()) {
@@ -105,7 +116,7 @@ public final class VisitPrevMessage implements VisitorString {
 
         } else {
             //  Treating first song exception
-            if (crtItem.getPlaylist().getSongs().indexOf(crtSong) == 0) {
+            if (songOrder.indexOf(crtSong) == 0) {
                 //  If we are at the first song, just restart the playlist
                 crtItem.setRemainingTime(crtItem.getPlaylist().getDuration());
                 crtItem.setStartTime(crtCommand.getTimestamp());
@@ -113,18 +124,18 @@ public final class VisitPrevMessage implements VisitorString {
 
                 message = "Returned to previous track successfully. "
                         + "The current track is "
-                        + crtItem.getPlaylist().getSongs().get(0).getName() + ".";
+                        + songOrder.get(0).getName() + ".";
 
                 //  Now we can go back to the previous song
             } else {
-                int index = crtItem.getPlaylist().getSongs().indexOf(crtSong) - 1;
+                int index = songOrder.indexOf(crtSong) - 1;
                 crtItem.setRemainingTime(duration
-                        + crtItem.getPlaylist().getSongs().get(index).getDuration());
+                        + songOrder.get(index).getDuration());
                 crtItem.setStartTime(crtCommand.getTimestamp());
                 crtItem.setPaused(false);
 
                 message = "Returned to previous track successfully. The current track is "
-                        + crtItem.getPlaylist().getSongs().get(index).getName() + ".";
+                        + songOrder.get(index).getName() + ".";
             }
         }
 
@@ -134,12 +145,20 @@ public final class VisitPrevMessage implements VisitorString {
     @Override
     public String visitString(final AlbumSelection crtItem) {
         String message = null;
+
         SongInput crtSong = null;
+        ArrayList<SongInput> songOrder = null;
 
         //  Find the current song
         int duration = crtItem.getAlbum().getDuration();
 
-        for (SongInput song : crtItem.getAlbum().getSongs()) {
+        if (!crtItem.isShuffle()) {
+            songOrder = crtItem.getAlbum().getSongs();
+        } else {
+            songOrder = crtItem.getShuffledAlbum();
+        }
+
+        for (SongInput song : songOrder) {
             duration -= song.getDuration();
 
             if (duration < crtItem.getRemainingTime()) {
@@ -159,7 +178,7 @@ public final class VisitPrevMessage implements VisitorString {
 
         } else {
             //  Treating first song exception
-            if (crtItem.getAlbum().getSongs().indexOf(crtSong) == 0) {
+            if (songOrder.indexOf(crtSong) == 0) {
                 //  If we are at the first song, just restart the playlist
                 crtItem.setRemainingTime(crtItem.getAlbum().getDuration());
                 crtItem.setStartTime(crtCommand.getTimestamp());
@@ -167,18 +186,18 @@ public final class VisitPrevMessage implements VisitorString {
 
                 message = "Returned to previous track successfully. "
                         + "The current track is "
-                        + crtItem.getAlbum().getSongs().get(0).getName() + ".";
+                        + songOrder.get(0).getName() + ".";
 
                 //  Now we can go back to the previous song
             } else {
-                int index = crtItem.getAlbum().getSongs().indexOf(crtSong) - 1;
+                int index = songOrder.indexOf(crtSong) - 1;
                 crtItem.setRemainingTime(duration
-                        + crtItem.getAlbum().getSongs().get(index).getDuration());
+                        + songOrder.get(index).getDuration());
                 crtItem.setStartTime(crtCommand.getTimestamp());
                 crtItem.setPaused(false);
 
                 message = "Returned to previous track successfully. The current track is "
-                        + crtItem.getAlbum().getSongs().get(index).getName() + ".";
+                        + songOrder.get(index).getName() + ".";
             }
         }
 

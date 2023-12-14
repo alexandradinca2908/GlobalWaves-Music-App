@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString;
+package main.VisitorPattern.VisitorString.Classes;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
@@ -6,17 +6,18 @@ import main.CommandHelper.Command;
 import main.SelectionClasses.*;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
+import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
 
-public final class VisitNextMessage implements VisitorString {
+public final class VisitNext implements VisitorString {
     private ArrayList<ItemSelection> player;
     private ArrayList<PodcastSelection> podcasts;
     private Command crtCommand;
 
-    public VisitNextMessage(final ArrayList<ItemSelection> player,
-                            final ArrayList<PodcastSelection> podcasts,
-                            final Command crtCommand) {
+    public VisitNext(final ArrayList<ItemSelection> player,
+                     final ArrayList<PodcastSelection> podcasts,
+                     final Command crtCommand) {
         this.player = player;
         this.podcasts = podcasts;
         this.crtCommand = crtCommand;
@@ -36,58 +37,57 @@ public final class VisitNextMessage implements VisitorString {
     public String visitString(final PodcastSelection crtItem) {
         String message = null;
 
-        PodcastSelection copyItem = (PodcastSelection) crtItem;
         EpisodeInput crtEp = null;
 
         //  Find the current episode
-        int duration = copyItem.getPodcast().getDuration();
+        int duration = crtItem.getPodcast().getDuration();
 
-        for (EpisodeInput episode : copyItem.getPodcast().getEpisodes()) {
+        for (EpisodeInput episode : crtItem.getPodcast().getEpisodes()) {
             duration -= episode.getDuration();
 
-            if (duration < copyItem.getRemainingTime()) {
+            if (duration < crtItem.getRemainingTime()) {
                 crtEp = episode;
                 break;
             }
         }
 
         if (duration > 0) {
-            copyItem.setRemainingTime(duration);
-            copyItem.setPaused(false);
-            int index = copyItem.getPodcast().getEpisodes().indexOf(crtEp);
+            crtItem.setRemainingTime(duration);
+            crtItem.setPaused(false);
+            int index = crtItem.getPodcast().getEpisodes().indexOf(crtEp);
 
             message = "Skipped to next track successfully. The current track is "
-                    + copyItem.getPodcast().getEpisodes().get(index + 1).getName() + ".";
+                    + crtItem.getPodcast().getEpisodes().get(index + 1).getName() + ".";
 
         } else if (duration == 0) {
             //  Check repeat status to take action
-            if (copyItem.getRepeat().equals("No Repeat")) {
+            if (crtItem.getRepeat().equals("No Repeat")) {
                 //  Stop podcast
-                copyItem.setRemainingTime(0);
-                copyItem.setPaused(true);
-                player.remove(copyItem);
-                podcasts.remove(copyItem);
+                crtItem.setRemainingTime(0);
+                crtItem.setPaused(true);
+                player.remove(crtItem);
+                podcasts.remove(crtItem);
 
                 message = "Please load a source before skipping to the next track.";
 
-            } else if (copyItem.getRepeat().equals("Repeat Once")) {
+            } else if (crtItem.getRepeat().equals("Repeat Once")) {
                 //  Restart podcast
-                copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
-                copyItem.setStartTime(crtCommand.getTimestamp());
-                copyItem.setPaused(false);
-                copyItem.setRepeat("No Repeat");
+                crtItem.setRemainingTime(crtItem.getPodcast().getDuration());
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
+                crtItem.setRepeat("No Repeat");
 
                 message = "Skipped to next track successfully. The current track is "
-                        + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+                        + crtItem.getPodcast().getEpisodes().get(0).getName() + ".";
 
-            } else if (copyItem.getRepeat().equals("Repeat Infinite")) {
+            } else if (crtItem.getRepeat().equals("Repeat Infinite")) {
                 //  Restart podcast but keep repeat status
-                copyItem.setRemainingTime(copyItem.getPodcast().getDuration());
-                copyItem.setStartTime(crtCommand.getTimestamp());
-                copyItem.setPaused(false);
+                crtItem.setRemainingTime(crtItem.getPodcast().getDuration());
+                crtItem.setStartTime(crtCommand.getTimestamp());
+                crtItem.setPaused(false);
 
                 message = "Skipped to next track successfully. The current track is "
-                        + copyItem.getPodcast().getEpisodes().get(0).getName() + ".";
+                        + crtItem.getPodcast().getEpisodes().get(0).getName() + ".";
             }
         }
 
@@ -99,12 +99,19 @@ public final class VisitNextMessage implements VisitorString {
         String message = null;
 
         SongInput crtSong = null;
+        ArrayList<SongInput> songOrder = null;
 
         //  Find the current song
         int duration = crtItem.getPlaylist().getDuration();
         int prevDuration = duration;
 
-        for (SongInput song : crtItem.getPlaylist().getSongs()) {
+        if (!crtItem.isShuffle()) {
+            songOrder = crtItem.getPlaylist().getSongs();
+        } else {
+            songOrder = crtItem.getShuffledPlaylist();
+        }
+
+        for (SongInput song : songOrder) {
             prevDuration = duration;
             duration -= song.getDuration();
 
@@ -129,10 +136,10 @@ public final class VisitNextMessage implements VisitorString {
                 crtItem.setStartTime(crtCommand.getTimestamp());
                 crtItem.setPaused(false);
 
-                int index = crtItem.getPlaylist().getSongs().indexOf(crtSong);
+                int index = songOrder.indexOf(crtSong);
 
                 message = "Skipped to next track successfully. The current track is "
-                        + crtItem.getPlaylist().getSongs().get(index + 1).getName() + ".";
+                        + songOrder.get(index + 1).getName() + ".";
             }
         } else if (duration == 0) {
             //  Check repeat status to take action
@@ -151,7 +158,7 @@ public final class VisitNextMessage implements VisitorString {
                 crtItem.setPaused(false);
 
                 message = "Skipped to next track successfully. The current track is "
-                        + crtItem.getPlaylist().getSongs().get(0).getName() + ".";
+                        + songOrder.get(0).getName() + ".";
 
             } else if (crtItem.getRepeat().equals("Repeat Current Song")) {
                 //  Restart song
@@ -172,12 +179,19 @@ public final class VisitNextMessage implements VisitorString {
         String message = null;
 
         SongInput crtSong = null;
+        ArrayList<SongInput> songOrder = null;
 
         //  Find the current song
         int duration = crtItem.getAlbum().getDuration();
         int prevDuration = duration;
 
-        for (SongInput song : crtItem.getAlbum().getSongs()) {
+        if (!crtItem.isShuffle()) {
+            songOrder = crtItem.getAlbum().getSongs();
+        } else {
+            songOrder = crtItem.getShuffledAlbum();
+        }
+
+        for (SongInput song : songOrder) {
             prevDuration = duration;
             duration -= song.getDuration();
 
@@ -202,10 +216,10 @@ public final class VisitNextMessage implements VisitorString {
                 crtItem.setStartTime(crtCommand.getTimestamp());
                 crtItem.setPaused(false);
 
-                int index = crtItem.getAlbum().getSongs().indexOf(crtSong);
+                int index = songOrder.indexOf(crtSong);
 
                 message = "Skipped to next track successfully. The current track is "
-                        + crtItem.getAlbum().getSongs().get(index + 1).getName() + ".";
+                        + songOrder.get(index + 1).getName() + ".";
             }
         } else if (duration == 0) {
             //  Check repeat status to take action
@@ -224,7 +238,7 @@ public final class VisitNextMessage implements VisitorString {
                 crtItem.setPaused(false);
 
                 message = "Skipped to next track successfully. The current track is "
-                        + crtItem.getAlbum().getSongs().get(0).getName() + ".";
+                        + songOrder.get(0).getName() + ".";
 
             } else if (crtItem.getRepeat().equals("Repeat Current Song")) {
                 //  Restart song

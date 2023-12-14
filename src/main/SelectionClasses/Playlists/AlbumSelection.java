@@ -119,7 +119,6 @@ public final class AlbumSelection extends ItemSelection implements VisitableStri
         }
     }
 
-
     /**
      * This method sets the interval of the current song within a playlist
      *

@@ -31,6 +31,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 import static main.UtilityClasses.DoCommands.*;
@@ -376,7 +377,7 @@ public final class Main {
                 case "addAlbum" -> {
                     ObjectNode addUserOutput;
                     addUserOutput = doAddAlbum(objectMapper, crtCommand,
-                            library, usersPlaylists, albums);
+                            library, usersPlaylists, albums, songsLikes);
 
                     outputs.add(addUserOutput);
                 }
@@ -617,6 +618,7 @@ public final class Main {
                                                     userPlaylists.getAlbums().remove(crtAlbum);
                                                 }
                                             }
+                                            songsLikes.remove(songLikes);
                                             break;
                                         }
                                     }
@@ -878,6 +880,33 @@ public final class Main {
 
                     removeEventOutput.put("message", message);
                     outputs.add(removeEventOutput);
+                }
+
+                case "getTop5Albums" -> {
+                    ObjectNode topAlbumsOutput = objectMapper.createObjectNode();
+
+                    topAlbumsOutput.put("command", "getTop5Albums");
+                    topAlbumsOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Sort the songs in a separate array and then take the first 5 results
+                    ArrayList<Album> sortedAlbumsByLikes = new ArrayList<>(albums);
+                    sortedAlbumsByLikes.sort((album1, album2) -> album2.calculateAlbumLikes()
+                            - album1.calculateAlbumLikes());
+
+                    //  Truncate the result to 5
+                    if (sortedAlbumsByLikes.size() > Constants.MAX_SIZE_5) {
+                        sortedAlbumsByLikes.subList(Constants.MAX_SIZE_5,
+                                sortedAlbumsByLikes.size()).clear();
+                    }
+
+                    //  Store names
+                    ArrayList<String> result = new ArrayList<>();
+                    for (Album album : sortedAlbumsByLikes) {
+                        result.add(album.getName());
+                    }
+
+                    topAlbumsOutput.putPOJO("result", result);
+                    outputs.add(topAlbumsOutput);
                 }
 
                 default -> {

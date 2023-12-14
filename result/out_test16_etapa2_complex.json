@@ -5299,7 +5299,7 @@
   "timestamp" : 6679,
   "stats" : {
     "name" : "Soul Pandora",
-    "remainedTime" : 162,
+    "remainedTime" : 172,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5308,7 +5308,7 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 6680,
-  "message" : "Skipped to next track successfully. The current track is Adventure Infinity."
+  "message" : "Skipped to next track successfully. The current track is Cascade Pulse."
 }, {
   "command" : "status",
   "user" : "emily30",
@@ -5324,7 +5324,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 6935,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -5398,7 +5398,7 @@
   "timestamp" : 6990,
   "stats" : {
     "name" : "Crescendo Twilight",
-    "remainedTime" : 195,
+    "remainedTime" : 205,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5407,7 +5407,7 @@
   "command" : "next",
   "user" : "frank21",
   "timestamp" : 6991,
-  "message" : "Skipped to next track successfully. The current track is Love Aurora."
+  "message" : "Skipped to next track successfully. The current track is Zephyr Enigma."
 }, {
   "command" : "status",
   "user" : "frank21",
@@ -5497,7 +5497,7 @@
   "timestamp" : 7301,
   "stats" : {
     "name" : "Harmony Love",
-    "remainedTime" : 262,
+    "remainedTime" : 272,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5506,14 +5506,14 @@
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 7302,
-  "message" : "Skipped to next track successfully. The current track is Harmony Pandora."
+  "message" : "Skipped to next track successfully. The current track is Reflection Utopia."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 7556,
   "stats" : {
-    "name" : "Reflection Utopia",
-    "remainedTime" : 192,
+    "name" : "Harmony Pandora",
+    "remainedTime" : 265,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5522,7 +5522,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 7557,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -5695,7 +5695,7 @@
   "timestamp" : 7923,
   "stats" : {
     "name" : "Night Aurora",
-    "remainedTime" : 240,
+    "remainedTime" : 250,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5704,14 +5704,14 @@
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 7924,
-  "message" : "Skipped to next track successfully. The current track is Glow Whisper."
+  "message" : "Skipped to next track successfully. The current track is Solitude Dance."
 }, {
   "command" : "status",
   "user" : "irene33",
   "timestamp" : 8178,
   "stats" : {
     "name" : "Solitude Dance",
-    "remainedTime" : 34,
+    "remainedTime" : 32,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -5720,7 +5720,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 8179,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -6893,14 +6893,14 @@
   "command" : "prev",
   "user" : "emily30",
   "timestamp" : 9230,
-  "message" : "Returned to previous track successfully. The current track is Blank Space."
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 9230,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 119,
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -6994,7 +6994,7 @@
   "command" : "prev",
   "user" : "alice22",
   "timestamp" : 9290,
-  "message" : "Returned to previous track successfully. The current track is Bohemian Rhapsody."
+  "message" : "Returned to previous track successfully. The current track is Castle on the Hill."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -7060,7 +7060,7 @@
   "timestamp" : 9330,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 19,
+    "remainedTime" : 112,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7071,7 +7071,7 @@
   "timestamp" : 9330,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 19,
+    "remainedTime" : 112,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7171,7 +7171,7 @@
   "command" : "next",
   "user" : "alice22",
   "timestamp" : 9390,
-  "message" : "Skipped to next track successfully. The current track is Bohemian Rhapsody."
+  "message" : "Skipped to next track successfully. The current track is Castle on the Hill."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -7245,14 +7245,14 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 9430,
-  "message" : "Skipped to next track successfully. The current track is Dream On."
+  "message" : "Skipped to next track successfully. The current track is Love Story."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 9430,
   "stats" : {
     "name" : "Love Story",
-    "remainedTime" : 124,
+    "remainedTime" : 236,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7364,7 +7364,7 @@
   "command" : "prev",
   "user" : "alice22",
   "timestamp" : 9490,
-  "message" : "Returned to previous track successfully. The current track is Bohemian Rhapsody."
+  "message" : "Returned to previous track successfully. The current track is Castle on the Hill."
 }, {
   "command" : "status",
   "user" : "alice22",
@@ -7435,7 +7435,7 @@
   "timestamp" : 9530,
   "stats" : {
     "name" : "Love Story",
-    "remainedTime" : 24,
+    "remainedTime" : 136,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : true
@@ -7470,14 +7470,14 @@
   "command" : "prev",
   "user" : "grace25",
   "timestamp" : 9550,
-  "message" : "Returned to previous track successfully. The current track is Under Pressure."
+  "message" : "Returned to previous track successfully. The current track is Money Trees."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 9550,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 185,
+    "remainedTime" : 387,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7622,7 +7622,7 @@
   "timestamp" : 9630,
   "stats" : {
     "name" : "Love Story",
-    "remainedTime" : 24,
+    "remainedTime" : 136,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7660,7 +7660,7 @@
   "timestamp" : 9650,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 85,
+    "remainedTime" : 287,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7671,7 +7671,7 @@
   "timestamp" : 9650,
   "stats" : {
     "name" : "Money Trees",
-    "remainedTime" : 85,
+    "remainedTime" : 287,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7809,19 +7809,19 @@
   "command" : "prev",
   "user" : "emily30",
   "timestamp" : 9730,
-  "message" : "Returned to previous track successfully. The current track is Dream On."
+  "message" : "Returned to previous track successfully. The current track is Love Story."
 }, {
   "command" : "prev",
   "user" : "emily30",
   "timestamp" : 9730,
-  "message" : "Returned to previous track successfully. The current track is Blank Space."
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 9730,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 119,
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -7852,7 +7852,7 @@
   "user" : "grace25",
   "timestamp" : 9750,
   "stats" : {
-    "name" : "Paint It Black",
+    "name" : "Money Trees",
     "remainedTime" : 187,
     "repeat" : "Repeat All",
     "shuffle" : false,
@@ -7926,14 +7926,14 @@
   "command" : "prev",
   "user" : "bob35",
   "timestamp" : 9800,
-  "message" : "Returned to previous track successfully. The current track is Begin Again."
+  "message" : "Returned to previous track successfully. The current track is Delicate."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 9800,
   "stats" : {
-    "name" : "Paint It Black",
-    "remainedTime" : 6,
+    "name" : "Delicate",
+    "remainedTime" : 232,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7942,14 +7942,14 @@
   "command" : "next",
   "user" : "carol19",
   "timestamp" : 9810,
-  "message" : "Skipped to next track successfully. The current track is Whatever You Need."
+  "message" : "Skipped to next track successfully. The current track is Blank Space."
 }, {
   "command" : "status",
   "user" : "carol19",
   "timestamp" : 9810,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 210,
+    "remainedTime" : 231,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -7981,7 +7981,7 @@
   "timestamp" : 9830,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 19,
+    "remainedTime" : 112,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8022,7 +8022,7 @@
   "user" : "grace25",
   "timestamp" : 9850,
   "stats" : {
-    "name" : "Paint It Black",
+    "name" : "Money Trees",
     "remainedTime" : 87,
     "repeat" : "Repeat All",
     "shuffle" : false,
@@ -8101,19 +8101,19 @@
   "command" : "prev",
   "user" : "bob35",
   "timestamp" : 9900,
-  "message" : "Returned to previous track successfully. The current track is Begin Again."
+  "message" : "Returned to previous track successfully. The current track is Delicate."
 }, {
   "command" : "prev",
   "user" : "bob35",
   "timestamp" : 9900,
-  "message" : "Returned to previous track successfully. The current track is Blank Space."
+  "message" : "Returned to previous track successfully. The current track is Paint It Black."
 }, {
   "command" : "status",
   "user" : "bob35",
   "timestamp" : 9900,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 35,
+    "name" : "Paint It Black",
+    "remainedTime" : 202,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8129,7 +8129,7 @@
   "timestamp" : 9910,
   "stats" : {
     "name" : "Blank Space",
-    "remainedTime" : 110,
+    "remainedTime" : 131,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8154,14 +8154,14 @@
   "command" : "prev",
   "user" : "emily30",
   "timestamp" : 9930,
-  "message" : "Returned to previous track successfully. The current track is Blank Space."
+  "message" : "Returned to previous track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 9930,
   "stats" : {
     "name" : "Start Me Up",
-    "remainedTime" : 119,
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8198,7 +8198,7 @@
   "user" : "grace25",
   "timestamp" : 9950,
   "stats" : {
-    "name" : "Paint It Black",
+    "name" : "Money Trees",
     "remainedTime" : 87,
     "repeat" : "Repeat All",
     "shuffle" : true,
@@ -8224,12 +8224,12 @@
   "command" : "prev",
   "user" : "irene33",
   "timestamp" : 9970,
-  "message" : "Returned to previous track successfully. The current track is Delicate."
+  "message" : "Returned to previous track successfully. The current track is Gimme Shelter."
 }, {
   "command" : "prev",
   "user" : "irene33",
   "timestamp" : 9970,
-  "message" : "Returned to previous track successfully. The current track is The Man."
+  "message" : "Returned to previous track successfully. The current track is Gimme Shelter."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -8289,7 +8289,7 @@
   "timestamp" : 10000,
   "stats" : {
     "name" : "Paint It Black",
-    "remainedTime" : 137,
+    "remainedTime" : 102,
     "repeat" : "No Repeat",
     "shuffle" : true,
     "paused" : false
@@ -8330,14 +8330,14 @@
   "command" : "next",
   "user" : "emily30",
   "timestamp" : 10030,
-  "message" : "Skipped to next track successfully. The current track is Dream On."
+  "message" : "Skipped to next track successfully. The current track is Love Story."
 }, {
   "command" : "status",
   "user" : "emily30",
   "timestamp" : 10030,
   "stats" : {
     "name" : "Love Story",
-    "remainedTime" : 124,
+    "remainedTime" : 236,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8367,14 +8367,14 @@
   "command" : "next",
   "user" : "grace25",
   "timestamp" : 10050,
-  "message" : "Skipped to next track successfully. The current track is Under Pressure."
+  "message" : "Skipped to next track successfully. The current track is Start Me Up."
 }, {
   "command" : "status",
   "user" : "grace25",
   "timestamp" : 10050,
   "stats" : {
-    "name" : "Paint It Black",
-    "remainedTime" : 32,
+    "name" : "Start Me Up",
+    "remainedTime" : 212,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8460,7 +8460,7 @@
   "timestamp" : 10100,
   "stats" : {
     "name" : "Paint It Black",
-    "remainedTime" : 37,
+    "remainedTime" : 2,
     "repeat" : "Repeat All",
     "shuffle" : true,
     "paused" : false
@@ -8513,7 +8513,7 @@
   "timestamp" : 10130,
   "stats" : {
     "name" : "Love Story",
-    "remainedTime" : 24,
+    "remainedTime" : 136,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8550,8 +8550,8 @@
   "user" : "grace25",
   "timestamp" : 10150,
   "stats" : {
-    "name" : "Money Trees",
-    "remainedTime" : 319,
+    "name" : "Start Me Up",
+    "remainedTime" : 112,
     "repeat" : "Repeat Current Song",
     "shuffle" : true,
     "paused" : false
@@ -8581,7 +8581,7 @@
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 10170,
-  "message" : "Skipped to next track successfully. The current track is The Man."
+  "message" : "Skipped to next track successfully. The current track is Gimme Shelter."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -8641,7 +8641,7 @@
   "timestamp" : 10200,
   "stats" : {
     "name" : "Delicate",
-    "remainedTime" : 169,
+    "remainedTime" : 134,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8688,8 +8688,8 @@
   "user" : "emily30",
   "timestamp" : 10230,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 155,
+    "name" : "Love Story",
+    "remainedTime" : 36,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8699,8 +8699,8 @@
   "user" : "emily30",
   "timestamp" : 10230,
   "stats" : {
-    "name" : "Blank Space",
-    "remainedTime" : 155,
+    "name" : "Love Story",
+    "remainedTime" : 36,
     "repeat" : "Repeat All",
     "shuffle" : false,
     "paused" : false
@@ -8741,8 +8741,8 @@
   "user" : "grace25",
   "timestamp" : 10250,
   "stats" : {
-    "name" : "Money Trees",
-    "remainedTime" : 219,
+    "name" : "Start Me Up",
+    "remainedTime" : 12,
     "repeat" : "Repeat Current Song",
     "shuffle" : false,
     "paused" : false
@@ -8767,7 +8767,7 @@
   "command" : "next",
   "user" : "irene33",
   "timestamp" : 10270,
-  "message" : "Skipped to next track successfully. The current track is The Man."
+  "message" : "Skipped to next track successfully. The current track is Gimme Shelter."
 }, {
   "command" : "status",
   "user" : "irene33",
@@ -8897,7 +8897,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10290,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -8907,7 +8907,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10290,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -8958,7 +8958,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10300,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -8968,7 +8968,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10300,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -9019,7 +9019,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10310,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -9029,7 +9029,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10310,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -9054,7 +9054,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10320,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -9080,7 +9080,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10320,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -9090,12 +9090,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10320,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10320,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -9105,7 +9105,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10320,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -9141,7 +9141,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10330,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -9151,7 +9151,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10330,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -9176,7 +9176,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -9202,7 +9202,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10340,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -9212,12 +9212,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10340,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -9227,7 +9227,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -9263,7 +9263,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10350,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -9273,7 +9273,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10350,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -9298,7 +9298,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10360,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -9339,7 +9339,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10360,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -9349,7 +9349,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10360,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -9385,7 +9385,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10370,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -9395,7 +9395,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10370,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -9629,7 +9629,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10410,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -9639,7 +9639,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10410,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -9664,7 +9664,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10420,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -9705,7 +9705,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10420,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -9715,7 +9715,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10420,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -9751,7 +9751,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10430,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -9761,7 +9761,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10430,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -9786,7 +9786,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -9827,7 +9827,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -9837,7 +9837,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -9873,7 +9873,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10450,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -9883,7 +9883,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10450,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -9908,7 +9908,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10460,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -9949,7 +9949,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10460,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -9959,7 +9959,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10460,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -9995,7 +9995,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10470,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -10005,7 +10005,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10470,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -10178,7 +10178,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10500,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -10188,7 +10188,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10500,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -10274,7 +10274,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10520,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -10300,7 +10300,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10520,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -10310,12 +10310,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10520,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10520,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -10325,7 +10325,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10520,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -10396,7 +10396,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -10437,7 +10437,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -10447,7 +10447,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -10483,7 +10483,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10550,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -10493,7 +10493,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10550,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -10518,7 +10518,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10560,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -10544,7 +10544,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10560,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -10554,12 +10554,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10560,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10560,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -10569,7 +10569,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10560,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -10605,7 +10605,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10570,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -10615,7 +10615,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10570,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -10666,7 +10666,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10580,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -10676,7 +10676,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10580,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -10727,7 +10727,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10590,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -10737,7 +10737,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10590,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -10849,7 +10849,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10610,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -10859,7 +10859,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10610,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -10884,7 +10884,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10620,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -10925,7 +10925,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10620,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -10935,7 +10935,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10620,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -11006,7 +11006,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -11032,7 +11032,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10640,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -11042,12 +11042,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10640,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -11057,7 +11057,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -11128,7 +11128,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10660,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -11154,7 +11154,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10660,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -11164,12 +11164,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10660,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10660,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -11179,7 +11179,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10660,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -11215,7 +11215,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10670,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -11225,7 +11225,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10670,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -11276,7 +11276,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10680,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -11286,7 +11286,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10680,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -11494,7 +11494,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10720,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -11520,7 +11520,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10720,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -11530,12 +11530,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10720,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10720,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -11545,7 +11545,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10720,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -11616,7 +11616,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -11642,7 +11642,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10740,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -11652,12 +11652,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10740,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -11667,7 +11667,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -11703,7 +11703,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10750,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -11713,7 +11713,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10750,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -11738,7 +11738,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10760,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -11779,7 +11779,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10760,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -11789,7 +11789,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10760,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -11825,7 +11825,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10770,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -11835,7 +11835,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10770,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -11886,7 +11886,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10780,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -11896,7 +11896,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10780,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -11947,7 +11947,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10790,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -11957,7 +11957,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10790,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -12069,7 +12069,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10810,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -12079,7 +12079,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10810,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -12104,7 +12104,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10820,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -12130,7 +12130,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10820,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -12140,12 +12140,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10820,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10820,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -12155,7 +12155,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10820,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -12226,7 +12226,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10840,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -12252,7 +12252,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10840,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -12262,12 +12262,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10840,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10840,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -12277,7 +12277,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10840,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -12313,7 +12313,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10850,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -12323,7 +12323,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 10850,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -12348,7 +12348,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10860,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -12389,7 +12389,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10860,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -12399,7 +12399,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10860,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -12435,7 +12435,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10870,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -12445,7 +12445,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10870,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -12496,7 +12496,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10880,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -12506,7 +12506,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 10880,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -12618,7 +12618,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10900,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -12628,7 +12628,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 10900,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -12679,7 +12679,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10910,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -12689,7 +12689,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 10910,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -12714,7 +12714,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10920,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -12740,7 +12740,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10920,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -12750,12 +12750,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 10920,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10920,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -12765,7 +12765,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 10920,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -12801,7 +12801,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10930,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -12811,7 +12811,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 10930,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -12836,7 +12836,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10940,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -12862,7 +12862,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10940,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -12872,12 +12872,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 10940,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10940,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -12887,7 +12887,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 10940,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -12958,7 +12958,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10960,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -12984,7 +12984,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10960,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -12994,12 +12994,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 10960,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10960,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -13009,7 +13009,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 10960,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -13045,7 +13045,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10970,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -13055,7 +13055,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 10970,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -13167,7 +13167,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10990,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -13177,7 +13177,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 10990,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -13228,7 +13228,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11000,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -13238,7 +13238,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11000,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -13289,7 +13289,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11010,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -13299,7 +13299,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11010,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -13324,7 +13324,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11020,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -13350,7 +13350,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11020,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -13360,12 +13360,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11020,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11020,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -13375,7 +13375,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11020,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -13411,7 +13411,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11030,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -13421,7 +13421,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11030,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -13446,7 +13446,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11040,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -13487,7 +13487,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11040,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -13497,7 +13497,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11040,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -13533,7 +13533,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11050,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -13543,7 +13543,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11050,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -13568,7 +13568,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11060,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -13609,7 +13609,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11060,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -13619,7 +13619,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11060,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -13655,7 +13655,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11070,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -13665,7 +13665,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11070,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -13716,7 +13716,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11080,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -13726,7 +13726,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11080,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -13777,7 +13777,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11090,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -13787,7 +13787,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11090,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -13899,7 +13899,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11110,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -13909,7 +13909,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11110,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -13934,7 +13934,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11120,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -13960,7 +13960,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11120,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -13970,12 +13970,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11120,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11120,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -13985,7 +13985,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11120,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -14021,7 +14021,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11130,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -14031,7 +14031,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11130,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -14056,7 +14056,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11140,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -14097,7 +14097,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11140,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -14107,7 +14107,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11140,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -14143,7 +14143,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11150,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -14153,7 +14153,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11150,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -14178,7 +14178,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11160,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -14204,7 +14204,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11160,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -14214,12 +14214,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11160,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11160,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -14229,7 +14229,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11160,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -14265,7 +14265,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11170,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -14275,7 +14275,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11170,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -14387,7 +14387,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11190,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -14397,7 +14397,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11190,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -14509,7 +14509,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11210,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -14519,7 +14519,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11210,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -14544,7 +14544,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11220,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -14570,7 +14570,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11220,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -14580,12 +14580,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11220,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11220,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -14595,7 +14595,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11220,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -14666,7 +14666,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11240,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -14692,7 +14692,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11240,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -14702,12 +14702,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11240,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11240,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -14717,7 +14717,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11240,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -14788,7 +14788,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11260,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -14814,7 +14814,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11260,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -14824,12 +14824,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11260,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11260,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -14839,7 +14839,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11260,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -14875,7 +14875,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11270,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -14885,7 +14885,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11270,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -14936,7 +14936,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11280,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -14946,7 +14946,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11280,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -14997,7 +14997,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11290,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -15007,7 +15007,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11290,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -15058,7 +15058,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11300,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -15068,7 +15068,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11300,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -15119,7 +15119,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11310,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -15129,7 +15129,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11310,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -15154,7 +15154,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11320,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -15180,7 +15180,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11320,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -15190,12 +15190,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11320,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11320,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -15205,7 +15205,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11320,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -15241,7 +15241,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11330,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -15251,7 +15251,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11330,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -15276,7 +15276,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -15302,7 +15302,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11340,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -15312,12 +15312,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11340,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -15327,7 +15327,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11340,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -15363,7 +15363,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11350,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -15373,7 +15373,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11350,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -15398,7 +15398,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11360,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -15424,7 +15424,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11360,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -15434,12 +15434,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11360,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11360,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -15449,7 +15449,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11360,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -15485,7 +15485,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11370,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -15495,7 +15495,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11370,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -15546,7 +15546,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11380,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -15556,7 +15556,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11380,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -15607,7 +15607,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11390,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -15617,7 +15617,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11390,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -15668,7 +15668,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11400,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -15678,7 +15678,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11400,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -15729,7 +15729,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11410,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -15739,7 +15739,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11410,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -15764,7 +15764,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11420,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -15790,7 +15790,7 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11420,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "emily30",
@@ -15800,12 +15800,12 @@
   "command" : "like",
   "user" : "emily30",
   "timestamp" : 11420,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11420,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -15815,7 +15815,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11420,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -15851,7 +15851,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11430,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -15861,7 +15861,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11430,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -15886,7 +15886,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -15912,7 +15912,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11440,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -15922,12 +15922,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11440,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -15937,7 +15937,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11440,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -15973,7 +15973,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11450,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -15983,7 +15983,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11450,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -16008,7 +16008,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11460,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -16034,7 +16034,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11460,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -16044,12 +16044,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11460,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11460,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -16059,7 +16059,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11460,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -16278,7 +16278,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11500,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -16288,7 +16288,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11500,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -16339,7 +16339,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11510,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -16349,7 +16349,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11510,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -16374,7 +16374,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11520,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -16415,7 +16415,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11520,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -16425,7 +16425,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11520,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -16461,7 +16461,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11530,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -16471,7 +16471,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11530,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -16496,7 +16496,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -16522,7 +16522,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11540,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -16532,12 +16532,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11540,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -16547,7 +16547,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11540,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -16583,7 +16583,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11550,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -16593,7 +16593,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11550,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -16618,7 +16618,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11560,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -16644,7 +16644,7 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11560,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "irene33",
@@ -16654,12 +16654,12 @@
   "command" : "like",
   "user" : "irene33",
   "timestamp" : 11560,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11560,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -16669,7 +16669,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11560,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -16705,7 +16705,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11570,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -16715,7 +16715,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11570,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -16766,7 +16766,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11580,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "alice22",
@@ -16776,7 +16776,7 @@
   "command" : "like",
   "user" : "alice22",
   "timestamp" : 11580,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
@@ -16827,7 +16827,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11590,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "bob35",
@@ -16837,7 +16837,7 @@
   "command" : "like",
   "user" : "bob35",
   "timestamp" : 11590,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
@@ -16888,7 +16888,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11600,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -16898,7 +16898,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11600,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -16949,7 +16949,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11610,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "david27",
@@ -16959,7 +16959,7 @@
   "command" : "like",
   "user" : "david27",
   "timestamp" : 11610,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
@@ -16984,7 +16984,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11620,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -17025,7 +17025,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11620,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -17035,7 +17035,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11620,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -17071,7 +17071,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11630,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -17081,7 +17081,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11630,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -17106,7 +17106,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -17132,7 +17132,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11640,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -17142,12 +17142,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11640,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -17157,7 +17157,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11640,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -17193,7 +17193,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11650,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -17203,7 +17203,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11650,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -17228,7 +17228,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11660,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -17269,7 +17269,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11660,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -17279,7 +17279,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11660,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -17315,7 +17315,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11670,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "jack29",
@@ -17325,7 +17325,7 @@
   "command" : "like",
   "user" : "jack29",
   "timestamp" : 11670,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
@@ -17498,7 +17498,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11700,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "carol19",
@@ -17508,7 +17508,7 @@
   "command" : "like",
   "user" : "carol19",
   "timestamp" : 11700,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
@@ -17594,7 +17594,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11720,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -17635,7 +17635,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11720,
-  "message" : "Liked songs:\n\t[Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal - jacobdean, Start Me Up - The Rolling Stones, Blank Space - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -17645,7 +17645,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11720,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -17681,7 +17681,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11730,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "frank21",
@@ -17691,7 +17691,7 @@
   "command" : "like",
   "user" : "frank21",
   "timestamp" : 11730,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
@@ -17716,7 +17716,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -17742,7 +17742,7 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11740,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "grace25",
@@ -17752,12 +17752,12 @@
   "command" : "like",
   "user" : "grace25",
   "timestamp" : 11740,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart - jsimpson]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -17767,7 +17767,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11740,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -17803,7 +17803,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11750,
-  "message" : "Loaded source is not a song."
+  "message" : "Like registered successfully."
 }, {
   "command" : "next",
   "user" : "henry26",
@@ -17813,7 +17813,7 @@
   "command" : "like",
   "user" : "henry26",
   "timestamp" : 11750,
-  "message" : "Loaded source is not a song."
+  "message" : "Unlike registered successfully."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
@@ -17838,7 +17838,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11760,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -17879,7 +17879,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11760,
-  "message" : "Liked songs:\n\t[The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper - mccarthyluis, The Man - Taylor Swift]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -17889,7 +17889,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11760,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -17955,18 +17955,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 11770,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 11770,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 11770,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -17976,7 +17976,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 11770,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -18027,18 +18027,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11790,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 11790,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11790,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -18048,7 +18048,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11790,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -18063,18 +18063,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 11800,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 11800,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 11800,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18084,7 +18084,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 11800,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -18130,23 +18130,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11810,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 11820,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 11820,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 11820,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -18156,7 +18156,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 11820,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -18171,18 +18171,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 11830,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 11830,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11830,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18192,7 +18192,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11830,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -18202,7 +18202,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11830,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -18274,23 +18274,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11850,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 11860,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 11860,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11860,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -18300,7 +18300,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11860,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -18351,18 +18351,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 11880,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 11880,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11880,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18372,7 +18372,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 11880,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -18387,18 +18387,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11890,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 11890,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11890,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -18408,7 +18408,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11890,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -18423,18 +18423,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 11900,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 11900,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 11900,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18444,7 +18444,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 11900,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -18459,18 +18459,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 11910,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 11910,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11910,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -18480,7 +18480,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11910,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -18490,23 +18490,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 11910,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 11920,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 11920,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 11920,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -18516,7 +18516,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 11920,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -18562,7 +18562,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 11930,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -18634,23 +18634,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 11950,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 11960,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 11960,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11960,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -18660,7 +18660,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 11960,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -18675,18 +18675,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 11970,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 11970,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 11970,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -18696,7 +18696,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 11970,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -18747,18 +18747,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 11990,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 11990,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11990,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -18768,7 +18768,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 11990,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -18850,7 +18850,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12010,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -18891,18 +18891,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12030,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12030,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12030,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18912,7 +18912,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12030,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -18922,7 +18922,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12030,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -18963,18 +18963,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12050,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12050,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12050,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -18984,7 +18984,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12050,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -18994,7 +18994,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12050,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -19035,18 +19035,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12070,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 12070,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12070,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -19056,7 +19056,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12070,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -19143,18 +19143,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12100,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12100,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12100,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19164,7 +19164,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12100,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -19210,23 +19210,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12110,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12120,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12120,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12120,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -19236,7 +19236,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12120,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -19282,23 +19282,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12130,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12140,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12140,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12140,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19308,7 +19308,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12140,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -19354,7 +19354,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12150,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -19395,18 +19395,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12170,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 12170,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12170,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -19416,7 +19416,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12170,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -19431,18 +19431,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12180,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 12180,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12180,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19452,7 +19452,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12180,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -19503,18 +19503,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12200,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12200,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12200,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -19524,7 +19524,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12200,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -19570,23 +19570,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12210,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12220,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12220,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12220,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19596,7 +19596,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12220,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -19611,18 +19611,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12230,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12230,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12230,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -19632,7 +19632,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12230,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -19642,23 +19642,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12230,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12240,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12240,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12240,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19668,7 +19668,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12240,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -19714,7 +19714,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12250,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -19755,18 +19755,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12270,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 12270,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12270,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -19776,7 +19776,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12270,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -19791,18 +19791,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12280,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 12280,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12280,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19812,7 +19812,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12280,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -19863,18 +19863,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12300,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12300,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12300,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -19884,7 +19884,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12300,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -19930,23 +19930,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12310,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12320,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12320,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12320,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -19956,7 +19956,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12320,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -19971,18 +19971,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12330,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12330,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12330,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -19992,7 +19992,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12330,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -20002,7 +20002,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12330,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -20043,18 +20043,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12350,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12350,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12350,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -20064,7 +20064,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12350,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -20074,23 +20074,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12350,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12360,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12360,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12360,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -20100,7 +20100,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12360,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -20187,18 +20187,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12390,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 12390,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 12390,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -20208,7 +20208,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 12390,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -20223,18 +20223,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12400,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12400,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12400,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -20244,7 +20244,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12400,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -20290,23 +20290,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12410,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12420,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12420,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12420,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -20316,7 +20316,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12420,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -20331,18 +20331,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12430,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12430,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12430,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -20352,7 +20352,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12430,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -20362,7 +20362,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12430,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -20403,18 +20403,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12450,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12450,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12450,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -20424,7 +20424,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12450,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -20434,23 +20434,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12450,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12460,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12460,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12460,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -20460,7 +20460,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12460,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -20511,18 +20511,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12480,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 12480,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12480,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -20532,7 +20532,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12480,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -20650,23 +20650,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12510,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12520,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12520,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12520,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -20676,7 +20676,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12520,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -20691,18 +20691,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12530,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12530,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12530,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -20712,7 +20712,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12530,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -20722,23 +20722,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12530,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12540,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12540,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12540,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -20748,7 +20748,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12540,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -20794,23 +20794,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12550,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12560,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12560,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12560,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -20820,7 +20820,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12560,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -20979,18 +20979,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12610,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 12610,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12610,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -21000,7 +21000,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12610,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -21010,7 +21010,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12610,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -21051,18 +21051,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12630,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12630,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12630,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -21072,7 +21072,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12630,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -21082,23 +21082,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12630,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12640,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12640,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12640,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -21108,7 +21108,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12640,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -21123,18 +21123,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12650,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12650,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12650,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21144,7 +21144,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12650,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -21154,23 +21154,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12650,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12660,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12660,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12660,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21180,7 +21180,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12660,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -21303,18 +21303,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12700,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12700,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12700,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -21324,7 +21324,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12700,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -21339,18 +21339,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 12710,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 12710,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12710,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21360,7 +21360,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12710,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -21370,23 +21370,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12710,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12720,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12720,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12720,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -21396,7 +21396,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12720,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -21442,23 +21442,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12730,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12740,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12740,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12740,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -21468,7 +21468,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12740,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -21483,18 +21483,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12750,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12750,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12750,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21504,7 +21504,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12750,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -21514,23 +21514,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12750,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12760,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12760,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12760,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -21540,7 +21540,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12760,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -21627,18 +21627,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 12790,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 12790,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 12790,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21648,7 +21648,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 12790,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -21730,23 +21730,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12810,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12820,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12820,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12820,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -21756,7 +21756,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12820,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -21802,7 +21802,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12830,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -21874,23 +21874,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12850,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 12860,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12860,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12860,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -21900,7 +21900,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 12860,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -21951,18 +21951,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12880,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 12880,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12880,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -21972,7 +21972,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12880,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -22023,18 +22023,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12900,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 12900,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12900,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22044,7 +22044,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 12900,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -22090,23 +22090,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 12910,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 12920,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 12920,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12920,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22116,7 +22116,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 12920,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -22131,18 +22131,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12930,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 12930,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12930,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22152,7 +22152,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12930,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -22162,23 +22162,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 12930,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 12940,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 12940,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12940,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22188,7 +22188,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 12940,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -22203,18 +22203,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 12950,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 12950,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12950,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22224,7 +22224,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12950,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -22234,7 +22234,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 12950,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -22275,18 +22275,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 12970,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 12970,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12970,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -22296,7 +22296,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 12970,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -22311,18 +22311,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12980,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 12980,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12980,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22332,7 +22332,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 12980,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -22419,18 +22419,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13010,
-  "message" : "Search returned 1 results",
-  "results" : [ "charlesgarcia" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 13010,
-  "message" : "Successfully selected charlesgarcia's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13010,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "charlesgarcia",
@@ -22440,7 +22440,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13010,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -22450,7 +22450,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13010,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -22491,18 +22491,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13030,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 13030,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13030,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -22512,7 +22512,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13030,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -22522,7 +22522,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13030,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -22594,7 +22594,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 13050,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -22671,18 +22671,18 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 13080,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 13080,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 13080,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22692,7 +22692,7 @@
   "user" : "bob35",
   "command" : "printCurrentPage",
   "timestamp" : 13080,
-  "message" : null
+  "message" : "Liked songs:\n\t[Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "bob35",
@@ -22743,18 +22743,18 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 13100,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 13100,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 13100,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22764,7 +22764,7 @@
   "user" : "david27",
   "command" : "printCurrentPage",
   "timestamp" : 13100,
-  "message" : null
+  "message" : "Liked songs:\n\t[Don't]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "david27",
@@ -22779,18 +22779,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13110,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 13110,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13110,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22800,7 +22800,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13110,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -22810,23 +22810,23 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13110,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 13120,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 13120,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 13120,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22836,7 +22836,7 @@
   "user" : "frank21",
   "command" : "printCurrentPage",
   "timestamp" : 13120,
-  "message" : null
+  "message" : "Liked songs:\n\t[Love Story]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "frank21",
@@ -22851,18 +22851,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13130,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 13130,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13130,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -22872,7 +22872,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13130,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -22882,23 +22882,23 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13130,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 13140,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "henry26",
   "timestamp" : 13140,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 13140,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -22908,7 +22908,7 @@
   "user" : "henry26",
   "command" : "printCurrentPage",
   "timestamp" : 13140,
-  "message" : null
+  "message" : "Liked songs:\n\t[Happier]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "henry26",
@@ -22954,7 +22954,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 13150,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -22995,18 +22995,18 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 13170,
-  "message" : "Search returned 1 results",
-  "results" : [ "matthewporter" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 13170,
-  "message" : "Successfully selected matthewporter's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 13170,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "matthewporter",
@@ -23016,7 +23016,7 @@
   "user" : "alice22",
   "command" : "printCurrentPage",
   "timestamp" : 13170,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "alice22",
@@ -23067,18 +23067,18 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 13190,
-  "message" : "Search returned 1 results",
-  "results" : [ "john99" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 13190,
-  "message" : "Successfully selected john99's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 13190,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "john99",
@@ -23088,7 +23088,7 @@
   "user" : "carol19",
   "command" : "printCurrentPage",
   "timestamp" : 13190,
-  "message" : null
+  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "carol19",
@@ -23139,18 +23139,18 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 13210,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 13210,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13210,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -23160,7 +23160,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13210,
-  "message" : null
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "emily30",
@@ -23170,7 +23170,7 @@
   "user" : "emily30",
   "command" : "printCurrentPage",
   "timestamp" : 13210,
-  "message" : "Liked songs:\n\t[Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Night Ethereal, Start Me Up, Blank Space]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -23211,18 +23211,18 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 13230,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 13230,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13230,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -23232,7 +23232,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13230,
-  "message" : null
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "grace25",
@@ -23242,7 +23242,7 @@
   "user" : "grace25",
   "command" : "printCurrentPage",
   "timestamp" : 13230,
-  "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Enigma Heart]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -23283,18 +23283,18 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 13250,
-  "message" : "Search returned 1 results",
-  "results" : [ "barmstrong" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 13250,
-  "message" : "Successfully selected barmstrong's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 13250,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "barmstrong",
@@ -23304,7 +23304,7 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 13250,
-  "message" : null
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "irene33",
@@ -23314,23 +23314,23 @@
   "user" : "irene33",
   "command" : "printCurrentPage",
   "timestamp" : 13250,
-  "message" : "Liked songs:\n\t[The Man]\n\nFollowed playlists:\n\t[]"
+  "message" : "Liked songs:\n\t[Glow Whisper, The Man]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 13260,
-  "message" : "Search returned 1 results",
-  "results" : [ "fwebb" ]
+  "message" : "Search returned 0 results",
+  "results" : [ ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 13260,
-  "message" : "Successfully selected fwebb's page."
+  "message" : "The selected ID is too high."
 }, {
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 13260,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "addAlbum",
   "user" : "fwebb",
@@ -23340,7 +23340,7 @@
   "user" : "jack29",
   "command" : "printCurrentPage",
   "timestamp" : 13260,
-  "message" : null
+  "message" : "Liked songs:\n\t[Delicate, Start Me Up]\n\nFollowed playlists:\n\t[]"
 }, {
   "command" : "changePage",
   "user" : "jack29",
@@ -25850,7 +25850,7 @@
   "command" : "showPreferredSongs",
   "user" : "emily30",
   "timestamp" : 14800,
-  "result" : [ "Start Me Up", "Blank Space" ]
+  "result" : [ "Night Ethereal", "Start Me Up", "Blank Space" ]
 }, {
   "command" : "showPlaylists",
   "user" : "frank21",
@@ -25890,7 +25890,7 @@
   "command" : "showPreferredSongs",
   "user" : "grace25",
   "timestamp" : 14820,
-  "result" : [ ]
+  "result" : [ "Enigma Heart" ]
 }, {
   "command" : "showPlaylists",
   "user" : "henry26",
@@ -25930,7 +25930,7 @@
   "command" : "showPreferredSongs",
   "user" : "irene33",
   "timestamp" : 14840,
-  "result" : [ "The Man" ]
+  "result" : [ "Glow Whisper", "The Man" ]
 }, {
   "command" : "showPlaylists",
   "user" : "jack29",
@@ -25963,4 +25963,8 @@
   "command" : "getTop5Songs",
   "timestamp" : 14850,
   "result" : [ "Start Me Up", "Blank Space", "Don't", "The Man", "Delicate" ]
+}, {
+  "command" : "getTop5Albums",
+  "timestamp" : 14850,
+  "result" : [ "Groovy Harmonies", "Bad Dirt", "Teen Technology", "Electric Funeral ", "Breezy View" ]
 } ]

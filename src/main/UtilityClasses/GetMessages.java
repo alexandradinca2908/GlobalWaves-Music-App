@@ -1,9 +1,6 @@
 package main.UtilityClasses;
 
-import fileio.input.EpisodeInput;
-import fileio.input.LibraryInput;
-import fileio.input.SongInput;
-import fileio.input.UserInput;
+import fileio.input.*;
 import main.CommandHelper.Search;
 import main.CreatorClasses.ArtistClasses.Event;
 import main.CreatorClasses.ArtistClasses.Management;
@@ -20,9 +17,9 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.SongClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
-import main.VisitorPattern.VisitorString.VisitDeleteUser;
-import main.VisitorPattern.VisitorString.VisitNextMessage;
-import main.VisitorPattern.VisitorString.VisitPrevMessage;
+import main.VisitorPattern.VisitorString.Classes.VisitDeleteUser;
+import main.VisitorPattern.VisitorString.Classes.VisitNext;
+import main.VisitorPattern.VisitorString.Classes.VisitPrev;
 import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
@@ -215,7 +212,7 @@ public final class GetMessages {
             int duration = copyItem.getAlbum().getDuration();
             int timeLeft;
 
-            for (SongInput song : copyItem.getAlbum().getSongs()) {
+            for (SongInput song : copyItem.getShuffledAlbum()) {
                 duration -= song.getDuration();
 
                 if (duration < copyItem.getRemainingTime()) {
@@ -413,8 +410,10 @@ public final class GetMessages {
         int loaded = 0;
         int isSong = 0;
         int isPlaylist = 0;
+        int isAlbum = 0;
         SongInput crtSong = null;
         PlaylistSelection crtPlaylist = null;
+        AlbumSelection crtAlbum = null;
 
         for (ItemSelection item : player) {
             if (item.getUser().equals(crtCommand.getUsername())) {
@@ -425,6 +424,9 @@ public final class GetMessages {
                 } else if (item instanceof PlaylistSelection) {
                     isPlaylist = 1;
                     crtPlaylist = (PlaylistSelection) item;
+                } else if (item instanceof AlbumSelection) {
+                    isAlbum = 1;
+                    crtAlbum = (AlbumSelection) item;
                 }
                 break;
             }
@@ -433,7 +435,7 @@ public final class GetMessages {
         if (loaded == 0) {
             message = "Please load a source before liking or unliking.";
 
-        } else if (isSong == 0 && isPlaylist == 0) {
+        } else if (isSong == 0 && isPlaylist == 0 && isAlbum == 0) {
             message = "Loaded source is not a song.";
 
         } else if (isSong == 1) {
@@ -486,7 +488,7 @@ public final class GetMessages {
             } else {
                 message = "ERROR. User not found";
             }
-        } else {
+        } else if (isPlaylist == 1) {
             //  We need to calculate which song we are currently at and store it
             SongInput crtSongInPlaylist = null;
             int duration = crtPlaylist.getPlaylist().getDuration();
@@ -552,6 +554,71 @@ public final class GetMessages {
                 message = "ERROR. User not found";
             }
 
+        } else {
+            //  We need to calculate which song we are currently at and store it
+            SongInput crtSongInAlbum = null;
+            int duration = crtAlbum.getAlbum().getDuration();
+
+            //  Calculating based on current time
+            crtAlbum.updateRemainingTime(crtCommand.getTimestamp());
+
+            for (SongInput song : crtAlbum.getAlbum().getSongs()) {
+                duration -= song.getDuration();
+
+                if (duration <= crtAlbum.getRemainingTime()) {
+                    crtSongInAlbum = song;
+                    break;
+                }
+            }
+
+            //  The loaded song is checked. We can add/remove it from liked songs
+            UserPlaylists user = null;
+
+            for (UserPlaylists crtUser : usersPlaylists) {
+                if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
+                    user = crtUser;
+                    break;
+                }
+            }
+
+            if (user != null) {
+                //  We search the current song
+                int found = 0;
+                for (SongInput song : user.getLikedSongs()) {
+                    if (song.equals(crtSongInAlbum)) {
+                        found = 1;
+                        user.getLikedSongs().remove(song);
+
+                        break;
+                    }
+                }
+
+                if (found == 0) {
+                    //  Add like
+                    user.getLikedSongs().add(crtSongInAlbum);
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSongInAlbum)) {
+                            song.setLikes(song.getLikes() + 1);
+                            break;
+                        }
+                    }
+
+                    message = "Like registered successfully.";
+                } else {
+                    //  Also remove the like from the song
+                    for (SongLikes song : songsLikes) {
+                        if (song.getSong().equals(crtSongInAlbum)) {
+                            song.setLikes(song.getLikes() - 1);
+                            break;
+                        }
+                    }
+
+                    message = "Unlike registered successfully.";
+                }
+
+            } else {
+                message = "ERROR. User not found";
+            }
         }
 
         return message;
@@ -709,7 +776,7 @@ public final class GetMessages {
             message = "Please load a source before skipping to the next track.";
         } else {
             //  Now we can execute the command
-            VisitorString visitNextMessage = new VisitNextMessage(player,
+            VisitorString visitNextMessage = new VisitNext(player,
                     podcasts, crtCommand);
 
             message = crtItem.acceptString(visitNextMessage);
@@ -733,7 +800,7 @@ public final class GetMessages {
             message = "Please load a source before returning to the previous track.";
         } else {
             //  Now we can execute the command
-            VisitorString visitPrevMessage = new VisitPrevMessage(crtCommand);
+            VisitorString visitPrevMessage = new VisitPrev(crtCommand);
 
             message = crtItem.acceptString(visitPrevMessage);
         }
@@ -870,7 +937,21 @@ public final class GetMessages {
             message = crtCommand.getUsername() + " is not a normal user.";
         } else {
             //  The user exists and is normal. Status can be updated
+
+            //  First we update timestamps
             updatePlayer(player, crtCommand, podcasts, library);
+
+            //  Then we set the user's start time from where he left off
+            if (!crtUser.isOnline()) {
+                for (ItemSelection item : player) {
+                    if (item.getUser().equals(crtUser.getUsername())) {
+                        item.setStartTime(crtCommand.getTimestamp());
+                        break;
+                    }
+                }
+            }
+
+            //  Switch status
             crtUser.setOnline(!crtUser.isOnline());
 
             message = crtUser.getUsername() + " has changed status successfully.";
@@ -970,7 +1051,8 @@ public final class GetMessages {
     public static String getAddAlbumMessage(final Command crtCommand,
                                             final LibraryInput library,
                                             final ArrayList<UserPlaylists> usersPlaylists,
-                                            final ArrayList<Album> albums) {
+                                            final ArrayList<Album> albums,
+                                            final ArrayList<SongLikes> songsLikes) {
         String message;
 
         UserInput artist = null;
@@ -1062,8 +1144,16 @@ public final class GetMessages {
                     albums.add(newAlbum);
 
                     //  Add songs in library
+                    //  Add songs in songs likes
+                    //  Add songs with like count in album
                     for (SongInput song : newAlbum.getSongs()) {
                         library.getSongs().add(song);
+
+                        SongLikes newSong = new SongLikes();
+                        newSong.setSong(song);
+
+                        songsLikes.add(newSong);
+                        newAlbum.getSongsWithLikes().add(newSong);
                     }
 
                     message = crtCommand.getUsername()
@@ -1248,7 +1338,8 @@ public final class GetMessages {
                                               final ArrayList<UserPlaylists> usersPlaylists,
                                               final ArrayList<Album> albums,
                                               final ArrayList<SongLikes> songsLikes,
-                                              final ArrayList<Page> pageSystem) {
+                                              final ArrayList<Page> pageSystem,
+                                              final ArrayList<PodcastSelection> podcasts) {
         String message = null;
 
         //  Searching the user through database
@@ -1337,6 +1428,15 @@ public final class GetMessages {
                     }
                     usersPlaylists.remove(deleteUserPlaylists);
 
+                    //  Delete user's page
+                    for (Page page : pageSystem) {
+                        if (page.getPageOwner().getUsername()
+                                .equals(crtCommand.getUsername())) {
+                            pageSystem.remove(page);
+                            break;
+                        }
+                    }
+
                     //  Lastly delete the user themselves
                     library.getUsers().remove(crtUser);
 
@@ -1379,6 +1479,72 @@ public final class GetMessages {
                         //  Delete album
                         albums.remove(album);
                     }
+
+                    //  Delete user's page
+                    for (Page page : pageSystem) {
+                        if (page.getPageOwner().getUsername()
+                                .equals(crtCommand.getUsername())) {
+                            pageSystem.remove(page);
+                            break;
+                        }
+                    }
+
+                    //  Now delete the user from the database
+                    UserPlaylists deleteUserPlaylists = null;
+                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                        if (userPlaylists.getUser().equals(crtUser)) {
+                            deleteUserPlaylists = userPlaylists;
+                            break;
+                        }
+                    }
+                    usersPlaylists.remove(deleteUserPlaylists);
+
+                    //  Lastly delete the user themselves
+                    library.getUsers().remove(crtUser);
+
+                    message = crtUser.getUsername() + " was successfully deleted.";
+                }
+                if (crtUser.getType().equals("host")) {
+                    //  Collect all deletable podcasts
+                    ArrayList<PodcastInput> removables = new ArrayList<>();
+                    for (PodcastInput podcast : library.getPodcasts()) {
+                        if (podcast.getOwner().equals(crtUser.getUsername())) {
+                            removables.add(podcast);
+                        }
+                    }
+
+                    //  Delete podcasts from library
+                    for (PodcastInput podcast1 : removables) {
+                        library.getPodcasts().remove(podcast1);
+
+                        //  Delete podcasts from paused podcasts
+                        for (PodcastSelection podcast2 : podcasts) {
+                            if (podcast2.getPodcast().equals(podcast1)) {
+                                podcasts.remove(podcast2);
+                                break;
+                            }
+                        }
+                    }
+
+                    //  Delete user's page
+                    for (Page page : pageSystem) {
+                        if (page.getPageOwner().getUsername()
+                                .equals(crtCommand.getUsername())) {
+                            pageSystem.remove(page);
+                            break;
+                        }
+                    }
+
+                    //  Now delete the user from the database
+                    UserPlaylists deleteUserPlaylists = null;
+                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                        if (userPlaylists.getUser().equals(crtUser)) {
+                            deleteUserPlaylists = userPlaylists;
+                            break;
+                        }
+                    }
+                    usersPlaylists.remove(deleteUserPlaylists);
+
                     //  Lastly delete the user themselves
                     library.getUsers().remove(crtUser);
 
