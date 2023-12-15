@@ -1,7 +1,7 @@
 Starting audit...
 [ERROR] D:\JetBrains\etapa-2-POO\.\src\main\Main.java:128:5: Method length is 429 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\DoCommands.java:56:5: Method length is 232 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\DoCommands.java:1239:5: Method length is 198 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\Do\DoCommands.java:59:5: Method length is 232 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\Do\DoCommands.java:1242:5: Method length is 198 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\GetMessages.java:1: File length is 2,272 lines (max allowed is 2,000). [FileLength]
 [ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\GetMessages.java:408:5: Method length is 236 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-2-POO\.\src\main\UtilityClasses\GetMessages.java:1386:5: Method length is 216 lines (max allowed is 150). [MethodLength]
