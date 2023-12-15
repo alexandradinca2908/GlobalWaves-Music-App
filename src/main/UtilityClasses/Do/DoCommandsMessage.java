@@ -1,4 +1,4 @@
-package main.UtilityClasses;
+package main.UtilityClasses.Do;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -14,6 +14,7 @@ import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PodcastSelection;
+import main.UtilityClasses.GetMessages;
 
 import java.util.ArrayList;
 
