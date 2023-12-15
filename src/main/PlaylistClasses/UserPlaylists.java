@@ -61,7 +61,7 @@ public final class UserPlaylists {
         return podcasts;
     }
 
-    public void setPodcasts(ArrayList<PodcastInput> podcasts) {
+    public void setPodcasts(final ArrayList<PodcastInput> podcasts) {
         this.podcasts = podcasts;
     }
 }

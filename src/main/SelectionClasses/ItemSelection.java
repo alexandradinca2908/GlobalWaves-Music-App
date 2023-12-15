@@ -2,10 +2,6 @@ package main.SelectionClasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.EpisodeInput;
-import fileio.input.SongInput;
-import main.SelectionClasses.Playlists.AlbumSelection;
-import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.VisitorPattern.VisitorObjectNode.VisitGetStats;
 import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
@@ -164,6 +160,12 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
         return null;
     }
 
+    /**
+     * This method accepts visitors for the ItemSelection subclasses
+     *
+     * @param visitor Visitor
+     * @return Command Output
+     */
     @Override
     public ObjectNode acceptObjectNode(final VisitorObjectNode visitor) {
         return null;

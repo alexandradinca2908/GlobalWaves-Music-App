@@ -6,7 +6,7 @@ import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 import main.VisitorPattern.VisitorString.VisitorString;
 
-public class VisitRepeat implements VisitorString {
+public final class VisitRepeat implements VisitorString {
     @Override
     public String visitString(final SongSelection crtItem) {
         String message = null;

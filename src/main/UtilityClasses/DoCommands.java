@@ -267,7 +267,7 @@ public final class DoCommands {
             }
 
             case "host" -> {
-                ArrayList<String> hostNames =SearchSelect
+                ArrayList<String> hostNames = SearchSelect
                         .setCreatorSearchResults(crtCommand,
                                 library, searchOutput);
 
@@ -352,7 +352,7 @@ public final class DoCommands {
                     .subList(2, crtSearch.getLastSearchResult().size()).clear();
 
             //  Last result is initialized properly for loading
-            crtSearch.setSteps(1,1);
+            crtSearch.setSteps(1, 1);
         }
 
         //  If an artist was selected, we change the user's page
@@ -1667,6 +1667,15 @@ public final class DoCommands {
         return showAlbumsOutput;
     }
 
+    /**
+     * Main method call for doPrintCurrentPage command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param pageSystem Array of all the pages in the system
+     * @param library Singleton containing all songs, users and podcasts
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doPrintCurrentPage(final ObjectMapper objectMapper,
                                                 final Command crtCommand,
                                                 final ArrayList<Page> pageSystem,
@@ -1860,6 +1869,15 @@ public final class DoCommands {
         return printCurrentPageOutput;
     }
 
+    /**
+     * Main method call for doAddEvent command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param managements The array containing events and merch of all artists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doAddEvent(final ObjectMapper objectMapper,
                                         final LibraryInput library,
                                         final Command crtCommand,
@@ -1878,6 +1896,15 @@ public final class DoCommands {
         return addEventOutput;
     }
 
+    /**
+     * Main method call for doAddMerch command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param managements The array containing events and merch of all artists
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doAddMerch(final ObjectMapper objectMapper,
                                         final LibraryInput library,
                                         final Command crtCommand,
@@ -1895,6 +1922,15 @@ public final class DoCommands {
 
         return addMerchOutput;
     }
+
+    /**
+     * Main method call for doGetAllUsers command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doGetAllUsers(final ObjectMapper objectMapper,
                                            final LibraryInput library,
                                            final Command crtCommand) {
@@ -1931,6 +1967,21 @@ public final class DoCommands {
         return getAllUsersOutput;
     }
 
+    /**
+     * Main method call for doDeleteUser command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param playlists The array of all user playlists
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param albums The array of all albums in the database
+     * @param songsLikes The array of songs and their respective likes
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     * @param pageSystem Array of all the pages in the system
+     * @return ObjectNode of the final JSON
+     */
     public static ObjectNode doDeleteUser(final ObjectMapper objectMapper,
                                           final LibraryInput library,
                                           final Command crtCommand,
@@ -1958,5 +2009,297 @@ public final class DoCommands {
         deleteUserOutput.put("message", message);
 
         return deleteUserOutput;
+    }
+
+    /**
+     * Main method call for doAddPodcast command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doAddPodcast(final ObjectMapper objectMapper,
+                                          final Command crtCommand,
+                                          final LibraryInput library,
+                                          final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode addPodcastOutput = objectMapper.createObjectNode();
+
+        addPodcastOutput.put("command", "addPodcast");
+        addPodcastOutput.put("user", crtCommand.getUsername());
+        addPodcastOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddPodcastMessage(library, crtCommand,
+                usersPlaylists);
+        addPodcastOutput.put("message", message);
+
+        return addPodcastOutput;
+    }
+
+    /**
+     * Main method call for doAddAnnouncement command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param hostInfos The array containing all annnouncements for every artist
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doAddAnnouncement(final ObjectMapper objectMapper,
+                                               final Command crtCommand,
+                                               final LibraryInput library,
+                                               final ArrayList<HostInfo> hostInfos) {
+        ObjectNode addAnnouncementOutput = objectMapper.createObjectNode();
+
+        addAnnouncementOutput.put("command", "addAnnouncement");
+        addAnnouncementOutput.put("user", crtCommand.getUsername());
+        addAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getAddAnnouncementMessage(library,
+                crtCommand, hostInfos);
+        addAnnouncementOutput.put("message", message);
+
+        return addAnnouncementOutput;
+    }
+
+    /**
+     * Main method call for doRemoveAnnouncement command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param hostInfos The array containing all annnouncements for every artist
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doRemoveAnnouncement(final ObjectMapper objectMapper,
+                                                  final Command crtCommand,
+                                                  final LibraryInput library,
+                                                  final ArrayList<HostInfo> hostInfos) {
+        ObjectNode removeAnnouncementOutput = objectMapper.createObjectNode();
+
+        removeAnnouncementOutput.put("command", "removeAnnouncement");
+        removeAnnouncementOutput.put("user", crtCommand.getUsername());
+        removeAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getRemoveAnnouncementMessage(library,
+                crtCommand, hostInfos);
+
+        removeAnnouncementOutput.put("message", message);
+
+        return removeAnnouncementOutput;
+    }
+
+    /**
+     * Main method call for doShowPodcasts command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doShowPodcasts(final ObjectMapper objectMapper,
+                                            final Command crtCommand,
+                                            final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode showPodcastsOutput = objectMapper.createObjectNode();
+
+        showPodcastsOutput.put("command", "showPodcasts");
+        showPodcastsOutput.put("user", crtCommand.getUsername());
+        showPodcastsOutput.put("timestamp", crtCommand.getTimestamp());
+
+        UserPlaylists crtUser = null;
+
+        //  Search for the user's playlists
+        for (UserPlaylists userPlaylists : usersPlaylists) {
+            String username = userPlaylists.getUser().getUsername();
+            if (username.equals(crtCommand.getUsername())) {
+                crtUser = userPlaylists;
+                break;
+            }
+        }
+
+        ArrayList<ObjectNode> result = new ArrayList<>();
+
+        if (crtUser != null) {
+            for (PodcastInput podcast : crtUser.getPodcasts()) {
+                ObjectNode resultNode = objectMapper.createObjectNode();
+
+                //  Set album data
+                resultNode.put("name", podcast.getName());
+
+                ArrayList<String> episodeNames = new ArrayList<>();
+                ArrayList<EpisodeInput> episodes = podcast.getEpisodes();
+
+                for (EpisodeInput episode : episodes) {
+                    episodeNames.add(episode.getName());
+                }
+                resultNode.putPOJO("episodes", episodeNames);
+
+                result.add(resultNode);
+            }
+        }
+
+        showPodcastsOutput.putPOJO("result", result);
+
+        return showPodcastsOutput;
+    }
+
+    /**
+     * Main method call for doRemoveAlbum command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param playlists The array of all user playlists
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param albums The array of all albums in the database
+     * @param songsLikes The array of songs and their respective likes
+     * @param player The array that keeps all user players in check]
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doRemoveAlbum(final ObjectMapper objectMapper,
+                                           final Command crtCommand,
+                                           final LibraryInput library,
+                                           final ArrayList<UserPlaylists> usersPlaylists,
+                                           final ArrayList<ItemSelection> player,
+                                           final ArrayList<Playlist> playlists,
+                                           final ArrayList<SongLikes> songsLikes,
+                                           final ArrayList<Album> albums) {
+        ObjectNode removeAlbumOutput = objectMapper.createObjectNode();
+
+        removeAlbumOutput.put("command", "removeAlbum");
+        removeAlbumOutput.put("user", crtCommand.getUsername());
+        removeAlbumOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getRemoveAlbumMessage(library, crtCommand,
+                usersPlaylists, player, playlists, songsLikes,
+                albums);
+
+        removeAlbumOutput.put("message", message);
+
+        return removeAlbumOutput;
+    }
+
+    /**
+     * Main method call for doChangePage command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param pageSystem Array of all the pages in the system
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doChangePage(final ObjectMapper objectMapper,
+                                          final Command crtCommand,
+                                          final ArrayList<Page> pageSystem,
+                                          final ArrayList<UserPlaylists> usersPlaylists) {
+        ObjectNode changePageOutput = objectMapper.createObjectNode();
+
+        changePageOutput.put("command", "changePage");
+        changePageOutput.put("user", crtCommand.getUsername());
+        changePageOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getChangePageMessage(crtCommand,
+                usersPlaylists, pageSystem);
+
+        changePageOutput.put("message", message);
+
+        return changePageOutput;
+    }
+
+    /**
+     * Main method call for doRemovePodcast command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param player The array that keeps all user players in check]
+     * @param library Singleton containing all songs, users and podcasts
+     * @param podcasts The array that keeps track of all the podcasts
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doRemovePodcast(final ObjectMapper objectMapper,
+                                             final Command crtCommand,
+                                             final ArrayList<UserPlaylists> usersPlaylists,
+                                             final ArrayList<ItemSelection> player,
+                                             final LibraryInput library,
+                                             final ArrayList<PodcastSelection> podcasts) {
+        ObjectNode removePodcastOutput = objectMapper.createObjectNode();
+
+        removePodcastOutput.put("command", "removePodcast");
+        removePodcastOutput.put("user", crtCommand.getUsername());
+        removePodcastOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getRemovePodcastMessage(crtCommand,
+                usersPlaylists, player, library, podcasts);
+
+        removePodcastOutput.put("message", message);
+
+        return removePodcastOutput;
+    }
+
+    /**
+     * Main method call for doRemoveEvent command
+     *
+     * @param objectMapper Object Mapper
+     * @param library Singleton containing all songs, users and podcasts
+     * @param crtCommand Current command
+     * @param managements The array containing events and merch of all artists
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doRemoveEvent(final ObjectMapper objectMapper,
+                                           final Command crtCommand,
+                                           final LibraryInput library,
+                                           final ArrayList<Management> managements) {
+        ObjectNode removeEventOutput = objectMapper.createObjectNode();
+
+        removeEventOutput.put("command", "removeEvent");
+        removeEventOutput.put("user", crtCommand.getUsername());
+        removeEventOutput.put("timestamp", crtCommand.getTimestamp());
+
+        String message = getRemoveEventMessage(crtCommand,
+                library, managements);
+
+        removeEventOutput.put("message", message);
+
+        return removeEventOutput;
+    }
+
+    /**
+     * Main method call for doGetTop5Albums command
+     *
+     * @param objectMapper Object Mapper
+     * @param crtCommand Current command
+     * @param albums The array of all albums in the database
+     * @return ObjectNode of the final JSON
+     */
+    public static ObjectNode doGetTop5Albums(final ObjectMapper objectMapper,
+                                             final Command crtCommand,
+                                             final ArrayList<Album> albums) {
+        ObjectNode topAlbumsOutput = objectMapper.createObjectNode();
+
+        topAlbumsOutput.put("command", "getTop5Albums");
+        topAlbumsOutput.put("timestamp", crtCommand.getTimestamp());
+
+        //  Sort the songs in a separate array and then take the first 5 results
+        ArrayList<Album> sortedAlbumsByLikes = new ArrayList<>(albums);
+        sortedAlbumsByLikes.sort((album1, album2) -> album2.calculateAlbumLikes()
+                - album1.calculateAlbumLikes());
+
+        //  Truncate the result to 5
+        if (sortedAlbumsByLikes.size() > Constants.MAX_SIZE_5) {
+            sortedAlbumsByLikes.subList(Constants.MAX_SIZE_5,
+                    sortedAlbumsByLikes.size()).clear();
+        }
+
+        //  Store names
+        ArrayList<String> result = new ArrayList<>();
+        for (Album album : sortedAlbumsByLikes) {
+            result.add(album.getName());
+        }
+
+        topAlbumsOutput.putPOJO("result", result);
+
+        return topAlbumsOutput;
     }
 }

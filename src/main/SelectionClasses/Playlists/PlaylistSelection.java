@@ -11,7 +11,9 @@ import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
 
-public final class PlaylistSelection extends ItemSelection implements VisitableString, VisitableObjectNode {
+public final class PlaylistSelection
+        extends ItemSelection
+        implements VisitableString, VisitableObjectNode {
     private Playlist playlist;
     private ArrayList<SongInput> shuffledPlaylist = new ArrayList<>();
     private int startTimestamp;
@@ -47,7 +49,7 @@ public final class PlaylistSelection extends ItemSelection implements VisitableS
         return shuffledPlaylist;
     }
 
-    public void setShuffledPlaylist(ArrayList<SongInput> shuffledPlaylist) {
+    public void setShuffledPlaylist(final ArrayList<SongInput> shuffledPlaylist) {
         this.shuffledPlaylist = shuffledPlaylist;
     }
 

@@ -7,7 +7,9 @@ import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
 
-public final class SongSelection extends ItemSelection implements VisitableString, VisitableObjectNode {
+public final class SongSelection
+        extends ItemSelection
+        implements VisitableString, VisitableObjectNode {
     private SongInput song;
 
     public SongSelection() {

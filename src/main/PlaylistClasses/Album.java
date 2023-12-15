@@ -4,7 +4,7 @@ import main.SongClasses.SongLikes;
 
 import java.util.ArrayList;
 
-public final class Album extends Playlist{
+public final class Album extends Playlist {
     private int releaseYear;
     private String description;
     private ArrayList<SongLikes> songsWithLikes = new ArrayList<>();
@@ -30,7 +30,7 @@ public final class Album extends Playlist{
         return songsWithLikes;
     }
 
-    public void setSongsWithLikes(ArrayList<SongLikes> songsWithLikes) {
+    public void setSongsWithLikes(final ArrayList<SongLikes> songsWithLikes) {
         this.songsWithLikes = songsWithLikes;
     }
 

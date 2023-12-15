@@ -12,7 +12,7 @@ public final class HostInfo {
         return host;
     }
 
-    public void setHost(UserInput host) {
+    public void setHost(final UserInput host) {
         this.host = host;
     }
 
@@ -20,7 +20,7 @@ public final class HostInfo {
         return announcements;
     }
 
-    public void setAnnouncements(ArrayList<Announcement> announcements) {
+    public void setAnnouncements(final ArrayList<Announcement> announcements) {
         this.announcements = announcements;
     }
 }

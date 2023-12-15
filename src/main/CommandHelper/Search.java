@@ -1,13 +1,11 @@
 package main.CommandHelper;
 
-import fileio.input.UserInput;
-
 import java.util.ArrayList;
 
 public final class Search {
     private String user;
     private ArrayList<String> lastSearchResult = new ArrayList<>();
-    int[] steps = new int[2];
+    private int[] steps = new int[2];
 
     public Search() {
     }
@@ -16,7 +14,7 @@ public final class Search {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(final String user) {
         this.user = user;
     }
 

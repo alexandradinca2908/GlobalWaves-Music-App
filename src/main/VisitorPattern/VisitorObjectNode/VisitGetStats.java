@@ -2,31 +2,20 @@ package main.VisitorPattern.VisitorObjectNode;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
-import fileio.input.LibraryInput;
-import fileio.input.PodcastInput;
 import fileio.input.SongInput;
-import main.CommandHelper.Command;
-import main.Main;
-import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
 
-import java.util.ArrayList;
+public final class VisitGetStats implements VisitorObjectNode {
+    private ObjectNode stats;
 
-public class VisitGetStats implements VisitorObjectNode {
-    ObjectNode stats;
-    ArrayList<ItemSelection> player;
-    Command crtCommand;
-    ArrayList<PodcastInput> podcasts;
-    LibraryInput library;
-
-    public VisitGetStats(ObjectNode stats) {
+    public VisitGetStats(final ObjectNode stats) {
         this.stats = stats;
     }
     @Override
-    public ObjectNode visitObjectNode(SongSelection reqItem) {
+    public ObjectNode visitObjectNode(final SongSelection reqItem) {
         SongInput songItem = reqItem.getSong();
 
         //  Check remaining time
@@ -55,7 +44,7 @@ public class VisitGetStats implements VisitorObjectNode {
     }
 
     @Override
-    public ObjectNode visitObjectNode(PodcastSelection reqItem) {
+    public ObjectNode visitObjectNode(final PodcastSelection reqItem) {
         //  Check remaining time
         int remainingTime = reqItem.getRemainingTime();
 
@@ -99,7 +88,7 @@ public class VisitGetStats implements VisitorObjectNode {
     }
 
     @Override
-    public ObjectNode visitObjectNode(PlaylistSelection reqItem) {
+    public ObjectNode visitObjectNode(final PlaylistSelection reqItem) {
         //  Check remaining time
         int remainingTime = reqItem.getRemainingTime();
 
@@ -155,7 +144,7 @@ public class VisitGetStats implements VisitorObjectNode {
     }
 
     @Override
-    public ObjectNode visitObjectNode(AlbumSelection reqItem) {
+    public ObjectNode visitObjectNode(final AlbumSelection reqItem) {
         //  Check remaining time
         int remainingTime = reqItem.getRemainingTime();
 

@@ -2,11 +2,8 @@ package main.PagingClasses;
 
 import fileio.input.UserInput;
 import main.CreatorClasses.ArtistClasses.Management;
-import main.CreatorClasses.HostClasses.Announcement;
 import main.CreatorClasses.HostClasses.HostInfo;
 import main.PlaylistClasses.UserPlaylists;
-
-import java.util.ArrayList;
 
 public final class Page {
     private UserInput pageOwner;
@@ -53,7 +50,7 @@ public final class Page {
         return hostInfo;
     }
 
-    public void setHostInfo(HostInfo hostInfo) {
+    public void setHostInfo(final HostInfo hostInfo) {
         this.hostInfo = hostInfo;
     }
 }
