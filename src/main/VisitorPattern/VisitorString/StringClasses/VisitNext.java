@@ -1,9 +1,11 @@
-package main.VisitorPattern.VisitorString.Classes;
+package main.VisitorPattern.VisitorString.StringClasses;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;
 import main.CommandHelper.Command;
-import main.SelectionClasses.*;
+import main.SelectionClasses.SongSelection;
+import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.VisitorPattern.VisitorString.VisitorString;

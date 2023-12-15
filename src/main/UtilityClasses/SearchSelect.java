@@ -10,7 +10,8 @@ import main.CommandHelper.Filters;
 import main.CommandHelper.Search;
 import main.PlaylistClasses.Album;
 import main.PlaylistClasses.Playlist;
-import main.SelectionClasses.*;
+import main.SelectionClasses.PodcastSelection;
+import main.SelectionClasses.SongSelection;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 
@@ -212,7 +213,7 @@ public final class SearchSelect {
      *
      * @param filters Search filters
      * @param result Found podcasts
-     * @param library Library containing all the songs
+     * @param library Library containing all the podcasts
      */
     public static void searchForPodcasts(final Filters filters,
                                          final ArrayList<PodcastInput> result,
@@ -295,6 +296,14 @@ public final class SearchSelect {
         }
     }
 
+    /**
+     * This command filters the creators based on the search filter
+     *
+     * @param filters Search filters
+     * @param result Found creators
+     * @param library Library containing all the users
+     * @param crtCommand Current command
+     */
     public static void searchForCreators(final Filters filters,
                                          final ArrayList<UserInput> result,
                                          final LibraryInput library,
@@ -310,6 +319,15 @@ public final class SearchSelect {
         }
     }
 
+    /**
+     * This command retrieves the first 5 creators found
+     * based on the search filter
+     *
+     * @param library Library containing all the users
+     * @param crtCommand Current command
+     * @param searchOutput Final JSON output for the given command
+     * @return Creator names
+     */
     public static ArrayList<String> setCreatorSearchResults(final Command crtCommand,
                                                             final LibraryInput library,
                                                             final ObjectNode searchOutput) {

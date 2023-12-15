@@ -2,7 +2,7 @@ package main.SelectionClasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import main.VisitorPattern.VisitorObjectNode.VisitGetStats;
+import main.VisitorPattern.VisitorObjectNode.ObjectNodeClasses.VisitGetStats;
 import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;

@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString.Classes;
+package main.VisitorPattern.VisitorString.StringClasses;
 
 import main.CommandHelper.Command;
 import main.SelectionClasses.Playlists.AlbumSelection;

@@ -20,7 +20,7 @@ import main.PlaylistClasses.Playlist;
 import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PodcastSelection;
-import main.SongClasses.SongLikes;
+import main.LikeClasses.SongLikes;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +30,47 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import static main.UtilityClasses.DoCommands.*;
+import static main.UtilityClasses.DoCommands.doSearch;
+import static main.UtilityClasses.DoCommands.doSelect;
+import static main.UtilityClasses.DoCommands.doLoad;
+import static main.UtilityClasses.DoCommands.doGetTop5Albums;
+import static main.UtilityClasses.DoCommands.doGetTop5Artists;
+import static main.UtilityClasses.DoCommands.doStatus;
+import static main.UtilityClasses.DoCommands.doShuffle;
+import static main.UtilityClasses.DoCommands.doShowPreferredSongs;
+import static main.UtilityClasses.DoCommands.doShowPodcasts;
+import static main.UtilityClasses.DoCommands.doShowPlaylists;
+import static main.UtilityClasses.DoCommands.doShowAlbums;
+import static main.UtilityClasses.DoCommands.doRepeat;
+import static main.UtilityClasses.DoCommands.doPrintCurrentPage;
+import static main.UtilityClasses.DoCommands.doPlayPause;
+import static main.UtilityClasses.DoCommands.doGetTop5Songs;
+import static main.UtilityClasses.DoCommands.doGetTop5Playlists;
+import static main.UtilityClasses.DoCommands.doGetOnlineUsers;
+import static main.UtilityClasses.DoCommands.doGetAllUsers;
+import static main.UtilityClasses.DoCommands.doFollow;
+import static main.UtilityClasses.DoCommands.doCreatePlaylist;
+
+import static main.UtilityClasses.DoCommandsMessage.doAddAlbum;
+import static main.UtilityClasses.DoCommandsMessage.doAddAnnouncement;
+import static main.UtilityClasses.DoCommandsMessage.doAddEvent;
+import static main.UtilityClasses.DoCommandsMessage.doAddMerch;
+import static main.UtilityClasses.DoCommandsMessage.doAddPodcast;
+import static main.UtilityClasses.DoCommandsMessage.doAddRemoveInPlaylist;
+import static main.UtilityClasses.DoCommandsMessage.doSwitchVisibility;
+import static main.UtilityClasses.DoCommandsMessage.doSwitchConnectionStatus;
+import static main.UtilityClasses.DoCommandsMessage.doRemovePodcast;
+import static main.UtilityClasses.DoCommandsMessage.doRemoveEvent;
+import static main.UtilityClasses.DoCommandsMessage.doRemoveAnnouncement;
+import static main.UtilityClasses.DoCommandsMessage.doRemoveAlbum;
+import static main.UtilityClasses.DoCommandsMessage.doPrev;
+import static main.UtilityClasses.DoCommandsMessage.doNext;
+import static main.UtilityClasses.DoCommandsMessage.doLike;
+import static main.UtilityClasses.DoCommandsMessage.doForward;
+import static main.UtilityClasses.DoCommandsMessage.doDeleteUser;
+import static main.UtilityClasses.DoCommandsMessage.doChangePage;
+import static main.UtilityClasses.DoCommandsMessage.doBackward;
+import static main.UtilityClasses.DoCommandsMessage.doAddUser;
 
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
@@ -389,7 +429,7 @@ public final class Main {
                 case "printCurrentPage" -> {
                     ObjectNode printCurrentPageOutput;
                     printCurrentPageOutput = doPrintCurrentPage(objectMapper,
-                            crtCommand, pageSystem, library);
+                            crtCommand, pageSystem, library, songsLikes);
 
                     outputs.add(printCurrentPageOutput);
                 }
@@ -500,6 +540,14 @@ public final class Main {
                     outputs.add(topAlbumsOutput);
                 }
 
+                case "getTop5Artists" -> {
+                    ObjectNode topArtistsOutput;
+                    topArtistsOutput = doGetTop5Artists(objectMapper,
+                            crtCommand, usersPlaylists);
+
+                    outputs.add(topArtistsOutput);
+                }
+
                 default -> {
                 }
             }
@@ -553,9 +601,6 @@ public final class Main {
 
         removableItems.clear();
     }
-
-
-
 
 }
 

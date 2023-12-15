@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString.Classes;
+package main.VisitorPattern.VisitorString.StringClasses;
 
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
@@ -69,7 +69,11 @@ public final class VisitRepeat implements VisitorString {
                 message = "Repeat mode changed to repeat current song.";
 
                 //  Setting intervals for the song loop
-                PlaylistSelection.setIntervals(crtItem);
+                if (!crtItem.isShuffle()) {
+                    PlaylistSelection.setIntervals(crtItem);
+                } else {
+                    PlaylistSelection.setIntervalsShuffle(crtItem);
+                }
             }
             case "Repeat Current Song" -> {
                 crtItem.setRepeat("No Repeat");
@@ -100,7 +104,11 @@ public final class VisitRepeat implements VisitorString {
                 message = "Repeat mode changed to repeat current song.";
 
                 //  Setting intervals for the song loop
-                AlbumSelection.setIntervals(crtItem);
+                if (!crtItem.isShuffle()) {
+                    AlbumSelection.setIntervals(crtItem);
+                } else {
+                    AlbumSelection.setIntervalsShuffle(crtItem);
+                }
             }
             case "Repeat Current Song" -> {
                 crtItem.setRepeat("No Repeat");

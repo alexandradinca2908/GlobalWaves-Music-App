@@ -1,6 +1,10 @@
 package main.UtilityClasses;
 
-import fileio.input.*;
+import fileio.input.UserInput;
+import fileio.input.SongInput;
+import fileio.input.LibraryInput;
+import fileio.input.PodcastInput;
+import fileio.input.EpisodeInput;
 import main.CommandHelper.Search;
 import main.CreatorClasses.ArtistClasses.Event;
 import main.CreatorClasses.ArtistClasses.Management;
@@ -16,11 +20,11 @@ import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
-import main.SongClasses.SongLikes;
+import main.LikeClasses.SongLikes;
 import main.PlaylistClasses.UserPlaylists;
-import main.VisitorPattern.VisitorString.Classes.VisitDeleteUser;
-import main.VisitorPattern.VisitorString.Classes.VisitNext;
-import main.VisitorPattern.VisitorString.Classes.VisitPrev;
+import main.VisitorPattern.VisitorString.StringClasses.VisitDeleteUser;
+import main.VisitorPattern.VisitorString.StringClasses.VisitNext;
+import main.VisitorPattern.VisitorString.StringClasses.VisitPrev;
 import main.VisitorPattern.VisitorString.VisitorString;
 
 import java.util.ArrayList;
@@ -497,10 +501,18 @@ public final class GetMessages {
             //  Calculating based on current time
             crtPlaylist.updateRemainingTime(crtCommand.getTimestamp());
 
-            for (SongInput song : crtPlaylist.getPlaylist().getSongs()) {
+            //  Choosing the appropriate order considering shuffle status
+            ArrayList<SongInput> songOrder;
+            if (!crtPlaylist.isShuffle()) {
+                songOrder = crtPlaylist.getPlaylist().getSongs();
+            } else {
+                songOrder = crtPlaylist.getShuffledPlaylist();
+            }
+
+            for (SongInput song : songOrder) {
                 duration -= song.getDuration();
 
-                if (duration <= crtPlaylist.getRemainingTime()) {
+                if (duration < crtPlaylist.getRemainingTime()) {
                     crtSongInPlaylist = song;
                     break;
                 }
@@ -563,10 +575,18 @@ public final class GetMessages {
             //  Calculating based on current time
             crtAlbum.updateRemainingTime(crtCommand.getTimestamp());
 
-            for (SongInput song : crtAlbum.getAlbum().getSongs()) {
+            //  Choosing the appropriate order considering shuffle status
+            ArrayList<SongInput> songOrder;
+            if (!crtAlbum.isShuffle()) {
+                songOrder = crtAlbum.getAlbum().getSongs();
+            } else {
+                songOrder = crtAlbum.getShuffledAlbum();
+            }
+
+            for (SongInput song : songOrder) {
                 duration -= song.getDuration();
 
-                if (duration <= crtAlbum.getRemainingTime()) {
+                if (duration < crtAlbum.getRemainingTime()) {
                     crtSongInAlbum = song;
                     break;
                 }
@@ -1166,6 +1186,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds a new event
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param managements The array of managing technicalities for artists
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddEventMessage(final LibraryInput library,
                                             final Command crtCommand,
                                             final ArrayList<Management> managements) {
@@ -1258,6 +1286,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds new merch
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param managements The array of managing technicalities for artists
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddMerchMessage(final LibraryInput library,
                                             final Command crtCommand,
                                             final ArrayList<Management> managements) {
@@ -1332,6 +1368,21 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method deletes a user
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param player The array that keeps all user players in check
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     * @param playlists The array of all user playlists
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param albums The array of all albums in the database
+     * @param songsLikes The array of songs and their respective likes
+     * @param pageSystem Array of all the pages in the system
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getDeleteUserMessage(final LibraryInput library,
                                               final Command crtCommand,
                                               final ArrayList<ItemSelection> player,
@@ -1557,6 +1608,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds a new podcast
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddPodcastMessage(final LibraryInput library,
                                               final Command crtCommand,
                                               final ArrayList<UserPlaylists> usersPlaylists) {
@@ -1656,6 +1715,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method adds a new announcement
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param hostInfos The array containing all announcements for every artist
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getAddAnnouncementMessage(final LibraryInput library,
                                                    final Command crtCommand,
                                                    final ArrayList<HostInfo> hostInfos) {
@@ -1723,6 +1790,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method removes an announcement
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param hostInfos The array containing all announcements for every artist
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getRemoveAnnouncementMessage(final LibraryInput library,
                                                       final Command crtCommand,
                                                       final ArrayList<HostInfo> hostInfos) {
@@ -1785,6 +1860,18 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method removes an album
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param player The array that keeps all user players in check
+     * @param playlists The array of all user playlists
+     * @param songsLikes The array of songs and their respective likes
+     * @param albums The array of all albums in the database
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getRemoveAlbumMessage(final LibraryInput library,
                                                final Command crtCommand,
                                                final ArrayList<UserPlaylists> usersPlaylists,
@@ -1925,6 +2012,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method changes the current page
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param pageSystem Array of all the pages in the system
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getChangePageMessage(final Command crtCommand,
                                               final ArrayList<UserPlaylists> usersPlaylists,
                                               final ArrayList<Page> pageSystem) {
@@ -1990,6 +2085,17 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method removes a podcast
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param usersPlaylists The array of users and their respective playlists
+     * @param player The array that keeps all user players in check
+     * @param library Singleton containing all songs, users and podcasts
+     * @param podcasts The array that keeps track of all the podcasts
+     *                 when they are not loaded
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getRemovePodcastMessage(final Command crtCommand,
                                                  final ArrayList<UserPlaylists> usersPlaylists,
                                                  final ArrayList<ItemSelection> player,
@@ -2092,6 +2198,14 @@ public final class GetMessages {
         return message;
     }
 
+    /**
+     * This method removes an event
+     *
+     * @param crtCommand The addUser command with all its data
+     * @param library Singleton containing all songs, users and podcasts
+     * @param managements The array of managing technicalities for artists
+     * @return Based on the operation, it returns an appropriate message
+     */
     public static String getRemoveEventMessage(final Command crtCommand,
                                                final LibraryInput library,
                                                final ArrayList<Management> managements) {

@@ -1,6 +1,6 @@
 package main.PlaylistClasses;
 
-import main.SongClasses.SongLikes;
+import main.LikeClasses.SongLikes;
 
 import java.util.ArrayList;
 
@@ -34,6 +34,10 @@ public final class Album extends Playlist {
         this.songsWithLikes = songsWithLikes;
     }
 
+    /**
+     * Calculates the number of likes from all songs in the album
+     * @return Total number of likes
+     */
     public int calculateAlbumLikes() {
         int allLikes = 0;
         for (SongLikes song : songsWithLikes) {

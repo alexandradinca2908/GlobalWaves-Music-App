@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorObjectNode;
+package main.VisitorPattern.VisitorObjectNode.ObjectNodeClasses;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.EpisodeInput;
@@ -7,6 +7,7 @@ import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.SelectionClasses.SongSelection;
+import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 
 public final class VisitGetStats implements VisitorObjectNode {
     private ObjectNode stats;

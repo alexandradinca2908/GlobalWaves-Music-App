@@ -1,4 +1,4 @@
-package main.VisitorPattern.VisitorString.Classes;
+package main.VisitorPattern.VisitorString.StringClasses;
 
 import fileio.input.EpisodeInput;
 import fileio.input.SongInput;

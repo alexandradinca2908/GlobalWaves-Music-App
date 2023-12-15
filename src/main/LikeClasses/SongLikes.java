@@ -1,4 +1,4 @@
-package main.SongClasses;
+package main.LikeClasses;
 
 import fileio.input.SongInput;
 
