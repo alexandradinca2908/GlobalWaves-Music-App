@@ -31,6 +31,8 @@ public final class Command {
     private ArrayList<EpisodeInput> episodes = new ArrayList<>();
     //  Change page
     private String nextPage;
+    //  Update recommendations
+    private String recommendationType;
 
     public Command() {
     }
@@ -185,5 +187,13 @@ public final class Command {
 
     public void setNextPage(final String nextPage) {
         this.nextPage = nextPage;
+    }
+
+    public String getRecommendationType() {
+        return recommendationType;
+    }
+
+    public void setRecommendationType(final String recommendationType) {
+        this.recommendationType = recommendationType;
     }
 }

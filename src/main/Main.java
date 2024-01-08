@@ -21,6 +21,7 @@ import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.LikeClasses.SongLikes;
+import main.WrappedDatabase.StatsFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -211,6 +212,11 @@ public final class Main {
 
                 hostInfos.add(crtHostInfo);
             }
+        }
+
+        //  Populating the wrapped statistics database
+        for (UserInput user : library.getUsers()) {
+            StatsFactory.createStats(user);
         }
 
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE

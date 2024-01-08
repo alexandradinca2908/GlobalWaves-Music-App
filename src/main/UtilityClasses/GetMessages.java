@@ -26,6 +26,7 @@ import main.VisitorPattern.VisitorString.StringClasses.VisitDeleteUser;
 import main.VisitorPattern.VisitorString.StringClasses.VisitNext;
 import main.VisitorPattern.VisitorString.StringClasses.VisitPrev;
 import main.VisitorPattern.VisitorString.VisitorString;
+import main.WrappedDatabase.StatsFactory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -1037,6 +1038,9 @@ public final class GetMessages {
             newPage.setUserPlaylists(newUserPlaylists);
             newPage.setPageOwner(newUserPlaylists.getUser());
             pageSystem.add(newPage);
+
+            //  Wrapped Statistics
+            StatsFactory.createStats(newUser);
 
             //  Management, if the user is an artist
             if (newUser.getType().equals("artist")) {
