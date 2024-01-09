@@ -12540,12 +12540,12 @@
   "user" : "jack29",
   "timestamp" : 12713,
   "message" : "Search returned 3 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "jack29",
   "timestamp" : 12713,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "jack29",
@@ -16499,12 +16499,12 @@
   "user" : "alice22",
   "timestamp" : 18095,
   "message" : "Search returned 3 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 18095,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "alice22",
@@ -18057,9 +18057,7 @@
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 20591,
-  "result" : {
-    "result" : "No data to show for emily30."
-  }
+  "message" : "No data to show for emily30."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -19072,9 +19070,7 @@
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 21848,
-  "result" : {
-    "result" : "No data to show for jack29."
-  }
+  "message" : "No data to show for jack29."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -19127,9 +19123,7 @@
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 22029,
-  "result" : {
-    "result" : "No data to show for frank21."
-  }
+  "message" : "No data to show for frank21."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -21621,9 +21615,7 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 26453,
-  "result" : {
-    "result" : "No data to show for carol19."
-  }
+  "message" : "No data to show for carol19."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22108,9 +22100,7 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 27217,
-  "result" : {
-    "result" : "No data to show for henry26."
-  }
+  "message" : "No data to show for henry26."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -22339,9 +22329,7 @@
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 27523,
-  "result" : {
-    "result" : "No data to show for bob35."
-  }
+  "message" : "No data to show for bob35."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22650,9 +22638,7 @@
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 28078,
-  "result" : {
-    "result" : "No data to show for grace25."
-  }
+  "message" : "No data to show for grace25."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -22977,9 +22963,7 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 28805,
-  "result" : {
-    "result" : "No data to show for david27."
-  }
+  "message" : "No data to show for david27."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -23327,9 +23311,7 @@
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 31186,
-  "result" : {
-    "result" : "No data to show for irene33."
-  }
+  "message" : "No data to show for irene33."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -24486,7 +24468,5 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 44014,
-  "result" : {
-    "result" : "No data to show for alice22."
-  }
+  "message" : "No data to show for alice22."
 } ]

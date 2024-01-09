@@ -354,44 +354,32 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 110,
-  "result" : {
-    "result" : "No data to show for carol19."
-  }
+  "message" : "No data to show for carol19."
 }, {
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 110,
-  "result" : {
-    "result" : "No data to show for bob35."
-  }
+  "message" : "No data to show for bob35."
 }, {
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 110,
-  "result" : {
-    "result" : "No data to show for frank21."
-  }
+  "message" : "No data to show for frank21."
 }, {
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 227,
-  "result" : {
-    "result" : "No data to show for irene33."
-  }
+  "message" : "No data to show for irene33."
 }, {
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 242,
-  "result" : {
-    "result" : "No data to show for emily30."
-  }
+  "message" : "No data to show for emily30."
 }, {
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 242,
-  "result" : {
-    "result" : "No data to show for grace25."
-  }
+  "message" : "No data to show for grace25."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -412,9 +400,7 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 564,
-  "result" : {
-    "result" : "No data to show for henry26."
-  }
+  "message" : "No data to show for henry26."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -435,9 +421,7 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 1590,
-  "result" : {
-    "result" : "No data to show for alice22."
-  }
+  "message" : "No data to show for alice22."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -458,9 +442,7 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 1647,
-  "result" : {
-    "result" : "No data to show for david27."
-  }
+  "message" : "No data to show for david27."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -488,7 +470,5 @@
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 3211,
-  "result" : {
-    "result" : "No data to show for jack29."
-  }
+  "message" : "No data to show for jack29."
 } ]

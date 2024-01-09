@@ -15,6 +15,7 @@ import main.SelectionClasses.SongSelection;
 import main.SelectionClasses.Playlists.AlbumSelection;
 import main.SelectionClasses.Playlists.PlaylistSelection;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 public final class SearchSelect {
     private SearchSelect() {
@@ -29,7 +30,8 @@ public final class SearchSelect {
      */
     public static void searchForSongs(final Filters filters,
                                       final ArrayList<SongInput> result,
-                                      final LibraryInput library) {
+                                      final LibraryInput library,
+                                      final ArrayList<Album> albums) {
         //  Add all songs containing the searched name
         if (filters.getName() != null) {
             for (SongInput song : library.getSongs()) {
@@ -255,7 +257,8 @@ public final class SearchSelect {
      */
     public static void searchForAlbums(final Filters filters,
                                        final ArrayList<Album> result,
-                                       final ArrayList<Album> albums) {
+                                       final ArrayList<Album> albums,
+                                       final LibraryInput library) {
         //  Add all albums containing the searched name
         if (filters.getName() != null) {
             for (Album album : albums) {
@@ -296,6 +299,33 @@ public final class SearchSelect {
                 result.removeIf(album -> !album.getDescription().equals(filters.getDescription()));
             }
         }
+
+        //  Convert album list to a string list first
+        ArrayList<String> albumNames = new ArrayList<>();
+        for (Album album : albums) {
+            albumNames.add(album.getName());
+        }
+
+        //  Convert user list to a string list first
+        ArrayList<String> usernames = new ArrayList<>();
+        for (UserInput user : library.getUsers()) {
+            usernames.add(user.getUsername());
+        }
+
+        //  Sort result by album apparition
+        result.sort((o1, o2) -> {
+            int index1 = usernames.indexOf(o1.getOwner());
+            int index2 = usernames.indexOf(o2.getOwner());
+
+            if (index1 == index2) {
+                int index3 = albumNames.indexOf(o1.getName());
+                int index4 = albumNames.indexOf(o2.getName());
+
+                return Integer.compare(index3, index4);
+            }
+
+            return Integer.compare(index1, index2);
+        });
     }
 
     /**

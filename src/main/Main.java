@@ -603,7 +603,7 @@ public final class Main {
                                 && userStats.getTopArtists().isEmpty()
                                 && userStats.getTopGenres().isEmpty()) {
 
-                            result.put("result", "No data to show for "
+                            wrappedOutput.put("message", "No data to show for user "
                                     + crtUser.getUsername() + ".");
                         } else {
                             //  Sort Artist HashMap data and display if available
@@ -630,7 +630,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topArtists", artistInfo);
                             } else {
-                                result.putPOJO("topArtists", "{ }");
+                                ObjectNode artistInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topArtists", artistInfo);
                             }
 
                             //  Sort Genre HashMap data and display if available
@@ -656,7 +657,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topGenres", genreInfo);
                             } else {
-                                result.putPOJO("topGenres", "{ }");
+                                ObjectNode genreInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topGenres", genreInfo);
                             }
 
                             //  Sort Song HashMap data and display if available
@@ -683,7 +685,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topSongs", songInfo);
                             } else {
-                                result.putPOJO("topSongs", "{ }");
+                                ObjectNode songInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topSongs", songInfo);
                             }
 
                             //  Sort Album HashMap data and display if available
@@ -709,7 +712,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topAlbums", albumInfo);
                             } else {
-                                result.putPOJO("topAlbums", "{ }");
+                                ObjectNode albumInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topAlbums", albumInfo);
                             }
 
                             //  Sort Episode HashMap data and display if available
@@ -735,7 +739,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topEpisodes", epInfo);
                             } else {
-                                result.putPOJO("topEpisodes", "{ }");
+                                ObjectNode epInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topEpisodes", epInfo);
                             }
                         }
 
@@ -755,7 +760,7 @@ public final class Main {
                                 && artistStats.getTopFans().isEmpty()
                                 && artistStats.getListeners().isEmpty()) {
 
-                            result.put("result", "No data to show for "
+                            wrappedOutput.put("message", "No data to show for user "
                                     + crtUser.getUsername() + ".");
                         } else {
                             //  Sort Album HashMap data and display if available
@@ -781,7 +786,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topAlbums", albumInfo);
                             } else {
-                                result.putPOJO("topAlbums", "{ }");
+                                ObjectNode albumInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topAlbums", albumInfo);
                             }
 
                             //  Sort Song HashMap data and display if available
@@ -807,7 +813,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topSongs", songInfo);
                             } else {
-                                result.putPOJO("topSongs", "{ }");
+                                ObjectNode songInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topSongs", songInfo);
                             }
 
                             //  Sort Fans HashMap data and display if available
@@ -833,7 +840,8 @@ public final class Main {
                                 }
                                 result.putPOJO("topFans", fanInfo);
                             } else {
-                                result.putPOJO("topFans", "{ }");
+                                ObjectNode fanInfo = objectMapper.createObjectNode();
+                                result.putPOJO("topFans", fanInfo);
                             }
 
                             //  Listeners
@@ -841,7 +849,9 @@ public final class Main {
                         }
                     }
 
-                    wrappedOutput.putPOJO("result", result);
+                    if (!result.isEmpty()) {
+                        wrappedOutput.putPOJO("result", result);
+                    }
                     outputs.add(wrappedOutput);
                 }
                 default -> {

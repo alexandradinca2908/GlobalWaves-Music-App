@@ -194,22 +194,17 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 4000,
-  "result" : {
-    "result" : "No data to show for alice22."
-  }
+  "message" : "No data to show for alice22."
 }, {
   "command" : "wrapped",
   "user" : "Guy Raz",
-  "timestamp" : 4000,
-  "result" : { }
+  "timestamp" : 4000
 }, {
   "command" : "wrapped",
   "user" : "Jad Abumrad and Robert Krulwich",
-  "timestamp" : 4000,
-  "result" : { }
+  "timestamp" : 4000
 }, {
   "command" : "wrapped",
   "user" : "Joe Rogan",
-  "timestamp" : 4000,
-  "result" : { }
+  "timestamp" : 4000
 } ]

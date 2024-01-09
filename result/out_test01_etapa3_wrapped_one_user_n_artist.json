@@ -6974,7 +6974,7 @@
   "user" : "david27",
   "timestamp" : 41017,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -10181,7 +10181,7 @@
   "user" : "david27",
   "timestamp" : 85233,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -25960,7 +25960,7 @@
   "user" : "david27",
   "timestamp" : 247632,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -57518,7 +57518,7 @@
   "user" : "david27",
   "timestamp" : 576180,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -79550,7 +79550,5 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 833559,
-  "result" : {
-    "result" : "No data to show for david27."
-  }
+  "message" : "No data to show for david27."
 } ]

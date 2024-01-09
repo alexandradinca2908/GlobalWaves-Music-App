@@ -127,7 +127,8 @@ public final class DoCommands {
                 ArrayList<SongInput> result = new ArrayList<>();
 
                 //  Found songs will be added in result array
-                SearchSelect.searchForSongs(filters, result, library);
+                SearchSelect.searchForSongs(filters, result, library,
+                        albums);
 
                 //  Truncate results if needed
                 if (result.size() > Constants.MAX_SIZE_5) {
@@ -234,7 +235,8 @@ public final class DoCommands {
                 ArrayList<Album> result = new ArrayList<>();
 
                 //  Found albums will be added in result array
-                SearchSelect.searchForAlbums(filters, result, albums);
+                SearchSelect.searchForAlbums(filters, result, albums,
+                        library);
 
                 //  Truncate results if needed
                 if (result.size() > Constants.MAX_SIZE_5) {

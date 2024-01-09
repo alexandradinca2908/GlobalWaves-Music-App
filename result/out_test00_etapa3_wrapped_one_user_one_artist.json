@@ -475,6 +475,6 @@
       "The Dark Side of the Moon" : 7,
       "Wish You Were Here" : 4
     },
-    "topEpisodes" : "{ }"
+    "topEpisodes" : { }
   }
 } ]
