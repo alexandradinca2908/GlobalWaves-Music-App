@@ -2,10 +2,13 @@ package main.SelectionClasses;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.SongInput;
+import main.PlaylistClasses.Album;
 import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
+
+import java.util.ArrayList;
 
 public final class SongSelection
         extends ItemSelection
@@ -24,7 +27,8 @@ public final class SongSelection
     }
 
     @Override
-    public void updateRemainingTime(final int crtTimestamp) {
+    public void updateRemainingTime(final int crtTimestamp,
+                                    final ArrayList<Album> albums) {
         if (!isPaused()) {
             int remainingTime = this.getRemainingTime() - (crtTimestamp - getStartTime());
 

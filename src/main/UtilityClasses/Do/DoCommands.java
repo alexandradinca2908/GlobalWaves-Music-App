@@ -77,7 +77,7 @@ public final class DoCommands {
         searchOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update all players first
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Select the user's search
         Search pastSearch = null;
@@ -112,7 +112,7 @@ public final class DoCommands {
             for (ItemSelection item : player) {
                 if (item.getUser().equals(crtCommand.getUsername())) {
                     if (item instanceof PodcastSelection) {
-                        item.updateRemainingTime(crtCommand.getTimestamp());
+                        item.updateRemainingTime(crtCommand.getTimestamp(), albums);
                         item.setPaused(true);
                     }
                     player.remove(item);
@@ -509,82 +509,8 @@ public final class DoCommands {
                 player.add(selectedSong);
 
                 //  Record the stats for wrapped
-                //  User stats
-                UserStatistics crtUser = null;
-                for (UserStatistics userStatistics
-                        : Statistics.getWrappedStats().getUsersStatistics()) {
-                    if (userStatistics.getUser().getUsername()
-                            .equals(selectedSong.getUser())) {
-                        crtUser = userStatistics;
-                        break;
-                    }
-                }
-
-                //  Song
-                if (crtUser.getTopSongs().containsKey(selectedSong.getSong())) {
-                    //  Increase the listen count if the song exists
-                    int count = crtUser.getTopSongs().get(selectedSong.getSong());
-                    crtUser.getTopSongs().put(selectedSong.getSong(), count + 1);
-                } else {
-                    //  Add the song
-                    crtUser.getTopSongs().put(selectedSong.getSong(), 1);
-                }
-                //  Genre
-                if (crtUser.getTopGenres().containsKey(selectedSong.getSong().getGenre())) {
-                    //  Increase the listen count if the genre exists
-                    int count = crtUser.getTopGenres()
-                            .get(selectedSong.getSong().getGenre());
-                    crtUser.getTopGenres()
-                            .put(selectedSong.getSong().getGenre(), count + 1);
-                } else {
-                    //  Add the genre
-                    crtUser.getTopGenres().put(selectedSong.getSong().getGenre(), 1);
-                }
-                //  Artist
-                if (crtUser.getTopArtists().containsKey(selectedSong.getSong().getArtist())) {
-                    //  Increase the listen count if the artist exists
-                    int count = crtUser.getTopArtists()
-                            .get(selectedSong.getSong().getArtist());
-                    crtUser.getTopArtists()
-                            .put(selectedSong.getSong().getArtist(), count + 1);
-                } else {
-                    //  Add the artist
-                    crtUser.getTopArtists().put(selectedSong.getSong().getArtist(), 1);
-                }
-
-                //  Artist stats
-                ArtistStatistics crtArtist = null;
-                for (ArtistStatistics artistStatistics
-                        : Statistics.getWrappedStats().getArtistsStatistics()) {
-                    if (artistStatistics.getArtist().getUsername()
-                            .equals(selectedSong.getSong().getArtist())) {
-                        crtArtist = artistStatistics;
-                        break;
-                    }
-                }
-
-                //  Song
-                if (crtArtist.getTopSongs().containsKey(selectedSong.getSong())) {
-                    //  Increase the listen count if the song exists
-                    int count = crtArtist.getTopSongs().get(selectedSong.getSong());
-                    crtArtist.getTopSongs().put(selectedSong.getSong(), count + 1);
-                } else {
-                    //  Add the song if it's the first time being listened to
-                    crtArtist.getTopSongs().put(selectedSong.getSong(), 1);
-                }
-                //  Fans
-                if (crtArtist.getTopFans().containsKey(crtUser.getUser())) {
-                    //  Increase the listen count if the fan exists
-                    int count = crtArtist.getTopFans().get(crtUser.getUser());
-                    crtArtist.getTopFans().put(crtUser.getUser(), count + 1);
-                } else {
-                    //  Add the song if it's the first time being listened to
-                    crtArtist.getTopFans().put(crtUser.getUser(), 1);
-                }
-                //  Listeners
-                if (!crtArtist.getListeners().contains(crtUser.getUser())) {
-                    crtArtist.getListeners().add(crtUser.getUser());
-                }
+                selectedSong.updateWrappedForSong(selectedSong.getSong(),
+                        albums);
             }
 
             //  Loading the playlist into the database
@@ -605,85 +531,9 @@ public final class DoCommands {
                 player.add(selectedPlaylist);
 
                 //  Record the stats for wrapped
-                //  We will only record the first song
-                SongInput selectedSong = selectedPlaylist.getPlaylist().getSongs().get(0);
-
-                //  User stats
-                UserStatistics crtUser = null;
-                for (UserStatistics userStatistics
-                        : Statistics.getWrappedStats().getUsersStatistics()) {
-                    if (userStatistics.getUser().getUsername()
-                            .equals(selectedPlaylist.getUser())) {
-                        crtUser = userStatistics;
-                        break;
-                    }
-                }
-
-                //  First song
-                if (crtUser.getTopSongs().containsKey(selectedSong)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtUser.getTopSongs().get(selectedSong);
-                    crtUser.getTopSongs().put(selectedSong, count + 1);
-                } else {
-                    //  Add the song
-                    crtUser.getTopSongs().put(selectedSong, 1);
-                }
-                //  Genre
-                if (crtUser.getTopGenres().containsKey(selectedSong.getGenre())) {
-                    //  Increase the listen count if the genre exists
-                    int count = crtUser.getTopGenres()
-                            .get(selectedSong.getGenre());
-                    crtUser.getTopGenres()
-                            .put(selectedSong.getGenre(), count + 1);
-                } else {
-                    //  Add the genre
-                    crtUser.getTopGenres().put(selectedSong.getGenre(), 1);
-                }
-                //  Artist
-                if (crtUser.getTopArtists().containsKey(selectedSong.getArtist())) {
-                    //  Increase the listen count if the artist exists
-                    int count = crtUser.getTopArtists()
-                            .get(selectedSong.getArtist());
-                    crtUser.getTopArtists()
-                            .put(selectedSong.getArtist(), count + 1);
-                } else {
-                    //  Add the artist
-                    crtUser.getTopArtists().put(selectedSong.getArtist(), 1);
-                }
-
-                //  Artist stats
-                ArtistStatistics crtArtist = null;
-                for (ArtistStatistics artistStatistics
-                        : Statistics.getWrappedStats().getArtistsStatistics()) {
-                    if (artistStatistics.getArtist().getUsername()
-                            .equals(selectedSong.getArtist())) {
-                        crtArtist = artistStatistics;
-                        break;
-                    }
-                }
-
-                //  Song
-                if (crtArtist.getTopSongs().containsKey(selectedSong)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtArtist.getTopSongs().get(selectedSong);
-                    crtArtist.getTopSongs().put(selectedSong, count + 1);
-                } else {
-                    //  Add the song if it's the first time being listened to
-                    crtArtist.getTopSongs().put(selectedSong, 1);
-                }
-                //  Fans
-                if (crtArtist.getTopFans().containsKey(crtUser.getUser())) {
-                    //  Increase the listen count if the fan exists
-                    int count = crtArtist.getTopFans().get(crtUser.getUser());
-                    crtArtist.getTopFans().put(crtUser.getUser(), count + 1);
-                } else {
-                    //  Add the song if it's the first encounter
-                    crtArtist.getTopFans().put(crtUser.getUser(), 1);
-                }
-                //  Listeners
-                if (!crtArtist.getListeners().contains(crtUser.getUser())) {
-                    crtArtist.getListeners().add(crtUser.getUser());
-                }
+                //  Only record the first song
+                selectedPlaylist.updateWrappedForSong(selectedPlaylist
+                        .getPlaylist().getSongs().get(0), albums);
             }
 
             //  Loading the podcast into the database
@@ -762,20 +612,23 @@ public final class DoCommands {
                 }
 
                 //  Episode
-                if (crtHost.getTopEpisodes().containsKey(selectedEpisode)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtHost.getTopEpisodes().get(selectedEpisode);
-                    crtHost.getTopEpisodes().put(selectedEpisode, count + 1);
-                } else {
-                    //  Add the song if it's the first time being listened to
-                    crtHost.getTopEpisodes().put(selectedEpisode, 1);
-                }
-                //  Listeners
-                if (!crtHost.getListeners().contains(crtUser.getUser())) {
-                    crtHost.getListeners().add(crtUser.getUser());
+                if(crtHost != null) {
+                    if (crtHost.getTopEpisodes().containsKey(selectedEpisode)) {
+                        //  Increase the listen count if the song exists
+                        int count = crtHost.getTopEpisodes().get(selectedEpisode);
+                        crtHost.getTopEpisodes().put(selectedEpisode, count + 1);
+                    } else {
+                        //  Add the song if it's the first time being listened to
+                        crtHost.getTopEpisodes().put(selectedEpisode, 1);
+                    }
+                    //  Listeners
+                    if (!crtHost.getListeners().contains(crtUser.getUser())) {
+                        crtHost.getListeners().add(crtUser.getUser());
+                    }
                 }
             }
 
+            //  Loading the album into the database
             if (crtSearch.getLastSearchResult().get(0).equals("album")) {
                 AlbumSelection selectedAlbum =
                         SearchSelect.getAlbumSelection(crtCommand,
@@ -794,94 +647,8 @@ public final class DoCommands {
 
                 //  Record the stats for wrapped
                 //  We will only record the first song
-                SongInput selectedSong = selectedAlbum.getAlbum().getSongs().get(0);
-
-                //  User stats
-                UserStatistics crtUser = null;
-                for (UserStatistics userStatistics
-                        : Statistics.getWrappedStats().getUsersStatistics()) {
-                    if (userStatistics.getUser().getUsername()
-                            .equals(selectedAlbum.getUser())) {
-                        crtUser = userStatistics;
-                        break;
-                    }
-                }
-
-                //  First song
-                if (crtUser.getTopSongs().containsKey(selectedSong)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtUser.getTopSongs().get(selectedSong);
-                    crtUser.getTopSongs().put(selectedSong, count + 1);
-                } else {
-                    //  Add the song
-                    crtUser.getTopSongs().put(selectedSong, 1);
-                }
-                //  Genre
-                if (crtUser.getTopGenres().containsKey(selectedSong.getGenre())) {
-                    //  Increase the listen count if the genre exists
-                    int count = crtUser.getTopGenres()
-                            .get(selectedSong.getGenre());
-                    crtUser.getTopGenres()
-                            .put(selectedSong.getGenre(), count + 1);
-                } else {
-                    //  Add the genre
-                    crtUser.getTopGenres().put(selectedSong.getGenre(), 1);
-                }
-                //  Artist
-                if (crtUser.getTopArtists().containsKey(selectedSong.getArtist())) {
-                    //  Increase the listen count if the artist exists
-                    int count = crtUser.getTopArtists()
-                            .get(selectedSong.getArtist());
-                    crtUser.getTopArtists()
-                            .put(selectedSong.getArtist(), count + 1);
-                } else {
-                    //  Add the artist
-                    crtUser.getTopArtists().put(selectedSong.getArtist(), 1);
-                }
-
-                //  Artist stats
-                ArtistStatistics crtArtist = null;
-                for (ArtistStatistics artistStatistics
-                        : Statistics.getWrappedStats().getArtistsStatistics()) {
-                    if (artistStatistics.getArtist().getUsername()
-                            .equals(selectedAlbum.getAlbum().getOwner())) {
-                        crtArtist = artistStatistics;
-                        break;
-                    }
-                }
-
-                //  Song
-                if (crtArtist.getTopSongs().containsKey(selectedSong)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtArtist.getTopSongs().get(selectedSong);
-                    crtArtist.getTopSongs().put(selectedSong, count + 1);
-                } else {
-                    //  Add the song if it's the first time being listened to
-                    crtArtist.getTopSongs().put(selectedSong, 1);
-                }
-                //  Album
-                if (crtArtist.getTopAlbums().containsKey(selectedAlbum.getAlbum())) {
-                    //  Increase the listen count if the album exists
-                    int count = crtArtist.getTopAlbums()
-                            .get(selectedAlbum.getAlbum());
-                    crtArtist.getTopAlbums().put(selectedAlbum.getAlbum(), count + 1);
-                } else {
-                    //  Add the album if it's the first time being listened to
-                    crtArtist.getTopAlbums().put(selectedAlbum.getAlbum(), 1);
-                }
-                //  Fans
-                if (crtArtist.getTopFans().containsKey(crtUser.getUser())) {
-                    //  Increase the listen count if the fan exists
-                    int count = crtArtist.getTopFans().get(crtUser.getUser());
-                    crtArtist.getTopFans().put(crtUser.getUser(), count + 1);
-                } else {
-                    //  Add the song if it's the first encounter
-                    crtArtist.getTopFans().put(crtUser.getUser(), 1);
-                }
-                //  Listeners
-                if (!crtArtist.getListeners().contains(crtUser.getUser())) {
-                    crtArtist.getListeners().add(crtUser.getUser());
-                }
+                selectedAlbum.updateWrappedForSong(selectedAlbum
+                                .getAlbum().getSongs().get(0), albums);
             }
 
             //  Clearing the result so that we can't load it twice
@@ -906,14 +673,15 @@ public final class DoCommands {
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
                                       final ArrayList<PodcastSelection> podcasts,
-                                      final LibraryInput library) {
+                                      final LibraryInput library,
+                                      final ArrayList<Album> albums) {
         ObjectNode statusOutput = objectMapper.createObjectNode();
         statusOutput.put("command", "status");
         statusOutput.put("user", crtCommand.getUsername());
         statusOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         String user = crtCommand.getUsername();
         ItemSelection reqItem = null;
@@ -946,7 +714,8 @@ public final class DoCommands {
                                          final Command crtCommand,
                                          final ArrayList<ItemSelection> player,
                                          final ArrayList<PodcastSelection> podcasts,
-                                         final LibraryInput library) {
+                                         final LibraryInput library,
+                                         final ArrayList<Album> albums) {
         ObjectNode playPauseOutput = objectMapper.createObjectNode();
 
         playPauseOutput.put("command", "playPause");
@@ -954,7 +723,7 @@ public final class DoCommands {
         playPauseOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -1182,7 +951,8 @@ public final class DoCommands {
                                       final Command crtCommand,
                                       final ArrayList<ItemSelection> player,
                                       final ArrayList<PodcastSelection> podcasts,
-                                      final LibraryInput library) {
+                                      final LibraryInput library,
+                                      final ArrayList<Album> albums) {
         ObjectNode repeatOutput = objectMapper.createObjectNode();
 
         repeatOutput.put("command", "repeat");
@@ -1221,7 +991,7 @@ public final class DoCommands {
             //  Player was found and repeat state will be changed
 
             //  First we update the time
-            updatePlayer(player, crtCommand, podcasts, library);
+            updatePlayer(player, crtCommand, podcasts, library, albums);
 
             //  Now we update repeat status
             VisitorString visitorRepeat = new VisitRepeat();
@@ -1249,7 +1019,8 @@ public final class DoCommands {
                                        final Command crtCommand,
                                        final ArrayList<ItemSelection> player,
                                        final ArrayList<PodcastSelection> podcasts,
-                                       final LibraryInput library) {
+                                       final LibraryInput library,
+                                       final ArrayList<Album> albums) {
         ObjectNode shuffleOutput = objectMapper.createObjectNode();
 
         shuffleOutput.put("command", "shuffle");
@@ -1257,7 +1028,7 @@ public final class DoCommands {
         shuffleOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update player first
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done

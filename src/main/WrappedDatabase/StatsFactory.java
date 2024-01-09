@@ -9,15 +9,15 @@ public final class StatsFactory {
     public static void createStats(final UserInput user) {
         switch (user.getType()) {
             case "user" -> {
-                UserStatistics statistics = new UserStatistics();
+                UserStatistics statistics = new UserStatistics(user);
                 Statistics.getWrappedStats().getUsersStatistics().add(statistics);
             }
             case "artist" -> {
-                ArtistStatistics statistics = new ArtistStatistics();
+                ArtistStatistics statistics = new ArtistStatistics(user);
                 Statistics.getWrappedStats().getArtistsStatistics().add(statistics);
             }
             case "host" -> {
-                HostStatistics statistics = new HostStatistics();
+                HostStatistics statistics = new HostStatistics(user);
                 Statistics.getWrappedStats().getHostsStatistics().add(statistics);
             }
         }

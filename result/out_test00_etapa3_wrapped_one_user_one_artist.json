@@ -430,4 +430,51 @@
   "user" : "alice22",
   "timestamp" : 12393,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 12427,
+  "result" : {
+    "topAlbums" : {
+      "The Wall" : 18,
+      "The Division Bell" : 14,
+      "The Dark Side of the Moon" : 7,
+      "Wish You Were Here" : 4
+    },
+    "topSongs" : {
+      "Another Brick in the Wall Part 1" : 2,
+      "Coming Back to Life" : 2,
+      "Goodbye Cruel World" : 2,
+      "Marooned" : 2,
+      "Take It Back" : 2
+    },
+    "topFans" : [ "alice22" ],
+    "listeners" : 1
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 12527,
+  "result" : {
+    "topArtists" : {
+      "Pink Floyd" : 43
+    },
+    "topGenres" : {
+      "progressive rock" : 43
+    },
+    "topSongs" : {
+      "Another Brick in the Wall Part 1" : 2,
+      "Coming Back to Life" : 2,
+      "Goodbye Cruel World" : 2,
+      "Marooned" : 2,
+      "Take It Back" : 2
+    },
+    "topAlbums" : {
+      "The Wall" : 18,
+      "The Division Bell" : 14,
+      "The Dark Side of the Moon" : 7,
+      "Wish You Were Here" : 4
+    },
+    "topEpisodes" : "{ }"
+  }
 } ]

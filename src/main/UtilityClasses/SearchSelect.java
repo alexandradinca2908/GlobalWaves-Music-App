@@ -33,7 +33,9 @@ public final class SearchSelect {
         //  Add all songs containing the searched name
         if (filters.getName() != null) {
             for (SongInput song : library.getSongs()) {
-                if (song.getName().startsWith(filters.getName())) {
+                String songName = song.getName().toLowerCase();
+                String searchedName = filters.getName().toLowerCase();
+                if (songName.startsWith(searchedName)) {
                     result.add(song);
                 }
             }

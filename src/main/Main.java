@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
@@ -21,6 +22,10 @@ import main.PlaylistClasses.UserPlaylists;
 import main.SelectionClasses.ItemSelection;
 import main.SelectionClasses.PodcastSelection;
 import main.LikeClasses.SongLikes;
+import main.UtilityClasses.Constants;
+import main.WrappedDatabase.AllUserStats.ArtistStatistics;
+import main.WrappedDatabase.AllUserStats.UserStatistics;
+import main.WrappedDatabase.Statistics;
 import main.WrappedDatabase.StatsFactory;
 
 import java.io.File;
@@ -29,6 +34,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
 import java.util.Objects;
 
 import static main.UtilityClasses.Do.DoCommands.doSearch;
@@ -255,7 +262,7 @@ public final class Main {
                 case "status" -> {
                     ObjectNode statusOutput;
                     statusOutput = doStatus(objectMapper, crtCommand, player,
-                            podcasts, library);
+                            podcasts, library, albums);
 
                     outputs.add(statusOutput);
                 }
@@ -263,7 +270,7 @@ public final class Main {
                 case "playPause" -> {
                     ObjectNode playPauseOutput;
                     playPauseOutput = doPlayPause(objectMapper, crtCommand, player,
-                            podcasts, library);
+                            podcasts, library, albums);
 
                     outputs.add(playPauseOutput);
                 }
@@ -281,7 +288,7 @@ public final class Main {
                     ObjectNode addRemoveOutput;
                     addRemoveOutput = doAddRemoveInPlaylist(objectMapper,
                             crtCommand, player, playlists, library,
-                            podcasts);
+                            podcasts, albums);
 
                     outputs.add(addRemoveOutput);
                 }
@@ -289,7 +296,8 @@ public final class Main {
                 case "like" -> {
                     ObjectNode likeOutput;
                     likeOutput = doLike(objectMapper, crtCommand, player,
-                            usersPlaylists, songsLikes, library);
+                            usersPlaylists, songsLikes, library,
+                            albums);
 
                     outputs.add(likeOutput);
                 }
@@ -313,7 +321,7 @@ public final class Main {
                 case "repeat" -> {
                     ObjectNode repeatOutput;
                     repeatOutput = doRepeat(objectMapper, crtCommand,
-                            player, podcasts, library);
+                            player, podcasts, library, albums);
 
                     outputs.add(repeatOutput);
                 }
@@ -321,7 +329,7 @@ public final class Main {
                 case "shuffle" -> {
                     ObjectNode shuffleOutput;
                     shuffleOutput = doShuffle(objectMapper, crtCommand,
-                            player, podcasts, library);
+                            player, podcasts, library, albums);
 
                     outputs.add(shuffleOutput);
                 }
@@ -329,7 +337,7 @@ public final class Main {
                 case "forward" -> {
                     ObjectNode forwardOutput;
                     forwardOutput = doForward(objectMapper, crtCommand,
-                            podcasts, player, library);
+                            podcasts, player, library, albums);
 
                     outputs.add(forwardOutput);
                 }
@@ -337,7 +345,7 @@ public final class Main {
                 case "backward" -> {
                     ObjectNode backwardOutput;
                     backwardOutput = doBackward(objectMapper, crtCommand,
-                            podcasts, player, library);
+                            podcasts, player, library, albums);
 
                     outputs.add(backwardOutput);
                 }
@@ -345,7 +353,7 @@ public final class Main {
                 case "next" -> {
                     ObjectNode nextOutput;
                     nextOutput = doNext(objectMapper, crtCommand,
-                            podcasts, player, library);
+                            podcasts, player, library, albums);
 
                     outputs.add(nextOutput);
                 }
@@ -353,7 +361,7 @@ public final class Main {
                 case "prev" -> {
                     ObjectNode prevOutput;
                     prevOutput = doPrev(objectMapper, crtCommand,
-                            podcasts, player, library);
+                            podcasts, player, library, albums);
 
                     outputs.add(prevOutput);
                 }
@@ -394,7 +402,7 @@ public final class Main {
                 case "switchConnectionStatus" -> {
                     ObjectNode switchConnectionOutput;
                     switchConnectionOutput = doSwitchConnectionStatus(objectMapper,
-                            crtCommand, player, library, podcasts);
+                            crtCommand, player, library, podcasts, albums);
 
                     outputs.add(switchConnectionOutput);
                 }
@@ -554,6 +562,288 @@ public final class Main {
                     outputs.add(topArtistsOutput);
                 }
 
+                case "wrapped" -> {
+                    ObjectNode wrappedOutput = objectMapper.createObjectNode();;
+
+                    wrappedOutput.put("command", "wrapped");
+                    wrappedOutput.put("user", crtCommand.getUsername());
+                    wrappedOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    ObjectNode result = objectMapper.createObjectNode();
+
+                    //  Update the player
+                    updatePlayer(player, crtCommand,
+                            podcasts, library, albums);
+
+                    //  Finding the user that queried the database
+                    //  Filtering by user type
+                    UserInput crtUser = null;
+
+                    for (UserInput user : library.getUsers()) {
+                        if (user.getUsername().equals(crtCommand.getUsername())) {
+                            crtUser = user;
+                            break;
+                        }
+                    }
+
+                    if (crtUser.getType().equals("user")) {
+                        //  Get user stats
+                        UserStatistics userStats = null;
+                        for(UserStatistics user : Statistics
+                                .getWrappedStats().getUsersStatistics()) {
+                            if (user.getUser().equals(crtUser)) {
+                                userStats = user;
+                                break;
+                            }
+                        }
+                        //  See if there is anything to display
+                        if (userStats.getTopSongs().isEmpty()
+                                && userStats.getTopAlbums().isEmpty()
+                                && userStats.getTopEpisodes().isEmpty()
+                                && userStats.getTopArtists().isEmpty()
+                                && userStats.getTopGenres().isEmpty()) {
+
+                            result.put("result", "No data to show for "
+                                    + crtUser.getUsername() + ".");
+                        } else {
+                            //  Sort Artist HashMap data and display if available
+                            if (!userStats.getTopArtists().isEmpty()) {
+                                ArrayList<Map.Entry<String, Integer>> artists;
+                                artists = new ArrayList<>(userStats.getTopArtists().entrySet());
+
+                                //  Sort
+                                artists.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().compareTo(a2.getKey());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+
+                                if (artists.size() > 5) {
+                                    artists.subList(Constants.MAX_SIZE_5, artists.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode artistInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<String, Integer> entry : artists) {
+                                    artistInfo.put(entry.getKey(), entry.getValue());
+                                }
+                                result.putPOJO("topArtists", artistInfo);
+                            } else {
+                                result.putPOJO("topArtists", "{ }");
+                            }
+
+                            //  Sort Genre HashMap data and display if available
+                            if (!userStats.getTopGenres().isEmpty()) {
+                                ArrayList<Map.Entry<String, Integer>> genres;
+                                genres = new ArrayList<>(userStats.getTopGenres().entrySet());
+
+                                //  Sort
+                                genres.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().compareTo(a2.getKey());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (genres.size() > 5) {
+                                    genres.subList(Constants.MAX_SIZE_5, genres.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode genreInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<String, Integer> entry : genres) {
+                                    genreInfo.put(entry.getKey(), entry.getValue());
+                                }
+                                result.putPOJO("topGenres", genreInfo);
+                            } else {
+                                result.putPOJO("topGenres", "{ }");
+                            }
+
+                            //  Sort Song HashMap data and display if available
+                            if (!userStats.getTopSongs().isEmpty()) {
+                                ArrayList<Map.Entry<SongInput, Integer>> songs;
+                                songs = new ArrayList<>(userStats.getTopSongs().entrySet());
+
+                                //  Sort
+                                songs.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getName()
+                                                .compareTo(a2.getKey().getName());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (songs.size() > 5) {
+                                    songs.subList(Constants.MAX_SIZE_5, songs.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode songInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<SongInput, Integer> entry : songs) {
+                                    songInfo.put(entry.getKey().getName(), entry.getValue());
+                                }
+                                result.putPOJO("topSongs", songInfo);
+                            } else {
+                                result.putPOJO("topSongs", "{ }");
+                            }
+
+                            //  Sort Album HashMap data and display if available
+                            if (!userStats.getTopAlbums().isEmpty()) {
+                                ArrayList<Map.Entry<Album, Integer>> topAlbums;
+                                topAlbums = new ArrayList<>(userStats.getTopAlbums().entrySet());
+
+                                //  Sort
+                                topAlbums.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (topAlbums.size() > 5) {
+                                    topAlbums.subList(Constants.MAX_SIZE_5, topAlbums.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode albumInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<Album, Integer> entry : topAlbums) {
+                                    albumInfo.put(entry.getKey().getName(), entry.getValue());
+                                }
+                                result.putPOJO("topAlbums", albumInfo);
+                            } else {
+                                result.putPOJO("topAlbums", "{ }");
+                            }
+
+                            //  Sort Episode HashMap data and display if available
+                            if (!userStats.getTopEpisodes().isEmpty()) {
+                                ArrayList<Map.Entry<EpisodeInput, Integer>> episodes;
+                                episodes = new ArrayList<>(userStats.getTopEpisodes().entrySet());
+
+                                //  Sort
+                                episodes.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (episodes.size() > 5) {
+                                    episodes.subList(Constants.MAX_SIZE_5, episodes.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode epInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<EpisodeInput, Integer> entry : episodes) {
+                                    epInfo.put(entry.getKey().getName(), entry.getValue());
+                                }
+                                result.putPOJO("topEpisodes", epInfo);
+                            } else {
+                                result.putPOJO("topEpisodes", "{ }");
+                            }
+                        }
+
+                    } else if (crtUser.getType().equals("artist")) {
+                        //  Get artist stats
+                        ArtistStatistics artistStats = null;
+                        for(ArtistStatistics artist : Statistics
+                                .getWrappedStats().getArtistsStatistics()) {
+                            if (artist.getArtist().equals(crtUser)) {
+                                artistStats = artist;
+                                break;
+                            }
+                        }
+                        //  See if there is anything to display
+                        if (artistStats.getTopSongs().isEmpty()
+                                && artistStats.getTopAlbums().isEmpty()
+                                && artistStats.getTopFans().isEmpty()
+                                && artistStats.getListeners().isEmpty()) {
+
+                            result.put("result", "No data to show for "
+                                    + crtUser.getUsername() + ".");
+                        } else {
+                            //  Sort Album HashMap data and display if available
+                            if (!artistStats.getTopAlbums().isEmpty()) {
+                                ArrayList<Map.Entry<Album, Integer>> topAlbums;
+                                topAlbums = new ArrayList<>(artistStats.getTopAlbums().entrySet());
+
+                                //  Sort
+                                topAlbums.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (topAlbums.size() > 5) {
+                                    topAlbums.subList(Constants.MAX_SIZE_5, topAlbums.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode albumInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<Album, Integer> entry : topAlbums) {
+                                    albumInfo.put(entry.getKey().getName(), entry.getValue());
+                                }
+                                result.putPOJO("topAlbums", albumInfo);
+                            } else {
+                                result.putPOJO("topAlbums", "{ }");
+                            }
+
+                            //  Sort Song HashMap data and display if available
+                            if (!artistStats.getTopSongs().isEmpty()) {
+                                ArrayList<Map.Entry<SongInput, Integer>> songs;
+                                songs = new ArrayList<>(artistStats.getTopSongs().entrySet());
+
+                                //  Sort
+                                songs.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (songs.size() > 5) {
+                                    songs.subList(Constants.MAX_SIZE_5, songs.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ObjectNode songInfo = objectMapper.createObjectNode();
+                                for (Map.Entry<SongInput, Integer> entry : songs) {
+                                    songInfo.put(entry.getKey().getName(), entry.getValue());
+                                }
+                                result.putPOJO("topSongs", songInfo);
+                            } else {
+                                result.putPOJO("topSongs", "{ }");
+                            }
+
+                            //  Sort Fans HashMap data and display if available
+                            if (!artistStats.getTopFans().isEmpty()) {
+                                ArrayList<Map.Entry<UserInput, Integer>> fans;
+                                fans = new ArrayList<>(artistStats.getTopFans().entrySet());
+
+                                //  Sort
+                                fans.sort((a1, a2) -> {
+                                    if (a2.getValue().equals(a1.getValue())) {
+                                        return a1.getKey().getUsername().compareTo(a2.getKey().getUsername());
+                                    }
+                                    return a2.getValue().compareTo(a1.getValue());
+                                });
+                                if (fans.size() > 5) {
+                                    fans.subList(Constants.MAX_SIZE_5, fans.size()).clear();
+                                }
+
+                                //  Add info to result array
+                                ArrayList<String> fanInfo = new ArrayList<>();
+                                for (Map.Entry<UserInput, Integer> entry : fans) {
+                                    fanInfo.add(entry.getKey().getUsername());
+                                }
+                                result.putPOJO("topFans", fanInfo);
+                            } else {
+                                result.putPOJO("topFans", "{ }");
+                            }
+
+                            //  Listeners
+                            result.putPOJO("listeners", artistStats.getListeners().size());
+                        }
+                    }
+
+                    wrappedOutput.putPOJO("result", result);
+                    outputs.add(wrappedOutput);
+                }
                 default -> {
                 }
             }
@@ -573,7 +863,8 @@ public final class Main {
     public static void updatePlayer(final ArrayList<ItemSelection> player,
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
-                                    final LibraryInput library) {
+                                    final LibraryInput library,
+                                    final ArrayList<Album> albums) {
         //  Iterate through the player and update times
         //  Remove all finished sources
         ArrayList<ItemSelection> removableItems = new ArrayList<>();
@@ -590,7 +881,8 @@ public final class Main {
             }
             //  Only update time of online players
             if (playerUser != null && playerUser.isOnline()) {
-                item.updateRemainingTime(crtCommand.getTimestamp());
+                item.updateRemainingTime(crtCommand.getTimestamp(),
+                        albums);
 
                 if (item.getRemainingTime() == 0) {
                     if (item instanceof PodcastSelection) {

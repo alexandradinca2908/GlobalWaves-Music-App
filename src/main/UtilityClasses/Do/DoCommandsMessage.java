@@ -51,7 +51,8 @@ public final class DoCommandsMessage {
                                                    final ArrayList<ItemSelection> player,
                                                    final ArrayList<Playlist> playlists,
                                                    final LibraryInput library,
-                                                   final ArrayList<PodcastSelection> podcasts) {
+                                                   final ArrayList<PodcastSelection> podcasts,
+                                                   final ArrayList<Album> albums) {
         ObjectNode addRemoveOutput = objectMapper.createObjectNode();
 
         addRemoveOutput.put("command", "addRemoveInPlaylist");
@@ -59,7 +60,7 @@ public final class DoCommandsMessage {
         addRemoveOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -75,7 +76,8 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make proper modifications to the playlist
-        String message = GetMessages.getAddRemoveMessage(player, playlists, crtCommand);
+        String message = GetMessages.getAddRemoveMessage(player, playlists, crtCommand,
+                albums);
         addRemoveOutput.put("message", message);
 
         return addRemoveOutput;
@@ -97,7 +99,8 @@ public final class DoCommandsMessage {
                                     final ArrayList<ItemSelection> player,
                                     final ArrayList<UserPlaylists> usersPlaylists,
                                     final ArrayList<SongLikes> songsLikes,
-                                    final LibraryInput library) {
+                                    final LibraryInput library,
+                                    final ArrayList<Album> albums) {
         ObjectNode likeOutput = objectMapper.createObjectNode();
 
         likeOutput.put("command", "like");
@@ -118,7 +121,7 @@ public final class DoCommandsMessage {
 
         //  Get message and make proper modifications to the user's liked songs
         String message = GetMessages.getLikeMessage(player, usersPlaylists,
-                crtCommand, songsLikes);
+                crtCommand, songsLikes, albums);
 
         likeOutput.put("message", message);
 
@@ -140,7 +143,8 @@ public final class DoCommandsMessage {
                                        final Command crtCommand,
                                        final ArrayList<PodcastSelection> podcasts,
                                        final ArrayList<ItemSelection> player,
-                                       final LibraryInput library) {
+                                       final LibraryInput library,
+                                       final ArrayList<Album> albums) {
         ObjectNode forwardOutput = objectMapper.createObjectNode();
 
         forwardOutput.put("command", "forward");
@@ -148,7 +152,7 @@ public final class DoCommandsMessage {
         forwardOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -174,7 +178,7 @@ public final class DoCommandsMessage {
 
         //  Get message and make changes
         String message = GetMessages.getForwardMessage(crtItem, crtCommand,
-                player, podcasts);
+                player, podcasts, albums);
         forwardOutput.put("message", message);
 
         return forwardOutput;
@@ -195,7 +199,8 @@ public final class DoCommandsMessage {
                                         final Command crtCommand,
                                         final ArrayList<PodcastSelection> podcasts,
                                         final ArrayList<ItemSelection> player,
-                                        final LibraryInput library) {
+                                        final LibraryInput library,
+                                        final ArrayList<Album> albums) {
         ObjectNode backwardOutput = objectMapper.createObjectNode();
 
         backwardOutput.put("command", "backward");
@@ -203,7 +208,7 @@ public final class DoCommandsMessage {
         backwardOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -249,7 +254,8 @@ public final class DoCommandsMessage {
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
                                     final ArrayList<ItemSelection> player,
-                                    final LibraryInput library) {
+                                    final LibraryInput library,
+                                    final ArrayList<Album> albums) {
         ObjectNode nextOutput = objectMapper.createObjectNode();
 
         nextOutput.put("command", "next");
@@ -257,7 +263,7 @@ public final class DoCommandsMessage {
         nextOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -304,7 +310,8 @@ public final class DoCommandsMessage {
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
                                     final ArrayList<ItemSelection> player,
-                                    final LibraryInput library) {
+                                    final LibraryInput library,
+                                    final ArrayList<Album> albums) {
         ObjectNode prevOutput = objectMapper.createObjectNode();
 
         prevOutput.put("command", "prev");
@@ -312,7 +319,7 @@ public final class DoCommandsMessage {
         prevOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  First we update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
@@ -398,7 +405,8 @@ public final class DoCommandsMessage {
                                                       final Command crtCommand,
                                                       final ArrayList<ItemSelection> player,
                                                       final LibraryInput library,
-                                                      final ArrayList<PodcastSelection> podcasts) {
+                                                      final ArrayList<PodcastSelection> podcasts,
+                                                      final ArrayList<Album> albums) {
         ObjectNode switchConnectionOutput = objectMapper.createObjectNode();
 
         switchConnectionOutput.put("command", "switchConnectionStatus");
@@ -417,7 +425,7 @@ public final class DoCommandsMessage {
 
         //  Get message and make changes
         String message = getSwitchConnectionMessage(crtUser,
-                player, crtCommand, podcasts, library);
+                player, crtCommand, podcasts, library, albums);
         switchConnectionOutput.put("message", message);
 
         return  switchConnectionOutput;
@@ -568,7 +576,7 @@ public final class DoCommandsMessage {
         deleteUserOutput.put("timestamp", crtCommand.getTimestamp());
 
         //  Update the player
-        updatePlayer(player, crtCommand, podcasts, library);
+        updatePlayer(player, crtCommand, podcasts, library, albums);
 
         String message = getDeleteUserMessage(library, crtCommand,
                 player, playlists, usersPlaylists, albums,

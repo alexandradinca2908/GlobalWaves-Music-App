@@ -298,7 +298,8 @@ public final class GetMessages {
      */
     public static String getAddRemoveMessage(final ArrayList<ItemSelection> player,
                                              final ArrayList<Playlist> playlists,
-                                             final Command crtCommand) {
+                                             final Command crtCommand,
+                                             final ArrayList<Album> albums) {
         String message;
 
         //  First we check to see if the user has anything loaded
@@ -358,7 +359,7 @@ public final class GetMessages {
                     int duration = crtAlbum.getAlbum().getDuration();
 
                     //  Calculating based on current time
-                    crtAlbum.updateRemainingTime(crtCommand.getTimestamp());
+                    crtAlbum.updateRemainingTime(crtCommand.getTimestamp(), albums);
 
                     for (SongInput song : crtAlbum.getAlbum().getSongs()) {
                         duration -= song.getDuration();
@@ -409,7 +410,8 @@ public final class GetMessages {
     public static String getLikeMessage(final ArrayList<ItemSelection> player,
                                         final ArrayList<UserPlaylists> usersPlaylists,
                                         final Command crtCommand,
-                                        final ArrayList<SongLikes> songsLikes) {
+                                        final ArrayList<SongLikes> songsLikes,
+                                        final ArrayList<Album> albums) {
         String message;
 
         //  We begin by checking if there is a loaded source, the source MUST be a song
@@ -500,7 +502,7 @@ public final class GetMessages {
             int duration = crtPlaylist.getPlaylist().getDuration();
 
             //  Calculating based on current time
-            crtPlaylist.updateRemainingTime(crtCommand.getTimestamp());
+            crtPlaylist.updateRemainingTime(crtCommand.getTimestamp(), albums);
 
             //  Choosing the appropriate order considering shuffle status
             ArrayList<SongInput> songOrder;
@@ -574,7 +576,7 @@ public final class GetMessages {
             int duration = crtAlbum.getAlbum().getDuration();
 
             //  Calculating based on current time
-            crtAlbum.updateRemainingTime(crtCommand.getTimestamp());
+            crtAlbum.updateRemainingTime(crtCommand.getTimestamp(), albums);
 
             //  Choosing the appropriate order considering shuffle status
             ArrayList<SongInput> songOrder;
@@ -656,7 +658,8 @@ public final class GetMessages {
      */
     public static String getForwardMessage(final ItemSelection crtItem, final Command crtCommand,
                                            final ArrayList<ItemSelection> player,
-                                           final ArrayList<PodcastSelection> podcasts) {
+                                           final ArrayList<PodcastSelection> podcasts,
+                                           final ArrayList<Album> albums) {
         String message;
 
         //  Verify if the command is possible
@@ -687,7 +690,8 @@ public final class GetMessages {
 
                 //  If the podcast finished, we update the time
                 if (copyItem.getRemainingTime() < 0) {
-                    copyItem.updateRemainingTime(crtCommand.getTimestamp());
+                    copyItem.updateRemainingTime(crtCommand.getTimestamp(),
+                            albums);
                     player.remove(copyItem);
                     podcasts.remove(copyItem);
 
@@ -950,7 +954,8 @@ public final class GetMessages {
                                                     final ArrayList<ItemSelection> player,
                                                     final Command crtCommand,
                                                     final ArrayList<PodcastSelection> podcasts,
-                                                    final LibraryInput library) {
+                                                    final LibraryInput library,
+                                                    final ArrayList<Album> albums) {
         String message;
 
         if (crtUser == null) {
@@ -961,7 +966,7 @@ public final class GetMessages {
             //  The user exists and is normal. Status can be updated
 
             //  First we update timestamps
-            updatePlayer(player, crtCommand, podcasts, library);
+            updatePlayer(player, crtCommand, podcasts, library, albums);
 
             //  Then we set the user's start time from where he left off
             if (!crtUser.isOnline()) {

@@ -3952,6 +3952,13 @@
   "timestamp" : 2902,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Nirvana",
+  "timestamp" : 2914,
+  "result" : {
+    "result" : "No data to show for Nirvana."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 2914,
@@ -5780,6 +5787,13 @@
   "timestamp" : 5257,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 5263,
+  "result" : {
+    "result" : "No data to show for Joni Mitchell."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 5263,
@@ -7461,6 +7475,13 @@
   "timestamp" : 6855,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "ABBA",
+  "timestamp" : 6881,
+  "result" : {
+    "result" : "No data to show for ABBA."
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 6881,
@@ -8326,13 +8347,13 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 7668,
-  "message" : "Search returned 1 results",
-  "results" : [ "You Are the Sunshine of My Life" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You Are The Sunshine Of My Life - Single Version With Horns", "You Are the Sunshine of My Life" ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 7668,
-  "message" : "Successfully selected You Are the Sunshine of My Life."
+  "message" : "Successfully selected You Are The Sunshine Of My Life - Single Version With Horns."
 }, {
   "command" : "load",
   "user" : "frank21",
@@ -9442,13 +9463,13 @@
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 8768,
-  "message" : "Search returned 1 results",
-  "results" : [ "You Are the Sunshine of My Life" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You Are The Sunshine Of My Life - Single Version With Horns", "You Are the Sunshine of My Life" ]
 }, {
   "command" : "select",
   "user" : "grace25",
   "timestamp" : 8768,
-  "message" : "Successfully selected You Are the Sunshine of My Life."
+  "message" : "Successfully selected You Are The Sunshine Of My Life - Single Version With Horns."
 }, {
   "command" : "load",
   "user" : "grace25",
@@ -10156,6 +10177,13 @@
   "user" : "jack29",
   "timestamp" : 9483,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Dylan",
+  "timestamp" : 9495,
+  "result" : {
+    "result" : "No data to show for Bob Dylan."
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -10980,6 +11008,13 @@
   "user" : "bob35",
   "timestamp" : 10350,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "The Beach Boys",
+  "timestamp" : 10363,
+  "result" : {
+    "result" : "No data to show for The Beach Boys."
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -15829,6 +15864,13 @@
   "timestamp" : 17201,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 17212,
+  "result" : {
+    "result" : "No data to show for Stevie Wonder."
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 17212,
@@ -17205,6 +17247,13 @@
   "timestamp" : 19371,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Radiohead",
+  "timestamp" : 19380,
+  "result" : {
+    "result" : "No data to show for Radiohead."
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 19380,
@@ -18004,6 +18053,13 @@
   "user" : "alice22",
   "timestamp" : 20591,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "emily30",
+  "timestamp" : 20591,
+  "result" : {
+    "result" : "No data to show for emily30."
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -19013,6 +19069,13 @@
   "timestamp" : 21831,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 21848,
+  "result" : {
+    "result" : "No data to show for jack29."
+  }
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 21889,
@@ -19060,6 +19123,13 @@
   "user" : "bob35",
   "timestamp" : 21991,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "frank21",
+  "timestamp" : 22029,
+  "result" : {
+    "result" : "No data to show for frank21."
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -19572,6 +19642,13 @@
   "user" : "grace25",
   "timestamp" : 22834,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Bruce Springsteen",
+  "timestamp" : 22844,
+  "result" : {
+    "result" : "No data to show for Bruce Springsteen."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -21541,6 +21618,13 @@
   "timestamp" : 26445,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 26453,
+  "result" : {
+    "result" : "No data to show for carol19."
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 26482,
@@ -22021,6 +22105,13 @@
   "timestamp" : 27192,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 27217,
+  "result" : {
+    "result" : "No data to show for henry26."
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 27245,
@@ -22244,6 +22335,13 @@
   "user" : "grace25",
   "timestamp" : 27518,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "bob35",
+  "timestamp" : 27523,
+  "result" : {
+    "result" : "No data to show for bob35."
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22548,6 +22646,13 @@
   "user" : "alice22",
   "timestamp" : 28039,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 28078,
+  "result" : {
+    "result" : "No data to show for grace25."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -22869,6 +22974,13 @@
   "timestamp" : 28753,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 28805,
+  "result" : {
+    "result" : "No data to show for david27."
+  }
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 28840,
@@ -22948,6 +23060,13 @@
   "user" : "irene33",
   "timestamp" : 29392,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Elton John",
+  "timestamp" : 29400,
+  "result" : {
+    "result" : "No data to show for Elton John."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -23205,6 +23324,13 @@
   "timestamp" : 30981,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 31186,
+  "result" : {
+    "result" : "No data to show for irene33."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 31281,
@@ -23460,6 +23586,13 @@
   "user" : "alice22",
   "timestamp" : 32789,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Johnny Cash",
+  "timestamp" : 32969,
+  "result" : {
+    "result" : "No data to show for Johnny Cash."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -23717,6 +23850,13 @@
   "timestamp" : 36122,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "The Beatles",
+  "timestamp" : 36172,
+  "result" : {
+    "result" : "No data to show for The Beatles."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 36172,
@@ -23860,6 +24000,13 @@
   "user" : "alice22",
   "timestamp" : 37174,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 37321,
+  "result" : {
+    "result" : "No data to show for The Rolling Stones."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -24101,6 +24248,13 @@
   "timestamp" : 43019,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Rihanna",
+  "timestamp" : 43125,
+  "result" : {
+    "result" : "No data to show for Rihanna."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 43125,
@@ -24244,4 +24398,95 @@
   "user" : "alice22",
   "timestamp" : 43808,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Adele",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Adele."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Imagine Dragons",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Imagine Dragons."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Marley",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Bob Marley."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Police",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for The Police."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "James Brown",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for James Brown."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Whitney Houston",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Whitney Houston."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "David Bowie",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for David Bowie."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Michael Jackson",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Michael Jackson."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Chuck Berry",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Chuck Berry."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Frank Sinatra",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Frank Sinatra."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Ray Charles",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Ray Charles."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Eminem",
+  "timestamp" : 43914,
+  "result" : {
+    "result" : "No data to show for Eminem."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 44014,
+  "result" : {
+    "result" : "No data to show for alice22."
+  }
 } ]

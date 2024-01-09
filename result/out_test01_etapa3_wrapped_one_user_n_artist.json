@@ -847,8 +847,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 6135,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1071,8 +1071,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 7254,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1279,8 +1279,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 8317,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1311,8 +1311,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 8467,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1327,8 +1327,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 8548,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1391,8 +1391,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 8920,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1503,8 +1503,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 9361,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1583,8 +1583,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 9715,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1663,8 +1663,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 10152,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -1679,8 +1679,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 10237,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2159,8 +2159,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 12651,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2367,8 +2367,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 13650,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2431,8 +2431,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 13904,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2559,8 +2559,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 14656,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2623,8 +2623,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 15060,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2751,8 +2751,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 15720,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -2783,8 +2783,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 15877,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3055,8 +3055,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 17138,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3199,8 +3199,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 18022,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3343,8 +3343,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 18839,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3455,8 +3455,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 19570,
-  "message" : "Search returned 1 results",
-  "results" : [ "No Particular Place to Go" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "No Particular Place to Go", "No Particular Place To Go - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3471,8 +3471,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 19651,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3487,8 +3487,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 19736,
-  "message" : "Search returned 2 results",
-  "results" : [ "Around and Around", "Around and Around" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Around and Around", "Around and Around", "Around And Around - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3663,8 +3663,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 20734,
-  "message" : "Search returned 2 results",
-  "results" : [ "Roll over Beethoven", "Roll over Beethoven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Roll over Beethoven", "Roll over Beethoven", "Roll Over Beethoven - Single Version" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -3835,6 +3835,13 @@
   "user" : "david27",
   "timestamp" : 21700,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Chuck Berry",
+  "timestamp" : 21770,
+  "result" : {
+    "result" : "No data to show for Chuck Berry."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -6955,6 +6962,13 @@
   "user" : "david27",
   "timestamp" : 40953,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "The Beach Boys",
+  "timestamp" : 41017,
+  "result" : {
+    "result" : "No data to show for The Beach Boys."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -10108,6 +10122,13 @@
   "timestamp" : 75844,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "The Doors",
+  "timestamp" : 75928,
+  "result" : {
+    "result" : "No data to show for The Doors."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 75928,
@@ -13260,6 +13281,13 @@
   "timestamp" : 122149,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Bruce Springsteen",
+  "timestamp" : 122450,
+  "result" : {
+    "result" : "No data to show for Bruce Springsteen."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 122450,
@@ -16395,6 +16423,13 @@
   "user" : "david27",
   "timestamp" : 156207,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Dylan",
+  "timestamp" : 156355,
+  "result" : {
+    "result" : "No data to show for Bob Dylan."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -19548,6 +19583,13 @@
   "timestamp" : 188586,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Prince",
+  "timestamp" : 188599,
+  "result" : {
+    "result" : "No data to show for Prince."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 188599,
@@ -22699,6 +22741,13 @@
   "user" : "david27",
   "timestamp" : 215676,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Adele",
+  "timestamp" : 215868,
+  "result" : {
+    "result" : "No data to show for Adele."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -25852,6 +25901,13 @@
   "timestamp" : 242796,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Rihanna",
+  "timestamp" : 242862,
+  "result" : {
+    "result" : "No data to show for Rihanna."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 242862,
@@ -26255,13 +26311,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 252013,
-  "message" : "Search returned 1 results",
-  "results" : [ "Play the Game" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Play The Game - Remastered 2011", "Play the Game" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 252013,
-  "message" : "Successfully selected Play the Game."
+  "message" : "Successfully selected Play The Game - Remastered 2011."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -27983,13 +28039,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 267705,
-  "message" : "Search returned 1 results",
-  "results" : [ "Another One Bites the Dust" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Another One Bites The Dust - Remastered 2011", "Another One Bites the Dust" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 267705,
-  "message" : "Successfully selected Another One Bites the Dust."
+  "message" : "Successfully selected Another One Bites The Dust - Remastered 2011."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -28095,13 +28151,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 268607,
-  "message" : "Search returned 1 results",
-  "results" : [ "Another One Bites the Dust" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Another One Bites The Dust - Remastered 2011", "Another One Bites the Dust" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 268607,
-  "message" : "Successfully selected Another One Bites the Dust."
+  "message" : "Successfully selected Another One Bites The Dust - Remastered 2011."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -28319,13 +28375,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 270629,
-  "message" : "Search returned 1 results",
-  "results" : [ "Another One Bites the Dust" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Another One Bites The Dust - Remastered 2011", "Another One Bites the Dust" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 270629,
-  "message" : "Successfully selected Another One Bites the Dust."
+  "message" : "Successfully selected Another One Bites The Dust - Remastered 2011."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -29003,6 +29059,13 @@
   "user" : "david27",
   "timestamp" : 276152,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Queen",
+  "timestamp" : 276281,
+  "result" : {
+    "result" : "No data to show for Queen."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -32139,6 +32202,13 @@
   "user" : "david27",
   "timestamp" : 302600,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "The Beatles",
+  "timestamp" : 302673,
+  "result" : {
+    "result" : "No data to show for The Beatles."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -35292,6 +35362,13 @@
   "timestamp" : 340986,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Eminem",
+  "timestamp" : 341117,
+  "result" : {
+    "result" : "No data to show for Eminem."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 341117,
@@ -38443,6 +38520,13 @@
   "user" : "david27",
   "timestamp" : 368437,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Marvin Gaye",
+  "timestamp" : 368526,
+  "result" : {
+    "result" : "No data to show for Marvin Gaye."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -41596,6 +41680,13 @@
   "timestamp" : 396118,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 396187,
+  "result" : {
+    "result" : "No data to show for Joni Mitchell."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 396187,
@@ -44731,6 +44822,13 @@
   "user" : "david27",
   "timestamp" : 428782,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Whitney Houston",
+  "timestamp" : 428914,
+  "result" : {
+    "result" : "No data to show for Whitney Houston."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -47884,6 +47982,13 @@
   "timestamp" : 452494,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Nirvana",
+  "timestamp" : 452821,
+  "result" : {
+    "result" : "No data to show for Nirvana."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 452821,
@@ -51035,6 +51140,13 @@
   "user" : "david27",
   "timestamp" : 494915,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "U2",
+  "timestamp" : 495083,
+  "result" : {
+    "result" : "No data to show for U2."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -54188,6 +54300,13 @@
   "timestamp" : 536097,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Madonna",
+  "timestamp" : 536336,
+  "result" : {
+    "result" : "No data to show for Madonna."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 536336,
@@ -57339,6 +57458,13 @@
   "user" : "david27",
   "timestamp" : 569998,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Jimi Hendrix",
+  "timestamp" : 570066,
+  "result" : {
+    "result" : "No data to show for Jimi Hendrix."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -60492,6 +60618,13 @@
   "timestamp" : 613908,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Elton John",
+  "timestamp" : 614220,
+  "result" : {
+    "result" : "No data to show for Elton John."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 614220,
@@ -63628,6 +63761,13 @@
   "timestamp" : 642741,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Ray Charles",
+  "timestamp" : 642810,
+  "result" : {
+    "result" : "No data to show for Ray Charles."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 642810,
@@ -66763,6 +66903,13 @@
   "user" : "david27",
   "timestamp" : 677988,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Michael Jackson",
+  "timestamp" : 678022,
+  "result" : {
+    "result" : "No data to show for Michael Jackson."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -69916,6 +70063,13 @@
   "timestamp" : 714007,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Radiohead",
+  "timestamp" : 714131,
+  "result" : {
+    "result" : "No data to show for Radiohead."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 714131,
@@ -73068,6 +73222,13 @@
   "timestamp" : 751428,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 751805,
+  "result" : {
+    "result" : "No data to show for The Rolling Stones."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 751805,
@@ -73231,8 +73392,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 761032,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -73759,8 +73920,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 767067,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -73919,8 +74080,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 769910,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -74015,8 +74176,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 771089,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -74351,8 +74512,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 775365,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -75343,8 +75504,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 790564,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -75471,8 +75632,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 792489,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -75535,8 +75696,8 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 793358,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "david27",
@@ -76220,6 +76381,13 @@
   "timestamp" : 802690,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 802803,
+  "result" : {
+    "result" : "No data to show for Pink Floyd."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 802803,
@@ -76799,13 +76967,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 817073,
-  "message" : "Search returned 1 results",
-  "results" : [ "Bird On A Wire" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Bird on a Wire - Live with Orchestra", "Bird On A Wire" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 817073,
-  "message" : "Successfully selected Bird On A Wire."
+  "message" : "Successfully selected Bird on a Wire - Live with Orchestra."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -79371,4 +79539,18 @@
   "user" : "david27",
   "timestamp" : 833349,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Johnny Cash",
+  "timestamp" : 833459,
+  "result" : {
+    "result" : "No data to show for Johnny Cash."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 833559,
+  "result" : {
+    "result" : "No data to show for david27."
+  }
 } ]

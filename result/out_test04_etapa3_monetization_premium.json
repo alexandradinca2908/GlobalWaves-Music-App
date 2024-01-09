@@ -1459,6 +1459,13 @@
   "timestamp" : 6172,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 6201,
+  "result" : {
+    "result" : "No data to show for jack29."
+  }
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 6298,
@@ -1587,6 +1594,13 @@
   "timestamp" : 6895,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "James Brown",
+  "timestamp" : 7034,
+  "result" : {
+    "result" : "No data to show for James Brown."
+  }
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7034,
@@ -1622,8 +1636,8 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7197,
-  "message" : "Search returned 1 results",
-  "results" : [ "Shine on You Crazy Diamond" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Shine on You Crazy Diamond", "Shine On You Crazy Diamond (Part Two)" ]
 }, {
   "command" : "select",
   "user" : "carol19",
@@ -2211,6 +2225,20 @@
   "timestamp" : 9616,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 9712,
+  "result" : {
+    "result" : "No data to show for henry26."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 9750,
+  "result" : {
+    "result" : "No data to show for carol19."
+  }
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 12124,
@@ -2354,6 +2382,13 @@
   "user" : "grace25",
   "timestamp" : 14523,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 14712,
+  "result" : {
+    "result" : "No data to show for Pink Floyd."
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2594,4 +2629,32 @@
   "user" : "grace25",
   "timestamp" : 20975,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Aretha Franklin",
+  "timestamp" : 21076,
+  "result" : {
+    "result" : "No data to show for Aretha Franklin."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 21076,
+  "result" : {
+    "result" : "No data to show for The Rolling Stones."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Frank Sinatra",
+  "timestamp" : 21076,
+  "result" : {
+    "result" : "No data to show for Frank Sinatra."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 21176,
+  "result" : {
+    "result" : "No data to show for grace25."
+  }
 } ]

@@ -335,13 +335,13 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 1388,
-  "message" : "Search returned 1 results",
-  "results" : [ "You Are the Sunshine of My Life" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You Are The Sunshine Of My Life - Single Version With Horns", "You Are the Sunshine of My Life" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 1388,
-  "message" : "Successfully selected You Are the Sunshine of My Life."
+  "message" : "Successfully selected You Are The Sunshine Of My Life - Single Version With Horns."
 }, {
   "command" : "load",
   "user" : "irene33",
@@ -383,13 +383,13 @@
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 1817,
-  "message" : "Search returned 1 results",
-  "results" : [ "You Are the Sunshine of My Life" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You Are The Sunshine Of My Life - Single Version With Horns", "You Are the Sunshine of My Life" ]
 }, {
   "command" : "select",
   "user" : "irene33",
   "timestamp" : 1817,
-  "message" : "Successfully selected You Are the Sunshine of My Life."
+  "message" : "Successfully selected You Are The Sunshine Of My Life - Single Version With Horns."
 }, {
   "command" : "load",
   "user" : "irene33",
@@ -955,6 +955,13 @@
   "user" : "grace25",
   "timestamp" : 4825,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 4927,
+  "result" : {
+    "result" : "No data to show for Stevie Wonder."
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1596,6 +1603,13 @@
   "timestamp" : 10099,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Prince",
+  "timestamp" : 10355,
+  "result" : {
+    "result" : "No data to show for Prince."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 10355,
@@ -2043,6 +2057,13 @@
   "user" : "david27",
   "timestamp" : 12571,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 12641,
+  "result" : {
+    "result" : "No data to show for irene33."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2524,6 +2545,13 @@
   "timestamp" : 14308,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "The Rolling Stones",
+  "timestamp" : 14425,
+  "result" : {
+    "result" : "No data to show for The Rolling Stones."
+  }
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 14425,
@@ -2539,6 +2567,13 @@
   "user" : "david27",
   "timestamp" : 14425,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 14442,
+  "result" : {
+    "result" : "No data to show for grace25."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2795,4 +2830,25 @@
   "user" : "david27",
   "timestamp" : 17782,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 17942,
+  "result" : {
+    "result" : "No data to show for Joni Mitchell."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Pink Floyd",
+  "timestamp" : 17942,
+  "result" : {
+    "result" : "No data to show for Pink Floyd."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 18042,
+  "result" : {
+    "result" : "No data to show for david27."
+  }
 } ]

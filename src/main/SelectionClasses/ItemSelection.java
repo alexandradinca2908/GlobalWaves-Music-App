@@ -2,11 +2,18 @@ package main.SelectionClasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import fileio.input.SongInput;
+import main.PlaylistClasses.Album;
 import main.VisitorPattern.VisitorObjectNode.ObjectNodeClasses.VisitGetStats;
 import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
+import main.WrappedDatabase.AllUserStats.ArtistStatistics;
+import main.WrappedDatabase.AllUserStats.UserStatistics;
+import main.WrappedDatabase.Statistics;
+
+import java.util.ArrayList;
 
 public class ItemSelection implements VisitableString, VisitableObjectNode {
     private String user;
@@ -147,7 +154,8 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
      *
      * @param crtTimestamp Current time
      */
-    public void updateRemainingTime(final int crtTimestamp) { };
+    public void updateRemainingTime(final int crtTimestamp,
+                                    final ArrayList<Album> albums) { };
 
     /**
      * This method accepts visitors for the ItemSelection subclasses
@@ -169,5 +177,116 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
     @Override
     public ObjectNode acceptObjectNode(final VisitorObjectNode visitor) {
         return null;
+    }
+
+    public void updateWrappedForSong(final SongInput selectedSong,
+                                     final ArrayList<Album> albums) {
+        //  User stats
+        UserStatistics crtUser = null;
+        for (UserStatistics userStatistics
+                : Statistics.getWrappedStats().getUsersStatistics()) {
+            if (userStatistics.getUser().getUsername()
+                    .equals(this.getUser())) {
+                crtUser = userStatistics;
+                break;
+            }
+        }
+
+        //  First song
+        if (crtUser.getTopSongs().containsKey(selectedSong)) {
+            //  Increase the listen count if the song exists
+            int count = crtUser.getTopSongs().get(selectedSong);
+            crtUser.getTopSongs().put(selectedSong, count + 1);
+        } else {
+            //  Add the song
+            crtUser.getTopSongs().put(selectedSong, 1);
+        }
+        //  Genre
+        if (crtUser.getTopGenres().containsKey(selectedSong.getGenre())) {
+            //  Increase the listen count if the genre exists
+            int count = crtUser.getTopGenres()
+                    .get(selectedSong.getGenre());
+            crtUser.getTopGenres()
+                    .put(selectedSong.getGenre(), count + 1);
+        } else {
+            //  Add the genre
+            crtUser.getTopGenres().put(selectedSong.getGenre(), 1);
+        }
+        //  Artist
+        if (crtUser.getTopArtists().containsKey(selectedSong.getArtist())) {
+            //  Increase the listen count if the artist exists
+            int count = crtUser.getTopArtists()
+                    .get(selectedSong.getArtist());
+            crtUser.getTopArtists()
+                    .put(selectedSong.getArtist(), count + 1);
+        } else {
+            //  Add the artist
+            crtUser.getTopArtists().put(selectedSong.getArtist(), 1);
+        }
+        //  Album
+        //  Find the album
+        Album crtAlbum = null;
+        for (Album album : albums) {
+            if (album.getName().equals(selectedSong.getAlbum())
+                    && album.getOwner().equals(selectedSong.getArtist())) {
+                crtAlbum = album;
+                break;
+            }
+        }
+        if (crtUser.getTopAlbums().containsKey(crtAlbum)) {
+            //  Increase the listen count if the album exists
+            int count = crtUser.getTopAlbums()
+                    .get(crtAlbum);
+            crtUser.getTopAlbums()
+                    .put(crtAlbum, count + 1);
+        } else {
+            //  Add the album
+            crtUser.getTopAlbums().put(crtAlbum, 1);
+        }
+
+        //  Artist stats
+        ArtistStatistics crtArtist = null;
+        for (ArtistStatistics artistStatistics
+                : Statistics.getWrappedStats().getArtistsStatistics()) {
+            if (artistStatistics.getArtist().getUsername()
+                    .equals(selectedSong.getArtist())) {
+                crtArtist = artistStatistics;
+                break;
+            }
+        }
+
+        //  Song
+        if (crtArtist.getTopSongs().containsKey(selectedSong)) {
+            //  Increase the listen count if the song exists
+            int count = crtArtist.getTopSongs().get(selectedSong);
+            crtArtist.getTopSongs().put(selectedSong, count + 1);
+        } else {
+            //  Add the song if it's the first time being listened to
+            crtArtist.getTopSongs().put(selectedSong, 1);
+        }
+        // Album
+        if (crtArtist.getTopAlbums().containsKey(crtAlbum)) {
+            //  Increase the listen count if the album exists
+            int count = crtArtist.getTopAlbums()
+                    .get(crtAlbum);
+            crtArtist.getTopAlbums()
+                    .put(crtAlbum, count + 1);
+        } else {
+            //  Add the album
+            crtArtist.getTopAlbums().put(crtAlbum, 1);
+        }
+        //  Fans
+        if (crtArtist.getTopFans().containsKey(crtUser.getUser())) {
+            //  Increase the listen count if the fan exists
+            int count = crtArtist.getTopFans().get(crtUser.getUser());
+            crtArtist.getTopFans().put(crtUser.getUser(), count + 1);
+        } else {
+            //  Add the song if it's the first encounter
+            crtArtist.getTopFans().put(crtUser.getUser(), 1);
+        }
+        //  Listeners
+        if (!crtArtist.getListeners().contains(crtUser.getUser())) {
+            crtArtist.getListeners().add(crtUser.getUser());
+        }
     }
 }

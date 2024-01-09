@@ -1176,8 +1176,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 901,
-  "message" : "Search returned 1 results",
-  "results" : [ "You're All I Need To Get By" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You're All I Need To Get By", "You're All I Need to Get By" ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -1368,8 +1368,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 1126,
-  "message" : "Search returned 1 results",
-  "results" : [ "You're All I Need To Get By" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "You're All I Need To Get By", "You're All I Need to Get By" ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -2056,13 +2056,13 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2139,
-  "message" : "Search returned 1 results",
-  "results" : [ "My Kind of Town" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "My Kind Of Town - Remastered 2008", "My Kind of Town" ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 2139,
-  "message" : "Successfully selected My Kind of Town."
+  "message" : "Successfully selected My Kind Of Town - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "frank21",
@@ -2184,13 +2184,13 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 2256,
-  "message" : "Search returned 1 results",
-  "results" : [ "Fly Me to the Moon" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "Fly Me To The Moon - Remastered 2008", "Fly Me to the Moon" ]
 }, {
   "command" : "select",
   "user" : "bob35",
   "timestamp" : 2256,
-  "message" : "Successfully selected Fly Me to the Moon."
+  "message" : "Successfully selected Fly Me To The Moon - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "bob35",
@@ -2488,13 +2488,13 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 2561,
-  "message" : "Search returned 1 results",
-  "results" : [ "It Was a Very Good Year" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "It Was A Very Good Year - Remastered 2008", "It Was a Very Good Year" ]
 }, {
   "command" : "select",
   "user" : "frank21",
   "timestamp" : 2561,
-  "message" : "Successfully selected It Was a Very Good Year."
+  "message" : "Successfully selected It Was A Very Good Year - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "frank21",
@@ -2612,6 +2612,13 @@
   "user" : "frank21",
   "timestamp" : 2693,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Marvin Gaye",
+  "timestamp" : 2775,
+  "result" : {
+    "result" : "No data to show for Marvin Gaye."
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -3576,8 +3583,8 @@
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 5138,
-  "message" : "Search returned 2 results",
-  "results" : [ "When the Levee Breaks", "When the Levee Breaks" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "When the Levee Breaks", "When The Levee Breaks - Alternate UK Mix In Progress", "When the Levee Breaks" ]
 }, {
   "command" : "select",
   "user" : "frank21",
@@ -3592,13 +3599,13 @@
   "command" : "search",
   "user" : "david27",
   "timestamp" : 5165,
-  "message" : "Search returned 1 results",
-  "results" : [ "My Kind of Town" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "My Kind Of Town - Remastered 2008", "My Kind of Town" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 5165,
-  "message" : "Successfully selected My Kind of Town."
+  "message" : "Successfully selected My Kind Of Town - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -3848,13 +3855,13 @@
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 5657,
-  "message" : "Search returned 1 results",
-  "results" : [ "My Kind of Town" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "My Kind Of Town - Remastered 2008", "My Kind of Town" ]
 }, {
   "command" : "select",
   "user" : "emily30",
   "timestamp" : 5657,
-  "message" : "Successfully selected My Kind of Town."
+  "message" : "Successfully selected My Kind Of Town - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "emily30",
@@ -4084,6 +4091,13 @@
   "user" : "jack29",
   "timestamp" : 5905,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Madonna",
+  "timestamp" : 5918,
+  "result" : {
+    "result" : "No data to show for Madonna."
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -4536,13 +4550,13 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 6365,
-  "message" : "Search returned 1 results",
-  "results" : [ "My Kind of Town" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "My Kind Of Town - Remastered 2008", "My Kind of Town" ]
 }, {
   "command" : "select",
   "user" : "alice22",
   "timestamp" : 6365,
-  "message" : "Successfully selected My Kind of Town."
+  "message" : "Successfully selected My Kind Of Town - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "alice22",
@@ -4568,13 +4582,13 @@
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 6408,
-  "message" : "Search returned 1 results",
-  "results" : [ "My Kind of Town" ]
+  "message" : "Search returned 2 results",
+  "results" : [ "My Kind Of Town - Remastered 2008", "My Kind of Town" ]
 }, {
   "command" : "select",
   "user" : "carol19",
   "timestamp" : 6408,
-  "message" : "Successfully selected My Kind of Town."
+  "message" : "Successfully selected My Kind Of Town - Remastered 2008."
 }, {
   "command" : "load",
   "user" : "carol19",
@@ -4836,6 +4850,13 @@
   "user" : "irene33",
   "timestamp" : 6707,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Stevie Wonder",
+  "timestamp" : 6741,
+  "result" : {
+    "result" : "No data to show for Stevie Wonder."
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -6245,6 +6266,13 @@
   "timestamp" : 9217,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "Frank Sinatra",
+  "timestamp" : 9221,
+  "result" : {
+    "result" : "No data to show for Frank Sinatra."
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 9221,
@@ -6484,6 +6512,13 @@
   "user" : "emily30",
   "timestamp" : 9624,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Aretha Franklin",
+  "timestamp" : 9635,
+  "result" : {
+    "result" : "No data to show for Aretha Franklin."
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -7493,6 +7528,13 @@
   "timestamp" : 11240,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "emily30",
+  "timestamp" : 11249,
+  "result" : {
+    "result" : "No data to show for emily30."
+  }
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 11309,
@@ -7624,8 +7666,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 11598,
-  "message" : "Search returned 2 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix", "Stairway to Heaven" ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -7800,8 +7842,8 @@
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 11929,
-  "message" : "Search returned 2 results",
-  "results" : [ "Going to California", "Going to California" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Going to California", "Going To California - Mandolin / Guitar Mix", "Going to California" ]
 }, {
   "command" : "select",
   "user" : "henry26",
@@ -7860,6 +7902,13 @@
   "user" : "grace25",
   "timestamp" : 12096,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "frank21",
+  "timestamp" : 12102,
+  "result" : {
+    "result" : "No data to show for frank21."
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -8168,8 +8217,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 12763,
-  "message" : "Search returned 2 results",
-  "results" : [ "The Battle of Evermore", "The Battle of Evermore" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "The Battle of Evermore", "The Battle Of Evermore - Mandolin / Guitar Mix From Headley Grange", "The Battle of Evermore" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -8392,8 +8441,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 13554,
-  "message" : "Search returned 2 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix", "Stairway to Heaven" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -8500,6 +8549,13 @@
   "user" : "grace25",
   "timestamp" : 13675,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Bruce Springsteen",
+  "timestamp" : 13709,
+  "result" : {
+    "result" : "No data to show for Bruce Springsteen."
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -8616,8 +8672,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 13885,
-  "message" : "Search returned 2 results",
-  "results" : [ "Going to California", "Going to California" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Going to California", "Going To California - Mandolin / Guitar Mix", "Going to California" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -8776,8 +8832,8 @@
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 14049,
-  "message" : "Search returned 2 results",
-  "results" : [ "Going to California", "Going to California" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Going to California", "Going To California - Mandolin / Guitar Mix", "Going to California" ]
 }, {
   "command" : "select",
   "user" : "bob35",
@@ -8884,6 +8940,13 @@
   "user" : "henry26",
   "timestamp" : 14390,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Joni Mitchell",
+  "timestamp" : 14439,
+  "result" : {
+    "result" : "No data to show for Joni Mitchell."
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -9428,6 +9491,13 @@
   "user" : "carol19",
   "timestamp" : 15309,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "grace25",
+  "timestamp" : 15317,
+  "result" : {
+    "result" : "No data to show for grace25."
+  }
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -10117,6 +10187,13 @@
   "timestamp" : 16382,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "david27",
+  "timestamp" : 16388,
+  "result" : {
+    "result" : "No data to show for david27."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 16415,
@@ -10152,8 +10229,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 16449,
-  "message" : "Search returned 2 results",
-  "results" : [ "Stairway to Heaven", "Stairway to Heaven" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "Stairway to Heaven", "Stairway To Heaven - Sunset Sound Mix", "Stairway to Heaven" ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -10392,8 +10469,8 @@
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 16986,
-  "message" : "Search returned 2 results",
-  "results" : [ "The Battle of Evermore", "The Battle of Evermore" ]
+  "message" : "Search returned 3 results",
+  "results" : [ "The Battle of Evermore", "The Battle Of Evermore - Mandolin / Guitar Mix From Headley Grange", "The Battle of Evermore" ]
 }, {
   "command" : "select",
   "user" : "alice22",
@@ -10532,6 +10609,13 @@
   "user" : "bob35",
   "timestamp" : 17266,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Led Zeppelin",
+  "timestamp" : 17287,
+  "result" : {
+    "result" : "No data to show for Led Zeppelin."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -10709,6 +10793,13 @@
   "timestamp" : 17665,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "jack29",
+  "timestamp" : 17689,
+  "result" : {
+    "result" : "No data to show for jack29."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 17701,
@@ -10724,6 +10815,13 @@
   "user" : "alice22",
   "timestamp" : 17701,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Jimi Hendrix",
+  "timestamp" : 17799,
+  "result" : {
+    "result" : "No data to show for Jimi Hendrix."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -10756,6 +10854,13 @@
   "user" : "henry26",
   "timestamp" : 17815,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "henry26",
+  "timestamp" : 17949,
+  "result" : {
+    "result" : "No data to show for henry26."
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -10868,6 +10973,13 @@
   "user" : "bob35",
   "timestamp" : 20534,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "bob35",
+  "timestamp" : 20668,
+  "result" : {
+    "result" : "No data to show for bob35."
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -11173,6 +11285,13 @@
   "timestamp" : 23598,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "carol19",
+  "timestamp" : 23865,
+  "result" : {
+    "result" : "No data to show for carol19."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 24580,
@@ -11268,6 +11387,13 @@
   "user" : "irene33",
   "timestamp" : 25097,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Fleetwood Mac",
+  "timestamp" : 25104,
+  "result" : {
+    "result" : "No data to show for Fleetwood Mac."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -11493,6 +11619,13 @@
   "timestamp" : 25936,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "wrapped",
+  "user" : "The Beatles",
+  "timestamp" : 25999,
+  "result" : {
+    "result" : "No data to show for The Beatles."
+  }
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 25999,
@@ -11572,6 +11705,20 @@
   "user" : "alice22",
   "timestamp" : 26175,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "irene33",
+  "timestamp" : 26272,
+  "result" : {
+    "result" : "No data to show for irene33."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Dylan",
+  "timestamp" : 26302,
+  "result" : {
+    "result" : "No data to show for Bob Dylan."
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -11668,4 +11815,32 @@
   "user" : "alice22",
   "timestamp" : 26857,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "wrapped",
+  "user" : "Bob Marley",
+  "timestamp" : 26891,
+  "result" : {
+    "result" : "No data to show for Bob Marley."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Elton John",
+  "timestamp" : 26891,
+  "result" : {
+    "result" : "No data to show for Elton John."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "Nirvana",
+  "timestamp" : 26891,
+  "result" : {
+    "result" : "No data to show for Nirvana."
+  }
+}, {
+  "command" : "wrapped",
+  "user" : "alice22",
+  "timestamp" : 26991,
+  "result" : {
+    "result" : "No data to show for alice22."
+  }
 } ]

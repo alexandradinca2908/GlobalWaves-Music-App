@@ -8,6 +8,10 @@ public final class ArtistStatistics extends GeneralStatistics {
     private UserInput artist;
     private HashMap<UserInput, Integer> topFans = new HashMap<>();
 
+    public ArtistStatistics(UserInput artist) {
+        this.artist = artist;
+    }
+
     public HashMap<UserInput, Integer> getTopFans() {
         return topFans;
     }
