@@ -354,32 +354,74 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 110,
-  "message" : "No data to show for carol19."
+  "message" : "No data to show for user carol19."
 }, {
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 110,
-  "message" : "No data to show for bob35."
+  "message" : "No data to show for user bob35."
 }, {
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 110,
-  "message" : "No data to show for frank21."
+  "message" : "No data to show for user frank21."
 }, {
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 227,
-  "message" : "No data to show for irene33."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 1
+    },
+    "topGenres" : {
+      "alternative" : 1
+    },
+    "topSongs" : {
+      "Just" : 1
+    },
+    "topAlbums" : {
+      "The Bends" : 1
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 242,
-  "message" : "No data to show for emily30."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 1
+    },
+    "topGenres" : {
+      "alternative" : 1
+    },
+    "topSongs" : {
+      "Exit Music (for a Film)" : 1
+    },
+    "topAlbums" : {
+      "OK Computer" : 1
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 242,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 1
+    },
+    "topGenres" : {
+      "alternative" : 1
+    },
+    "topSongs" : {
+      "Exit Music (for a Film)" : 1
+    },
+    "topAlbums" : {
+      "OK Computer" : 1
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -400,7 +442,23 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 564,
-  "message" : "No data to show for henry26."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 2
+    },
+    "topGenres" : {
+      "alternative" : 2
+    },
+    "topSongs" : {
+      "Reckoner" : 1,
+      "Subterranean Homesick Alien" : 1
+    },
+    "topAlbums" : {
+      "In Rainbows" : 1,
+      "OK Computer" : 1
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -421,7 +479,25 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 1590,
-  "message" : "No data to show for alice22."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 7
+    },
+    "topGenres" : {
+      "alternative" : 7
+    },
+    "topSongs" : {
+      "(Nice Dream)" : 1,
+      "Bones" : 1,
+      "Fake Plastic Trees" : 1,
+      "High and Dry" : 1,
+      "Just" : 1
+    },
+    "topAlbums" : {
+      "The Bends" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -442,7 +518,27 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 1647,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 7
+    },
+    "topGenres" : {
+      "alternative rock" : 6,
+      "alternative" : 1
+    },
+    "topSongs" : {
+      "Anyone Can Play Guitar" : 1,
+      "Creep" : 1,
+      "How Do You?" : 1,
+      "Stop Whispering" : 1,
+      "Thinking About You" : 1
+    },
+    "topAlbums" : {
+      "Pablo Honey" : 6,
+      "In Rainbows" : 1
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -464,11 +560,55 @@
   "user" : "Radiohead",
   "timestamp" : 3111,
   "result" : {
-    "result" : "No data to show for Radiohead."
+    "topAlbums" : {
+      "The Bends" : 14,
+      "OK Computer" : 9,
+      "In Rainbows" : 7,
+      "Pablo Honey" : 6
+    },
+    "topSongs" : {
+      "Exit Music (for a Film)" : 3,
+      "(Nice Dream)" : 2,
+      "Just" : 2,
+      "Subterranean Homesick Alien" : 2,
+      "Weird Fishes/Arpeggi" : 2
+    },
+    "topFans" : [ "alice22", "jack29", "david27", "henry26", "emily30" ],
+    "listeners" : 7
   }
 }, {
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 3211,
-  "message" : "No data to show for jack29."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 12
+    },
+    "topGenres" : {
+      "alternative" : 12
+    },
+    "topSongs" : {
+      "(Nice Dream)" : 1,
+      "15 Step" : 1,
+      "Airbag" : 1,
+      "All I Need" : 1,
+      "Bodysnatchers" : 1
+    },
+    "topAlbums" : {
+      "OK Computer" : 6,
+      "In Rainbows" : 5,
+      "The Bends" : 1
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Radiohead" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

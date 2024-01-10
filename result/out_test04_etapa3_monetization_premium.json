@@ -1462,7 +1462,33 @@
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 6201,
-  "message" : "No data to show for jack29."
+  "result" : {
+    "topArtists" : {
+      "James Brown" : 21,
+      "Pink Floyd" : 15,
+      "Aretha Franklin" : 12
+    },
+    "topGenres" : {
+      "funk" : 21,
+      "progressive rock" : 15,
+      "soul" : 12
+    },
+    "topSongs" : {
+      "Come Rain Or Come Shine" : 2,
+      "Have a Cigar" : 2,
+      "I Got You (I Feel Good)" : 2,
+      "I Wanna Be Around (feat. New York Studio Orchestra & Chorus)" : 2,
+      "Nature Boy" : 2
+    },
+    "topAlbums" : {
+      "Soul Queen" : 12,
+      "Out of Sight" : 11,
+      "The 50th Anniversary Collection" : 9,
+      "The Dark Side of the Moon" : 6,
+      "The Wall" : 5
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1596,7 +1622,20 @@
   "user" : "James Brown",
   "timestamp" : 7034,
   "result" : {
-    "result" : "No data to show for James Brown."
+    "topAlbums" : {
+      "The 50th Anniversary Collection" : 54,
+      "Out of Sight" : 21,
+      "20 All-Time Greatest Hits!" : 17
+    },
+    "topSongs" : {
+      "Come Rain Or Come Shine" : 4,
+      "I Got You (I Feel Good)" : 4,
+      "I Got You (I Feel Good) (Original 1964 Album)" : 4,
+      "I Wanna Be Around (feat. New York Studio Orchestra & Chorus)" : 3,
+      "It's A Man's, Man's, Man's World - Single Version / Mono" : 3
+    },
+    "topFans" : [ "carol19", "grace25", "jack29", "henry26" ],
+    "listeners" : 4
   }
 }, {
   "command" : "search",
@@ -2226,12 +2265,64 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 9712,
-  "message" : "No data to show for henry26."
+  "result" : {
+    "topArtists" : {
+      "Pink Floyd" : 32,
+      "Aretha Franklin" : 12,
+      "James Brown" : 6
+    },
+    "topGenres" : {
+      "progressive rock" : 32,
+      "soul" : 12,
+      "funk" : 6
+    },
+    "topSongs" : {
+      "Another Brick in the Wall Part 1" : 2,
+      "Another Brick in the Wall Part 2" : 2,
+      "Have a Cigar" : 2,
+      "Tracks Of My Tears" : 2,
+      "Welcome to the Machine" : 2
+    },
+    "topAlbums" : {
+      "The Wall" : 19,
+      "Soul Queen" : 12,
+      "Wish You Were Here" : 8,
+      "The 50th Anniversary Collection" : 4,
+      "The Division Bell" : 3
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 9750,
-  "message" : "No data to show for carol19."
+  "result" : {
+    "topArtists" : {
+      "James Brown" : 40,
+      "Pink Floyd" : 9,
+      "Aretha Franklin" : 8
+    },
+    "topGenres" : {
+      "funk" : 40,
+      "progressive rock" : 9,
+      "soul" : 8
+    },
+    "topSongs" : {
+      "It's A Man's, Man's, Man's World - Single Version / Mono" : 3,
+      "Ain't It Funky Now" : 2,
+      "Come Rain Or Come Shine" : 2,
+      "Good Good Lovin' - Single Version" : 2,
+      "Have a Cigar" : 2
+    },
+    "topAlbums" : {
+      "The 50th Anniversary Collection" : 34,
+      "Soul Queen" : 8,
+      "Out of Sight" : 5,
+      "The Dark Side of the Moon" : 5,
+      "Wish You Were Here" : 4
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2381,7 +2472,21 @@
   "user" : "Pink Floyd",
   "timestamp" : 14712,
   "result" : {
-    "result" : "No data to show for Pink Floyd."
+    "topAlbums" : {
+      "The Dark Side of the Moon" : 24,
+      "The Wall" : 24,
+      "The Division Bell" : 19,
+      "Wish You Were Here" : 19
+    },
+    "topSongs" : {
+      "Have a Cigar" : 7,
+      "Brain Damage" : 4,
+      "Speak to Me" : 4,
+      "Welcome to the Machine" : 4,
+      "Cluster One" : 3
+    },
+    "topFans" : [ "henry26", "grace25", "jack29", "carol19" ],
+    "listeners" : 4
   }
 }, {
   "command" : "search",
@@ -2628,25 +2733,80 @@
   "user" : "Aretha Franklin",
   "timestamp" : 21076,
   "result" : {
-    "result" : "No data to show for Aretha Franklin."
+    "topAlbums" : {
+      "Soul Queen" : 81
+    },
+    "topSongs" : {
+      "Baby, Baby, Baby" : 3,
+      "Dr. Feelgood (Love Is a Serious Business)" : 3,
+      "I Say a Little Prayer" : 3,
+      "My Song" : 3,
+      "Night Life" : 3
+    },
+    "topFans" : [ "grace25", "henry26", "jack29", "carol19" ],
+    "listeners" : 4
   }
 }, {
   "command" : "wrapped",
   "user" : "The Rolling Stones",
   "timestamp" : 21076,
-  "result" : {
-    "result" : "No data to show for The Rolling Stones."
-  }
+  "message" : "No data to show for user The Rolling Stones."
 }, {
   "command" : "wrapped",
   "user" : "Frank Sinatra",
   "timestamp" : 21076,
-  "result" : {
-    "result" : "No data to show for Frank Sinatra."
-  }
+  "message" : "No data to show for user Frank Sinatra."
 }, {
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 21176,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "Aretha Franklin" : 49,
+      "Pink Floyd" : 30,
+      "James Brown" : 25
+    },
+    "topGenres" : {
+      "soul" : 49,
+      "progressive rock" : 30,
+      "funk" : 25
+    },
+    "topSongs" : {
+      "I Say a Little Prayer" : 3,
+      "Ain't No Way" : 2,
+      "Baby I Love You" : 2,
+      "Baby, Baby, Baby" : 2,
+      "Cluster One" : 2
+    },
+    "topAlbums" : {
+      "Soul Queen" : 49,
+      "The Division Bell" : 16,
+      "20 All-Time Greatest Hits!" : 15,
+      "The Dark Side of the Moon" : 11,
+      "The 50th Anniversary Collection" : 7
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "James Brown" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Pink Floyd" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

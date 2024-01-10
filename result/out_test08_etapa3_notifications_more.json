@@ -828,4 +828,7 @@
   "user" : "Bob Dylan",
   "timestamp" : 10076,
   "message" : "Bob Dylan has added new album successfully."
+}, {
+  "command" : "endProgram",
+  "result" : { }
 } ]

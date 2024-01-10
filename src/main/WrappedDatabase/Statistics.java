@@ -7,9 +7,9 @@ import main.WrappedDatabase.AllUserStats.UserStatistics;
 import java.util.ArrayList;
 
 public final class Statistics {
-    private ArrayList<UserStatistics> usersStatistics = new ArrayList<>();
-    private ArrayList<ArtistStatistics> artistsStatistics = new ArrayList<>();
-    private ArrayList<HostStatistics> hostsStatistics = new ArrayList<>();
+    private ArrayList<UserStatistics> usersStatistics;
+    private ArrayList<ArtistStatistics> artistsStatistics;
+    private ArrayList<HostStatistics> hostsStatistics;
 
     private static Statistics wrappedStats;
 
@@ -19,15 +19,25 @@ public final class Statistics {
     public static Statistics getWrappedStats() {
         if (wrappedStats == null) {
             wrappedStats = new Statistics();
+            wrappedStats.usersStatistics = new ArrayList<>();
+            wrappedStats.artistsStatistics = new ArrayList<>();
+            wrappedStats.hostsStatistics = new ArrayList<>();
         }
         return wrappedStats;
+    }
+
+    public void resetWrappedStats() {
+        wrappedStats.usersStatistics = null;
+        wrappedStats.artistsStatistics = null;
+        wrappedStats.hostsStatistics = null;
+        wrappedStats = null;
     }
 
     public ArrayList<UserStatistics> getUsersStatistics() {
         return usersStatistics;
     }
 
-    public void setUsersStatistics(ArrayList<UserStatistics> usersStatistics) {
+    public void setUsersStatistics(final ArrayList<UserStatistics> usersStatistics) {
         this.usersStatistics = usersStatistics;
     }
 
@@ -35,7 +45,7 @@ public final class Statistics {
         return artistsStatistics;
     }
 
-    public void setArtistsStatistics(ArrayList<ArtistStatistics> artistsStatistics) {
+    public void setArtistsStatistics(final ArrayList<ArtistStatistics> artistsStatistics) {
         this.artistsStatistics = artistsStatistics;
     }
 
@@ -43,7 +53,7 @@ public final class Statistics {
         return hostsStatistics;
     }
 
-    public void setHostsStatistics(ArrayList<HostStatistics> hostsStatistics) {
+    public void setHostsStatistics(final ArrayList<HostStatistics> hostsStatistics) {
         this.hostsStatistics = hostsStatistics;
     }
 }

@@ -2617,7 +2617,21 @@
   "user" : "Marvin Gaye",
   "timestamp" : 2775,
   "result" : {
-    "result" : "No data to show for Marvin Gaye."
+    "topAlbums" : {
+      "United" : 27,
+      "The Very Best of Marvin Gaye" : 18,
+      "What's Going On" : 18,
+      "Midnight Love" : 13
+    },
+    "topSongs" : {
+      "You've Got What It Takes" : 6,
+      "Ain't No Mountain High Enough" : 4,
+      "What's Happening Brother" : 4,
+      "God Is Love" : 3,
+      "Hold Me Oh My Darling" : 3
+    },
+    "topFans" : [ "carol19", "frank21", "emily30", "irene33", "david27" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -4096,7 +4110,21 @@
   "user" : "Madonna",
   "timestamp" : 5918,
   "result" : {
-    "result" : "No data to show for Madonna."
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 37,
+      "Confessions on a Dance Floor" : 19,
+      "Ray of Light" : 16,
+      "Like a Prayer" : 13
+    },
+    "topSongs" : {
+      "Express Yourself" : 5,
+      "Future Lovers" : 4,
+      "Hung Up" : 4,
+      "Like a Prayer" : 4,
+      "Love Song" : 4
+    },
+    "topFans" : [ "henry26", "jack29", "alice22", "irene33", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -4855,7 +4883,21 @@
   "user" : "Stevie Wonder",
   "timestamp" : 6741,
   "result" : {
-    "result" : "No data to show for Stevie Wonder."
+    "topAlbums" : {
+      "The Definitive Collection" : 34,
+      "Songs in the Key of Life" : 23,
+      "Innervisions" : 19,
+      "Talking Book" : 13
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 5,
+      "Signed, Sealed, Delivered (I'm Yours)" : 5,
+      "Don't You Worry 'Bout a Thing" : 4,
+      "Superstition - Single Version" : 4,
+      "All in Love Is Fair" : 3
+    },
+    "topFans" : [ "irene33", "david27", "carol19", "alice22", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -6270,7 +6312,21 @@
   "user" : "Frank Sinatra",
   "timestamp" : 9221,
   "result" : {
-    "result" : "No data to show for Frank Sinatra."
+    "topAlbums" : {
+      "Nothing But the Best (Remastered)" : 30,
+      "Christmas Songs by Sinatra" : 26,
+      "A Jolly Christmas from Frank Sinatra" : 19,
+      "Sinatra Reprise: The Very Good Years" : 14
+    },
+    "topSongs" : {
+      "Adeste Fideles" : 6,
+      "My Kind Of Town - Remastered 2008" : 6,
+      "I'll Be Home for Christmas" : 5,
+      "Jingle Bells" : 5,
+      "Silent Night" : 5
+    },
+    "topFans" : [ "alice22", "emily30", "jack29", "henry26", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -6517,7 +6573,21 @@
   "user" : "Aretha Franklin",
   "timestamp" : 9635,
   "result" : {
-    "result" : "No data to show for Aretha Franklin."
+    "topAlbums" : {
+      "Soul Queen" : 77,
+      "I Never Loved a Man the Way I Love You" : 12,
+      "Aretha Now" : 6,
+      "Respect" : 2
+    },
+    "topSongs" : {
+      "Dr. Feelgood (Love Is a Serious Business)" : 10,
+      "Respect" : 6,
+      "I Can't See Myself Leaving You" : 4,
+      "You're A Sweet Sweet Man" : 4,
+      "A Change Is Gonna Come" : 3
+    },
+    "topFans" : [ "bob35", "alice22", "frank21", "emily30", "david27" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -7531,7 +7601,37 @@
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 11249,
-  "message" : "No data to show for emily30."
+  "result" : {
+    "topArtists" : {
+      "Frank Sinatra" : 14,
+      "Marvin Gaye" : 9,
+      "Aretha Franklin" : 8,
+      "Bob Dylan" : 8,
+      "Bob Marley" : 8
+    },
+    "topGenres" : {
+      "soul" : 24,
+      "jazz" : 14,
+      "folk" : 10,
+      "classic rock" : 8,
+      "reggae" : 8
+    },
+    "topSongs" : {
+      "'Til Tomorrow" : 2,
+      "Adeste Fideles" : 2,
+      "Buffalo Soldier" : 2,
+      "Corrina, Corrina" : 2,
+      "He's Misstra Know It All" : 2
+    },
+    "topAlbums" : {
+      "Sinatra Reprise: The Very Good Years" : 10,
+      "Soul Queen" : 7,
+      "Midnight Love" : 5,
+      "The Freewheelin' Bob Dylan" : 5,
+      "Legend" : 4
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -7904,7 +8004,37 @@
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 12102,
-  "message" : "No data to show for frank21."
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 19,
+      "Marvin Gaye" : 12,
+      "Fleetwood Mac" : 10,
+      "Aretha Franklin" : 9,
+      "Bruce Springsteen" : 7
+    },
+    "topGenres" : {
+      "classic rock" : 25,
+      "soul" : 22,
+      "rock" : 13,
+      "jazz" : 7,
+      "70s" : 6
+    },
+    "topSongs" : {
+      "Ain't No Mountain High Enough" : 2,
+      "Born in the U.S.A." : 2,
+      "If I Could Build My Whole World Around You" : 2,
+      "Never Going Back" : 2,
+      "She Belongs to Me" : 2
+    },
+    "topAlbums" : {
+      "Experience Hendrix: The Best of Jimi Hendrix" : 12,
+      "United" : 9,
+      "I Never Loved a Man the Way I Love You" : 7,
+      "Are You Experienced?" : 6,
+      "The Essential Bruce Springsteen" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -8550,7 +8680,21 @@
   "user" : "Bruce Springsteen",
   "timestamp" : 13709,
   "result" : {
-    "result" : "No data to show for Bruce Springsteen."
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 44,
+      "Greatest Hits" : 20,
+      "Born to Run" : 16,
+      "Born in the U.S.A." : 13
+    },
+    "topSongs" : {
+      "Dancing in the Dark" : 4,
+      "Jungleland" : 4,
+      "Meeting Across the River" : 4,
+      "My Hometown" : 4,
+      "Born in the U.S.A." : 3
+    },
+    "topFans" : [ "irene33", "bob35", "carol19", "grace25", "jack29" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -8941,7 +9085,21 @@
   "user" : "Joni Mitchell",
   "timestamp" : 14439,
   "result" : {
-    "result" : "No data to show for Joni Mitchell."
+    "topAlbums" : {
+      "Blue" : 22,
+      "Both Sides Now" : 22,
+      "Ladies of the Canyon" : 21,
+      "Court and Spark" : 19
+    },
+    "topSongs" : {
+      "A Case of You" : 4,
+      "This Flight Tonight" : 4,
+      "At Last" : 3,
+      "Blue Boy" : 3,
+      "California" : 3
+    },
+    "topFans" : [ "grace25", "jack29", "henry26", "alice22", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -9491,7 +9649,37 @@
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 15317,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 20,
+      "Bob Marley" : 17,
+      "Joni Mitchell" : 13,
+      "Bruce Springsteen" : 11,
+      "Fleetwood Mac" : 7
+    },
+    "topGenres" : {
+      "classic rock" : 21,
+      "rock" : 19,
+      "reggae" : 17,
+      "soul" : 14,
+      "1974" : 12
+    },
+    "topSongs" : {
+      "Angel" : 2,
+      "Foxy Lady" : 2,
+      "Free Man in Paris" : 2,
+      "Have You Ever Been (To Electric Ladyland)" : 2,
+      "Kinky Reggae [feat. The Marley Brothers & Ghetto Youths Crew]" : 2
+    },
+    "topAlbums" : {
+      "Chant Down Babylon" : 15,
+      "Electric Ladyland" : 15,
+      "Court and Spark" : 12,
+      "Born in the U.S.A." : 7,
+      "Soul Queen" : 4
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -10184,7 +10372,37 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 16388,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 22,
+      "Stevie Wonder" : 17,
+      "Led Zeppelin" : 9,
+      "Joni Mitchell" : 8,
+      "Aretha Franklin" : 7
+    },
+    "topGenres" : {
+      "soul" : 31,
+      "rock" : 30,
+      "classic rock" : 7,
+      "hard rock" : 7,
+      "folk" : 6
+    },
+    "topSongs" : {
+      "Paperback Writer - Remastered 2015" : 3,
+      "Heartbreaker" : 2,
+      "Joy" : 2,
+      "Jungleland" : 2,
+      "Knocks Me Off My Feet" : 2
+    },
+    "topAlbums" : {
+      "1 (Remastered)" : 19,
+      "Songs in the Key of Life" : 14,
+      "Led Zeppelin II" : 7,
+      "Soul Queen" : 5,
+      "The Essential Bruce Springsteen" : 4
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -10606,7 +10824,20 @@
   "user" : "Led Zeppelin",
   "timestamp" : 17287,
   "result" : {
-    "result" : "No data to show for Led Zeppelin."
+    "topAlbums" : {
+      "Led Zeppelin IV (Deluxe Edition)" : 51,
+      "Led Zeppelin" : 17,
+      "Led Zeppelin II" : 15
+    },
+    "topSongs" : {
+      "Black Dog" : 6,
+      "Four Sticks" : 6,
+      "Going to California" : 6,
+      "Stairway to Heaven" : 6,
+      "Misty Mountain Hop" : 5
+    },
+    "topFans" : [ "alice22", "carol19", "bob35", "david27", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -10788,7 +11019,37 @@
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 17689,
-  "message" : "No data to show for jack29."
+  "result" : {
+    "topArtists" : {
+      "Frank Sinatra" : 14,
+      "Madonna" : 14,
+      "Joni Mitchell" : 13,
+      "Bob Marley" : 12,
+      "Bruce Springsteen" : 10
+    },
+    "topGenres" : {
+      "rock" : 17,
+      "folk" : 16,
+      "soul" : 16,
+      "pop" : 14,
+      "classic rock" : 13
+    },
+    "topSongs" : {
+      "Silent Night" : 3,
+      "Blowin' in the Wind" : 2,
+      "Court and Spark" : 2,
+      "Dr. Feelgood (Love Is a Serious Business)" : 2,
+      "I Don't Live Today" : 2
+    },
+    "topAlbums" : {
+      "Blue" : 11,
+      "Christmas Songs by Sinatra" : 10,
+      "Legend" : 9,
+      "Ray of Light" : 9,
+      "Rumours" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -10810,7 +11071,21 @@
   "user" : "Jimi Hendrix",
   "timestamp" : 17799,
   "result" : {
-    "result" : "No data to show for Jimi Hendrix."
+    "topAlbums" : {
+      "Are You Experienced?" : 33,
+      "Electric Ladyland" : 29,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 20,
+      "Are You Experienced" : 3
+    },
+    "topSongs" : {
+      "Foxy Lady" : 7,
+      "I Don't Live Today" : 6,
+      "Love Or Confusion" : 4,
+      "Burning of the Midnight Lamp" : 3,
+      "Have You Ever Been (To Electric Ladyland)" : 3
+    },
+    "topFans" : [ "grace25", "frank21", "carol19", "david27", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -10848,7 +11123,37 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 17949,
-  "message" : "No data to show for henry26."
+  "result" : {
+    "topArtists" : {
+      "Madonna" : 18,
+      "Frank Sinatra" : 13,
+      "Joni Mitchell" : 10,
+      "The Beatles" : 10,
+      "Marvin Gaye" : 7
+    },
+    "topGenres" : {
+      "soul" : 19,
+      "pop" : 18,
+      "rock" : 14,
+      "folk" : 13,
+      "jazz" : 13
+    },
+    "topSongs" : {
+      "You've Got What It Takes" : 3,
+      "I Wish" : 2,
+      "Luck Be A Lady - 2008 Remastered" : 2,
+      "Superstition - Single Version" : 2,
+      "4 Minutes - feat. Justin Timberlake and Timbaland" : 1
+    },
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 17,
+      "Nothing But the Best (Remastered)" : 12,
+      "Ladies of the Canyon" : 8,
+      "Abbey Road (Remastered)" : 6,
+      "The Definitive Collection" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -10965,7 +11270,37 @@
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 20668,
-  "message" : "No data to show for bob35."
+  "result" : {
+    "topArtists" : {
+      "Aretha Franklin" : 39,
+      "Bob Marley" : 20,
+      "Bruce Springsteen" : 14,
+      "Frank Sinatra" : 10,
+      "Led Zeppelin" : 10
+    },
+    "topGenres" : {
+      "soul" : 46,
+      "rock" : 22,
+      "reggae" : 20,
+      "jazz" : 12,
+      "70s" : 9
+    },
+    "topSongs" : {
+      "African Herbsman" : 2,
+      "Black Dog - Basic Track With Guitar Overdubs" : 2,
+      "Going to California" : 2,
+      "I Take What I Want" : 2,
+      "Jingle Bells" : 2
+    },
+    "topAlbums" : {
+      "Soul Queen" : 38,
+      "Natural Mystic" : 15,
+      "Greatest Hits" : 11,
+      "Led Zeppelin IV (Deluxe Edition)" : 8,
+      "Both Sides Now" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -11274,7 +11609,37 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 23865,
-  "message" : "No data to show for carol19."
+  "result" : {
+    "topArtists" : {
+      "Bob Dylan" : 25,
+      "Bob Marley" : 18,
+      "Marvin Gaye" : 16,
+      "Stevie Wonder" : 15,
+      "Bruce Springsteen" : 12
+    },
+    "topGenres" : {
+      "soul" : 36,
+      "reggae" : 18,
+      "classic rock" : 17,
+      "folk" : 16,
+      "rock" : 16
+    },
+    "topSongs" : {
+      "400 Years" : 3,
+      "He's Misstra Know It All" : 3,
+      "Black Dog" : 2,
+      "Foxy Lady" : 2,
+      "Glory Days" : 2
+    },
+    "topAlbums" : {
+      "One Love Peace Concert" : 15,
+      "The Freewheelin' Bob Dylan" : 14,
+      "The Very Best of Marvin Gaye" : 12,
+      "Bringing It All Back Home" : 11,
+      "Innervisions" : 11
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -11376,7 +11741,21 @@
   "user" : "Fleetwood Mac",
   "timestamp" : 25104,
   "result" : {
-    "result" : "No data to show for Fleetwood Mac."
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 42,
+      "Fleetwood Mac" : 21,
+      "Rumours" : 21,
+      "Greatest Hits" : 9
+    },
+    "topSongs" : {
+      "Never Going Back" : 5,
+      "Gold Dust Woman" : 4,
+      "Landslide" : 4,
+      "Crystal" : 3,
+      "Dreams" : 3
+    },
+    "topFans" : [ "alice22", "irene33", "frank21", "jack29", "grace25" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -11607,7 +11986,20 @@
   "user" : "The Beatles",
   "timestamp" : 25999,
   "result" : {
-    "result" : "No data to show for The Beatles."
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 46,
+      "1 (Remastered)" : 34,
+      "Abbey Road (Remastered)" : 22
+    },
+    "topSongs" : {
+      "Paperback Writer - Remastered 2015" : 4,
+      "Yer Blues - Remastered 2009" : 4,
+      "Because - Remastered 2009" : 3,
+      "Come Together - Remastered 2009" : 3,
+      "Cry Baby Cry - Remastered 2009" : 3
+    },
+    "topFans" : [ "irene33", "david27", "henry26", "alice22", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -11693,13 +12085,56 @@
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 26272,
-  "message" : "No data to show for irene33."
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 34,
+      "Bruce Springsteen" : 25,
+      "Stevie Wonder" : 18,
+      "Bob Dylan" : 11,
+      "Fleetwood Mac" : 11
+    },
+    "topGenres" : {
+      "rock" : 60,
+      "soul" : 31,
+      "folk" : 12,
+      "pop" : 11,
+      "classic rock" : 9
+    },
+    "topSongs" : {
+      "From a Buick 6" : 2,
+      "It's Alright, Ma (I'm Only Bleeding)" : 2,
+      "Love Song" : 2,
+      "Prove It All Night" : 2,
+      "Wild Honey Pie - Remastered 2009" : 2
+    },
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 31,
+      "The Essential Bruce Springsteen" : 20,
+      "The Definitive Collection" : 14,
+      "Fleetwood Mac" : 8,
+      "Like a Prayer" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "wrapped",
   "user" : "Bob Dylan",
   "timestamp" : 26302,
   "result" : {
-    "result" : "No data to show for Bob Dylan."
+    "topAlbums" : {
+      "The Freewheelin' Bob Dylan" : 34,
+      "Bringing It All Back Home" : 26,
+      "Highway 61 Revisited" : 16
+    },
+    "topSongs" : {
+      "Honey, Just Allow Me One More Chance" : 5,
+      "It's Alright, Ma (I'm Only Bleeding)" : 5,
+      "Ballad of a Thin Man" : 4,
+      "Corrina, Corrina" : 4,
+      "Maggie's Farm" : 4
+    },
+    "topFans" : [ "carol19", "irene33", "emily30", "jack29", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -11802,25 +12237,147 @@
   "user" : "Bob Marley",
   "timestamp" : 26891,
   "result" : {
-    "result" : "No data to show for Bob Marley."
+    "topAlbums" : {
+      "One Love Peace Concert" : 26,
+      "Chant Down Babylon" : 24,
+      "Natural Mystic" : 24,
+      "Legend" : 18
+    },
+    "topSongs" : {
+      "400 Years" : 4,
+      "Buffalo Soldier" : 4,
+      "Johnny Was [feat. Guru]" : 4,
+      "Peace Treaty" : 4,
+      "African Herbsman" : 3
+    },
+    "topFans" : [ "bob35", "carol19", "grace25", "jack29", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "wrapped",
   "user" : "Elton John",
   "timestamp" : 26891,
-  "result" : {
-    "result" : "No data to show for Elton John."
-  }
+  "message" : "No data to show for user Elton John."
 }, {
   "command" : "wrapped",
   "user" : "Nirvana",
   "timestamp" : 26891,
-  "result" : {
-    "result" : "No data to show for Nirvana."
-  }
+  "message" : "No data to show for user Nirvana."
 }, {
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 26991,
-  "message" : "No data to show for alice22."
+  "result" : {
+    "topArtists" : {
+      "Fleetwood Mac" : 33,
+      "Led Zeppelin" : 27,
+      "Frank Sinatra" : 16,
+      "Aretha Franklin" : 13,
+      "Madonna" : 11
+    },
+    "topGenres" : {
+      "justice for silver springs" : 29,
+      "70s" : 27,
+      "soul" : 25,
+      "christmas" : 14,
+      "rock" : 12
+    },
+    "topSongs" : {
+      "Black Dog" : 3,
+      "Four Sticks" : 3,
+      "Stairway to Heaven" : 3,
+      "The Battle of Evermore" : 3,
+      "Babe I'm Gonna Leave You" : 2
+    },
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 29,
+      "Led Zeppelin IV (Deluxe Edition)" : 24,
+      "A Jolly Christmas from Frank Sinatra" : 12,
+      "Soul Queen" : 8,
+      "Confessions on a Dance Floor" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bob Dylan" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bob Marley" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bruce Springsteen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    },
+    "Fleetwood Mac" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 5,
+      "mostProfitableSong" : "N/A"
+    },
+    "Frank Sinatra" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 6,
+      "mostProfitableSong" : "N/A"
+    },
+    "Jimi Hendrix" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 7,
+      "mostProfitableSong" : "N/A"
+    },
+    "Joni Mitchell" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 8,
+      "mostProfitableSong" : "N/A"
+    },
+    "Led Zeppelin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 9,
+      "mostProfitableSong" : "N/A"
+    },
+    "Madonna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 10,
+      "mostProfitableSong" : "N/A"
+    },
+    "Marvin Gaye" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 11,
+      "mostProfitableSong" : "N/A"
+    },
+    "Stevie Wonder" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 12,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Beatles" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 13,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

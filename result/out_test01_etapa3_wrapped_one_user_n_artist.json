@@ -3840,7 +3840,21 @@
   "user" : "Chuck Berry",
   "timestamp" : 21770,
   "result" : {
-    "result" : "No data to show for Chuck Berry."
+    "topAlbums" : {
+      "Berry Is On Top" : 107,
+      "St. Louis to Liverpool" : 67,
+      "The Great Twenty-Eight" : 51,
+      "Chuck Berry Is On Top" : 7
+    },
+    "topSongs" : {
+      "Almost Grown" : 12,
+      "Carol" : 12,
+      "Little Queenie" : 12,
+      "Johnny B. Goode" : 11,
+      "Around and Around" : 10
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -6967,7 +6981,19 @@
   "user" : "The Beach Boys",
   "timestamp" : 41017,
   "result" : {
-    "result" : "No data to show for The Beach Boys."
+    "topAlbums" : {
+      "Pet Sounds" : 122,
+      "Summer Dreams" : 93
+    },
+    "topSongs" : {
+      "Pet Sounds" : 25,
+      "Summertime Blues" : 16,
+      "Do You Remember" : 13,
+      "Shut Down" : 13,
+      "Heroes & Villains" : 12
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -10126,7 +10152,21 @@
   "user" : "The Doors",
   "timestamp" : 75928,
   "result" : {
-    "result" : "No data to show for The Doors."
+    "topAlbums" : {
+      "Greatest Hits" : 76,
+      "L.A. Woman" : 48,
+      "Strange Days" : 48,
+      "The Doors" : 46
+    },
+    "topSongs" : {
+      "People Are Strange" : 13,
+      "Riders on the Storm" : 9,
+      "Break on Through (to the Other Side)" : 8,
+      "Horse Latitudes" : 8,
+      "Light My Fire" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -13285,7 +13325,21 @@
   "user" : "Bruce Springsteen",
   "timestamp" : 122450,
   "result" : {
-    "result" : "No data to show for Bruce Springsteen."
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 79,
+      "Born in the U.S.A." : 68,
+      "Born to Run" : 62,
+      "Greatest Hits" : 11
+    },
+    "topSongs" : {
+      "Born to Run" : 13,
+      "Born in the U.S.A." : 10,
+      "No Surrender" : 10,
+      "Tenth Avenue Freeze-Out" : 10,
+      "Backstreets" : 9
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -16428,7 +16482,20 @@
   "user" : "Bob Dylan",
   "timestamp" : 156355,
   "result" : {
-    "result" : "No data to show for Bob Dylan."
+    "topAlbums" : {
+      "Bringing It All Back Home" : 86,
+      "The Freewheelin' Bob Dylan" : 65,
+      "Highway 61 Revisited" : 61
+    },
+    "topSongs" : {
+      "Maggie's Farm" : 12,
+      "Gates of Eden" : 10,
+      "Mr. Tambourine Man" : 10,
+      "It's All Over Now, Baby Blue" : 9,
+      "Bob Dylan's 115th Dream" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -19587,7 +19654,21 @@
   "user" : "Prince",
   "timestamp" : 188599,
   "result" : {
-    "result" : "No data to show for Prince."
+    "topAlbums" : {
+      "Parade - Music From the Motion Picture Under the Cherry Moon" : 66,
+      "Purple Rain" : 58,
+      "1999" : 47,
+      "The Very Best of Prince" : 47
+    },
+    "topSongs" : {
+      "God - Love Theme From Purple Rain 12\" Instrumental Version" : 23,
+      "God - Vocal Version" : 20,
+      "Purple Rain" : 15,
+      "Mountains" : 10,
+      "Venus de Milo" : 9
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -22746,7 +22827,21 @@
   "user" : "Adele",
   "timestamp" : 215868,
   "result" : {
-    "result" : "No data to show for Adele."
+    "topAlbums" : {
+      "19" : 63,
+      "21" : 53,
+      "30" : 52,
+      "25" : 41
+    },
+    "topSongs" : {
+      "Rolling in the Deep" : 11,
+      "Best for Last" : 9,
+      "Strangers by Nature" : 8,
+      "All I Ask" : 7,
+      "Crazy for You" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -25905,7 +26000,20 @@
   "user" : "Rihanna",
   "timestamp" : 242862,
   "result" : {
-    "result" : "No data to show for Rihanna."
+    "topAlbums" : {
+      "Good Girl Gone Bad: Reloaded" : 101,
+      "Loud" : 68,
+      "ANTI (Deluxe)" : 51
+    },
+    "topSongs" : {
+      "Rehab" : 11,
+      "Complicated" : 10,
+      "Man Down" : 10,
+      "Hate That I Love You" : 9,
+      "Say It" : 9
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -29064,7 +29172,21 @@
   "user" : "Queen",
   "timestamp" : 276281,
   "result" : {
-    "result" : "No data to show for Queen."
+    "topAlbums" : {
+      "The Game (2011 Remaster)" : 72,
+      "A Night At The Opera (2011 Remaster)" : 57,
+      "Greatest Hits II" : 53,
+      "Greatest Hits" : 34
+    },
+    "topSongs" : {
+      "Another One Bites The Dust - Remastered 2011" : 14,
+      "Crazy Little Thing Called Love - Remastered 2011" : 13,
+      "Bohemian Rhapsody - Remastered 2011" : 12,
+      "Dragon Attack - Remastered 2011" : 8,
+      "I Want It All" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -32207,7 +32329,20 @@
   "user" : "The Beatles",
   "timestamp" : 302673,
   "result" : {
-    "result" : "No data to show for The Beatles."
+    "topAlbums" : {
+      "1 (Remastered)" : 90,
+      "The Beatles (Remastered)" : 79,
+      "Abbey Road (Remastered)" : 65
+    },
+    "topSongs" : {
+      "Love Me Do - Mono / Remastered 2015" : 8,
+      "Here Comes the Sun - Remastered 2009" : 7,
+      "Maxwell's Silver Hammer - Remastered 2009" : 7,
+      "Oh! Darling - Remastered 2009" : 7,
+      "Can't Buy Me Love - Remastered 2015" : 6
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -35366,7 +35501,21 @@
   "user" : "Eminem",
   "timestamp" : 341117,
   "result" : {
-    "result" : "No data to show for Eminem."
+    "topAlbums" : {
+      "The Marshall Mathers LP" : 68,
+      "The Slim Shady LP" : 68,
+      "The Eminem Show" : 61,
+      "Recovery" : 48
+    },
+    "topSongs" : {
+      "Criminal" : 8,
+      "Bitch Please II" : 7,
+      "Marshall Mathers" : 7,
+      "Bad Meets Evil (feat. Royce da 5'9\")" : 6,
+      "I'm Back" : 6
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -38525,7 +38674,21 @@
   "user" : "Marvin Gaye",
   "timestamp" : 368526,
   "result" : {
-    "result" : "No data to show for Marvin Gaye."
+    "topAlbums" : {
+      "The Very Best of Marvin Gaye" : 77,
+      "United" : 59,
+      "Midnight Love" : 43,
+      "What's Going On" : 42
+    },
+    "topSongs" : {
+      "Sexual Healing" : 14,
+      "What's Going On" : 13,
+      "Midnight Lady" : 10,
+      "Flyin' High (In the Friendly Sky)" : 9,
+      "God Is Love" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -41684,7 +41847,21 @@
   "user" : "Joni Mitchell",
   "timestamp" : 396187,
   "result" : {
-    "result" : "No data to show for Joni Mitchell."
+    "topAlbums" : {
+      "Court and Spark" : 58,
+      "Both Sides Now" : 57,
+      "Ladies of the Canyon" : 57,
+      "Blue" : 36
+    },
+    "topSongs" : {
+      "A Case of You" : 10,
+      "Car on a Hill" : 8,
+      "Down to You" : 8,
+      "At Last" : 7,
+      "Conversation" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -44827,7 +45004,20 @@
   "user" : "Whitney Houston",
   "timestamp" : 428914,
   "result" : {
-    "result" : "No data to show for Whitney Houston."
+    "topAlbums" : {
+      "Whitney Houston" : 80,
+      "My Love Is Your Love" : 66,
+      "The Bodyguard - Original Soundtrack Album" : 60
+    },
+    "topSongs" : {
+      "Get It Back" : 31,
+      "You'll Never Stand Alone" : 20,
+      "In My Business" : 15,
+      "Take Good Care Of My Heart" : 13,
+      "All at Once" : 11
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -47986,7 +48176,21 @@
   "user" : "Nirvana",
   "timestamp" : 452821,
   "result" : {
-    "result" : "No data to show for Nirvana."
+    "topAlbums" : {
+      "Nevermind" : 81,
+      "MTV Unplugged in New York" : 66,
+      "Nirvana" : 47,
+      "In Utero" : 40
+    },
+    "topSongs" : {
+      "Smells Like Teen Spirit" : 12,
+      "Come as You Are" : 11,
+      "Pennyroyal Tea" : 10,
+      "Rape Me" : 10,
+      "Dumb" : 9
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -51145,7 +51349,21 @@
   "user" : "U2",
   "timestamp" : 495083,
   "result" : {
-    "result" : "No data to show for U2."
+    "topAlbums" : {
+      "How to Dismantle an Atomic Bomb" : 63,
+      "All That You Can't Leave Behind" : 58,
+      "The Joshua Tree" : 50,
+      "Achtung Baby" : 44
+    },
+    "topSongs" : {
+      "Miracle Drug" : 11,
+      "Elevation" : 8,
+      "In a Little While" : 8,
+      "Stuck in a Moment You Can't Get Out Of" : 8,
+      "Walk On" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -54304,7 +54522,21 @@
   "user" : "Madonna",
   "timestamp" : 536336,
   "result" : {
-    "result" : "No data to show for Madonna."
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 112,
+      "Ray of Light" : 47,
+      "Confessions on a Dance Floor" : 43,
+      "Like a Prayer" : 34
+    },
+    "topSongs" : {
+      "Candy Perfume Girl" : 10,
+      "Hung Up" : 9,
+      "Frozen" : 8,
+      "Love Song" : 8,
+      "Jump" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -57463,7 +57695,21 @@
   "user" : "Jimi Hendrix",
   "timestamp" : 570066,
   "result" : {
-    "result" : "No data to show for Jimi Hendrix."
+    "topAlbums" : {
+      "Experience Hendrix: The Best of Jimi Hendrix" : 118,
+      "Are You Experienced" : 45,
+      "Electric Ladyland" : 45,
+      "Are You Experienced?" : 18
+    },
+    "topSongs" : {
+      "Foxy Lady" : 15,
+      "Fire" : 13,
+      "Hey Joe" : 13,
+      "Manic Depression" : 12,
+      "Love Or Confusion" : 11
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -60622,7 +60868,21 @@
   "user" : "Elton John",
   "timestamp" : 614220,
   "result" : {
-    "result" : "No data to show for Elton John."
+    "topAlbums" : {
+      "Honky Chateau" : 60,
+      "Madman Across the Water" : 59,
+      "Too Low For Zero" : 57,
+      "Greatest Hits" : 36
+    },
+    "topSongs" : {
+      "Razor Face" : 11,
+      "Honky Cat" : 10,
+      "Tiny Dancer" : 10,
+      "Levon" : 9,
+      "Crocodile Rock" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -63765,7 +64025,20 @@
   "user" : "Ray Charles",
   "timestamp" : 642810,
   "result" : {
-    "result" : "No data to show for Ray Charles."
+    "topAlbums" : {
+      "Anthology" : 82,
+      "Ray!" : 76,
+      "Genius Loves Company" : 73
+    },
+    "topSongs" : {
+      "Sinner's Prayer" : 10,
+      "Fever" : 9,
+      "Here We Go Again" : 8,
+      "You Don't Know Me" : 8,
+      "America The Beautiful" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -66908,7 +67181,20 @@
   "user" : "Michael Jackson",
   "timestamp" : 678022,
   "result" : {
-    "result" : "No data to show for Michael Jackson."
+    "topAlbums" : {
+      "Thriller 25 Super Deluxe Edition" : 103,
+      "Off the Wall" : 69,
+      "Dangerous" : 65
+    },
+    "topSongs" : {
+      "Workin' Day and Night" : 10,
+      "Burn This Disco Out" : 9,
+      "Can't Let Her Get Away" : 8,
+      "Don't Stop 'Til You Get Enough" : 7,
+      "Get on the Floor" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -70067,7 +70353,21 @@
   "user" : "Radiohead",
   "timestamp" : 714131,
   "result" : {
-    "result" : "No data to show for Radiohead."
+    "topAlbums" : {
+      "In Rainbows" : 60,
+      "OK Computer" : 49,
+      "The Bends" : 46,
+      "Pablo Honey" : 45
+    },
+    "topSongs" : {
+      "All I Need" : 11,
+      "Bones" : 10,
+      "(Nice Dream)" : 8,
+      "Jigsaw Falling Into Place" : 8,
+      "Weird Fishes/Arpeggi" : 8
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -73226,7 +73526,21 @@
   "user" : "The Rolling Stones",
   "timestamp" : 751805,
   "result" : {
-    "result" : "No data to show for The Rolling Stones."
+    "topAlbums" : {
+      "Aftermath" : 57,
+      "Rolled Gold" : 57,
+      "Some Girls" : 54,
+      "Let It Bleed" : 51
+    },
+    "topSongs" : {
+      "Just My Imagination (Running Away With Me)" : 10,
+      "Lady Jane" : 9,
+      "Let It Bleed" : 9,
+      "Country Woman" : 8,
+      "Doncha Bother Me" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -76385,7 +76699,21 @@
   "user" : "Pink Floyd",
   "timestamp" : 802803,
   "result" : {
-    "result" : "No data to show for Pink Floyd."
+    "topAlbums" : {
+      "The Wall" : 59,
+      "Wish You Were Here" : 51,
+      "The Division Bell" : 45,
+      "The Dark Side of the Moon" : 42
+    },
+    "topSongs" : {
+      "Have a Cigar" : 12,
+      "Wish You Were Here" : 11,
+      "On the Run" : 10,
+      "Welcome to the Machine" : 10,
+      "Shine On You Crazy Diamond (Part Two)" : 9
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "search",
@@ -79544,11 +79872,209 @@
   "user" : "Johnny Cash",
   "timestamp" : 833459,
   "result" : {
-    "result" : "No data to show for Johnny Cash."
+    "topAlbums" : {
+      "Unearthed" : 94,
+      "The Legend of Johnny Cash" : 62,
+      "American IV: The Man Comes Around" : 50,
+      "American III: Solitary Man" : 40
+    },
+    "topSongs" : {
+      "The Man Comes Around (Early Take)" : 11,
+      "Before My Time" : 8,
+      "In My Life" : 7,
+      "Tear Stained Letter" : 7,
+      "That Lucky Old Sun (Just Rolls Around Heaven All Day)" : 7
+    },
+    "topFans" : [ "david27" ],
+    "listeners" : 1
   }
 }, {
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 833559,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "Eminem" : 255,
+      "The Doors" : 255,
+      "Rihanna" : 248,
+      "The Beatles" : 247,
+      "Johnny Cash" : 246
+    },
+    "topGenres" : {
+      "rock" : 872,
+      "classic rock" : 737,
+      "pop" : 721,
+      "soul" : 559,
+      "80s" : 312
+    },
+    "topSongs" : {
+      "Get It Back" : 31,
+      "Pet Sounds" : 25,
+      "God - Love Theme From Purple Rain 12\" Instrumental Version" : 23,
+      "God - Vocal Version" : 20,
+      "You'll Never Stand Alone" : 20
+    },
+    "topAlbums" : {
+      "Pet Sounds" : 122,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 118,
+      "Celebration (Double Disc Version)" : 112,
+      "Berry Is On Top" : 111,
+      "Good Girl Gone Bad: Reloaded" : 107
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Adele" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bob Dylan" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bruce Springsteen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "Chuck Berry" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    },
+    "Elton John" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 5,
+      "mostProfitableSong" : "N/A"
+    },
+    "Eminem" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 6,
+      "mostProfitableSong" : "N/A"
+    },
+    "Jimi Hendrix" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 7,
+      "mostProfitableSong" : "N/A"
+    },
+    "Johnny Cash" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 8,
+      "mostProfitableSong" : "N/A"
+    },
+    "Joni Mitchell" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 9,
+      "mostProfitableSong" : "N/A"
+    },
+    "Madonna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 10,
+      "mostProfitableSong" : "N/A"
+    },
+    "Marvin Gaye" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 11,
+      "mostProfitableSong" : "N/A"
+    },
+    "Michael Jackson" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 12,
+      "mostProfitableSong" : "N/A"
+    },
+    "Nirvana" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 13,
+      "mostProfitableSong" : "N/A"
+    },
+    "Pink Floyd" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 14,
+      "mostProfitableSong" : "N/A"
+    },
+    "Prince" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 15,
+      "mostProfitableSong" : "N/A"
+    },
+    "Queen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 16,
+      "mostProfitableSong" : "N/A"
+    },
+    "Radiohead" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 17,
+      "mostProfitableSong" : "N/A"
+    },
+    "Ray Charles" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 18,
+      "mostProfitableSong" : "N/A"
+    },
+    "Rihanna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 19,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Beach Boys" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 20,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Beatles" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 21,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Doors" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 22,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Rolling Stones" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 23,
+      "mostProfitableSong" : "N/A"
+    },
+    "U2" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 24,
+      "mostProfitableSong" : "N/A"
+    },
+    "Whitney Houston" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 25,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

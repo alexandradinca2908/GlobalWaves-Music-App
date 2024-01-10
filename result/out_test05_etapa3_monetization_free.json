@@ -960,7 +960,21 @@
   "user" : "Stevie Wonder",
   "timestamp" : 4927,
   "result" : {
-    "result" : "No data to show for Stevie Wonder."
+    "topAlbums" : {
+      "The Definitive Collection" : 24,
+      "Songs in the Key of Life" : 18,
+      "Innervisions" : 14,
+      "Talking Book" : 14
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 3,
+      "Hey Love" : 3,
+      "Higher Ground - Single Version" : 3,
+      "Maybe Your Baby" : 3,
+      "Visions" : 3
+    },
+    "topFans" : [ "grace25", "david27", "irene33" ],
+    "listeners" : 3
   }
 }, {
   "command" : "search",
@@ -1607,7 +1621,21 @@
   "user" : "Prince",
   "timestamp" : 10355,
   "result" : {
-    "result" : "No data to show for Prince."
+    "topAlbums" : {
+      "The Very Best of Prince" : 30,
+      "1999" : 24,
+      "Parade - Music From the Motion Picture Under the Cherry Moon" : 14,
+      "Purple Rain" : 6
+    },
+    "topSongs" : {
+      "D.M.S.R." : 5,
+      "All The Critics Love U In New York" : 4,
+      "God - Love Theme From Purple Rain 12\" Instrumental Version" : 4,
+      "Little Red Corvette [Explicit]" : 4,
+      "Christopher Tracy's Parade" : 3
+    },
+    "topFans" : [ "irene33", "david27", "grace25" ],
+    "listeners" : 3
   }
 }, {
   "command" : "search",
@@ -2061,7 +2089,36 @@
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 12641,
-  "message" : "No data to show for irene33."
+  "result" : {
+    "topArtists" : {
+      "Prince" : 32,
+      "Stevie Wonder" : 22,
+      "The Rolling Stones" : 15,
+      "Joni Mitchell" : 8
+    },
+    "topGenres" : {
+      "80s" : 30,
+      "soul" : 22,
+      "classic rock" : 15,
+      "folk" : 8,
+      "rnb" : 2
+    },
+    "topSongs" : {
+      "Lady Jane" : 3,
+      "1999 [Edit]" : 2,
+      "Blame It on the Sun" : 2,
+      "D.M.S.R." : 2,
+      "Flight 505" : 2
+    },
+    "topAlbums" : {
+      "The Very Best of Prince" : 24,
+      "Aftermath" : 8,
+      "Ladies of the Canyon" : 8,
+      "Talking Book" : 8,
+      "The Definitive Collection" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2547,7 +2604,21 @@
   "user" : "The Rolling Stones",
   "timestamp" : 14425,
   "result" : {
-    "result" : "No data to show for The Rolling Stones."
+    "topAlbums" : {
+      "Rolled Gold" : 30,
+      "Aftermath" : 15,
+      "Let It Bleed" : 13,
+      "Some Girls" : 13
+    },
+    "topSongs" : {
+      "Lady Jane" : 5,
+      "Out of Time" : 4,
+      "Flight 505" : 3,
+      "Live With Me" : 3,
+      "Mother's Little Helper" : 3
+    },
+    "topFans" : [ "grace25", "david27", "irene33" ],
+    "listeners" : 3
   }
 }, {
   "command" : "search",
@@ -2569,7 +2640,36 @@
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 14442,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 35,
+      "Stevie Wonder" : 26,
+      "Prince" : 20,
+      "Joni Mitchell" : 12
+    },
+    "topGenres" : {
+      "classic rock" : 35,
+      "soul" : 26,
+      "folk" : 12,
+      "rnb" : 11,
+      "80s" : 9
+    },
+    "topSongs" : {
+      "Morning Morgantown" : 3,
+      "Out of Time" : 3,
+      "The Arrangement" : 3,
+      "Big Yellow Taxi" : 2,
+      "Christopher Tracy's Parade" : 2
+    },
+    "topAlbums" : {
+      "Rolled Gold" : 20,
+      "The Definitive Collection" : 14,
+      "Ladies of the Canyon" : 12,
+      "Parade - Music From the Motion Picture Under the Cherry Moon" : 11,
+      "Let It Bleed" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2831,18 +2931,84 @@
   "user" : "Joni Mitchell",
   "timestamp" : 17942,
   "result" : {
-    "result" : "No data to show for Joni Mitchell."
+    "topAlbums" : {
+      "Ladies of the Canyon" : 48
+    },
+    "topSongs" : {
+      "The Arrangement" : 8,
+      "Morning Morgantown" : 6,
+      "Big Yellow Taxi" : 4,
+      "Blue Boy" : 4,
+      "Ladies of the Canyon" : 4
+    },
+    "topFans" : [ "david27", "grace25", "irene33" ],
+    "listeners" : 3
   }
 }, {
   "command" : "wrapped",
   "user" : "Pink Floyd",
   "timestamp" : 17942,
-  "result" : {
-    "result" : "No data to show for Pink Floyd."
-  }
+  "message" : "No data to show for user Pink Floyd."
 }, {
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 18042,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "Joni Mitchell" : 28,
+      "Prince" : 22,
+      "Stevie Wonder" : 22,
+      "The Rolling Stones" : 21
+    },
+    "topGenres" : {
+      "folk" : 28,
+      "soul" : 22,
+      "80s" : 21,
+      "classic rock" : 21,
+      "rnb" : 1
+    },
+    "topSongs" : {
+      "All The Critics Love U In New York" : 3,
+      "Blue Boy" : 3,
+      "D.M.S.R." : 3,
+      "For Free" : 3,
+      "Ladies of the Canyon" : 3
+    },
+    "topAlbums" : {
+      "Ladies of the Canyon" : 28,
+      "1999" : 18,
+      "Songs in the Key of Life" : 12,
+      "Some Girls" : 9,
+      "Rolled Gold" : 6
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Joni Mitchell" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Prince" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Stevie Wonder" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Rolling Stones" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

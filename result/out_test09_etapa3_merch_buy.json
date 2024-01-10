@@ -308,4 +308,7 @@
   "user" : "alice22",
   "timestamp" : 9720,
   "message" : "Successfully selected Nothing But Thieves's page."
+}, {
+  "command" : "endProgram",
+  "result" : { }
 } ]

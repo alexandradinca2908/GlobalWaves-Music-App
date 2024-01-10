@@ -358,4 +358,7 @@
   "user" : "Fleetwood Mac",
   "timestamp" : 8078,
   "message" : "Fleetwood Mac has added new merchandise successfully."
+}, {
+  "command" : "endProgram",
+  "result" : { }
 } ]

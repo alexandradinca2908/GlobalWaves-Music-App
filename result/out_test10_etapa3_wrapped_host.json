@@ -194,7 +194,18 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 4000,
-  "message" : "No data to show for alice22."
+  "result" : {
+    "topArtists" : { },
+    "topGenres" : { },
+    "topSongs" : { },
+    "topAlbums" : { },
+    "topEpisodes" : {
+      "The Power of Design" : 2,
+      "Elon Musk Returns" : 1,
+      "Ghosts" : 1,
+      "Salman Rushdie Reads Gabriel Garcia Marquez" : 1
+    }
+  }
 }, {
   "command" : "wrapped",
   "user" : "Guy Raz",
@@ -207,4 +218,7 @@
   "command" : "wrapped",
   "user" : "Joe Rogan",
   "timestamp" : 4000
+}, {
+  "command" : "endProgram",
+  "result" : { }
 } ]

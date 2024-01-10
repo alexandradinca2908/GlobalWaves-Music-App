@@ -1,6 +1,5 @@
 Starting audit...
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:37:8: Unused import - java.util.Collections. [UnusedImports]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:136:5: Method length is 727 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:136:5: Method length is 760 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:566:80: Empty statement. [EmptyStatement]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:592:25: 'for' is not followed by whitespace. [WhitespaceAround]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:622:54: '5' is a magic number. [MagicNumber]
@@ -21,8 +20,8 @@ Starting audit...
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:832:51: '5' is a magic number. [MagicNumber]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\ItemSelection.java:182:5: Class 'ItemSelection' looks like designed for extension (can be subclassed), but the method 'updateWrappedForSong' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'ItemSelection' final or making the method 'updateWrappedForSong' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\ItemSelection.java:182:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\AlbumSelection.java:14:8: Unused import - java.lang.reflect.Array. [UnusedImports]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\AlbumSelection.java:60:5: Method length is 233 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\AlbumSelection.java:12:8: Unused import - java.lang.reflect.Array. [UnusedImports]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\AlbumSelection.java:58:5: Method length is 216 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\PlaylistSelection.java:12:8: Unused import - main.WrappedDatabase.AllUserStats.ArtistStatistics. [UnusedImports]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\PlaylistSelection.java:13:8: Unused import - main.WrappedDatabase.AllUserStats.UserStatistics. [UnusedImports]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\SelectionClasses\Playlists\PlaylistSelection.java:14:8: Unused import - main.WrappedDatabase.Statistics. [UnusedImports]
@@ -52,11 +51,9 @@ Starting audit...
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\AllUserStats\UserStatistics.java:11:27: Parameter user should be final. [FinalParameters]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:16:25: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:19:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:30:36: Parameter usersStatistics should be final. [FinalParameters]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:38:38: Parameter artistsStatistics should be final. [FinalParameters]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:46:36: Parameter hostsStatistics should be final. [FinalParameters]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\Statistics.java:29:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\StatsFactory.java:8:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\StatsFactory.java:9:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\WrappedDatabase\StatsFactory.java:10:9: switch without "default" clause. [MissingSwitchDefault]
 Audit done.
-Checkstyle ends with 59 errors.
+Checkstyle ends with 56 errors.

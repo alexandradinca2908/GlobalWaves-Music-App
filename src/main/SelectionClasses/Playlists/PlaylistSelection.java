@@ -172,12 +172,12 @@ public final class PlaylistSelection
                     }
 
                     for (SongInput song : crtPlaylist) {
-                        duration -= song.getDuration();
-
                         if (duration < prevRemainingTime
                                 && crtPlaylist.indexOf(song) != 0) {
                             this.updateWrappedForSong(song, albums);
                         }
+
+                        duration -= song.getDuration();
                     }
 
                     //  Stop playlist
@@ -250,8 +250,8 @@ public final class PlaylistSelection
                                 && duration < prevRemainingTime) {
                             break;
                         }
-                        if (duration > this.getRemainingTime()
-                                && duration > prevRemainingTime) {
+                        if (duration < this.getRemainingTime()
+                                && duration < prevRemainingTime) {
                             skipWrapped = true;
                             break;
                         }

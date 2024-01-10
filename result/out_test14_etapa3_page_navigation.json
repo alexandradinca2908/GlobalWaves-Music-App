@@ -153,4 +153,14 @@
   "command" : "printCurrentPage",
   "timestamp" : 265,
   "message" : "Liked songs:\n\t[]\n\nFollowed playlists:\n\t[]"
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Queen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

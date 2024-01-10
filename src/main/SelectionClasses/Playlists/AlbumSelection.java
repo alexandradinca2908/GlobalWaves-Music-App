@@ -8,8 +8,6 @@ import main.VisitorPattern.VisitorObjectNode.VisitableObjectNode;
 import main.VisitorPattern.VisitorObjectNode.VisitorObjectNode;
 import main.VisitorPattern.VisitorString.VisitableString;
 import main.VisitorPattern.VisitorString.VisitorString;
-import main.WrappedDatabase.AllUserStats.ArtistStatistics;
-import main.WrappedDatabase.Statistics;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -63,17 +61,6 @@ public final class AlbumSelection
         if (!isPaused()) {
             int remainingTime = this.getRemainingTime() - (crtTimestamp - this.getStartTime());
 
-            //  For artist album stats
-            ArtistStatistics crtArtist = null;
-            for (ArtistStatistics artistStatistics
-                    : Statistics.getWrappedStats().getArtistsStatistics()) {
-                if (artistStatistics.getArtist().getUsername()
-                        .equals(this.getAlbum().getOwner())) {
-                    crtArtist = artistStatistics;
-                    break;
-                }
-            }
-
             if (remainingTime < 0) {
                 if (this.getRepeat().equals("Repeat All")) {
                     //  Count replays
@@ -83,11 +70,6 @@ public final class AlbumSelection
                     while (remainingTime < 0) {
                         remainingTime += this.getAlbum().getDuration();
                         replays++;
-
-                        //  Increase album the listen count
-                        int count = crtArtist.getTopAlbums()
-                                .get(this.getAlbum());
-                        crtArtist.getTopAlbums().put(this.getAlbum(), count + 1);
                     }
                     int prevRemainingTime = this.getRemainingTime();
 
@@ -186,12 +168,11 @@ public final class AlbumSelection
                     }
 
                     for (SongInput song : crtAlbum) {
-                        duration -= song.getDuration();
-
                         if (duration < prevRemainingTime
                                 && crtAlbum.indexOf(song) != 0) {
                             this.updateWrappedForSong(song, albums);
                         }
+                        duration -= song.getDuration();
                     }
 
                     //  Stop playlist
@@ -264,8 +245,8 @@ public final class AlbumSelection
                                 && duration < prevRemainingTime) {
                             break;
                         }
-                        if (duration > this.getRemainingTime()
-                                && duration > prevRemainingTime) {
+                        if (duration <= this.getRemainingTime()
+                                && duration <= prevRemainingTime) {
                             skipWrapped = true;
                             break;
                         }

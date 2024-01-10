@@ -3924,7 +3924,21 @@
   "user" : "Marvin Gaye",
   "timestamp" : 4051,
   "result" : {
-    "result" : "No data to show for Marvin Gaye."
+    "topAlbums" : {
+      "United" : 34,
+      "What's Going On" : 31,
+      "Midnight Love" : 26,
+      "The Very Best of Marvin Gaye" : 19
+    },
+    "topSongs" : {
+      "Joy" : 7,
+      "If I Could Build My Whole World Around You" : 6,
+      "Mercy Mercy Me (The Ecology)" : 6,
+      "What's Going On" : 6,
+      "Right On" : 5
+    },
+    "topFans" : [ "david27", "jack29", "alice22", "frank21", "carol19" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -5751,7 +5765,21 @@
   "user" : "Led Zeppelin",
   "timestamp" : 6641,
   "result" : {
-    "result" : "No data to show for Led Zeppelin."
+    "topAlbums" : {
+      "Led Zeppelin IV" : 46,
+      "Led Zeppelin II" : 27,
+      "Led Zeppelin" : 23,
+      "Led Zeppelin IV (Deluxe Edition)" : 20
+    },
+    "topSongs" : {
+      "Misty Mountain Hop" : 8,
+      "Stairway to Heaven" : 8,
+      "When the Levee Breaks" : 8,
+      "Black Dog" : 5,
+      "Bring It on Home" : 5
+    },
+    "topFans" : [ "bob35", "emily30", "frank21", "david27", "carol19" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -9575,7 +9603,20 @@
   "user" : "Michael Jackson",
   "timestamp" : 10441,
   "result" : {
-    "result" : "No data to show for Michael Jackson."
+    "topAlbums" : {
+      "Thriller 25 Super Deluxe Edition" : 50,
+      "Dangerous" : 44,
+      "Off the Wall" : 30
+    },
+    "topSongs" : {
+      "Jam" : 7,
+      "Heal the World" : 6,
+      "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix" : 6,
+      "Beat It - Single Version" : 5,
+      "Can't Let Her Get Away" : 5
+    },
+    "topFans" : [ "henry26", "david27", "frank21", "carol19", "jack29" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -11182,7 +11223,21 @@
   "user" : "Chuck Berry",
   "timestamp" : 12537,
   "result" : {
-    "result" : "No data to show for Chuck Berry."
+    "topAlbums" : {
+      "Chuck Berry Is On Top" : 60,
+      "The Great Twenty-Eight" : 35,
+      "St. Louis to Liverpool" : 29,
+      "Berry Is On Top" : 7
+    },
+    "topSongs" : {
+      "Johnny B. Goode" : 8,
+      "Carol" : 7,
+      "Hey Pedro" : 7,
+      "Sweet Little Rock And Roller" : 7,
+      "Maybellene" : 6
+    },
+    "topFans" : [ "david27", "jack29", "bob35", "frank21", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -13061,7 +13116,21 @@
   "user" : "Madonna",
   "timestamp" : 14948,
   "result" : {
-    "result" : "No data to show for Madonna."
+    "topAlbums" : {
+      "Celebration (Double Disc Version)" : 58,
+      "Confessions on a Dance Floor" : 26,
+      "Ray of Light" : 26,
+      "Like a Prayer" : 5
+    },
+    "topSongs" : {
+      "Express Yourself" : 7,
+      "Forbidden Love" : 5,
+      "The Power of Good-Bye" : 5,
+      "Drowned World/Substitute for Love" : 4,
+      "Get Together" : 4
+    },
+    "topFans" : [ "grace25", "henry26", "irene33", "carol19", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -14844,7 +14913,21 @@
   "user" : "ABBA",
   "timestamp" : 17448,
   "result" : {
-    "result" : "No data to show for ABBA."
+    "topAlbums" : {
+      "Arrival" : 40,
+      "ABBA Gold" : 32,
+      "Voulez-Vous" : 26,
+      "Super Trouper" : 3
+    },
+    "topSongs" : {
+      "The Winner Takes It All" : 8,
+      "Knowing Me, Knowing You" : 7,
+      "Dum Dum Diddle" : 6,
+      "Money, Money, Money" : 5,
+      "The Piper" : 5
+    },
+    "topFans" : [ "carol19", "alice22", "frank21", "henry26", "david27" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -18323,7 +18406,21 @@
   "user" : "Taylor Swift",
   "timestamp" : 21532,
   "result" : {
-    "result" : "No data to show for Taylor Swift."
+    "topAlbums" : {
+      "Lover" : 35,
+      "Fearless" : 34,
+      "1989" : 33,
+      "reputation" : 33
+    },
+    "topSongs" : {
+      "Fifteen" : 6,
+      "So It Goes… 就这样吧" : 6,
+      "Blank Space" : 5,
+      "Delicate 易碎" : 5,
+      "Gorgeous 完美情人" : 5
+    },
+    "topFans" : [ "david27", "irene33", "henry26", "frank21", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -18777,7 +18874,37 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 22130,
-  "message" : "No data to show for carol19."
+  "result" : {
+    "topArtists" : {
+      "ABBA" : 22,
+      "Johnny Cash" : 15,
+      "Led Zeppelin" : 12,
+      "Madonna" : 12,
+      "Chuck Berry" : 11
+    },
+    "topGenres" : {
+      "pop" : 44,
+      "country" : 18,
+      "soul" : 11,
+      "hard rock" : 10,
+      "rap" : 10
+    },
+    "topSongs" : {
+      "Stairway to Heaven" : 3,
+      "3rd Stone From the Sun" : 2,
+      "Blank Space" : 2,
+      "I Know Places" : 2,
+      "I'm So Afraid" : 2
+    },
+    "topAlbums" : {
+      "ABBA Gold" : 10,
+      "Led Zeppelin IV" : 8,
+      "Chuck Berry Is On Top" : 7,
+      "Arrival" : 6,
+      "1989" : 5
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -18990,7 +19117,37 @@
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 22598,
-  "message" : "No data to show for bob35."
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 22,
+      "Chuck Berry" : 18,
+      "Jimi Hendrix" : 18,
+      "Led Zeppelin" : 18,
+      "Taylor Swift" : 13
+    },
+    "topGenres" : {
+      "pop" : 28,
+      "country" : 26,
+      "classic rock" : 21,
+      "rock" : 15,
+      "rock and roll" : 13
+    },
+    "topSongs" : {
+      "Dancing With Our Hands Tied" : 3,
+      "You Belong with Me" : 3,
+      "All Along the Watchtower" : 2,
+      "Clean" : 2,
+      "Dazed and Confused" : 2
+    },
+    "topAlbums" : {
+      "The Legend of Johnny Cash" : 13,
+      "Chuck Berry Is On Top" : 10,
+      "Electric Ladyland" : 9,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 6,
+      "Led Zeppelin" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -19139,7 +19296,37 @@
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 22932,
-  "message" : "No data to show for alice22."
+  "result" : {
+    "topArtists" : {
+      "U2" : 25,
+      "ABBA" : 17,
+      "Nothing But Thieves" : 15,
+      "Marvin Gaye" : 12,
+      "Fleetwood Mac" : 11
+    },
+    "topGenres" : {
+      "rock" : 32,
+      "pop" : 21,
+      "soul" : 12,
+      "country" : 11,
+      "1979" : 8
+    },
+    "topSongs" : {
+      "I Have a Dream" : 3,
+      "Love and Peace or Else" : 3,
+      "Broken Machine" : 2,
+      "Burn This Disco Out" : 2,
+      "Business" : 2
+    },
+    "topAlbums" : {
+      "All That You Can't Leave Behind" : 9,
+      "How to Dismantle an Atomic Bomb" : 9,
+      "Broken Machine (Deluxe)" : 8,
+      "Voulez-Vous" : 8,
+      "Greatest Hits" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -19545,7 +19732,21 @@
   "user" : "U2",
   "timestamp" : 23920,
   "result" : {
-    "result" : "No data to show for U2."
+    "topAlbums" : {
+      "All That You Can't Leave Behind" : 36,
+      "Achtung Baby" : 34,
+      "The Joshua Tree" : 33,
+      "How to Dismantle an Atomic Bomb" : 24
+    },
+    "topSongs" : {
+      "Stuck in a Moment You Can't Get Out Of" : 9,
+      "So Cruel" : 6,
+      "With or Without You" : 6,
+      "In a Little While" : 5,
+      "One" : 5
+    },
+    "topFans" : [ "alice22", "emily30", "david27", "bob35", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -20351,7 +20552,37 @@
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 25802,
-  "message" : "No data to show for emily30."
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 19,
+      "Led Zeppelin" : 16,
+      "U2" : 16,
+      "Fleetwood Mac" : 14,
+      "ABBA" : 12
+    },
+    "topGenres" : {
+      "pop" : 32,
+      "rock" : 31,
+      "country" : 14,
+      "hard rock" : 13,
+      "justice for silver springs" : 11
+    },
+    "topSongs" : {
+      "Stairway to Heaven" : 3,
+      "Amsterdam - NBT" : 2,
+      "Angeleyes" : 2,
+      "Bring It on Home" : 2,
+      "Can You See Me" : 2
+    },
+    "topAlbums" : {
+      "Are You Experienced" : 13,
+      "The Joshua Tree" : 12,
+      "Rumours (Super Deluxe)" : 11,
+      "Led Zeppelin II" : 8,
+      "Celebration (Double Disc Version)" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -20389,7 +20620,21 @@
   "user" : "Jimi Hendrix",
   "timestamp" : 25893,
   "result" : {
-    "result" : "No data to show for Jimi Hendrix."
+    "topAlbums" : {
+      "Are You Experienced" : 48,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 44,
+      "Electric Ladyland" : 39,
+      "Are You Experienced?" : 8
+    },
+    "topSongs" : {
+      "Foxy Lady" : 10,
+      "Manic Depression" : 8,
+      "Fire" : 6,
+      "Hey Joe" : 6,
+      "Love Or Confusion" : 5
+    },
+    "topFans" : [ "frank21", "emily30", "bob35", "grace25", "irene33" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -20539,7 +20784,37 @@
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 26457,
-  "message" : "No data to show for irene33."
+  "result" : {
+    "topArtists" : {
+      "Eminem" : 20,
+      "Madonna" : 20,
+      "Taylor Swift" : 19,
+      "Nothing But Thieves" : 18,
+      "Fleetwood Mac" : 17
+    },
+    "topGenres" : {
+      "pop" : 36,
+      "country" : 22,
+      "rap" : 20,
+      "rock" : 20,
+      "classic rock" : 11
+    },
+    "topSongs" : {
+      "Express Yourself" : 3,
+      "Love Story" : 3,
+      "Blues for Hawaiians" : 2,
+      "Have You Ever Been (To Electric Ladyland)" : 2,
+      "I Was Just a Kid" : 2
+    },
+    "topAlbums" : {
+      "Fearless" : 10,
+      "Recovery" : 10,
+      "Broken Machine (Deluxe)" : 9,
+      "Celebration (Double Disc Version)" : 8,
+      "Fleetwood Mac" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -21136,7 +21411,37 @@
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 28471,
-  "message" : "No data to show for frank21."
+  "result" : {
+    "topArtists" : {
+      "Jimi Hendrix" : 26,
+      "Chuck Berry" : 18,
+      "ABBA" : 15,
+      "Led Zeppelin" : 15,
+      "Johnny Cash" : 14
+    },
+    "topGenres" : {
+      "pop" : 32,
+      "classic rock" : 26,
+      "country" : 17,
+      "rock and roll" : 15,
+      "soul" : 12
+    },
+    "topSongs" : {
+      "Dum Dum Diddle" : 3,
+      "Going to California" : 3,
+      "Graveyard Whistling" : 3,
+      "Bold As Love" : 2,
+      "Can You Afford to Be An Individual?" : 2
+    },
+    "topAlbums" : {
+      "Experience Hendrix: The Best of Jimi Hendrix" : 20,
+      "The Great Twenty-Eight" : 12,
+      "reputation" : 9,
+      "Arrival" : 8,
+      "Led Zeppelin IV (Deluxe Edition)" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -21462,7 +21767,21 @@
   "user" : "Eminem",
   "timestamp" : 29652,
   "result" : {
-    "result" : "No data to show for Eminem."
+    "topAlbums" : {
+      "The Eminem Show" : 37,
+      "The Marshall Mathers LP" : 37,
+      "The Slim Shady LP" : 34,
+      "Recovery" : 27
+    },
+    "topSongs" : {
+      "Public Service Announcement 2000" : 6,
+      "Business" : 4,
+      "Cleanin' Out My Closet" : 4,
+      "Role Model" : 4,
+      "Space Bound" : 4
+    },
+    "topFans" : [ "david27", "henry26", "irene33", "jack29", "grace25" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -22236,7 +22555,37 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 32557,
-  "message" : "No data to show for henry26."
+  "result" : {
+    "topArtists" : {
+      "Michael Jackson" : 28,
+      "Madonna" : 22,
+      "Eminem" : 20,
+      "Johnny Cash" : 20,
+      "Nothing But Thieves" : 16
+    },
+    "topGenres" : {
+      "pop" : 68,
+      "country" : 21,
+      "rap" : 20,
+      "rock" : 16,
+      "soul" : 10
+    },
+    "topSongs" : {
+      "Don't Stop 'Til You Get Enough" : 3,
+      "Our Little Rendezvous" : 3,
+      "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix" : 3,
+      "'Till I Collapse (feat. Nate Dogg)" : 2,
+      "Billie Jean" : 2
+    },
+    "topAlbums" : {
+      "Thriller 25 Super Deluxe Edition" : 17,
+      "American III: Solitary Man" : 15,
+      "Like a Prayer" : 12,
+      "The Slim Shady LP" : 12,
+      "1989" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -22289,7 +22638,37 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 32802,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "Taylor Swift" : 31,
+      "Michael Jackson" : 21,
+      "Chuck Berry" : 20,
+      "Eminem" : 20,
+      "Marvin Gaye" : 17
+    },
+    "topGenres" : {
+      "pop" : 63,
+      "rock" : 21,
+      "rap" : 20,
+      "rock and roll" : 19,
+      "soul" : 17
+    },
+    "topSongs" : {
+      "Hey Pedro" : 3,
+      "Jam" : 3,
+      "Beat It - Single Version" : 2,
+      "Blues for Hawaiians" : 2,
+      "Can't Let Her Get Away" : 2
+    },
+    "topAlbums" : {
+      "Lover" : 21,
+      "Dangerous" : 13,
+      "The Marshall Mathers LP" : 13,
+      "Berry Is On Top" : 7,
+      "United" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22470,7 +22849,37 @@
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 33646,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "Fleetwood Mac" : 47,
+      "Madonna" : 31,
+      "Nothing But Thieves" : 19,
+      "Eminem" : 15,
+      "Jimi Hendrix" : 15
+    },
+    "topGenres" : {
+      "pop" : 47,
+      "justice for silver springs" : 39,
+      "rock" : 20,
+      "rap" : 15,
+      "alternative rock" : 11
+    },
+    "topSongs" : {
+      "Songbird - 2004 Remastered Edition" : 4,
+      "Misty Mountain Hop" : 3,
+      "4 Minutes - feat. Justin Timberlake and Timbaland" : 2,
+      "Dreams - 2004 Remastered Edition" : 2,
+      "Even Better Than the Real Thing" : 2
+    },
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 39,
+      "Celebration (Double Disc Version)" : 25,
+      "Broken Machine (Deluxe)" : 11,
+      "Electric Ladyland" : 10,
+      "Moral Panic" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -22556,7 +22965,21 @@
   "user" : "Johnny Cash",
   "timestamp" : 34057,
   "result" : {
-    "result" : "No data to show for Johnny Cash."
+    "topAlbums" : {
+      "Unearthed" : 107,
+      "American III: Solitary Man" : 38,
+      "The Legend of Johnny Cash" : 32,
+      "American IV: The Man Comes Around" : 27
+    },
+    "topSongs" : {
+      "Wayfaring Stranger" : 6,
+      "The Man Comes Around (Early Take)" : 5,
+      "Country Trash" : 4,
+      "I Won't Back Down" : 4,
+      "Like A Soldier" : 4
+    },
+    "topFans" : [ "jack29", "bob35", "henry26", "carol19", "frank21" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -22755,7 +23178,20 @@
   "user" : "Fleetwood Mac",
   "timestamp" : 36958,
   "result" : {
-    "result" : "No data to show for Fleetwood Mac."
+    "topAlbums" : {
+      "Rumours (Super Deluxe)" : 87,
+      "Greatest Hits" : 36,
+      "Fleetwood Mac" : 25
+    },
+    "topSongs" : {
+      "I'm So Afraid" : 7,
+      "Shake Your Moneymaker" : 7,
+      "Songbird - 2004 Remastered Edition" : 7,
+      "Go Your Own Way - 2004 Remastered Edition" : 6,
+      "Never Going Back Again - 2004 Remastered Edition" : 6
+    },
+    "topFans" : [ "grace25", "jack29", "irene33", "emily30", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -22922,95 +23358,196 @@
   "user" : "Nothing But Thieves",
   "timestamp" : 38196,
   "result" : {
-    "result" : "No data to show for Nothing But Thieves."
+    "topAlbums" : {
+      "Broken Machine (Deluxe)" : 48,
+      "Moral Panic" : 36,
+      "Nothing But Thieves (Deluxe)" : 34
+    },
+    "topSongs" : {
+      "Moral Panic" : 9,
+      "If I Get High" : 8,
+      "Broken Machine" : 6,
+      "Graveyard Whistling" : 6,
+      "I'm Not Made by Design" : 6
+    },
+    "topFans" : [ "grace25", "irene33", "henry26", "alice22", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "wrapped",
   "user" : "Stevie Wonder",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Stevie Wonder."
-  }
+  "message" : "No data to show for user Stevie Wonder."
 }, {
   "command" : "wrapped",
   "user" : "Bob Marley",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Bob Marley."
-  }
+  "message" : "No data to show for user Bob Marley."
 }, {
   "command" : "wrapped",
   "user" : "Rihanna",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Rihanna."
-  }
+  "message" : "No data to show for user Rihanna."
 }, {
   "command" : "wrapped",
   "user" : "David Bowie",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for David Bowie."
-  }
+  "message" : "No data to show for user David Bowie."
 }, {
   "command" : "wrapped",
   "user" : "Ray Charles",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Ray Charles."
-  }
+  "message" : "No data to show for user Ray Charles."
 }, {
   "command" : "wrapped",
   "user" : "Imagine Dragons",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Imagine Dragons."
-  }
+  "message" : "No data to show for user Imagine Dragons."
 }, {
   "command" : "wrapped",
   "user" : "Whitney Houston",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Whitney Houston."
-  }
+  "message" : "No data to show for user Whitney Houston."
 }, {
   "command" : "wrapped",
   "user" : "The Doors",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for The Doors."
-  }
+  "message" : "No data to show for user The Doors."
 }, {
   "command" : "wrapped",
   "user" : "Radiohead",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Radiohead."
-  }
+  "message" : "No data to show for user Radiohead."
 }, {
   "command" : "wrapped",
   "user" : "Aretha Franklin",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for Aretha Franklin."
-  }
+  "message" : "No data to show for user Aretha Franklin."
 }, {
   "command" : "wrapped",
   "user" : "The Beach Boys",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for The Beach Boys."
-  }
+  "message" : "No data to show for user The Beach Boys."
 }, {
   "command" : "wrapped",
   "user" : "The Police",
   "timestamp" : 38196,
-  "result" : {
-    "result" : "No data to show for The Police."
-  }
+  "message" : "No data to show for user The Police."
 }, {
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 38296,
-  "message" : "No data to show for jack29."
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 92,
+      "Chuck Berry" : 20,
+      "Eminem" : 20,
+      "Fleetwood Mac" : 18,
+      "Jimi Hendrix" : 13
+    },
+    "topGenres" : {
+      "country" : 92,
+      "rock" : 35,
+      "pop" : 29,
+      "rap" : 20,
+      "rock and roll" : 18
+    },
+    "topSongs" : {
+      "Around and Around" : 4,
+      "Manic Depression" : 3,
+      "1983...(A Merman I Should Turn to Be)" : 2,
+      "Are You Experienced" : 2,
+      "Carol" : 2
+    },
+    "topAlbums" : {
+      "Unearthed" : 82,
+      "Chuck Berry Is On Top" : 18,
+      "Greatest Hits" : 14,
+      "The Eminem Show" : 11,
+      "Are You Experienced" : 9
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "ABBA" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Chuck Berry" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Eminem" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "Fleetwood Mac" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    },
+    "Jimi Hendrix" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 5,
+      "mostProfitableSong" : "N/A"
+    },
+    "Johnny Cash" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 6,
+      "mostProfitableSong" : "N/A"
+    },
+    "Led Zeppelin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 7,
+      "mostProfitableSong" : "N/A"
+    },
+    "Madonna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 8,
+      "mostProfitableSong" : "N/A"
+    },
+    "Marvin Gaye" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 9,
+      "mostProfitableSong" : "N/A"
+    },
+    "Michael Jackson" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 10,
+      "mostProfitableSong" : "N/A"
+    },
+    "Nothing But Thieves" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 11,
+      "mostProfitableSong" : "N/A"
+    },
+    "Taylor Swift" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 12,
+      "mostProfitableSong" : "N/A"
+    },
+    "U2" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 13,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

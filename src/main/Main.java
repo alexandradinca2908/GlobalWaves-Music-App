@@ -858,6 +858,39 @@ public final class Main {
                 }
             }
         }
+
+        //  End of program stats
+        ObjectNode endProgramOutput = objectMapper.createObjectNode();
+        endProgramOutput.put("command", "endProgram");
+
+        ObjectNode result = objectMapper.createObjectNode();
+        ArrayList<String> artistNames = new ArrayList<>();
+
+        for (ArtistStatistics artist : Statistics.getWrappedStats().getArtistsStatistics()) {
+            if (!artist.getTopSongs().isEmpty()) {
+                artistNames.add(artist.getArtist().getUsername());
+            }
+        }
+        Collections.sort(artistNames);
+
+        int ranking = 1;
+        for (String user : artistNames) {
+            ObjectNode node = objectMapper.createObjectNode();
+            node.put("merchRevenue", 0.0);
+            node.put("songRevenue", 0.0);
+            node.put("ranking", ranking);
+            node.put("mostProfitableSong", "N/A");
+
+            result.putPOJO(user, node);
+            ranking++;
+        }
+        endProgramOutput.putPOJO("result", result);
+
+        outputs.add(endProgramOutput);
+
+        //  Reset Singleton Database
+        Statistics.getWrappedStats().resetWrappedStats();
+
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(filePathOutput), outputs);
     }
@@ -909,6 +942,5 @@ public final class Main {
 
         removableItems.clear();
     }
-
 }
 

@@ -92,4 +92,14 @@
   "command" : "printCurrentPage",
   "timestamp" : 190,
   "message" : "Liked songs:\n\t[Amsterdam]\n\nFollowed playlists:\n\t[]"
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "Nothing But Thieves" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]

@@ -3956,7 +3956,21 @@
   "user" : "Nirvana",
   "timestamp" : 2914,
   "result" : {
-    "result" : "No data to show for Nirvana."
+    "topAlbums" : {
+      "Nevermind" : 42,
+      "Nirvana" : 39,
+      "In Utero" : 13,
+      "MTV Unplugged in New York" : 11
+    },
+    "topSongs" : {
+      "Come as You Are" : 7,
+      "All Apologies (MTV Unplugged)" : 6,
+      "On a Plain" : 6,
+      "Pennyroyal Tea - Single Mix" : 6,
+      "Where Did You Sleep Last Night (Live Version)" : 6
+    },
+    "topFans" : [ "bob35", "emily30", "carol19", "irene33", "alice22" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -5791,7 +5805,21 @@
   "user" : "Joni Mitchell",
   "timestamp" : 5263,
   "result" : {
-    "result" : "No data to show for Joni Mitchell."
+    "topAlbums" : {
+      "Blue" : 33,
+      "Ladies of the Canyon" : 30,
+      "Court and Spark" : 27,
+      "Both Sides Now" : 26
+    },
+    "topSongs" : {
+      "All I Want" : 6,
+      "A Case of You" : 5,
+      "Comes Love" : 5,
+      "Little Green" : 5,
+      "Raised on Robbery" : 5
+    },
+    "topFans" : [ "frank21", "carol19", "alice22", "grace25", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -7479,7 +7507,21 @@
   "user" : "ABBA",
   "timestamp" : 6881,
   "result" : {
-    "result" : "No data to show for ABBA."
+    "topAlbums" : {
+      "ABBA Gold" : 52,
+      "Arrival" : 35,
+      "Super Trouper" : 18,
+      "Voulez-Vous" : 18
+    },
+    "topSongs" : {
+      "Dancing Queen" : 7,
+      "That's Me" : 7,
+      "Money, Money, Money" : 6,
+      "My Love, My Life" : 5,
+      "Voulez-Vous" : 5
+    },
+    "topFans" : [ "carol19", "jack29", "henry26", "david27", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -10182,7 +10224,20 @@
   "user" : "Bob Dylan",
   "timestamp" : 9495,
   "result" : {
-    "result" : "No data to show for Bob Dylan."
+    "topAlbums" : {
+      "Bringing It All Back Home" : 44,
+      "Highway 61 Revisited" : 43,
+      "The Freewheelin' Bob Dylan" : 37
+    },
+    "topSongs" : {
+      "Queen Jane Approximately" : 8,
+      "From a Buick 6" : 7,
+      "Bob Dylan's 115th Dream" : 6,
+      "Desolation Row" : 6,
+      "Don't Think Twice, It's All Right" : 6
+    },
+    "topFans" : [ "david27", "irene33", "grace25", "henry26", "jack29" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -11013,7 +11068,19 @@
   "user" : "The Beach Boys",
   "timestamp" : 10363,
   "result" : {
-    "result" : "No data to show for The Beach Boys."
+    "topAlbums" : {
+      "Pet Sounds" : 64,
+      "Summer Dreams" : 48
+    },
+    "topSongs" : {
+      "Summertime Blues" : 8,
+      "Girl Don't Tell Me" : 7,
+      "I Know There's an Answer" : 7,
+      "Pet Sounds" : 7,
+      "That's Not Me" : 7
+    },
+    "topFans" : [ "alice22", "jack29", "bob35", "carol19", "david27" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -15868,7 +15935,21 @@
   "user" : "Stevie Wonder",
   "timestamp" : 17212,
   "result" : {
-    "result" : "No data to show for Stevie Wonder."
+    "topAlbums" : {
+      "The Definitive Collection" : 46,
+      "Songs in the Key of Life" : 42,
+      "Talking Book" : 32,
+      "Innervisions" : 28
+    },
+    "topSongs" : {
+      "All Day Sucker" : 6,
+      "He's Misstra Know It All" : 6,
+      "Higher Ground - Single Version" : 6,
+      "I Believe (When I Fall in Love It Will Be Forever)" : 6,
+      "All in Love Is Fair" : 5
+    },
+    "topFans" : [ "irene33", "carol19", "frank21", "henry26", "alice22" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -17251,7 +17332,21 @@
   "user" : "Radiohead",
   "timestamp" : 19380,
   "result" : {
-    "result" : "No data to show for Radiohead."
+    "topAlbums" : {
+      "OK Computer" : 33,
+      "In Rainbows" : 32,
+      "The Bends" : 30,
+      "Pablo Honey" : 28
+    },
+    "topSongs" : {
+      "Lurgee" : 6,
+      "Weird Fishes/Arpeggi" : 6,
+      "Jigsaw Falling Into Place" : 5,
+      "My Iron Lung" : 5,
+      "Street Spirit (Fade Out)" : 5
+    },
+    "topFans" : [ "bob35", "david27", "frank21", "carol19", "grace25" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -18057,7 +18152,37 @@
   "command" : "wrapped",
   "user" : "emily30",
   "timestamp" : 20591,
-  "message" : "No data to show for emily30."
+  "result" : {
+    "topArtists" : {
+      "Rihanna" : 21,
+      "Nirvana" : 17,
+      "The Rolling Stones" : 14,
+      "ABBA" : 12,
+      "Johnny Cash" : 12
+    },
+    "topGenres" : {
+      "pop" : 22,
+      "soul" : 19,
+      "grunge" : 17,
+      "classic rock" : 15,
+      "rock" : 13
+    },
+    "topSongs" : {
+      "Push Up on Me" : 3,
+      "Before They Make Me Run" : 2,
+      "Come On" : 2,
+      "Consideration" : 2,
+      "Exit Music (for a Film)" : 2
+    },
+    "topAlbums" : {
+      "Good Girl Gone Bad" : 16,
+      "Nevermind" : 6,
+      "Nirvana" : 6,
+      "Summer Dreams" : 6,
+      "Voulez-Vous" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -19070,7 +19195,37 @@
   "command" : "wrapped",
   "user" : "jack29",
   "timestamp" : 21848,
-  "message" : "No data to show for jack29."
+  "result" : {
+    "topArtists" : {
+      "ABBA" : 17,
+      "The Beach Boys" : 15,
+      "Bob Dylan" : 14,
+      "Rihanna" : 14,
+      "Johnny Cash" : 11
+    },
+    "topGenres" : {
+      "pop" : 29,
+      "rock" : 18,
+      "soul" : 17,
+      "classic rock" : 12,
+      "folk" : 12
+    },
+    "topSongs" : {
+      "He's Misstra Know It All" : 3,
+      "Melt My Heart to Stone" : 3,
+      "Pet Sounds" : 3,
+      "You Never Give Me Your Money - Remastered 2009" : 3,
+      "Do You Remember" : 2
+    },
+    "topAlbums" : {
+      "Arrival" : 11,
+      "Summer Dreams" : 8,
+      "American IV: The Man Comes Around" : 7,
+      "Pet Sounds" : 7,
+      "Good Girl Gone Bad" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -19123,7 +19278,37 @@
   "command" : "wrapped",
   "user" : "frank21",
   "timestamp" : 22029,
-  "message" : "No data to show for frank21."
+  "result" : {
+    "topArtists" : {
+      "Joni Mitchell" : 19,
+      "Bruce Springsteen" : 16,
+      "The Beatles" : 15,
+      "Elton John" : 14,
+      "Stevie Wonder" : 14
+    },
+    "topGenres" : {
+      "rock" : 31,
+      "soul" : 27,
+      "pop" : 18,
+      "folk" : 16,
+      "classic rock" : 12
+    },
+    "topSongs" : {
+      "Woman Like Me" : 3,
+      "Backstreets" : 2,
+      "Big Yellow Taxi" : 2,
+      "Come Together - Remastered 2009" : 2,
+      "First Love" : 2
+    },
+    "topAlbums" : {
+      "Court and Spark" : 9,
+      "1 (Remastered)" : 7,
+      "19" : 7,
+      "Pet Sounds" : 7,
+      "30" : 6
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -19641,7 +19826,21 @@
   "user" : "Bruce Springsteen",
   "timestamp" : 22844,
   "result" : {
-    "result" : "No data to show for Bruce Springsteen."
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 71,
+      "Born in the U.S.A." : 23,
+      "Born to Run" : 22,
+      "Greatest Hits" : 7
+    },
+    "topSongs" : {
+      "Born to Run" : 9,
+      "I'm on Fire" : 6,
+      "Meeting Across the River" : 6,
+      "Backstreets" : 5,
+      "Badlands" : 5
+    },
+    "topFans" : [ "alice22", "bob35", "frank21", "henry26", "irene33" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -21615,7 +21814,37 @@
   "command" : "wrapped",
   "user" : "carol19",
   "timestamp" : 26453,
-  "message" : "No data to show for carol19."
+  "result" : {
+    "topArtists" : {
+      "Johnny Cash" : 45,
+      "Stevie Wonder" : 21,
+      "ABBA" : 17,
+      "Joni Mitchell" : 17,
+      "Nirvana" : 14
+    },
+    "topGenres" : {
+      "country" : 45,
+      "soul" : 29,
+      "rock" : 18,
+      "classic rock" : 14,
+      "folk" : 14
+    },
+    "topSongs" : {
+      "Here Today" : 3,
+      "All the Nasties" : 2,
+      "Bones" : 2,
+      "Born to Run" : 2,
+      "Come as You Are" : 2
+    },
+    "topAlbums" : {
+      "Unearthed" : 41,
+      "The Definitive Collection" : 15,
+      "Blue" : 10,
+      "Super Trouper" : 8,
+      "Pet Sounds" : 7
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22100,7 +22329,37 @@
   "command" : "wrapped",
   "user" : "henry26",
   "timestamp" : 27217,
-  "message" : "No data to show for henry26."
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 20,
+      "Adele" : 18,
+      "Johnny Cash" : 18,
+      "Bob Dylan" : 15,
+      "ABBA" : 14
+    },
+    "topGenres" : {
+      "soul" : 33,
+      "classic rock" : 28,
+      "rock" : 22,
+      "folk" : 21,
+      "country" : 18
+    },
+    "topSongs" : {
+      "Chasing Pavements" : 4,
+      "A Case of You" : 3,
+      "Arrival" : 3,
+      "Goodbye Yellow Brick Road" : 3,
+      "All Day Sucker" : 2
+    },
+    "topAlbums" : {
+      "Aftermath" : 16,
+      "Talking Book" : 10,
+      "The Freewheelin' Bob Dylan" : 10,
+      "19" : 9,
+      "30" : 9
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -22329,7 +22588,37 @@
   "command" : "wrapped",
   "user" : "bob35",
   "timestamp" : 27523,
-  "message" : "No data to show for bob35."
+  "result" : {
+    "topArtists" : {
+      "Radiohead" : 28,
+      "Bruce Springsteen" : 19,
+      "Nirvana" : 15,
+      "The Beach Boys" : 12,
+      "The Rolling Stones" : 12
+    },
+    "topGenres" : {
+      "rock" : 28,
+      "soul" : 20,
+      "alternative" : 19,
+      "classic rock" : 15,
+      "grunge" : 15
+    },
+    "topSongs" : {
+      "Bob Dylan's Blues" : 2,
+      "Born in the U.S.A." : 2,
+      "Born to Run" : 2,
+      "Climbing Up the Walls" : 2,
+      "Daydreamer" : 2
+    },
+    "topAlbums" : {
+      "OK Computer" : 14,
+      "Nevermind" : 9,
+      "Pablo Honey" : 9,
+      "The Essential Bruce Springsteen" : 9,
+      "19" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22638,7 +22927,37 @@
   "command" : "wrapped",
   "user" : "grace25",
   "timestamp" : 28078,
-  "message" : "No data to show for grace25."
+  "result" : {
+    "topArtists" : {
+      "The Beatles" : 37,
+      "Rihanna" : 17,
+      "Bob Dylan" : 16,
+      "Joni Mitchell" : 14,
+      "Adele" : 13
+    },
+    "topGenres" : {
+      "rock" : 46,
+      "soul" : 26,
+      "classic rock" : 15,
+      "pop" : 14,
+      "folk rock" : 13
+    },
+    "topSongs" : {
+      "Live With Me" : 3,
+      "At Last" : 2,
+      "Bob Dylan's 115th Dream" : 2,
+      "Cold Shoulder" : 2,
+      "Come as You Are" : 2
+    },
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 30,
+      "Bringing It All Back Home" : 13,
+      "ANTI (Deluxe)" : 11,
+      "19" : 8,
+      "Summer Dreams" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "david27",
@@ -22963,7 +23282,37 @@
   "command" : "wrapped",
   "user" : "david27",
   "timestamp" : 28805,
-  "message" : "No data to show for david27."
+  "result" : {
+    "topArtists" : {
+      "The Rolling Stones" : 44,
+      "Bob Dylan" : 22,
+      "Radiohead" : 16,
+      "Adele" : 14,
+      "Johnny Cash" : 13
+    },
+    "topGenres" : {
+      "classic rock" : 44,
+      "soul" : 25,
+      "folk" : 21,
+      "pop" : 19,
+      "rock" : 14
+    },
+    "topSongs" : {
+      "Desolation Row" : 3,
+      "It Takes a Lot to Laugh, It Takes a Train to Cry" : 3,
+      "Lurgee" : 3,
+      "Melt My Heart to Stone" : 3,
+      "All Apologies (MTV Unplugged)" : 2
+    },
+    "topAlbums" : {
+      "Rolled Gold" : 29,
+      "Highway 61 Revisited" : 15,
+      "30" : 9,
+      "Good Girl Gone Bad" : 8,
+      "Let It Bleed" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -23049,7 +23398,21 @@
   "user" : "Elton John",
   "timestamp" : 29400,
   "result" : {
-    "result" : "No data to show for Elton John."
+    "topAlbums" : {
+      "Madman Across the Water" : 32,
+      "Honky Chateau" : 30,
+      "Too Low For Zero" : 29,
+      "Greatest Hits" : 23
+    },
+    "topSongs" : {
+      "Goodbye Yellow Brick Road" : 7,
+      "Honky Cat" : 7,
+      "I'm Still Standing" : 6,
+      "Madman Across the Water" : 6,
+      "Religion" : 6
+    },
+    "topFans" : [ "alice22", "frank21", "grace25", "irene33", "henry26" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -23311,7 +23674,37 @@
   "command" : "wrapped",
   "user" : "irene33",
   "timestamp" : 31186,
-  "message" : "No data to show for irene33."
+  "result" : {
+    "topArtists" : {
+      "Stevie Wonder" : 37,
+      "The Beatles" : 24,
+      "Bob Dylan" : 21,
+      "Elton John" : 13,
+      "Nirvana" : 12
+    },
+    "topGenres" : {
+      "soul" : 46,
+      "rock" : 35,
+      "folk" : 14,
+      "pop" : 14,
+      "grunge" : 12
+    },
+    "topSongs" : {
+      "All in Love Is Fair" : 3,
+      "Subterranean Homesick Blues" : 3,
+      "Wayfaring Stranger" : 3,
+      "Bob Dylan's 115th Dream" : 2,
+      "Born to Run" : 2
+    },
+    "topAlbums" : {
+      "Songs in the Key of Life" : 23,
+      "1 (Remastered)" : 20,
+      "Bringing It All Back Home" : 11,
+      "Innervisions" : 11,
+      "In Rainbows" : 8
+    },
+    "topEpisodes" : { }
+  }
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -23573,7 +23966,21 @@
   "user" : "Johnny Cash",
   "timestamp" : 32969,
   "result" : {
-    "result" : "No data to show for Johnny Cash."
+    "topAlbums" : {
+      "Unearthed" : 74,
+      "The Legend of Johnny Cash" : 31,
+      "American IV: The Man Comes Around" : 30,
+      "American III: Solitary Man" : 26
+    },
+    "topSongs" : {
+      "Desperado" : 5,
+      "Field of Diamonds" : 5,
+      "Hurt" : 5,
+      "I Won't Back Down" : 5,
+      "Get Rhythm" : 4
+    },
+    "topFans" : [ "carol19", "alice22", "henry26", "david27", "emily30" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -23836,7 +24243,20 @@
   "user" : "The Beatles",
   "timestamp" : 36172,
   "result" : {
-    "result" : "No data to show for The Beatles."
+    "topAlbums" : {
+      "The Beatles (Remastered)" : 54,
+      "1 (Remastered)" : 52,
+      "Abbey Road (Remastered)" : 44
+    },
+    "topSongs" : {
+      "I Feel Fine - Remastered 2015" : 7,
+      "She Came in Through the Bathroom Window" : 7,
+      "Here Comes the Sun - Remastered 2009" : 6,
+      "Octopus's Garden - Remastered 2009" : 5,
+      "Yellow Submarine - Remastered 2015" : 5
+    },
+    "topFans" : [ "grace25", "irene33", "alice22", "frank21", "carol19" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -23987,7 +24407,21 @@
   "user" : "The Rolling Stones",
   "timestamp" : 37321,
   "result" : {
-    "result" : "No data to show for The Rolling Stones."
+    "topAlbums" : {
+      "Rolled Gold" : 47,
+      "Aftermath" : 41,
+      "Let It Bleed" : 32,
+      "Some Girls" : 28
+    },
+    "topSongs" : {
+      "Before They Make Me Run" : 7,
+      "Live With Me" : 7,
+      "I Am Waiting" : 5,
+      "Let It Bleed" : 5,
+      "Midnight Rambler" : 5
+    },
+    "topFans" : [ "david27", "henry26", "carol19", "emily30", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -24234,7 +24668,21 @@
   "user" : "Rihanna",
   "timestamp" : 43125,
   "result" : {
-    "result" : "No data to show for Rihanna."
+    "topAlbums" : {
+      "Good Girl Gone Bad" : 61,
+      "ANTI (Deluxe)" : 30,
+      "Loud" : 24,
+      "Good Girl Gone Bad: Reloaded" : 19
+    },
+    "topSongs" : {
+      "Breakin' Dishes" : 7,
+      "Push Up on Me" : 7,
+      "Good Girl Gone Bad" : 6,
+      "Lemme Get That" : 6,
+      "Shut Up and Drive" : 6
+    },
+    "topFans" : [ "alice22", "emily30", "grace25", "jack29", "david27" ],
+    "listeners" : 10
   }
 }, {
   "command" : "search",
@@ -24385,88 +24833,208 @@
   "user" : "Adele",
   "timestamp" : 43914,
   "result" : {
-    "result" : "No data to show for Adele."
+    "topAlbums" : {
+      "19" : 59,
+      "30" : 52
+    },
+    "topSongs" : {
+      "Melt My Heart to Stone" : 11,
+      "Tired" : 8,
+      "Chasing Pavements" : 7,
+      "Cold Shoulder" : 7,
+      "Make You Feel My Love" : 7
+    },
+    "topFans" : [ "henry26", "david27", "frank21", "grace25", "bob35" ],
+    "listeners" : 10
   }
 }, {
   "command" : "wrapped",
   "user" : "Imagine Dragons",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Imagine Dragons."
-  }
+  "message" : "No data to show for user Imagine Dragons."
 }, {
   "command" : "wrapped",
   "user" : "Bob Marley",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Bob Marley."
-  }
+  "message" : "No data to show for user Bob Marley."
 }, {
   "command" : "wrapped",
   "user" : "The Police",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for The Police."
-  }
+  "message" : "No data to show for user The Police."
 }, {
   "command" : "wrapped",
   "user" : "James Brown",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for James Brown."
-  }
+  "message" : "No data to show for user James Brown."
 }, {
   "command" : "wrapped",
   "user" : "Whitney Houston",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Whitney Houston."
-  }
+  "message" : "No data to show for user Whitney Houston."
 }, {
   "command" : "wrapped",
   "user" : "David Bowie",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for David Bowie."
-  }
+  "message" : "No data to show for user David Bowie."
 }, {
   "command" : "wrapped",
   "user" : "Michael Jackson",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Michael Jackson."
-  }
+  "message" : "No data to show for user Michael Jackson."
 }, {
   "command" : "wrapped",
   "user" : "Chuck Berry",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Chuck Berry."
-  }
+  "message" : "No data to show for user Chuck Berry."
 }, {
   "command" : "wrapped",
   "user" : "Frank Sinatra",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Frank Sinatra."
-  }
+  "message" : "No data to show for user Frank Sinatra."
 }, {
   "command" : "wrapped",
   "user" : "Ray Charles",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Ray Charles."
-  }
+  "message" : "No data to show for user Ray Charles."
 }, {
   "command" : "wrapped",
   "user" : "Eminem",
   "timestamp" : 43914,
-  "result" : {
-    "result" : "No data to show for Eminem."
-  }
+  "message" : "No data to show for user Eminem."
 }, {
   "command" : "wrapped",
   "user" : "alice22",
   "timestamp" : 44014,
-  "message" : "No data to show for alice22."
+  "result" : {
+    "topArtists" : {
+      "Rihanna" : 33,
+      "Bruce Springsteen" : 27,
+      "Johnny Cash" : 27,
+      "Elton John" : 24,
+      "The Beatles" : 21
+    },
+    "topGenres" : {
+      "rock" : 48,
+      "pop" : 35,
+      "country" : 27,
+      "soul" : 22,
+      "classic rock" : 19
+    },
+    "topSongs" : {
+      "Octopus's Garden - Remastered 2009" : 3,
+      "Big Brother" : 2,
+      "Born to Run" : 2,
+      "Desperado" : 2,
+      "Devils & Dust" : 2
+    },
+    "topAlbums" : {
+      "The Essential Bruce Springsteen" : 23,
+      "Good Girl Gone Bad: Reloaded" : 15,
+      "Pet Sounds" : 15,
+      "Abbey Road (Remastered)" : 14,
+      "The Legend of Johnny Cash" : 14
+    },
+    "topEpisodes" : { }
+  }
+}, {
+  "command" : "endProgram",
+  "result" : {
+    "ABBA" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Adele" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    },
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 3,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bob Dylan" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 4,
+      "mostProfitableSong" : "N/A"
+    },
+    "Bruce Springsteen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 5,
+      "mostProfitableSong" : "N/A"
+    },
+    "Elton John" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 6,
+      "mostProfitableSong" : "N/A"
+    },
+    "Johnny Cash" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 7,
+      "mostProfitableSong" : "N/A"
+    },
+    "Joni Mitchell" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 8,
+      "mostProfitableSong" : "N/A"
+    },
+    "Nirvana" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 9,
+      "mostProfitableSong" : "N/A"
+    },
+    "Queen" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 10,
+      "mostProfitableSong" : "N/A"
+    },
+    "Radiohead" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 11,
+      "mostProfitableSong" : "N/A"
+    },
+    "Rihanna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 12,
+      "mostProfitableSong" : "N/A"
+    },
+    "Stevie Wonder" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 13,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Beach Boys" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 14,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Beatles" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 15,
+      "mostProfitableSong" : "N/A"
+    },
+    "The Rolling Stones" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 0.0,
+      "ranking" : 16,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]
