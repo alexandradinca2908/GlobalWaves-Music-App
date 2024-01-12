@@ -193,13 +193,13 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
         }
 
         //  First song
-        if (crtUser.getTopSongs().containsKey(selectedSong)) {
+        if (crtUser.getTopSongs().containsKey(selectedSong.getName())) {
             //  Increase the listen count if the song exists
-            int count = crtUser.getTopSongs().get(selectedSong);
-            crtUser.getTopSongs().put(selectedSong, count + 1);
+            int count = crtUser.getTopSongs().get(selectedSong.getName());
+            crtUser.getTopSongs().put(selectedSong.getName(), count + 1);
         } else {
             //  Add the song
-            crtUser.getTopSongs().put(selectedSong, 1);
+            crtUser.getTopSongs().put(selectedSong.getName(), 1);
         }
         //  Genre
         if (crtUser.getTopGenres().containsKey(selectedSong.getGenre())) {
@@ -233,15 +233,15 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
                 break;
             }
         }
-        if (crtUser.getTopAlbums().containsKey(crtAlbum)) {
+        if (crtUser.getTopAlbums().containsKey(crtAlbum.getName())) {
             //  Increase the listen count if the album exists
             int count = crtUser.getTopAlbums()
-                    .get(crtAlbum);
+                    .get(crtAlbum.getName());
             crtUser.getTopAlbums()
-                    .put(crtAlbum, count + 1);
+                    .put(crtAlbum.getName(), count + 1);
         } else {
             //  Add the album
-            crtUser.getTopAlbums().put(crtAlbum, 1);
+            crtUser.getTopAlbums().put(crtAlbum.getName(), 1);
         }
 
         //  Artist stats
@@ -256,24 +256,24 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
         }
 
         //  Song
-        if (crtArtist.getTopSongs().containsKey(selectedSong)) {
+        if (crtArtist.getTopSongs().containsKey(selectedSong.getName())) {
             //  Increase the listen count if the song exists
-            int count = crtArtist.getTopSongs().get(selectedSong);
-            crtArtist.getTopSongs().put(selectedSong, count + 1);
+            int count = crtArtist.getTopSongs().get(selectedSong.getName());
+            crtArtist.getTopSongs().put(selectedSong.getName(), count + 1);
         } else {
             //  Add the song if it's the first time being listened to
-            crtArtist.getTopSongs().put(selectedSong, 1);
+            crtArtist.getTopSongs().put(selectedSong.getName(), 1);
         }
         // Album
-        if (crtArtist.getTopAlbums().containsKey(crtAlbum)) {
+        if (crtArtist.getTopAlbums().containsKey(crtAlbum.getName())) {
             //  Increase the listen count if the album exists
             int count = crtArtist.getTopAlbums()
-                    .get(crtAlbum);
+                    .get(crtAlbum.getName());
             crtArtist.getTopAlbums()
-                    .put(crtAlbum, count + 1);
+                    .put(crtAlbum.getName(), count + 1);
         } else {
             //  Add the album
-            crtArtist.getTopAlbums().put(crtAlbum, 1);
+            crtArtist.getTopAlbums().put(crtAlbum.getName(), 1);
         }
         //  Fans
         if (crtArtist.getTopFans().containsKey(crtUser.getUser())) {

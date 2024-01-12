@@ -300,12 +300,6 @@ public final class SearchSelect {
             }
         }
 
-        //  Convert album list to a string list first
-        ArrayList<String> albumNames = new ArrayList<>();
-        for (Album album : albums) {
-            albumNames.add(album.getName());
-        }
-
         //  Convert user list to a string list first
         ArrayList<String> usernames = new ArrayList<>();
         for (UserInput user : library.getUsers()) {
@@ -318,8 +312,8 @@ public final class SearchSelect {
             int index2 = usernames.indexOf(o2.getOwner());
 
             if (index1 == index2) {
-                int index3 = albumNames.indexOf(o1.getName());
-                int index4 = albumNames.indexOf(o2.getName());
+                int index3 = albums.indexOf(o1);
+                int index4 = albums.indexOf(o2);
 
                 return Integer.compare(index3, index4);
             }

@@ -88,12 +88,11 @@ public final class AlbumSelection
                     }
 
                     for (SongInput song : crtAlbum) {
-                        duration -= song.getDuration();
-
                         if (duration < prevRemainingTime
                                 && crtAlbum.indexOf(song) != 0) {
                             this.updateWrappedForSong(song, albums);
                         }
+                        duration -= song.getDuration();
                     }
 
                     //  Now add all the songs if there is more than one replay
@@ -108,14 +107,12 @@ public final class AlbumSelection
                     duration = this.getAlbum().getDuration();
 
                     for (SongInput song : crtAlbum) {
-                        duration -= song.getDuration();
-
                         if (duration >= remainingTime) {
                             this.updateWrappedForSong(song, albums);
                         } else {
-                            this.updateWrappedForSong(song, albums);
                             break;
                         }
+                        duration -= song.getDuration();
                     }
 
                 } else if (this.getRepeat().equals("Repeat Current Song")) {

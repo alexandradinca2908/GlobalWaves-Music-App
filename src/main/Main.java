@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 import static main.UtilityClasses.Do.DoCommands.doSearch;
 import static main.UtilityClasses.Do.DoCommands.doSelect;
@@ -227,7 +228,7 @@ public final class Main {
         }
 
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
-
+        System.out.println(filePathInput);
         //  Parsing commands
         for (Command crtCommand : commands) {
             switch (crtCommand.getCommand()) {
@@ -663,14 +664,14 @@ public final class Main {
 
                             //  Sort Song HashMap data and display if available
                             if (!userStats.getTopSongs().isEmpty()) {
-                                ArrayList<Map.Entry<SongInput, Integer>> songs;
+                                ArrayList<Map.Entry<String, Integer>> songs;
                                 songs = new ArrayList<>(userStats.getTopSongs().entrySet());
 
                                 //  Sort
                                 songs.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getName()
-                                                .compareTo(a2.getKey().getName());
+                                        return a1.getKey()
+                                                .compareTo(a2.getKey());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
@@ -680,8 +681,8 @@ public final class Main {
 
                                 //  Add info to result array
                                 ObjectNode songInfo = objectMapper.createObjectNode();
-                                for (Map.Entry<SongInput, Integer> entry : songs) {
-                                    songInfo.put(entry.getKey().getName(), entry.getValue());
+                                for (Map.Entry<String, Integer> entry : songs) {
+                                    songInfo.put(entry.getKey(), entry.getValue());
                                 }
                                 result.putPOJO("topSongs", songInfo);
                             } else {
@@ -691,13 +692,13 @@ public final class Main {
 
                             //  Sort Album HashMap data and display if available
                             if (!userStats.getTopAlbums().isEmpty()) {
-                                ArrayList<Map.Entry<Album, Integer>> topAlbums;
+                                ArrayList<Map.Entry<String, Integer>> topAlbums;
                                 topAlbums = new ArrayList<>(userStats.getTopAlbums().entrySet());
 
                                 //  Sort
                                 topAlbums.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                        return a1.getKey().compareTo(a2.getKey());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
@@ -707,8 +708,8 @@ public final class Main {
 
                                 //  Add info to result array
                                 ObjectNode albumInfo = objectMapper.createObjectNode();
-                                for (Map.Entry<Album, Integer> entry : topAlbums) {
-                                    albumInfo.put(entry.getKey().getName(), entry.getValue());
+                                for (Map.Entry<String, Integer> entry : topAlbums) {
+                                    albumInfo.put(entry.getKey(), entry.getValue());
                                 }
                                 result.putPOJO("topAlbums", albumInfo);
                             } else {
@@ -765,13 +766,13 @@ public final class Main {
                         } else {
                             //  Sort Album HashMap data and display if available
                             if (!artistStats.getTopAlbums().isEmpty()) {
-                                ArrayList<Map.Entry<Album, Integer>> topAlbums;
+                                ArrayList<Map.Entry<String, Integer>> topAlbums;
                                 topAlbums = new ArrayList<>(artistStats.getTopAlbums().entrySet());
 
                                 //  Sort
                                 topAlbums.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                        return a1.getKey().compareTo(a2.getKey());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
@@ -781,8 +782,8 @@ public final class Main {
 
                                 //  Add info to result array
                                 ObjectNode albumInfo = objectMapper.createObjectNode();
-                                for (Map.Entry<Album, Integer> entry : topAlbums) {
-                                    albumInfo.put(entry.getKey().getName(), entry.getValue());
+                                for (Map.Entry<String, Integer> entry : topAlbums) {
+                                    albumInfo.put(entry.getKey(), entry.getValue());
                                 }
                                 result.putPOJO("topAlbums", albumInfo);
                             } else {
@@ -792,13 +793,13 @@ public final class Main {
 
                             //  Sort Song HashMap data and display if available
                             if (!artistStats.getTopSongs().isEmpty()) {
-                                ArrayList<Map.Entry<SongInput, Integer>> songs;
+                                ArrayList<Map.Entry<String, Integer>> songs;
                                 songs = new ArrayList<>(artistStats.getTopSongs().entrySet());
 
                                 //  Sort
                                 songs.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                        return a1.getKey().compareTo(a2.getKey());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
@@ -808,8 +809,8 @@ public final class Main {
 
                                 //  Add info to result array
                                 ObjectNode songInfo = objectMapper.createObjectNode();
-                                for (Map.Entry<SongInput, Integer> entry : songs) {
-                                    songInfo.put(entry.getKey().getName(), entry.getValue());
+                                for (Map.Entry<String, Integer> entry : songs) {
+                                    songInfo.put(entry.getKey(), entry.getValue());
                                 }
                                 result.putPOJO("topSongs", songInfo);
                             } else {

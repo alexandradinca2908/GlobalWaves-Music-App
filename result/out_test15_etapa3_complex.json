@@ -5772,11 +5772,11 @@
       "Led Zeppelin IV (Deluxe Edition)" : 20
     },
     "topSongs" : {
-      "Misty Mountain Hop" : 8,
-      "Stairway to Heaven" : 8,
-      "When the Levee Breaks" : 8,
-      "Black Dog" : 5,
-      "Bring It on Home" : 5
+      "Misty Mountain Hop" : 9,
+      "Stairway to Heaven" : 9,
+      "When the Levee Breaks" : 9,
+      "Black Dog" : 6,
+      "Rock and Roll" : 6
     },
     "topFans" : [ "bob35", "emily30", "frank21", "david27", "carol19" ],
     "listeners" : 10
@@ -11230,11 +11230,11 @@
       "Berry Is On Top" : 7
     },
     "topSongs" : {
-      "Johnny B. Goode" : 8,
-      "Carol" : 7,
+      "Johnny B. Goode" : 10,
+      "Carol" : 8,
+      "Sweet Little Rock And Roller" : 8,
       "Hey Pedro" : 7,
-      "Sweet Little Rock And Roller" : 7,
-      "Maybellene" : 6
+      "Maybellene" : 7
     },
     "topFans" : [ "david27", "jack29", "bob35", "frank21", "henry26" ],
     "listeners" : 10
@@ -13118,16 +13118,16 @@
   "result" : {
     "topAlbums" : {
       "Celebration (Double Disc Version)" : 58,
-      "Confessions on a Dance Floor" : 26,
+      "Confessions on a Dance Floor" : 28,
       "Ray of Light" : 26,
-      "Like a Prayer" : 5
+      "Like a Prayer" : 23
     },
     "topSongs" : {
-      "Express Yourself" : 7,
-      "Forbidden Love" : 5,
+      "Express Yourself" : 8,
+      "Forbidden Love" : 6,
+      "Like a Prayer" : 5,
       "The Power of Good-Bye" : 5,
-      "Drowned World/Substitute for Love" : 4,
-      "Get Together" : 4
+      "Dear Jessie" : 4
     },
     "topFans" : [ "grace25", "henry26", "irene33", "carol19", "emily30" ],
     "listeners" : 10
@@ -14916,15 +14916,15 @@
     "topAlbums" : {
       "Arrival" : 40,
       "ABBA Gold" : 32,
-      "Voulez-Vous" : 26,
-      "Super Trouper" : 3
+      "Super Trouper" : 26,
+      "Voulez-Vous" : 26
     },
     "topSongs" : {
-      "The Winner Takes It All" : 8,
-      "Knowing Me, Knowing You" : 7,
+      "The Winner Takes It All" : 10,
+      "Knowing Me, Knowing You" : 8,
       "Dum Dum Diddle" : 6,
-      "Money, Money, Money" : 5,
-      "The Piper" : 5
+      "Dancing Queen" : 5,
+      "I Have a Dream" : 5
     },
     "topFans" : [ "carol19", "alice22", "frank21", "henry26", "david27" ],
     "listeners" : 10
@@ -18890,11 +18890,11 @@
       "rap" : 10
     },
     "topSongs" : {
+      "Knowing Me, Knowing You" : 3,
       "Stairway to Heaven" : 3,
       "3rd Stone From the Sun" : 2,
       "Blank Space" : 2,
-      "I Know Places" : 2,
-      "I'm So Afraid" : 2
+      "Dancing Queen" : 2
     },
     "topAlbums" : {
       "ABBA Gold" : 10,
@@ -20627,11 +20627,11 @@
       "Are You Experienced?" : 8
     },
     "topSongs" : {
-      "Foxy Lady" : 10,
-      "Manic Depression" : 8,
-      "Fire" : 6,
-      "Hey Joe" : 6,
-      "Love Or Confusion" : 5
+      "Foxy Lady" : 11,
+      "Manic Depression" : 10,
+      "Fire" : 7,
+      "Hey Joe" : 7,
+      "Love Or Confusion" : 6
     },
     "topFans" : [ "frank21", "emily30", "bob35", "grace25", "irene33" ],
     "listeners" : 10
@@ -20803,8 +20803,8 @@
       "Express Yourself" : 3,
       "Love Story" : 3,
       "Blues for Hawaiians" : 2,
-      "Have You Ever Been (To Electric Ladyland)" : 2,
-      "I Was Just a Kid" : 2
+      "Forbidden Love" : 2,
+      "Have You Ever Been (To Electric Ladyland)" : 2
     },
     "topAlbums" : {
       "Fearless" : 10,
@@ -21427,8 +21427,8 @@
       "soul" : 12
     },
     "topSongs" : {
+      "Going to California" : 4,
       "Dum Dum Diddle" : 3,
-      "Going to California" : 3,
       "Graveyard Whistling" : 3,
       "Bold As Love" : 2,
       "Can You Afford to Be An Individual?" : 2
@@ -22972,11 +22972,11 @@
       "American IV: The Man Comes Around" : 27
     },
     "topSongs" : {
-      "Wayfaring Stranger" : 6,
-      "The Man Comes Around (Early Take)" : 5,
+      "Wayfaring Stranger" : 7,
+      "The Man Comes Around (Early Take)" : 6,
       "Country Trash" : 4,
-      "I Won't Back Down" : 4,
-      "Like A Soldier" : 4
+      "I Hung My Head" : 4,
+      "I Won't Back Down" : 4
     },
     "topFans" : [ "jack29", "bob35", "henry26", "carol19", "frank21" ],
     "listeners" : 10

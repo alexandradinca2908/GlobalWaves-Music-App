@@ -9,24 +9,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GeneralStatistics {
-    private HashMap<SongInput, Integer> topSongs = new HashMap<>();
-    private HashMap<Album, Integer> topAlbums = new HashMap<>();
+    private HashMap<String, Integer> topSongs = new HashMap<>();
+    private HashMap<String, Integer> topAlbums = new HashMap<>();
     private HashMap<EpisodeInput, Integer> topEpisodes = new HashMap<>();
     private ArrayList<UserInput> listeners = new ArrayList<>();
 
-    public HashMap<SongInput, Integer> getTopSongs() {
+    public HashMap<String, Integer> getTopSongs() {
         return topSongs;
     }
 
-    public void setTopSongs(final HashMap<SongInput, Integer> topSongs) {
+    public void setTopSongs(final HashMap<String, Integer> topSongs) {
         this.topSongs = topSongs;
     }
 
-    public HashMap<Album, Integer> getTopAlbums() {
+    public HashMap<String, Integer> getTopAlbums() {
         return topAlbums;
     }
 
-    public void setTopAlbums(final HashMap<Album, Integer> topAlbums) {
+    public void setTopAlbums(final HashMap<String, Integer> topAlbums) {
         this.topAlbums = topAlbums;
     }
 

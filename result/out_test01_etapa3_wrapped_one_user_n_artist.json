@@ -3847,10 +3847,10 @@
       "Chuck Berry Is On Top" : 7
     },
     "topSongs" : {
-      "Almost Grown" : 12,
-      "Carol" : 12,
-      "Little Queenie" : 12,
-      "Johnny B. Goode" : 11,
+      "Almost Grown" : 13,
+      "Carol" : 13,
+      "Johnny B. Goode" : 13,
+      "Little Queenie" : 13,
       "Around and Around" : 10
     },
     "topFans" : [ "david27" ],
@@ -6986,7 +6986,7 @@
       "Summer Dreams" : 93
     },
     "topSongs" : {
-      "Pet Sounds" : 25,
+      "Pet Sounds" : 26,
       "Summertime Blues" : 16,
       "Do You Remember" : 13,
       "Shut Down" : 13,
@@ -7000,12 +7000,12 @@
   "user" : "david27",
   "timestamp" : 41017,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 41017,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -10153,17 +10153,17 @@
   "timestamp" : 75928,
   "result" : {
     "topAlbums" : {
-      "Greatest Hits" : 76,
+      "Greatest Hits" : 70,
       "L.A. Woman" : 48,
       "Strange Days" : 48,
       "The Doors" : 46
     },
     "topSongs" : {
-      "People Are Strange" : 13,
-      "Riders on the Storm" : 9,
+      "People Are Strange" : 12,
       "Break on Through (to the Other Side)" : 8,
       "Horse Latitudes" : 8,
-      "Light My Fire" : 8
+      "Light My Fire" : 8,
+      "Love Me Two Times" : 8
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -10221,12 +10221,12 @@
   "user" : "david27",
   "timestamp" : 85233,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 85233,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -13332,10 +13332,10 @@
       "Greatest Hits" : 11
     },
     "topSongs" : {
-      "Born to Run" : 13,
-      "Born in the U.S.A." : 10,
+      "Born to Run" : 14,
+      "Born in the U.S.A." : 11,
+      "Tenth Avenue Freeze-Out" : 11,
       "No Surrender" : 10,
-      "Tenth Avenue Freeze-Out" : 10,
       "Backstreets" : 9
     },
     "topFans" : [ "david27" ],
@@ -19663,7 +19663,7 @@
     "topSongs" : {
       "God - Love Theme From Purple Rain 12\" Instrumental Version" : 23,
       "God - Vocal Version" : 20,
-      "Purple Rain" : 15,
+      "Purple Rain" : 16,
       "Mountains" : 10,
       "Venus de Milo" : 9
     },
@@ -26068,12 +26068,12 @@
   "user" : "david27",
   "timestamp" : 247632,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 247632,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -29173,17 +29173,17 @@
   "timestamp" : 276281,
   "result" : {
     "topAlbums" : {
+      "Greatest Hits II" : 83,
       "The Game (2011 Remaster)" : 72,
       "A Night At The Opera (2011 Remaster)" : 57,
-      "Greatest Hits II" : 53,
       "Greatest Hits" : 34
     },
     "topSongs" : {
       "Another One Bites The Dust - Remastered 2011" : 14,
       "Crazy Little Thing Called Love - Remastered 2011" : 13,
       "Bohemian Rhapsody - Remastered 2011" : 12,
-      "Dragon Attack - Remastered 2011" : 8,
-      "I Want It All" : 8
+      "I Want It All" : 11,
+      "Dragon Attack - Remastered 2011" : 8
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -38681,8 +38681,8 @@
       "What's Going On" : 42
     },
     "topSongs" : {
-      "Sexual Healing" : 14,
-      "What's Going On" : 13,
+      "Sexual Healing" : 15,
+      "What's Going On" : 14,
       "Midnight Lady" : 10,
       "Flyin' High (In the Friendly Sky)" : 9,
       "God Is Love" : 8
@@ -48183,11 +48183,11 @@
       "In Utero" : 40
     },
     "topSongs" : {
-      "Smells Like Teen Spirit" : 12,
-      "Come as You Are" : 11,
-      "Pennyroyal Tea" : 10,
-      "Rape Me" : 10,
-      "Dumb" : 9
+      "Come as You Are" : 13,
+      "Smells Like Teen Spirit" : 13,
+      "Rape Me" : 11,
+      "Dumb" : 10,
+      "Pennyroyal Tea" : 10
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -54530,10 +54530,10 @@
     },
     "topSongs" : {
       "Candy Perfume Girl" : 10,
-      "Hung Up" : 9,
+      "Hung Up" : 10,
       "Frozen" : 8,
       "Love Song" : 8,
-      "Jump" : 7
+      "Ray of Light" : 8
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -57702,11 +57702,11 @@
       "Are You Experienced?" : 18
     },
     "topSongs" : {
-      "Foxy Lady" : 15,
-      "Fire" : 13,
-      "Hey Joe" : 13,
-      "Manic Depression" : 12,
-      "Love Or Confusion" : 11
+      "Foxy Lady" : 17,
+      "Fire" : 15,
+      "Hey Joe" : 14,
+      "Manic Depression" : 14,
+      "Love Or Confusion" : 12
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -57764,12 +57764,12 @@
   "user" : "david27",
   "timestamp" : 576180,
   "message" : "Search returned 5 results",
-  "results" : [ "Greatest Hits", "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
+  "results" : [ "Greatest Hits II", "Greatest Hits", "Greatest Hits", "Greatest Hits", "Greatest Hits" ]
 }, {
   "command" : "select",
   "user" : "david27",
   "timestamp" : 576180,
-  "message" : "Successfully selected Greatest Hits."
+  "message" : "Successfully selected Greatest Hits II."
 }, {
   "command" : "load",
   "user" : "david27",
@@ -64031,9 +64031,9 @@
       "Genius Loves Company" : 73
     },
     "topSongs" : {
-      "Sinner's Prayer" : 10,
+      "Sinner's Prayer" : 11,
       "Fever" : 9,
-      "Here We Go Again" : 8,
+      "Here We Go Again" : 9,
       "You Don't Know Me" : 8,
       "America The Beautiful" : 7
     },
@@ -73534,10 +73534,10 @@
     },
     "topSongs" : {
       "Just My Imagination (Running Away With Me)" : 10,
-      "Lady Jane" : 9,
+      "Lady Jane" : 10,
       "Let It Bleed" : 9,
       "Country Woman" : 8,
-      "Doncha Bother Me" : 7
+      "Out of Time" : 8
     },
     "topFans" : [ "david27" ],
     "listeners" : 1
@@ -79895,31 +79895,31 @@
   "result" : {
     "topArtists" : {
       "Eminem" : 255,
-      "The Doors" : 255,
+      "Queen" : 252,
       "Rihanna" : 248,
       "The Beatles" : 247,
       "Johnny Cash" : 246
     },
     "topGenres" : {
       "rock" : 872,
-      "classic rock" : 737,
+      "classic rock" : 743,
       "pop" : 721,
       "soul" : 559,
       "80s" : 312
     },
     "topSongs" : {
       "Get It Back" : 31,
-      "Pet Sounds" : 25,
+      "Pet Sounds" : 26,
       "God - Love Theme From Purple Rain 12\" Instrumental Version" : 23,
       "God - Vocal Version" : 20,
       "You'll Never Stand Alone" : 20
     },
     "topAlbums" : {
+      "Greatest Hits" : 159,
       "Pet Sounds" : 122,
       "Experience Hendrix: The Best of Jimi Hendrix" : 118,
       "Celebration (Double Disc Version)" : 112,
-      "Berry Is On Top" : 111,
-      "Good Girl Gone Bad: Reloaded" : 107
+      "Berry Is On Top" : 111
     },
     "topEpisodes" : { }
   }

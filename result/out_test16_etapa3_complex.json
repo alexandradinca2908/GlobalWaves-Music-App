@@ -3963,7 +3963,7 @@
       "MTV Unplugged in New York" : 11
     },
     "topSongs" : {
-      "Come as You Are" : 7,
+      "Come as You Are" : 8,
       "All Apologies (MTV Unplugged)" : 6,
       "On a Plain" : 6,
       "Pennyroyal Tea - Single Mix" : 6,
@@ -7514,11 +7514,11 @@
       "Voulez-Vous" : 18
     },
     "topSongs" : {
-      "Dancing Queen" : 7,
+      "Dancing Queen" : 8,
+      "Money, Money, Money" : 7,
       "That's Me" : 7,
-      "Money, Money, Money" : 6,
-      "My Love, My Life" : 5,
-      "Voulez-Vous" : 5
+      "Voulez-Vous" : 6,
+      "Knowing Me, Knowing You" : 5
     },
     "topFans" : [ "carol19", "jack29", "henry26", "david27", "emily30" ],
     "listeners" : 10
@@ -19215,7 +19215,7 @@
       "Melt My Heart to Stone" : 3,
       "Pet Sounds" : 3,
       "You Never Give Me Your Money - Remastered 2009" : 3,
-      "Do You Remember" : 2
+      "Dancing Queen" : 2
     },
     "topAlbums" : {
       "Arrival" : 11,
@@ -19297,8 +19297,8 @@
       "Woman Like Me" : 3,
       "Backstreets" : 2,
       "Big Yellow Taxi" : 2,
-      "Come Together - Remastered 2009" : 2,
-      "First Love" : 2
+      "Born to Run" : 2,
+      "Come Together - Remastered 2009" : 2
     },
     "topAlbums" : {
       "Court and Spark" : 9,
@@ -19833,7 +19833,7 @@
       "Greatest Hits" : 7
     },
     "topSongs" : {
-      "Born to Run" : 9,
+      "Born to Run" : 10,
       "I'm on Fire" : 6,
       "Meeting Across the River" : 6,
       "Backstreets" : 5,
@@ -22604,8 +22604,8 @@
       "grunge" : 15
     },
     "topSongs" : {
+      "Born in the U.S.A." : 3,
       "Bob Dylan's Blues" : 2,
-      "Born in the U.S.A." : 2,
       "Born to Run" : 2,
       "Climbing Up the Walls" : 2,
       "Daydreamer" : 2
@@ -23302,7 +23302,7 @@
       "It Takes a Lot to Laugh, It Takes a Train to Cry" : 3,
       "Lurgee" : 3,
       "Melt My Heart to Stone" : 3,
-      "All Apologies (MTV Unplugged)" : 2
+      "Midnight Rambler" : 3
     },
     "topAlbums" : {
       "Rolled Gold" : 29,
@@ -23973,9 +23973,9 @@
       "American III: Solitary Man" : 26
     },
     "topSongs" : {
+      "Hurt" : 6,
       "Desperado" : 5,
       "Field of Diamonds" : 5,
-      "Hurt" : 5,
       "I Won't Back Down" : 5,
       "Get Rhythm" : 4
     },
@@ -24416,9 +24416,9 @@
     "topSongs" : {
       "Before They Make Me Run" : 7,
       "Live With Me" : 7,
-      "I Am Waiting" : 5,
-      "Let It Bleed" : 5,
-      "Midnight Rambler" : 5
+      "Midnight Rambler" : 6,
+      "Out of Time" : 6,
+      "Gimme Shelter" : 5
     },
     "topFans" : [ "david27", "henry26", "carol19", "emily30", "bob35" ],
     "listeners" : 10
@@ -24675,11 +24675,11 @@
       "Good Girl Gone Bad: Reloaded" : 19
     },
     "topSongs" : {
-      "Breakin' Dishes" : 7,
-      "Push Up on Me" : 7,
-      "Good Girl Gone Bad" : 6,
-      "Lemme Get That" : 6,
-      "Shut Up and Drive" : 6
+      "Breakin' Dishes" : 8,
+      "Push Up on Me" : 8,
+      "Good Girl Gone Bad" : 7,
+      "Lemme Get That" : 7,
+      "Shut Up and Drive" : 7
     },
     "topFans" : [ "alice22", "emily30", "grace25", "jack29", "david27" ],
     "listeners" : 10
@@ -24923,10 +24923,10 @@
     },
     "topSongs" : {
       "Octopus's Garden - Remastered 2009" : 3,
+      "Shut Up and Drive" : 3,
       "Big Brother" : 2,
       "Born to Run" : 2,
-      "Desperado" : 2,
-      "Devils & Dust" : 2
+      "Desperado" : 2
     },
     "topAlbums" : {
       "The Essential Bruce Springsteen" : 23,

@@ -4117,11 +4117,11 @@
       "Like a Prayer" : 13
     },
     "topSongs" : {
-      "Express Yourself" : 5,
-      "Future Lovers" : 4,
-      "Hung Up" : 4,
-      "Like a Prayer" : 4,
-      "Love Song" : 4
+      "Express Yourself" : 6,
+      "Hung Up" : 5,
+      "Like a Prayer" : 5,
+      "Cherish" : 4,
+      "Future Lovers" : 4
     },
     "topFans" : [ "henry26", "jack29", "alice22", "irene33", "bob35" ],
     "listeners" : 10
@@ -4893,8 +4893,8 @@
       "He's Misstra Know It All" : 5,
       "Signed, Sealed, Delivered (I'm Yours)" : 5,
       "Don't You Worry 'Bout a Thing" : 4,
-      "Superstition - Single Version" : 4,
-      "All in Love Is Fair" : 3
+      "I Wish" : 4,
+      "Superstition - Single Version" : 4
     },
     "topFans" : [ "irene33", "david27", "carol19", "alice22", "emily30" ],
     "listeners" : 10
@@ -6319,11 +6319,11 @@
       "Sinatra Reprise: The Very Good Years" : 14
     },
     "topSongs" : {
-      "Adeste Fideles" : 6,
+      "Adeste Fideles" : 7,
+      "Jingle Bells" : 6,
       "My Kind Of Town - Remastered 2008" : 6,
-      "I'll Be Home for Christmas" : 5,
-      "Jingle Bells" : 5,
-      "Silent Night" : 5
+      "Silent Night" : 6,
+      "I'll Be Home for Christmas" : 5
     },
     "topFans" : [ "alice22", "emily30", "jack29", "henry26", "bob35" ],
     "listeners" : 10
@@ -6581,10 +6581,10 @@
     },
     "topSongs" : {
       "Dr. Feelgood (Love Is a Serious Business)" : 10,
-      "Respect" : 6,
+      "Respect" : 8,
       "I Can't See Myself Leaving You" : 4,
-      "You're A Sweet Sweet Man" : 4,
-      "A Change Is Gonna Come" : 3
+      "Night Time Is The Right Time" : 4,
+      "See Saw" : 4
     },
     "topFans" : [ "bob35", "alice22", "frank21", "emily30", "david27" ],
     "listeners" : 10
@@ -8022,9 +8022,9 @@
     "topSongs" : {
       "Ain't No Mountain High Enough" : 2,
       "Born in the U.S.A." : 2,
+      "Hey Joe" : 2,
       "If I Could Build My Whole World Around You" : 2,
-      "Never Going Back" : 2,
-      "She Belongs to Me" : 2
+      "Manic Depression" : 2
     },
     "topAlbums" : {
       "Experience Hendrix: The Best of Jimi Hendrix" : 12,
@@ -8687,11 +8687,11 @@
       "Born in the U.S.A." : 13
     },
     "topSongs" : {
-      "Dancing in the Dark" : 4,
-      "Jungleland" : 4,
-      "Meeting Across the River" : 4,
-      "My Hometown" : 4,
-      "Born in the U.S.A." : 3
+      "Thunder Road" : 6,
+      "Born in the U.S.A." : 5,
+      "Born to Run" : 5,
+      "Dancing in the Dark" : 5,
+      "Badlands" : 4
     },
     "topFans" : [ "irene33", "bob35", "carol19", "grace25", "jack29" ],
     "listeners" : 10
@@ -9092,7 +9092,7 @@
       "Court and Spark" : 19
     },
     "topSongs" : {
-      "A Case of You" : 4,
+      "A Case of You" : 5,
       "This Flight Tonight" : 4,
       "At Last" : 3,
       "Blue Boy" : 3,
@@ -9676,7 +9676,7 @@
       "Electric Ladyland" : 15,
       "Court and Spark" : 12,
       "Born in the U.S.A." : 7,
-      "Soul Queen" : 4
+      "Greatest Hits" : 4
     },
     "topEpisodes" : { }
   }
@@ -10389,10 +10389,10 @@
     },
     "topSongs" : {
       "Paperback Writer - Remastered 2015" : 3,
+      "Respect" : 3,
       "Heartbreaker" : 2,
       "Joy" : 2,
-      "Jungleland" : 2,
-      "Knocks Me Off My Feet" : 2
+      "Jungleland" : 2
     },
     "topAlbums" : {
       "1 (Remastered)" : 19,
@@ -11078,11 +11078,11 @@
       "Are You Experienced" : 3
     },
     "topSongs" : {
-      "Foxy Lady" : 7,
+      "Foxy Lady" : 8,
       "I Don't Live Today" : 6,
+      "Hey Joe" : 4,
       "Love Or Confusion" : 4,
-      "Burning of the Midnight Lamp" : 3,
-      "Have You Ever Been (To Electric Ladyland)" : 3
+      "Purple Haze" : 4
     },
     "topFans" : [ "grace25", "frank21", "carol19", "david27", "henry26" ],
     "listeners" : 10
@@ -11748,8 +11748,8 @@
       "Greatest Hits" : 9
     },
     "topSongs" : {
+      "Gold Dust Woman" : 5,
       "Never Going Back" : 5,
-      "Gold Dust Woman" : 4,
       "Landslide" : 4,
       "Crystal" : 3,
       "Dreams" : 3
@@ -12101,11 +12101,11 @@
       "classic rock" : 9
     },
     "topSongs" : {
+      "Cherish" : 2,
       "From a Buick 6" : 2,
       "It's Alright, Ma (I'm Only Bleeding)" : 2,
       "Love Song" : 2,
-      "Prove It All Night" : 2,
-      "Wild Honey Pie - Remastered 2009" : 2
+      "Prove It All Night" : 2
     },
     "topAlbums" : {
       "The Beatles (Remastered)" : 31,
