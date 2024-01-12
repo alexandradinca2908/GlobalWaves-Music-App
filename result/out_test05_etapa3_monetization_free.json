@@ -2948,7 +2948,7 @@
   "command" : "wrapped",
   "user" : "Pink Floyd",
   "timestamp" : 17942,
-  "message" : "No data to show for user Pink Floyd."
+  "message" : "No data to show for artist Pink Floyd."
 }, {
   "command" : "wrapped",
   "user" : "david27",
@@ -2986,25 +2986,25 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Joni Mitchell" : {
+    "The Rolling Stones" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 1,
       "mostProfitableSong" : "N/A"
     },
-    "Prince" : {
+    "Stevie Wonder" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 2,
       "mostProfitableSong" : "N/A"
     },
-    "Stevie Wonder" : {
+    "Prince" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 3,
       "mostProfitableSong" : "N/A"
     },
-    "The Rolling Stones" : {
+    "Joni Mitchell" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 4,

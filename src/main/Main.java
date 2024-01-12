@@ -11,75 +11,73 @@ import fileio.input.EpisodeInput;
 import fileio.input.LibraryInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
-import main.CommandHelper.Command;
-import main.CommandHelper.Search;
-import main.CreatorClasses.ArtistClasses.Management;
-import main.CreatorClasses.HostClasses.HostInfo;
-import main.PagingClasses.Page;
-import main.PlaylistClasses.Album;
-import main.PlaylistClasses.Playlist;
-import main.PlaylistClasses.UserPlaylists;
-import main.SelectionClasses.ItemSelection;
-import main.SelectionClasses.PodcastSelection;
-import main.LikeClasses.SongLikes;
-import main.UtilityClasses.Constants;
-import main.WrappedDatabase.AllUserStats.ArtistStatistics;
-import main.WrappedDatabase.AllUserStats.UserStatistics;
-import main.WrappedDatabase.Statistics;
-import main.WrappedDatabase.StatsFactory;
+import main.commandhelper.Command;
+import main.commandhelper.Search;
+import main.creatorclasses.artistclasses.Management;
+import main.creatorclasses.hostclasses.HostInfo;
+import main.monetization.ArtistRevenue;
+import main.monetization.PremiumUser;
+import main.pagingclasses.Page;
+import main.playlistclasses.Album;
+import main.playlistclasses.Playlist;
+import main.playlistclasses.UserPlaylists;
+import main.selectionclasses.ItemSelection;
+import main.selectionclasses.PodcastSelection;
+import main.likeclasses.SongLikes;
+import main.utilityclasses.Constants;
+import main.wrappeddatabase.alluserstats.ArtistStatistics;
+import main.wrappeddatabase.alluserstats.UserStatistics;
+import main.wrappeddatabase.Statistics;
+import main.wrappeddatabase.StatsFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Stream;
+import java.util.*;
 
-import static main.UtilityClasses.Do.DoCommands.doSearch;
-import static main.UtilityClasses.Do.DoCommands.doSelect;
-import static main.UtilityClasses.Do.DoCommands.doLoad;
-import static main.UtilityClasses.Do.DoCommands.doGetTop5Albums;
-import static main.UtilityClasses.Do.DoCommands.doGetTop5Artists;
-import static main.UtilityClasses.Do.DoCommands.doStatus;
-import static main.UtilityClasses.Do.DoCommands.doShuffle;
-import static main.UtilityClasses.Do.DoCommands.doShowPreferredSongs;
-import static main.UtilityClasses.Do.DoCommands.doShowPodcasts;
-import static main.UtilityClasses.Do.DoCommands.doShowPlaylists;
-import static main.UtilityClasses.Do.DoCommands.doShowAlbums;
-import static main.UtilityClasses.Do.DoCommands.doRepeat;
-import static main.UtilityClasses.Do.DoCommands.doPrintCurrentPage;
-import static main.UtilityClasses.Do.DoCommands.doPlayPause;
-import static main.UtilityClasses.Do.DoCommands.doGetTop5Songs;
-import static main.UtilityClasses.Do.DoCommands.doGetTop5Playlists;
-import static main.UtilityClasses.Do.DoCommands.doGetOnlineUsers;
-import static main.UtilityClasses.Do.DoCommands.doGetAllUsers;
-import static main.UtilityClasses.Do.DoCommands.doFollow;
-import static main.UtilityClasses.Do.DoCommands.doCreatePlaylist;
+import static main.utilityclasses.doclasses.DoCommands.doSearch;
+import static main.utilityclasses.doclasses.DoCommands.doSelect;
+import static main.utilityclasses.doclasses.DoCommands.doLoad;
+import static main.utilityclasses.doclasses.DoCommands.doGetTop5Albums;
+import static main.utilityclasses.doclasses.DoCommands.doGetTop5Artists;
+import static main.utilityclasses.doclasses.DoCommands.doStatus;
+import static main.utilityclasses.doclasses.DoCommands.doShuffle;
+import static main.utilityclasses.doclasses.DoCommands.doShowPreferredSongs;
+import static main.utilityclasses.doclasses.DoCommands.doShowPodcasts;
+import static main.utilityclasses.doclasses.DoCommands.doShowPlaylists;
+import static main.utilityclasses.doclasses.DoCommands.doShowAlbums;
+import static main.utilityclasses.doclasses.DoCommands.doRepeat;
+import static main.utilityclasses.doclasses.DoCommands.doPrintCurrentPage;
+import static main.utilityclasses.doclasses.DoCommands.doPlayPause;
+import static main.utilityclasses.doclasses.DoCommands.doGetTop5Songs;
+import static main.utilityclasses.doclasses.DoCommands.doGetTop5Playlists;
+import static main.utilityclasses.doclasses.DoCommands.doGetOnlineUsers;
+import static main.utilityclasses.doclasses.DoCommands.doGetAllUsers;
+import static main.utilityclasses.doclasses.DoCommands.doFollow;
+import static main.utilityclasses.doclasses.DoCommands.doCreatePlaylist;
 
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddAlbum;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddAnnouncement;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddEvent;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddMerch;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddPodcast;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddRemoveInPlaylist;
-import static main.UtilityClasses.Do.DoCommandsMessage.doSwitchVisibility;
-import static main.UtilityClasses.Do.DoCommandsMessage.doSwitchConnectionStatus;
-import static main.UtilityClasses.Do.DoCommandsMessage.doRemovePodcast;
-import static main.UtilityClasses.Do.DoCommandsMessage.doRemoveEvent;
-import static main.UtilityClasses.Do.DoCommandsMessage.doRemoveAnnouncement;
-import static main.UtilityClasses.Do.DoCommandsMessage.doRemoveAlbum;
-import static main.UtilityClasses.Do.DoCommandsMessage.doPrev;
-import static main.UtilityClasses.Do.DoCommandsMessage.doNext;
-import static main.UtilityClasses.Do.DoCommandsMessage.doLike;
-import static main.UtilityClasses.Do.DoCommandsMessage.doForward;
-import static main.UtilityClasses.Do.DoCommandsMessage.doDeleteUser;
-import static main.UtilityClasses.Do.DoCommandsMessage.doChangePage;
-import static main.UtilityClasses.Do.DoCommandsMessage.doBackward;
-import static main.UtilityClasses.Do.DoCommandsMessage.doAddUser;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddAlbum;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddAnnouncement;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddEvent;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddMerch;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddPodcast;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddRemoveInPlaylist;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doSwitchVisibility;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doSwitchConnectionStatus;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doRemovePodcast;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doRemoveEvent;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doRemoveAnnouncement;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doRemoveAlbum;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doPrev;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doNext;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doLike;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doForward;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doDeleteUser;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doChangePage;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doBackward;
+import static main.utilityclasses.doclasses.DoCommandsMessage.doAddUser;
 
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
@@ -227,6 +225,10 @@ public final class Main {
             StatsFactory.createStats(user);
         }
 
+        //  Storing premium users
+        ArrayList<PremiumUser> premiumUsers = new ArrayList<>();
+        ArrayList<PremiumUser> cancelledPremiumUsers = new ArrayList<>();
+
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
         System.out.println(filePathInput);
         //  Parsing commands
@@ -236,7 +238,7 @@ public final class Main {
                     ObjectNode searchOutput;
                     searchOutput = doSearch(player, crtCommand,
                             podcasts, objectMapper, library, searches,
-                            playlists, albums);
+                            playlists, albums, premiumUsers);
 
                     outputs.add(searchOutput);
                 }
@@ -255,7 +257,8 @@ public final class Main {
                     ObjectNode loadOutput;
                     loadOutput = doLoad(objectMapper, crtCommand,
                             searches, library, player,
-                            playlists, podcasts, albums);
+                            playlists, podcasts, albums,
+                            premiumUsers);
 
                     outputs.add(loadOutput);
                 }
@@ -263,7 +266,7 @@ public final class Main {
                 case "status" -> {
                     ObjectNode statusOutput;
                     statusOutput = doStatus(objectMapper, crtCommand, player,
-                            podcasts, library, albums);
+                            podcasts, library, albums, premiumUsers);
 
                     outputs.add(statusOutput);
                 }
@@ -271,7 +274,7 @@ public final class Main {
                 case "playPause" -> {
                     ObjectNode playPauseOutput;
                     playPauseOutput = doPlayPause(objectMapper, crtCommand, player,
-                            podcasts, library, albums);
+                            podcasts, library, albums, premiumUsers);
 
                     outputs.add(playPauseOutput);
                 }
@@ -289,7 +292,7 @@ public final class Main {
                     ObjectNode addRemoveOutput;
                     addRemoveOutput = doAddRemoveInPlaylist(objectMapper,
                             crtCommand, player, playlists, library,
-                            podcasts, albums);
+                            podcasts, albums, premiumUsers);
 
                     outputs.add(addRemoveOutput);
                 }
@@ -298,7 +301,7 @@ public final class Main {
                     ObjectNode likeOutput;
                     likeOutput = doLike(objectMapper, crtCommand, player,
                             usersPlaylists, songsLikes, library,
-                            albums);
+                            albums, premiumUsers);
 
                     outputs.add(likeOutput);
                 }
@@ -322,7 +325,7 @@ public final class Main {
                 case "repeat" -> {
                     ObjectNode repeatOutput;
                     repeatOutput = doRepeat(objectMapper, crtCommand,
-                            player, podcasts, library, albums);
+                            player, podcasts, library, albums, premiumUsers);
 
                     outputs.add(repeatOutput);
                 }
@@ -330,7 +333,7 @@ public final class Main {
                 case "shuffle" -> {
                     ObjectNode shuffleOutput;
                     shuffleOutput = doShuffle(objectMapper, crtCommand,
-                            player, podcasts, library, albums);
+                            player, podcasts, library, albums, premiumUsers);
 
                     outputs.add(shuffleOutput);
                 }
@@ -338,7 +341,7 @@ public final class Main {
                 case "forward" -> {
                     ObjectNode forwardOutput;
                     forwardOutput = doForward(objectMapper, crtCommand,
-                            podcasts, player, library, albums);
+                            podcasts, player, library, albums, premiumUsers);
 
                     outputs.add(forwardOutput);
                 }
@@ -346,7 +349,7 @@ public final class Main {
                 case "backward" -> {
                     ObjectNode backwardOutput;
                     backwardOutput = doBackward(objectMapper, crtCommand,
-                            podcasts, player, library, albums);
+                            podcasts, player, library, albums, premiumUsers);
 
                     outputs.add(backwardOutput);
                 }
@@ -354,7 +357,7 @@ public final class Main {
                 case "next" -> {
                     ObjectNode nextOutput;
                     nextOutput = doNext(objectMapper, crtCommand,
-                            podcasts, player, library, albums);
+                            podcasts, player, library, albums, premiumUsers);
 
                     outputs.add(nextOutput);
                 }
@@ -362,7 +365,7 @@ public final class Main {
                 case "prev" -> {
                     ObjectNode prevOutput;
                     prevOutput = doPrev(objectMapper, crtCommand,
-                            podcasts, player, library, albums);
+                            podcasts, player, library, albums, premiumUsers);
 
                     outputs.add(prevOutput);
                 }
@@ -403,7 +406,7 @@ public final class Main {
                 case "switchConnectionStatus" -> {
                     ObjectNode switchConnectionOutput;
                     switchConnectionOutput = doSwitchConnectionStatus(objectMapper,
-                            crtCommand, player, library, podcasts, albums);
+                            crtCommand, player, library, podcasts, albums, premiumUsers);
 
                     outputs.add(switchConnectionOutput);
                 }
@@ -476,7 +479,7 @@ public final class Main {
                     ObjectNode deleteUserOutput;
                     deleteUserOutput = doDeleteUser(objectMapper, library, crtCommand,
                             player, playlists, usersPlaylists, albums, songsLikes,
-                            podcasts, pageSystem);
+                            podcasts, pageSystem, premiumUsers);
 
                     outputs.add(deleteUserOutput);
                 }
@@ -564,7 +567,7 @@ public final class Main {
                 }
 
                 case "wrapped" -> {
-                    ObjectNode wrappedOutput = objectMapper.createObjectNode();;
+                    ObjectNode wrappedOutput = objectMapper.createObjectNode();
 
                     wrappedOutput.put("command", "wrapped");
                     wrappedOutput.put("user", crtCommand.getUsername());
@@ -574,7 +577,7 @@ public final class Main {
 
                     //  Update the player
                     updatePlayer(player, crtCommand,
-                            podcasts, library, albums);
+                            podcasts, library, albums, premiumUsers);
 
                     //  Finding the user that queried the database
                     //  Filtering by user type
@@ -590,7 +593,7 @@ public final class Main {
                     if (crtUser.getType().equals("user")) {
                         //  Get user stats
                         UserStatistics userStats = null;
-                        for(UserStatistics user : Statistics
+                        for (UserStatistics user : Statistics
                                 .getWrappedStats().getUsersStatistics()) {
                             if (user.getUser().equals(crtUser)) {
                                 userStats = user;
@@ -620,7 +623,7 @@ public final class Main {
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
 
-                                if (artists.size() > 5) {
+                                if (artists.size() > Constants.MAX_SIZE_5) {
                                     artists.subList(Constants.MAX_SIZE_5, artists.size()).clear();
                                 }
 
@@ -647,7 +650,7 @@ public final class Main {
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (genres.size() > 5) {
+                                if (genres.size() > Constants.MAX_SIZE_5) {
                                     genres.subList(Constants.MAX_SIZE_5, genres.size()).clear();
                                 }
 
@@ -675,7 +678,7 @@ public final class Main {
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (songs.size() > 5) {
+                                if (songs.size() > Constants.MAX_SIZE_5) {
                                     songs.subList(Constants.MAX_SIZE_5, songs.size()).clear();
                                 }
 
@@ -702,8 +705,9 @@ public final class Main {
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (topAlbums.size() > 5) {
-                                    topAlbums.subList(Constants.MAX_SIZE_5, topAlbums.size()).clear();
+                                if (topAlbums.size() > Constants.MAX_SIZE_5) {
+                                    topAlbums.subList(Constants.MAX_SIZE_5,
+                                            topAlbums.size()).clear();
                                 }
 
                                 //  Add info to result array
@@ -725,11 +729,12 @@ public final class Main {
                                 //  Sort
                                 episodes.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getName().compareTo(a2.getKey().getName());
+                                        return a1.getKey().getName()
+                                                .compareTo(a2.getKey().getName());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (episodes.size() > 5) {
+                                if (episodes.size() > Constants.MAX_SIZE_5) {
                                     episodes.subList(Constants.MAX_SIZE_5, episodes.size()).clear();
                                 }
 
@@ -748,7 +753,7 @@ public final class Main {
                     } else if (crtUser.getType().equals("artist")) {
                         //  Get artist stats
                         ArtistStatistics artistStats = null;
-                        for(ArtistStatistics artist : Statistics
+                        for (ArtistStatistics artist : Statistics
                                 .getWrappedStats().getArtistsStatistics()) {
                             if (artist.getArtist().equals(crtUser)) {
                                 artistStats = artist;
@@ -761,7 +766,7 @@ public final class Main {
                                 && artistStats.getTopFans().isEmpty()
                                 && artistStats.getListeners().isEmpty()) {
 
-                            wrappedOutput.put("message", "No data to show for user "
+                            wrappedOutput.put("message", "No data to show for artist "
                                     + crtUser.getUsername() + ".");
                         } else {
                             //  Sort Album HashMap data and display if available
@@ -776,8 +781,9 @@ public final class Main {
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (topAlbums.size() > 5) {
-                                    topAlbums.subList(Constants.MAX_SIZE_5, topAlbums.size()).clear();
+                                if (topAlbums.size() > Constants.MAX_SIZE_5) {
+                                    topAlbums.subList(Constants.MAX_SIZE_5,
+                                            topAlbums.size()).clear();
                                 }
 
                                 //  Add info to result array
@@ -803,8 +809,9 @@ public final class Main {
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (songs.size() > 5) {
-                                    songs.subList(Constants.MAX_SIZE_5, songs.size()).clear();
+                                if (songs.size() > Constants.MAX_SIZE_5) {
+                                    songs.subList(Constants.MAX_SIZE_5,
+                                            songs.size()).clear();
                                 }
 
                                 //  Add info to result array
@@ -826,12 +833,14 @@ public final class Main {
                                 //  Sort
                                 fans.sort((a1, a2) -> {
                                     if (a2.getValue().equals(a1.getValue())) {
-                                        return a1.getKey().getUsername().compareTo(a2.getKey().getUsername());
+                                        return a1.getKey().getUsername()
+                                                .compareTo(a2.getKey().getUsername());
                                     }
                                     return a2.getValue().compareTo(a1.getValue());
                                 });
-                                if (fans.size() > 5) {
-                                    fans.subList(Constants.MAX_SIZE_5, fans.size()).clear();
+                                if (fans.size() > Constants.MAX_SIZE_5) {
+                                    fans.subList(Constants.MAX_SIZE_5,
+                                            fans.size()).clear();
                                 }
 
                                 //  Add info to result array
@@ -855,6 +864,86 @@ public final class Main {
                     }
                     outputs.add(wrappedOutput);
                 }
+
+                case "buyPremium" -> {
+                    ObjectNode buyPremiumOutput = objectMapper.createObjectNode();
+
+                    buyPremiumOutput.put("command", "buyPremium");
+                    buyPremiumOutput.put("user", crtCommand.getUsername());
+                    buyPremiumOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message;
+
+                    //  First check if the user is already premium
+                    boolean isPremium = false;
+                    for (PremiumUser user : premiumUsers) {
+                        if (user.getUser()
+                                .equals(crtCommand.getUsername())) {
+                            isPremium = true;
+                            break;
+                        }
+                    }
+                    //  Then check whether the user has a cancelled subscription
+                    PremiumUser cancelledUser = null;
+                    for (PremiumUser user : cancelledPremiumUsers) {
+                        if (user.getUser()
+                                .equals(crtCommand.getUsername())) {
+                            cancelledUser = user;
+                            break;
+                        }
+                    }
+
+                    if (isPremium) {
+                        message = crtCommand.getUsername() + " is already a premium user.";
+                    } else {
+                        if (cancelledUser == null) {
+                            PremiumUser newUser = new PremiumUser(crtCommand.getUsername());
+                            premiumUsers.add(newUser);
+                        } else {
+                            premiumUsers.add(cancelledUser);
+                            cancelledPremiumUsers.remove(cancelledUser);
+                        }
+
+                        message = crtCommand.getUsername()
+                                + " bought the subscription successfully.";
+                    }
+
+                    buyPremiumOutput.put("message", message);
+                    outputs.add(buyPremiumOutput);
+                }
+
+                case "cancelPremium" -> {
+                    ObjectNode cancelPremiumOutput = objectMapper.createObjectNode();
+
+                    cancelPremiumOutput.put("command", "cancelPremium");
+                    cancelPremiumOutput.put("user", crtCommand.getUsername());
+                    cancelPremiumOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    String message;
+
+                    //  First check if the user is already premium
+                    PremiumUser existingUser = null;
+                    for (PremiumUser user : premiumUsers) {
+                        if (user.getUser()
+                                .equals(crtCommand.getUsername())) {
+                            existingUser = user;
+                            break;
+                        }
+                    }
+
+                    if (existingUser == null) {
+                        message = crtCommand.getUsername() + " is not a premium user.";
+                    } else {
+                        cancelledPremiumUsers.add(existingUser);
+                        premiumUsers.remove(existingUser);
+                        message = crtCommand.getUsername()
+                                + " cancelled the subscription successfully.";
+                    }
+
+                    cancelPremiumOutput.put("message", message);
+                    outputs.add(cancelPremiumOutput);
+                }
+
                 default -> {
                 }
             }
@@ -864,27 +953,97 @@ public final class Main {
         ObjectNode endProgramOutput = objectMapper.createObjectNode();
         endProgramOutput.put("command", "endProgram");
 
-        ObjectNode result = objectMapper.createObjectNode();
         ArrayList<String> artistNames = new ArrayList<>();
+        ArrayList<ArtistRevenue> artistRevenues = new ArrayList<>();
 
+        //  Collect all artists who may have generated any revenue
         for (ArtistStatistics artist : Statistics.getWrappedStats().getArtistsStatistics()) {
             if (!artist.getTopSongs().isEmpty()) {
                 artistNames.add(artist.getArtist().getUsername());
             }
         }
-        Collections.sort(artistNames);
 
-        int ranking = 1;
-        for (String user : artistNames) {
-            ObjectNode node = objectMapper.createObjectNode();
-            node.put("merchRevenue", 0.0);
-            node.put("songRevenue", 0.0);
-            node.put("ranking", ranking);
-            node.put("mostProfitableSong", "N/A");
+        //  For each artist, create a revenue entity
+        for (String artist : artistNames) {
+            double songRevenue = 0.0;
+            double merchRevenue = 0.0;
+            String mostProfitableSong = null;
+            HashMap<String, Integer> streamedSongs = new HashMap<>();
 
-            result.putPOJO(user, node);
-            ranking++;
+            //  Check for all streamed songs among premium users
+            songRevenue = calculateSongRevenue(premiumUsers,
+                    artist, streamedSongs);
+            //  Check for all streamed songs among cancelled premium users
+            songRevenue += calculateSongRevenue(cancelledPremiumUsers,
+                    artist, streamedSongs);
+
+            int maxStreams = 0;
+            for (Map.Entry<String, Integer> element : streamedSongs.entrySet()) {
+                if (element.getValue() >= maxStreams) {
+                    maxStreams = element.getValue();
+                    mostProfitableSong = element.getKey();
+                }
+            }
+
+            ArtistRevenue newRevenue;
+
+            if (songRevenue != 0) {
+                if (merchRevenue != 0) {
+                    newRevenue = new ArtistRevenue.ArtistRevenueBuilder(artist)
+                            .setSongRevenue(songRevenue)
+                            .setMostProfitableSong(mostProfitableSong)
+                            .setMerchRevenue(merchRevenue)
+                            .build();
+                } else {
+                    newRevenue = new ArtistRevenue.ArtistRevenueBuilder(artist)
+                            .setSongRevenue(songRevenue)
+                            .setMostProfitableSong(mostProfitableSong)
+                            .build();
+                }
+            } else {
+                newRevenue = new ArtistRevenue.ArtistRevenueBuilder(artist)
+                        .build();
+            }
+
+            artistRevenues.add(newRevenue);
         }
+
+        //  Sort by revenue
+        artistRevenues.sort((o1, o2) -> {
+            if (o1.getSongRevenue() + o1.getMerchRevenue()
+                    == o2.getSongRevenue() + o2.getMerchRevenue()) {
+                return o2.getArtist().compareTo(o1.getArtist());
+            }
+            return Double.compare(o2.getSongRevenue() + o2.getMerchRevenue(),
+                    o1.getSongRevenue() + o1.getMerchRevenue());
+        });
+
+        //  Display revenue rankings
+        ObjectNode result = objectMapper.createObjectNode();
+        int ranking = 1;
+
+        for (ArtistRevenue artistRevenue : artistRevenues) {
+            ObjectNode node = objectMapper.createObjectNode();
+            double roundRevenue;
+
+            roundRevenue = Math.round(artistRevenue.getMerchRevenue()
+                    * Constants.LAST_TWO_DIGITS_ADD)
+                    / Constants.LAST_TWO_DIGITS_EXTRACT;
+            node.put("merchRevenue", roundRevenue);
+
+            roundRevenue = Math.round(artistRevenue.getSongRevenue()
+                    * Constants.LAST_TWO_DIGITS_ADD)
+                    / Constants.LAST_TWO_DIGITS_EXTRACT;
+            node.put("songRevenue", roundRevenue);
+
+            node.put("ranking", ranking);
+            node.put("mostProfitableSong", artistRevenue.getMostProfitableSong());
+
+            ranking++;
+
+            result.putPOJO(artistRevenue.getArtist(), node);
+        }
+
         endProgramOutput.putPOJO("result", result);
 
         outputs.add(endProgramOutput);
@@ -908,7 +1067,8 @@ public final class Main {
                                     final Command crtCommand,
                                     final ArrayList<PodcastSelection> podcasts,
                                     final LibraryInput library,
-                                    final ArrayList<Album> albums) {
+                                    final ArrayList<Album> albums,
+                                    final ArrayList<PremiumUser> premiumUsers) {
         //  Iterate through the player and update times
         //  Remove all finished sources
         ArrayList<ItemSelection> removableItems = new ArrayList<>();
@@ -926,7 +1086,7 @@ public final class Main {
             //  Only update time of online players
             if (playerUser != null && playerUser.isOnline()) {
                 item.updateRemainingTime(crtCommand.getTimestamp(),
-                        albums);
+                        albums, premiumUsers);
 
                 if (item.getRemainingTime() == 0) {
                     if (item instanceof PodcastSelection) {
@@ -942,6 +1102,42 @@ public final class Main {
         }
 
         removableItems.clear();
+    }
+
+    /**
+     * This method calculates an artist's revenue on premium users
+     *
+     * @param premiumUsers Premium Users
+     * @param artist Crt artist
+     * @param streamedSongs All the artist's streamed songs
+     * @return Song Revenue
+     */
+    public static double calculateSongRevenue(final ArrayList<PremiumUser> premiumUsers,
+                                              final String artist,
+                                              final HashMap<String, Integer> streamedSongs) {
+        double songRevenue = 0;
+
+        for (PremiumUser user : premiumUsers) {
+            int allSongs = user.getPlayedSongs().size();
+            int artistSongs = 0;
+
+            for (SongInput song : user.getPlayedSongs()) {
+                if (song.getArtist().equals(artist)) {
+                    artistSongs++;
+                    if (streamedSongs.containsKey(song.getName())) {
+                        //  Increase the listen count if the song exists
+                        int count = streamedSongs.get(song.getName());
+                        streamedSongs.put(song.getName(), count + 1);
+                    } else {
+                        //  Add the song if it's the first encounter
+                        streamedSongs.put(song.getName(), 1);
+                    }
+                }
+            }
+            songRevenue += Constants.SUBSCRIPTION_PRICE / allSongs * artistSongs;
+        }
+
+        return songRevenue;
     }
 }
 

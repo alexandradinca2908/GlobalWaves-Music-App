@@ -469,6 +469,31 @@
   "timestamp" : 1,
   "message" : "Nothing But Thieves has added new album successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "carol19",
+  "timestamp" : 5,
+  "message" : "carol19 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "frank21",
+  "timestamp" : 5,
+  "message" : "frank21 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 5,
+  "message" : "jack29 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "irene33",
+  "timestamp" : 5,
+  "message" : "irene33 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 5,
+  "message" : "grace25 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 10,
@@ -919,6 +944,11 @@
   "timestamp" : 321,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "henry26",
+  "timestamp" : 331,
+  "message" : "henry26 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 331,
@@ -1128,6 +1158,11 @@
   "timestamp" : 533,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "jack29",
+  "timestamp" : 539,
+  "message" : "jack29 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 539,
@@ -1277,6 +1312,11 @@
   "user" : "jack29",
   "timestamp" : 654,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "grace25",
+  "timestamp" : 655,
+  "message" : "grace25 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1745,6 +1785,11 @@
   "timestamp" : 1092,
   "message" : "Successfully selected Madonna's page."
 }, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 1098,
+  "message" : "grace25 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 1098,
@@ -2201,6 +2246,11 @@
   "user" : "frank21",
   "timestamp" : 1661,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "alice22",
+  "timestamp" : 1671,
+  "message" : "alice22 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -3569,6 +3619,11 @@
   "timestamp" : 3534,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "grace25",
+  "timestamp" : 3549,
+  "message" : "grace25 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 3549,
@@ -4100,6 +4155,11 @@
   "timestamp" : 4234,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 4241,
+  "message" : "jack29 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 4241,
@@ -4439,6 +4499,11 @@
   "user" : "irene33",
   "timestamp" : 4719,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "carol19",
+  "timestamp" : 4725,
+  "message" : "carol19 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -5309,6 +5374,11 @@
   "timestamp" : 6100,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "jack29",
+  "timestamp" : 6143,
+  "message" : "jack29 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 6143,
@@ -5696,6 +5766,11 @@
   "user" : "ABBA",
   "timestamp" : 6560,
   "message" : "ABBA has added new album successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "irene33",
+  "timestamp" : 6563,
+  "message" : "irene33 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -7357,6 +7432,11 @@
   "timestamp" : 8354,
   "message" : "ABBA can't delete this album."
 }, {
+  "command" : "buyPremium",
+  "user" : "carol19",
+  "timestamp" : 8358,
+  "message" : "carol19 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 8358,
@@ -8534,6 +8614,11 @@
   "timestamp" : 9566,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "emily30",
+  "timestamp" : 9573,
+  "message" : "emily30 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 9573,
@@ -8859,6 +8944,11 @@
   "timestamp" : 9834,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "frank21",
+  "timestamp" : 9855,
+  "message" : "frank21 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 9855,
@@ -8943,6 +9033,11 @@
   "user" : "henry26",
   "timestamp" : 9927,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "emily30",
+  "timestamp" : 9929,
+  "message" : "emily30 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -10323,6 +10418,11 @@
   "timestamp" : 11592,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "emily30",
+  "timestamp" : 11637,
+  "message" : "emily30 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 11642,
@@ -10898,6 +10998,11 @@
   "user" : "grace25",
   "timestamp" : 12221,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "irene33",
+  "timestamp" : 12226,
+  "message" : "irene33 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -12472,6 +12577,11 @@
   "timestamp" : 14173,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "irene33",
+  "timestamp" : 14216,
+  "message" : "irene33 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 14216,
@@ -12615,6 +12725,11 @@
   "user" : "david27",
   "timestamp" : 14379,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "irene33",
+  "timestamp" : 14388,
+  "message" : "irene33 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -12791,6 +12906,11 @@
   "user" : "david27",
   "timestamp" : 14581,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "bob35",
+  "timestamp" : 14596,
+  "message" : "bob35 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -13197,6 +13317,11 @@
   "timestamp" : 14977,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "david27",
+  "timestamp" : 14980,
+  "message" : "david27 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 14980,
@@ -13533,6 +13658,11 @@
   "timestamp" : 15321,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "bob35",
+  "timestamp" : 15355,
+  "message" : "bob35 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 15355,
@@ -13756,6 +13886,11 @@
   "user" : "jack29",
   "timestamp" : 15542,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 15559,
+  "message" : "grace25 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -14124,6 +14259,11 @@
   "user" : "carol19",
   "timestamp" : 15943,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "alice22",
+  "timestamp" : 16037,
+  "message" : "alice22 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -14573,6 +14713,11 @@
   "timestamp" : 16841,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "carol19",
+  "timestamp" : 16844,
+  "message" : "carol19 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 16844,
@@ -14636,6 +14781,11 @@
   "user" : "alice22",
   "timestamp" : 16947,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "emily30",
+  "timestamp" : 17006,
+  "message" : "emily30 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -15106,6 +15256,11 @@
   "timestamp" : 17737,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "grace25",
+  "timestamp" : 17750,
+  "message" : "grace25 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 17750,
@@ -15170,6 +15325,11 @@
   "timestamp" : 17866,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "alice22",
+  "timestamp" : 17891,
+  "message" : "alice22 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 17891,
@@ -15233,6 +15393,11 @@
   "user" : "grace25",
   "timestamp" : 17972,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 17978,
+  "message" : "jack29 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -15329,6 +15494,11 @@
   "user" : "bob35",
   "timestamp" : 18136,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "carol19",
+  "timestamp" : 18136,
+  "message" : "carol19 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -15441,6 +15611,11 @@
   "user" : "irene33",
   "timestamp" : 18294,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "carol19",
+  "timestamp" : 18297,
+  "message" : "carol19 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -15761,6 +15936,11 @@
   "user" : "irene33",
   "timestamp" : 18604,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 18651,
+  "message" : "grace25 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -16706,6 +16886,11 @@
   "timestamp" : 19560,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "alice22",
+  "timestamp" : 19561,
+  "message" : "alice22 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 19561,
@@ -16785,6 +16970,11 @@
   "user" : "carol19",
   "timestamp" : 19620,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "irene33",
+  "timestamp" : 19666,
+  "message" : "irene33 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -16881,6 +17071,11 @@
   "user" : "david27",
   "timestamp" : 19752,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "emily30",
+  "timestamp" : 19771,
+  "message" : "emily30 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -17009,6 +17204,11 @@
   "user" : "carol19",
   "timestamp" : 19961,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "emily30",
+  "timestamp" : 19975,
+  "message" : "emily30 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -17281,6 +17481,11 @@
   "user" : "henry26",
   "timestamp" : 20326,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "david27",
+  "timestamp" : 20327,
+  "message" : "david27 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -18097,6 +18302,11 @@
   "user" : "alice22",
   "timestamp" : 21174,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "emily30",
+  "timestamp" : 21194,
+  "message" : "emily30 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -19261,6 +19471,11 @@
   "timestamp" : 22798,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "frank21",
+  "timestamp" : 22824,
+  "message" : "frank21 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 22824,
@@ -19276,6 +19491,11 @@
   "user" : "frank21",
   "timestamp" : 22824,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "david27",
+  "timestamp" : 22901,
+  "message" : "david27 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -19439,6 +19659,11 @@
   "user" : "frank21",
   "timestamp" : 23350,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "irene33",
+  "timestamp" : 23384,
+  "message" : "irene33 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -19781,6 +20006,11 @@
   "timestamp" : 23925,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "irene33",
+  "timestamp" : 23948,
+  "message" : "irene33 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 23948,
@@ -19892,6 +20122,11 @@
   "user" : "henry26",
   "timestamp" : 24099,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "emily30",
+  "timestamp" : 24176,
+  "message" : "emily30 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -20117,6 +20352,11 @@
   "timestamp" : 24827,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 24939,
+  "message" : "henry26 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 24939,
@@ -20180,6 +20420,11 @@
   "user" : "henry26",
   "timestamp" : 24995,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "irene33",
+  "timestamp" : 25049,
+  "message" : "irene33 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -20340,6 +20585,11 @@
   "user" : "david27",
   "timestamp" : 25413,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "emily30",
+  "timestamp" : 25436,
+  "message" : "emily30 bought the subscription successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -21088,6 +21338,11 @@
   "timestamp" : 27708,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "grace25",
+  "timestamp" : 27726,
+  "message" : "grace25 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 27726,
@@ -21459,6 +21714,11 @@
   "timestamp" : 28496,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "henry26",
+  "timestamp" : 28496,
+  "message" : "henry26 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 28496,
@@ -21683,6 +21943,11 @@
   "timestamp" : 29150,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 29211,
+  "message" : "grace25 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 29211,
@@ -21831,6 +22096,11 @@
   "user" : "henry26",
   "timestamp" : 29708,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "grace25",
+  "timestamp" : 29755,
+  "message" : "grace25 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -22088,6 +22358,11 @@
   "timestamp" : 30819,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "david27",
+  "timestamp" : 30906,
+  "message" : "david27 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 30906,
@@ -22327,6 +22602,11 @@
   "user" : "david27",
   "timestamp" : 31722,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 31809,
+  "message" : "henry26 cancelled the subscription successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -23377,62 +23657,62 @@
   "command" : "wrapped",
   "user" : "Stevie Wonder",
   "timestamp" : 38196,
-  "message" : "No data to show for user Stevie Wonder."
+  "message" : "No data to show for artist Stevie Wonder."
 }, {
   "command" : "wrapped",
   "user" : "Bob Marley",
   "timestamp" : 38196,
-  "message" : "No data to show for user Bob Marley."
+  "message" : "No data to show for artist Bob Marley."
 }, {
   "command" : "wrapped",
   "user" : "Rihanna",
   "timestamp" : 38196,
-  "message" : "No data to show for user Rihanna."
+  "message" : "No data to show for artist Rihanna."
 }, {
   "command" : "wrapped",
   "user" : "David Bowie",
   "timestamp" : 38196,
-  "message" : "No data to show for user David Bowie."
+  "message" : "No data to show for artist David Bowie."
 }, {
   "command" : "wrapped",
   "user" : "Ray Charles",
   "timestamp" : 38196,
-  "message" : "No data to show for user Ray Charles."
+  "message" : "No data to show for artist Ray Charles."
 }, {
   "command" : "wrapped",
   "user" : "Imagine Dragons",
   "timestamp" : 38196,
-  "message" : "No data to show for user Imagine Dragons."
+  "message" : "No data to show for artist Imagine Dragons."
 }, {
   "command" : "wrapped",
   "user" : "Whitney Houston",
   "timestamp" : 38196,
-  "message" : "No data to show for user Whitney Houston."
+  "message" : "No data to show for artist Whitney Houston."
 }, {
   "command" : "wrapped",
   "user" : "The Doors",
   "timestamp" : 38196,
-  "message" : "No data to show for user The Doors."
+  "message" : "No data to show for artist The Doors."
 }, {
   "command" : "wrapped",
   "user" : "Radiohead",
   "timestamp" : 38196,
-  "message" : "No data to show for user Radiohead."
+  "message" : "No data to show for artist Radiohead."
 }, {
   "command" : "wrapped",
   "user" : "Aretha Franklin",
   "timestamp" : 38196,
-  "message" : "No data to show for user Aretha Franklin."
+  "message" : "No data to show for artist Aretha Franklin."
 }, {
   "command" : "wrapped",
   "user" : "The Beach Boys",
   "timestamp" : 38196,
-  "message" : "No data to show for user The Beach Boys."
+  "message" : "No data to show for artist The Beach Boys."
 }, {
   "command" : "wrapped",
   "user" : "The Police",
   "timestamp" : 38196,
-  "message" : "No data to show for user The Police."
+  "message" : "No data to show for artist The Police."
 }, {
   "command" : "wrapped",
   "user" : "jack29",
@@ -23471,83 +23751,83 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "ABBA" : {
+    "U2" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 1627105.73,
       "ranking" : 1,
-      "mostProfitableSong" : "N/A"
-    },
-    "Chuck Berry" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 2,
-      "mostProfitableSong" : "N/A"
-    },
-    "Eminem" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 3,
-      "mostProfitableSong" : "N/A"
-    },
-    "Fleetwood Mac" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 4,
-      "mostProfitableSong" : "N/A"
-    },
-    "Jimi Hendrix" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 5,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "The Fly"
     },
     "Johnny Cash" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 6,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 1208307.94,
+      "ranking" : 2,
+      "mostProfitableSong" : "The Man Comes Around (Early Take)"
     },
-    "Led Zeppelin" : {
+    "Fleetwood Mac" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 7,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 1061494.56,
+      "ranking" : 3,
+      "mostProfitableSong" : "Go Your Own Way - 2004 Remastered Edition"
     },
-    "Madonna" : {
+    "Eminem" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 8,
-      "mostProfitableSong" : "N/A"
-    },
-    "Marvin Gaye" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 9,
-      "mostProfitableSong" : "N/A"
-    },
-    "Michael Jackson" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 10,
-      "mostProfitableSong" : "N/A"
-    },
-    "Nothing But Thieves" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 11,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 979200.11,
+      "ranking" : 4,
+      "mostProfitableSong" : "Public Service Announcement 2000"
     },
     "Taylor Swift" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 12,
-      "mostProfitableSong" : "N/A"
+      "songRevenue" : 850663.45,
+      "ranking" : 5,
+      "mostProfitableSong" : "Blank Space"
     },
-    "U2" : {
+    "Jimi Hendrix" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 781452.95,
+      "ranking" : 6,
+      "mostProfitableSong" : "Manic Depression"
+    },
+    "ABBA" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 710166.09,
+      "ranking" : 7,
+      "mostProfitableSong" : "Knowing Me, Knowing You"
+    },
+    "Led Zeppelin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 609559.37,
+      "ranking" : 8,
+      "mostProfitableSong" : "Misty Mountain Hop"
+    },
+    "Michael Jackson" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 545657.06,
+      "ranking" : 9,
+      "mostProfitableSong" : "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix"
+    },
+    "Marvin Gaye" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 469959.99,
+      "ranking" : 10,
+      "mostProfitableSong" : "Mercy Mercy Me (The Ecology)"
+    },
+    "Nothing But Thieves" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 403160.13,
+      "ranking" : 11,
+      "mostProfitableSong" : "If I Get High"
+    },
+    "Madonna" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 394159.7,
+      "ranking" : 12,
+      "mostProfitableSong" : "Mer Girl"
+    },
+    "Chuck Berry" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 359112.92,
       "ranking" : 13,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "Reelin' And Rockin' - Single Version"
     }
   }
 } ]

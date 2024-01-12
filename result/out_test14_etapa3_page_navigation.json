@@ -60,7 +60,7 @@
   "timestamp" : 70,
   "stats" : {
     "name" : "Exploring Sonic Landscapes",
-    "remainedTime" : 2685,
+    "remainedTime" : 2700,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -97,7 +97,7 @@
   "timestamp" : 115,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 340,
+    "remainedTime" : 350,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -113,7 +113,7 @@
   "timestamp" : 165,
   "stats" : {
     "name" : "Bohemian Rhapsody",
-    "remainedTime" : 290,
+    "remainedTime" : 350,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false

@@ -259,6 +259,16 @@
   "timestamp" : 1,
   "message" : "Aretha Franklin has added new album successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "henry26",
+  "timestamp" : 5,
+  "message" : "henry26 bought the subscription successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "grace25",
+  "timestamp" : 5,
+  "message" : "grace25 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 10,
@@ -339,6 +349,11 @@
   "timestamp" : 191,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 482,
+  "message" : "henry26 cancelled the subscription successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 482,
@@ -386,6 +401,11 @@
   "user" : "henry26",
   "timestamp" : 734,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 823,
+  "message" : "henry26 is not a premium user."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -451,6 +471,11 @@
   "timestamp" : 1059,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 1132,
+  "message" : "jack29 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 1132,
@@ -466,6 +491,11 @@
   "user" : "jack29",
   "timestamp" : 1132,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 1203,
+  "message" : "jack29 is already a premium user."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -674,6 +704,11 @@
   "user" : "jack29",
   "timestamp" : 2226,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 2320,
+  "message" : "jack29 is already a premium user."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -1251,6 +1286,11 @@
   "timestamp" : 5508,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "buyPremium",
+  "user" : "carol19",
+  "timestamp" : 5509,
+  "message" : "carol19 bought the subscription successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 5509,
@@ -1314,6 +1354,11 @@
   "user" : "jack29",
   "timestamp" : 5649,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "buyPremium",
+  "user" : "jack29",
+  "timestamp" : 5683,
+  "message" : "jack29 is already a premium user."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -1958,6 +2003,11 @@
   "timestamp" : 8797,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 8797,
+  "message" : "henry26 is not a premium user."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 8797,
@@ -2005,6 +2055,11 @@
   "user" : "henry26",
   "timestamp" : 8866,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "cancelPremium",
+  "user" : "henry26",
+  "timestamp" : 8900,
+  "message" : "henry26 is not a premium user."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -2750,12 +2805,12 @@
   "command" : "wrapped",
   "user" : "The Rolling Stones",
   "timestamp" : 21076,
-  "message" : "No data to show for user The Rolling Stones."
+  "message" : "No data to show for artist The Rolling Stones."
 }, {
   "command" : "wrapped",
   "user" : "Frank Sinatra",
   "timestamp" : 21076,
-  "message" : "No data to show for user Frank Sinatra."
+  "message" : "No data to show for artist Frank Sinatra."
 }, {
   "command" : "wrapped",
   "user" : "grace25",
@@ -2790,23 +2845,23 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Aretha Franklin" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
-      "ranking" : 1,
-      "mostProfitableSong" : "N/A"
-    },
     "James Brown" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 1894230.77,
+      "ranking" : 1,
+      "mostProfitableSong" : "Make It Funky, Pt. 1"
+    },
+    "Aretha Franklin" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 1086538.46,
       "ranking" : 2,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "I Say a Little Prayer"
     },
     "Pink Floyd" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 0.0,
+      "songRevenue" : 1019230.77,
       "ranking" : 3,
-      "mostProfitableSong" : "N/A"
+      "mostProfitableSong" : "Have a Cigar"
     }
   }
 } ]

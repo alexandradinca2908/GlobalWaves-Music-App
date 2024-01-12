@@ -50,7 +50,7 @@
   "timestamp" : 70,
   "stats" : {
     "name" : "Nobody Loves Me Like You Do",
-    "remainedTime" : 221,
+    "remainedTime" : 226,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -104,13 +104,13 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Prince" : {
+    "Whitney Houston" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 1,
       "mostProfitableSong" : "N/A"
     },
-    "Whitney Houston" : {
+    "Prince" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 2,

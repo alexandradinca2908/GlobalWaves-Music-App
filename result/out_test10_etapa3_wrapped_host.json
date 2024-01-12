@@ -35,7 +35,7 @@
   "timestamp" : 59,
   "stats" : {
     "name" : "The Power of Design",
-    "remainedTime" : 3065,
+    "remainedTime" : 3104,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -78,7 +78,7 @@
   "timestamp" : 86,
   "stats" : {
     "name" : "The Power of Design",
-    "remainedTime" : 3063,
+    "remainedTime" : 3104,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -93,8 +93,8 @@
   "user" : "alice22",
   "timestamp" : 3201,
   "stats" : {
-    "name" : "The Science of Us",
-    "remainedTime" : 3081,
+    "name" : "The Power of Design",
+    "remainedTime" : 3104,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
