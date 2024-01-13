@@ -13,7 +13,7 @@ public final class CreatorChannel extends Observable {
         return creator;
     }
 
-    public void setCreator(UserInput creator) {
+    public void setCreator(final UserInput creator) {
         this.creator = creator;
     }
 
@@ -21,7 +21,7 @@ public final class CreatorChannel extends Observable {
         return subscribers;
     }
 
-    public void setSubscribers(ArrayList<String> subscribers) {
+    public void setSubscribers(final ArrayList<String> subscribers) {
         this.subscribers = subscribers;
     }
 }

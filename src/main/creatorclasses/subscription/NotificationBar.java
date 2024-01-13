@@ -1,7 +1,5 @@
 package main.creatorclasses.subscription;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import java.util.ArrayList;
 
 public final class NotificationBar {
@@ -12,7 +10,7 @@ public final class NotificationBar {
         return subscriber;
     }
 
-    public void setSubscriber(String subscriber) {
+    public void setSubscriber(final String subscriber) {
         this.subscriber = subscriber;
     }
 
@@ -20,7 +18,7 @@ public final class NotificationBar {
         return notifications;
     }
 
-    public void setNotifications(ArrayList<String> notifications) {
+    public void setNotifications(final ArrayList<String> notifications) {
         this.notifications = notifications;
     }
 }

@@ -3,11 +3,11 @@ package main.pagingclasses;
 import fileio.input.UserInput;
 import main.creatorclasses.artistclasses.Management;
 import main.creatorclasses.hostclasses.HostInfo;
-import main.playlistclasses.UserPlaylists;
+import main.playlistclasses.UserData;
 
 public final class Page {
     private UserInput pageOwner;
-    private UserPlaylists userPlaylists;
+    private UserData userData;
     private String currentPage = "Home";
     //  All artist extras
     private Management management;
@@ -22,12 +22,12 @@ public final class Page {
         this.pageOwner = pageOwner;
     }
 
-    public UserPlaylists getUserPlaylists() {
-        return userPlaylists;
+    public UserData getUserData() {
+        return userData;
     }
 
-    public void setUserPlaylists(final UserPlaylists userPlaylists) {
-        this.userPlaylists = userPlaylists;
+    public void setUserData(final UserData userPlaylists) {
+        this.userData = userPlaylists;
     }
 
     public String getCurrentPage() {

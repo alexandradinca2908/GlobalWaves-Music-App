@@ -35,7 +35,7 @@
   "timestamp" : 59,
   "stats" : {
     "name" : "The Power of Design",
-    "remainedTime" : 3104,
+    "remainedTime" : 3065,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -78,7 +78,7 @@
   "timestamp" : 86,
   "stats" : {
     "name" : "The Power of Design",
-    "remainedTime" : 3104,
+    "remainedTime" : 3063,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : false
@@ -93,8 +93,8 @@
   "user" : "alice22",
   "timestamp" : 3201,
   "stats" : {
-    "name" : "The Power of Design",
-    "remainedTime" : 3104,
+    "name" : "The Science of Us",
+    "remainedTime" : 3081,
     "repeat" : "No Repeat",
     "shuffle" : false,
     "paused" : true
@@ -203,21 +203,41 @@
       "The Power of Design" : 2,
       "Elon Musk Returns" : 1,
       "Ghosts" : 1,
-      "Salman Rushdie Reads Gabriel Garcia Marquez" : 1
+      "Salman Rushdie Reads Gabriel Garcia Marquez" : 1,
+      "The Science of Us" : 1
     }
   }
 }, {
   "command" : "wrapped",
   "user" : "Guy Raz",
-  "timestamp" : 4000
+  "timestamp" : 4000,
+  "result" : {
+    "topEpisodes" : {
+      "The Power of Design" : 2,
+      "The Science of Us" : 1
+    },
+    "listeners" : 1
+  }
 }, {
   "command" : "wrapped",
   "user" : "Jad Abumrad and Robert Krulwich",
-  "timestamp" : 4000
+  "timestamp" : 4000,
+  "result" : {
+    "topEpisodes" : {
+      "Ghosts" : 1
+    },
+    "listeners" : 1
+  }
 }, {
   "command" : "wrapped",
   "user" : "Joe Rogan",
-  "timestamp" : 4000
+  "timestamp" : 4000,
+  "result" : {
+    "topEpisodes" : {
+      "Elon Musk Returns" : 1
+    },
+    "listeners" : 1
+  }
 }, {
   "command" : "endProgram",
   "result" : { }

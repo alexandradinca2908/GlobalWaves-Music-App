@@ -3,18 +3,21 @@ package main.playlistclasses;
 import fileio.input.PodcastInput;
 import fileio.input.SongInput;
 import fileio.input.UserInput;
+import main.creatorclasses.artistclasses.Merch;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public final class UserPlaylists {
+public final class UserData {
     private UserInput user;
     private ArrayList<Playlist> playlists = new ArrayList<>();
     private ArrayList<SongInput> likedSongs = new ArrayList<>();
     private ArrayList<Playlist> followedPlaylists = new ArrayList<>();
     private ArrayList<Album> albums = new ArrayList<>();
     private ArrayList<PodcastInput> podcasts = new ArrayList<>();
+    private HashMap<Merch, String> merches = new HashMap<>();
 
-    public UserPlaylists() {
+    public UserData() {
     }
 
     public UserInput getUser() {
@@ -63,5 +66,13 @@ public final class UserPlaylists {
 
     public void setPodcasts(final ArrayList<PodcastInput> podcasts) {
         this.podcasts = podcasts;
+    }
+
+    public HashMap<Merch, String> getMerches() {
+        return merches;
+    }
+
+    public void setMerches(final HashMap<Merch, String> merches) {
+        this.merches = merches;
     }
 }

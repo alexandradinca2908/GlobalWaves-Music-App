@@ -14,7 +14,7 @@ import main.monetization.PremiumUser;
 import main.pagingclasses.Page;
 import main.playlistclasses.Album;
 import main.playlistclasses.Playlist;
-import main.playlistclasses.UserPlaylists;
+import main.playlistclasses.UserData;
 import main.selectionclasses.ItemSelection;
 import main.selectionclasses.PodcastSelection;
 import main.utilityclasses.GetMessages;
@@ -93,7 +93,7 @@ public final class DoCommandsMessage {
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
      * @param player The array that keeps all user players in check
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param songsLikes The array of songs and their respective likes
      * @param library Singleton containing all songs, users and podcasts
      * @return ObjectNode of the final JSON
@@ -101,7 +101,7 @@ public final class DoCommandsMessage {
     public static ObjectNode doLike(final ObjectMapper objectMapper,
                                     final Command crtCommand,
                                     final ArrayList<ItemSelection> player,
-                                    final ArrayList<UserPlaylists> usersPlaylists,
+                                    final ArrayList<UserData> usersData,
                                     final ArrayList<SongLikes> songsLikes,
                                     final LibraryInput library,
                                     final ArrayList<Album> albums,
@@ -125,7 +125,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make proper modifications to the user's liked songs
-        String message = GetMessages.getLikeMessage(player, usersPlaylists,
+        String message = GetMessages.getLikeMessage(player, usersData,
                 crtCommand, songsLikes, albums, premiumUsers);
 
         likeOutput.put("message", message);
@@ -364,13 +364,13 @@ public final class DoCommandsMessage {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param library Singleton containing all songs, users and podcasts
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doSwitchVisibility(final ObjectMapper objectMapper,
                                                 final Command crtCommand,
-                                                final ArrayList<UserPlaylists> usersPlaylists,
+                                                final ArrayList<UserData> usersData,
                                                 final LibraryInput library) {
         ObjectNode switchOutput = objectMapper.createObjectNode();
 
@@ -392,7 +392,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getSwitchVisibilityMessage(usersPlaylists,
+        String message = GetMessages.getSwitchVisibilityMessage(usersData,
                 crtCommand);
         switchOutput.put("message", message);
 
@@ -448,13 +448,13 @@ public final class DoCommandsMessage {
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doAddUser(final ObjectMapper objectMapper,
                                        final Command crtCommand,
                                        final LibraryInput library,
-                                       final ArrayList<UserPlaylists> usersPlaylists,
+                                       final ArrayList<UserData> usersData,
                                        final ArrayList<Page> pageSystem,
                                        final ArrayList<Management> managements,
                                        final ArrayList<HostInfo> hostInfos,
@@ -467,7 +467,7 @@ public final class DoCommandsMessage {
         addUserOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddUserMessage(crtCommand,
-                library, usersPlaylists, pageSystem, managements,
+                library, usersData, pageSystem, managements,
                 hostInfos, channels, notificationBars);
         addUserOutput.put("message", message);
 
@@ -480,14 +480,14 @@ public final class DoCommandsMessage {
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param albums The array of all albums in the database
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doAddAlbum(final ObjectMapper objectMapper,
                                         final Command crtCommand,
                                         final LibraryInput library,
-                                        final ArrayList<UserPlaylists> usersPlaylists,
+                                        final ArrayList<UserData> usersData,
                                         final ArrayList<Album> albums,
                                         final ArrayList<SongLikes> songsLikes,
                                         final ArrayList<CreatorChannel> channels,
@@ -499,7 +499,7 @@ public final class DoCommandsMessage {
         addAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddAlbumMessage(crtCommand, library,
-                usersPlaylists, albums, songsLikes, channels, notificationBars);
+                usersData, albums, songsLikes, channels, notificationBars);
         addAlbumOutput.put("message", message);
 
         return addAlbumOutput;
@@ -570,7 +570,7 @@ public final class DoCommandsMessage {
      * @param library Singleton containing all songs, users and podcasts
      * @param crtCommand Current command
      * @param playlists The array of all user playlists
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param albums The array of all albums in the database
      * @param songsLikes The array of songs and their respective likes
      * @param player The array that keeps all user players in check
@@ -583,7 +583,7 @@ public final class DoCommandsMessage {
                                           final Command crtCommand,
                                           final ArrayList<ItemSelection> player,
                                           final ArrayList<Playlist> playlists,
-                                          final ArrayList<UserPlaylists> usersPlaylists,
+                                          final ArrayList<UserData> usersData,
                                           final ArrayList<Album> albums,
                                           final ArrayList<SongLikes> songsLikes,
                                           final ArrayList<PodcastSelection> podcasts,
@@ -599,7 +599,7 @@ public final class DoCommandsMessage {
         updatePlayer(player, crtCommand, podcasts, library, albums, premiumUsers);
 
         String message = getDeleteUserMessage(library, crtCommand,
-                player, playlists, usersPlaylists, albums,
+                player, playlists, usersData, albums,
                 songsLikes, pageSystem, podcasts);
 
 
@@ -614,13 +614,13 @@ public final class DoCommandsMessage {
      * @param objectMapper Object Mapper
      * @param library Singleton containing all songs, users and podcasts
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doAddPodcast(final ObjectMapper objectMapper,
                                           final Command crtCommand,
                                           final LibraryInput library,
-                                          final ArrayList<UserPlaylists> usersPlaylists,
+                                          final ArrayList<UserData> usersData,
                                           final ArrayList<CreatorChannel> channels,
                                           final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addPodcastOutput = objectMapper.createObjectNode();
@@ -630,7 +630,7 @@ public final class DoCommandsMessage {
         addPodcastOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getAddPodcastMessage(library, crtCommand,
-                usersPlaylists, channels, notificationBars);
+                usersData, channels, notificationBars);
         addPodcastOutput.put("message", message);
 
         return addPodcastOutput;
@@ -698,7 +698,7 @@ public final class DoCommandsMessage {
      * @param library Singleton containing all songs, users and podcasts
      * @param crtCommand Current command
      * @param playlists The array of all user playlists
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param albums The array of all albums in the database
      * @param songsLikes The array of songs and their respective likes
      * @param player The array that keeps all user players in check]
@@ -707,7 +707,7 @@ public final class DoCommandsMessage {
     public static ObjectNode doRemoveAlbum(final ObjectMapper objectMapper,
                                            final Command crtCommand,
                                            final LibraryInput library,
-                                           final ArrayList<UserPlaylists> usersPlaylists,
+                                           final ArrayList<UserData> usersData,
                                            final ArrayList<ItemSelection> player,
                                            final ArrayList<Playlist> playlists,
                                            final ArrayList<SongLikes> songsLikes,
@@ -719,7 +719,7 @@ public final class DoCommandsMessage {
         removeAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getRemoveAlbumMessage(library, crtCommand,
-                usersPlaylists, player, playlists, songsLikes,
+                usersData, player, playlists, songsLikes,
                 albums);
 
         removeAlbumOutput.put("message", message);
@@ -733,13 +733,13 @@ public final class DoCommandsMessage {
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
      * @param pageSystem Array of all the pages in the system
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doChangePage(final ObjectMapper objectMapper,
                                           final Command crtCommand,
                                           final ArrayList<Page> pageSystem,
-                                          final ArrayList<UserPlaylists> usersPlaylists) {
+                                          final ArrayList<UserData> usersData) {
         ObjectNode changePageOutput = objectMapper.createObjectNode();
 
         changePageOutput.put("command", "changePage");
@@ -747,7 +747,7 @@ public final class DoCommandsMessage {
         changePageOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getChangePageMessage(crtCommand,
-                usersPlaylists, pageSystem);
+                usersData, pageSystem);
 
         changePageOutput.put("message", message);
 
@@ -759,7 +759,7 @@ public final class DoCommandsMessage {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param player The array that keeps all user players in check]
      * @param library Singleton containing all songs, users and podcasts
      * @param podcasts The array that keeps track of all the podcasts
@@ -767,7 +767,7 @@ public final class DoCommandsMessage {
      */
     public static ObjectNode doRemovePodcast(final ObjectMapper objectMapper,
                                              final Command crtCommand,
-                                             final ArrayList<UserPlaylists> usersPlaylists,
+                                             final ArrayList<UserData> usersData,
                                              final ArrayList<ItemSelection> player,
                                              final LibraryInput library,
                                              final ArrayList<PodcastSelection> podcasts) {
@@ -778,7 +778,7 @@ public final class DoCommandsMessage {
         removePodcastOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getRemovePodcastMessage(crtCommand,
-                usersPlaylists, player, library, podcasts);
+                usersData, player, library, podcasts);
 
         removePodcastOutput.put("message", message);
 

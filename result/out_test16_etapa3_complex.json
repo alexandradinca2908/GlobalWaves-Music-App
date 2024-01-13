@@ -894,6 +894,11 @@
   "timestamp" : 230,
   "message" : "Successfully selected James Brown's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "jack29",
+  "timestamp" : 230,
+  "message" : "The merch James Brown's Cap doesn't exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 252,
@@ -952,6 +957,11 @@
   "user" : "emily30",
   "timestamp" : 280,
   "message" : "Successfully selected Michael Jackson's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "emily30",
+  "timestamp" : 280,
+  "message" : "The merch Michael Jackson Vinyl Record doesn't exist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1123,6 +1133,11 @@
   "timestamp" : 380,
   "message" : "emily30 subscribed to Michael Jackson successfully."
 }, {
+  "command" : "seeMerch",
+  "user" : "jack29",
+  "timestamp" : 380,
+  "result" : [ ]
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 385,
@@ -1218,6 +1233,11 @@
   "user" : "david27",
   "timestamp" : 419,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "emily30",
+  "timestamp" : 430,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1992,6 +2012,11 @@
   "timestamp" : 1166,
   "message" : "Successfully selected Ray Charles's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "bob35",
+  "timestamp" : 1166,
+  "message" : "The merch Ray Charles Vinyl Record doesn't exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1167,
@@ -2002,6 +2027,11 @@
   "user" : "carol19",
   "timestamp" : 1167,
   "message" : "Successfully selected Bob Dylan's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "carol19",
+  "timestamp" : 1167,
+  "message" : "The merch Bob Dylan Album doesn't exist."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2135,6 +2165,16 @@
   "user" : "carol19",
   "timestamp" : 1284,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "bob35",
+  "timestamp" : 1316,
+  "result" : [ ]
+}, {
+  "command" : "seeMerch",
+  "user" : "carol19",
+  "timestamp" : 1317,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -4501,6 +4541,11 @@
   "timestamp" : 3127,
   "message" : "Successfully selected Michael Jackson's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "henry26",
+  "timestamp" : 3127,
+  "message" : "The merch Michael Jackson Vinyl Record doesn't exist."
+}, {
   "command" : "cancelPremium",
   "user" : "carol19",
   "timestamp" : 3171,
@@ -4633,6 +4678,11 @@
   "user" : "david27",
   "timestamp" : 3277,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "henry26",
+  "timestamp" : 3277,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -5647,6 +5697,11 @@
   "timestamp" : 4809,
   "message" : "Successfully selected Nirvana's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "alice22",
+  "timestamp" : 4809,
+  "message" : "The merch Nirvana Vinyl Record doesn't exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 4823,
@@ -5779,6 +5834,11 @@
   "user" : "irene33",
   "timestamp" : 4955,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "alice22",
+  "timestamp" : 4959,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "jack29",

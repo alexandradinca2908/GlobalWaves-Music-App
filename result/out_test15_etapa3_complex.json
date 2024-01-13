@@ -793,6 +793,11 @@
   "timestamp" : 133,
   "message" : "Successfully selected Imagine Dragons's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "jack29",
+  "timestamp" : 133,
+  "message" : "The merch Imagine Dragons Album doesn't exist."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 140,
@@ -952,6 +957,11 @@
   "user" : "jack29",
   "timestamp" : 267,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "jack29",
+  "timestamp" : 283,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -1699,6 +1709,11 @@
   "timestamp" : 935,
   "message" : "Successfully selected Stevie Wonder's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "carol19",
+  "timestamp" : 935,
+  "message" : "The merch Stevie Wonder Vinyl Record doesn't exist."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 956,
@@ -1858,6 +1873,11 @@
   "user" : "bob35",
   "timestamp" : 1075,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "carol19",
+  "timestamp" : 1085,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2895,6 +2915,11 @@
   "timestamp" : 2342,
   "message" : "Successfully selected Taylor Swift's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "alice22",
+  "timestamp" : 2342,
+  "message" : "The merch Taylor Swift Album doesn't exist."
+}, {
   "command" : "removeAlbum",
   "user" : "Michael Jackson",
   "timestamp" : 2343,
@@ -2963,6 +2988,11 @@
   "user" : "bob35",
   "timestamp" : 2406,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "alice22",
+  "timestamp" : 2492,
+  "result" : [ ]
 }, {
   "command" : "addAlbum",
   "user" : "Michael Jackson",
@@ -3209,6 +3239,11 @@
   "timestamp" : 2839,
   "message" : "Successfully selected ABBA's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "david27",
+  "timestamp" : 2839,
+  "message" : "david27 has added new merch successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 2851,
@@ -3251,6 +3286,11 @@
   "user" : "bob35",
   "timestamp" : 2873,
   "message" : "Successfully selected Imagine Dragons's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "bob35",
+  "timestamp" : 2873,
+  "message" : "The merch Imagine Dragons Album doesn't exist."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -3348,6 +3388,11 @@
   "timestamp" : 2952,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "seeMerch",
+  "user" : "david27",
+  "timestamp" : 2989,
+  "result" : [ "ABBA Vinyl Record" ]
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 2991,
@@ -3427,6 +3472,11 @@
   "user" : "grace25",
   "timestamp" : 3021,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "bob35",
+  "timestamp" : 3023,
+  "result" : [ ]
 }, {
   "command" : "addEvent",
   "user" : "Aretha Franklin",
@@ -3833,6 +3883,11 @@
   "timestamp" : 3599,
   "message" : "Successfully selected Taylor Swift's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "bob35",
+  "timestamp" : 3599,
+  "message" : "The merch Taylor Swift Album doesn't exist."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 3620,
@@ -3949,6 +4004,11 @@
   "user" : "irene33",
   "timestamp" : 3741,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "bob35",
+  "timestamp" : 3749,
+  "result" : [ ]
 }, {
   "command" : "getNotifications",
   "user" : "carol19",
@@ -4647,6 +4707,11 @@
   "timestamp" : 4648,
   "message" : "Successfully selected Stevie Wonder's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "alice22",
+  "timestamp" : 4648,
+  "message" : "The merch Stevie Wonder Vinyl Record doesn't exist."
+}, {
   "command" : "removeAlbum",
   "user" : "Jay-Z",
   "timestamp" : 4666,
@@ -4752,6 +4817,11 @@
   "user" : "grace25",
   "timestamp" : 4783,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "alice22",
+  "timestamp" : 4798,
+  "result" : [ ]
 }, {
   "command" : "addAlbum",
   "user" : "Jay-Z",
@@ -6510,6 +6580,11 @@
   "timestamp" : 7237,
   "message" : "Successfully selected The Beach Boys's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "irene33",
+  "timestamp" : 7237,
+  "message" : "The merch The Beach Boys Album doesn't exist."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 7261,
@@ -6621,6 +6696,11 @@
   "user" : "irene33",
   "timestamp" : 7383,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "irene33",
+  "timestamp" : 7387,
+  "result" : [ ]
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -7382,6 +7462,11 @@
   "timestamp" : 8134,
   "message" : "Successfully selected Stevie Wonder's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "jack29",
+  "timestamp" : 8134,
+  "message" : "The merch Stevie Wonder Vinyl Record doesn't exist."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 8141,
@@ -7456,6 +7541,11 @@
   "user" : "carol19",
   "timestamp" : 8197,
   "message" : "Successfully selected Imagine Dragons's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "carol19",
+  "timestamp" : 8197,
+  "message" : "carol19 has added new merch successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -7558,6 +7648,11 @@
   "timestamp" : 8263,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "seeMerch",
+  "user" : "jack29",
+  "timestamp" : 8284,
+  "result" : [ ]
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 8291,
@@ -7621,6 +7716,11 @@
   "user" : "henry26",
   "timestamp" : 8341,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "carol19",
+  "timestamp" : 8347,
+  "result" : [ "Imagine Dragons Album" ]
 }, {
   "command" : "getNotifications",
   "user" : "jack29",
@@ -24060,7 +24160,7 @@
       "mostProfitableSong" : "1983...(A Merman I Should Turn to Be)"
     },
     "ABBA" : {
-      "merchRevenue" : 0.0,
+      "merchRevenue" : 1500.0,
       "songRevenue" : 725438.36,
       "ranking" : 7,
       "mostProfitableSong" : "Knowing Me, Knowing You"
@@ -24100,6 +24200,12 @@
       "songRevenue" : 380395.34,
       "ranking" : 13,
       "mostProfitableSong" : "Reelin' And Rockin' - Single Version"
+    },
+    "Imagine Dragons" : {
+      "merchRevenue" : 7700.0,
+      "songRevenue" : 0.0,
+      "ranking" : 14,
+      "mostProfitableSong" : "N/A"
     }
   }
 } ]

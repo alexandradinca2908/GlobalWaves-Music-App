@@ -1,7 +1,5 @@
 package main.utilityclasses;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.UserInput;
 import fileio.input.SongInput;
 import fileio.input.LibraryInput;
@@ -26,7 +24,7 @@ import main.selectionclasses.playlists.PlaylistSelection;
 import main.selectionclasses.PodcastSelection;
 import main.selectionclasses.SongSelection;
 import main.likeclasses.SongLikes;
-import main.playlistclasses.UserPlaylists;
+import main.playlistclasses.UserData;
 import main.visitorpattern.visitorstring.stringclasses.VisitDeleteUser;
 import main.visitorpattern.visitorstring.stringclasses.VisitNext;
 import main.visitorpattern.visitorstring.stringclasses.VisitPrev;
@@ -409,13 +407,13 @@ public final class GetMessages {
      * This method likes or dislikes a song
      *
      * @param player The array that keeps all user players in check
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param crtCommand The like command with all its data
      * @param songsLikes The array of songs and their respective likes
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getLikeMessage(final ArrayList<ItemSelection> player,
-                                        final ArrayList<UserPlaylists> usersPlaylists,
+                                        final ArrayList<UserData> usersData,
                                         final Command crtCommand,
                                         final ArrayList<SongLikes> songsLikes,
                                         final ArrayList<Album> albums,
@@ -456,10 +454,10 @@ public final class GetMessages {
 
         } else if (isSong == 1) {
             //  The loaded source is checked. We can add/remove it from liked songs
-            UserPlaylists user = null;
+            UserData user = null;
 
             //  Find user
-            for (UserPlaylists crtUser : usersPlaylists) {
+            for (UserData crtUser : usersData) {
                 if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
                     user = crtUser;
                     break;
@@ -530,9 +528,9 @@ public final class GetMessages {
             }
 
             //  The loaded song is checked. We can add/remove it from liked songs
-            UserPlaylists user = null;
+            UserData user = null;
 
-            for (UserPlaylists crtUser : usersPlaylists) {
+            for (UserData crtUser : usersData) {
                 if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
                     user = crtUser;
                     break;
@@ -604,9 +602,9 @@ public final class GetMessages {
             }
 
             //  The loaded song is checked. We can add/remove it from liked songs
-            UserPlaylists user = null;
+            UserData user = null;
 
-            for (UserPlaylists crtUser : usersPlaylists) {
+            for (UserData crtUser : usersData) {
                 if (crtUser.getUser().getUsername().equals(crtCommand.getUsername())) {
                     user = crtUser;
                     break;
@@ -848,12 +846,12 @@ public final class GetMessages {
      *
      * @param wantedPlaylist The playlist selected by the user
      * @param crtCommand The follow command with all its data
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getFollowMessage(final Playlist wantedPlaylist,
                                           final Command crtCommand,
-                                          final ArrayList<UserPlaylists> usersPlaylists) {
+                                          final ArrayList<UserData> usersData) {
         String message;
 
         //  Begin by checking whether the user follows this playlist or not
@@ -869,7 +867,7 @@ public final class GetMessages {
 
         //  Remove playlist from user's followed playlists
         if (found == 1) {
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
                     userPlaylists.getFollowedPlaylists().remove(wantedPlaylist);
                     break;
@@ -882,7 +880,7 @@ public final class GetMessages {
             wantedPlaylist.getFollowers().add(crtCommand.getUsername());
 
             //  Add the playlist to the user's followed playlists
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
                     userPlaylists.getFollowedPlaylists().add(wantedPlaylist);
                     break;
@@ -898,20 +896,20 @@ public final class GetMessages {
     /**
      * This method switches the visibility of a playlist
      *
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param crtCommand The switchVisibility command with all its data
      * @return Based on the operation, it returns an appropriate message
      */
-    public static String getSwitchVisibilityMessage(final ArrayList<UserPlaylists> usersPlaylists,
+    public static String getSwitchVisibilityMessage(final ArrayList<UserData> usersData,
                                                     final Command crtCommand) {
         String message;
 
         //  We find the user, search through the playlists and switch the visibility
 
         //  Find user
-        UserPlaylists crtUser = null;
+        UserData crtUser = null;
 
-        for (UserPlaylists userPlaylists : usersPlaylists) {
+        for (UserData userPlaylists : usersData) {
             if (userPlaylists.getUser().getUsername().equals(crtCommand.getUsername())) {
                 crtUser = userPlaylists;
                 break;
@@ -1002,14 +1000,14 @@ public final class GetMessages {
      *
      * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param pageSystem The array of user pages
      * @param managements The array of managing technicalities for artists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddUserMessage(final Command crtCommand,
                                            final LibraryInput library,
-                                           final ArrayList<UserPlaylists> usersPlaylists,
+                                           final ArrayList<UserData> usersData,
                                            final ArrayList<Page> pageSystem,
                                            final ArrayList<Management> managements,
                                            final ArrayList<HostInfo> hostInfos,
@@ -1046,13 +1044,13 @@ public final class GetMessages {
             library.getUsers().add(newUser);
 
             //  Users' playlists
-            UserPlaylists newUserPlaylists = new UserPlaylists();
+            UserData newUserPlaylists = new UserData();
             newUserPlaylists.setUser(newUser);
-            usersPlaylists.add(newUserPlaylists);
+            usersData.add(newUserPlaylists);
 
             //  Page system
             Page newPage = new Page();
-            newPage.setUserPlaylists(newUserPlaylists);
+            newPage.setUserData(newUserPlaylists);
             newPage.setPageOwner(newUserPlaylists.getUser());
             pageSystem.add(newPage);
 
@@ -1096,13 +1094,13 @@ public final class GetMessages {
      *
      * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param albums The array of all albums in the database
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddAlbumMessage(final Command crtCommand,
                                             final LibraryInput library,
-                                            final ArrayList<UserPlaylists> usersPlaylists,
+                                            final ArrayList<UserData> usersData,
                                             final ArrayList<Album> albums,
                                             final ArrayList<SongLikes> songsLikes,
                                             final ArrayList<CreatorChannel> channels,
@@ -1135,9 +1133,9 @@ public final class GetMessages {
 
             //  Verify album name uniqueness
             //  First we find the user's playlists
-            UserPlaylists allPlaylists = null;
+            UserData allPlaylists = null;
 
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().equals(artist)) {
                     allPlaylists = userPlaylists;
                     break;
@@ -1471,7 +1469,7 @@ public final class GetMessages {
      * @param podcasts The array that keeps track of all the podcasts
      *                 when they are not loaded
      * @param playlists The array of all user playlists
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param albums The array of all albums in the database
      * @param songsLikes The array of songs and their respective likes
      * @param pageSystem Array of all the pages in the system
@@ -1481,7 +1479,7 @@ public final class GetMessages {
                                               final Command crtCommand,
                                               final ArrayList<ItemSelection> player,
                                               final ArrayList<Playlist> playlists,
-                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<UserData> usersData,
                                               final ArrayList<Album> albums,
                                               final ArrayList<SongLikes> songsLikes,
                                               final ArrayList<Page> pageSystem,
@@ -1518,7 +1516,7 @@ public final class GetMessages {
             if (crtUser.getType().equals("artist")) {
                 for (Page page : pageSystem) {
                     if (page.getCurrentPage().equals("ArtistPage")
-                            && page.getUserPlaylists().getUser().equals(crtUser)) {
+                            && page.getUserData().getUser().equals(crtUser)) {
                         used = "true";
                         break;
                     }
@@ -1526,7 +1524,7 @@ public final class GetMessages {
             } else if (crtUser.getType().equals("host")) {
                 for (Page page : pageSystem) {
                     if (page.getCurrentPage().equals("HostPage")
-                            && page.getUserPlaylists().getUser().equals(crtUser)) {
+                            && page.getUserData().getUser().equals(crtUser)) {
                         used = "true";
                         break;
                     }
@@ -1549,7 +1547,7 @@ public final class GetMessages {
                     //  Before deleting playlists we must delete follows
                     for (Playlist playlist : removables) {
                         for (String username : playlist.getFollowers()) {
-                            for (UserPlaylists user : usersPlaylists) {
+                            for (UserData user : usersData) {
                                 if (user.getUser().getUsername().equals(username)) {
                                     user.getFollowedPlaylists().remove(playlist);
                                     break;
@@ -1565,14 +1563,14 @@ public final class GetMessages {
                     }
 
                     //  Now delete the user from the database
-                    UserPlaylists deleteUserPlaylists = null;
-                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                    UserData deleteUserPlaylists = null;
+                    for (UserData userPlaylists : usersData) {
                         if (userPlaylists.getUser().equals(crtUser)) {
                             deleteUserPlaylists = userPlaylists;
                             break;
                         }
                     }
-                    usersPlaylists.remove(deleteUserPlaylists);
+                    usersData.remove(deleteUserPlaylists);
 
                     //  Delete user's page
                     for (Page page : pageSystem) {
@@ -1602,7 +1600,7 @@ public final class GetMessages {
                     for (Album album : removables) {
                         for (SongInput song : album.getSongs()) {
                             //  Delete song from users' likes
-                            for (UserPlaylists user : usersPlaylists) {
+                            for (UserData user : usersData) {
                                 if (user.getLikedSongs().contains(song)) {
                                     user.getLikedSongs().remove(song);
                                     break;
@@ -1636,14 +1634,14 @@ public final class GetMessages {
                     }
 
                     //  Now delete the user from the database
-                    UserPlaylists deleteUserPlaylists = null;
-                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                    UserData deleteUserPlaylists = null;
+                    for (UserData userPlaylists : usersData) {
                         if (userPlaylists.getUser().equals(crtUser)) {
                             deleteUserPlaylists = userPlaylists;
                             break;
                         }
                     }
-                    usersPlaylists.remove(deleteUserPlaylists);
+                    usersData.remove(deleteUserPlaylists);
 
                     //  Lastly delete the user themselves
                     library.getUsers().remove(crtUser);
@@ -1682,14 +1680,14 @@ public final class GetMessages {
                     }
 
                     //  Now delete the user from the database
-                    UserPlaylists deleteUserPlaylists = null;
-                    for (UserPlaylists userPlaylists : usersPlaylists) {
+                    UserData deleteUserPlaylists = null;
+                    for (UserData userPlaylists : usersData) {
                         if (userPlaylists.getUser().equals(crtUser)) {
                             deleteUserPlaylists = userPlaylists;
                             break;
                         }
                     }
-                    usersPlaylists.remove(deleteUserPlaylists);
+                    usersData.remove(deleteUserPlaylists);
 
                     //  Lastly delete the user themselves
                     library.getUsers().remove(crtUser);
@@ -1707,12 +1705,12 @@ public final class GetMessages {
      *
      * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddPodcastMessage(final LibraryInput library,
                                               final Command crtCommand,
-                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<UserData> usersData,
                                               final ArrayList<CreatorChannel> channels,
                                               final ArrayList<NotificationBar> notificationBars) {
         String message = null;
@@ -1742,9 +1740,9 @@ public final class GetMessages {
 
             //  Verify podcast name uniqueness
             //  First we find the user's playlists
-            UserPlaylists allPlaylists = null;
+            UserData allPlaylists = null;
 
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().equals(host)) {
                     allPlaylists = userPlaylists;
                     break;
@@ -1842,7 +1840,8 @@ public final class GetMessages {
                                                    final Command crtCommand,
                                                    final ArrayList<HostInfo> hostInfos,
                                                    final ArrayList<CreatorChannel> channels,
-                                                   final ArrayList<NotificationBar> notificationBars) {
+                                                   final ArrayList<NotificationBar>
+                                                           notificationBars) {
         String message = null;
 
         UserInput host = null;
@@ -2001,7 +2000,7 @@ public final class GetMessages {
      *
      * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param player The array that keeps all user players in check
      * @param playlists The array of all user playlists
      * @param songsLikes The array of songs and their respective likes
@@ -2010,7 +2009,7 @@ public final class GetMessages {
      */
     public static String getRemoveAlbumMessage(final LibraryInput library,
                                                final Command crtCommand,
-                                               final ArrayList<UserPlaylists> usersPlaylists,
+                                               final ArrayList<UserData> usersData,
                                                final ArrayList<ItemSelection> player,
                                                final ArrayList<Playlist> playlists,
                                                final ArrayList<SongLikes> songsLikes,
@@ -2043,9 +2042,9 @@ public final class GetMessages {
 
             //  Verify album name
             //  First we find the user's playlists
-            UserPlaylists allPlaylists = null;
+            UserData allPlaylists = null;
 
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().equals(artist)) {
                     allPlaylists = userPlaylists;
                     break;
@@ -2120,7 +2119,7 @@ public final class GetMessages {
                             if (songLikes.getSong().equals(song)) {
                                 //  If the song has at least a like
                                 //  It must be removed from users' liked songs
-                                for (UserPlaylists userPlaylists : usersPlaylists) {
+                                for (UserData userPlaylists : usersData) {
                                     userPlaylists.getLikedSongs().remove(song);
 
                                     //  From the artist's playlist also remove the album
@@ -2152,12 +2151,12 @@ public final class GetMessages {
      * This method changes the current page
      *
      * @param crtCommand The command with all its data
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param pageSystem Array of all the pages in the system
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getChangePageMessage(final Command crtCommand,
-                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<UserData> usersData,
                                               final ArrayList<Page> pageSystem) {
         String message;
 
@@ -2174,9 +2173,9 @@ public final class GetMessages {
         switch (crtCommand.getNextPage()) {
             case "Home" -> {
                 //  Finding the user's original playlists
-                for (UserPlaylists userPlaylists : usersPlaylists) {
+                for (UserData userPlaylists : usersData) {
                     if (userPlaylists.getUser().equals(crtPage.getPageOwner())) {
-                        crtPage.setUserPlaylists(userPlaylists);
+                        crtPage.setUserData(userPlaylists);
                         break;
                     }
                 }
@@ -2194,9 +2193,9 @@ public final class GetMessages {
 
             case "LikedContent" -> {
                 //  Finding the user's original playlists
-                for (UserPlaylists userPlaylists : usersPlaylists) {
+                for (UserData userPlaylists : usersData) {
                     if (userPlaylists.getUser().equals(crtPage.getPageOwner())) {
-                        crtPage.setUserPlaylists(userPlaylists);
+                        crtPage.setUserData(userPlaylists);
                         break;
                     }
                 }
@@ -2225,7 +2224,7 @@ public final class GetMessages {
      * This method removes a podcast
      *
      * @param crtCommand The command with all its data
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param player The array that keeps all user players in check
      * @param library Singleton containing all songs, users and podcasts
      * @param podcasts The array that keeps track of all the podcasts
@@ -2233,7 +2232,7 @@ public final class GetMessages {
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getRemovePodcastMessage(final Command crtCommand,
-                                                 final ArrayList<UserPlaylists> usersPlaylists,
+                                                 final ArrayList<UserData> usersData,
                                                  final ArrayList<ItemSelection> player,
                                                  final LibraryInput library,
                                                  final ArrayList<PodcastSelection> podcasts) {
@@ -2265,9 +2264,9 @@ public final class GetMessages {
 
             //  Verify podcast name
             //  First we find the user's playlists
-            UserPlaylists allPlaylists = null;
+            UserData allPlaylists = null;
 
-            for (UserPlaylists userPlaylists : usersPlaylists) {
+            for (UserData userPlaylists : usersData) {
                 if (userPlaylists.getUser().equals(host)) {
                     allPlaylists = userPlaylists;
                     break;

@@ -2,40 +2,33 @@ package main.utilityclasses.doclasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.UserInput;
-import fileio.input.SongInput;
-import fileio.input.LibraryInput;
-import fileio.input.PodcastInput;
-import fileio.input.EpisodeInput;
+import fileio.input.*;
+import main.commandhelper.Command;
+import main.commandhelper.Filters;
 import main.commandhelper.Search;
 import main.creatorclasses.artistclasses.Event;
 import main.creatorclasses.artistclasses.Management;
 import main.creatorclasses.artistclasses.Merch;
-import main.commandhelper.Command;
-import main.commandhelper.Filters;
 import main.creatorclasses.hostclasses.Announcement;
 import main.creatorclasses.hostclasses.HostInfo;
 import main.likeclasses.ArtistLikes;
+import main.likeclasses.SongLikes;
 import main.monetization.PremiumUser;
 import main.pagingclasses.Page;
 import main.playlistclasses.Album;
 import main.playlistclasses.Playlist;
-import main.playlistclasses.UserPlaylists;
-import main.selectionclasses.SongSelection;
+import main.playlistclasses.UserData;
 import main.selectionclasses.ItemSelection;
 import main.selectionclasses.PodcastSelection;
+import main.selectionclasses.SongSelection;
 import main.selectionclasses.playlists.AlbumSelection;
 import main.selectionclasses.playlists.PlaylistSelection;
-import main.likeclasses.SongLikes;
 import main.utilityclasses.Constants;
 import main.utilityclasses.GetMessages;
 import main.utilityclasses.SearchSelect;
+import main.visitorpattern.visitorstring.VisitorString;
 import main.visitorpattern.visitorstring.stringclasses.VisitRepeat;
 import main.visitorpattern.visitorstring.stringclasses.VisitShuffle;
-import main.visitorpattern.visitorstring.VisitorString;
-import main.wrappeddatabase.alluserstats.HostStatistics;
-import main.wrappeddatabase.alluserstats.UserStatistics;
-import main.wrappeddatabase.Statistics;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -313,7 +306,7 @@ public final class DoCommands {
      * @param searches The array containing all searches
      * @param library Singleton containing all songs, users and podcasts
      * @param pageSystem The pages of all user
-     * @param usersPlaylists Every playlist a user/artist/host owns
+     * @param usersData Every playlist a user/artist/host owns
      * @param managements All events and merches for every artist
      * @param hostInfos All announcements for every host
      * @return ObjectNode of the final JSON
@@ -323,7 +316,7 @@ public final class DoCommands {
                                       final ArrayList<Search> searches,
                                       final LibraryInput library,
                                       final ArrayList<Page> pageSystem,
-                                      final ArrayList<UserPlaylists> usersPlaylists,
+                                      final ArrayList<UserData> usersData,
                                       final ArrayList<Management> managements,
                                       final ArrayList<HostInfo> hostInfos) {
         //  Setting the output
@@ -400,9 +393,9 @@ public final class DoCommands {
 
             if (creator != null && crtPage != null) {
                 //  Add the creator's playlists to the current page
-                for (UserPlaylists userPlaylists : usersPlaylists) {
+                for (UserData userPlaylists : usersData) {
                     if (userPlaylists.getUser().equals(creator)) {
-                        crtPage.setUserPlaylists(userPlaylists);
+                        crtPage.setUserData(userPlaylists);
                         break;
                     }
                 }
@@ -585,56 +578,8 @@ public final class DoCommands {
 
                 //  Record the stats for wrapped
                 //  We will only record the first episode
-                EpisodeInput selectedEpisode = selectedPodcast.getPodcast()
-                        .getEpisodes().get(0);
-
-                //  User stats
-                UserStatistics crtUser = null;
-                for (UserStatistics userStatistics
-                        : Statistics.getWrappedStats().getUsersStatistics()) {
-                    if (userStatistics.getUser().getUsername()
-                            .equals(selectedPodcast.getUser())) {
-                        crtUser = userStatistics;
-                        break;
-                    }
-                }
-
-                //  First episode
-                if (crtUser.getTopEpisodes().containsKey(selectedEpisode)) {
-                    //  Increase the listen count if the song exists
-                    int count = crtUser.getTopEpisodes().get(selectedEpisode);
-                    crtUser.getTopEpisodes().put(selectedEpisode, count + 1);
-                } else {
-                    //  Add the song
-                    crtUser.getTopEpisodes().put(selectedEpisode, 1);
-                }
-
-                //  Artist stats
-                HostStatistics crtHost = null;
-                for (HostStatistics hostStatistics
-                        : Statistics.getWrappedStats().getHostsStatistics()) {
-                    if (hostStatistics.getHost().getUsername()
-                            .equals(selectedPodcast.getPodcast().getOwner())) {
-                        crtHost = hostStatistics;
-                        break;
-                    }
-                }
-
-                //  Episode
-                if (crtHost != null) {
-                    if (crtHost.getTopEpisodes().containsKey(selectedEpisode)) {
-                        //  Increase the listen count if the song exists
-                        int count = crtHost.getTopEpisodes().get(selectedEpisode);
-                        crtHost.getTopEpisodes().put(selectedEpisode, count + 1);
-                    } else {
-                        //  Add the song if it's the first time being listened to
-                        crtHost.getTopEpisodes().put(selectedEpisode, 1);
-                    }
-                    //  Listeners
-                    if (!crtHost.getListeners().contains(crtUser.getUser())) {
-                        crtHost.getListeners().add(crtUser.getUser());
-                    }
-                }
+                selectedPodcast.updateWrappedForEpisode(selectedPodcast
+                        .getPodcast().getEpisodes().get(0));
             }
 
             //  Loading the album into the database
@@ -788,14 +733,14 @@ public final class DoCommands {
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
      * @param playlists The array of all user playlists
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param library Singleton containing all songs, users and podcasts
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doCreatePlaylist(final ObjectMapper objectMapper,
                                               final Command crtCommand,
                                               final ArrayList<Playlist> playlists,
-                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<UserData> usersData,
                                               final LibraryInput library) {
         ObjectNode createPlaylistOutput = objectMapper.createObjectNode();
 
@@ -836,7 +781,7 @@ public final class DoCommands {
             //  Add playlist in general list
             playlists.add(newPlaylist);
             //  Add playlist in user's list
-            for (UserPlaylists user : usersPlaylists) {
+            for (UserData user : usersData) {
                 if (user.getUser().getUsername().equals(crtCommand.getUsername())) {
                     user.getPlaylists().add(newPlaylist);
                     break;
@@ -854,12 +799,12 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doShowPlaylists(final ObjectMapper objectMapper,
                                              final Command crtCommand,
-                                             final ArrayList<UserPlaylists> usersPlaylists) {
+                                             final ArrayList<UserData> usersData) {
         ObjectNode showPlaylistsOutput = objectMapper.createObjectNode();
 
         showPlaylistsOutput.put("command", "showPlaylists");
@@ -868,9 +813,9 @@ public final class DoCommands {
 
         ArrayList<ObjectNode> result = new ArrayList<>();
 
-        UserPlaylists user = null;
+        UserData user = null;
 
-        for (UserPlaylists userP : usersPlaylists) {
+        for (UserData userP : usersData) {
             if (userP.getUser().getUsername().equals(crtCommand.getUsername())) {
                 user = userP;
                 break;
@@ -920,12 +865,12 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doShowPreferredSongs(final ObjectMapper objectMapper,
                                                   final Command crtCommand,
-                                                  final ArrayList<UserPlaylists> usersPlaylists) {
+                                                  final ArrayList<UserData> usersData) {
         ObjectNode showPreferredSongsOutput = objectMapper.createObjectNode();
 
         showPreferredSongsOutput.put("command", "showPreferredSongs");
@@ -934,7 +879,7 @@ public final class DoCommands {
 
         ArrayList<String> songNames = new ArrayList<>();
 
-        for (UserPlaylists user : usersPlaylists) {
+        for (UserData user : usersData) {
             if (user.getUser().getUsername().equals(crtCommand.getUsername())) {
                 for (SongInput song : user.getLikedSongs()) {
                     songNames.add(song.getName());
@@ -1087,7 +1032,7 @@ public final class DoCommands {
      * @param crtCommand Current command
      * @param searches The array containing all searches
      * @param playlists The array of all user playlists
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @param library Singleton containing all songs, users and podcasts
      * @return ObjectNode of the final JSON
      */
@@ -1095,7 +1040,7 @@ public final class DoCommands {
                                       final Command crtCommand,
                                       final ArrayList<Search> searches,
                                       final ArrayList<Playlist> playlists,
-                                      final ArrayList<UserPlaylists> usersPlaylists,
+                                      final ArrayList<UserData> usersData,
                                       final LibraryInput library) {
         ObjectNode followOutput = objectMapper.createObjectNode();
 
@@ -1153,7 +1098,7 @@ public final class DoCommands {
                 //  The follow/unfollow command can be executed
             } else {
                 String message = GetMessages.getFollowMessage(wantedPlaylist,
-                        crtCommand, usersPlaylists);
+                        crtCommand, usersData);
                 followOutput.put("message", message);
             }
         }
@@ -1270,22 +1215,22 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doShowAlbums(final ObjectMapper objectMapper,
                                           final Command crtCommand,
-                                          final ArrayList<UserPlaylists> usersPlaylists) {
+                                          final ArrayList<UserData> usersData) {
         ObjectNode showAlbumsOutput = objectMapper.createObjectNode();
 
         showAlbumsOutput.put("command", "showAlbums");
         showAlbumsOutput.put("user", crtCommand.getUsername());
         showAlbumsOutput.put("timestamp", crtCommand.getTimestamp());
 
-        UserPlaylists crtUser = null;
+        UserData crtUser = null;
 
         //  Search for the user's playlists
-        for (UserPlaylists userPlaylists : usersPlaylists) {
+        for (UserData userPlaylists : usersData) {
             String username = userPlaylists.getUser().getUsername();
             if (username.equals(crtCommand.getUsername())) {
                 crtUser = userPlaylists;
@@ -1370,7 +1315,7 @@ public final class DoCommands {
             switch (crtPage.getCurrentPage()) {
                 case "Home" -> {
                     ArrayList<String> likedSongs = new ArrayList<>();
-                    ArrayList<SongInput> songs = crtPage.getUserPlaylists().getLikedSongs();
+                    ArrayList<SongInput> songs = crtPage.getUserData().getLikedSongs();
                     ArrayList<SongLikes> sortedSongs = new ArrayList<>();
 
                     //  Get first 5 liked songs
@@ -1396,7 +1341,7 @@ public final class DoCommands {
                     //  Get first 5 followed playlists
                     ArrayList<String> followedPlaylists = new ArrayList<>();
                     ArrayList<Playlist> playlistsArray =
-                            crtPage.getUserPlaylists().getFollowedPlaylists();
+                            crtPage.getUserData().getFollowedPlaylists();
 
                     playlistsArray.sort((p1, p2) ->
                             p2.getFollowers().size() - p1.getFollowers().size());
@@ -1419,7 +1364,7 @@ public final class DoCommands {
                     //  Get liked songs
                     ArrayList<String> likedSongs = new ArrayList<>();
                     ArrayList<SongInput> songs =
-                            crtPage.getUserPlaylists().getLikedSongs();
+                            crtPage.getUserData().getLikedSongs();
 
                     for (SongInput song : songs) {
                         likedSongs.add(song.getName()
@@ -1429,7 +1374,7 @@ public final class DoCommands {
                     //  Get followed playlists
                     ArrayList<String> followedPlaylists = new ArrayList<>();
                     ArrayList<Playlist> playlistsArray =
-                            crtPage.getUserPlaylists().getFollowedPlaylists();
+                            crtPage.getUserData().getFollowedPlaylists();
 
                     for (Playlist playlist : playlistsArray) {
                         followedPlaylists.add(playlist.getName()
@@ -1446,7 +1391,7 @@ public final class DoCommands {
                     //  Get albums
                     ArrayList<String> artistAlbums = new ArrayList<>();
                     ArrayList<Album> albumsArray =
-                            crtPage.getUserPlaylists().getAlbums();
+                            crtPage.getUserData().getAlbums();
 
                     for (Album album : albumsArray) {
                         artistAlbums.add(album.getName());
@@ -1489,7 +1434,7 @@ public final class DoCommands {
                     //  Get podcasts
                     ArrayList<String> hostPodcasts = new ArrayList<>();
                     ArrayList<PodcastInput> podcastArray =
-                            crtPage.getUserPlaylists().getPodcasts();
+                            crtPage.getUserData().getPodcasts();
 
                     for (PodcastInput podcast : podcastArray) {
                         String podcastString = podcast.getName() + ":\n\t[";
@@ -1581,22 +1526,22 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doShowPodcasts(final ObjectMapper objectMapper,
                                             final Command crtCommand,
-                                            final ArrayList<UserPlaylists> usersPlaylists) {
+                                            final ArrayList<UserData> usersData) {
         ObjectNode showPodcastsOutput = objectMapper.createObjectNode();
 
         showPodcastsOutput.put("command", "showPodcasts");
         showPodcastsOutput.put("user", crtCommand.getUsername());
         showPodcastsOutput.put("timestamp", crtCommand.getTimestamp());
 
-        UserPlaylists crtUser = null;
+        UserData crtUser = null;
 
         //  Search for the user's playlists
-        for (UserPlaylists userPlaylists : usersPlaylists) {
+        for (UserData userPlaylists : usersData) {
             String username = userPlaylists.getUser().getUsername();
             if (username.equals(crtCommand.getUsername())) {
                 crtUser = userPlaylists;
@@ -1681,12 +1626,12 @@ public final class DoCommands {
      *
      * @param objectMapper Object Mapper
      * @param crtCommand Current command
-     * @param usersPlaylists The array of users and their respective playlists
+     * @param usersData The array of users and their respective playlists
      * @return ObjectNode of the final JSON
      */
     public static ObjectNode doGetTop5Artists(final ObjectMapper objectMapper,
                                               final Command crtCommand,
-                                              final ArrayList<UserPlaylists> usersPlaylists) {
+                                              final ArrayList<UserData> usersData) {
         ObjectNode topAlbumsOutput = objectMapper.createObjectNode();
 
         topAlbumsOutput.put("command", "getTop5Artists");
@@ -1695,7 +1640,7 @@ public final class DoCommands {
         //  Sort the songs in a separate array and then take the first 5 results
         ArrayList<ArtistLikes> sortedArtists = new ArrayList<>();
 
-        for (UserPlaylists user : usersPlaylists) {
+        for (UserData user : usersData) {
             if (user.getUser().getType().equals("artist")) {
                 ArtistLikes newArtist = new ArtistLikes();
 

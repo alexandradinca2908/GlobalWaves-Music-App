@@ -157,7 +157,7 @@ public class ItemSelection implements VisitableString, VisitableObjectNode {
      */
     public void updateRemainingTime(final int crtTimestamp,
                                     final ArrayList<Album> albums,
-                                    final ArrayList<PremiumUser> premiumUsers) { };
+                                    final ArrayList<PremiumUser> premiumUsers) { }
 
     /**
      * This method accepts visitors for the ItemSelection subclasses

@@ -235,6 +235,11 @@
   "timestamp" : 2137,
   "message" : "Successfully selected Nothing But Thieves's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "emily30",
+  "timestamp" : 2137,
+  "message" : "The merch Nothing But Thieves Vinyl Record doesn't exist."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 2271,
@@ -245,6 +250,21 @@
   "user" : "david27",
   "timestamp" : 2271,
   "message" : "Successfully selected Whitney Houston's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "david27",
+  "timestamp" : 2271,
+  "message" : "The merch Whitney Houston Album doesn't exist."
+}, {
+  "command" : "seeMerch",
+  "user" : "emily30",
+  "timestamp" : 2287,
+  "result" : [ ]
+}, {
+  "command" : "seeMerch",
+  "user" : "david27",
+  "timestamp" : 2421,
+  "result" : [ ]
 }, {
   "command" : "addMerch",
   "user" : "Led Zeppelin",
@@ -261,6 +281,16 @@
   "user" : "grace25",
   "timestamp" : 3155,
   "message" : "Successfully selected Nothing But Thieves's page."
+}, {
+  "command" : "buyMerch",
+  "user" : "grace25",
+  "timestamp" : 3155,
+  "message" : "The merch Nothing But Thieves Vinyl Record doesn't exist."
+}, {
+  "command" : "seeMerch",
+  "user" : "grace25",
+  "timestamp" : 3305,
+  "result" : [ ]
 }, {
   "command" : "addMerch",
   "user" : "Nothing But Thieves",
@@ -288,6 +318,16 @@
   "timestamp" : 4721,
   "message" : "Successfully selected Elton John's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "jack29",
+  "timestamp" : 4721,
+  "message" : "jack29 has added new merch successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "jack29",
+  "timestamp" : 4871,
+  "result" : [ "Elton John Vinyl Record" ]
+}, {
   "command" : "addMerch",
   "user" : "Bruce Springsteen",
   "timestamp" : 6557,
@@ -309,6 +349,29 @@
   "timestamp" : 9720,
   "message" : "Successfully selected Nothing But Thieves's page."
 }, {
+  "command" : "buyMerch",
+  "user" : "alice22",
+  "timestamp" : 9720,
+  "message" : "alice22 has added new merch successfully."
+}, {
+  "command" : "seeMerch",
+  "user" : "alice22",
+  "timestamp" : 9870,
+  "result" : [ "Nothing But Thieves Vinyl Record" ]
+}, {
   "command" : "endProgram",
-  "result" : { }
+  "result" : {
+    "Nothing But Thieves" : {
+      "merchRevenue" : 2500.0,
+      "songRevenue" : 0.0,
+      "ranking" : 1,
+      "mostProfitableSong" : "N/A"
+    },
+    "Elton John" : {
+      "merchRevenue" : 1400.0,
+      "songRevenue" : 0.0,
+      "ranking" : 2,
+      "mostProfitableSong" : "N/A"
+    }
+  }
 } ]
