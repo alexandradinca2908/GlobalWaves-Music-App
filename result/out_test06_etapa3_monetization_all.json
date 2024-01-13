@@ -2673,8 +2673,8 @@
   "timestamp" : 2775,
   "result" : {
     "topAlbums" : {
-      "United" : 27,
-      "The Very Best of Marvin Gaye" : 18,
+      "United" : 28,
+      "The Very Best of Marvin Gaye" : 19,
       "What's Going On" : 18,
       "Midnight Love" : 13
     },
@@ -4186,7 +4186,7 @@
   "timestamp" : 5918,
   "result" : {
     "topAlbums" : {
-      "Celebration (Double Disc Version)" : 37,
+      "Celebration (Double Disc Version)" : 38,
       "Confessions on a Dance Floor" : 19,
       "Ray of Light" : 16,
       "Like a Prayer" : 13
@@ -6418,19 +6418,19 @@
   "timestamp" : 9221,
   "result" : {
     "topAlbums" : {
-      "Nothing But the Best (Remastered)" : 30,
+      "Nothing But the Best (Remastered)" : 32,
       "Christmas Songs by Sinatra" : 26,
       "A Jolly Christmas from Frank Sinatra" : 19,
       "Sinatra Reprise: The Very Good Years" : 14
     },
     "topSongs" : {
       "Adeste Fideles" : 7,
+      "My Kind Of Town - Remastered 2008" : 7,
       "Jingle Bells" : 6,
-      "My Kind Of Town - Remastered 2008" : 6,
       "Silent Night" : 6,
       "I'll Be Home for Christmas" : 5
     },
-    "topFans" : [ "alice22", "emily30", "jack29", "henry26", "bob35" ],
+    "topFans" : [ "alice22", "henry26", "emily30", "jack29", "bob35" ],
     "listeners" : 10
   }
 }, {
@@ -6684,7 +6684,7 @@
   "timestamp" : 9635,
   "result" : {
     "topAlbums" : {
-      "Soul Queen" : 77,
+      "Soul Queen" : 78,
       "I Never Loved a Man the Way I Love You" : 12,
       "Aretha Now" : 6,
       "Respect" : 2
@@ -8147,14 +8147,14 @@
   "result" : {
     "topArtists" : {
       "Jimi Hendrix" : 19,
-      "Marvin Gaye" : 12,
+      "Marvin Gaye" : 13,
       "Fleetwood Mac" : 10,
       "Aretha Franklin" : 9,
       "Bruce Springsteen" : 7
     },
     "topGenres" : {
       "classic rock" : 25,
-      "soul" : 22,
+      "soul" : 23,
       "rock" : 13,
       "jazz" : 7,
       "70s" : 6
@@ -8168,7 +8168,7 @@
     },
     "topAlbums" : {
       "Experience Hendrix: The Best of Jimi Hendrix" : 12,
-      "United" : 9,
+      "United" : 10,
       "I Never Loved a Man the Way I Love You" : 7,
       "Are You Experienced?" : 6,
       "The Essential Bruce Springsteen" : 6
@@ -8836,10 +8836,10 @@
   "timestamp" : 13709,
   "result" : {
     "topAlbums" : {
-      "The Essential Bruce Springsteen" : 44,
+      "The Essential Bruce Springsteen" : 45,
       "Greatest Hits" : 20,
       "Born to Run" : 16,
-      "Born in the U.S.A." : 13
+      "Born in the U.S.A." : 14
     },
     "topSongs" : {
       "Thunder Road" : 6,
@@ -9826,31 +9826,31 @@
   "timestamp" : 15317,
   "result" : {
     "topArtists" : {
-      "Jimi Hendrix" : 20,
+      "Jimi Hendrix" : 22,
       "Bob Marley" : 17,
       "Joni Mitchell" : 13,
-      "Bruce Springsteen" : 11,
+      "Bruce Springsteen" : 12,
       "Fleetwood Mac" : 7
     },
     "topGenres" : {
-      "classic rock" : 21,
-      "rock" : 19,
+      "classic rock" : 23,
+      "rock" : 20,
       "reggae" : 17,
       "soul" : 14,
       "1974" : 12
     },
     "topSongs" : {
       "Angel" : 2,
+      "Darlington County" : 2,
       "Foxy Lady" : 2,
       "Free Man in Paris" : 2,
-      "Have You Ever Been (To Electric Ladyland)" : 2,
-      "Kinky Reggae [feat. The Marley Brothers & Ghetto Youths Crew]" : 2
+      "Have You Ever Been (To Electric Ladyland)" : 2
     },
     "topAlbums" : {
+      "Electric Ladyland" : 17,
       "Chant Down Babylon" : 15,
-      "Electric Ladyland" : 15,
       "Court and Spark" : 12,
-      "Born in the U.S.A." : 7,
+      "Born in the U.S.A." : 8,
       "Greatest Hits" : 4
     },
     "topEpisodes" : { }
@@ -10559,15 +10559,15 @@
   "timestamp" : 16388,
   "result" : {
     "topArtists" : {
-      "The Beatles" : 22,
+      "The Beatles" : 23,
       "Stevie Wonder" : 17,
       "Led Zeppelin" : 9,
       "Joni Mitchell" : 8,
       "Aretha Franklin" : 7
     },
     "topGenres" : {
+      "rock" : 31,
       "soul" : 31,
-      "rock" : 30,
       "classic rock" : 7,
       "hard rock" : 7,
       "folk" : 6
@@ -10580,7 +10580,7 @@
       "Jungleland" : 2
     },
     "topAlbums" : {
-      "1 (Remastered)" : 19,
+      "1 (Remastered)" : 20,
       "Songs in the Key of Life" : 14,
       "Led Zeppelin II" : 7,
       "Soul Queen" : 5,
@@ -11015,7 +11015,7 @@
   "timestamp" : 17287,
   "result" : {
     "topAlbums" : {
-      "Led Zeppelin IV (Deluxe Edition)" : 51,
+      "Led Zeppelin IV (Deluxe Edition)" : 54,
       "Led Zeppelin" : 17,
       "Led Zeppelin II" : 15
     },
@@ -11273,7 +11273,7 @@
   "result" : {
     "topAlbums" : {
       "Are You Experienced?" : 33,
-      "Electric Ladyland" : 29,
+      "Electric Ladyland" : 31,
       "Experience Hendrix: The Best of Jimi Hendrix" : 20,
       "Are You Experienced" : 3
     },
@@ -11325,18 +11325,18 @@
   "timestamp" : 17949,
   "result" : {
     "topArtists" : {
-      "Madonna" : 18,
-      "Frank Sinatra" : 13,
+      "Madonna" : 19,
+      "Frank Sinatra" : 15,
       "Joni Mitchell" : 10,
       "The Beatles" : 10,
       "Marvin Gaye" : 7
     },
     "topGenres" : {
+      "pop" : 19,
       "soul" : 19,
-      "pop" : 18,
+      "jazz" : 15,
       "rock" : 14,
-      "folk" : 13,
-      "jazz" : 13
+      "folk" : 13
     },
     "topSongs" : {
       "You've Got What It Takes" : 3,
@@ -11346,8 +11346,8 @@
       "4 Minutes - feat. Justin Timberlake and Timbaland" : 1
     },
     "topAlbums" : {
-      "Celebration (Double Disc Version)" : 17,
-      "Nothing But the Best (Remastered)" : 12,
+      "Celebration (Double Disc Version)" : 18,
+      "Nothing But the Best (Remastered)" : 14,
       "Ladies of the Canyon" : 8,
       "Abbey Road (Remastered)" : 6,
       "The Definitive Collection" : 6
@@ -11472,14 +11472,14 @@
   "timestamp" : 20668,
   "result" : {
     "topArtists" : {
-      "Aretha Franklin" : 39,
+      "Aretha Franklin" : 40,
       "Bob Marley" : 20,
       "Bruce Springsteen" : 14,
       "Frank Sinatra" : 10,
       "Led Zeppelin" : 10
     },
     "topGenres" : {
-      "soul" : 46,
+      "soul" : 47,
       "rock" : 22,
       "reggae" : 20,
       "jazz" : 12,
@@ -11493,7 +11493,7 @@
       "Jingle Bells" : 2
     },
     "topAlbums" : {
-      "Soul Queen" : 38,
+      "Soul Queen" : 39,
       "Natural Mystic" : 15,
       "Greatest Hits" : 11,
       "Led Zeppelin IV (Deluxe Edition)" : 8,
@@ -11828,12 +11828,12 @@
     "topArtists" : {
       "Bob Dylan" : 25,
       "Bob Marley" : 18,
-      "Marvin Gaye" : 16,
+      "Marvin Gaye" : 17,
       "Stevie Wonder" : 15,
-      "Bruce Springsteen" : 12
+      "Led Zeppelin" : 13
     },
     "topGenres" : {
-      "soul" : 36,
+      "soul" : 37,
       "reggae" : 18,
       "classic rock" : 17,
       "folk" : 16,
@@ -11849,7 +11849,7 @@
     "topAlbums" : {
       "One Love Peace Concert" : 15,
       "The Freewheelin' Bob Dylan" : 14,
-      "The Very Best of Marvin Gaye" : 12,
+      "The Very Best of Marvin Gaye" : 13,
       "Bringing It All Back Home" : 11,
       "Innervisions" : 11
     },
@@ -12208,7 +12208,7 @@
   "result" : {
     "topAlbums" : {
       "The Beatles (Remastered)" : 46,
-      "1 (Remastered)" : 34,
+      "1 (Remastered)" : 35,
       "Abbey Road (Remastered)" : 22
     },
     "topSongs" : {
@@ -12313,13 +12313,13 @@
   "result" : {
     "topArtists" : {
       "The Beatles" : 34,
-      "Bruce Springsteen" : 25,
+      "Bruce Springsteen" : 26,
       "Stevie Wonder" : 18,
       "Bob Dylan" : 11,
       "Fleetwood Mac" : 11
     },
     "topGenres" : {
-      "rock" : 60,
+      "rock" : 61,
       "soul" : 31,
       "folk" : 12,
       "pop" : 11,
@@ -12334,7 +12334,7 @@
     },
     "topAlbums" : {
       "The Beatles (Remastered)" : 31,
-      "The Essential Bruce Springsteen" : 20,
+      "The Essential Bruce Springsteen" : 21,
       "The Definitive Collection" : 14,
       "Fleetwood Mac" : 8,
       "Like a Prayer" : 7
@@ -12495,14 +12495,14 @@
   "result" : {
     "topArtists" : {
       "Fleetwood Mac" : 33,
-      "Led Zeppelin" : 27,
+      "Led Zeppelin" : 29,
       "Frank Sinatra" : 16,
       "Aretha Franklin" : 13,
       "Madonna" : 11
     },
     "topGenres" : {
+      "70s" : 29,
       "justice for silver springs" : 29,
-      "70s" : 27,
       "soul" : 25,
       "christmas" : 14,
       "rock" : 12
@@ -12516,7 +12516,7 @@
     },
     "topAlbums" : {
       "Rumours (Super Deluxe)" : 29,
-      "Led Zeppelin IV (Deluxe Edition)" : 24,
+      "Led Zeppelin IV (Deluxe Edition)" : 26,
       "A Jolly Christmas from Frank Sinatra" : 12,
       "Soul Queen" : 8,
       "Confessions on a Dance Floor" : 6
@@ -12528,81 +12528,81 @@
   "result" : {
     "The Beatles" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1220756.4,
+      "songRevenue" : 1228053.13,
       "ranking" : 1,
       "mostProfitableSong" : "Because - Remastered 2009"
     },
     "Bob Marley" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1166623.61,
+      "songRevenue" : 1157004.67,
       "ranking" : 2,
       "mostProfitableSong" : "400 Years"
     },
     "Jimi Hendrix" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1085551.01,
+      "songRevenue" : 1107089.89,
       "ranking" : 3,
       "mostProfitableSong" : "Foxy Lady"
     },
     "Madonna" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1043270.87,
+      "songRevenue" : 1044279.72,
       "ranking" : 4,
-      "mostProfitableSong" : "Hung Up"
+      "mostProfitableSong" : "Express Yourself"
     },
     "Fleetwood Mac" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 856679.94,
+      "songRevenue" : 851034.31,
       "ranking" : 5,
-      "mostProfitableSong" : "Never Going Back"
+      "mostProfitableSong" : "Gold Dust Woman"
     },
     "Frank Sinatra" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 819676.42,
+      "songRevenue" : 838632.95,
       "ranking" : 6,
       "mostProfitableSong" : "Silent Night"
     },
     "Marvin Gaye" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 802413.82,
+      "songRevenue" : 797662.69,
       "ranking" : 7,
-      "mostProfitableSong" : "You've Got What It Takes"
+      "mostProfitableSong" : "God Is Love"
     },
     "Bob Dylan" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 760512.51,
+      "songRevenue" : 758292.76,
       "ranking" : 8,
       "mostProfitableSong" : "Corrina, Corrina"
     },
     "Aretha Franklin" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 649132.15,
+      "songRevenue" : 643366.86,
       "ranking" : 9,
-      "mostProfitableSong" : "Respect"
+      "mostProfitableSong" : "Dr. Feelgood (Love Is a Serious Business)"
     },
     "Joni Mitchell" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 532675.2,
+      "songRevenue" : 524701.8,
       "ranking" : 10,
-      "mostProfitableSong" : "For Free"
+      "mostProfitableSong" : "Ladies of the Canyon"
     },
     "Led Zeppelin" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 431406.19,
+      "songRevenue" : 426532.18,
       "ranking" : 11,
-      "mostProfitableSong" : "Thank You"
+      "mostProfitableSong" : "Misty Mountain Hop"
     },
     "Stevie Wonder" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 372312.41,
+      "songRevenue" : 367095.07,
       "ranking" : 12,
-      "mostProfitableSong" : "All Day Sucker"
+      "mostProfitableSong" : "Signed, Sealed, Delivered (I'm Yours)"
     },
     "Bruce Springsteen" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 258989.47,
+      "songRevenue" : 256253.97,
       "ranking" : 13,
-      "mostProfitableSong" : "Thunder Road"
+      "mostProfitableSong" : "No Surrender"
     }
   }
 } ]

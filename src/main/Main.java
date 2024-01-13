@@ -15,6 +15,8 @@ import main.commandhelper.Command;
 import main.commandhelper.Search;
 import main.creatorclasses.artistclasses.Management;
 import main.creatorclasses.hostclasses.HostInfo;
+import main.creatorclasses.subscription.CreatorChannel;
+import main.creatorclasses.subscription.NotificationBar;
 import main.monetization.ArtistRevenue;
 import main.monetization.PremiumUser;
 import main.pagingclasses.Page;
@@ -229,6 +231,23 @@ public final class Main {
         ArrayList<PremiumUser> premiumUsers = new ArrayList<>();
         ArrayList<PremiumUser> cancelledPremiumUsers = new ArrayList<>();
 
+        //  Creating channel-subscribers dynamic
+        ArrayList<CreatorChannel> channels = new ArrayList<>();
+        for (UserInput user : library.getUsers()) {
+            CreatorChannel newCreator = new CreatorChannel();
+            newCreator.setCreator(user);
+
+            channels.add(newCreator);
+        }
+
+        ArrayList<NotificationBar> notificationBars = new ArrayList<>();
+        for (UserInput user : library.getUsers()) {
+            NotificationBar newBar = new NotificationBar();
+            newBar.setSubscriber(user.getUsername());
+
+            notificationBars.add(newBar);
+        }
+
         //  IMPORTANT VARIABLES DECLARATION ENDS HERE
         System.out.println(filePathInput);
         //  Parsing commands
@@ -423,7 +442,8 @@ public final class Main {
                     ObjectNode addUserOutput;
                     addUserOutput = doAddUser(objectMapper,
                             crtCommand, library, usersPlaylists,
-                            pageSystem, managements, hostInfos);
+                            pageSystem, managements, hostInfos,
+                            channels, notificationBars);
 
                     outputs.add(addUserOutput);
                 }
@@ -431,7 +451,8 @@ public final class Main {
                 case "addAlbum" -> {
                     ObjectNode addUserOutput;
                     addUserOutput = doAddAlbum(objectMapper, crtCommand,
-                            library, usersPlaylists, albums, songsLikes);
+                            library, usersPlaylists, albums, songsLikes,
+                            channels, notificationBars);
 
                     outputs.add(addUserOutput);
                 }
@@ -455,7 +476,7 @@ public final class Main {
                 case "addEvent" -> {
                     ObjectNode addEventOutput;
                     addEventOutput = doAddEvent(objectMapper, library,
-                            crtCommand, managements);
+                            crtCommand, managements, channels, notificationBars);
 
                     outputs.add(addEventOutput);
                 }
@@ -463,7 +484,7 @@ public final class Main {
                 case "addMerch" -> {
                     ObjectNode addMerchOutput;
                     addMerchOutput = doAddMerch(objectMapper, library,
-                            crtCommand, managements);
+                            crtCommand, managements, channels, notificationBars);
 
                     outputs.add(addMerchOutput);
                 }
@@ -487,7 +508,7 @@ public final class Main {
                 case "addPodcast" -> {
                     ObjectNode addPodcastOutput;
                     addPodcastOutput =  doAddPodcast(objectMapper, crtCommand,
-                            library, usersPlaylists);
+                            library, usersPlaylists, channels, notificationBars);
 
                     outputs.add(addPodcastOutput);
                 }
@@ -495,7 +516,7 @@ public final class Main {
                 case "addAnnouncement" -> {
                     ObjectNode addAnnouncementOutput;
                     addAnnouncementOutput = doAddAnnouncement(objectMapper,
-                            crtCommand, library, hostInfos);
+                            crtCommand, library, hostInfos, channels, notificationBars);
 
                     outputs.add(addAnnouncementOutput);
                 }
@@ -944,12 +965,101 @@ public final class Main {
                     outputs.add(cancelPremiumOutput);
                 }
 
+                case "subscribe" -> {
+                    ObjectNode subscribeOutput = objectMapper.createObjectNode();
+
+                    subscribeOutput.put("command", "subscribe");
+                    subscribeOutput.put("user", crtCommand.getUsername());
+                    subscribeOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    //  Find the user's page
+                    Page crtPage = null;
+                    for (Page page : pageSystem) {
+                        if (page.getPageOwner().getUsername()
+                                .equals(crtCommand.getUsername())) {
+                            crtPage = page;
+                            break;
+                        }
+                    }
+
+                    String message = null;
+                    if (crtPage == null) {
+                        message = "The username " + crtCommand.getUsername()
+                                + " doesn't exist.";
+                    } else if (!crtPage.getCurrentPage().equals("ArtistPage")
+                            && !crtPage.getCurrentPage().equals("HostPage")) {
+                        message = "To subscribe you need to be on the page of"
+                                + "an artist or host.";
+                    } else {
+                        UserInput creator = crtPage.getUserPlaylists().getUser();
+
+                        //  Add subscriber to creator channel
+                        for (CreatorChannel channel : channels) {
+                            if (channel.getCreator().equals(creator)) {
+                                //  Find subscriber
+                                if (channel.getSubscribers()
+                                        .contains(crtCommand.getUsername())) {
+                                    channel.getSubscribers().remove(crtCommand.getUsername());
+                                    message = crtCommand.getUsername() + " unsubscribed from "
+                                            + channel.getCreator().getUsername()
+                                            + " successfully.";
+                                } else {
+                                    channel.getSubscribers().add(crtCommand.getUsername());
+                                    message = crtCommand.getUsername() + " subscribed to "
+                                            + channel.getCreator().getUsername()
+                                            + " successfully.";
+                                }
+                                break;
+                            }
+                        }
+                    }
+
+                    subscribeOutput.put("message", message);
+                    outputs.add(subscribeOutput);
+                }
+
+                case "getNotifications" -> {
+                    ObjectNode getNotificationsOutput = objectMapper.createObjectNode();
+
+                    getNotificationsOutput.put("command", "getNotifications");
+                    getNotificationsOutput.put("user", crtCommand.getUsername());
+                    getNotificationsOutput.put("timestamp", crtCommand.getTimestamp());
+
+                    ArrayList<ObjectNode> notifications = new ArrayList<>();
+
+                    //  Find user notifications
+                    NotificationBar crtBar = null;
+                    for (NotificationBar bar : notificationBars) {
+                        if (bar.getSubscriber().equals(crtCommand.getUsername())) {
+                            crtBar = bar;
+                            break;
+                        }
+                    }
+
+                    //  Add notifications to display
+                    for (String notification : crtBar.getNotifications()) {
+                        ObjectNode node = objectMapper.createObjectNode();
+                        String[] info = notification.split("/");
+
+                        node.put("name", "New " + info[0]);
+                        node.put("description", "New " + info[0] + " from " + info[1] + ".");
+
+                        notifications.add(node);
+                    }
+
+                    //  Clear notifications
+                    crtBar.getNotifications().clear();
+
+                    getNotificationsOutput.putPOJO("notifications", notifications);
+                    outputs.add(getNotificationsOutput);
+                }
+
                 default -> {
                 }
             }
         }
 
-        //  End of program stats
+        //  End of program behaviour
         ObjectNode endProgramOutput = objectMapper.createObjectNode();
         endProgramOutput.put("command", "endProgram");
 
@@ -965,22 +1075,22 @@ public final class Main {
 
         //  For each artist, create a revenue entity
         for (String artist : artistNames) {
-            double songRevenue = 0.0;
+            double songRevenue;
             double merchRevenue = 0.0;
             String mostProfitableSong = null;
-            HashMap<String, Integer> streamedSongs = new HashMap<>();
+            HashMap<String, Double> songsAndRevenues = new HashMap<>();
 
             //  Check for all streamed songs among premium users
             songRevenue = calculateSongRevenue(premiumUsers,
-                    artist, streamedSongs);
+                    artist, songsAndRevenues);
             //  Check for all streamed songs among cancelled premium users
             songRevenue += calculateSongRevenue(cancelledPremiumUsers,
-                    artist, streamedSongs);
+                    artist, songsAndRevenues);
 
-            int maxStreams = 0;
-            for (Map.Entry<String, Integer> element : streamedSongs.entrySet()) {
-                if (element.getValue() >= maxStreams) {
-                    maxStreams = element.getValue();
+            double maxRevenue = 0;
+            for (Map.Entry<String, Double> element : songsAndRevenues.entrySet()) {
+                if (element.getValue() > maxRevenue) {
+                    maxRevenue = element.getValue();
                     mostProfitableSong = element.getKey();
                 }
             }
@@ -1012,7 +1122,7 @@ public final class Main {
         artistRevenues.sort((o1, o2) -> {
             if (o1.getSongRevenue() + o1.getMerchRevenue()
                     == o2.getSongRevenue() + o2.getMerchRevenue()) {
-                return o2.getArtist().compareTo(o1.getArtist());
+                return o1.getArtist().compareTo(o2.getArtist());
             }
             return Double.compare(o2.getSongRevenue() + o2.getMerchRevenue(),
                     o1.getSongRevenue() + o1.getMerchRevenue());
@@ -1109,15 +1219,17 @@ public final class Main {
      *
      * @param premiumUsers Premium Users
      * @param artist Crt artist
-     * @param streamedSongs All the artist's streamed songs
+     * @param songsAndRevenues All the artist's streamed songs with their revenues
      * @return Song Revenue
      */
     public static double calculateSongRevenue(final ArrayList<PremiumUser> premiumUsers,
                                               final String artist,
-                                              final HashMap<String, Integer> streamedSongs) {
-        double songRevenue = 0;
+                                              final HashMap<String, Double> songsAndRevenues) {
+        double songRevenue;
+        double totalRevenue = 0;
 
         for (PremiumUser user : premiumUsers) {
+            HashMap<String, Integer> streamedSongs = new HashMap<>();
             int allSongs = user.getPlayedSongs().size();
             int artistSongs = 0;
 
@@ -1134,10 +1246,25 @@ public final class Main {
                     }
                 }
             }
-            songRevenue += Constants.SUBSCRIPTION_PRICE / allSongs * artistSongs;
+            totalRevenue += Constants.SUBSCRIPTION_PRICE / allSongs * artistSongs;
+            songRevenue = Constants.SUBSCRIPTION_PRICE / allSongs;
+
+            //  Calculate revenue per song
+            for (Map.Entry<String, Integer> songStreams : streamedSongs.entrySet()) {
+                double crtRevenue = songRevenue * songStreams.getValue();
+
+                if (songsAndRevenues.containsKey(songStreams.getKey())) {
+                    //  Increase the revenue count if the song exists
+                    double newRevenue = songsAndRevenues.get(songStreams.getKey()) + crtRevenue;
+                    songsAndRevenues.put(songStreams.getKey(), newRevenue);
+                } else {
+                    //  Add the song if it's the first encounter
+                    songsAndRevenues.put(songStreams.getKey(), crtRevenue);
+                }
+            }
         }
 
-        return songRevenue;
+        return totalRevenue;
     }
 }
 

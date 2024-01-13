@@ -649,6 +649,11 @@
   "timestamp" : 10,
   "message" : "Successfully selected Eminem's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 10,
+  "message" : "alice22 subscribed to Eminem successfully."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 20,
@@ -691,6 +696,11 @@
   "user" : "bob35",
   "timestamp" : 98,
   "message" : "Successfully selected Marvin Gaye's page."
+}, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 98,
+  "message" : "bob35 subscribed to Marvin Gaye successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -799,6 +809,11 @@
   "timestamp" : 167,
   "message" : "Successfully selected Adele's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 167,
+  "message" : "henry26 subscribed to Adele successfully."
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 171,
@@ -889,6 +904,11 @@
   "user" : "irene33",
   "timestamp" : 252,
   "message" : "Successfully selected Jay-Z's page."
+}, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 252,
+  "message" : "irene33 subscribed to Jay-Z successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -1008,6 +1028,11 @@
   "timestamp" : 338,
   "message" : "Successfully selected Madonna's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 338,
+  "message" : "henry26 subscribed to Madonna successfully."
+}, {
   "command" : "buyPremium",
   "user" : "henry26",
   "timestamp" : 341,
@@ -1056,6 +1081,11 @@
   "timestamp" : 361,
   "message" : "Successfully selected Dire Straits's page."
 }, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 361,
+  "message" : "irene33 subscribed to Dire Straits successfully."
+}, {
   "command" : "cancelPremium",
   "user" : "jack29",
   "timestamp" : 367,
@@ -1087,6 +1117,11 @@
   "user" : "emily30",
   "timestamp" : 380,
   "message" : "Successfully selected Michael Jackson's page."
+}, {
+  "command" : "subscribe",
+  "user" : "emily30",
+  "timestamp" : 380,
+  "message" : "emily30 subscribed to Michael Jackson successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -1146,6 +1181,11 @@
   "user" : "carol19",
   "timestamp" : 403,
   "message" : "Successfully selected David Bowie's page."
+}, {
+  "command" : "subscribe",
+  "user" : "carol19",
+  "timestamp" : 403,
+  "message" : "carol19 subscribed to David Bowie successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1291,6 +1331,11 @@
   "timestamp" : 495,
   "message" : "Successfully selected Stevie Wonder's page."
 }, {
+  "command" : "subscribe",
+  "user" : "emily30",
+  "timestamp" : 495,
+  "message" : "emily30 subscribed to Stevie Wonder successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 506,
@@ -1317,6 +1362,11 @@
   "user" : "david27",
   "timestamp" : 537,
   "message" : "Successfully selected The Beatles's page."
+}, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 537,
+  "message" : "david27 subscribed to The Beatles successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1393,6 +1443,11 @@
   "timestamp" : 582,
   "message" : "Successfully selected Imagine Dragons's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 582,
+  "message" : "henry26 subscribed to Imagine Dragons successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 589,
@@ -1452,6 +1507,11 @@
   "timestamp" : 649,
   "message" : "Successfully selected Chuck Berry's page."
 }, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 649,
+  "message" : "bob35 subscribed to Chuck Berry successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 674,
@@ -1495,6 +1555,11 @@
   "timestamp" : 679,
   "message" : "Successfully selected Led Zeppelin's page."
 }, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 679,
+  "message" : "bob35 subscribed to Led Zeppelin successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 697,
@@ -1521,6 +1586,11 @@
   "user" : "alice22",
   "timestamp" : 726,
   "message" : "Successfully selected Bob Dylan's page."
+}, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 726,
+  "message" : "alice22 subscribed to Bob Dylan successfully."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -1581,6 +1651,11 @@
   "timestamp" : 784,
   "message" : "Successfully selected Prince's page."
 }, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 784,
+  "message" : "irene33 subscribed to Prince successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 813,
@@ -1640,6 +1715,11 @@
   "timestamp" : 879,
   "message" : "Successfully selected Prince's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 879,
+  "message" : "alice22 subscribed to Prince successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 883,
@@ -1666,6 +1746,11 @@
   "user" : "bob35",
   "timestamp" : 899,
   "message" : "Successfully selected Bruce Springsteen's page."
+}, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 899,
+  "message" : "bob35 subscribed to Bruce Springsteen successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -1747,6 +1832,11 @@
   "timestamp" : 998,
   "message" : "Successfully selected David Bowie's page."
 }, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 998,
+  "message" : "jack29 subscribed to David Bowie successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 1026,
@@ -1806,6 +1896,11 @@
   "timestamp" : 1066,
   "message" : "Successfully selected Queen's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 1066,
+  "message" : "alice22 subscribed to Queen successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1073,
@@ -1849,6 +1944,11 @@
   "timestamp" : 1096,
   "message" : "Successfully selected U2's page."
 }, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 1096,
+  "message" : "irene33 subscribed to U2 successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1128,
@@ -1859,6 +1959,11 @@
   "user" : "bob35",
   "timestamp" : 1128,
   "message" : "Successfully selected Queen's page."
+}, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 1128,
+  "message" : "bob35 subscribed to Queen successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1973,6 +2078,11 @@
   "timestamp" : 1203,
   "message" : "Successfully selected Aretha Franklin's page."
 }, {
+  "command" : "subscribe",
+  "user" : "grace25",
+  "timestamp" : 1203,
+  "message" : "grace25 subscribed to Aretha Franklin successfully."
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 1250,
@@ -1999,6 +2109,11 @@
   "user" : "jack29",
   "timestamp" : 1277,
   "message" : "Successfully selected Nothing But Thieves's page."
+}, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 1277,
+  "message" : "jack29 subscribed to Nothing But Thieves successfully."
 }, {
   "command" : "buyPremium",
   "user" : "carol19",
@@ -2064,6 +2179,11 @@
   "timestamp" : 1340,
   "message" : "Successfully selected Bruce Springsteen's page."
 }, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 1340,
+  "message" : "jack29 subscribed to Bruce Springsteen successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 1353,
@@ -2106,6 +2226,11 @@
   "user" : "jack29",
   "timestamp" : 1373,
   "message" : "Successfully selected Madonna's page."
+}, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 1373,
+  "message" : "jack29 subscribed to Madonna successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -2214,6 +2339,11 @@
   "timestamp" : 1450,
   "message" : "Successfully selected The Who's page."
 }, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 1450,
+  "message" : "bob35 subscribed to The Who successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 1486,
@@ -2256,6 +2386,11 @@
   "user" : "irene33",
   "timestamp" : 1502,
   "message" : "Successfully selected Pink Floyd's page."
+}, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 1502,
+  "message" : "irene33 subscribed to Pink Floyd successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -2331,6 +2466,11 @@
   "user" : "grace25",
   "timestamp" : 1574,
   "message" : "Successfully selected Stevie Wonder's page."
+}, {
+  "command" : "subscribe",
+  "user" : "grace25",
+  "timestamp" : 1574,
+  "message" : "grace25 subscribed to Stevie Wonder successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -2460,6 +2600,11 @@
   "timestamp" : 1661,
   "message" : "Successfully selected The Beach Boys's page."
 }, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 1661,
+  "message" : "david27 subscribed to The Beach Boys successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 1667,
@@ -2486,6 +2631,11 @@
   "user" : "david27",
   "timestamp" : 1700,
   "message" : "Successfully selected Aretha Franklin's page."
+}, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 1700,
+  "message" : "david27 subscribed to Aretha Franklin successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -3569,7 +3719,7 @@
   "command" : "removeAlbum",
   "user" : "Stevie Wonder",
   "timestamp" : 2580,
-  "message" : "Stevie Wonder  deleted the album successfully."
+  "message" : "Stevie Wonder deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -3888,7 +4038,7 @@
   "command" : "removeAlbum",
   "user" : "Adele",
   "timestamp" : 2778,
-  "message" : "Adele  deleted the album successfully."
+  "message" : "Adele deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -4593,7 +4743,7 @@
   "command" : "removeAlbum",
   "user" : "Queen",
   "timestamp" : 3445,
-  "message" : "Queen  deleted the album successfully."
+  "message" : "Queen deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -4876,6 +5026,11 @@
   "timestamp" : 3934,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "frank21",
+  "timestamp" : 3936,
+  "notifications" : [ ]
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 4007,
@@ -4959,7 +5114,7 @@
   "command" : "removeAlbum",
   "user" : "Stevie Wonder",
   "timestamp" : 4142,
-  "message" : "Stevie Wonder  deleted the album successfully."
+  "message" : "Stevie Wonder deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -5097,7 +5252,7 @@
   "command" : "removeAlbum",
   "user" : "The Beatles",
   "timestamp" : 4334,
-  "message" : "The Beatles  deleted the album successfully."
+  "message" : "The Beatles deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -5800,6 +5955,23 @@
   "timestamp" : 5134,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "grace25",
+  "timestamp" : 5149,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from Stevie Wonder."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Aretha Franklin."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Stevie Wonder."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Stevie Wonder."
+  } ]
+}, {
   "command" : "buyPremium",
   "user" : "irene33",
   "timestamp" : 5183,
@@ -5917,7 +6089,7 @@
   "result" : {
     "topAlbums" : {
       "Blue" : 33,
-      "Ladies of the Canyon" : 30,
+      "Ladies of the Canyon" : 31,
       "Court and Spark" : 27,
       "Both Sides Now" : 26
     },
@@ -6005,6 +6177,38 @@
   "user" : "emily30",
   "timestamp" : 5363,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "bob35",
+  "timestamp" : 5370,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Led Zeppelin."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Queen."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Queen."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Queen."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Queen."
+  }, {
+    "name" : "New Event",
+    "description" : "New Event from Bruce Springsteen."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Marvin Gaye."
+  }, {
+    "name" : "New Event",
+    "description" : "New Event from The Who."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Chuck Berry."
+  } ]
 }, {
   "command" : "buyPremium",
   "user" : "carol19",
@@ -6360,7 +6564,7 @@
   "command" : "removeAlbum",
   "user" : "Prince",
   "timestamp" : 5768,
-  "message" : "Prince  deleted the album successfully."
+  "message" : "Prince deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -6739,6 +6943,14 @@
   "timestamp" : 6102,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "henry26",
+  "timestamp" : 6104,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from Adele."
+  } ]
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 6110,
@@ -6786,6 +6998,14 @@
   "user" : "irene33",
   "timestamp" : 6150,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "grace25",
+  "timestamp" : 6163,
+  "notifications" : [ {
+    "name" : "New Event",
+    "description" : "New Event from Stevie Wonder."
+  } ]
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -6992,7 +7212,7 @@
   "command" : "removeAlbum",
   "user" : "The Beach Boys",
   "timestamp" : 6306,
-  "message" : "The Beach Boys  deleted the album successfully."
+  "message" : "The Beach Boys deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -7660,8 +7880,8 @@
     "topAlbums" : {
       "ABBA Gold" : 52,
       "Arrival" : 35,
-      "Super Trouper" : 18,
-      "Voulez-Vous" : 18
+      "Voulez-Vous" : 19,
+      "Super Trouper" : 18
     },
     "topSongs" : {
       "Dancing Queen" : 8,
@@ -7670,7 +7890,7 @@
       "Voulez-Vous" : 6,
       "Knowing Me, Knowing You" : 5
     },
-    "topFans" : [ "carol19", "jack29", "henry26", "david27", "emily30" ],
+    "topFans" : [ "carol19", "jack29", "emily30", "henry26", "david27" ],
     "listeners" : 10
   }
 }, {
@@ -7821,7 +8041,7 @@
   "command" : "removeAlbum",
   "user" : "Stevie Wonder",
   "timestamp" : 6991,
-  "message" : "Stevie Wonder  deleted the album successfully."
+  "message" : "Stevie Wonder deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -8339,6 +8559,32 @@
   "timestamp" : 7417,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "david27",
+  "timestamp" : 7438,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from The Beatles."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Aretha Franklin."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from The Beatles."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from The Beach Boys."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from The Beach Boys."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Aretha Franklin."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Aretha Franklin."
+  } ]
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 7451,
@@ -8830,7 +9076,7 @@
   "command" : "removeAlbum",
   "user" : "Queen",
   "timestamp" : 7944,
-  "message" : "Queen  deleted the album successfully."
+  "message" : "Queen deleted the album successfully."
 }, {
   "command" : "addMerch",
   "user" : "Michael Jackson",
@@ -8958,6 +9204,20 @@
   "user" : "irene33",
   "timestamp" : 8121,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "grace25",
+  "timestamp" : 8128,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Aretha Franklin."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Stevie Wonder."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Aretha Franklin."
+  } ]
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -9095,7 +9355,7 @@
   "command" : "removeAlbum",
   "user" : "The Beatles",
   "timestamp" : 8231,
-  "message" : "The Beatles  deleted the album successfully."
+  "message" : "The Beatles deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -9213,6 +9473,20 @@
   "user" : "jack29",
   "timestamp" : 8292,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "bob35",
+  "timestamp" : 8292,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from Queen."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from The Who."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Queen."
+  } ]
 }, {
   "command" : "search",
   "user" : "david27",
@@ -9637,7 +9911,7 @@
   "command" : "removeAlbum",
   "user" : "Bruce Springsteen",
   "timestamp" : 8731,
-  "message" : "Bruce Springsteen  deleted the album successfully."
+  "message" : "Bruce Springsteen deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -9909,6 +10183,11 @@
   "user" : "frank21",
   "timestamp" : 8964,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "carol19",
+  "timestamp" : 8976,
+  "notifications" : [ ]
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -10430,9 +10709,9 @@
   "timestamp" : 9495,
   "result" : {
     "topAlbums" : {
-      "Bringing It All Back Home" : 44,
+      "Bringing It All Back Home" : 45,
       "Highway 61 Revisited" : 43,
-      "The Freewheelin' Bob Dylan" : 37
+      "The Freewheelin' Bob Dylan" : 38
     },
     "topSongs" : {
       "Queen Jane Approximately" : 8,
@@ -10464,7 +10743,7 @@
   "command" : "removeAlbum",
   "user" : "Dire Straits",
   "timestamp" : 9511,
-  "message" : "Dire Straits  deleted the album successfully."
+  "message" : "Dire Straits deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -10513,6 +10792,14 @@
   "user" : "david27",
   "timestamp" : 9533,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "carol19",
+  "timestamp" : 9563,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from David Bowie."
+  } ]
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -17610,7 +17897,7 @@
     "topAlbums" : {
       "OK Computer" : 33,
       "In Rainbows" : 32,
-      "The Bends" : 30,
+      "The Bends" : 31,
       "Pablo Honey" : 28
     },
     "topSongs" : {
@@ -18437,7 +18724,7 @@
       "Rihanna" : 21,
       "Nirvana" : 17,
       "The Rolling Stones" : 14,
-      "ABBA" : 12,
+      "ABBA" : 13,
       "Johnny Cash" : 12
     },
     "topGenres" : {
@@ -18452,14 +18739,14 @@
       "Before They Make Me Run" : 2,
       "Come On" : 2,
       "Consideration" : 2,
-      "Exit Music (for a Film)" : 2
+      "Does Your Mother Know" : 2
     },
     "topAlbums" : {
       "Good Girl Gone Bad" : 16,
+      "Voulez-Vous" : 7,
       "Nevermind" : 6,
       "Nirvana" : 6,
-      "Summer Dreams" : 6,
-      "Voulez-Vous" : 6
+      "Summer Dreams" : 6
     },
     "topEpisodes" : { }
   }
@@ -20112,14 +20399,14 @@
   "timestamp" : 22844,
   "result" : {
     "topAlbums" : {
-      "The Essential Bruce Springsteen" : 71,
-      "Born in the U.S.A." : 23,
+      "The Essential Bruce Springsteen" : 72,
+      "Born in the U.S.A." : 24,
       "Born to Run" : 22,
       "Greatest Hits" : 7
     },
     "topSongs" : {
       "Born to Run" : 10,
-      "I'm on Fire" : 6,
+      "I'm on Fire" : 7,
       "Meeting Across the River" : 6,
       "Backstreets" : 5,
       "Badlands" : 5
@@ -22136,14 +22423,14 @@
   "timestamp" : 26453,
   "result" : {
     "topArtists" : {
-      "Johnny Cash" : 45,
+      "Johnny Cash" : 46,
       "Stevie Wonder" : 21,
       "ABBA" : 17,
       "Joni Mitchell" : 17,
       "Nirvana" : 14
     },
     "topGenres" : {
-      "country" : 45,
+      "country" : 46,
       "soul" : 29,
       "rock" : 18,
       "classic rock" : 14,
@@ -22157,11 +22444,11 @@
       "Come as You Are" : 2
     },
     "topAlbums" : {
-      "Unearthed" : 41,
+      "Unearthed" : 42,
       "The Definitive Collection" : 15,
       "Blue" : 10,
       "Super Trouper" : 8,
-      "Pet Sounds" : 7
+      "The Bends" : 8
     },
     "topEpisodes" : { }
   }
@@ -22664,14 +22951,14 @@
       "The Rolling Stones" : 20,
       "Adele" : 18,
       "Johnny Cash" : 18,
-      "Bob Dylan" : 15,
+      "Bob Dylan" : 16,
       "ABBA" : 14
     },
     "topGenres" : {
       "soul" : 33,
       "classic rock" : 28,
+      "folk" : 22,
       "rock" : 22,
-      "folk" : 21,
       "country" : 18
     },
     "topSongs" : {
@@ -22683,8 +22970,8 @@
     },
     "topAlbums" : {
       "Aftermath" : 16,
+      "The Freewheelin' Bob Dylan" : 11,
       "Talking Book" : 10,
-      "The Freewheelin' Bob Dylan" : 10,
       "19" : 9,
       "30" : 9
     },
@@ -22931,13 +23218,13 @@
   "result" : {
     "topArtists" : {
       "Radiohead" : 28,
-      "Bruce Springsteen" : 19,
+      "Bruce Springsteen" : 20,
       "Nirvana" : 15,
       "The Beach Boys" : 12,
       "The Rolling Stones" : 12
     },
     "topGenres" : {
-      "rock" : 28,
+      "rock" : 29,
       "soul" : 20,
       "alternative" : 19,
       "classic rock" : 15,
@@ -23285,8 +23572,8 @@
   "result" : {
     "topArtists" : {
       "The Beatles" : 37,
+      "Bob Dylan" : 17,
       "Rihanna" : 17,
-      "Bob Dylan" : 16,
       "Joni Mitchell" : 14,
       "Adele" : 13
     },
@@ -23294,8 +23581,8 @@
       "rock" : 46,
       "soul" : 26,
       "classic rock" : 15,
-      "pop" : 14,
-      "folk rock" : 13
+      "folk rock" : 14,
+      "pop" : 14
     },
     "topSongs" : {
       "Live With Me" : 3,
@@ -23306,7 +23593,7 @@
     },
     "topAlbums" : {
       "The Beatles (Remastered)" : 30,
-      "Bringing It All Back Home" : 13,
+      "Bringing It All Back Home" : 14,
       "ANTI (Deluxe)" : 11,
       "19" : 8,
       "Summer Dreams" : 8
@@ -24062,14 +24349,14 @@
   "result" : {
     "topArtists" : {
       "Stevie Wonder" : 37,
-      "The Beatles" : 24,
+      "The Beatles" : 25,
       "Bob Dylan" : 21,
       "Elton John" : 13,
       "Nirvana" : 12
     },
     "topGenres" : {
       "soul" : 46,
-      "rock" : 35,
+      "rock" : 36,
       "folk" : 14,
       "pop" : 14,
       "grunge" : 12
@@ -24083,7 +24370,7 @@
     },
     "topAlbums" : {
       "Songs in the Key of Life" : 23,
-      "1 (Remastered)" : 20,
+      "1 (Remastered)" : 21,
       "Bringing It All Back Home" : 11,
       "Innervisions" : 11,
       "In Rainbows" : 8
@@ -24352,7 +24639,7 @@
   "timestamp" : 32969,
   "result" : {
     "topAlbums" : {
-      "Unearthed" : 74,
+      "Unearthed" : 75,
       "The Legend of Johnny Cash" : 31,
       "American IV: The Man Comes Around" : 30,
       "American III: Solitary Man" : 26
@@ -24630,7 +24917,7 @@
   "result" : {
     "topAlbums" : {
       "The Beatles (Remastered)" : 54,
-      "1 (Remastered)" : 52,
+      "1 (Remastered)" : 53,
       "Abbey Road (Remastered)" : 44
     },
     "topSongs" : {
@@ -25299,17 +25586,17 @@
   "result" : {
     "topArtists" : {
       "Rihanna" : 33,
-      "Bruce Springsteen" : 27,
+      "Bruce Springsteen" : 28,
       "Johnny Cash" : 27,
       "Elton John" : 24,
       "The Beatles" : 21
     },
     "topGenres" : {
-      "rock" : 48,
+      "rock" : 49,
       "pop" : 35,
       "country" : 27,
       "soul" : 22,
-      "classic rock" : 19
+      "classic rock" : 20
     },
     "topSongs" : {
       "Octopus's Garden - Remastered 2009" : 3,
@@ -25319,7 +25606,7 @@
       "Desperado" : 2
     },
     "topAlbums" : {
-      "The Essential Bruce Springsteen" : 23,
+      "The Essential Bruce Springsteen" : 24,
       "Good Girl Gone Bad: Reloaded" : 15,
       "Pet Sounds" : 15,
       "Abbey Road (Remastered)" : 14,
@@ -25332,97 +25619,97 @@
   "result" : {
     "Stevie Wonder" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1021024.23,
+      "songRevenue" : 1018003.52,
       "ranking" : 1,
-      "mostProfitableSong" : "All Day Sucker"
+      "mostProfitableSong" : "He's Misstra Know It All"
     },
     "The Beach Boys" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1010201.5,
+      "songRevenue" : 1007078.9,
       "ranking" : 2,
       "mostProfitableSong" : "Pet Sounds"
     },
     "The Beatles" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 951469.01,
+      "songRevenue" : 945756.08,
       "ranking" : 3,
-      "mostProfitableSong" : "Octopus's Garden - Remastered 2009"
+      "mostProfitableSong" : "You Never Give Me Your Money - Remastered 2009"
+    },
+    "Bob Dylan" : {
+      "merchRevenue" : 0.0,
+      "songRevenue" : 873541.08,
+      "ranking" : 4,
+      "mostProfitableSong" : "Girl From the North Country"
     },
     "Joni Mitchell" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 867007.38,
-      "ranking" : 4,
+      "songRevenue" : 866753.01,
+      "ranking" : 5,
       "mostProfitableSong" : "Woodstock"
     },
     "Johnny Cash" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 861232.67,
-      "ranking" : 5,
-      "mostProfitableSong" : "Get Rhythm"
-    },
-    "Bob Dylan" : {
-      "merchRevenue" : 0.0,
-      "songRevenue" : 858680.07,
+      "songRevenue" : 861920.96,
       "ranking" : 6,
-      "mostProfitableSong" : "From a Buick 6"
+      "mostProfitableSong" : "The Man Comes Around (Early Take)"
     },
     "The Rolling Stones" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 689361.29,
+      "songRevenue" : 685906.11,
       "ranking" : 7,
       "mostProfitableSong" : "Live With Me"
     },
     "Bruce Springsteen" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 637520.61,
+      "songRevenue" : 639626.0,
       "ranking" : 8,
       "mostProfitableSong" : "Born to Run"
     },
     "ABBA" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 617203.86,
+      "songRevenue" : 623926.35,
       "ranking" : 9,
-      "mostProfitableSong" : "Dancing Queen"
+      "mostProfitableSong" : "Money, Money, Money"
     },
     "Elton John" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 521069.59,
+      "songRevenue" : 518830.88,
       "ranking" : 10,
       "mostProfitableSong" : "Razor Face"
     },
     "Nirvana" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 520603.85,
+      "songRevenue" : 517544.4,
       "ranking" : 11,
-      "mostProfitableSong" : "Come as You Are"
+      "mostProfitableSong" : "Where Did You Sleep Last Night (Live Version)"
     },
     "Radiohead" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 485842.31,
+      "songRevenue" : 484033.12,
       "ranking" : 12,
       "mostProfitableSong" : "Weird Fishes/Arpeggi"
     },
     "Rihanna" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 457167.91,
+      "songRevenue" : 453621.28,
       "ranking" : 13,
       "mostProfitableSong" : "Push Up on Me"
     },
     "Adele" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 426532.72,
+      "songRevenue" : 423792.2,
       "ranking" : 14,
-      "mostProfitableSong" : "Chasing Pavements"
+      "mostProfitableSong" : "Melt My Heart to Stone"
     },
     "Queen" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 43715.85,
+      "songRevenue" : 48387.1,
       "ranking" : 15,
-      "mostProfitableSong" : "It's a Hard Life"
+      "mostProfitableSong" : "I Want to Break Free"
     },
     "Aretha Franklin" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 31367.15,
+      "songRevenue" : 31279.01,
       "ranking" : 16,
       "mostProfitableSong" : "Night Life"
     }

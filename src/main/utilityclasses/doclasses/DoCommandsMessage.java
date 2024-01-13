@@ -7,6 +7,8 @@ import fileio.input.UserInput;
 import main.commandhelper.Command;
 import main.creatorclasses.artistclasses.Management;
 import main.creatorclasses.hostclasses.HostInfo;
+import main.creatorclasses.subscription.CreatorChannel;
+import main.creatorclasses.subscription.NotificationBar;
 import main.likeclasses.SongLikes;
 import main.monetization.PremiumUser;
 import main.pagingclasses.Page;
@@ -455,7 +457,9 @@ public final class DoCommandsMessage {
                                        final ArrayList<UserPlaylists> usersPlaylists,
                                        final ArrayList<Page> pageSystem,
                                        final ArrayList<Management> managements,
-                                       final ArrayList<HostInfo> hostInfos) {
+                                       final ArrayList<HostInfo> hostInfos,
+                                       final ArrayList<CreatorChannel> channels,
+                                       final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addUserOutput = objectMapper.createObjectNode();
 
         addUserOutput.put("command", "addUser");
@@ -464,7 +468,7 @@ public final class DoCommandsMessage {
 
         String message = GetMessages.getAddUserMessage(crtCommand,
                 library, usersPlaylists, pageSystem, managements,
-                hostInfos);
+                hostInfos, channels, notificationBars);
         addUserOutput.put("message", message);
 
         return addUserOutput;
@@ -485,7 +489,9 @@ public final class DoCommandsMessage {
                                         final LibraryInput library,
                                         final ArrayList<UserPlaylists> usersPlaylists,
                                         final ArrayList<Album> albums,
-                                        final ArrayList<SongLikes> songsLikes) {
+                                        final ArrayList<SongLikes> songsLikes,
+                                        final ArrayList<CreatorChannel> channels,
+                                        final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addAlbumOutput = objectMapper.createObjectNode();
 
         addAlbumOutput.put("command", "addAlbum");
@@ -493,7 +499,7 @@ public final class DoCommandsMessage {
         addAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = GetMessages.getAddAlbumMessage(crtCommand, library,
-                usersPlaylists, albums, songsLikes);
+                usersPlaylists, albums, songsLikes, channels, notificationBars);
         addAlbumOutput.put("message", message);
 
         return addAlbumOutput;
@@ -511,7 +517,9 @@ public final class DoCommandsMessage {
     public static ObjectNode doAddEvent(final ObjectMapper objectMapper,
                                         final LibraryInput library,
                                         final Command crtCommand,
-                                        final ArrayList<Management> managements) {
+                                        final ArrayList<Management> managements,
+                                        final ArrayList<CreatorChannel> channels,
+                                        final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addEventOutput = objectMapper.createObjectNode();
 
         addEventOutput.put("command", "addEvent");
@@ -519,7 +527,7 @@ public final class DoCommandsMessage {
         addEventOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getAddEventMessage(library, crtCommand,
-                managements);
+                managements, channels, notificationBars);
 
         addEventOutput.put("message", message);
 
@@ -538,7 +546,9 @@ public final class DoCommandsMessage {
     public static ObjectNode doAddMerch(final ObjectMapper objectMapper,
                                         final LibraryInput library,
                                         final Command crtCommand,
-                                        final ArrayList<Management> managements) {
+                                        final ArrayList<Management> managements,
+                                        final ArrayList<CreatorChannel> channels,
+                                        final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addMerchOutput = objectMapper.createObjectNode();
 
         addMerchOutput.put("command", "addMerch");
@@ -546,7 +556,7 @@ public final class DoCommandsMessage {
         addMerchOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getAddMerchMessage(library, crtCommand,
-                managements);
+                managements, channels, notificationBars);
 
         addMerchOutput.put("message", message);
 
@@ -610,7 +620,9 @@ public final class DoCommandsMessage {
     public static ObjectNode doAddPodcast(final ObjectMapper objectMapper,
                                           final Command crtCommand,
                                           final LibraryInput library,
-                                          final ArrayList<UserPlaylists> usersPlaylists) {
+                                          final ArrayList<UserPlaylists> usersPlaylists,
+                                          final ArrayList<CreatorChannel> channels,
+                                          final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addPodcastOutput = objectMapper.createObjectNode();
 
         addPodcastOutput.put("command", "addPodcast");
@@ -618,7 +630,7 @@ public final class DoCommandsMessage {
         addPodcastOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getAddPodcastMessage(library, crtCommand,
-                usersPlaylists);
+                usersPlaylists, channels, notificationBars);
         addPodcastOutput.put("message", message);
 
         return addPodcastOutput;
@@ -636,7 +648,9 @@ public final class DoCommandsMessage {
     public static ObjectNode doAddAnnouncement(final ObjectMapper objectMapper,
                                                final Command crtCommand,
                                                final LibraryInput library,
-                                               final ArrayList<HostInfo> hostInfos) {
+                                               final ArrayList<HostInfo> hostInfos,
+                                               final ArrayList<CreatorChannel> channels,
+                                               final ArrayList<NotificationBar> notificationBars) {
         ObjectNode addAnnouncementOutput = objectMapper.createObjectNode();
 
         addAnnouncementOutput.put("command", "addAnnouncement");
@@ -644,7 +658,7 @@ public final class DoCommandsMessage {
         addAnnouncementOutput.put("timestamp", crtCommand.getTimestamp());
 
         String message = getAddAnnouncementMessage(library,
-                crtCommand, hostInfos);
+                crtCommand, hostInfos, channels, notificationBars);
         addAnnouncementOutput.put("message", message);
 
         return addAnnouncementOutput;

@@ -2322,12 +2322,12 @@
   "timestamp" : 9712,
   "result" : {
     "topArtists" : {
-      "Pink Floyd" : 32,
+      "Pink Floyd" : 33,
       "Aretha Franklin" : 12,
       "James Brown" : 6
     },
     "topGenres" : {
-      "progressive rock" : 32,
+      "progressive rock" : 33,
       "soul" : 12,
       "funk" : 6
     },
@@ -2339,7 +2339,7 @@
       "Welcome to the Machine" : 2
     },
     "topAlbums" : {
-      "The Wall" : 19,
+      "The Wall" : 20,
       "Soul Queen" : 12,
       "Wish You Were Here" : 8,
       "The 50th Anniversary Collection" : 4,
@@ -2528,8 +2528,8 @@
   "timestamp" : 14712,
   "result" : {
     "topAlbums" : {
+      "The Wall" : 25,
       "The Dark Side of the Moon" : 24,
-      "The Wall" : 24,
       "The Division Bell" : 19,
       "Wish You Were Here" : 19
     },
@@ -2849,13 +2849,13 @@
       "merchRevenue" : 0.0,
       "songRevenue" : 1894230.77,
       "ranking" : 1,
-      "mostProfitableSong" : "Make It Funky, Pt. 1"
+      "mostProfitableSong" : "I Don't Want Nobody To Give Me Nothing (Open Up The Door I'll Get It Myself)"
     },
     "Aretha Franklin" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 1086538.46,
       "ranking" : 2,
-      "mostProfitableSong" : "I Say a Little Prayer"
+      "mostProfitableSong" : "Dr. Feelgood (Love Is a Serious Business)"
     },
     "Pink Floyd" : {
       "merchRevenue" : 0.0,

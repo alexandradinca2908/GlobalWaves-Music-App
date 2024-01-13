@@ -104,13 +104,13 @@
 }, {
   "command" : "endProgram",
   "result" : {
-    "Whitney Houston" : {
+    "Prince" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 1,
       "mostProfitableSong" : "N/A"
     },
-    "Prince" : {
+    "Whitney Houston" : {
       "merchRevenue" : 0.0,
       "songRevenue" : 0.0,
       "ranking" : 2,

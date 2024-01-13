@@ -1,5 +1,7 @@
 package main.utilityclasses;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import fileio.input.UserInput;
 import fileio.input.SongInput;
 import fileio.input.LibraryInput;
@@ -12,6 +14,8 @@ import main.creatorclasses.artistclasses.Merch;
 import main.commandhelper.Command;
 import main.creatorclasses.hostclasses.Announcement;
 import main.creatorclasses.hostclasses.HostInfo;
+import main.creatorclasses.subscription.CreatorChannel;
+import main.creatorclasses.subscription.NotificationBar;
 import main.monetization.PremiumUser;
 import main.pagingclasses.Page;
 import main.playlistclasses.Album;
@@ -996,7 +1000,7 @@ public final class GetMessages {
     /**
      * This method adds a new user
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param usersPlaylists The array of users and their respective playlists
      * @param pageSystem The array of user pages
@@ -1008,7 +1012,9 @@ public final class GetMessages {
                                            final ArrayList<UserPlaylists> usersPlaylists,
                                            final ArrayList<Page> pageSystem,
                                            final ArrayList<Management> managements,
-                                           final ArrayList<HostInfo> hostInfos) {
+                                           final ArrayList<HostInfo> hostInfos,
+                                           final ArrayList<CreatorChannel> channels,
+                                           final ArrayList<NotificationBar> notificationBars) {
         String message;
 
         //  Search to see if this is a new user
@@ -1053,6 +1059,16 @@ public final class GetMessages {
             //  Wrapped Statistics
             StatsFactory.createStats(newUser);
 
+            //  Creator channel
+            CreatorChannel newChannel = new CreatorChannel();
+            newChannel.setCreator(newUserPlaylists.getUser());
+            channels.add(newChannel);
+
+            //  Notification bar
+            NotificationBar newBar = new NotificationBar();
+            newBar.setSubscriber(newUserPlaylists.getUser().getUsername());
+            notificationBars.add(newBar);
+
             //  Management, if the user is an artist
             if (newUser.getType().equals("artist")) {
                 Management newManagement = new Management();
@@ -1078,7 +1094,7 @@ public final class GetMessages {
     /**
      * This method adds a new album
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param usersPlaylists The array of users and their respective playlists
      * @param albums The array of all albums in the database
@@ -1088,7 +1104,9 @@ public final class GetMessages {
                                             final LibraryInput library,
                                             final ArrayList<UserPlaylists> usersPlaylists,
                                             final ArrayList<Album> albums,
-                                            final ArrayList<SongLikes> songsLikes) {
+                                            final ArrayList<SongLikes> songsLikes,
+                                            final ArrayList<CreatorChannel> channels,
+                                            final ArrayList<NotificationBar> notificationBars) {
         String message;
 
         UserInput artist = null;
@@ -1194,6 +1212,25 @@ public final class GetMessages {
 
                     message = crtCommand.getUsername()
                             + " has added new album successfully.";
+
+                    //  Find channel
+                    CreatorChannel crtChannel = null;
+                    for (CreatorChannel channel : channels) {
+                        if (channel.getCreator().equals(artist)) {
+                            crtChannel = channel;
+                            break;
+                        }
+                    }
+
+                    //  Notify all subscribers
+                    for (String user : crtChannel.getSubscribers()) {
+                        for (NotificationBar bar : notificationBars) {
+                            if (bar.getSubscriber().equals(user)) {
+                                bar.getNotifications().add("Album"
+                                        + "/" + artist.getUsername());
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1204,14 +1241,16 @@ public final class GetMessages {
     /**
      * This method adds a new event
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param managements The array of managing technicalities for artists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddEventMessage(final LibraryInput library,
                                             final Command crtCommand,
-                                            final ArrayList<Management> managements) {
+                                            final ArrayList<Management> managements,
+                                            final ArrayList<CreatorChannel> channels,
+                                            final ArrayList<NotificationBar> notificationBars) {
         String message = null;
 
         UserInput artist = null;
@@ -1293,6 +1332,25 @@ public final class GetMessages {
 
                         message = crtCommand.getUsername()
                                 + " has added new event successfully.";
+
+                        //  Find channel
+                        CreatorChannel crtChannel = null;
+                        for (CreatorChannel channel : channels) {
+                            if (channel.getCreator().equals(artist)) {
+                                crtChannel = channel;
+                                break;
+                            }
+                        }
+
+                        //  Notify all subscribers
+                        for (String user : crtChannel.getSubscribers()) {
+                            for (NotificationBar bar : notificationBars) {
+                                if (bar.getSubscriber().equals(user)) {
+                                    bar.getNotifications().add("Event"
+                                            + "/" + artist.getUsername());
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -1304,14 +1362,16 @@ public final class GetMessages {
     /**
      * This method adds new merch
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param managements The array of managing technicalities for artists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddMerchMessage(final LibraryInput library,
                                             final Command crtCommand,
-                                            final ArrayList<Management> managements) {
+                                            final ArrayList<Management> managements,
+                                            final ArrayList<CreatorChannel> channels,
+                                            final ArrayList<NotificationBar> notificationBars) {
         String message = null;
 
         UserInput artist = null;
@@ -1376,6 +1436,25 @@ public final class GetMessages {
 
                     message = crtCommand.getUsername()
                             + " has added new merchandise successfully.";
+
+                    //  Find channel
+                    CreatorChannel crtChannel = null;
+                    for (CreatorChannel channel : channels) {
+                        if (channel.getCreator().equals(artist)) {
+                            crtChannel = channel;
+                            break;
+                        }
+                    }
+
+                    //  Notify all subscribers
+                    for (String user : crtChannel.getSubscribers()) {
+                        for (NotificationBar bar : notificationBars) {
+                            if (bar.getSubscriber().equals(user)) {
+                                bar.getNotifications().add("Merchandise"
+                                        + "/" + artist.getUsername());
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1386,7 +1465,7 @@ public final class GetMessages {
     /**
      * This method deletes a user
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param player The array that keeps all user players in check
      * @param podcasts The array that keeps track of all the podcasts
@@ -1626,14 +1705,16 @@ public final class GetMessages {
     /**
      * This method adds a new podcast
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param usersPlaylists The array of users and their respective playlists
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddPodcastMessage(final LibraryInput library,
                                               final Command crtCommand,
-                                              final ArrayList<UserPlaylists> usersPlaylists) {
+                                              final ArrayList<UserPlaylists> usersPlaylists,
+                                              final ArrayList<CreatorChannel> channels,
+                                              final ArrayList<NotificationBar> notificationBars) {
         String message = null;
 
         UserInput host = null;
@@ -1723,6 +1804,25 @@ public final class GetMessages {
 
                     message = crtCommand.getUsername()
                             + " has added new podcast successfully.";
+
+                    //  Find channel
+                    CreatorChannel crtChannel = null;
+                    for (CreatorChannel channel : channels) {
+                        if (channel.getCreator().equals(host)) {
+                            crtChannel = channel;
+                            break;
+                        }
+                    }
+
+                    //  Notify all subscribers
+                    for (String user : crtChannel.getSubscribers()) {
+                        for (NotificationBar bar : notificationBars) {
+                            if (bar.getSubscriber().equals(user)) {
+                                bar.getNotifications().add("Podcast"
+                                        + "/" + host.getUsername());
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1733,14 +1833,16 @@ public final class GetMessages {
     /**
      * This method adds a new announcement
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param hostInfos The array containing all announcements for every artist
      * @return Based on the operation, it returns an appropriate message
      */
     public static String getAddAnnouncementMessage(final LibraryInput library,
                                                    final Command crtCommand,
-                                                   final ArrayList<HostInfo> hostInfos) {
+                                                   final ArrayList<HostInfo> hostInfos,
+                                                   final ArrayList<CreatorChannel> channels,
+                                                   final ArrayList<NotificationBar> notificationBars) {
         String message = null;
 
         UserInput host = null;
@@ -1799,6 +1901,25 @@ public final class GetMessages {
 
                 message = crtCommand.getUsername()
                         + " has successfully added new announcement.";
+
+                //  Find channel
+                CreatorChannel crtChannel = null;
+                for (CreatorChannel channel : channels) {
+                    if (channel.getCreator().equals(host)) {
+                        crtChannel = channel;
+                        break;
+                    }
+                }
+
+                //  Notify all subscribers
+                for (String user : crtChannel.getSubscribers()) {
+                    for (NotificationBar bar : notificationBars) {
+                        if (bar.getSubscriber().equals(user)) {
+                            bar.getNotifications().add("Announcement"
+                                    + "/" + host.getUsername());
+                        }
+                    }
+                }
             }
         }
 
@@ -1808,7 +1929,7 @@ public final class GetMessages {
     /**
      * This method removes an announcement
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param hostInfos The array containing all announcements for every artist
      * @return Based on the operation, it returns an appropriate message
@@ -1878,7 +1999,7 @@ public final class GetMessages {
     /**
      * This method removes an album
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param usersPlaylists The array of users and their respective playlists
      * @param player The array that keeps all user players in check
@@ -2019,7 +2140,7 @@ public final class GetMessages {
                     albums.remove(crtAlbum);
 
                     message = crtCommand.getUsername()
-                            + "  deleted the album successfully.";
+                            + " deleted the album successfully.";
                 }
             }
         }
@@ -2030,7 +2151,7 @@ public final class GetMessages {
     /**
      * This method changes the current page
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param usersPlaylists The array of users and their respective playlists
      * @param pageSystem Array of all the pages in the system
      * @return Based on the operation, it returns an appropriate message
@@ -2103,7 +2224,7 @@ public final class GetMessages {
     /**
      * This method removes a podcast
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param usersPlaylists The array of users and their respective playlists
      * @param player The array that keeps all user players in check
      * @param library Singleton containing all songs, users and podcasts
@@ -2216,7 +2337,7 @@ public final class GetMessages {
     /**
      * This method removes an event
      *
-     * @param crtCommand The addUser command with all its data
+     * @param crtCommand The command with all its data
      * @param library Singleton containing all songs, users and podcasts
      * @param managements The array of managing technicalities for artists
      * @return Based on the operation, it returns an appropriate message

@@ -467,6 +467,9 @@ public final class DoCommands {
         loadOutput.put("user", crtCommand.getUsername());
         loadOutput.put("timestamp", crtCommand.getTimestamp());
 
+        updatePlayer(player, crtCommand, podcasts, library, albums,
+                premiumUsers);
+
         //  Check online status
         //  If user is offline, we exit the function before any action can be done
         for (UserInput user : library.getUsers()) {

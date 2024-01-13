@@ -649,6 +649,11 @@
   "timestamp" : 10,
   "message" : "Successfully selected BeyoncÃ©'s page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 10,
+  "message" : "henry26 subscribed to BeyoncÃ© successfully."
+}, {
   "command" : "search",
   "user" : "henry26",
   "timestamp" : 20,
@@ -675,6 +680,11 @@
   "user" : "carol19",
   "timestamp" : 48,
   "message" : "Successfully selected Aretha Franklin's page."
+}, {
+  "command" : "subscribe",
+  "user" : "carol19",
+  "timestamp" : 48,
+  "message" : "carol19 subscribed to Aretha Franklin successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -734,6 +744,11 @@
   "user" : "david27",
   "timestamp" : 114,
   "message" : "Successfully selected BeyoncÃ©'s page."
+}, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 114,
+  "message" : "david27 subscribed to BeyoncÃ© successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -820,6 +835,11 @@
   "user" : "irene33",
   "timestamp" : 166,
   "message" : "Successfully selected Eric Clapton's page."
+}, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 166,
+  "message" : "irene33 subscribed to Eric Clapton successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -912,6 +932,11 @@
   "timestamp" : 243,
   "message" : "Successfully selected Fleetwood Mac's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 243,
+  "message" : "alice22 subscribed to Fleetwood Mac successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 267,
@@ -992,6 +1017,11 @@
   "timestamp" : 342,
   "message" : "Successfully selected Eminem's page."
 }, {
+  "command" : "subscribe",
+  "user" : "carol19",
+  "timestamp" : 342,
+  "message" : "carol19 subscribed to Eminem successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 365,
@@ -1034,6 +1064,11 @@
   "user" : "emily30",
   "timestamp" : 432,
   "message" : "Successfully selected Imagine Dragons's page."
+}, {
+  "command" : "subscribe",
+  "user" : "emily30",
+  "timestamp" : 432,
+  "message" : "emily30 subscribed to Imagine Dragons successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1109,6 +1144,11 @@
   "user" : "bob35",
   "timestamp" : 487,
   "message" : "Successfully selected Bob Dylan's page."
+}, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 487,
+  "message" : "bob35 subscribed to Bob Dylan successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -1206,6 +1246,11 @@
   "timestamp" : 566,
   "message" : "Successfully selected Michael Jackson's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 566,
+  "message" : "henry26 subscribed to Michael Jackson successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 567,
@@ -1280,6 +1325,11 @@
   "user" : "grace25",
   "timestamp" : 627,
   "message" : "Successfully selected Bob Marley's page."
+}, {
+  "command" : "subscribe",
+  "user" : "grace25",
+  "timestamp" : 627,
+  "message" : "grace25 subscribed to Bob Marley successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -1376,6 +1426,11 @@
   "user" : "irene33",
   "timestamp" : 694,
   "message" : "Successfully selected The Beatles's page."
+}, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 694,
+  "message" : "irene33 subscribed to The Beatles successfully."
 }, {
   "command" : "search",
   "user" : "grace25",
@@ -1484,6 +1539,11 @@
   "timestamp" : 771,
   "message" : "Successfully selected Whitney Houston's page."
 }, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 771,
+  "message" : "jack29 subscribed to Whitney Houston successfully."
+}, {
   "command" : "search",
   "user" : "irene33",
   "timestamp" : 804,
@@ -1527,6 +1587,11 @@
   "timestamp" : 867,
   "message" : "Successfully selected The Beach Boys's page."
 }, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 867,
+  "message" : "david27 subscribed to The Beach Boys successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 892,
@@ -1553,6 +1618,11 @@
   "user" : "emily30",
   "timestamp" : 905,
   "message" : "Successfully selected Fleetwood Mac's page."
+}, {
+  "command" : "subscribe",
+  "user" : "emily30",
+  "timestamp" : 905,
+  "message" : "emily30 subscribed to Fleetwood Mac successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -1612,6 +1682,11 @@
   "user" : "henry26",
   "timestamp" : 929,
   "message" : "Successfully selected The Police's page."
+}, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 929,
+  "message" : "henry26 subscribed to The Police successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1699,6 +1774,11 @@
   "timestamp" : 999,
   "message" : "Successfully selected James Brown's page."
 }, {
+  "command" : "subscribe",
+  "user" : "jack29",
+  "timestamp" : 999,
+  "message" : "jack29 subscribed to James Brown successfully."
+}, {
   "command" : "search",
   "user" : "alice22",
   "timestamp" : 1013,
@@ -1758,6 +1838,11 @@
   "timestamp" : 1032,
   "message" : "Successfully selected ABBA's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 1032,
+  "message" : "henry26 subscribed to ABBA successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1075,
@@ -1784,6 +1869,11 @@
   "user" : "david27",
   "timestamp" : 1092,
   "message" : "Successfully selected Madonna's page."
+}, {
+  "command" : "subscribe",
+  "user" : "david27",
+  "timestamp" : 1092,
+  "message" : "david27 subscribed to Madonna successfully."
 }, {
   "command" : "buyPremium",
   "user" : "grace25",
@@ -1865,6 +1955,11 @@
   "timestamp" : 1161,
   "message" : "Successfully selected Madonna's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 1161,
+  "message" : "alice22 subscribed to Madonna successfully."
+}, {
   "command" : "search",
   "user" : "frank21",
   "timestamp" : 1180,
@@ -1875,6 +1970,11 @@
   "user" : "frank21",
   "timestamp" : 1180,
   "message" : "Successfully selected The Beatles's page."
+}, {
+  "command" : "subscribe",
+  "user" : "frank21",
+  "timestamp" : 1180,
+  "message" : "frank21 subscribed to The Beatles successfully."
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -1918,6 +2018,11 @@
   "user" : "irene33",
   "timestamp" : 1226,
   "message" : "Successfully selected Radiohead's page."
+}, {
+  "command" : "subscribe",
+  "user" : "irene33",
+  "timestamp" : 1226,
+  "message" : "irene33 subscribed to Radiohead successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -1994,6 +2099,11 @@
   "timestamp" : 1295,
   "message" : "Successfully selected Eminem's page."
 }, {
+  "command" : "subscribe",
+  "user" : "bob35",
+  "timestamp" : 1295,
+  "message" : "bob35 subscribed to Eminem successfully."
+}, {
   "command" : "search",
   "user" : "bob35",
   "timestamp" : 1311,
@@ -2069,6 +2179,11 @@
   "timestamp" : 1363,
   "message" : "Successfully selected Taylor Swift's page."
 }, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 1363,
+  "message" : "henry26 subscribed to Taylor Swift successfully."
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 1420,
@@ -2079,6 +2194,11 @@
   "user" : "emily30",
   "timestamp" : 1420,
   "message" : "Successfully selected Elton John's page."
+}, {
+  "command" : "subscribe",
+  "user" : "emily30",
+  "timestamp" : 1420,
+  "message" : "emily30 subscribed to Elton John successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -2139,6 +2259,11 @@
   "timestamp" : 1466,
   "message" : "Successfully selected Eminem's page."
 }, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 1466,
+  "message" : "alice22 subscribed to Eminem successfully."
+}, {
   "command" : "search",
   "user" : "jack29",
   "timestamp" : 1485,
@@ -2166,6 +2291,11 @@
   "timestamp" : 1505,
   "message" : "Successfully selected Rihanna's page."
 }, {
+  "command" : "subscribe",
+  "user" : "carol19",
+  "timestamp" : 1505,
+  "message" : "carol19 subscribed to Rihanna successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 1522,
@@ -2177,6 +2307,11 @@
   "timestamp" : 1522,
   "message" : "Successfully selected Bob Dylan's page."
 }, {
+  "command" : "subscribe",
+  "user" : "grace25",
+  "timestamp" : 1522,
+  "message" : "grace25 subscribed to Bob Dylan successfully."
+}, {
   "command" : "search",
   "user" : "grace25",
   "timestamp" : 1546,
@@ -2187,6 +2322,11 @@
   "user" : "grace25",
   "timestamp" : 1546,
   "message" : "Successfully selected BeyoncÃ©'s page."
+}, {
+  "command" : "subscribe",
+  "user" : "grace25",
+  "timestamp" : 1546,
+  "message" : "grace25 subscribed to BeyoncÃ© successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -2230,6 +2370,11 @@
   "user" : "henry26",
   "timestamp" : 1610,
   "message" : "Successfully selected ABBA's page."
+}, {
+  "command" : "subscribe",
+  "user" : "henry26",
+  "timestamp" : 1610,
+  "message" : "henry26 unsubscribed from ABBA successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -2278,6 +2423,11 @@
   "user" : "alice22",
   "timestamp" : 1703,
   "message" : "Successfully selected Jay-Z's page."
+}, {
+  "command" : "subscribe",
+  "user" : "alice22",
+  "timestamp" : 1703,
+  "message" : "alice22 subscribed to Jay-Z successfully."
 }, {
   "command" : "search",
   "user" : "jack29",
@@ -2415,7 +2565,7 @@
   "command" : "removeAlbum",
   "user" : "Taylor Swift",
   "timestamp" : 1885,
-  "message" : "Taylor Swift  deleted the album successfully."
+  "message" : "Taylor Swift deleted the album successfully."
 }, {
   "command" : "addMerch",
   "user" : "Bob Marley",
@@ -2442,6 +2592,11 @@
   "user" : "Aretha Franklin",
   "timestamp" : 1942,
   "message" : "Aretha Franklin has added new merchandise successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "frank21",
+  "timestamp" : 1947,
+  "notifications" : [ ]
 }, {
   "command" : "addMerch",
   "user" : "Fleetwood Mac",
@@ -2605,7 +2760,7 @@
   "command" : "removeAlbum",
   "user" : "Fleetwood Mac",
   "timestamp" : 2185,
-  "message" : "Fleetwood Mac  deleted the album successfully."
+  "message" : "Fleetwood Mac deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -2743,7 +2898,7 @@
   "command" : "removeAlbum",
   "user" : "Michael Jackson",
   "timestamp" : 2343,
-  "message" : "Michael Jackson  deleted the album successfully."
+  "message" : "Michael Jackson deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -3534,6 +3689,17 @@
   "timestamp" : 3440,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "carol19",
+  "timestamp" : 3461,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Aretha Franklin."
+  }, {
+    "name" : "New Event",
+    "description" : "New Event from Aretha Franklin."
+  } ]
+}, {
   "command" : "search",
   "user" : "david27",
   "timestamp" : 3462,
@@ -3553,7 +3719,7 @@
   "command" : "removeAlbum",
   "user" : "Fleetwood Mac",
   "timestamp" : 3476,
-  "message" : "Fleetwood Mac  deleted the album successfully."
+  "message" : "Fleetwood Mac deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -3784,6 +3950,11 @@
   "timestamp" : 3741,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "carol19",
+  "timestamp" : 3770,
+  "notifications" : [ ]
+}, {
   "command" : "addMerch",
   "user" : "The Beatles",
   "timestamp" : 3776,
@@ -3981,7 +4152,7 @@
   "result" : {
     "topAlbums" : {
       "United" : 34,
-      "What's Going On" : 31,
+      "What's Going On" : 32,
       "Midnight Love" : 26,
       "The Very Best of Marvin Gaye" : 19
     },
@@ -3992,7 +4163,7 @@
       "What's Going On" : 6,
       "Right On" : 5
     },
-    "topFans" : [ "david27", "jack29", "alice22", "frank21", "carol19" ],
+    "topFans" : [ "david27", "frank21", "jack29", "alice22", "carol19" ],
     "listeners" : 10
   }
 }, {
@@ -4015,7 +4186,7 @@
   "command" : "removeAlbum",
   "user" : "Fleetwood Mac",
   "timestamp" : 4058,
-  "message" : "Fleetwood Mac  deleted the album successfully."
+  "message" : "Fleetwood Mac deleted the album successfully."
 }, {
   "command" : "removeAlbum",
   "user" : "Rihanna",
@@ -4245,6 +4416,14 @@
   "timestamp" : 4330,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "irene33",
+  "timestamp" : 4372,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from The Beatles."
+  } ]
+}, {
   "command" : "search",
   "user" : "carol19",
   "timestamp" : 4394,
@@ -4328,7 +4507,7 @@
   "command" : "removeAlbum",
   "user" : "Eminem",
   "timestamp" : 4443,
-  "message" : "Eminem  deleted the album successfully."
+  "message" : "Eminem deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -4377,6 +4556,11 @@
   "user" : "david27",
   "timestamp" : 4514,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "bob35",
+  "timestamp" : 4551,
+  "notifications" : [ ]
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -4593,7 +4777,7 @@
   "command" : "removeAlbum",
   "user" : "Eminem",
   "timestamp" : 4863,
-  "message" : "Eminem  deleted the album successfully."
+  "message" : "Eminem deleted the album successfully."
 }, {
   "command" : "addMerch",
   "user" : "Eminem",
@@ -4709,7 +4893,7 @@
   "command" : "removeAlbum",
   "user" : "ABBA",
   "timestamp" : 5111,
-  "message" : "ABBA  deleted the album successfully."
+  "message" : "ABBA deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -5675,7 +5859,7 @@
   "command" : "removeAlbum",
   "user" : "ABBA",
   "timestamp" : 6410,
-  "message" : "ABBA  deleted the album successfully."
+  "message" : "ABBA deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "frank21",
@@ -5842,7 +6026,7 @@
   "result" : {
     "topAlbums" : {
       "Led Zeppelin IV" : 46,
-      "Led Zeppelin II" : 27,
+      "Led Zeppelin II" : 28,
       "Led Zeppelin" : 23,
       "Led Zeppelin IV (Deluxe Edition)" : 20
     },
@@ -6395,6 +6579,17 @@
   "timestamp" : 7327,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "irene33",
+  "timestamp" : 7347,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Eric Clapton."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from The Beatles."
+  } ]
+}, {
   "command" : "search",
   "user" : "emily30",
   "timestamp" : 7372,
@@ -6574,7 +6769,7 @@
   "command" : "removeAlbum",
   "user" : "James Brown",
   "timestamp" : 7585,
-  "message" : "James Brown  deleted the album successfully."
+  "message" : "James Brown deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "emily30",
@@ -6861,7 +7056,7 @@
   "command" : "removeAlbum",
   "user" : "Madonna",
   "timestamp" : 7860,
-  "message" : "Madonna  deleted the album successfully."
+  "message" : "Madonna deleted the album successfully."
 }, {
   "command" : "addAlbum",
   "user" : "The Beatles",
@@ -7158,7 +7353,7 @@
   "command" : "removeAlbum",
   "user" : "The Beach Boys",
   "timestamp" : 8089,
-  "message" : "The Beach Boys  deleted the album successfully."
+  "message" : "The Beach Boys deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -7427,6 +7622,23 @@
   "timestamp" : 8341,
   "message" : "Playback loaded successfully."
 }, {
+  "command" : "getNotifications",
+  "user" : "jack29",
+  "timestamp" : 8348,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from James Brown."
+  }, {
+    "name" : "New Event",
+    "description" : "New Event from James Brown."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Whitney Houston."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from James Brown."
+  } ]
+}, {
   "command" : "removeAlbum",
   "user" : "ABBA",
   "timestamp" : 8354,
@@ -7567,7 +7779,7 @@
   "command" : "removeAlbum",
   "user" : "Imagine Dragons",
   "timestamp" : 8478,
-  "message" : "Imagine Dragons  deleted the album successfully."
+  "message" : "Imagine Dragons deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "bob35",
@@ -7938,7 +8150,7 @@
   "command" : "removeAlbum",
   "user" : "ABBA",
   "timestamp" : 8805,
-  "message" : "ABBA  deleted the album successfully."
+  "message" : "ABBA deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -8007,7 +8219,7 @@
   "command" : "removeAlbum",
   "user" : "Madonna",
   "timestamp" : 8887,
-  "message" : "Madonna  deleted the album successfully."
+  "message" : "Madonna deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "henry26",
@@ -8220,6 +8432,35 @@
   "user" : "emily30",
   "timestamp" : 9048,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "emily30",
+  "timestamp" : 9049,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Fleetwood Mac."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Fleetwood Mac."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Fleetwood Mac."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Imagine Dragons."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Fleetwood Mac."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Imagine Dragons."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Fleetwood Mac."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Imagine Dragons."
+  } ]
 }, {
   "command" : "search",
   "user" : "david27",
@@ -8458,7 +8699,7 @@
   "command" : "removeAlbum",
   "user" : "Fleetwood Mac",
   "timestamp" : 9408,
-  "message" : "Fleetwood Mac  deleted the album successfully."
+  "message" : "Fleetwood Mac deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "david27",
@@ -8507,6 +8748,29 @@
   "user" : "irene33",
   "timestamp" : 9453,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "david27",
+  "timestamp" : 9458,
+  "notifications" : [ {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from Madonna."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from The Beach Boys."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Madonna."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from The Beach Boys."
+  }, {
+    "name" : "New Merchandise",
+    "description" : "New Merchandise from The Beach Boys."
+  }, {
+    "name" : "New Album",
+    "description" : "New Album from Madonna."
+  } ]
 }, {
   "command" : "search",
   "user" : "carol19",
@@ -8559,7 +8823,7 @@
   "command" : "removeAlbum",
   "user" : "Bob Dylan",
   "timestamp" : 9516,
-  "message" : "Bob Dylan  deleted the album successfully."
+  "message" : "Bob Dylan deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "alice22",
@@ -8613,6 +8877,14 @@
   "user" : "bob35",
   "timestamp" : 9566,
   "message" : "Playback loaded successfully."
+}, {
+  "command" : "getNotifications",
+  "user" : "emily30",
+  "timestamp" : 9566,
+  "notifications" : [ {
+    "name" : "New Album",
+    "description" : "New Album from Fleetwood Mac."
+  } ]
 }, {
   "command" : "buyPremium",
   "user" : "emily30",
@@ -9000,7 +9272,7 @@
   "command" : "removeAlbum",
   "user" : "The Police",
   "timestamp" : 9899,
-  "message" : "The Police  deleted the album successfully."
+  "message" : "The Police deleted the album successfully."
 }, {
   "command" : "search",
   "user" : "irene33",
@@ -9700,7 +9972,7 @@
   "result" : {
     "topAlbums" : {
       "Thriller 25 Super Deluxe Edition" : 50,
-      "Dangerous" : 44,
+      "Dangerous" : 45,
       "Off the Wall" : 30
     },
     "topSongs" : {
@@ -11330,8 +11602,8 @@
   "result" : {
     "topAlbums" : {
       "Chuck Berry Is On Top" : 60,
-      "The Great Twenty-Eight" : 35,
-      "St. Louis to Liverpool" : 29,
+      "The Great Twenty-Eight" : 37,
+      "St. Louis to Liverpool" : 30,
       "Berry Is On Top" : 7
     },
     "topSongs" : {
@@ -11341,7 +11613,7 @@
       "Hey Pedro" : 7,
       "Maybellene" : 7
     },
-    "topFans" : [ "david27", "jack29", "bob35", "frank21", "henry26" ],
+    "topFans" : [ "david27", "frank21", "jack29", "bob35", "henry26" ],
     "listeners" : 10
   }
 }, {
@@ -13237,7 +13509,7 @@
   "timestamp" : 14948,
   "result" : {
     "topAlbums" : {
-      "Celebration (Double Disc Version)" : 58,
+      "Celebration (Double Disc Version)" : 59,
       "Confessions on a Dance Floor" : 28,
       "Ray of Light" : 26,
       "Like a Prayer" : 23
@@ -15065,7 +15337,7 @@
   "result" : {
     "topAlbums" : {
       "Arrival" : 40,
-      "ABBA Gold" : 32,
+      "ABBA Gold" : 34,
       "Super Trouper" : 26,
       "Voulez-Vous" : 26
     },
@@ -15073,8 +15345,8 @@
       "The Winner Takes It All" : 10,
       "Knowing Me, Knowing You" : 8,
       "Dum Dum Diddle" : 6,
-      "Dancing Queen" : 5,
-      "I Have a Dream" : 5
+      "Money, Money, Money" : 6,
+      "Dancing Queen" : 5
     },
     "topFans" : [ "carol19", "alice22", "frank21", "henry26", "david27" ],
     "listeners" : 10
@@ -18617,7 +18889,7 @@
   "timestamp" : 21532,
   "result" : {
     "topAlbums" : {
-      "Lover" : 35,
+      "Lover" : 36,
       "Fearless" : 34,
       "1989" : 33,
       "reputation" : 33
@@ -19086,14 +19358,14 @@
   "timestamp" : 22130,
   "result" : {
     "topArtists" : {
-      "ABBA" : 22,
+      "ABBA" : 24,
       "Johnny Cash" : 15,
       "Led Zeppelin" : 12,
       "Madonna" : 12,
       "Chuck Berry" : 11
     },
     "topGenres" : {
-      "pop" : 44,
+      "pop" : 46,
       "country" : 18,
       "soul" : 11,
       "hard rock" : 10,
@@ -19107,7 +19379,7 @@
       "Dancing Queen" : 2
     },
     "topAlbums" : {
-      "ABBA Gold" : 10,
+      "ABBA Gold" : 12,
       "Led Zeppelin IV" : 8,
       "Chuck Berry Is On Top" : 7,
       "Arrival" : 6,
@@ -19959,7 +20231,7 @@
   "result" : {
     "topAlbums" : {
       "All That You Can't Leave Behind" : 36,
-      "Achtung Baby" : 34,
+      "Achtung Baby" : 35,
       "The Joshua Tree" : 33,
       "How to Dismantle an Atomic Bomb" : 24
     },
@@ -19970,7 +20242,7 @@
       "In a Little While" : 5,
       "One" : 5
     },
-    "topFans" : [ "alice22", "emily30", "david27", "bob35", "henry26" ],
+    "topFans" : [ "alice22", "emily30", "david27", "bob35", "grace25" ],
     "listeners" : 10
   }
 }, {
@@ -20805,7 +21077,7 @@
   "result" : {
     "topArtists" : {
       "Jimi Hendrix" : 19,
-      "Led Zeppelin" : 16,
+      "Led Zeppelin" : 17,
       "U2" : 16,
       "Fleetwood Mac" : 14,
       "ABBA" : 12
@@ -20814,7 +21086,7 @@
       "pop" : 32,
       "rock" : 31,
       "country" : 14,
-      "hard rock" : 13,
+      "hard rock" : 14,
       "justice for silver springs" : 11
     },
     "topSongs" : {
@@ -20828,7 +21100,7 @@
       "Are You Experienced" : 13,
       "The Joshua Tree" : 12,
       "Rumours (Super Deluxe)" : 11,
-      "Led Zeppelin II" : 8,
+      "Led Zeppelin II" : 9,
       "Celebration (Double Disc Version)" : 7
     },
     "topEpisodes" : { }
@@ -20872,7 +21144,7 @@
   "result" : {
     "topAlbums" : {
       "Are You Experienced" : 48,
-      "Experience Hendrix: The Best of Jimi Hendrix" : 44,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 45,
       "Electric Ladyland" : 39,
       "Are You Experienced?" : 8
     },
@@ -21036,7 +21308,7 @@
   "timestamp" : 26457,
   "result" : {
     "topArtists" : {
-      "Eminem" : 20,
+      "Eminem" : 21,
       "Madonna" : 20,
       "Taylor Swift" : 19,
       "Nothing But Thieves" : 18,
@@ -21045,7 +21317,7 @@
     "topGenres" : {
       "pop" : 36,
       "country" : 22,
-      "rap" : 20,
+      "rap" : 21,
       "rock" : 20,
       "classic rock" : 11
     },
@@ -21057,8 +21329,8 @@
       "Have You Ever Been (To Electric Ladyland)" : 2
     },
     "topAlbums" : {
+      "Recovery" : 11,
       "Fearless" : 10,
-      "Recovery" : 10,
       "Broken Machine (Deluxe)" : 9,
       "Celebration (Double Disc Version)" : 8,
       "Fleetwood Mac" : 8
@@ -21668,18 +21940,18 @@
   "timestamp" : 28471,
   "result" : {
     "topArtists" : {
-      "Jimi Hendrix" : 26,
-      "Chuck Berry" : 18,
+      "Jimi Hendrix" : 27,
+      "Chuck Berry" : 20,
       "ABBA" : 15,
       "Led Zeppelin" : 15,
       "Johnny Cash" : 14
     },
     "topGenres" : {
       "pop" : 32,
-      "classic rock" : 26,
+      "classic rock" : 27,
       "country" : 17,
-      "rock and roll" : 15,
-      "soul" : 12
+      "rock and roll" : 17,
+      "soul" : 13
     },
     "topSongs" : {
       "Going to California" : 4,
@@ -21689,8 +21961,8 @@
       "Can You Afford to Be An Individual?" : 2
     },
     "topAlbums" : {
-      "Experience Hendrix: The Best of Jimi Hendrix" : 20,
-      "The Great Twenty-Eight" : 12,
+      "Experience Hendrix: The Best of Jimi Hendrix" : 21,
+      "The Great Twenty-Eight" : 14,
       "reputation" : 9,
       "Arrival" : 8,
       "Led Zeppelin IV (Deluxe Edition)" : 8
@@ -22033,10 +22305,10 @@
   "timestamp" : 29652,
   "result" : {
     "topAlbums" : {
-      "The Eminem Show" : 37,
-      "The Marshall Mathers LP" : 37,
+      "The Eminem Show" : 38,
+      "The Marshall Mathers LP" : 38,
       "The Slim Shady LP" : 34,
-      "Recovery" : 27
+      "Recovery" : 28
     },
     "topSongs" : {
       "Public Service Announcement 2000" : 6,
@@ -22045,7 +22317,7 @@
       "Role Model" : 4,
       "Space Bound" : 4
     },
-    "topFans" : [ "david27", "henry26", "irene33", "jack29", "grace25" ],
+    "topFans" : [ "david27", "irene33", "jack29", "henry26", "grace25" ],
     "listeners" : 10
   }
 }, {
@@ -22862,7 +23134,7 @@
       "American III: Solitary Man" : 15,
       "Like a Prayer" : 12,
       "The Slim Shady LP" : 12,
-      "1989" : 8
+      "St. Louis to Liverpool" : 9
     },
     "topEpisodes" : { }
   }
@@ -22920,16 +23192,16 @@
   "timestamp" : 32802,
   "result" : {
     "topArtists" : {
-      "Taylor Swift" : 31,
-      "Michael Jackson" : 21,
+      "Taylor Swift" : 32,
+      "Michael Jackson" : 22,
+      "Eminem" : 21,
       "Chuck Berry" : 20,
-      "Eminem" : 20,
       "Marvin Gaye" : 17
     },
     "topGenres" : {
-      "pop" : 63,
+      "pop" : 65,
+      "rap" : 21,
       "rock" : 21,
-      "rap" : 20,
       "rock and roll" : 19,
       "soul" : 17
     },
@@ -22941,9 +23213,9 @@
       "Can't Let Her Get Away" : 2
     },
     "topAlbums" : {
-      "Lover" : 21,
-      "Dangerous" : 13,
-      "The Marshall Mathers LP" : 13,
+      "Lover" : 22,
+      "Dangerous" : 14,
+      "The Marshall Mathers LP" : 14,
       "Berry Is On Top" : 7,
       "United" : 7
     },
@@ -23131,16 +23403,16 @@
   "timestamp" : 33646,
   "result" : {
     "topArtists" : {
-      "Fleetwood Mac" : 47,
-      "Madonna" : 31,
+      "Fleetwood Mac" : 48,
+      "Madonna" : 32,
       "Nothing But Thieves" : 19,
       "Eminem" : 15,
       "Jimi Hendrix" : 15
     },
     "topGenres" : {
-      "pop" : 47,
-      "justice for silver springs" : 39,
-      "rock" : 20,
+      "pop" : 48,
+      "justice for silver springs" : 40,
+      "rock" : 21,
       "rap" : 15,
       "alternative rock" : 11
     },
@@ -23152,11 +23424,11 @@
       "Even Better Than the Real Thing" : 2
     },
     "topAlbums" : {
-      "Rumours (Super Deluxe)" : 39,
-      "Celebration (Double Disc Version)" : 25,
+      "Rumours (Super Deluxe)" : 40,
+      "Celebration (Double Disc Version)" : 26,
       "Broken Machine (Deluxe)" : 11,
       "Electric Ladyland" : 10,
-      "Moral Panic" : 7
+      "Achtung Baby" : 7
     },
     "topEpisodes" : { }
   }
@@ -23246,7 +23518,7 @@
   "timestamp" : 34057,
   "result" : {
     "topAlbums" : {
-      "Unearthed" : 107,
+      "Unearthed" : 108,
       "American III: Solitary Man" : 38,
       "The Legend of Johnny Cash" : 32,
       "American IV: The Man Comes Around" : 27
@@ -23459,7 +23731,7 @@
   "timestamp" : 36958,
   "result" : {
     "topAlbums" : {
-      "Rumours (Super Deluxe)" : 87,
+      "Rumours (Super Deluxe)" : 88,
       "Greatest Hits" : 36,
       "Fleetwood Mac" : 25
     },
@@ -23719,17 +23991,17 @@
   "timestamp" : 38296,
   "result" : {
     "topArtists" : {
-      "Johnny Cash" : 92,
+      "Johnny Cash" : 93,
+      "Eminem" : 21,
       "Chuck Berry" : 20,
-      "Eminem" : 20,
       "Fleetwood Mac" : 18,
       "Jimi Hendrix" : 13
     },
     "topGenres" : {
-      "country" : 92,
+      "country" : 93,
       "rock" : 35,
       "pop" : 29,
-      "rap" : 20,
+      "rap" : 21,
       "rock and roll" : 18
     },
     "topSongs" : {
@@ -23740,10 +24012,10 @@
       "Carol" : 2
     },
     "topAlbums" : {
-      "Unearthed" : 82,
+      "Unearthed" : 83,
       "Chuck Berry Is On Top" : 18,
       "Greatest Hits" : 14,
-      "The Eminem Show" : 11,
+      "The Eminem Show" : 12,
       "Are You Experienced" : 9
     },
     "topEpisodes" : { }
@@ -23753,79 +24025,79 @@
   "result" : {
     "U2" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1627105.73,
+      "songRevenue" : 1621166.86,
       "ranking" : 1,
-      "mostProfitableSong" : "The Fly"
+      "mostProfitableSong" : "Running to Stand Still"
     },
     "Johnny Cash" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1208307.94,
+      "songRevenue" : 1203330.7,
       "ranking" : 2,
-      "mostProfitableSong" : "The Man Comes Around (Early Take)"
+      "mostProfitableSong" : "I Won't Back Down"
     },
     "Fleetwood Mac" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 1061494.56,
+      "songRevenue" : 1062430.55,
       "ranking" : 3,
-      "mostProfitableSong" : "Go Your Own Way - 2004 Remastered Edition"
+      "mostProfitableSong" : "Never Going Back Again - 2004 Remastered Edition"
     },
     "Eminem" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 979200.11,
+      "songRevenue" : 987342.51,
       "ranking" : 4,
       "mostProfitableSong" : "Public Service Announcement 2000"
     },
     "Taylor Swift" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 850663.45,
+      "songRevenue" : 852164.75,
       "ranking" : 5,
       "mostProfitableSong" : "Blank Space"
     },
     "Jimi Hendrix" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 781452.95,
+      "songRevenue" : 772490.35,
       "ranking" : 6,
-      "mostProfitableSong" : "Manic Depression"
+      "mostProfitableSong" : "1983...(A Merman I Should Turn to Be)"
     },
     "ABBA" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 710166.09,
+      "songRevenue" : 725438.36,
       "ranking" : 7,
       "mostProfitableSong" : "Knowing Me, Knowing You"
     },
     "Led Zeppelin" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 609559.37,
+      "songRevenue" : 598418.03,
       "ranking" : 8,
       "mostProfitableSong" : "Misty Mountain Hop"
     },
     "Michael Jackson" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 545657.06,
+      "songRevenue" : 538511.74,
       "ranking" : 9,
-      "mostProfitableSong" : "Wanna Be Startin' Somethin' 2008 with Akon - Thriller 25th Anniversary Remix"
+      "mostProfitableSong" : "Burn This Disco Out"
     },
     "Marvin Gaye" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 469959.99,
+      "songRevenue" : 470520.72,
       "ranking" : 10,
       "mostProfitableSong" : "Mercy Mercy Me (The Ecology)"
     },
     "Nothing But Thieves" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 403160.13,
+      "songRevenue" : 397695.73,
       "ranking" : 11,
       "mostProfitableSong" : "If I Get High"
     },
     "Madonna" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 394159.7,
+      "songRevenue" : 390094.35,
       "ranking" : 12,
       "mostProfitableSong" : "Mer Girl"
     },
     "Chuck Berry" : {
       "merchRevenue" : 0.0,
-      "songRevenue" : 359112.92,
+      "songRevenue" : 380395.34,
       "ranking" : 13,
       "mostProfitableSong" : "Reelin' And Rockin' - Single Version"
     }

@@ -239,7 +239,7 @@ public final class AlbumSelection
 
                     //  Check song
                     for (SongInput song : crtAlbum) {
-                        if (duration > this.getRemainingTime()
+                        if (duration >= this.getRemainingTime()
                                 && duration < prevRemainingTime) {
                             break;
                         }
@@ -255,7 +255,7 @@ public final class AlbumSelection
                     if (!skipWrapped) {
                         duration = this.getAlbum().getDuration();
                         for (SongInput song : crtAlbum) {
-                            if (duration <= prevRemainingTime) {
+                            if (duration < prevRemainingTime) {
                                 if (duration < this.getRemainingTime()) {
                                     break;
                                 } else {
