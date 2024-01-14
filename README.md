@@ -1,6 +1,6 @@
 # Proiect GlobalWaves - Etapa 2 - CLASS DESCRIPTION
 
-## _Package : CommandHelper_
+## _Package : commandhelper_
 
 ## **Command**
 This class represents any command that the user may input. When reading into an instance of this class 
@@ -14,7 +14,7 @@ relationship with _Command_ class.
 This class represents the format of a search. It contains the user that searched, the latest result of the
 search and the steps that need to be completed before loading/following (step1 - search, step2 - select)
 
-## _Package : CreatorClasses_
+## _Package : creatorclasses_
 
 ## **Event**
 This class represents an event that an artist may add. It has the 3 main attributes of an event: name,
@@ -33,7 +33,13 @@ This class represents an announcement of a host; it is distinguished by name and
 ## **HostInfo**
 HostInfo is the collection of all announcements made by a certain host.
 
-## _Package : LikeClasses_
+## **CreatorChannel**
+This class represents a channel of an artist/host, having an identifier (creator name) and a list of subscribers.
+
+## **NotificationBar**
+This class represents the collection of notifications each user can get if they subscribe to channels.
+
+## _Package : likeclasses_
 
 ## **ArtistLikes**
 This class is the representation of an artist, linked with their total likes. In this way, when we need to
@@ -43,7 +49,16 @@ type UserInput, adding a field of likes for any user would have been redundant.
 ## **SongLikes**
 This class represents a song from the library paired with all its likes from the app users
 
-## _Package : PagingClasses_
+## _Package : monetization_
+
+## **ArtistRevenue**
+This class represents the end of program revenue template for each creator that may have generated revenue. It includes
+a builder class.
+
+## **PremiumUser**
+This class links together a premium user and the songs they listened to. Used for revenue analysis.
+
+## _Package : pagingclasses_
 
 ## **Page**
 This class represents an individual page from the entire page system. Each user has their own page and,
@@ -51,7 +66,7 @@ based on what page they select, the user playlists change from the owner's playl
 selected; when printing information about this page, the songs and playlists are right where
 they are needed.
 
-## _Package : PlaylistClasses_
+## _Package : playlistclasses_
 
 ## **Album**
 This class represents an album. It is the extension of a playlist (see below), but has a few extra attributes.
@@ -60,11 +75,10 @@ This class represents an album. It is the extension of a playlist (see below), b
 This class represents any playlist. It keeps track of the name, songs, followers, owner and even the shuffled
 order of its songs.
 
-## **UserPlaylist**
-This class represents a user and all their playlists: followed playlists and liked
-songs
+## **UserData**
+This class represents a user and all their data: followed playlists, liked songs, bought merch
 
-## _Package : SelectionClasses_
+## _Package : selectionclasses_
 
 ## **ItemSelection**
 This class is the general representation of an item that can be selected and loaded into the player. It
@@ -107,13 +121,13 @@ This class is the specific extension of ItemSelection that represents a selected
 
     getDuration: sums the durations of all the songs in the playlist
 
-## _Package : UtilityClasses_
+## _Package : utilityclasses_
 
 ## **Constants**
 This utility class contains all constants that are required for the program.
 
-## **DoCommands**
-This utility class contains static methods that execute certain commands; most of the time, these functions either
+## **DoCommands12/3**
+These utility classes contain static methods that execute certain commands; most of the time, these functions either
 don't require a final message or the process of acquiring the message was short enough to fit into the doCommand
 method
 
@@ -169,13 +183,17 @@ method
 
     doGetTop5Artists: this method displays most liked 5 artists from the 
         database
+
+    doGetNotification: this method displays all notifications from followed channels
+
+    doSeeMerch: this method displays all the user's purchased merch
     
-## **DoCommandsMessage**
+## **DoCommandsMessage12/3**
 This utility class contains static wrapper methods that just call the associated getMessage function and return the
 output ObjectNode
 
-## **GetMessages**
-This utility class contains all the static methods required to make a change into the database and then return
+## **GetMessages12/3**
+These utility classes contain all the static methods required to make a change into the database and then return
 the appropriate message based on how the operation went.
 
     getShuffleMessage: this method treats the 2 cases (shuffle and unshuffle)
@@ -282,6 +300,18 @@ the appropriate message based on how the operation went.
     getRemoveEventMessage: this method safely deletes an event from
         Management
 
+    getBuyPremiumMessage: this method helps a user buy a premium subscription
+        and checks for exceptions
+
+    getCancelPremiumMessage: this method helps a user cancel a premium subscription
+        and checks for exceptions
+
+    getSubscribeMessage: this method allows the users to subscribe/unsubscribe
+        to any channel
+
+    getBuyMerchMessage: this method adds a piece of merch to a user's data and
+        keeps track of artist revenue
+
 ## **SearchSelect**
 This utility class contains all the static methods required for the search and select
 commands
@@ -318,7 +348,7 @@ commands
 
     storeResultForSelect: stores in an array the name and type of the selection
 
-## _**Package : VisitorPattern**_
+## _**Package : visitorpattern**_
 This package contains 2 sets of Visitor Patterns, one that returns Strings and one that returns ObjectNodes.
 The visitables are always ItemSelection objects, while the visitors are methods that implement the logic of
 the **getStatus, deleteUser, next, prev, repeat and shuffle** commands and finally return a certain output.
@@ -326,11 +356,53 @@ The main advantage of the Visitor Pattern in my application is reducing the usag
 cleanliness and better structure overall. Therefore, in order to check the logic behind those commands, you
 can find them in their respective Visitor class.
 
+## _**Package : wrappeddatabase**_
+This package contains a singleton database that stores both creator and user wrapped, general statistics that are
+inherited by more concrete classes and a factory pattern for database expansion.
+
+## **GeneralStatistics**
+This class is the general template of how a user's statistics will look like. It is inherited by ArtistStatistics,
+HostStatistics and UserStatistics
+
+## **Statistics**
+Here is the Database. It is mainly made of 3 ArrayLists: one for artists, one for hosts and one for users. This class also
+contains the function that formats the data into an appropriate output when a user wants to generate their wrapped.
+
+## **StatsFactory**
+This Factory Class adds a new user to the wrapped database, depending on their type.
+
 ## **Main**
 In this class everything is bound together: after reading the database and the
 commands from the JSON files, the _action_ method calls a big **SWITCH** statement
 that executes all commands, one by one.
     
     updatePlayer: this method updates the times of all loaded and unpaused 
-        players 
+        players
+    endProgram: this method calculates and displays generated revenue and sorts creators
+        by how much money they made on the platform
             
+## **USED DESIGN PATTERNS**
+
+## **1.Visitor**
+Visitor is located separately in its own package. This design pattern was necessary for a cleaner, more concise
+and more POO approach when handling ItemSelection objects in the player. Instead of using _instanceof_ repeteadly on
+certain commands that treat Selections differently, I implemented a visitor class for each respective method. Moreover,
+this Visitor is separated into Visitor that returns ObjectNode items or String items.
+_Note: due to distinctive interfaces, I had to give different names to the visit/accept methods, otherwise the names
+clash and generate an error._
+
+## **2. Singleton**
+Singleton is located in wrappeddatabase/Statistics. Singleton Pattern was a good approach because the Database for Wrapped was 
+necessary at all times, therefore it was mandatory to be global. It helped by making any statistic available in for any
+class. (Note: if I were to start this homework from scratch, I would put everything in Singletons in order to increase 
+program flexibility and overall organisation).
+
+## **3. Factory**
+Factory is located in wrappeddatabase/StatsFactory. Factory Pattern was helpful when creating new users, because it automatically
+updated the Wrapped Database with the required user. I switched things up a bit by automatically updating the Statistics
+arrays instead of returning the new object in order to make the whole creation process more compact.
+
+## **4.Builder**
+Builder is located within monetization/ArtistRevenue. Builder Pattern was a choice of readability; I decided to implement
+it because I felt like it would make the creation of ArtistRevenue instance more clear and since this class has many
+optional fields, it seemed like the best approach for a POO-style implementation.
