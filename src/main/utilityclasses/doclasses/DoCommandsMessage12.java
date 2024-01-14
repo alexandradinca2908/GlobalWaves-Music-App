@@ -17,26 +17,26 @@ import main.playlistclasses.Playlist;
 import main.playlistclasses.UserData;
 import main.selectionclasses.ItemSelection;
 import main.selectionclasses.PodcastSelection;
-import main.utilityclasses.GetMessages;
+import main.utilityclasses.getmessageclasses.GetMessages12;
 
 import java.util.ArrayList;
 
 import static main.Main.updatePlayer;
 
-import static main.utilityclasses.GetMessages.getSwitchConnectionMessage;
-import static main.utilityclasses.GetMessages.getRemovePodcastMessage;
-import static main.utilityclasses.GetMessages.getRemoveEventMessage;
-import static main.utilityclasses.GetMessages.getRemoveAnnouncementMessage;
-import static main.utilityclasses.GetMessages.getRemoveAlbumMessage;
-import static main.utilityclasses.GetMessages.getDeleteUserMessage;
-import static main.utilityclasses.GetMessages.getChangePageMessage;
-import static main.utilityclasses.GetMessages.getAddPodcastMessage;
-import static main.utilityclasses.GetMessages.getAddMerchMessage;
-import static main.utilityclasses.GetMessages.getAddEventMessage;
-import static main.utilityclasses.GetMessages.getAddAnnouncementMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getSwitchConnectionMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getRemovePodcastMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getRemoveEventMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getRemoveAnnouncementMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getRemoveAlbumMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getDeleteUserMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getChangePageMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getAddPodcastMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getAddMerchMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getAddEventMessage;
+import static main.utilityclasses.getmessageclasses.GetMessages12.getAddAnnouncementMessage;
 
-public final class DoCommandsMessage {
-    private DoCommandsMessage() {
+public final class DoCommandsMessage12 {
+    private DoCommandsMessage12() {
     }
 
     /**
@@ -80,7 +80,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make proper modifications to the playlist
-        String message = GetMessages.getAddRemoveMessage(player, playlists, crtCommand,
+        String message = GetMessages12.getAddRemoveMessage(player, playlists, crtCommand,
                 albums, premiumUsers);
         addRemoveOutput.put("message", message);
 
@@ -125,7 +125,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make proper modifications to the user's liked songs
-        String message = GetMessages.getLikeMessage(player, usersData,
+        String message = GetMessages12.getLikeMessage(player, usersData,
                 crtCommand, songsLikes, albums, premiumUsers);
 
         likeOutput.put("message", message);
@@ -183,7 +183,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getForwardMessage(crtItem, crtCommand,
+        String message = GetMessages12.getForwardMessage(crtItem, crtCommand,
                 player, podcasts, albums, premiumUsers);
         forwardOutput.put("message", message);
 
@@ -240,7 +240,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getBackwardMessage(crtItem);
+        String message = GetMessages12.getBackwardMessage(crtItem);
         backwardOutput.put("message", message);
 
         return backwardOutput;
@@ -296,7 +296,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getNextMessage(crtItem, player,
+        String message = GetMessages12.getNextMessage(crtItem, player,
                 podcasts, crtCommand);
         nextOutput.put("message", message);
 
@@ -353,7 +353,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getPrevMessage(crtItem, crtCommand);
+        String message = GetMessages12.getPrevMessage(crtItem, crtCommand);
         prevOutput.put("message", message);
 
         return prevOutput;
@@ -392,7 +392,7 @@ public final class DoCommandsMessage {
         }
 
         //  Get message and make changes
-        String message = GetMessages.getSwitchVisibilityMessage(usersData,
+        String message = GetMessages12.getSwitchVisibilityMessage(usersData,
                 crtCommand);
         switchOutput.put("message", message);
 
@@ -466,7 +466,7 @@ public final class DoCommandsMessage {
         addUserOutput.put("user", crtCommand.getUsername());
         addUserOutput.put("timestamp", crtCommand.getTimestamp());
 
-        String message = GetMessages.getAddUserMessage(crtCommand,
+        String message = GetMessages12.getAddUserMessage(crtCommand,
                 library, usersData, pageSystem, managements,
                 hostInfos, channels, notificationBars);
         addUserOutput.put("message", message);
@@ -498,7 +498,7 @@ public final class DoCommandsMessage {
         addAlbumOutput.put("user", crtCommand.getUsername());
         addAlbumOutput.put("timestamp", crtCommand.getTimestamp());
 
-        String message = GetMessages.getAddAlbumMessage(crtCommand, library,
+        String message = GetMessages12.getAddAlbumMessage(crtCommand, library,
                 usersData, albums, songsLikes, channels, notificationBars);
         addAlbumOutput.put("message", message);
 

@@ -2,7 +2,11 @@ package main.utilityclasses.doclasses;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.*;
+import fileio.input.EpisodeInput;
+import fileio.input.PodcastInput;
+import fileio.input.UserInput;
+import fileio.input.LibraryInput;
+import fileio.input.SongInput;
 import main.commandhelper.Command;
 import main.commandhelper.Filters;
 import main.commandhelper.Search;
@@ -24,7 +28,7 @@ import main.selectionclasses.SongSelection;
 import main.selectionclasses.playlists.AlbumSelection;
 import main.selectionclasses.playlists.PlaylistSelection;
 import main.utilityclasses.Constants;
-import main.utilityclasses.GetMessages;
+import main.utilityclasses.getmessageclasses.GetMessages12;
 import main.utilityclasses.SearchSelect;
 import main.visitorpattern.visitorstring.VisitorString;
 import main.visitorpattern.visitorstring.stringclasses.VisitRepeat;
@@ -35,9 +39,9 @@ import java.util.Collections;
 
 import static main.Main.updatePlayer;
 
-public final class DoCommands {
+public final class DoCommands12 {
 
-    private DoCommands() {
+    private DoCommands12() {
     }
 
     /**
@@ -348,7 +352,7 @@ public final class DoCommands {
         }
 
         //  Creating the message
-        String message = GetMessages.getSelectMessage(crtSearch,
+        String message = GetMessages12.getSelectMessage(crtSearch,
                 crtCommand);
         selectOutput.put("message", message);
 
@@ -1097,7 +1101,7 @@ public final class DoCommands {
 
                 //  The follow/unfollow command can be executed
             } else {
-                String message = GetMessages.getFollowMessage(wantedPlaylist,
+                String message = GetMessages12.getFollowMessage(wantedPlaylist,
                         crtCommand, usersData);
                 followOutput.put("message", message);
             }

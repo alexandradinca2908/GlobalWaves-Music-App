@@ -1,4 +1,4 @@
-package main.utilityclasses;
+package main.utilityclasses.getmessageclasses;
 
 import fileio.input.UserInput;
 import fileio.input.SongInput;
@@ -25,6 +25,7 @@ import main.selectionclasses.PodcastSelection;
 import main.selectionclasses.SongSelection;
 import main.likeclasses.SongLikes;
 import main.playlistclasses.UserData;
+import main.utilityclasses.Constants;
 import main.visitorpattern.visitorstring.stringclasses.VisitDeleteUser;
 import main.visitorpattern.visitorstring.stringclasses.VisitNext;
 import main.visitorpattern.visitorstring.stringclasses.VisitPrev;
@@ -37,9 +38,9 @@ import java.util.Random;
 
 import static main.Main.updatePlayer;
 
-public final class GetMessages {
+public final class GetMessages12 {
 
-    private GetMessages() {
+    private GetMessages12() {
     }
 
     /**

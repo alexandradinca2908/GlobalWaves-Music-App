@@ -5,7 +5,7 @@ import main.selectionclasses.playlists.AlbumSelection;
 import main.selectionclasses.playlists.PlaylistSelection;
 import main.selectionclasses.PodcastSelection;
 import main.selectionclasses.SongSelection;
-import main.utilityclasses.GetMessages;
+import main.utilityclasses.getmessageclasses.GetMessages12;
 import main.visitorpattern.visitorstring.VisitorString;
 
 public final class VisitShuffle implements VisitorString {
@@ -31,13 +31,13 @@ public final class VisitShuffle implements VisitorString {
     public String visitString(final PlaylistSelection crtItem) {
         //  All conditions met. Switch to shuffle/unshuffle
         //  Set the message and update playlist
-        return GetMessages.getShuffleMessage(crtItem, crtCommand);
+        return GetMessages12.getShuffleMessage(crtItem, crtCommand);
     }
 
     @Override
     public String visitString(final AlbumSelection crtItem) {
         //  All conditions met. Switch to shuffle/unshuffle
         //  Set the message and update playlist
-        return GetMessages.getShuffleMessage(crtItem, crtCommand);
+        return GetMessages12.getShuffleMessage(crtItem, crtCommand);
     }
 }
