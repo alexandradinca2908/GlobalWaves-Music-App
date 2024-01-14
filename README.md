@@ -184,6 +184,9 @@ method
     doGetTop5Artists: this method displays most liked 5 artists from the 
         database
 
+    doWrapped: this method retrieves the information from the database and displays
+        it for the current user
+
     doGetNotification: this method displays all notifications from followed channels
 
     doSeeMerch: this method displays all the user's purchased merch
@@ -365,8 +368,7 @@ This class is the general template of how a user's statistics will look like. It
 HostStatistics and UserStatistics
 
 ## **Statistics**
-Here is the Database. It is mainly made of 3 ArrayLists: one for artists, one for hosts and one for users. This class also
-contains the function that formats the data into an appropriate output when a user wants to generate their wrapped.
+Here is the Database. It is mainly made of 3 ArrayLists: one for artists, one for hosts and one for users.
 
 ## **StatsFactory**
 This Factory Class adds a new user to the wrapped database, depending on their type.

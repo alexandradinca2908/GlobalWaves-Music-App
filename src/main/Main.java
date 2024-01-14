@@ -44,12 +44,12 @@ import java.util.Objects;
 import static main.utilityclasses.doclasses.DoCommands12.*;
 import static main.utilityclasses.doclasses.DoCommands3.doGetNotifications;
 import static main.utilityclasses.doclasses.DoCommands3.doSeeMerch;
+import static main.utilityclasses.doclasses.DoCommands3.doWrapped;
 import static main.utilityclasses.doclasses.DoCommandsMessage12.*;
 import static main.utilityclasses.doclasses.DoCommandsMessage3.doBuyMerch;
 import static main.utilityclasses.doclasses.DoCommandsMessage3.doBuyPremium;
 import static main.utilityclasses.doclasses.DoCommandsMessage3.doCancelPremium;
 import static main.utilityclasses.doclasses.DoCommandsMessage3.doSubscribe;
-import static main.wrappeddatabase.Statistics.retrieveWrapped;
 
 /**
  * The entry point to this homework. It runs the checker that tests your implentation.
@@ -562,7 +562,7 @@ public final class Main {
 
                 case "wrapped" -> {
                     ObjectNode wrappedOutput;
-                    wrappedOutput = retrieveWrapped(objectMapper, premiumUsers,
+                    wrappedOutput = doWrapped(objectMapper, premiumUsers,
                             player, crtCommand, podcasts, library, albums);
 
                     outputs.add(wrappedOutput);
