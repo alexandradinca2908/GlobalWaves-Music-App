@@ -1,24 +1,10 @@
 package main.wrappeddatabase;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import fileio.input.EpisodeInput;
-import fileio.input.LibraryInput;
-import fileio.input.UserInput;
-import main.commandhelper.Command;
-import main.monetization.PremiumUser;
-import main.playlistclasses.Album;
-import main.selectionclasses.ItemSelection;
-import main.selectionclasses.PodcastSelection;
-import main.utilityclasses.Constants;
 import main.wrappeddatabase.alluserstats.ArtistStatistics;
 import main.wrappeddatabase.alluserstats.HostStatistics;
 import main.wrappeddatabase.alluserstats.UserStatistics;
 
 import java.util.ArrayList;
-import java.util.Map;
-
-import static main.Main.updatePlayer;
 
 public final class Statistics {
     private ArrayList<UserStatistics> usersStatistics;

@@ -1,15 +1,15 @@
 Starting audit...
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:44:57: Using the '.*' form of import should be avoided - main.utilityclasses.doclasses.DoCommands12.*. [AvoidStarImport]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:47:64: Using the '.*' form of import should be avoided - main.utilityclasses.doclasses.DoCommandsMessage12.*. [AvoidStarImport]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:48:64: Using the '.*' form of import should be avoided - main.utilityclasses.doclasses.DoCommandsMessage12.*. [AvoidStarImport]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\Main.java:107:5: Method length is 526 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\selectionclasses\playlists\AlbumSelection.java:58:5: Method length is 214 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\selectionclasses\playlists\PlaylistSelection.java:58:5: Method length is 214 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\doclasses\DoCommands12.java:60:5: Method length is 236 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\doclasses\DoCommands12.java:453:5: Method length is 157 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\doclasses\DoCommands12.java:1280:5: Method length is 198 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\doclasses\DoCommands3.java:44:5: Method length is 350 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\getmessageclasses\GetMessages12.java:1: File length is 2,408 lines (max allowed is 2,000). [FileLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\getmessageclasses\GetMessages12.java:416:5: Method length is 236 lines (max allowed is 150). [MethodLength]
 [ERROR] D:\JetBrains\etapa-3-POO\.\src\main\utilityclasses\getmessageclasses\GetMessages12.java:1479:5: Method length is 216 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\JetBrains\etapa-3-POO\.\src\main\wrappeddatabase\Statistics.java:93:5: Method length is 350 lines (max allowed is 150). [MethodLength]
 Audit done.
 Checkstyle ends with 12 errors.
