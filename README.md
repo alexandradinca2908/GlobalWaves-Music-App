@@ -1,4 +1,4 @@
-# Proiect GlobalWaves - Etapa 2 - CLASS DESCRIPTION
+# Proiect GlobalWaves - Etapa 3 - CLASS DESCRIPTION
 
 ## _Package : commandhelper_
 
